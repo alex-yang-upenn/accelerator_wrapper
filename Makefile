@@ -59,7 +59,8 @@ include $(ABS_COMMON_REPO)/libs/xcl2/xcl2.mk
 CXXFLAGS += $(xcl2_CXXFLAGS) -I./src/ -I./src/nnet_utils/ $(opencl_CXXFLAGS)
 LDFLAGS += $(xcl2_LDFLAGS)
 HOST_SRCS += $(xcl2_SRCS)
-CXXFLAGS += $(opencl_CXXFLAGS) -Wall -O0 -g -std=c++11 -DIS_$(HLS4ML_PROJ_TYPE) -DHLS4ML_DATA_DIR=./
+CXXFLAGS += $(opencl_CXXFLAGS) -Wall -O0 -g -std=c++11 
+CXXFLAGS += -DIS_$(HLS4ML_PROJ_TYPE) -DHLS4ML_DATA_DIR=./ -DXCL_BIN_FILENAME=$(BUILD_DIR)/alveo_hls4ml.xclbin
 LDFLAGS += $(opencl_LDFLAGS) -I$(XILINX_VIVADO)/include/ -I$(XILINX_HLS)/include/ -Wno-unknown-pragmas
 
 HOST_SRCS += src/host.cpp
