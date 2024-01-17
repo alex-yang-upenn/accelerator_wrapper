@@ -8,8 +8,7 @@
 #include "timing.h"
 
 template <class T>
-fpgaObj<T>::fpgaObj(int nevents, int kernInputSize, int kernOutputSize, int numSLR, int numThreads): 
-        _nevents(nevents),
+fpgaObj<T>::fpgaObj(int kernInputSize, int kernOutputSize, int numSLR, int numThreads): 
         _kernInputSize(kernInputSize),
         _kernOutputSize(kernOutputSize),
         _numSLR(numSLR),
@@ -176,12 +175,19 @@ void fpgaObj<T>::write_ss_safe(std::string newss) {
 }
 
 template <class T>
+void fpgaObj<T>::finishRun() {
+    for (int i = 0 ; i < NUM_CU ; i++){
+        OCL_CHECK(err, err = q[i].finish());
+    }
+}
+
+template <class T>
 std::stringstream fpgaObj<T>::runFPGA() {
     auto t_start = Clock::now();
     auto t_end = Clock::now();
     std::stringstream ss;
 
-    for (int i = 0 ; i < _nevents ; i++){
+    for (int i = 0 ; i < _numSLR ; i++){
         t_start = Clock::now();
         auto ikf = get_info_lock();
         int ikb = ikf.first;

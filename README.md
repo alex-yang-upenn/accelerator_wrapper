@@ -15,5 +15,5 @@ LD_PRELOAD=/lib/x86_64-linux-gnu/libudev.so.1 make all TARGET=hw  DEVICE=xilinx_
 
 Run project
 ```bash
-./host build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml.xclbin 1000
+./host
 ```

@@ -41,7 +41,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #include "timing.h"
 #include "xcl2.hpp"
 
-#define NUM_CU 4
+#define NUM_CU 3
 #define NBUFFER 8
 
 #define STRINGIFY2(var) #var
@@ -65,16 +65,12 @@ void runFPGAHelper(fpgaObj& theFPGA) {
 
 int main(int argc, char** argv)
 {
-
-    int nevents = 5;
     std::string datadir = STRINGIFY(HLS4ML_DATA_DIR);
-    std::string xclbinFilename = "";
-    if (argc > 1) xclbinFilename = argv[1];
-    if (argc > 2) nevents = atoi(argv[2]);
-    if (argc > 3) datadir = argv[3];
-    std::cout << "Will run " << nevents << " time(s), using " << datadir << " to get input features and output predictions (tb_input_features.dat and tb_output_predictions.dat)" << std::endl;
+    std::string xclbinFilename = STRINGIFY(XCL_BIN_FILENAME);
+    
+    std::cout << "Will run using " << datadir << " to get input features and output predictions (tb_input_features.dat and tb_output_predictions.dat)" << std::endl;
 
-    fpgaObj<bigdata_t> fpga(nevents, STREAMSIZE, COMPSTREAMSIZE, NUM_CU, NBUFFER);
+    fpgaObj<bigdata_t> fpga(STREAMSIZE, COMPSTREAMSIZE, NUM_CU, NBUFFER);
     
     /* 
     get_xil_devices() is a utility API which will find the xilinx
@@ -97,42 +93,33 @@ int main(int argc, char** argv)
 
     fpga.allocateHostMemory();
 
+    // Create the test data
     for (int ib = 0; ib < NBUFFER; ib++) {
         for (int i = 0 ; i < NUM_CU ; i++){
             for (int istream = 0; istream < STREAMSIZE; istream++) {
-            // Create the test data if no data files found or if end of files has been reached
+            
       	        fpga.source_in[ib*NUM_CU*STREAMSIZE+i*STREAMSIZE+istream] = (bigdata_t)(12354.37674*(istream+STREAMSIZE*(ib+i+1)));
             }
         }
     }
 
+    std::vector<std::thread> hostAccelerationThreads;
+    hostAccelThreads.reserve(NBUFFER);
+
     auto ts_start = SClock::now();
 
-    std::thread th0(runFPGAHelper, std::ref(fpga));
-    std::thread th1(runFPGAHelper, std::ref(fpga));
-    std::thread th2(runFPGAHelper, std::ref(fpga));
-    std::thread th3(runFPGAHelper, std::ref(fpga));
-    std::thread th4(runFPGAHelper, std::ref(fpga));
-    std::thread th5(runFPGAHelper, std::ref(fpga));
-    std::thread th6(runFPGAHelper, std::ref(fpga));
-    std::thread th7(runFPGAHelper, std::ref(fpga));
-    th0.join();
-    th1.join();
-    th2.join();
-    th3.join();
-    th4.join();
-    th5.join();
-    th6.join();
-    th7.join();
-    //FPGA(std::ref(fpga));
-
-    for (int i = 0 ; i < NUM_CU ; i++){
-        OCL_CHECK(fpga.err, fpga.err = fpga.q[i].flush());
-        OCL_CHECK(fpga.err, fpga.err = fpga.q[i].finish());
+    for (int i = 0; i < NBUFFER; i++) {
+        hostAccelerationThreads.push_back(std::thread(runFPGAHelper, std::ref(fpga)));
     }
 
+    for (int i = 0; i < NBUFFER; i++) {
+        hostAccelerationThreads[i].join();
+    }
+
+    fpga.finishRun();
+
     auto ts_end = SClock::now();
-    float throughput = (float(nevents * 8) /
+    float throughput = (float(NUM_CU * NBUFFER) /
             float(std::chrono::duration_cast<std::chrono::nanoseconds>(ts_start - ts_end).count())) *
             1000000000.;
     std::cout << "Throughput = "

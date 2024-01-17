@@ -41,8 +41,6 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 template <class T>
 class fpgaObj {
   public:
-    int _nevents;
-
     /**
      * \brief Vector containing all inputs to the kernels
     */
@@ -61,7 +59,7 @@ class fpgaObj {
     /**
      * \brief Constructor. Reserves and allocates buffers in host memory.
     */
-    fpgaObj(int nevents, int kernInputSize, int kernOutputSize, int numRegions, int numThreads);
+    fpgaObj(int kernInputSize, int kernOutputSize, int numRegions, int numThreads);
 
     /**
      * \brief Initializes OpenCL objects using the given devices and program
@@ -81,6 +79,11 @@ class fpgaObj {
     */
     void write_ss_safe(std::string newss);
     
+    /**
+     * \brief Completes all enqueued operations
+    */
+    void finishRun();
+
     /**
      * \brief Migrates input to FPGA , executes kernels, and migrates output to host memory
     */
