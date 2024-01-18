@@ -248,6 +248,7 @@ std::stringstream fpgaObj<T>::runFPGA() {
     return ss;
 }
 
+template <class T>
 void fpgaObj<T>::event_cb(cl_event event1, cl_int cmd_status, void *data) {
     cl_int err;
     cl_command_type command;
@@ -301,6 +302,7 @@ void fpgaObj<T>::event_cb(cl_event event1, cl_int cmd_status, void *data) {
     fflush(stdout);
 }
 
+template <class T>
 void fpgaObj<T>::set_callback(const char *queue_name, cl::Event event) {
     cl_int err;
     OCL_CHECK(err,
