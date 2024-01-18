@@ -155,6 +155,11 @@ class fpgaObj {
     cl::Program program;
 
     /**
+     * \brief OpenCL object containing the device context
+    */
+    cl::Context context;
+    
+    /**
      * \brief Vector containing queues of OpenCL commands.
      * Each queue corresponds to one Compute Unit on the FPGA 
     */

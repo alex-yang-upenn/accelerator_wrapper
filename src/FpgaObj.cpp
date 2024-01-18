@@ -7,6 +7,15 @@
 
 #include "timing.h"
 
+// HBM Pseudo-channel(PC) requirements
+#define MAX_HBM_PC_COUNT 32
+#define PC_NAME(n) n | XCL_MEM_TOPOLOGY
+const int pc[MAX_HBM_PC_COUNT] = {
+    PC_NAME(0),  PC_NAME(1),  PC_NAME(2),  PC_NAME(3),  PC_NAME(4),  PC_NAME(5),  PC_NAME(6),  PC_NAME(7),
+    PC_NAME(8),  PC_NAME(9),  PC_NAME(10), PC_NAME(11), PC_NAME(12), PC_NAME(13), PC_NAME(14), PC_NAME(15),
+    PC_NAME(16), PC_NAME(17), PC_NAME(18), PC_NAME(19), PC_NAME(20), PC_NAME(21), PC_NAME(22), PC_NAME(23),
+    PC_NAME(24), PC_NAME(25), PC_NAME(26), PC_NAME(27), PC_NAME(28), PC_NAME(29), PC_NAME(30), PC_NAME(31)};
+
 template <class T>
 fpgaObj<T>::fpgaObj(int kernInputSize, int kernOutputSize, int numSLR, int numThreads): 
         _kernInputSize(kernInputSize),
@@ -42,21 +51,24 @@ fpgaObj<T>::fpgaObj(int kernInputSize, int kernOutputSize, int numSLR, int numTh
 
 template <class T>
 void fpgaObj<T>::initializeOpenCL(std::vector<cl::Device> &devices, cl::Program::Binaries &bins) {
+    // Create OpenCL device and context
     devices.resize(1);
     cl::Device clDevice = devices[0];
     std::string device_name = clDevice.getInfo<CL_DEVICE_NAME>(); 
     std::cout << "Found Device=" << device_name.c_str() << std::endl;
+
+    cl::Context tmp_context(clDevice);
+    context = tmp_context;
+
+    // Create OpenCL program from binary file
+    cl::Program tmp_program(context, devices, bins);
+    program = tmp_program;
 
     // Create a OpenCL command queue for each compute unit
     for (int i = 0; i < _numSLR; i++) {
         cl::CommandQueue q_tmp(context, clDevice, CL_QUEUE_PROFILING_ENABLE | CL_QUEUE_OUT_OF_ORDER_EXEC_MODE_ENABLE);
         q.push_back(q_tmp);
     }
-
-    // Create OpenCL program from binary file
-    cl::Context context(clDevice);
-    cl::Program tmp_program(context, devices, bins);
-    program = tmp_program;
 
     for (int ib = 0; ib < _numThreads; ib++) {
         for (int i = 0; i < _numSLR; i++) {
@@ -130,11 +142,11 @@ void fpgaObj<T>::allocateHostMemory() {
             cl::Buffer buffer_in_tmp (context, 
                     CL_MEM_USE_HOST_PTR | CL_MEM_EXT_PTR_XILINX | CL_MEM_READ_ONLY,
                     vector_size_in_bytes,
-                    &(this.buf_in_ext[ib*_numSLR + ik]));
+                    &(buf_in_ext[ib*_numSLR + ik]));
             cl::Buffer buffer_out_tmp(context,
                     CL_MEM_USE_HOST_PTR | CL_MEM_EXT_PTR_XILINX | CL_MEM_WRITE_ONLY,
                     vector_size_out_bytes,
-                    &(this.buf_out_ext[ib*_numSLR + ik]));
+                    &(buf_out_ext[ib*_numSLR + ik]));
             buffer_in.push_back(buffer_in_tmp);
             buffer_out.push_back(buffer_out_tmp);
             krnl_xil[ib*_numSLR + ik].setArg(0, buffer_in[ib*_numSLR + ik]);
@@ -176,7 +188,7 @@ void fpgaObj<T>::write_ss_safe(std::string newss) {
 
 template <class T>
 void fpgaObj<T>::finishRun() {
-    for (int i = 0 ; i < NUM_CU ; i++){
+    for (int i = 0 ; i < _numSLR ; i++){
         OCL_CHECK(err, err = q[i].finish());
     }
 }
@@ -236,7 +248,7 @@ std::stringstream fpgaObj<T>::runFPGA() {
     return ss;
 }
 
-void fpgaObj::event_cb(cl_event event1, cl_int cmd_status, void *data) {
+void fpgaObj<T>::event_cb(cl_event event1, cl_int cmd_status, void *data) {
     cl_int err;
     cl_command_type command;
     cl::Event event(event1, true);
@@ -289,7 +301,7 @@ void fpgaObj::event_cb(cl_event event1, cl_int cmd_status, void *data) {
     fflush(stdout);
 }
 
-void fpgaObj::set_callback(const char *queue_name, cl::Event event) {
+void fpgaObj<T>::set_callback(const char *queue_name, cl::Event event) {
     cl_int err;
     OCL_CHECK(err,
               err =

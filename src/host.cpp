@@ -47,17 +47,8 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #define STRINGIFY2(var) #var
 #define STRINGIFY(var) STRINGIFY2(var)
 
-// HBM Pseudo-channel(PC) requirements
-#define MAX_HBM_PC_COUNT 32
-#define PC_NAME(n) n | XCL_MEM_TOPOLOGY
-const int pc[MAX_HBM_PC_COUNT] = {
-    PC_NAME(0),  PC_NAME(1),  PC_NAME(2),  PC_NAME(3),  PC_NAME(4),  PC_NAME(5),  PC_NAME(6),  PC_NAME(7),
-    PC_NAME(8),  PC_NAME(9),  PC_NAME(10), PC_NAME(11), PC_NAME(12), PC_NAME(13), PC_NAME(14), PC_NAME(15),
-    PC_NAME(16), PC_NAME(17), PC_NAME(18), PC_NAME(19), PC_NAME(20), PC_NAME(21), PC_NAME(22), PC_NAME(23),
-    PC_NAME(24), PC_NAME(25), PC_NAME(26), PC_NAME(27), PC_NAME(28), PC_NAME(29), PC_NAME(30), PC_NAME(31)};
 
-
-void runFPGAHelper(fpgaObj& theFPGA) {
+void runFPGAHelper(fpgaObj<bigdata_t> &theFPGA) {
     std::stringstream ss;
     ss << (theFPGA.runFPGA()).str();
     theFPGA.write_ss_safe(ss.str());
@@ -104,7 +95,7 @@ int main(int argc, char** argv)
     }
 
     std::vector<std::thread> hostAccelerationThreads;
-    hostAccelThreads.reserve(NBUFFER);
+    hostAccelerationThreads.reserve(NBUFFER);
 
     auto ts_start = SClock::now();
 
