@@ -34,7 +34,7 @@ fpgaObj<T>::fpgaObj(int kernInputSize, int kernOutputSize, int numSLR, int numTh
     */
     source_in.reserve(_kernInputSize * _numSLR * _numThreads);
     source_hw_results.reserve(_kernOutputSize * _numSLR * _numThreads);
-    mtxi.reserve(_numSLR * _numThreads);
+    mtxi.resize(_numSLR * _numThreads);
     isFirstRun.reserve(_numSLR * _numThreads);
 
     for(int j = 0 ; j < _kernInputSize * _numSLR * _numThreads ; j++){
@@ -44,7 +44,7 @@ fpgaObj<T>::fpgaObj(int kernInputSize, int kernOutputSize, int numSLR, int numTh
         source_hw_results[j] = 0;
     }
     for (int j = 0 ; j < _numSLR * _numThreads ; j++){
-        mtxi.push_back(std::mutex());
+        mtxi.emplace_back(std::mutex());
         isFirstRun.push_back(true);
     }
 }
