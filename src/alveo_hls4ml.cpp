@@ -1,5 +1,8 @@
 #include "alveo_hls4ml.h"
 
+#define PROJ_HDR <MYPROJ.h>
+#include PROJ_HDR
+
 /*
     HLS4ML Kernel Implementation 
     Arguments:

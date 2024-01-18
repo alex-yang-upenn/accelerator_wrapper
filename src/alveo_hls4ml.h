@@ -38,8 +38,6 @@ Description:
 
 #include "parameters.h"
 #include "ap_fixed.h"
-#define PROJ_HDR <MYPROJ.h>
-#include PROJ_HDR
 
 //how many consecutive sets of inputs to run over per kernel execution
 #define COMPRESSION 32
