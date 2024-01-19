@@ -4,4 +4,4 @@
 # Ignore build files
 build_dir.*/
 _x.*/
-v++*
+*.log
