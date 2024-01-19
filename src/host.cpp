@@ -70,15 +70,7 @@ int main(int argc, char** argv)
     std::vector<cl::Device> devices = xcl::get_xil_devices();
 
     // Load xclbin
-    cl::Program::Binaries bins;
-    std::cout << "Loading: '" << xclbinFilename << "'\n";
-    std::ifstream bin_file(xclbinFilename, std::ifstream::binary);
-    bin_file.seekg (0, bin_file.end);
-    unsigned nb = bin_file.tellg();
-    bin_file.seekg (0, bin_file.beg);
-    char *buf = new char [nb];
-    bin_file.read(buf, nb);
-    bins.push_back({buf,nb});
+    cl::Program::Binaries bins = xcl::import_binary_file(xclbinFilename);
 
     fpga.initializeOpenCL(devices, bins);
 
