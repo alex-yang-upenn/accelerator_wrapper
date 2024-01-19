@@ -118,14 +118,14 @@ void fpgaObj<T>::allocateHostMemory() {
             cl_mem_ext_ptr_t buf_in_ext_tmp;
             buf_in_ext_tmp.obj = source_in.data() + ((ib*_numSLR + ik) * _kernInputSize);
             buf_in_ext_tmp.param = 0;
-            buf_in_ext_tmp.flags = pc[(ik * 2 * 4)] | pc[(ik * 2 * 4) + 1] | pc[(ik * 2 * 4) + 2] | pc[(ik * 2 * 4) + 3];
+            buf_in_ext_tmp.flags = pc[(ik * 2 * _numSLR)] | pc[(ik * 2 * _numSLR) + 1] | pc[(ik * 2 * _numSLR) + 2] | pc[(ik * 2 * _numSLR) + 3];
             
             buf_in_ext.push_back(buf_in_ext_tmp);
 
             cl_mem_ext_ptr_t buf_out_ext_tmp;
             buf_out_ext_tmp.obj = source_hw_results.data() + ((ib*_numSLR + ik) * _kernOutputSize);
             buf_out_ext_tmp.param = 0;
-            buf_out_ext_tmp.flags = pc[(ik * 2 * 4) + 4] | pc[(ik * 2 * 4) + 5] | pc[(ik * 2 * 4) + 6] | pc[(ik * 2 * 4) + 7];
+            buf_out_ext_tmp.flags = pc[(ik * 2 * _numSLR) + 4] | pc[(ik * 2 * _numSLR) + 5] | pc[(ik * 2 * _numSLR) + 6] | pc[(ik * 2 * _numSLR) + 7];
             
             buf_out_ext.push_back(buf_out_ext_tmp);
         }
