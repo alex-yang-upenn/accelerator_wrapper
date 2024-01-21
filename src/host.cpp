@@ -102,7 +102,7 @@ int main(int argc, char** argv)
     fpga.finishRun();
 
     auto ts_end = SClock::now();
-    float throughput = (float(NUM_CU * NBUFFER) /
+    float throughput = (float(NUM_CU * NBUFFER * 1000 * STREAMSIZE) /
             float(std::chrono::duration_cast<std::chrono::nanoseconds>(ts_end - ts_start).count())) *
             1000000000.;
     
@@ -112,7 +112,7 @@ int main(int argc, char** argv)
 
     std::cout << "Throughput = "
             << throughput
-            <<" events/s"<<std::endl;
+            <<" predictions/second" <<std::endl;
     return EXIT_SUCCESS;
 }
 
