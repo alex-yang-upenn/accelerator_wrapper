@@ -17,13 +17,14 @@ const int pc[MAX_HBM_PC_COUNT] = {
     PC_NAME(24), PC_NAME(25), PC_NAME(26), PC_NAME(27), PC_NAME(28), PC_NAME(29), PC_NAME(30), PC_NAME(31)};
 
 template <class T>
-fpgaObj<T>::fpgaObj(int kernInputSize, int kernOutputSize, int numSLR, int numThreads): 
+fpgaObj<T>::fpgaObj(int kernInputSize, int kernOutputSize, int numSLR, int numThreads, int n_iter): 
         _kernInputSize(kernInputSize),
         _kernOutputSize(kernOutputSize),
         _numSLR(numSLR),
         _numThreads(numThreads),
         ikern(0), 
-        ithr(0) {
+        ithr(0),
+        _n_iter(n_iter) {
     // Allocate Memory in Host Memory
     /* 
     When creating a buffer with user pointer (CL_MEM_USE_HOST_PTR), under the hood user ptr 
@@ -200,7 +201,7 @@ std::stringstream fpgaObj<T>::runFPGA() {
     auto t_end = Clock::now();
     std::stringstream ss;
 
-    for (int i = 0 ; i < _numSLR ; i++){
+    for (int i = 0 ; i < _numSLR * _n_iter; i++){
         t_start = Clock::now();
         auto ikf = get_info_lock();
         int ikb = ikf.first;
