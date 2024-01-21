@@ -57,6 +57,11 @@ class fpgaObj {
     cl_int err;
 
     /**
+     * \brief Stringstream containing information from runFPGA() for every thread ran on this object
+    */
+    std::stringstream ss;
+
+    /**
      * \brief Constructor. Reserves and allocates buffers in host memory.
     */
     fpgaObj(int kernInputSize, int kernOutputSize, int numRegions, int numThreads, int n_iter);
@@ -126,11 +131,6 @@ class fpgaObj {
      * \brief The number of times to iterate over the input buffers.
     */
     int _n_iter;
-
-    /**
-     * \brief Stringstream containing information from runFPGA() for every thread ran on this object
-    */
-    std::stringstream ss;
 
     /**
      * \brief Vector tracking whether each kernel object is being run over its inputs for
