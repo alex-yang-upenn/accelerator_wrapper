@@ -57,7 +57,7 @@ class fpgaObj {
     cl_int err;
 
     /**
-     * \brief Stringstream containing information from runFPGA() for every thread ran on this object
+     * \brief Stringstream logging information from runFPGA() for every thread ran on this object
     */
     std::stringstream ss;
 

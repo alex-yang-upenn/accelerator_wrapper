@@ -105,11 +105,14 @@ int main(int argc, char** argv)
     float throughput = (float(NUM_CU * NBUFFER) /
             float(std::chrono::duration_cast<std::chrono::nanoseconds>(ts_end - ts_start).count())) *
             1000000000.;
+    
+    std::ofstream outFile("u55c_executable_logfile.log");
+    outFile << fpga.ss.rdbuf();
+    outFile.close();
+
     std::cout << "Throughput = "
             << throughput
             <<" events/s"<<std::endl;
-    std::cout << fpga.ss.str();
-
     return EXIT_SUCCESS;
 }
 
