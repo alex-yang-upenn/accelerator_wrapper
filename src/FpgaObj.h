@@ -91,16 +91,6 @@ class fpgaObj {
 
   private:
     /**
-     * \brief A counter tracking the number of threads ran on this object
-    */
-    int ithr;
-
-    /**
-     * \brief A counter tracking which kernel object is being run
-    */
-    int ikern;
-
-    /**
      * \brief The number of inputs each kernel object runs
     */
     int _kernInputSize;
@@ -121,6 +111,16 @@ class fpgaObj {
      * process
     */
     int _numThreads;
+
+    /**
+     * \brief A counter tracking which kernel object is being run
+    */
+    int ikern;
+
+    /**
+     * \brief A counter tracking the number of threads ran on this object
+    */
+    int ithr;
 
     /**
      * \brief Stringstream containing information from runFPGA() for every thread ran on this object
