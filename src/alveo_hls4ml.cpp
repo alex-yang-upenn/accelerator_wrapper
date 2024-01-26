@@ -78,7 +78,7 @@ extern "C" {
         // Write output
         for (int i = 0; i < STREAMSIZE; i++) {
           #pragma HLS PIPELINE
-          for (int j = 0; j < DATA_SIZE_OUT) {
+          for (int j = 0; j < DATA_SIZE_OUT; j++) {
             #pragma HLS UNROLL
             out[i * DATA_SIZE_OUT + j] = out_buf[i][j];
           }
