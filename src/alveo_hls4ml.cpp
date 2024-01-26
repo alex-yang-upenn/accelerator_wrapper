@@ -3,13 +3,40 @@
 #define PROJ_HDR <MYPROJ.h>
 #include PROJ_HDR
 
-/*
-    HLS4ML Kernel Implementation 
-    Arguments:
-        in    (input)     --> Input Vector
-        out   (output)    --> Output Vector
+#ifdef IS_CONV1D
+/**
+ * \brief Read Data from Global Memory and write into Stream inStream
 */
+static void read_input(const input_data_t *in, hls::stream<input_stream_t> &input) {
+  for (int i = 0; i < DATA_SIZE_IN; i++) {
+    #pragma HLS PIPELINE
+    input_stream_t tmp;
+    for (int j = 0; j < Z_DIMENSION_IN; j++) {
+      #pragma HLS UNROLL
+      tmp[j] = in[(n * DATA_SIZE_IN * Z_DIMENSION_IN) + (i * Z_DIMENSION_IN) + j];
+    }
+    input << tmp;
+  }
+}
+
+/**
+ * \brief Read result from output and write the result to Global
+*/
+static void write_result(output_data_t *out, hls::stream<output_stream_t> &output) {
+  output_stream_t tmp = output.read();
+  for (int i = 0; i < DATA_SIZE_OUT; i++) {
+    #pragma HLS UNROLL
+    out[(n * DATA_SIZE_OUT) + i] = tmp[i];
+  }
+}
+#endif
+
 extern "C" {
+  /**
+    \brief HLS4ML Kernel Implementation 
+    \param in Input Vector
+    \param out Output Vector
+*/
   void alveo_hls4ml(const input_data_t *in, output_data_t *out) {
       // SDAccel kernel must have one and only one s_axilite interface which will be used by host application to configure the kernel.
       // Here bundle control is defined which is s_axilite interface and associated with all the arguments (in and out),
@@ -65,29 +92,13 @@ extern "C" {
         #pragma HLS STREAM variable=output depth=1
         
         for (int n = 0; n < STREAMSIZE; n++) {
-        #pragma HLS DATAFLOW
-          // Read input
-          for (int i = 0; i < DATA_SIZE_IN; i++) {
-            #pragma HLS PIPELINE
-            input_data_t tmp;
-            for (int j = 0; j < Z_DIMENSION_IN; j++) {
-              #pragma HLS UNROLL
-              tmp[j] = in[(n * DATA_SIZE_IN * Z_DIMENSION_IN) + (i * Z_DIMENSION_IN) + j];
-            }
-            input << tmp;
-          }
-
-          // Run inference
-          #pragma HLS DATAFLOW
+        #pragma HLS PIPELINE
+        #pragma HLS DATAFLOW          
+          read_input(in, input);
           hls4ml: MYPROJ(input, output);
-
-          // Write output
-          for (int i = 0; i < DATA_SIZE_OUT; i++) {
-            #pragma HLS UNROLL
-            out[(n * DATA_SIZE_OUT) + i] = output.read();
-          }
+          write_result(out, output);
         }
       #endif
-      
+
   }
 }
