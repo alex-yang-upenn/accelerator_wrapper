@@ -38,7 +38,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 #include "xcl2.hpp"
 
-template <class T>
+template <class T, class U>
 class fpgaObj {
   public:
     /**
@@ -49,7 +49,7 @@ class fpgaObj {
     /**
      * \brief Vector where all outputs from the kernels will be written to
     */
-    std::vector<T,aligned_allocator<T>> source_hw_results;
+    std::vector<U,aligned_allocator<U>> source_hw_results;
 
     /**
      * \brief Object to store any potential error codes thrown by OpenCL functions

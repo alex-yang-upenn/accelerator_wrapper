@@ -16,8 +16,8 @@ const int pc[MAX_HBM_PC_COUNT] = {
     PC_NAME(16), PC_NAME(17), PC_NAME(18), PC_NAME(19), PC_NAME(20), PC_NAME(21), PC_NAME(22), PC_NAME(23),
     PC_NAME(24), PC_NAME(25), PC_NAME(26), PC_NAME(27), PC_NAME(28), PC_NAME(29), PC_NAME(30), PC_NAME(31)};
 
-template <class T>
-fpgaObj<T>::fpgaObj(int kernInputSize, int kernOutputSize, int numSLR, int numThreads, int n_iter): 
+template <class T, class U>
+fpgaObj<T, U>::fpgaObj(int kernInputSize, int kernOutputSize, int numSLR, int numThreads, int n_iter): 
         _kernInputSize(kernInputSize),
         _kernOutputSize(kernOutputSize),
         _numSLR(numSLR),
@@ -51,8 +51,8 @@ fpgaObj<T>::fpgaObj(int kernInputSize, int kernOutputSize, int numSLR, int numTh
     }
 }
 
-template <class T>
-void fpgaObj<T>::initializeOpenCL(std::vector<cl::Device> &devices, cl::Program::Binaries &bins) {
+template <class T, class U>
+void fpgaObj<T, U>::initializeOpenCL(std::vector<cl::Device> &devices, cl::Program::Binaries &bins) {
     // Create OpenCL device and context
     devices.resize(1);
     cl::Device clDevice = devices[0];
@@ -107,8 +107,8 @@ void fpgaObj<T>::initializeOpenCL(std::vector<cl::Device> &devices, cl::Program:
     }
 }
 
-template <class T>
-void fpgaObj<T>::allocateHostMemory() {
+template <class T, class U>
+void fpgaObj<T, U>::allocateHostMemory() {
     /* 
     Creating pointer objects
     In order to allocate buffer to specific Global Memory PC, 
@@ -138,7 +138,7 @@ void fpgaObj<T>::allocateHostMemory() {
     Device-to-host communication
     */
     size_t vector_size_in_bytes = sizeof(T) * _kernInputSize;
-    size_t vector_size_out_bytes = sizeof(T) * _kernOutputSize;
+    size_t vector_size_out_bytes = sizeof(U) * _kernOutputSize;
     for (int ib = 0; ib < _numThreads; ib++) {
         for (int ik = 0; ik < _numSLR; ik++) {
             cl::Buffer buffer_in_tmp (context, 
@@ -157,8 +157,8 @@ void fpgaObj<T>::allocateHostMemory() {
     }
 }
 
-template <class T>
-std::pair<int,bool> fpgaObj<T>::get_info_lock() {
+template <class T, class U>
+std::pair<int,bool> fpgaObj<T, U>::get_info_lock() {
     int i;
     bool first;
     mtx.lock();
@@ -170,33 +170,33 @@ std::pair<int,bool> fpgaObj<T>::get_info_lock() {
     return std::make_pair(i,first);
 }
 
-template <class T>
-void fpgaObj<T>::get_ilock(int ik) {
+template <class T, class U>
+void fpgaObj<T, U>::get_ilock(int ik) {
     mtxi[ik].lock();
 }
 
-template <class T>
-void fpgaObj<T>::release_ilock(int ik) {
+template <class T, class U>
+void fpgaObj<T, U>::release_ilock(int ik) {
     mtxi[ik].unlock();
 }
 
-template <class T>
-void fpgaObj<T>::write_ss_safe(std::string newss) {
+template <class T, class U>
+void fpgaObj<T, U>::write_ss_safe(std::string newss) {
     smtx.lock();
     ss << "Thread " << ithr << "\n" << newss << "\n";
     ithr++;
     smtx.unlock();
 }
 
-template <class T>
+template <class T, class U>
 void fpgaObj<T>::finishRun() {
     for (int i = 0 ; i < _numSLR ; i++){
         OCL_CHECK(err, err = q[i].finish());
     }
 }
 
-template <class T>
-std::stringstream fpgaObj<T>::runFPGA() {
+template <class T, class U>
+std::stringstream fpgaObj<T, U>::runFPGA() {
     auto t_start = Clock::now();
     auto t_end = Clock::now();
     std::stringstream ss;
@@ -250,8 +250,8 @@ std::stringstream fpgaObj<T>::runFPGA() {
     return ss;
 }
 
-template <class T>
-void fpgaObj<T>::event_cb(cl_event event1, cl_int cmd_status, void *data) {
+template <class T, class U>
+void fpgaObj<T, U>::event_cb(cl_event event1, cl_int cmd_status, void *data) {
     cl_int err;
     cl_command_type command;
     cl::Event event(event1, true);
@@ -304,8 +304,8 @@ void fpgaObj<T>::event_cb(cl_event event1, cl_int cmd_status, void *data) {
     fflush(stdout);
 }
 
-template <class T>
-void fpgaObj<T>::set_callback(const char *queue_name, cl::Event event) {
+template <class T, class U>
+void fpgaObj<T, U>::set_callback(const char *queue_name, cl::Event event) {
     cl_int err;
     OCL_CHECK(err,
               err =

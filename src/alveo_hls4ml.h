@@ -37,17 +37,41 @@ Description:
 #define ALVEO_HLS4ML_H
 
 #include "parameters.h"
-#include "ap_fixed.h"
 
 //how many consecutive sets of inputs to run over per kernel execution
-#define COMPRESSION 32
-#define COMPSTREAMSIZE 512
+
+#ifdef IS_DENSE
 #define STREAMSIZE 16384
 
 #define DATA_SIZE_IN N_INPUT_1_1
-#define DATA_SIZE_OUT N_LAYER_11
+#define INSTREAMSIZE (STREAMSIZE * DATA_SIZE_IN)
 
-typedef ap_fixed<16,6> data_t;
-typedef ap_uint<512> bigdata_t;
+#define DATA_SIZE_OUT N_LAYER_11
+#define OUTSTREAMSIZE (STREAMSIZE * DATA_SIZE_OUT)
+
+typedef input_t input_data_t;
+typedef layer11_t output_data_t;
+#endif
+
+#ifdef IS_CONV1D
+#define STREAMSIZE 8192
+
+#define X_DIMENSION_IN N_INPUT_1_1
+#define Y_DIMENSION_IN N_INPUT_2_1
+#define Z_DIMENSION_IN N_INPUT_3_1
+#define DATA_SIZE_IN (X_DIMENSION_IN * Y_DIMENSION_IN)
+#define INSTREAMSIZE (STREAMSIZE * DATA_SIZE_IN * Z_DIMENSION_IN)
+
+#define DATA_SIZE_OUT N_LAYER_26
+#define OUTSTREAMSIZE (STREAMSIZE * DATA_SIZE_OUT)
+
+typedef model_default_t input_data_t;
+typedef model_default_t output_data_t;
+
+typedef input_t input_stream_t;
+typedef result_t output_stream_t;
+#endif
+
+
 
 #endif
