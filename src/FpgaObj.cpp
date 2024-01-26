@@ -189,7 +189,7 @@ void fpgaObj<T, U>::write_ss_safe(std::string newss) {
 }
 
 template <class T, class U>
-void fpgaObj<T>::finishRun() {
+void fpgaObj<T, U>::finishRun() {
     for (int i = 0 ; i < _numSLR ; i++){
         OCL_CHECK(err, err = q[i].finish());
     }
