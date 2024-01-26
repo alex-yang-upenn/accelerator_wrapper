@@ -1,1 +1,2 @@
-#catch {config_array_partition -maximum_size 4096}
+config_interface -m_axi_auto_max_ports=true
+config_interface -m_axi_offset slave

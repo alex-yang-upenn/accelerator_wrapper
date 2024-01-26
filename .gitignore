@@ -5,3 +5,8 @@
 build_dir.*/
 _x.*/
 *.log
+host
+
+# Ignore server files
+.ipcache/
+.run/

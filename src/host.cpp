@@ -44,11 +44,11 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #define NUM_CU 3
 #define NBUFFER 8
 
-#define STRINGIFY2(var) #var
-#define STRINGIFY(var) STRINGIFY2(var)
+#define STRINGIFY(var) #var
+#define EXPAND_STRING(var) STRINGIFY(var)
 
 
-void runFPGAHelper(fpgaObj<bigdata_t> &theFPGA) {
+void runFPGAHelper(fpgaObj<input_data_t, output_data_t> &theFPGA) {
     std::stringstream ss;
     ss << (theFPGA.runFPGA()).str();
     theFPGA.write_ss_safe(ss.str());
@@ -56,13 +56,13 @@ void runFPGAHelper(fpgaObj<bigdata_t> &theFPGA) {
 
 int main(int argc, char** argv)
 {
-    std::string datadir = STRINGIFY(HLS4ML_DATA_DIR);
-    std::string xclbinFilename = STRINGIFY(XCL_BIN_FILENAME);
+    std::string datadir = EXPAND_STRING(HLS4ML_DATA_DIR);
+    std::string xclbinFilename = EXPAND_STRING(XCL_BIN_FILENAME);
     
     std::cout << "Will run using " << datadir << " to get input features and output predictions (tb_input_features.dat and tb_output_predictions.dat)" << std::endl;
-
-    fpgaObj<bigdata_t> fpga(STREAMSIZE, COMPSTREAMSIZE, NUM_CU, NBUFFER, 1000);
     
+    fpgaObj<input_data_t, output_data_t> fpga(INSTREAMSIZE, OUTSTREAMSIZE, NUM_CU, NBUFFER, 500);
+
     /* 
     get_xil_devices() is a utility API which will find the xilinx
     platforms and will return list of devices connected to Xilinx platform
@@ -79,9 +79,8 @@ int main(int argc, char** argv)
     // Create the test data
     for (int ib = 0; ib < NBUFFER; ib++) {
         for (int i = 0 ; i < NUM_CU ; i++){
-            for (int istream = 0; istream < STREAMSIZE; istream++) {
-            
-      	        fpga.source_in[ib*NUM_CU*STREAMSIZE+i*STREAMSIZE+istream] = (bigdata_t)(12354.37674*(istream+STREAMSIZE*(ib+i+1)));
+            for (int istream = 0; istream < INSTREAMSIZE; istream++) {
+      	        fpga.source_in[(ib * NUM_CU* INSTREAMSIZE) + (i * INSTREAMSIZE) + istream] = (input_data_t)(1.2345*(istream+INSTREAMSIZE*(ib+i+1)));
             }
         }
     }
@@ -102,17 +101,21 @@ int main(int argc, char** argv)
     fpga.finishRun();
 
     auto ts_end = SClock::now();
-    float throughput = (float(NUM_CU * NBUFFER * 1000 * STREAMSIZE) /
+    float throughput = (float(NUM_CU * NBUFFER * 500 * BATCHSIZE) /
             float(std::chrono::duration_cast<std::chrono::nanoseconds>(ts_end - ts_start).count())) *
             1000000000.;
     
-    std::ofstream outFile("u55c_executable_logfile.log");
-    outFile << fpga.ss.rdbuf();
-    outFile.close();
+    std::ofstream outFile("u55c_executable_logfile.log", std::ios::trunc);
+    if (outFile.is_open()) {
+        outFile << fpga.ss.rdbuf();
+        outFile.close();
+    } else {
+        std::cerr << "Error opening file for writing." << std::endl;
+    }
 
     std::cout << "Throughput = "
             << throughput
-            <<" predictions/second" <<std::endl;
+            <<" predictions/second" << std::endl;
     return EXIT_SUCCESS;
 }
 
