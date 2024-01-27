@@ -37,6 +37,13 @@ sp=alveo_hls4ml_1.out:HBM[12:15]
 .
 ```
 
+## Modify Makefile to point to HLS4ML project
+Enter the name of the HLS4ML kernel name and project type in the following Makefile lines
+```bash
+HLS4ML_NAME := <project name>
+HLS4ML_PROJ_TYPE := <project type>
+```
+
 ## Compile VitisAccel project
 ```bash
 # Makefile Usage:
