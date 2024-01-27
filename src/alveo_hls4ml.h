@@ -37,7 +37,6 @@ Description:
 #define ALVEO_HLS4ML_H
 
 #include "parameters.h"
-#include "defines.h"
 
 #ifdef IS_DENSE
 #define STREAMSIZE 8192
