@@ -1,155 +1,142 @@
 #ifndef PARAMETERS_H_
 #define PARAMETERS_H_
 
-#include <complex>
-#include "ap_int.h"
 #include "ap_fixed.h"
-#include "nnet_utils/nnet_dense.h"
-#include "nnet_utils/nnet_dense_large.h"
-#include "nnet_utils/nnet_dense_compressed.h"
-#include "nnet_utils/nnet_conv.h"
-#include "nnet_utils/nnet_conv_large.h"
-#include "nnet_utils/nnet_conv2d.h"
-#include "nnet_utils/nnet_conv2d_large.h"
-#include "nnet_utils/nnet_activation.h"
-#include "nnet_utils/nnet_common.h"
-#include "nnet_utils/nnet_batchnorm.h"
-#include "nnet_utils/nnet_pooling.h"
-#include "nnet_utils/nnet_merge.h"
-#include "nnet_utils/nnet_array.h"
-#include "nnet_utils/nnet_image.h"
+#include "ap_int.h"
+
+#include "nnet_utils/nnet_code_gen.h"
 #include "nnet_utils/nnet_helpers.h"
+// hls-fpga-machine-learning insert includes
+#include "nnet_utils/nnet_activation.h"
+#include "nnet_utils/nnet_activation_stream.h"
+#include "nnet_utils/nnet_dense.h"
+#include "nnet_utils/nnet_dense_compressed.h"
+#include "nnet_utils/nnet_dense_stream.h"
 
-//hls-fpga-machine-learning insert numbers
-#define N_INPUT_1_1 18
-#define N_LAYER_3 31
-#define N_LAYER_6 11
-#define N_LAYER_9 3
-#define N_LAYER_11 1
+// hls-fpga-machine-learning insert weights
+#include "weights/w2.h"
+#include "weights/b2.h"
+#include "weights/w5.h"
+#include "weights/b5.h"
+#include "weights/w8.h"
+#include "weights/b8.h"
+#include "weights/w11.h"
+#include "weights/b11.h"
 
-//hls-fpga-machine-learning insert layer-precision
-typedef ap_fixed<16,6> model_default_t;
-typedef ap_fixed<16,6> input_t;
-typedef ap_fixed<16,6> layer2_t;
-typedef ap_fixed<16,6> layer3_t;
-typedef ap_fixed<16,6> layer4_t;
-typedef ap_fixed<16,6> layer5_t;
-typedef ap_fixed<16,6> layer6_t;
-typedef ap_fixed<16,6> layer7_t;
-typedef ap_fixed<16,6> layer8_t;
-typedef ap_fixed<16,6> layer9_t;
-typedef ap_fixed<16,6> layer10_t;
-typedef ap_fixed<16,6> layer11_t;
-
-//hls-fpga-machine-learning insert layer-config
-struct config2 : nnet::batchnorm_config {
-    static const unsigned n_in = N_INPUT_1_1;
-    static const unsigned n_filt = -1;
+// hls-fpga-machine-learning insert layer-config
+// fc1
+struct config2 : nnet::dense_config {
+    static const unsigned n_in = 16;
+    static const unsigned n_out = 64;
     static const unsigned io_type = nnet::io_parallel;
+    static const unsigned strategy = nnet::latency;
     static const unsigned reuse_factor = 1;
+    static const unsigned n_zeros = 784;
+    static const unsigned n_nonzeros = 240;
+    static const unsigned multiplier_limit = DIV_ROUNDUP(n_in * n_out, reuse_factor) - n_zeros / reuse_factor;
     static const bool store_weights_in_bram = false;
-    typedef model_default_t bias_t;
-    typedef model_default_t scale_t;
+    typedef model_default_t accum_t;
+    typedef bias2_t bias_t;
+    typedef weight2_t weight_t;
+    typedef layer2_index index_t;
+    template<class x_T, class y_T>
+    using product = nnet::product::mult<x_T, y_T>;
 };
 
-struct config3 : nnet::dense_config {
-    static const unsigned n_in = N_INPUT_1_1;
-    static const unsigned n_out = N_LAYER_3;
-    static const unsigned io_type = nnet::io_parallel;
-    static const unsigned reuse_factor = 1;
-    static const unsigned n_zeros = 0;
-    static const unsigned n_nonzeros = 558;
-    static const bool store_weights_in_bram = false;
-    typedef ap_fixed<16,6> accum_t;
-    typedef model_default_t bias_t;
-    typedef model_default_t weight_t;
-    typedef ap_uint<1> index_t;
-};
-
+// relu1
 struct relu_config4 : nnet::activ_config {
-    static const unsigned n_in = N_LAYER_3;
+    static const unsigned n_in = 64;
     static const unsigned table_size = 1024;
     static const unsigned io_type = nnet::io_parallel;
     static const unsigned reuse_factor = 1;
-    typedef ap_fixed<18,8> table_t;
+    typedef relu1_table_t table_t;
 };
 
-struct config5 : nnet::batchnorm_config {
-    static const unsigned n_in = N_LAYER_3;
-    static const unsigned n_filt = -1;
+// fc2
+struct config5 : nnet::dense_config {
+    static const unsigned n_in = 64;
+    static const unsigned n_out = 32;
     static const unsigned io_type = nnet::io_parallel;
+    static const unsigned strategy = nnet::latency;
     static const unsigned reuse_factor = 1;
+    static const unsigned n_zeros = 1609;
+    static const unsigned n_nonzeros = 439;
+    static const unsigned multiplier_limit = DIV_ROUNDUP(n_in * n_out, reuse_factor) - n_zeros / reuse_factor;
     static const bool store_weights_in_bram = false;
-    typedef model_default_t bias_t;
-    typedef model_default_t scale_t;
+    typedef model_default_t accum_t;
+    typedef bias5_t bias_t;
+    typedef weight5_t weight_t;
+    typedef layer5_index index_t;
+    template<class x_T, class y_T>
+    using product = nnet::product::mult<x_T, y_T>;
 };
 
-struct config6 : nnet::dense_config {
-    static const unsigned n_in = N_LAYER_3;
-    static const unsigned n_out = N_LAYER_6;
-    static const unsigned io_type = nnet::io_parallel;
-    static const unsigned reuse_factor = 1;
-    static const unsigned n_zeros = 0;
-    static const unsigned n_nonzeros = 341;
-    static const bool store_weights_in_bram = false;
-    typedef ap_fixed<16,6> accum_t;
-    typedef model_default_t bias_t;
-    typedef model_default_t weight_t;
-    typedef ap_uint<1> index_t;
-};
-
+// relu2
 struct relu_config7 : nnet::activ_config {
-    static const unsigned n_in = N_LAYER_6;
+    static const unsigned n_in = 32;
     static const unsigned table_size = 1024;
     static const unsigned io_type = nnet::io_parallel;
     static const unsigned reuse_factor = 1;
-    typedef ap_fixed<18,8> table_t;
+    typedef relu2_table_t table_t;
 };
 
-struct config8 : nnet::batchnorm_config {
-    static const unsigned n_in = N_LAYER_6;
-    static const unsigned n_filt = -1;
+// fc3
+struct config8 : nnet::dense_config {
+    static const unsigned n_in = 32;
+    static const unsigned n_out = 32;
     static const unsigned io_type = nnet::io_parallel;
+    static const unsigned strategy = nnet::latency;
     static const unsigned reuse_factor = 1;
+    static const unsigned n_zeros = 788;
+    static const unsigned n_nonzeros = 236;
+    static const unsigned multiplier_limit = DIV_ROUNDUP(n_in * n_out, reuse_factor) - n_zeros / reuse_factor;
     static const bool store_weights_in_bram = false;
-    typedef model_default_t bias_t;
-    typedef model_default_t scale_t;
+    typedef model_default_t accum_t;
+    typedef bias8_t bias_t;
+    typedef weight8_t weight_t;
+    typedef layer8_index index_t;
+    template<class x_T, class y_T>
+    using product = nnet::product::mult<x_T, y_T>;
 };
 
-struct config9 : nnet::dense_config {
-    static const unsigned n_in = N_LAYER_6;
-    static const unsigned n_out = N_LAYER_9;
-    static const unsigned io_type = nnet::io_parallel;
-    static const unsigned reuse_factor = 1;
-    static const unsigned n_zeros = 0;
-    static const unsigned n_nonzeros = 33;
-    static const bool store_weights_in_bram = false;
-    typedef ap_fixed<16,6> accum_t;
-    typedef model_default_t bias_t;
-    typedef model_default_t weight_t;
-    typedef ap_uint<1> index_t;
-};
-
+// relu3
 struct relu_config10 : nnet::activ_config {
-    static const unsigned n_in = N_LAYER_9;
+    static const unsigned n_in = 32;
     static const unsigned table_size = 1024;
     static const unsigned io_type = nnet::io_parallel;
     static const unsigned reuse_factor = 1;
-    typedef ap_fixed<18,8> table_t;
+    typedef relu3_table_t table_t;
 };
 
+// output
 struct config11 : nnet::dense_config {
-    static const unsigned n_in = N_LAYER_9;
-    static const unsigned n_out = N_LAYER_11;
+    static const unsigned n_in = 32;
+    static const unsigned n_out = 5;
+    static const unsigned io_type = nnet::io_parallel;
+    static const unsigned strategy = nnet::latency;
+    static const unsigned reuse_factor = 1;
+    static const unsigned n_zeros = 120;
+    static const unsigned n_nonzeros = 40;
+    static const unsigned multiplier_limit = DIV_ROUNDUP(n_in * n_out, reuse_factor) - n_zeros / reuse_factor;
+    static const bool store_weights_in_bram = false;
+    typedef model_default_t accum_t;
+    typedef bias11_t bias_t;
+    typedef weight11_t weight_t;
+    typedef layer11_index index_t;
+    template<class x_T, class y_T>
+    using product = nnet::product::mult<x_T, y_T>;
+};
+
+// softmax
+struct softmax_config13 : nnet::activ_config {
+    static const unsigned n_in = 5;
+    static const unsigned table_size = 1024;
     static const unsigned io_type = nnet::io_parallel;
     static const unsigned reuse_factor = 1;
-    static const unsigned n_zeros = 0;
-    static const unsigned n_nonzeros = 3;
-    static const bool store_weights_in_bram = false;
-    typedef ap_fixed<16,6> accum_t;
-    typedef model_default_t bias_t;
-    typedef model_default_t weight_t;
-    typedef ap_uint<1> index_t;
+    static const unsigned axis = -1;
+    static const nnet::softmax_implementation implementation = nnet::softmax_implementation::stable;
+    typedef softmax_exp_table_t exp_table_t;
+    typedef softmax_inv_table_t inv_table_t;
 };
 
 

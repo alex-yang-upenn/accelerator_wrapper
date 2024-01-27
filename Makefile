@@ -46,7 +46,7 @@ SDCARD := sd_card
 
 #--v--v--
 #these need to be set by the user for their specific installation
-HLS4ML_NAME := ereg_v1
+HLS4ML_NAME := myproject
 HLS4ML_PROJ_TYPE := DENSE
 #possible options are: DENSE, CONV1D
 #--^--^--
