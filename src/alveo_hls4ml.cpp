@@ -38,20 +38,6 @@ extern "C" {
     \param out Output Vector
 */
   void alveo_hls4ml(const input_data_t *in, output_data_t *out) {
-      // SDAccel kernel must have one and only one s_axilite interface which will be used by host application to configure the kernel.
-      // Here bundle control is defined which is s_axilite interface and associated with all the arguments (in and out),
-      // control interface must also be associated with "return".
-      // All the global memory access arguments must be associated to one m_axi(AXI Master Interface). Here all two arguments(in, out) are 
-      // associated to bundle gmem which means that a AXI master interface named "gmem" will be created in Kernel and all these variables will be 
-      // accessing global memory through this interface.
-      // Multiple interfaces can also be created based on the requirements. For example when multiple memory accessing arguments need access to
-      // global memory simultaneously, user can create multiple master interfaces and can connect to different arguments.
-      #pragma HLS INTERFACE m_axi port=in  offset=slave bundle=gmem0
-      #pragma HLS INTERFACE m_axi port=out offset=slave bundle=gmem1
-      #pragma HLS INTERFACE s_axilite port=in
-      #pragma HLS INTERFACE s_axilite port=out
-      #pragma HLS INTERFACE s_axilite port=return
-
       #ifdef IS_DENSE
       #pragma HLS DATAFLOW
 
