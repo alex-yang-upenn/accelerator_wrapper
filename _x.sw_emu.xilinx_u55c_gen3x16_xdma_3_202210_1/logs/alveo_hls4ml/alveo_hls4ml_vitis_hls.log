@@ -7,7 +7,7 @@
 source /tools/Xilinx/Vitis_HLS/2022.2/scripts/vitis_hls/hls.tcl -notrace
 INFO: [HLS 200-10] Running '/tools/Xilinx/Vitis_HLS/2022.2/bin/unwrapped/lnx64.o/vitis_hls'
 /tools/Xilinx/Vitis_HLS/2022.2/tps/tcl/tcl8.5/tzdata/UTC can't be opened.
-INFO: [HLS 200-10] For user 'user' on host 'egl' (Linux_x86_64 version 5.10.187.release.2.9.0r4-amd64) on Sat Jan 27 06:39:16 UTC 2024
+INFO: [HLS 200-10] For user 'user' on host 'egl' (Linux_x86_64 version 5.10.187.release.2.9.0r4-amd64) on Sat Jan 27 06:40:45 UTC 2024
 INFO: [HLS 200-10] On os Ubuntu 20.04.4 LTS
 INFO: [HLS 200-10] In directory '/home/ayvol/accelerator_wrapper/_x.sw_emu.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml'
 Sourcing Tcl script 'alveo_hls4ml.tcl'
@@ -44,7 +44,7 @@ INFO: [HLS 200-1907] Replacing 'config_export -deadlock_detection=none' with 'co
 INFO: [HLS 200-1510] Running: config_interface -m_axi_auto_max_ports=true 
 INFO: [HLS 200-1510] Running: config_interface -m_axi_offset slave 
 INFO: [HLS 200-1510] Running: csynth_design -synthesis_check 
-INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0.01 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.01 seconds; current allocated memory: 754.184 MB.
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0.01 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.02 seconds; current allocated memory: 754.184 MB.
 INFO: [HLS 200-10] Analyzing design file '/home/ayvol/accelerator_wrapper/src/myproject.cpp' ... 
 WARNING: [HLS 207-5292] unused parameter 'keep' (/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_helpers.h:285:99)
 WARNING: [HLS 207-5292] unused parameter 'data' (/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_code_gen.h:11:36)
@@ -61,8 +61,8 @@ WARNING: [HLS 207-5292] unused parameter 'partition' (/home/ayvol/accelerator_wr
 WARNING: [HLS 207-5292] unused parameter 'data' (/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_code_gen.h:21:24)
 WARNING: [HLS 207-5292] unused parameter 'buffer' (/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_code_gen.h:22:24)
 WARNING: [HLS 207-5292] unused parameter 'partition' (/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_code_gen.h:23:32)
-INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 12.47 seconds. CPU system time: 1.48 seconds. Elapsed time: 17.07 seconds; current allocated memory: 760.594 MB.
-INFO: [HLS 200-111] Finished Command csynth_design CPU user time: 12.53 seconds. CPU system time: 1.53 seconds. Elapsed time: 17.18 seconds; current allocated memory: 6.410 MB.
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 12.79 seconds. CPU system time: 1.24 seconds. Elapsed time: 17.88 seconds; current allocated memory: 760.594 MB.
+INFO: [HLS 200-111] Finished Command csynth_design CPU user time: 12.83 seconds. CPU system time: 1.27 seconds. Elapsed time: 18.01 seconds; current allocated memory: 6.410 MB.
 Error in llvm-link
     while executing
 "source alveo_hls4ml.tcl"
@@ -70,5 +70,5 @@ Error in llvm-link
     invoked from within
 "uplevel \#0 [list source $arg] "
 
-INFO: [HLS 200-112] Total CPU user time: 15.03 seconds. Total CPU system time: 2 seconds. Total elapsed time: 21.23 seconds; peak allocated memory: 760.594 MB.
-INFO: [Common 17-206] Exiting vitis_hls at Sat Jan 27 06:39:36 2024...
+INFO: [HLS 200-112] Total CPU user time: 15.34 seconds. Total CPU system time: 1.69 seconds. Total elapsed time: 21.78 seconds; peak allocated memory: 760.594 MB.
+INFO: [Common 17-206] Exiting vitis_hls at Sat Jan 27 06:41:07 2024...

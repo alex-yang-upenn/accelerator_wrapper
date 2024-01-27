@@ -1,4 +1,4 @@
-INFO-FLOW: Workspace /home/ayvol/accelerator_wrapper/_x.sw_emu.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml/solution opened at Sat Jan 27 06:39:16 UTC 2024
+INFO-FLOW: Workspace /home/ayvol/accelerator_wrapper/_x.sw_emu.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml/solution opened at Sat Jan 27 06:40:46 UTC 2024
 Execute       send_msg_by_id INFO @200-1505@%s%s  vitis 
 INFO: [HLS 200-1505] Using flow_target 'vitis'
 Execute       send_msg_by_id INFO @200-435@%s%s 'open_solution -flow_target vitis' config_interface -m_axi_latency=64 
@@ -15,7 +15,7 @@ Execute       config_interface -default_interface=kernel
 Execute       send_msg_by_id INFO @200-435@%s%s 'open_solution -flow_target vitis' config_rtl -register_reset_num=3 
 INFO: [HLS 200-435] Setting 'open_solution -flow_target vitis' configuration: config_rtl -register_reset_num=3
 Execute       config_rtl -register_reset_num=3 
-Command     open_solution done; 0.27 sec.
+Command     open_solution done; 0.25 sec.
 Execute     set_part xcu55c-fsvh2892-2L-e 
 INFO: [HLS 200-1510] Running: set_part xcu55c-fsvh2892-2L-e 
 Execute       create_platform xcu55c-fsvh2892-2L-e -board  
@@ -23,7 +23,7 @@ DBG:HLSDevice: Trying to load device library: /tools/Xilinx/Vitis_HLS/2022.2/lib
 DBG:HLSDevice: first parts/arch.xml in RDI_DATADIR: /tools/Xilinx/Vivado/2022.2/data/parts/arch.xml
 DBG:HLSDevice: init success
 INFO: [HLS 200-1611] Setting target device to 'xcu55c-fsvh2892-2L-e'
-Command       create_platform done; 2.52 sec.
+Command       create_platform done; 2.44 sec.
 Execute       source /tools/Xilinx/Vitis_HLS/2022.2/common/technology/xilinx/common/xilinx.gen 
 Execute         source /tools/Xilinx/Vitis_HLS/2022.2/common/technology/xilinx/interface/plb46.gen 
 Execute         source /tools/Xilinx/Vitis_HLS/2022.2/common/technology/xilinx/interface/axi4.gen 
@@ -38,7 +38,7 @@ Execute         source /tools/Xilinx/Vitis_HLS/2022.2/common/technology/xilinx/i
 Execute         source /tools/Xilinx/Vitis_HLS/2022.2/common/technology/xilinx/DSP48/dsp48.gen 
 Execute       ap_part_info -name xcu55c-fsvh2892-2L-e -data info 
 Execute       config_compile -quiet -complex-mul-dsp=0 
-Command     set_part done; 2.65 sec.
+Command     set_part done; 2.57 sec.
 Execute     create_clock -period 300.000000MHz -name default 
 INFO: [HLS 200-1510] Running: create_clock -period 300.000000MHz -name default 
 Execute       ap_set_clock -name default -period 3.333 -unit ns -default=false 
@@ -67,11 +67,10 @@ Execute       config_interface -m_axi_auto_max_ports=true
 INFO: [HLS 200-1510] Running: config_interface -m_axi_auto_max_ports=true 
 Execute       config_interface -m_axi_offset slave 
 INFO: [HLS 200-1510] Running: config_interface -m_axi_offset slave 
-Command     ap_source done; 0.12 sec.
 Execute     csynth_design -synthesis_check 
 INFO: [HLS 200-1510] Running: csynth_design -synthesis_check 
 Execute       elaborate -effort=medium -skip_syncheck=0 -keep_printf=0 -skip_cdt=0 -skip_transform=2 -ng=0 -g=0 -opt_fp=0 -from_csynth_design=1 
-INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0.01 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.01 seconds; current allocated memory: 754.184 MB.
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0.01 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.02 seconds; current allocated memory: 754.184 MB.
 INFO: [HLS 200-10] Analyzing design file '/home/ayvol/accelerator_wrapper/src/myproject.cpp' ... 
 INFO-FLOW: Compiling one TU...
 INFO-FLOW: Handling /home/ayvol/accelerator_wrapper/src/myproject.cpp as C++
@@ -79,7 +78,7 @@ Execute         ap_part_info -name xcu55c-fsvh2892-2L-e -data info
 INFO-FLOW: Running: GCC PP 39
 INFO-FLOW: Source preprocessing
 Execute         ap_eval exec -ignorestderr /tools/Xilinx/Vitis_HLS/2022.2/lnx64/tools/clang-3.9-csynth/bin/clang /home/ayvol/accelerator_wrapper/src/myproject.cpp -foptimization-record-file=/home/ayvol/accelerator_wrapper/_x.sw_emu.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml/solution/.autopilot/db/myproject.cpp.clang.diag.yml -mllvm -pass-remarks-missed=reflow|pasta|unroll -mllvm -pass-remarks=reflow|pasta|unroll|inline -fno-limit-debug-info -gcc-toolchain /tools/Xilinx/Vitis_HLS/2022.2/tps/lnx64/gcc-8.3.0 -fhls -fno-exceptions -E -g -DMYPROJ=myproject -DIS_DENSE -I/home/ayvol/accelerator_wrapper/src -I/home/ayvol/accelerator_wrapper/src -I/home/ayvol/accelerator_wrapper/src/weights -I/home/ayvol/accelerator_wrapper/src/nnet_utils -std=c++11 -fno-math-errno -c -emit-llvm -mllvm -disable-llvm-optzns -Werror=implicit-function-declaration -Werror=implicit-hls-streams -Werror=return-type -Wpragmas -Wunused-parameter -Wdump-hls-pragmas -Wno-error=dump-hls-pragmas -fno-threadsafe-statics -fno-use-cxa-atexit -target fpga64-xilinx-linux-gnu -fno-threadsafe-statics -fno-use-cxa-atexit -D__VITIS_HLS__ -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I /tools/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot -I /tools/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E2__ -I /usr/include/x86_64-linux-gnu -o /home/ayvol/accelerator_wrapper/_x.sw_emu.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml/solution/.autopilot/db/myproject.pp.0.cpp -hls-platform-db-name=/tools/Xilinx/Vitis_HLS/2022.2/common/technology/xilinx/common/platform.db -hls-platform-name=virtexuplus_medium -device-resource-info=BRAM_4032.000000_DSP_9024.000000_FF_2607360.000000_LUT_1303680.000000_SLICE_162960.000000_SLR_3.000000_URAM_960.000000 -device-name-info=xcu55c-fsvh2892-2L-e > /home/ayvol/accelerator_wrapper/_x.sw_emu.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml/solution/.autopilot/db/myproject.cpp.clang.out.log 2> /home/ayvol/accelerator_wrapper/_x.sw_emu.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml/solution/.autopilot/db/myproject.cpp.clang.err.log 
-Command         ap_eval done; 0.72 sec.
+Command         ap_eval done; 0.69 sec.
 INFO-FLOW: Done: GCC PP 39 time: 0.7 seconds per iteration
 Execute         set_directive_top alveo_hls4ml -name=alveo_hls4ml 
 Execute         source /tools/Xilinx/Vitis_HLS/2022.2/tps/tcl/tcllib1.11.1/yaml/huddle.tcl 
@@ -89,19 +88,19 @@ Execute         ap_eval exec -ignorestderr /tools/Xilinx/Vitis_HLS/2022.2/lnx64/
 Command         ap_eval done; 1.85 sec.
 Execute         clang_tidy xilinx-systemc-detector -desc systemc-detector /home/ayvol/accelerator_wrapper/_x.sw_emu.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml/solution/.autopilot/db/myproject.pp.0.cpp std=c++11 -target fpga  -directive=/home/ayvol/accelerator_wrapper/_x.sw_emu.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml/solution/.autopilot/db/.systemc_flag 
 INFO-FLOW: exec /tools/Xilinx/Vitis_HLS/2022.2/lnx64/tools/clang-3.9-csynth/bin/clang-tidy -header-filter=.* --checks=-*,xilinx-systemc-detector -import-directive=/home/ayvol/accelerator_wrapper/_x.sw_emu.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml/solution/.autopilot/db/.systemc_flag -fix-errors /home/ayvol/accelerator_wrapper/_x.sw_emu.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml/solution/.autopilot/db/myproject.pp.0.cpp -- -std=c++11 -target fpga -fhls -ferror-limit=0
-Command         clang_tidy done; 1.33 sec.
+Command         clang_tidy done; 1.34 sec.
 INFO-FLOW: Running: clang-tidy CDT preprocess 39
 Execute         clang_tidy xilinx-directive2pragma -desc directive2pragma /home/ayvol/accelerator_wrapper/_x.sw_emu.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml/solution/.autopilot/db/myproject.pp.0.cpp std=c++11 -target fpga  -directive=/home/ayvol/accelerator_wrapper/_x.sw_emu.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml/solution/.autopilot/db/all.directive.json 
 INFO-FLOW: exec /tools/Xilinx/Vitis_HLS/2022.2/lnx64/tools/clang-3.9-csynth/bin/clang-tidy -header-filter=.* --checks=-*,xilinx-directive2pragma -import-directive=/home/ayvol/accelerator_wrapper/_x.sw_emu.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml/solution/.autopilot/db/all.directive.json -fix-errors /home/ayvol/accelerator_wrapper/_x.sw_emu.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml/solution/.autopilot/db/myproject.pp.0.cpp -- -std=c++11 -target fpga -fhls -ferror-limit=0
-Command         clang_tidy done; 1.3 sec.
+Command         clang_tidy done; 1.28 sec.
 Execute         clang_tidy xilinx-remove-assert -desc remove-assert /home/ayvol/accelerator_wrapper/_x.sw_emu.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml/solution/.autopilot/db/myproject.pp.0.cpp std=c++11 -target fpga  
 INFO-FLOW: exec /tools/Xilinx/Vitis_HLS/2022.2/lnx64/tools/clang-3.9-csynth/bin/clang-tidy -header-filter=.* --checks=-*,xilinx-remove-assert -fix-errors /home/ayvol/accelerator_wrapper/_x.sw_emu.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml/solution/.autopilot/db/myproject.pp.0.cpp -- -std=c++11 -target fpga -fhls -ferror-limit=0
-Command         clang_tidy done; 1.78 sec.
+Command         clang_tidy done; 1.82 sec.
 INFO-FLOW: Done: clang-tidy CDT preprocess 39 time: 3.1 seconds per iteration
 Execute         ap_part_info -name xcu55c-fsvh2892-2L-e -data info 
 INFO-FLOW: compiling source code to llvm bc
 Execute         ap_eval exec -ignorestderr /tools/Xilinx/Vitis_HLS/2022.2/lnx64/tools/clang-3.9-csynth/bin/clang -foptimization-record-file=/home/ayvol/accelerator_wrapper/_x.sw_emu.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml/solution/.autopilot/db/myproject.pp.0.cpp.clang.diag.yml -mllvm -pass-remarks-missed=reflow|pasta|unroll -mllvm -pass-remarks=reflow|pasta|unroll|inline -fno-limit-debug-info -fhls -flto -fno-exceptions -Wno-error=c++11-narrowing /home/ayvol/accelerator_wrapper/_x.sw_emu.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml/solution/.autopilot/db/myproject.pp.0.cpp -g -DMYPROJ=myproject -DIS_DENSE -I/home/ayvol/accelerator_wrapper/src -I/home/ayvol/accelerator_wrapper/src -I/home/ayvol/accelerator_wrapper/src/weights -I/home/ayvol/accelerator_wrapper/src/nnet_utils -std=c++11 -fno-math-errno -c -emit-llvm -mllvm -disable-llvm-optzns -Werror=implicit-function-declaration -Werror=implicit-hls-streams -Werror=return-type -Wpragmas -Wunused-parameter -Wdump-hls-pragmas -Wno-error=dump-hls-pragmas -fno-threadsafe-statics -fno-use-cxa-atexit -target fpga64-xilinx-linux-gnu -D__VITIS_HLS__ -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I /tools/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot -I /tools/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E2__ -g -o /home/ayvol/accelerator_wrapper/_x.sw_emu.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml/solution/.autopilot/db/myproject.bc -hls-platform-db-name=/tools/Xilinx/Vitis_HLS/2022.2/common/technology/xilinx/common/platform.db -hls-platform-name=virtexuplus_medium -device-resource-info=BRAM_4032.000000_DSP_9024.000000_FF_2607360.000000_LUT_1303680.000000_SLICE_162960.000000_SLR_3.000000_URAM_960.000000 -device-name-info=xcu55c-fsvh2892-2L-e > /home/ayvol/accelerator_wrapper/_x.sw_emu.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml/solution/.autopilot/db/myproject.pp.0.cpp.clang.out.log 2> /home/ayvol/accelerator_wrapper/_x.sw_emu.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml/solution/.autopilot/db/myproject.pp.0.cpp.clang.err.log 
-Command         ap_eval done; 1.96 sec.
+Command         ap_eval done; 2.06 sec.
 WARNING: [HLS 207-5292] unused parameter 'keep' (/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_helpers.h:285:99)
 WARNING: [HLS 207-5292] unused parameter 'data' (/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_code_gen.h:11:36)
 WARNING: [HLS 207-5292] unused parameter 'buffer' (/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_code_gen.h:12:36)
@@ -116,7 +115,7 @@ Execute         ap_part_info -name xcu55c-fsvh2892-2L-e -data info
 INFO-FLOW: Running: GCC PP 39
 INFO-FLOW: Source preprocessing
 Execute         ap_eval exec -ignorestderr /tools/Xilinx/Vitis_HLS/2022.2/lnx64/tools/clang-3.9-csynth/bin/clang /home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp -foptimization-record-file=/home/ayvol/accelerator_wrapper/_x.sw_emu.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml/solution/.autopilot/db/alveo_hls4ml.cpp.clang.diag.yml -mllvm -pass-remarks-missed=reflow|pasta|unroll -mllvm -pass-remarks=reflow|pasta|unroll|inline -fno-limit-debug-info -gcc-toolchain /tools/Xilinx/Vitis_HLS/2022.2/tps/lnx64/gcc-8.3.0 -fhls -fno-exceptions -E -g -DMYPROJ=myproject -DIS_DENSE -I/home/ayvol/accelerator_wrapper/src -I/home/ayvol/accelerator_wrapper/src -I/home/ayvol/accelerator_wrapper/src/weights -I/home/ayvol/accelerator_wrapper/src/nnet_utils -std=c++11 -fno-math-errno -c -emit-llvm -mllvm -disable-llvm-optzns -Werror=implicit-function-declaration -Werror=implicit-hls-streams -Werror=return-type -Wpragmas -Wunused-parameter -Wdump-hls-pragmas -Wno-error=dump-hls-pragmas -fno-threadsafe-statics -fno-use-cxa-atexit -target fpga64-xilinx-linux-gnu -fno-threadsafe-statics -fno-use-cxa-atexit -D__VITIS_HLS__ -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I /tools/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot -I /tools/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E2__ -I /usr/include/x86_64-linux-gnu -o /home/ayvol/accelerator_wrapper/_x.sw_emu.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml/solution/.autopilot/db/alveo_hls4ml.pp.0.cpp -hls-platform-db-name=/tools/Xilinx/Vitis_HLS/2022.2/common/technology/xilinx/common/platform.db -hls-platform-name=virtexuplus_medium -device-resource-info=BRAM_4032.000000_DSP_9024.000000_FF_2607360.000000_LUT_1303680.000000_SLICE_162960.000000_SLR_3.000000_URAM_960.000000 -device-name-info=xcu55c-fsvh2892-2L-e > /home/ayvol/accelerator_wrapper/_x.sw_emu.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml/solution/.autopilot/db/alveo_hls4ml.cpp.clang.out.log 2> /home/ayvol/accelerator_wrapper/_x.sw_emu.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml/solution/.autopilot/db/alveo_hls4ml.cpp.clang.err.log 
-Command         ap_eval done; 0.7 sec.
+Command         ap_eval done; 0.69 sec.
 INFO-FLOW: Done: GCC PP 39 time: 0.7 seconds per iteration
 Execute         set_directive_top alveo_hls4ml -name=alveo_hls4ml 
 INFO-FLOW: Source syntax check for synthesis
@@ -128,15 +127,15 @@ Command         clang_tidy done; 0.92 sec.
 INFO-FLOW: Running: clang-tidy CDT preprocess 39
 Execute         clang_tidy xilinx-directive2pragma -desc directive2pragma /home/ayvol/accelerator_wrapper/_x.sw_emu.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml/solution/.autopilot/db/alveo_hls4ml.pp.0.cpp std=c++11 -target fpga  -directive=/home/ayvol/accelerator_wrapper/_x.sw_emu.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml/solution/.autopilot/db/all.directive.json 
 INFO-FLOW: exec /tools/Xilinx/Vitis_HLS/2022.2/lnx64/tools/clang-3.9-csynth/bin/clang-tidy -header-filter=.* --checks=-*,xilinx-directive2pragma -import-directive=/home/ayvol/accelerator_wrapper/_x.sw_emu.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml/solution/.autopilot/db/all.directive.json -fix-errors /home/ayvol/accelerator_wrapper/_x.sw_emu.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml/solution/.autopilot/db/alveo_hls4ml.pp.0.cpp -- -std=c++11 -target fpga -fhls -ferror-limit=0
-Command         clang_tidy done; 1.32 sec.
+Command         clang_tidy done; 1.34 sec.
 Execute         clang_tidy xilinx-remove-assert -desc remove-assert /home/ayvol/accelerator_wrapper/_x.sw_emu.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml/solution/.autopilot/db/alveo_hls4ml.pp.0.cpp std=c++11 -target fpga  
 INFO-FLOW: exec /tools/Xilinx/Vitis_HLS/2022.2/lnx64/tools/clang-3.9-csynth/bin/clang-tidy -header-filter=.* --checks=-*,xilinx-remove-assert -fix-errors /home/ayvol/accelerator_wrapper/_x.sw_emu.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml/solution/.autopilot/db/alveo_hls4ml.pp.0.cpp -- -std=c++11 -target fpga -fhls -ferror-limit=0
-Command         clang_tidy done; 1.39 sec.
+Command         clang_tidy done; 1.41 sec.
 INFO-FLOW: Done: clang-tidy CDT preprocess 39 time: 2.7 seconds per iteration
 Execute         ap_part_info -name xcu55c-fsvh2892-2L-e -data info 
 INFO-FLOW: compiling source code to llvm bc
 Execute         ap_eval exec -ignorestderr /tools/Xilinx/Vitis_HLS/2022.2/lnx64/tools/clang-3.9-csynth/bin/clang -foptimization-record-file=/home/ayvol/accelerator_wrapper/_x.sw_emu.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml/solution/.autopilot/db/alveo_hls4ml.pp.0.cpp.clang.diag.yml -mllvm -pass-remarks-missed=reflow|pasta|unroll -mllvm -pass-remarks=reflow|pasta|unroll|inline -fno-limit-debug-info -fhls -flto -fno-exceptions -Wno-error=c++11-narrowing /home/ayvol/accelerator_wrapper/_x.sw_emu.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml/solution/.autopilot/db/alveo_hls4ml.pp.0.cpp -g -DMYPROJ=myproject -DIS_DENSE -I/home/ayvol/accelerator_wrapper/src -I/home/ayvol/accelerator_wrapper/src -I/home/ayvol/accelerator_wrapper/src/weights -I/home/ayvol/accelerator_wrapper/src/nnet_utils -std=c++11 -fno-math-errno -c -emit-llvm -mllvm -disable-llvm-optzns -Werror=implicit-function-declaration -Werror=implicit-hls-streams -Werror=return-type -Wpragmas -Wunused-parameter -Wdump-hls-pragmas -Wno-error=dump-hls-pragmas -fno-threadsafe-statics -fno-use-cxa-atexit -target fpga64-xilinx-linux-gnu -D__VITIS_HLS__ -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I /tools/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot -I /tools/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E2__ -g -o /home/ayvol/accelerator_wrapper/_x.sw_emu.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml/solution/.autopilot/db/alveo_hls4ml.bc -hls-platform-db-name=/tools/Xilinx/Vitis_HLS/2022.2/common/technology/xilinx/common/platform.db -hls-platform-name=virtexuplus_medium -device-resource-info=BRAM_4032.000000_DSP_9024.000000_FF_2607360.000000_LUT_1303680.000000_SLICE_162960.000000_SLR_3.000000_URAM_960.000000 -device-name-info=xcu55c-fsvh2892-2L-e > /home/ayvol/accelerator_wrapper/_x.sw_emu.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml/solution/.autopilot/db/alveo_hls4ml.pp.0.cpp.clang.out.log 2> /home/ayvol/accelerator_wrapper/_x.sw_emu.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml/solution/.autopilot/db/alveo_hls4ml.pp.0.cpp.clang.err.log 
-Command         ap_eval done; 1.54 sec.
+Command         ap_eval done; 1.7 sec.
 WARNING: [HLS 207-5292] unused parameter 'keep' (/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_helpers.h:285:99)
 WARNING: [HLS 207-5292] unused parameter 'data' (/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_code_gen.h:11:36)
 WARNING: [HLS 207-5292] unused parameter 'buffer' (/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_code_gen.h:12:36)
@@ -144,7 +143,7 @@ WARNING: [HLS 207-5292] unused parameter 'partition' (/home/ayvol/accelerator_wr
 WARNING: [HLS 207-5292] unused parameter 'data' (/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_code_gen.h:21:24)
 WARNING: [HLS 207-5292] unused parameter 'buffer' (/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_code_gen.h:22:24)
 WARNING: [HLS 207-5292] unused parameter 'partition' (/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_code_gen.h:23:32)
-INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 12.47 seconds. CPU system time: 1.48 seconds. Elapsed time: 17.07 seconds; current allocated memory: 760.594 MB.
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 12.79 seconds. CPU system time: 1.24 seconds. Elapsed time: 17.88 seconds; current allocated memory: 760.594 MB.
 INFO-FLOW: Linking Debug ...
 INFO-FLOW: Linking dut bc code.
 Execute         run_link_or_opt -out /home/ayvol/accelerator_wrapper/_x.sw_emu.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml/solution/.autopilot/db/a.g.ld.0.bc -args  "/home/ayvol/accelerator_wrapper/_x.sw_emu.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml/solution/.autopilot/db/myproject.g.bc" "/home/ayvol/accelerator_wrapper/_x.sw_emu.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml/solution/.autopilot/db/alveo_hls4ml.g.bc"  
@@ -167,11 +166,11 @@ INFO-FLOW: Caught error in elaborate: Error in llvm-link
     (procedure "ap_internal_elaborate" line 83)
     invoked from within
 "ap_internal_elaborate "
-Command       elaborate done; error code: 2; 17.17 sec.
+Command       elaborate done; error code: 2; 18 sec.
 INFO-FLOW: Caught error in csynth_design: Error in llvm-link
     while executing
 "ap_internal_csynth_design "
-Command     csynth_design done; error code: 2; 17.18 sec.
-INFO: [HLS 200-111] Finished Command csynth_design CPU user time: 12.53 seconds. CPU system time: 1.53 seconds. Elapsed time: 17.18 seconds; current allocated memory: 6.410 MB.
-Command   ap_source done; error code: 1; 20.64 sec.
+Command     csynth_design done; error code: 2; 18.01 sec.
+INFO: [HLS 200-111] Finished Command csynth_design CPU user time: 12.83 seconds. CPU system time: 1.27 seconds. Elapsed time: 18.01 seconds; current allocated memory: 6.410 MB.
+Command   ap_source done; error code: 1; 21.18 sec.
 Execute   cleanup_all 
