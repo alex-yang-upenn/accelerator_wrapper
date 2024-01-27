@@ -7,7 +7,7 @@
 /**
  * \brief Read Data from Global Memory and write into Stream inStream
 */
-static void read_input(const input_data_t *in, hls::stream<input_stream_t> &input) {
+static void read_input(const input_data_t *in, hls::stream<input_stream_t> &input, int n) {
   for (int i = 0; i < DATA_SIZE_IN; i++) {
     #pragma HLS PIPELINE
     input_stream_t tmp;
@@ -22,7 +22,7 @@ static void read_input(const input_data_t *in, hls::stream<input_stream_t> &inpu
 /**
  * \brief Read result from output and write the result to Global
 */
-static void write_result(output_data_t *out, hls::stream<output_stream_t> &output) {
+static void write_result(output_data_t *out, hls::stream<output_stream_t> &output, int n) {
   output_stream_t tmp = output.read();
   for (int i = 0; i < DATA_SIZE_OUT; i++) {
     #pragma HLS UNROLL
@@ -78,11 +78,10 @@ extern "C" {
         #pragma HLS STREAM variable=output depth=1
         
         for (int n = 0; n < STREAMSIZE; n++) {
-        #pragma HLS PIPELINE
         #pragma HLS DATAFLOW          
-          read_input(in, input);
+          read_input(in, input, n);
           hls4ml: MYPROJ(input, output);
-          write_result(out, output);
+          write_result(out, output, n);
         }
       #endif
 
