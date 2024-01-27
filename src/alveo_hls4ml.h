@@ -37,11 +37,10 @@ Description:
 #define ALVEO_HLS4ML_H
 
 #include "parameters.h"
-
-//how many consecutive sets of inputs to run over per kernel execution
+#include "defines.h"
 
 #ifdef IS_DENSE
-#define STREAMSIZE 16384
+#define STREAMSIZE 8192
 
 #define DATA_SIZE_IN N_INPUT_1_1
 #define INSTREAMSIZE (STREAMSIZE * DATA_SIZE_IN)
@@ -50,7 +49,7 @@ Description:
 #define OUTSTREAMSIZE (STREAMSIZE * DATA_SIZE_OUT)
 
 typedef input_t input_data_t;
-typedef layer11_t output_data_t;
+typedef result_t output_data_t;
 #endif
 
 #ifdef IS_CONV1D
