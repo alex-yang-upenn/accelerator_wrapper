@@ -1,2 +1,2 @@
 config_interface -m_axi_auto_max_ports=true
-config_interace -m_axi_offset slave
+config_interface -m_axi_offset slave
