@@ -1,6 +1,8 @@
 #ifndef PARAMETERS_H_
 #define PARAMETERS_H_
 
+#include "defines.h"
+
 #include "ap_fixed.h"
 #include "ap_int.h"
 
