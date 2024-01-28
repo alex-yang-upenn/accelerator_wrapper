@@ -36,12 +36,11 @@ Description:
 #ifndef ALVEO_HLS4ML_H
 #define ALVEO_HLS4ML_H
 
-#include "parameters.h"
-
-//how many consecutive sets of inputs to run over per kernel execution
+#include "defines.h" // Generated from HLS4ML
+#include "parameters.h" // Generated from HLS4ML
 
 #ifdef IS_DENSE
-#define STREAMSIZE 16384
+#define STREAMSIZE 8192 // Calculate according to FPGA specs (HBM PC memory size). DO NOT fully use up assigned HBM memory
 
 #define DATA_SIZE_IN N_INPUT_1_1
 #define INSTREAMSIZE (STREAMSIZE * DATA_SIZE_IN)
@@ -49,12 +48,12 @@ Description:
 #define DATA_SIZE_OUT N_LAYER_11
 #define OUTSTREAMSIZE (STREAMSIZE * DATA_SIZE_OUT)
 
-typedef input_t input_data_t;
-typedef layer11_t output_data_t;
+typedef model_default_t input_data_t; // Update accordingly
+typedef model_default_t output_data_t; // Update accordingly
 #endif
 
 #ifdef IS_CONV1D
-#define STREAMSIZE 8192
+#define STREAMSIZE 8192 // Calculate according to FPGA specs (HBM PC memory size). DO NOT fully use up assigned HBM memory
 
 #define X_DIMENSION_IN N_INPUT_1_1
 #define Y_DIMENSION_IN N_INPUT_2_1
@@ -62,7 +61,7 @@ typedef layer11_t output_data_t;
 #define DATA_SIZE_IN (X_DIMENSION_IN * Y_DIMENSION_IN)
 #define INSTREAMSIZE (STREAMSIZE * DATA_SIZE_IN * Z_DIMENSION_IN)
 
-#define DATA_SIZE_OUT N_LAYER_26
+#define DATA_SIZE_OUT N_LAYER_26 // Update accordingly
 #define OUTSTREAMSIZE (STREAMSIZE * DATA_SIZE_OUT)
 
 typedef model_default_t input_data_t;
