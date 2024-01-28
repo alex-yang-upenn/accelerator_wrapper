@@ -44,8 +44,8 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #define NUM_CU 3
 #define NBUFFER 8
 
-#define STRINGIFY2(var) #var
-#define STRINGIFY(var) STRINGIFY2(var)
+#define STRINGIFY(var) #var
+#define EXPAND_STRING(var) STRINGIFY(var)
 
 
 void runFPGAHelper(fpgaObj<input_data_t, output_data_t> &theFPGA) {
@@ -56,8 +56,8 @@ void runFPGAHelper(fpgaObj<input_data_t, output_data_t> &theFPGA) {
 
 int main(int argc, char** argv)
 {
-    std::string datadir = STRINGIFY(HLS4ML_DATA_DIR);
-    std::string xclbinFilename = STRINGIFY(XCL_BIN_FILENAME);
+    std::string datadir = EXPAND_STRING(HLS4ML_DATA_DIR);
+    std::string xclbinFilename = EXPAND_STRING(XCL_BIN_FILENAME);
     
     std::cout << "Will run using " << datadir << " to get input features and output predictions (tb_input_features.dat and tb_output_predictions.dat)" << std::endl;
     
