@@ -5,7 +5,7 @@
 
 #ifdef IS_CONV1D
 /**
- * \brief Read Data from Global Memory and write into Stream inStream
+ * \brief Read data from Global Memory and write into Stream inStream
 */
 static void read_input(const input_data_t *in, hls::stream<input_stream_t> &input) {
   for (int i = 0; i < DATA_SIZE_IN; i++) {
@@ -20,7 +20,7 @@ static void read_input(const input_data_t *in, hls::stream<input_stream_t> &inpu
 }
 
 /**
- * \brief Read result from output and write the result to Global
+ * \brief Read result from output and write the result to Global Memory
 */
 static void write_result(output_data_t *out, hls::stream<output_stream_t> &output) {
   output_stream_t tmp = output.read();
