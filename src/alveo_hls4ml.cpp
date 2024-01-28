@@ -78,7 +78,6 @@ extern "C" {
         #pragma HLS STREAM variable=output depth=1
         
         for (int n = 0; n < STREAMSIZE; n++) {
-        #pragma HLS PIPELINE
         #pragma HLS DATAFLOW          
           read_input(in, input);
           hls4ml: MYPROJ(input, output);

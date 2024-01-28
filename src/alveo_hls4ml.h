@@ -48,8 +48,8 @@ Description:
 #define DATA_SIZE_OUT N_LAYER_11
 #define OUTSTREAMSIZE (STREAMSIZE * DATA_SIZE_OUT)
 
-typedef model_default_t input_data_t; // Update accordingly
-typedef model_default_t output_data_t; // Update accordingly
+typedef model_default_t input_data_t;
+typedef model_default_t output_data_t;
 #endif
 
 #ifdef IS_CONV1D
