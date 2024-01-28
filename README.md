@@ -37,13 +37,6 @@ sp=alveo_hls4ml_1.out:HBM[12:15]
 .
 ```
 
-## Modify Makefile to point to HLS4ML project
-Enter the name of the HLS4ML kernel name and project type in the following Makefile lines
-```bash
-HLS4ML_NAME := <project name>
-HLS4ML_PROJ_TYPE := <project type>
-```
-
 ## Compile VitisAccel project
 ```bash
 # Makefile Usage:
@@ -53,7 +46,7 @@ LD_PRELOAD=/lib/x86_64-linux-gnu/libudev.so.1
 
 # Command to generate the entire design for specified Target and Shell.
 # HOST_ARCH and SYSROOT are optional commands. By default, HOST_ARCH=x86. HOST_ARCH and SYSROOT is required for SoC shells
-make all TARGET=<sw_emu/hw_emu/hw> DEVICE=<FPGA platform> HOST_ARCH=<aarch32/aarch64/x86> SYSROOT=<sysroot_path>
+make all TARGET=<sw_emu/hw_emu/hw> DEVICE=<FPGA platform> HLS4ML_NAME=<kernel name> HLS4ML_PROJ_TYPE=<DENSE/CONV1D> HOST_ARCH=<aarch32/aarch64/x86> SYSROOT=<sysroot_path>
 
 # Command to remove the generated non-hardware files."
 make clean
@@ -62,17 +55,15 @@ make clean
 make cleanall
 
 # Command to build only the xclbin application
-make build TARGET=<sw_emu/hw_emu/hw> DEVICE=<FPGA platform> HOST_ARCH=<aarch32/aarch64/x86> SYSROOT=<sysroot_path>
+make build TARGET=<sw_emu/hw_emu/hw> DEVICE=<FPGA platform> HLS4ML_NAME=<kernel name> HLS4ML_PROJ_TYPE=<DENSE/CONV1D> HOST_ARCH=<aarch32/aarch64/x86> SYSROOT=<sysroot_path>
 
 # Command to build only the host executable
-make exe TARGET=<sw_emu/hw_emu/hw> DEVICE=<FPGA platform> HOST_ARCH=<aarch32/aarch64/x86> SYSROOT=<sysroot_path>
+make exe TARGET=<sw_emu/hw_emu/hw> DEVICE=<FPGA platform> HLS4ML_NAME=<kernel name> HLS4ML_PROJ_TYPE=<DENSE/CONV1D> HOST_ARCH=<aarch32/aarch64/x86> SYSROOT=<sysroot_path>
 ```
 
-## Example Usage (for Alveo U55C Card)
+## Run on accelerator (TARGET=hw only)
 ```bash
-# Compile
-LD_PRELOAD=/lib/x86_64-linux-gnu/libudev.so.1 make all TARGET=hw  DEVICE=xilinx_u55c_gen3x16_xdma_3_202210_1
-
-# Run
+# Run command
 ./host
+# Notes: Currently only runs on bogus data in order to test throughput
 ```
