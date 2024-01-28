@@ -12,6 +12,18 @@ git clone https://github.com/alex-yang-upenn/accelerator_wrapper.git
 source setup.sh
 ```
 
+## Move in HLS4ML Firmware Files
+Copy the following HLS4ML-generated files and directories into the src folder
+```bash
+[HLS4ML Project Directory]/firmware/defines.h
+[HLS4ML Project Directory]/firmware/parameters.h
+[HLS4ML Project Directory]/firmware/myproject.cpp # Kernel source file
+[HLS4ML Project Directory]/firmware/myproject.h # Kernel header file
+
+[HLS4ML Project Directory]/firmware/nnet_utils
+[HLS4ML Project Directory]/firmware/weights
+```
+
 ## Modify connectivity configurations for target platform
 The default "connectivity" section of config.ini is created for the U55C card, which features 3 SLR regions and HBM memory. It places a copy of the kernel into each SLR region and assigns different HBM channels for each kernel's input and output. 
 ```bash
