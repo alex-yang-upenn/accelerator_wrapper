@@ -365,94 +365,76 @@
     <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_latency.h:33:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="dense_latency" ARG_PragmaIsValid="1" ARG_PragmaOptions="operation instances=mul limit=CONFIG_T::multiplier_limit" ARG_PragmaType="allocation" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_resource.h:28:9" msg_body="HLS pragma dump">
-        <args ARG_PragmaFunction="dense_resource_rf_leq_nin" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=weights,biases" ARG_PragmaType="function_instantiate" ClangWarningOption="dump-hls-pragmas"/>
-    </msg>
     <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_resource.h:30:9" msg_body="HLS pragma dump">
-        <args ARG_PragmaFunction="dense_resource_rf_leq_nin" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=weights block factor=block_factor" ARG_PragmaType="array_reshape" ClangWarningOption="dump-hls-pragmas"/>
-    </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_resource.h:31:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="dense_resource_rf_leq_nin" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=biases complete" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_resource.h:34:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_resource.h:33:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="dense_resource_rf_leq_nin" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=acc complete" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_resource.h:38:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_resource.h:37:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="dense_resource_rf_leq_nin" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_resource.h:44:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_resource.h:43:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="dense_resource_rf_leq_nin" ARG_PragmaIsValid="1" ARG_PragmaOptions="II=1 rewind" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_resource.h:53:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_resource.h:51:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="dense_resource_rf_leq_nin" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_resource.h:78:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_resource.h:75:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="dense_resource_rf_leq_nin" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_resource.h:99:9" msg_body="HLS pragma dump">
-        <args ARG_PragmaFunction="dense_resource_rf_gt_nin_rem0" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=weights,biases" ARG_PragmaType="function_instantiate" ClangWarningOption="dump-hls-pragmas"/>
-    </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_resource.h:101:9" msg_body="HLS pragma dump">
-        <args ARG_PragmaFunction="dense_resource_rf_gt_nin_rem0" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=weights block factor=block_factor" ARG_PragmaType="array_reshape" ClangWarningOption="dump-hls-pragmas"/>
-    </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_resource.h:102:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_resource.h:98:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="dense_resource_rf_gt_nin_rem0" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=biases complete" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_resource.h:105:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_resource.h:101:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="dense_resource_rf_gt_nin_rem0" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=acc complete" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_resource.h:109:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_resource.h:105:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="dense_resource_rf_gt_nin_rem0" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_resource.h:130:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_resource.h:125:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="dense_resource_rf_gt_nin_rem0" ARG_PragmaIsValid="1" ARG_PragmaOptions="II=1 rewind" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_resource.h:137:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_resource.h:131:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="dense_resource_rf_gt_nin_rem0" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_resource.h:157:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_resource.h:150:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="dense_resource_rf_gt_nin_rem0" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_resource.h:178:9" msg_body="HLS pragma dump">
-        <args ARG_PragmaFunction="dense_resource_rf_gt_nin" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=weights,biases" ARG_PragmaType="function_instantiate" ClangWarningOption="dump-hls-pragmas"/>
-    </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_resource.h:180:9" msg_body="HLS pragma dump">
-        <args ARG_PragmaFunction="dense_resource_rf_gt_nin" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=weights block factor=block_factor" ARG_PragmaType="array_reshape" ClangWarningOption="dump-hls-pragmas"/>
-    </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_resource.h:181:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_resource.h:172:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="dense_resource_rf_gt_nin" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=biases complete" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_resource.h:184:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_resource.h:175:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="dense_resource_rf_gt_nin" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=acc complete" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_resource.h:188:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_resource.h:179:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="dense_resource_rf_gt_nin" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_resource.h:194:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_resource.h:185:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="dense_resource_rf_gt_nin" ARG_PragmaIsValid="1" ARG_PragmaOptions="II=1 rewind" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_resource.h:196:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_resource.h:187:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="dense_resource_rf_gt_nin" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=tmpmult complete" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_resource.h:200:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_resource.h:191:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="dense_resource_rf_gt_nin" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_resource.h:210:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_resource.h:199:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="dense_resource_rf_gt_nin" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=mult complete" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_resource.h:214:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_resource.h:203:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="dense_resource_rf_gt_nin" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_resource.h:220:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_resource.h:209:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="dense_resource_rf_gt_nin" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_resource.h:230:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_resource.h:219:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="dense_resource_rf_gt_nin" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_resource.h:240:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_resource.h:227:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="dense_resource_rf_gt_nin" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_resource.h:250:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_resource.h:237:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="dense_resource" ARG_PragmaIsValid="1" ARG_PragmaOptions="recursive" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
     <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense.h:39:9" msg_body="HLS pragma dump">
@@ -492,28 +474,40 @@
         <args ARG_PragmaFunction="dense_compressed" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
     <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:16:9" msg_body="HLS pragma dump">
-        <args ARG_PragmaFunction="dense_wrapper" ARG_PragmaIsValid="1" ARG_PragmaOptions="recursive" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
+        <args ARG_PragmaFunction="dense_latency_wrapper" ARG_PragmaIsValid="1" ARG_PragmaOptions="II=CONFIG_T::reuse_factor" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:18:9" msg_body="HLS pragma dump">
-        <args ARG_PragmaFunction="dense_wrapper" ARG_PragmaIsValid="1" ARG_PragmaOptions="II=CONFIG_T::reuse_factor" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:29:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="data_prepare" ARG_PragmaIsValid="1" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:30:9" msg_body="HLS pragma dump">
-        <args ARG_PragmaFunction="dense" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=data complete" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
-    </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:33:9" msg_body="HLS pragma dump">
-        <args ARG_PragmaFunction="dense" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=res complete" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:34:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="data_prepare" ARG_PragmaIsValid="1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
     <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:38:9" msg_body="HLS pragma dump">
-        <args ARG_PragmaFunction="dense" ARG_PragmaIsValid="1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
+        <args ARG_PragmaFunction="data_prepare" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:43:9" msg_body="HLS pragma dump">
-        <args ARG_PragmaFunction="dense" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:46:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="data_prepare" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:53:9" msg_body="HLS pragma dump">
-        <args ARG_PragmaFunction="dense" ARG_PragmaIsValid="1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:54:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="res_write" ARG_PragmaIsValid="1" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
     <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:59:9" msg_body="HLS pragma dump">
-        <args ARG_PragmaFunction="dense" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
+        <args ARG_PragmaFunction="res_write" ARG_PragmaIsValid="1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:64:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="res_write" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:74:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="res_write" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:85:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="dense" ARG_PragmaIsValid="1" ARG_PragmaOptions="recursive" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:88:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="dense" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=data complete" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:91:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="dense" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=res complete" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
     <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/ayvol/accelerator_wrapper/src/myproject.cpp:12:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="myproject" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=fc1_input complete dim=0" ARG_PragmaType="array_reshape" ClangWarningOption="dump-hls-pragmas"/>
@@ -914,94 +908,76 @@
     <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_latency.h:33:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="dense_latency" ARG_PragmaIsValid="1" ARG_PragmaOptions="operation instances=mul limit=CONFIG_T::multiplier_limit" ARG_PragmaType="allocation" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_resource.h:28:9" msg_body="HLS pragma dump">
-        <args ARG_PragmaFunction="dense_resource_rf_leq_nin" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=weights,biases" ARG_PragmaType="function_instantiate" ClangWarningOption="dump-hls-pragmas"/>
-    </msg>
     <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_resource.h:30:9" msg_body="HLS pragma dump">
-        <args ARG_PragmaFunction="dense_resource_rf_leq_nin" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=weights block factor=block_factor" ARG_PragmaType="array_reshape" ClangWarningOption="dump-hls-pragmas"/>
-    </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_resource.h:31:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="dense_resource_rf_leq_nin" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=biases complete" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_resource.h:34:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_resource.h:33:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="dense_resource_rf_leq_nin" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=acc complete" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_resource.h:38:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_resource.h:37:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="dense_resource_rf_leq_nin" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_resource.h:44:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_resource.h:43:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="dense_resource_rf_leq_nin" ARG_PragmaIsValid="1" ARG_PragmaOptions="II=1 rewind" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_resource.h:53:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_resource.h:51:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="dense_resource_rf_leq_nin" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_resource.h:78:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_resource.h:75:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="dense_resource_rf_leq_nin" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_resource.h:99:9" msg_body="HLS pragma dump">
-        <args ARG_PragmaFunction="dense_resource_rf_gt_nin_rem0" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=weights,biases" ARG_PragmaType="function_instantiate" ClangWarningOption="dump-hls-pragmas"/>
-    </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_resource.h:101:9" msg_body="HLS pragma dump">
-        <args ARG_PragmaFunction="dense_resource_rf_gt_nin_rem0" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=weights block factor=block_factor" ARG_PragmaType="array_reshape" ClangWarningOption="dump-hls-pragmas"/>
-    </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_resource.h:102:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_resource.h:98:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="dense_resource_rf_gt_nin_rem0" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=biases complete" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_resource.h:105:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_resource.h:101:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="dense_resource_rf_gt_nin_rem0" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=acc complete" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_resource.h:109:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_resource.h:105:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="dense_resource_rf_gt_nin_rem0" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_resource.h:130:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_resource.h:125:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="dense_resource_rf_gt_nin_rem0" ARG_PragmaIsValid="1" ARG_PragmaOptions="II=1 rewind" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_resource.h:137:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_resource.h:131:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="dense_resource_rf_gt_nin_rem0" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_resource.h:157:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_resource.h:150:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="dense_resource_rf_gt_nin_rem0" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_resource.h:178:9" msg_body="HLS pragma dump">
-        <args ARG_PragmaFunction="dense_resource_rf_gt_nin" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=weights,biases" ARG_PragmaType="function_instantiate" ClangWarningOption="dump-hls-pragmas"/>
-    </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_resource.h:180:9" msg_body="HLS pragma dump">
-        <args ARG_PragmaFunction="dense_resource_rf_gt_nin" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=weights block factor=block_factor" ARG_PragmaType="array_reshape" ClangWarningOption="dump-hls-pragmas"/>
-    </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_resource.h:181:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_resource.h:172:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="dense_resource_rf_gt_nin" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=biases complete" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_resource.h:184:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_resource.h:175:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="dense_resource_rf_gt_nin" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=acc complete" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_resource.h:188:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_resource.h:179:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="dense_resource_rf_gt_nin" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_resource.h:194:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_resource.h:185:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="dense_resource_rf_gt_nin" ARG_PragmaIsValid="1" ARG_PragmaOptions="II=1 rewind" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_resource.h:196:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_resource.h:187:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="dense_resource_rf_gt_nin" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=tmpmult complete" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_resource.h:200:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_resource.h:191:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="dense_resource_rf_gt_nin" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_resource.h:210:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_resource.h:199:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="dense_resource_rf_gt_nin" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=mult complete" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_resource.h:214:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_resource.h:203:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="dense_resource_rf_gt_nin" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_resource.h:220:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_resource.h:209:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="dense_resource_rf_gt_nin" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_resource.h:230:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_resource.h:219:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="dense_resource_rf_gt_nin" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_resource.h:240:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_resource.h:227:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="dense_resource_rf_gt_nin" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_resource.h:250:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_resource.h:237:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="dense_resource" ARG_PragmaIsValid="1" ARG_PragmaOptions="recursive" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
     <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense.h:39:9" msg_body="HLS pragma dump">
@@ -1041,28 +1017,40 @@
         <args ARG_PragmaFunction="dense_compressed" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
     <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:16:9" msg_body="HLS pragma dump">
-        <args ARG_PragmaFunction="dense_wrapper" ARG_PragmaIsValid="1" ARG_PragmaOptions="recursive" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
+        <args ARG_PragmaFunction="dense_latency_wrapper" ARG_PragmaIsValid="1" ARG_PragmaOptions="II=CONFIG_T::reuse_factor" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:18:9" msg_body="HLS pragma dump">
-        <args ARG_PragmaFunction="dense_wrapper" ARG_PragmaIsValid="1" ARG_PragmaOptions="II=CONFIG_T::reuse_factor" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:29:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="data_prepare" ARG_PragmaIsValid="1" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:30:9" msg_body="HLS pragma dump">
-        <args ARG_PragmaFunction="dense" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=data complete" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
-    </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:33:9" msg_body="HLS pragma dump">
-        <args ARG_PragmaFunction="dense" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=res complete" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:34:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="data_prepare" ARG_PragmaIsValid="1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
     <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:38:9" msg_body="HLS pragma dump">
-        <args ARG_PragmaFunction="dense" ARG_PragmaIsValid="1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
+        <args ARG_PragmaFunction="data_prepare" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:43:9" msg_body="HLS pragma dump">
-        <args ARG_PragmaFunction="dense" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:46:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="data_prepare" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:53:9" msg_body="HLS pragma dump">
-        <args ARG_PragmaFunction="dense" ARG_PragmaIsValid="1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:54:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="res_write" ARG_PragmaIsValid="1" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
     <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:59:9" msg_body="HLS pragma dump">
-        <args ARG_PragmaFunction="dense" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
+        <args ARG_PragmaFunction="res_write" ARG_PragmaIsValid="1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:64:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="res_write" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:74:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="res_write" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:85:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="dense" ARG_PragmaIsValid="1" ARG_PragmaOptions="recursive" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:88:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="dense" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=data complete" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:91:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="dense" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=res complete" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
     <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/ayvol/accelerator_wrapper/_x.sw_emu.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml.tcl:32:9" msg_body="HLS pragma dump">
         <args ARG_PragmaContext="directive" ARG_PragmaFunction="alveo_hls4ml" ARG_PragmaIsValid="1" ARG_PragmaOptions="name=alveo_hls4ml" ARG_PragmaType="top" ClangWarningOption="dump-hls-pragmas"/>

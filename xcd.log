@@ -1,33 +1,33 @@
-Sat Jan 27 06:40:30 2024: Running xcd server. This server was built by gradle.
-Sat Jan 27 06:40:30 2024: Server was asked to start on port: '35103'
-Sat Jan 27 06:40:30 2024: Server is using token UUID: 'e32a7746-b41c-490f-9eb6-1df9a6ccbe80'
-Sat Jan 27 06:40:30 2024: SESSION_MGR: creating session with session uuid: '6d04a3e9-ade5-4ab9-8d63-1f78fcd2ec76' and name 'default'
-Sat Jan 27 06:40:30 2024: Attempting to start server on port '35103'
-Sat Jan 27 06:40:30 2024: XCD main fifo: created main fifo '/tmp/xcdmaine32a7746-b41c-490f-9eb6-1df9a6ccbe80', fd read = 13
-Sat Jan 27 06:40:30 2024: Running Dispatch Server
-Sat Jan 27 06:40:30 2024: Version 2.2.0
-Sat Jan 27 06:40:39 2024: Dispatch Server: Accepted socket connection from client
-Sat Jan 27 06:40:39 2024: Starting Socket connection
-Sat Jan 27 06:40:39 2024: EXCHANGE_TOKEN received, server token: e32a7746-b41c-490f-9eb6-1df9a6ccbe80, passed token: e32a7746-b41c-490f-9eb6-1df9a6ccbe80
-Sat Jan 27 06:40:39 2024: DISPATCH_HANDLER: Adding handler from function makeHandler in library libxv_system_diagram
-Sat Jan 27 06:40:39 2024: SESSION_MGR: creating session with session uuid: 'edf4509a-3b4b-4196-8e48-db447d5775b2' and name 'v++_compile_alveo_hls4ml'
-Sat Jan 27 06:40:39 2024: KERNEL_SVC: creating session with uuid: 'edf4509a-3b4b-4196-8e48-db447d5775b2' and name 'v++_compile_alveo_hls4ml'
-Sat Jan 27 06:40:39 2024: GUIDANCE_SMGR: creating guidance session with uuid: 'edf4509a-3b4b-4196-8e48-db447d5775b2' and name 'v++_compile_alveo_hls4ml'
-Sat Jan 27 06:40:39 2024: SYSTEM_DIAGRAM: creating session with uuid: 'edf4509a-3b4b-4196-8e48-db447d5775b2' and name 'v++_compile_alveo_hls4ml'
-Sat Jan 27 06:40:49 2024: Dispatch Server: Accepted socket connection from client
-Sat Jan 27 06:40:49 2024: Starting Socket connection
-Sat Jan 27 06:41:07 2024: SESSION_MGR: closing session for UUID 'edf4509a-3b4b-4196-8e48-db447d5775b2' with name 'v++_compile_alveo_hls4ml'
-Sat Jan 27 06:41:07 2024: KERNEL_SVC: closing session for UUID 'edf4509a-3b4b-4196-8e48-db447d5775b2' with name 'v++_compile_alveo_hls4ml'
-Sat Jan 27 06:41:07 2024: GUIDANCE_SMGR: closing session for UUID 'edf4509a-3b4b-4196-8e48-db447d5775b2' with name 'v++_compile_alveo_hls4ml'
-Sat Jan 27 06:41:07 2024: SYSTEM_DIAGRAM: closing session for UUID 'edf4509a-3b4b-4196-8e48-db447d5775b2' with name 'v++_compile_alveo_hls4ml'
-Sat Jan 27 06:41:07 2024: STOP_SERVER received, server token: e32a7746-b41c-490f-9eb6-1df9a6ccbe80, passed token: e32a7746-b41c-490f-9eb6-1df9a6ccbe80
-Sat Jan 27 06:41:07 2024: Socket received request to stop server.
-Sat Jan 27 06:41:07 2024: Dispatch Server: do_await_stop
-Sat Jan 27 06:41:07 2024: Dispatch Server: stopping mainFifo_
-Sat Jan 27 06:41:07 2024: XCD main fifo: Stopping
-Sat Jan 27 06:41:07 2024: XCD main fifo: do_read error code: Operation canceled
-Sat Jan 27 06:41:07 2024: XCD main fifo: bytes_transferred: 0
-Sat Jan 27 06:41:07 2024: SERVER: destructor for server bound to port 35103
-Sat Jan 27 06:41:07 2024: XCD main fifo: Good unlink of /tmp/xcdmaine32a7746-b41c-490f-9eb6-1df9a6ccbe80
-Sat Jan 27 06:41:07 2024: Server exiting with status 0.
-Sat Jan 27 06:41:07 2024: Closing log file.
+Tue Jan 30 04:33:50 2024: Running xcd server. This server was built by gradle.
+Tue Jan 30 04:33:50 2024: Server was asked to start on port: '44569'
+Tue Jan 30 04:33:50 2024: Server is using token UUID: '1a2b97d6-784e-4640-8872-5b43a7d3758d'
+Tue Jan 30 04:33:50 2024: SESSION_MGR: creating session with session uuid: '6d04a3e9-ade5-4ab9-8d63-1f78fcd2ec76' and name 'default'
+Tue Jan 30 04:33:50 2024: Attempting to start server on port '44569'
+Tue Jan 30 04:33:50 2024: XCD main fifo: created main fifo '/tmp/xcdmain1a2b97d6-784e-4640-8872-5b43a7d3758d', fd read = 12
+Tue Jan 30 04:33:50 2024: Running Dispatch Server
+Tue Jan 30 04:33:50 2024: Version 2.2.0
+Tue Jan 30 04:33:56 2024: Dispatch Server: Accepted socket connection from client
+Tue Jan 30 04:33:56 2024: Starting Socket connection
+Tue Jan 30 04:33:56 2024: EXCHANGE_TOKEN received, server token: 1a2b97d6-784e-4640-8872-5b43a7d3758d, passed token: 1a2b97d6-784e-4640-8872-5b43a7d3758d
+Tue Jan 30 04:33:58 2024: DISPATCH_HANDLER: Adding handler from function makeHandler in library libxv_system_diagram
+Tue Jan 30 04:33:58 2024: SESSION_MGR: creating session with session uuid: '883c2c98-6d12-4a14-938a-37b0f748136e' and name 'v++_compile_alveo_hls4ml'
+Tue Jan 30 04:33:58 2024: KERNEL_SVC: creating session with uuid: '883c2c98-6d12-4a14-938a-37b0f748136e' and name 'v++_compile_alveo_hls4ml'
+Tue Jan 30 04:33:58 2024: GUIDANCE_SMGR: creating guidance session with uuid: '883c2c98-6d12-4a14-938a-37b0f748136e' and name 'v++_compile_alveo_hls4ml'
+Tue Jan 30 04:33:58 2024: SYSTEM_DIAGRAM: creating session with uuid: '883c2c98-6d12-4a14-938a-37b0f748136e' and name 'v++_compile_alveo_hls4ml'
+Tue Jan 30 04:41:47 2024: Dispatch Server: Accepted socket connection from client
+Tue Jan 30 04:41:47 2024: Starting Socket connection
+Tue Jan 30 04:43:15 2024: SESSION_MGR: closing session for UUID '883c2c98-6d12-4a14-938a-37b0f748136e' with name 'v++_compile_alveo_hls4ml'
+Tue Jan 30 04:43:15 2024: KERNEL_SVC: closing session for UUID '883c2c98-6d12-4a14-938a-37b0f748136e' with name 'v++_compile_alveo_hls4ml'
+Tue Jan 30 04:43:15 2024: GUIDANCE_SMGR: closing session for UUID '883c2c98-6d12-4a14-938a-37b0f748136e' with name 'v++_compile_alveo_hls4ml'
+Tue Jan 30 04:43:17 2024: SYSTEM_DIAGRAM: closing session for UUID '883c2c98-6d12-4a14-938a-37b0f748136e' with name 'v++_compile_alveo_hls4ml'
+Tue Jan 30 04:43:17 2024: STOP_SERVER received, server token: 1a2b97d6-784e-4640-8872-5b43a7d3758d, passed token: 1a2b97d6-784e-4640-8872-5b43a7d3758d
+Tue Jan 30 04:43:17 2024: Socket received request to stop server.
+Tue Jan 30 04:43:17 2024: Dispatch Server: do_await_stop
+Tue Jan 30 04:43:17 2024: Dispatch Server: stopping mainFifo_
+Tue Jan 30 04:43:17 2024: XCD main fifo: Stopping
+Tue Jan 30 04:43:17 2024: XCD main fifo: do_read error code: Operation canceled
+Tue Jan 30 04:43:17 2024: XCD main fifo: bytes_transferred: 0
+Tue Jan 30 04:43:17 2024: SERVER: destructor for server bound to port 44569
+Tue Jan 30 04:43:17 2024: XCD main fifo: Good unlink of /tmp/xcdmain1a2b97d6-784e-4640-8872-5b43a7d3758d
+Tue Jan 30 04:43:17 2024: Server exiting with status 0.
+Tue Jan 30 04:43:17 2024: Closing log file.

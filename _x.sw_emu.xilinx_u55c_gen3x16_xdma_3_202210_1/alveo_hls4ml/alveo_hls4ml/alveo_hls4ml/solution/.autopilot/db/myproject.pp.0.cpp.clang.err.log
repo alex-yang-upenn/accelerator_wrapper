@@ -394,94 +394,76 @@ In file included from /home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense.
 In file included from /home/ayvol/accelerator_wrapper/src/myproject.cpp:4:
 In file included from /home/ayvol/accelerator_wrapper/src/parameters.h:12:
 In file included from /home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense.h:7:
-/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_resource.h:28:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=function_instantiate_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=dense_resource_rf_leq_nin_XLX_SEP_ PragmaOptions=variable=weights,biases_XLX_SEP_ [-Wdump-hls-pragmas]
-#pragma HLS function_instantiate variable=weights,biases
-        ^
-/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_resource.h:30:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=array_reshape_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=dense_resource_rf_leq_nin_XLX_SEP_ PragmaOptions=variable=weights block factor=block_factor_XLX_SEP_ [-Wdump-hls-pragmas]
-#pragma HLS ARRAY_RESHAPE variable=weights block factor=block_factor
-        ^
-/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_resource.h:31:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=array_partition_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=dense_resource_rf_leq_nin_XLX_SEP_ PragmaOptions=variable=biases complete_XLX_SEP_ [-Wdump-hls-pragmas]
+/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_resource.h:30:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=array_partition_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=dense_resource_rf_leq_nin_XLX_SEP_ PragmaOptions=variable=biases complete_XLX_SEP_ [-Wdump-hls-pragmas]
 #pragma HLS ARRAY_PARTITION variable=biases complete
         ^
-/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_resource.h:34:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=array_partition_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=dense_resource_rf_leq_nin_XLX_SEP_ PragmaOptions=variable=acc complete_XLX_SEP_ [-Wdump-hls-pragmas]
+/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_resource.h:33:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=array_partition_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=dense_resource_rf_leq_nin_XLX_SEP_ PragmaOptions=variable=acc complete_XLX_SEP_ [-Wdump-hls-pragmas]
 #pragma HLS ARRAY_PARTITION variable=acc complete
         ^
-/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_resource.h:38:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=unroll_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=dense_resource_rf_leq_nin_XLX_SEP_ PragmaOptions=_XLX_SEP_ [-Wdump-hls-pragmas]
+/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_resource.h:37:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=unroll_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=dense_resource_rf_leq_nin_XLX_SEP_ PragmaOptions=_XLX_SEP_ [-Wdump-hls-pragmas]
 #pragma HLS UNROLL
         ^
-/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_resource.h:44:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=pipeline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=dense_resource_rf_leq_nin_XLX_SEP_ PragmaOptions=II=1 rewind_XLX_SEP_ [-Wdump-hls-pragmas]
+/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_resource.h:43:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=pipeline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=dense_resource_rf_leq_nin_XLX_SEP_ PragmaOptions=II=1 rewind_XLX_SEP_ [-Wdump-hls-pragmas]
 #pragma HLS PIPELINE II=1 rewind
         ^
-/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_resource.h:53:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=unroll_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=dense_resource_rf_leq_nin_XLX_SEP_ PragmaOptions=_XLX_SEP_ [-Wdump-hls-pragmas]
+/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_resource.h:51:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=unroll_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=dense_resource_rf_leq_nin_XLX_SEP_ PragmaOptions=_XLX_SEP_ [-Wdump-hls-pragmas]
 #pragma HLS UNROLL
         ^
-/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_resource.h:78:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=unroll_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=dense_resource_rf_leq_nin_XLX_SEP_ PragmaOptions=_XLX_SEP_ [-Wdump-hls-pragmas]
+/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_resource.h:75:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=unroll_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=dense_resource_rf_leq_nin_XLX_SEP_ PragmaOptions=_XLX_SEP_ [-Wdump-hls-pragmas]
 #pragma HLS UNROLL
         ^
-/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_resource.h:99:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=function_instantiate_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=dense_resource_rf_gt_nin_rem0_XLX_SEP_ PragmaOptions=variable=weights,biases_XLX_SEP_ [-Wdump-hls-pragmas]
-#pragma HLS function_instantiate variable=weights,biases
-        ^
-/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_resource.h:101:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=array_reshape_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=dense_resource_rf_gt_nin_rem0_XLX_SEP_ PragmaOptions=variable=weights block factor=block_factor_XLX_SEP_ [-Wdump-hls-pragmas]
-#pragma HLS ARRAY_RESHAPE variable=weights block factor=block_factor
-        ^
-/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_resource.h:102:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=array_partition_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=dense_resource_rf_gt_nin_rem0_XLX_SEP_ PragmaOptions=variable=biases complete_XLX_SEP_ [-Wdump-hls-pragmas]
+/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_resource.h:98:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=array_partition_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=dense_resource_rf_gt_nin_rem0_XLX_SEP_ PragmaOptions=variable=biases complete_XLX_SEP_ [-Wdump-hls-pragmas]
 #pragma HLS ARRAY_PARTITION variable=biases complete
         ^
-/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_resource.h:105:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=array_partition_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=dense_resource_rf_gt_nin_rem0_XLX_SEP_ PragmaOptions=variable=acc complete_XLX_SEP_ [-Wdump-hls-pragmas]
+/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_resource.h:101:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=array_partition_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=dense_resource_rf_gt_nin_rem0_XLX_SEP_ PragmaOptions=variable=acc complete_XLX_SEP_ [-Wdump-hls-pragmas]
 #pragma HLS ARRAY_PARTITION variable=acc complete
         ^
-/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_resource.h:109:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=unroll_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=dense_resource_rf_gt_nin_rem0_XLX_SEP_ PragmaOptions=_XLX_SEP_ [-Wdump-hls-pragmas]
+/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_resource.h:105:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=unroll_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=dense_resource_rf_gt_nin_rem0_XLX_SEP_ PragmaOptions=_XLX_SEP_ [-Wdump-hls-pragmas]
 #pragma HLS UNROLL
         ^
-/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_resource.h:130:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=pipeline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=dense_resource_rf_gt_nin_rem0_XLX_SEP_ PragmaOptions=II=1 rewind_XLX_SEP_ [-Wdump-hls-pragmas]
+/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_resource.h:125:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=pipeline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=dense_resource_rf_gt_nin_rem0_XLX_SEP_ PragmaOptions=II=1 rewind_XLX_SEP_ [-Wdump-hls-pragmas]
 #pragma HLS PIPELINE II=1 rewind
         ^
-/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_resource.h:137:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=unroll_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=dense_resource_rf_gt_nin_rem0_XLX_SEP_ PragmaOptions=_XLX_SEP_ [-Wdump-hls-pragmas]
+/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_resource.h:131:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=unroll_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=dense_resource_rf_gt_nin_rem0_XLX_SEP_ PragmaOptions=_XLX_SEP_ [-Wdump-hls-pragmas]
 #pragma HLS UNROLL
         ^
-/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_resource.h:157:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=unroll_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=dense_resource_rf_gt_nin_rem0_XLX_SEP_ PragmaOptions=_XLX_SEP_ [-Wdump-hls-pragmas]
+/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_resource.h:150:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=unroll_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=dense_resource_rf_gt_nin_rem0_XLX_SEP_ PragmaOptions=_XLX_SEP_ [-Wdump-hls-pragmas]
 #pragma HLS UNROLL
         ^
-/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_resource.h:178:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=function_instantiate_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=dense_resource_rf_gt_nin_XLX_SEP_ PragmaOptions=variable=weights,biases_XLX_SEP_ [-Wdump-hls-pragmas]
-#pragma HLS function_instantiate variable=weights,biases
-        ^
-/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_resource.h:180:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=array_reshape_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=dense_resource_rf_gt_nin_XLX_SEP_ PragmaOptions=variable=weights block factor=block_factor_XLX_SEP_ [-Wdump-hls-pragmas]
-#pragma HLS ARRAY_RESHAPE variable=weights block factor=block_factor
-        ^
-/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_resource.h:181:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=array_partition_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=dense_resource_rf_gt_nin_XLX_SEP_ PragmaOptions=variable=biases complete_XLX_SEP_ [-Wdump-hls-pragmas]
+/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_resource.h:172:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=array_partition_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=dense_resource_rf_gt_nin_XLX_SEP_ PragmaOptions=variable=biases complete_XLX_SEP_ [-Wdump-hls-pragmas]
 #pragma HLS ARRAY_PARTITION variable=biases complete
         ^
-/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_resource.h:184:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=array_partition_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=dense_resource_rf_gt_nin_XLX_SEP_ PragmaOptions=variable=acc complete_XLX_SEP_ [-Wdump-hls-pragmas]
+/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_resource.h:175:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=array_partition_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=dense_resource_rf_gt_nin_XLX_SEP_ PragmaOptions=variable=acc complete_XLX_SEP_ [-Wdump-hls-pragmas]
 #pragma HLS ARRAY_PARTITION variable=acc complete
         ^
-/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_resource.h:188:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=unroll_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=dense_resource_rf_gt_nin_XLX_SEP_ PragmaOptions=_XLX_SEP_ [-Wdump-hls-pragmas]
+/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_resource.h:179:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=unroll_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=dense_resource_rf_gt_nin_XLX_SEP_ PragmaOptions=_XLX_SEP_ [-Wdump-hls-pragmas]
 #pragma HLS UNROLL
         ^
-/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_resource.h:194:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=pipeline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=dense_resource_rf_gt_nin_XLX_SEP_ PragmaOptions=II=1 rewind_XLX_SEP_ [-Wdump-hls-pragmas]
+/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_resource.h:185:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=pipeline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=dense_resource_rf_gt_nin_XLX_SEP_ PragmaOptions=II=1 rewind_XLX_SEP_ [-Wdump-hls-pragmas]
 #pragma HLS PIPELINE II=1 rewind
         ^
-/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_resource.h:196:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=array_partition_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=dense_resource_rf_gt_nin_XLX_SEP_ PragmaOptions=variable=tmpmult complete_XLX_SEP_ [-Wdump-hls-pragmas]
+/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_resource.h:187:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=array_partition_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=dense_resource_rf_gt_nin_XLX_SEP_ PragmaOptions=variable=tmpmult complete_XLX_SEP_ [-Wdump-hls-pragmas]
 #pragma HLS ARRAY_PARTITION variable=tmpmult complete
         ^
-/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_resource.h:200:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=unroll_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=dense_resource_rf_gt_nin_XLX_SEP_ PragmaOptions=_XLX_SEP_ [-Wdump-hls-pragmas]
+/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_resource.h:191:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=unroll_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=dense_resource_rf_gt_nin_XLX_SEP_ PragmaOptions=_XLX_SEP_ [-Wdump-hls-pragmas]
 #pragma HLS UNROLL
         ^
-/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_resource.h:210:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=array_partition_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=dense_resource_rf_gt_nin_XLX_SEP_ PragmaOptions=variable=mult complete_XLX_SEP_ [-Wdump-hls-pragmas]
+/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_resource.h:199:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=array_partition_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=dense_resource_rf_gt_nin_XLX_SEP_ PragmaOptions=variable=mult complete_XLX_SEP_ [-Wdump-hls-pragmas]
 #pragma HLS ARRAY_PARTITION variable=mult complete
         ^
-/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_resource.h:214:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=unroll_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=dense_resource_rf_gt_nin_XLX_SEP_ PragmaOptions=_XLX_SEP_ [-Wdump-hls-pragmas]
+/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_resource.h:203:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=unroll_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=dense_resource_rf_gt_nin_XLX_SEP_ PragmaOptions=_XLX_SEP_ [-Wdump-hls-pragmas]
 #pragma HLS UNROLL
         ^
-/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_resource.h:220:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=unroll_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=dense_resource_rf_gt_nin_XLX_SEP_ PragmaOptions=_XLX_SEP_ [-Wdump-hls-pragmas]
+/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_resource.h:209:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=unroll_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=dense_resource_rf_gt_nin_XLX_SEP_ PragmaOptions=_XLX_SEP_ [-Wdump-hls-pragmas]
 #pragma HLS UNROLL
         ^
-/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_resource.h:230:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=unroll_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=dense_resource_rf_gt_nin_XLX_SEP_ PragmaOptions=_XLX_SEP_ [-Wdump-hls-pragmas]
+/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_resource.h:219:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=unroll_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=dense_resource_rf_gt_nin_XLX_SEP_ PragmaOptions=_XLX_SEP_ [-Wdump-hls-pragmas]
 #pragma HLS UNROLL
         ^
-/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_resource.h:240:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=unroll_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=dense_resource_rf_gt_nin_XLX_SEP_ PragmaOptions=_XLX_SEP_ [-Wdump-hls-pragmas]
+/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_resource.h:227:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=unroll_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=dense_resource_rf_gt_nin_XLX_SEP_ PragmaOptions=_XLX_SEP_ [-Wdump-hls-pragmas]
 #pragma HLS UNROLL
         ^
-/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_resource.h:250:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=inline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=dense_resource_XLX_SEP_ PragmaOptions=recursive_XLX_SEP_ [-Wdump-hls-pragmas]
+/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_resource.h:237:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=inline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=dense_resource_XLX_SEP_ PragmaOptions=recursive_XLX_SEP_ [-Wdump-hls-pragmas]
 #pragma HLS INLINE recursive
         ^
 In file included from /home/ayvol/accelerator_wrapper/src/myproject.cpp:4:
@@ -526,29 +508,41 @@ In file included from /home/ayvol/accelerator_wrapper/src/parameters.h:13:
         ^
 In file included from /home/ayvol/accelerator_wrapper/src/myproject.cpp:4:
 In file included from /home/ayvol/accelerator_wrapper/src/parameters.h:14:
-/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:16:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=inline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=dense_wrapper_XLX_SEP_ PragmaOptions=recursive_XLX_SEP_ [-Wdump-hls-pragmas]
-#pragma HLS INLINE recursive
-        ^
-/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:18:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=pipeline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=dense_wrapper_XLX_SEP_ PragmaOptions=II=CONFIG_T::reuse_factor_XLX_SEP_ [-Wdump-hls-pragmas]
+/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:16:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=pipeline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=dense_latency_wrapper_XLX_SEP_ PragmaOptions=II=CONFIG_T::reuse_factor_XLX_SEP_ [-Wdump-hls-pragmas]
 #pragma HLS PIPELINE II=CONFIG_T::reuse_factor
         ^
-/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:30:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=array_partition_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=dense_XLX_SEP_ PragmaOptions=variable=data complete_XLX_SEP_ [-Wdump-hls-pragmas]
+/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:29:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=inline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=data_prepare_XLX_SEP_ PragmaOptions=_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS INLINE
+        ^
+/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:34:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=pipeline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=data_prepare_XLX_SEP_ PragmaOptions=_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS PIPELINE
+        ^
+/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:38:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=unroll_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=data_prepare_XLX_SEP_ PragmaOptions=_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS UNROLL
+        ^
+/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:46:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=unroll_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=data_prepare_XLX_SEP_ PragmaOptions=_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS UNROLL
+        ^
+/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:54:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=inline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=res_write_XLX_SEP_ PragmaOptions=_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS INLINE
+        ^
+/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:59:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=pipeline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=res_write_XLX_SEP_ PragmaOptions=_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS PIPELINE
+        ^
+/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:64:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=unroll_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=res_write_XLX_SEP_ PragmaOptions=_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS UNROLL
+        ^
+/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:74:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=unroll_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=res_write_XLX_SEP_ PragmaOptions=_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS UNROLL
+        ^
+/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:85:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=inline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=dense_XLX_SEP_ PragmaOptions=recursive_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS INLINE recursive
+        ^
+/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:88:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=array_partition_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=dense_XLX_SEP_ PragmaOptions=variable=data complete_XLX_SEP_ [-Wdump-hls-pragmas]
 #pragma HLS ARRAY_PARTITION variable=data complete
         ^
-/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:33:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=array_partition_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=dense_XLX_SEP_ PragmaOptions=variable=res complete_XLX_SEP_ [-Wdump-hls-pragmas]
+/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:91:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=array_partition_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=dense_XLX_SEP_ PragmaOptions=variable=res complete_XLX_SEP_ [-Wdump-hls-pragmas]
 #pragma HLS ARRAY_PARTITION variable=res complete
-        ^
-/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:38:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=pipeline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=dense_XLX_SEP_ PragmaOptions=_XLX_SEP_ [-Wdump-hls-pragmas]
-#pragma HLS PIPELINE
-        ^
-/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:43:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=unroll_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=dense_XLX_SEP_ PragmaOptions=_XLX_SEP_ [-Wdump-hls-pragmas]
-#pragma HLS UNROLL
-        ^
-/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:53:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=pipeline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=dense_XLX_SEP_ PragmaOptions=_XLX_SEP_ [-Wdump-hls-pragmas]
-#pragma HLS PIPELINE
-        ^
-/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:59:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=unroll_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=dense_XLX_SEP_ PragmaOptions=_XLX_SEP_ [-Wdump-hls-pragmas]
-#pragma HLS UNROLL
         ^
 /home/ayvol/accelerator_wrapper/src/myproject.cpp:12:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=array_reshape_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=myproject_XLX_SEP_ PragmaOptions=variable=fc1_input complete dim=0_XLX_SEP_ [-Wdump-hls-pragmas]
 #pragma HLS ARRAY_RESHAPE variable=fc1_input complete dim=0
@@ -583,4 +577,4 @@ In file included from /home/ayvol/accelerator_wrapper/src/parameters.h:14:
 /home/ayvol/accelerator_wrapper/src/myproject.cpp:64:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=array_partition_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=myproject_XLX_SEP_ PragmaOptions=variable=layer11_out complete dim=0_XLX_SEP_ [-Wdump-hls-pragmas]
 #pragma HLS ARRAY_PARTITION variable=layer11_out complete dim=0
         ^
-183 warnings generated.
+181 warnings generated.
