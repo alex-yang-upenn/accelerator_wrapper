@@ -45,13 +45,10 @@ BUILD_DIR := ./build_dir.$(TARGET).$(XSA)
 BIN_FILENAME := $(BUILD_DIR)/alveo_hls4ml.xclbin
 XO_CONTAINER_FILENAME := $(XO_DIR)/alveo_hls4ml.xo
 
-VPP := v++
-SDCARD := sd_card
-
 #--v--v--
 #these need to be set by the user for their specific installation
-HLS4ML_NAME := ereg_v1
-HLS4ML_PROJ_TYPE := DENSE
+HLS4ML_NAME := 
+HLS4ML_PROJ_TYPE := 
 #possible options are: DENSE, CONV1D
 #--^--^--
 ifeq ($(filter $(HLS4ML_PROJ_TYPE),DENSE CONV1D),)
@@ -90,7 +87,7 @@ endif
 
 EXECUTABLE = host
 EMCONFIG_DIR = $(XO_DIR)
-EMU_DIR = $(SDCARD)/data/emulation
+EMU_DIR = sd_card/data/emulation
 
 CP = cp -rf
 
@@ -106,10 +103,10 @@ build: $(BIN_FILENAME)
 # Building kernel
 $(XO_CONTAINER_FILENAME): src/alveo_hls4ml.cpp
 	mkdir -p $(XO_DIR)
-	$(VPP) $(CLFLAGS) --temp_dir $(XO_DIR) -c -k alveo_hls4ml -I'$(<D)' -o'$@' '$<' $(KERN_SRCS) $(KERN_MACROS) -I./src/ -I./src/weights -I./src/nnet_utils/ --config config.ini
+	v++ $(CLFLAGS) --temp_dir $(XO_DIR) -c -k alveo_hls4ml -I'$(<D)' -o'$@' '$<' $(KERN_SRCS) $(KERN_MACROS) -I./src/ -I./src/weights -I./src/nnet_utils/ --config config.ini
 $(BIN_FILENAME): $(XO_CONTAINER_FILENAME)
 	mkdir -p $(BUILD_DIR)
-	$(VPP) $(CLFLAGS) --temp_dir $(BUILD_DIR) -l $(LDCLFLAGS) -o'$@' $(+) --config config.ini
+	v++ $(CLFLAGS) --temp_dir $(BUILD_DIR) -l $(LDCLFLAGS) -o'$@' $(+) --config config.ini
 
 # Building Host
 $(EXECUTABLE): check-xrt $(HOST_SRCS) $(HOST_HDRS)
@@ -127,8 +124,8 @@ ifeq ($(HOST_ARCH), x86)
 else
 	mkdir -p $(EMU_DIR)
 	$(CP) $(XILINX_VITIS)/data/emulation/unified $(EMU_DIR)
-	mkfatimg $(SDCARD) $(SDCARD).img 500000
-	launch_emulator -no-reboot -runtime ocl -t $(TARGET) -sd-card-image $(SDCARD).img -device-family $(DEV_FAM)
+	mkfatimg sd_card sd_card.img 500000
+	launch_emulator -no-reboot -runtime ocl -t $(TARGET) -sd-card-image sd_card.img -device-family $(DEV_FAM)
 endif
 else
 ifeq ($(HOST_ARCH), x86)
@@ -141,18 +138,18 @@ endif
 
 sd_card: $(EXECUTABLE) $(BIN_FILENAME) emconfig
 ifneq ($(HOST_ARCH), x86)
-	mkdir -p $(SDCARD)/$(BUILD_DIR)
-	$(CP) $(B_NAME)/sw/$(XSA)/boot/generic.readme $(B_NAME)/sw/$(XSA)/xrt/image/* xrt.ini $(EXECUTABLE) $(SDCARD)
-	$(CP) $(BUILD_DIR)/*.xclbin $(SDCARD)/$(BUILD_DIR)/
+	mkdir -p sd_card/$(BUILD_DIR)
+	$(CP) $(B_NAME)/sw/$(XSA)/boot/generic.readme $(B_NAME)/sw/$(XSA)/xrt/image/* xrt.ini $(EXECUTABLE) sd_card
+	$(CP) $(BUILD_DIR)/*.xclbin sd_card/$(BUILD_DIR)/
 ifeq ($(TARGET),$(filter $(TARGET),sw_emu hw_emu))
-	$(ECHO) 'cd /mnt/' >> $(SDCARD)/init.sh
-	$(ECHO) 'export XILINX_VITIS=$$PWD' >> $(SDCARD)/init.sh
-	$(ECHO) 'export XCL_EMULATION_MODE=$(TARGET)' >> $(SDCARD)/init.sh
-	$(ECHO) './$(EXECUTABLE) $(BIN_FILENAME)' >> $(SDCARD)/init.sh
-	$(ECHO) 'reboot' >> $(SDCARD)/init.sh
+	$(ECHO) 'cd /mnt/' >> sd_card/init.sh
+	$(ECHO) 'export XILINX_VITIS=$$PWD' >> sd_card/init.sh
+	$(ECHO) 'export XCL_EMULATION_MODE=$(TARGET)' >> sd_card/init.sh
+	$(ECHO) './$(EXECUTABLE) $(BIN_FILENAME)' >> sd_card/init.sh
+	$(ECHO) 'reboot' >> sd_card/init.sh
 else
-	[ -f $(SDCARD)/BOOT.BIN ] && echo "INFO: BOOT.BIN already exists" || $(CP) $(BUILD_DIR)/sd_card/BOOT.BIN $(SDCARD)/
-	$(ECHO) './$(EXECUTABLE) $(BIN_FILENAME)' >> $(SDCARD)/init.sh
+	[ -f sd_card/BOOT.BIN ] && echo "INFO: BOOT.BIN already exists" || $(CP) $(BUILD_DIR)/sd_card/BOOT.BIN sd_card/
+	$(ECHO) './$(EXECUTABLE) $(BIN_FILENAME)' >> sd_card/init.sh
 endif
 endif
 
