@@ -1,0 +1,172 @@
+
+*** Running vitis_hls
+    with args -f alveo_hls4ml.tcl -messageDb vitis_hls.pb
+
+
+****** Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2022.2 (64-bit)
+  **** SW Build 3670227 on Oct 13 2022
+  **** IP Build 3669848 on Fri Oct 14 08:30:02 MDT 2022
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+
+source /tools/Xilinx/Vitis_HLS/2022.2/scripts/vitis_hls/hls.tcl -notrace
+INFO: [HLS 200-10] Running '/tools/Xilinx/Vitis_HLS/2022.2/bin/unwrapped/lnx64.o/vitis_hls'
+/tools/Xilinx/Vitis_HLS/2022.2/tps/tcl/tcl8.5/tzdata/UTC can't be opened.
+INFO: [HLS 200-10] For user 'user' on host 'egl' (Linux_x86_64 version 5.10.187.release.2.9.0r4-amd64) on Tue Jan 30 04:48:34 UTC 2024
+INFO: [HLS 200-10] On os Ubuntu 20.04.4 LTS
+INFO: [HLS 200-10] In directory '/home/ayvol/accelerator_wrapper/_x.sw_emu.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml'
+Sourcing Tcl script 'alveo_hls4ml.tcl'
+INFO: [HLS 200-1510] Running: open_project alveo_hls4ml 
+INFO: [HLS 200-10] Creating and opening project '/home/ayvol/accelerator_wrapper/_x.sw_emu.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml'.
+INFO: [HLS 200-1510] Running: set_top alveo_hls4ml 
+INFO: [HLS 200-1510] Running: add_files /home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp -cflags  -g -D MYPROJ=ereg_v1 -D IS_DENSE -I /home/ayvol/accelerator_wrapper/src -I /home/ayvol/accelerator_wrapper/src -I /home/ayvol/accelerator_wrapper/src/weights -I /home/ayvol/accelerator_wrapper/src/nnet_utils -std=c++11 
+INFO: [HLS 200-10] Adding design file '/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files /home/ayvol/accelerator_wrapper/src/ereg_v1.cpp -cflags  -g -D MYPROJ=ereg_v1 -D IS_DENSE -I /home/ayvol/accelerator_wrapper/src -I /home/ayvol/accelerator_wrapper/src -I /home/ayvol/accelerator_wrapper/src/weights -I /home/ayvol/accelerator_wrapper/src/nnet_utils -std=c++11 
+INFO: [HLS 200-10] Adding design file '/home/ayvol/accelerator_wrapper/src/ereg_v1.cpp' to the project
+INFO: [HLS 200-1510] Running: open_solution -flow_target vitis solution 
+INFO: [HLS 200-10] Creating and opening solution '/home/ayvol/accelerator_wrapper/_x.sw_emu.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml/solution'.
+INFO: [HLS 200-1505] Using flow_target 'vitis'
+Resolution: For help on HLS 200-1505 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.2;t=hls+guidance;d=200-1505.html
+INFO: [HLS 200-435] Setting 'open_solution -flow_target vitis' configuration: config_interface -m_axi_latency=64
+INFO: [HLS 200-435] Setting 'open_solution -flow_target vitis' configuration: config_interface -m_axi_alignment_byte_size=64
+INFO: [HLS 200-435] Setting 'open_solution -flow_target vitis' configuration: config_interface -m_axi_max_widen_bitwidth=512
+INFO: [HLS 200-435] Setting 'open_solution -flow_target vitis' configuration: config_rtl -register_reset_num=3
+INFO: [HLS 200-1510] Running: set_part xcu55c-fsvh2892-2L-e 
+INFO: [HLS 200-1611] Setting target device to 'xcu55c-fsvh2892-2L-e'
+INFO: [HLS 200-1510] Running: create_clock -period 300.000000MHz -name default 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 3.333ns.
+INFO: [HLS 200-1510] Running: config_rtl -kernel_profile 
+INFO: [HLS 200-1510] Running: config_dataflow -strict_mode warning 
+INFO: [HLS 200-1510] Running: config_debug -enable 
+INFO: [HLS 200-1510] Running: config_export -deadlock_detection none 
+WARNING: [HLS 200-483] The 'config_export -deadlock_detection' command is deprecated and will be removed in a future release. Use 'config_rtl -deadlock_detection' as its replacement.
+INFO: [HLS 200-1907] Replacing 'config_export -deadlock_detection=none' with 'config_rtl -deadlock_detection=none' in current solution file
+INFO: [HLS 200-1510] Running: config_interface -m_axi_conservative_mode=1 
+INFO: [HLS 200-1510] Running: config_interface -m_axi_addr64 
+INFO: [HLS 200-1510] Running: config_interface -m_axi_auto_max_ports=0 
+INFO: [HLS 200-1510] Running: config_export -format xo -ipname alveo_hls4ml 
+INFO: [HLS 200-1907] Replacing 'config_export -deadlock_detection=none' with 'config_rtl -deadlock_detection=none' in current solution file
+INFO: [HLS 200-1510] Running: config_interface -m_axi_auto_max_ports=true 
+INFO: [HLS 200-1510] Running: config_interface -m_axi_offset slave 
+INFO: [HLS 200-1510] Running: csynth_design -synthesis_check 
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0.01 seconds. CPU system time: 0 seconds. Elapsed time: 0.01 seconds; current allocated memory: 754.215 MB.
+INFO: [HLS 200-10] Analyzing design file '/home/ayvol/accelerator_wrapper/src/ereg_v1.cpp' ... 
+WARNING: [HLS 207-5555] unexpected pragma argument 'product', expects function/operation (/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense.h:132:34)
+WARNING: [HLS 207-5527] 'Resource pragma' is deprecated, use 'bind_op/bind_storage pragma' instead (/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense.h:155:9)
+WARNING: [HLS 207-5555] unexpected pragma argument 'product', expects function/operation (/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense.h:168:34)
+WARNING: [HLS 207-5528] 'region' in '#pragma HLS Inline' is deprecated, use 'Inline Pragma' instead (/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_large.h:271:26)
+WARNING: [HLS 207-5506] the pragma is not supported and will be ignored (/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_compressed.h:56:9)
+WARNING: [HLS 207-5555] unexpected pragma argument 'mul', expects function/operation (/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv.h:110:34)
+WARNING: [HLS 207-5555] unexpected pragma argument 'mul', expects function/operation (/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv2d.h:126:34)
+WARNING: [HLS 207-5555] unexpected pragma argument 'mul', expects function/operation (/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv2d.h:242:34)
+WARNING: [HLS 207-5555] unexpected pragma argument 'mul', expects function/operation (/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_batchnorm.h:71:34)
+WARNING: [HLS 207-5555] unexpected pragma argument 'pool_op', expects function/operation (/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_pooling.h:141:34)
+WARNING: [HLS 207-5555] unexpected pragma argument 'pool_op', expects function/operation (/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_pooling.h:192:34)
+WARNING: [HLS 207-5560] Only for/while/do support the pipeline  pragma (/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_batchnorm.h:64:9)
+WARNING: [HLS 207-5558] Only for-loops and functions support the dataflow (/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_batchnorm.h:76:9)
+WARNING: [HLS 207-5559] Only for/while loops support the 'Unroll ' (/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_batchnorm.h:82:9)
+WARNING: [HLS 207-5560] Only for/while/do support the pipeline  pragma (/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_batchnorm.h:83:9)
+WARNING: [HLS 207-5560] Only for/while/do support the pipeline  pragma (/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense.h:124:9)
+WARNING: [HLS 207-5558] Only for-loops and functions support the dataflow (/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense.h:151:9)
+WARNING: [HLS 207-5560] Only for/while/do support the pipeline  pragma (/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense.h:162:9)
+WARNING: [HLS 207-5559] Only for/while loops support the 'Unroll ' (/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense.h:178:9)
+WARNING: [HLS 207-5560] Only for/while/do support the pipeline  pragma (/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense.h:186:9)
+WARNING: [HLS 207-5559] Only for/while loops support the 'Unroll ' (/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense.h:197:9)
+WARNING: [HLS 207-5560] Only for/while/do support the pipeline  pragma (/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_activation.h:74:9)
+WARNING: [HLS 207-5560] Only for/while/do support the pipeline  pragma (/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_activation.h:80:9)
+INFO: [HLS 200-10] Analyzing design file '/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp' ... 
+WARNING: [HLS 207-5555] unexpected pragma argument 'product', expects function/operation (/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense.h:132:34)
+WARNING: [HLS 207-5527] 'Resource pragma' is deprecated, use 'bind_op/bind_storage pragma' instead (/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense.h:155:9)
+WARNING: [HLS 207-5555] unexpected pragma argument 'product', expects function/operation (/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense.h:168:34)
+WARNING: [HLS 207-5528] 'region' in '#pragma HLS Inline' is deprecated, use 'Inline Pragma' instead (/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_large.h:271:26)
+WARNING: [HLS 207-5506] the pragma is not supported and will be ignored (/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_compressed.h:56:9)
+WARNING: [HLS 207-5555] unexpected pragma argument 'mul', expects function/operation (/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv.h:110:34)
+WARNING: [HLS 207-5555] unexpected pragma argument 'mul', expects function/operation (/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv2d.h:126:34)
+WARNING: [HLS 207-5555] unexpected pragma argument 'mul', expects function/operation (/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv2d.h:242:34)
+WARNING: [HLS 207-5555] unexpected pragma argument 'mul', expects function/operation (/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_batchnorm.h:71:34)
+WARNING: [HLS 207-5555] unexpected pragma argument 'pool_op', expects function/operation (/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_pooling.h:141:34)
+WARNING: [HLS 207-5555] unexpected pragma argument 'pool_op', expects function/operation (/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_pooling.h:192:34)
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 9.5 seconds. CPU system time: 1.23 seconds. Elapsed time: 28.71 seconds; current allocated memory: 761.672 MB.
+INFO: [HLS 200-777] Using interface defaults for 'Vitis' flow target.
+INFO: [HLS 214-291] Loop 'anonymous' is marked as complete unroll implied by the pipeline pragma (/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:67:2)
+INFO: [HLS 214-291] Loop 'anonymous' is marked as complete unroll implied by the pipeline pragma (/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:52:2)
+INFO: [HLS 214-291] Loop 'anonymous' is marked as complete unroll implied by the pipeline pragma (/home/ayvol/accelerator_wrapper/src/ereg_v1.cpp:113:15)
+INFO: [HLS 214-291] Loop 'anonymous' is marked as complete unroll implied by the pipeline pragma (/home/ayvol/accelerator_wrapper/src/ereg_v1.cpp:109:14)
+INFO: [HLS 214-291] Loop 'anonymous' is marked as complete unroll implied by the pipeline pragma (/home/ayvol/accelerator_wrapper/src/ereg_v1.cpp:105:14)
+INFO: [HLS 214-291] Loop 'anonymous' is marked as complete unroll implied by the pipeline pragma (/home/ayvol/accelerator_wrapper/src/ereg_v1.cpp:101:14)
+INFO: [HLS 214-291] Loop 'anonymous' is marked as complete unroll implied by the pipeline pragma (/home/ayvol/accelerator_wrapper/src/ereg_v1.cpp:97:14)
+INFO: [HLS 214-291] Loop 'anonymous' is marked as complete unroll implied by the pipeline pragma (/home/ayvol/accelerator_wrapper/src/ereg_v1.cpp:93:14)
+INFO: [HLS 214-291] Loop 'anonymous' is marked as complete unroll implied by the pipeline pragma (/home/ayvol/accelerator_wrapper/src/ereg_v1.cpp:89:14)
+INFO: [HLS 214-291] Loop 'anonymous' is marked as complete unroll implied by the pipeline pragma (/home/ayvol/accelerator_wrapper/src/ereg_v1.cpp:85:14)
+INFO: [HLS 214-291] Loop 'anonymous' is marked as complete unroll implied by the pipeline pragma (/home/ayvol/accelerator_wrapper/src/ereg_v1.cpp:81:11)
+INFO: [HLS 214-291] Loop 'Result' is marked as complete unroll implied by the pipeline pragma (/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense.h:195:13)
+INFO: [HLS 214-291] Loop 'Accum1' is marked as complete unroll implied by the pipeline pragma (/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense.h:184:13)
+INFO: [HLS 214-291] Loop 'Accum2' is marked as complete unroll implied by the pipeline pragma (/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense.h:188:17)
+INFO: [HLS 214-291] Loop 'ResetAccum' is marked as complete unroll implied by the pipeline pragma (/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense.h:176:17)
+INFO: [HLS 214-291] Loop 'Product1' is marked as complete unroll implied by the pipeline pragma (/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense.h:160:15)
+INFO: [HLS 214-291] Loop 'Product2' is marked as complete unroll implied by the pipeline pragma (/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense.h:165:19)
+INFO: [HLS 214-291] Loop 'anonymous' is marked as complete unroll implied by the pipeline pragma (/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense.h:115:32)
+INFO: [HLS 214-291] Loop 'anonymous' is marked as complete unroll implied by the pipeline pragma (/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense.h:114:32)
+INFO: [HLS 214-291] Loop 'anonymous' is marked as complete unroll implied by the pipeline pragma (/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_activation.h:78:5)
+INFO: [HLS 214-291] Loop 'Result' is marked as complete unroll implied by the pipeline pragma (/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_batchnorm.h:80:13)
+INFO: [HLS 214-186] Unrolling loop 'anonymous' (/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:67:2) in function 'alveo_hls4ml' completely with a factor of 1 (/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:40:0)
+INFO: [HLS 214-186] Unrolling loop 'anonymous' (/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:52:2) in function 'alveo_hls4ml' completely with a factor of 18 (/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:40:0)
+INFO: [HLS 214-186] Unrolling loop 'anonymous' (/home/ayvol/accelerator_wrapper/src/ereg_v1.cpp:113:15) in function 'ereg_v1' completely with a factor of 3 (/home/ayvol/accelerator_wrapper/src/ereg_v1.cpp:44:0)
+INFO: [HLS 214-186] Unrolling loop 'anonymous' (/home/ayvol/accelerator_wrapper/src/ereg_v1.cpp:109:14) in function 'ereg_v1' completely with a factor of 3 (/home/ayvol/accelerator_wrapper/src/ereg_v1.cpp:44:0)
+INFO: [HLS 214-186] Unrolling loop 'anonymous' (/home/ayvol/accelerator_wrapper/src/ereg_v1.cpp:105:14) in function 'ereg_v1' completely with a factor of 11 (/home/ayvol/accelerator_wrapper/src/ereg_v1.cpp:44:0)
+INFO: [HLS 214-186] Unrolling loop 'anonymous' (/home/ayvol/accelerator_wrapper/src/ereg_v1.cpp:101:14) in function 'ereg_v1' completely with a factor of 11 (/home/ayvol/accelerator_wrapper/src/ereg_v1.cpp:44:0)
+INFO: [HLS 214-186] Unrolling loop 'anonymous' (/home/ayvol/accelerator_wrapper/src/ereg_v1.cpp:97:14) in function 'ereg_v1' completely with a factor of 11 (/home/ayvol/accelerator_wrapper/src/ereg_v1.cpp:44:0)
+INFO: [HLS 214-186] Unrolling loop 'anonymous' (/home/ayvol/accelerator_wrapper/src/ereg_v1.cpp:93:14) in function 'ereg_v1' completely with a factor of 31 (/home/ayvol/accelerator_wrapper/src/ereg_v1.cpp:44:0)
+INFO: [HLS 214-186] Unrolling loop 'anonymous' (/home/ayvol/accelerator_wrapper/src/ereg_v1.cpp:89:14) in function 'ereg_v1' completely with a factor of 31 (/home/ayvol/accelerator_wrapper/src/ereg_v1.cpp:44:0)
+INFO: [HLS 214-186] Unrolling loop 'anonymous' (/home/ayvol/accelerator_wrapper/src/ereg_v1.cpp:85:14) in function 'ereg_v1' completely with a factor of 31 (/home/ayvol/accelerator_wrapper/src/ereg_v1.cpp:44:0)
+INFO: [HLS 214-186] Unrolling loop 'anonymous' (/home/ayvol/accelerator_wrapper/src/ereg_v1.cpp:81:11) in function 'ereg_v1' completely with a factor of 18 (/home/ayvol/accelerator_wrapper/src/ereg_v1.cpp:44:0)
+INFO: [HLS 214-186] Unrolling loop 'Result' (/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense.h:195:13) in function 'nnet::dense_latency<ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, config11>' completely with a factor of 1 (/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense.h:112:0)
+INFO: [HLS 214-186] Unrolling loop 'Accum1' (/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense.h:184:13) in function 'nnet::dense_latency<ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, config11>' completely with a factor of 3 (/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense.h:112:0)
+INFO: [HLS 214-186] Unrolling loop 'Accum2' (/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense.h:188:17) in function 'nnet::dense_latency<ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, config11>' completely with a factor of 1 (/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense.h:112:0)
+INFO: [HLS 214-186] Unrolling loop 'ResetAccum' (/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense.h:176:17) in function 'nnet::dense_latency<ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, config11>' completely with a factor of 1 (/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense.h:112:0)
+INFO: [HLS 214-186] Unrolling loop 'Product1' (/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense.h:160:15) in function 'nnet::dense_latency<ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, config11>' completely with a factor of 3 (/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense.h:112:0)
+INFO: [HLS 214-186] Unrolling loop 'Product2' (/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense.h:165:19) in function 'nnet::dense_latency<ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, config11>' completely with a factor of 1 (/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense.h:112:0)
+INFO: [HLS 214-186] Unrolling loop 'anonymous' (/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense.h:115:32) in function 'nnet::dense_latency<ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, config11>' completely with a factor of 1 (/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense.h:112:0)
+INFO: [HLS 214-186] Unrolling loop 'anonymous' (/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense.h:114:32) in function 'nnet::dense_latency<ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, config11>' completely with a factor of 3 (/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense.h:112:0)
+INFO: [HLS 214-186] Unrolling loop 'anonymous' (/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_activation.h:78:5) in function 'nnet::relu<ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, relu_config10>' completely with a factor of 3 (/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_activation.h:72:0)
+INFO: [HLS 214-186] Unrolling loop 'Result' (/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense.h:195:13) in function 'nnet::dense_latency<ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, config9>' completely with a factor of 3 (/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense.h:112:0)
+INFO: [HLS 214-186] Unrolling loop 'Accum1' (/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense.h:184:13) in function 'nnet::dense_latency<ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, config9>' completely with a factor of 11 (/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense.h:112:0)
+INFO: [HLS 214-186] Unrolling loop 'Accum2' (/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense.h:188:17) in function 'nnet::dense_latency<ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, config9>' completely with a factor of 3 (/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense.h:112:0)
+INFO: [HLS 214-186] Unrolling loop 'ResetAccum' (/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense.h:176:17) in function 'nnet::dense_latency<ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, config9>' completely with a factor of 3 (/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense.h:112:0)
+INFO: [HLS 214-186] Unrolling loop 'Product1' (/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense.h:160:15) in function 'nnet::dense_latency<ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, config9>' completely with a factor of 11 (/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense.h:112:0)
+INFO: [HLS 214-186] Unrolling loop 'Product2' (/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense.h:165:19) in function 'nnet::dense_latency<ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, config9>' completely with a factor of 3 (/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense.h:112:0)
+INFO: [HLS 214-186] Unrolling loop 'anonymous' (/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense.h:115:32) in function 'nnet::dense_latency<ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, config9>' completely with a factor of 3 (/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense.h:112:0)
+INFO: [HLS 214-186] Unrolling loop 'anonymous' (/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense.h:114:32) in function 'nnet::dense_latency<ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, config9>' completely with a factor of 33 (/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense.h:112:0)
+INFO: [HLS 214-186] Unrolling loop 'Result' (/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_batchnorm.h:80:13) in function 'nnet::normalize<ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, config8>' completely with a factor of 11 (/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_batchnorm.h:54:0)
+INFO: [HLS 214-186] Unrolling loop 'anonymous' (/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_activation.h:78:5) in function 'nnet::relu<ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, relu_config7>' completely with a factor of 11 (/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_activation.h:72:0)
+INFO: [HLS 214-186] Unrolling loop 'Result' (/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense.h:195:13) in function 'nnet::dense_latency<ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, config6>' completely with a factor of 11 (/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense.h:112:0)
+INFO: [HLS 214-186] Unrolling loop 'Accum1' (/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense.h:184:13) in function 'nnet::dense_latency<ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, config6>' completely with a factor of 31 (/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense.h:112:0)
+INFO: [HLS 214-186] Unrolling loop 'Accum2' (/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense.h:188:17) in function 'nnet::dense_latency<ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, config6>' completely with a factor of 11 (/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense.h:112:0)
+INFO: [HLS 214-186] Unrolling loop 'ResetAccum' (/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense.h:176:17) in function 'nnet::dense_latency<ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, config6>' completely with a factor of 11 (/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense.h:112:0)
+INFO: [HLS 214-186] Unrolling loop 'Product1' (/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense.h:160:15) in function 'nnet::dense_latency<ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, config6>' completely with a factor of 31 (/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense.h:112:0)
+INFO: [HLS 214-186] Unrolling loop 'Product2' (/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense.h:165:19) in function 'nnet::dense_latency<ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, config6>' completely with a factor of 11 (/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense.h:112:0)
+INFO: [HLS 214-186] Unrolling loop 'anonymous' (/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense.h:115:32) in function 'nnet::dense_latency<ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, config6>' completely with a factor of 11 (/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense.h:112:0)
+INFO: [HLS 214-186] Unrolling loop 'anonymous' (/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense.h:114:32) in function 'nnet::dense_latency<ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, config6>' completely with a factor of 341 (/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense.h:112:0)
+INFO: [HLS 214-186] Unrolling loop 'Result' (/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_batchnorm.h:80:13) in function 'nnet::normalize<ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, config5>' completely with a factor of 31 (/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_batchnorm.h:54:0)
+INFO: [HLS 214-186] Unrolling loop 'anonymous' (/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_activation.h:78:5) in function 'nnet::relu<ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, relu_config4>' completely with a factor of 31 (/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_activation.h:72:0)
+INFO: [HLS 214-186] Unrolling loop 'Result' (/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense.h:195:13) in function 'nnet::dense_latency<ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, config3>' completely with a factor of 31 (/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense.h:112:0)
+INFO: [HLS 214-186] Unrolling loop 'Accum1' (/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense.h:184:13) in function 'nnet::dense_latency<ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, config3>' completely with a factor of 18 (/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense.h:112:0)
+INFO: [HLS 214-186] Unrolling loop 'Accum2' (/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense.h:188:17) in function 'nnet::dense_latency<ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, config3>' completely with a factor of 31 (/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense.h:112:0)
+INFO: [HLS 214-186] Unrolling loop 'ResetAccum' (/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense.h:176:17) in function 'nnet::dense_latency<ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, config3>' completely with a factor of 31 (/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense.h:112:0)
+INFO: [HLS 214-186] Unrolling loop 'Product1' (/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense.h:160:15) in function 'nnet::dense_latency<ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, config3>' completely with a factor of 18 (/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense.h:112:0)
+INFO: [HLS 214-186] Unrolling loop 'Product2' (/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense.h:165:19) in function 'nnet::dense_latency<ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, config3>' completely with a factor of 31 (/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense.h:112:0)
+INFO: [HLS 214-186] Unrolling loop 'anonymous' (/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense.h:115:32) in function 'nnet::dense_latency<ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, config3>' completely with a factor of 31 (/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense.h:112:0)
+INFO: [HLS 214-186] Unrolling loop 'anonymous' (/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense.h:114:32) in function 'nnet::dense_latency<ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, config3>' completely with a factor of 558 (/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense.h:112:0)
+INFO: [HLS 214-186] Unrolling loop 'Result' (/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_batchnorm.h:80:13) in function 'nnet::normalize<ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, config2>' completely with a factor of 18 (/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_batchnorm.h:54:0)
+INFO: [HLS 214-178] Inlining function 'std::enable_if<!(std::is_same<ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_uint<1> >::value), ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0> >::type nnet::cast<ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, config3>(config3::accum_t)' into 'void nnet::dense_latency<ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, config3>(ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>*, ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>*, config3::weight_t*, config3::bias_t*)' (/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense.h:112:0)
+INFO: [HLS 214-178] Inlining function 'std::enable_if<!(std::is_same<ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_uint<1> >::value), ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0> >::type nnet::cast<ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, config6>(config6::accum_t)' into 'void nnet::dense_latency<ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, config6>(ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>*, ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>*, config6::weight_t*, config6::bias_t*)' (/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense.h:112:0)
+INFO: [HLS 214-178] Inlining function 'std::enable_if<!(std::is_same<ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_uint<1> >::value), ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0> >::type nnet::cast<ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, config9>(config9::accum_t)' into 'void nnet::dense_latency<ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, config9>(ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>*, ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>*, config9::weight_t*, config9::bias_t*)' (/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense.h:112:0)
+INFO: [HLS 214-178] Inlining function 'std::enable_if<!(std::is_same<ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_uint<1> >::value), ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0> >::type nnet::cast<ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, config11>(config11::accum_t)' into 'void nnet::dense_latency<ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, config11>(ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>*, ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>*, config11::weight_t*, config11::bias_t*)' (/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense.h:112:0)
+INFO: [HLS 214-178] Inlining function 'void nnet::relu<ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, relu_config10>(ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>*, ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>*)' into 'ereg_v1(ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>*, ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>*)' (/home/ayvol/accelerator_wrapper/src/ereg_v1.cpp:44:0)
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 17.63 seconds. CPU system time: 0.72 seconds. Elapsed time: 35.95 seconds; current allocated memory: 764.113 MB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0 seconds; current allocated memory: 764.113 MB.
+INFO: [HLS 200-1493] Running only source code synthesis checks, skipping scheduling and RTL generation.
+INFO: [HLS 200-111] Finished Command csynth_design CPU user time: 27.13 seconds. CPU system time: 1.99 seconds. Elapsed time: 66.83 seconds; current allocated memory: 9.898 MB.
+INFO: [HLS 200-1510] Running: close_project 
+HLS completed successfully
+INFO: [HLS 200-112] Total CPU user time: 29.81 seconds. Total CPU system time: 2.53 seconds. Total elapsed time: 248.93 seconds; peak allocated memory: 764.129 MB.
+INFO: [Common 17-206] Exiting vitis_hls at Tue Jan 30 04:52:39 2024...

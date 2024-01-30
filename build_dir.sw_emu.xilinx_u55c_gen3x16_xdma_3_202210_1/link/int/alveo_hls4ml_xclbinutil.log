@@ -1,0 +1,57 @@
+XRT Build Version: 2.15.225 (2023.1)
+       Build Date: 2023-05-03 10:13:38
+          Hash ID: adf27adb3cfadc6e4c41d6db814159f1329b24f3
+Creating a default 'in-memory' xclbin image.
+
+Section: 'BITSTREAM'(0) was successfully added.
+Size   : 1371680 bytes
+Format : RAW
+File   : '/home/ayvol/accelerator_wrapper/build_dir.sw_emu.xilinx_u55c_gen3x16_xdma_3_202210_1/link/int/alveo_hls4ml.so'
+
+Section: 'MEM_TOPOLOGY'(6) was successfully added.
+Format : JSON
+File   : 'mem_topology'
+
+Section: 'IP_LAYOUT'(8) was successfully added.
+Format : JSON
+File   : 'ip_layout'
+
+Section: 'CONNECTIVITY'(7) was successfully added.
+Format : JSON
+File   : 'connectivity'
+WARNING: Skipping CLOCK_FREQ_TOPOLOGY section for count size is zero.
+WARNING: Section 'CLOCK_FREQ_TOPOLOGY' content is empty.  No data in the given JSON file.
+
+Section: 'CLOCK_FREQ_TOPOLOGY'(11) was empty.  No action taken.
+Format : JSON
+File   : '/home/ayvol/accelerator_wrapper/build_dir.sw_emu.xilinx_u55c_gen3x16_xdma_3_202210_1/link/int/alveo_hls4ml_xml.rtd'
+
+Section: 'BUILD_METADATA'(14) was successfully added.
+Size   : 2662 bytes
+Format : JSON
+File   : '/home/ayvol/accelerator_wrapper/build_dir.sw_emu.xilinx_u55c_gen3x16_xdma_3_202210_1/link/int/alveo_hls4ml_build.rtd'
+
+Section: 'EMBEDDED_METADATA'(2) was successfully added.
+Size   : 2496 bytes
+Format : RAW
+File   : '/home/ayvol/accelerator_wrapper/build_dir.sw_emu.xilinx_u55c_gen3x16_xdma_3_202210_1/link/int/alveo_hls4ml.xml'
+
+Section: 'DEBUG_DATA'(4) was successfully added.
+Size   : 0 bytes
+Format : RAW
+File   : '/dev/null'
+
+Section: 'SYSTEM_METADATA'(22) was successfully added.
+Size   : 15101 bytes
+Format : RAW
+File   : '/home/ayvol/accelerator_wrapper/build_dir.sw_emu.xilinx_u55c_gen3x16_xdma_3_202210_1/link/int/systemDiagramModel.json'
+
+Section: 'PARTITION_METADATA'(20) was successfully appended to.
+Format : JSON
+File   : 'partition_metadata'
+
+Section: 'IP_LAYOUT'(8) was successfully appended to.
+Format : JSON
+File   : 'ip_layout'
+Successfully wrote (1420111 bytes) to the output file: /home/ayvol/accelerator_wrapper/build_dir.sw_emu.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml.xclbin
+Leaving xclbinutil.
