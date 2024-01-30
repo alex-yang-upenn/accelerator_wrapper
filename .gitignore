@@ -2,10 +2,11 @@
 .vscode/
 
 # Ignore build files
-build_dir.*/
-_x.*/
-*.log
-host
+# build_dir.*/
+# _x.*/
+# *.log
+# host
+u55c_executable_logfile.log
 
 # Ignore server files
 .ipcache/
