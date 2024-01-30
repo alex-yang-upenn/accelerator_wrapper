@@ -1,8 +1,8 @@
 INFO: [v++ 60-1306] Additional information associated with this v++ compile can be found at:
 	Reports: /home/ayvol/accelerator_wrapper/_x.sw_emu.xilinx_u55c_gen3x16_xdma_3_202210_1/reports/alveo_hls4ml
 	Log files: /home/ayvol/accelerator_wrapper/_x.sw_emu.xilinx_u55c_gen3x16_xdma_3_202210_1/logs/alveo_hls4ml
-INFO: [v++ 60-1548] Creating build summary session with primary output /home/ayvol/accelerator_wrapper/_x.sw_emu.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml.xo.compile_summary, at Sat Jan 27 06:14:14 2024
-INFO: [v++ 60-1315] Creating rulecheck session with output '/home/ayvol/accelerator_wrapper/_x.sw_emu.xilinx_u55c_gen3x16_xdma_3_202210_1/reports/alveo_hls4ml/v++_compile_alveo_hls4ml_guidance.html', at Sat Jan 27 06:14:14 2024
+INFO: [v++ 60-1548] Creating build summary session with primary output /home/ayvol/accelerator_wrapper/_x.sw_emu.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml.xo.compile_summary, at Tue Jan 30 05:01:11 2024
+INFO: [v++ 60-1315] Creating rulecheck session with output '/home/ayvol/accelerator_wrapper/_x.sw_emu.xilinx_u55c_gen3x16_xdma_3_202210_1/reports/alveo_hls4ml/v++_compile_alveo_hls4ml_guidance.html', at Tue Jan 30 05:01:11 2024
 INFO: [v++ 60-895]   Target platform: /opt/xilinx/platforms/xilinx_u55c_gen3x16_xdma_3_202210_1/xilinx_u55c_gen3x16_xdma_3_202210_1.xpfm
 INFO: [v++ 60-1578]   This platform contains Xilinx Shell Archive '/opt/xilinx/platforms/xilinx_u55c_gen3x16_xdma_3_202210_1/hw/hw.xsa'
 INFO: [v++ 74-78] Compiler Version string: 2022.2

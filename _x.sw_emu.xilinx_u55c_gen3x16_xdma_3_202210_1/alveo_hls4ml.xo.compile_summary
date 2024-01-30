@@ -9,10 +9,10 @@
 <ENTRY>
 {
  "type": "ET_CmdStep",
- "dateTimestamp": "Sat Jan 27 06:14:14 2024",
- "timestampMillis": "1706336054517",
+ "dateTimestamp": "Tue Jan 30 05:01:11 2024",
+ "timestampMillis": "1706590871826",
  "buildStep": {
-  "cmdId": "62335af8-662e-4010-b0f7-0acea0e7a933",
+  "cmdId": "69f7770d-0dcf-4872-ac13-9d3692905000",
   "name": "v++",
   "logFile": "/home/ayvol/accelerator_wrapper/_x.sw_emu.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml.steps.log",
   "commandLine": "/tools/Xilinx/Vitis/2022.2/bin/unwrapped/lnx64.o/v++  --vivado.prop \"run.__KERNEL__.{STEPS.SYNTH_DESIGN.ARGS.MORE OPTIONS}={-directive sdx_optimization_effort_high}\" --advanced.misc \"report=type report_timing_summary name impl_report_timing_summary_route_design_summary steps {route_design} runs {impl_1} options {-max_paths 10}\" --advanced.misc \"report=type report_timing_summary name impl_report_timing_summary_post_route_phys_opt_design_summary steps {post_route_phys_opt_design} runs {impl_1} options {-max_paths 10}\" -t sw_emu --platform xilinx_u55c_gen3x16_xdma_3_202210_1 --save-temps -g --temp_dir ./_x.sw_emu.xilinx_u55c_gen3x16_xdma_3_202210_1 -c -k alveo_hls4ml -Isrc -o_x.sw_emu.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml.xo src/alveo_hls4ml.cpp src/myproject.cpp -DMYPROJ=myproject -DIS_CONV1D -I./src/ -I./src/weights -I./src/nnet_utils/ --config config.ini ",
@@ -53,10 +53,10 @@
 <ENTRY>
 {
  "type": "ET_Status",
- "dateTimestamp": "Sat Jan 27 06:14:14 2024",
- "timestampMillis": "1706336054518",
+ "dateTimestamp": "Tue Jan 30 05:01:11 2024",
+ "timestampMillis": "1706590871826",
  "status": {
-  "cmdId": "62335af8-662e-4010-b0f7-0acea0e7a933",
+  "cmdId": "69f7770d-0dcf-4872-ac13-9d3692905000",
   "state": "CS_RUNNING"
  }
 }
@@ -64,8 +64,8 @@
 <ENTRY>
 {
  "type": "ET_FlowMetaData",
- "dateTimestamp": "Sat Jan 27 06:14:17 2024",
- "timestampMillis": "1706336057715",
+ "dateTimestamp": "Tue Jan 30 05:01:15 2024",
+ "timestampMillis": "1706590875100",
  "buildSummary": {
   "hardwarePlatform": "xilinx_u55c_gen3x16_xdma_3_202210_1.xpfm",
   "hardwareDsa": "",
@@ -101,10 +101,10 @@
 <ENTRY>
 {
  "type": "ET_SubCmdStep",
- "dateTimestamp": "Sat Jan 27 06:14:17 2024",
- "timestampMillis": "1706336057717",
+ "dateTimestamp": "Tue Jan 30 05:01:15 2024",
+ "timestampMillis": "1706590875103",
  "buildStep": {
-  "cmdId": "2a37647c-9350-406e-ac78-60e5190ab6cf",
+  "cmdId": "b729021b-5125-4291-9683-39439023ba77",
   "name": "vitis_hls",
   "logFile": "/home/ayvol/accelerator_wrapper/_x.sw_emu.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/vitis_hls.log",
   "commandLine": "vitis_hls -f /home/ayvol/accelerator_wrapper/_x.sw_emu.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml.tcl -messageDb vitis_hls.pb",
@@ -123,10 +123,10 @@
 <ENTRY>
 {
  "type": "ET_Status",
- "dateTimestamp": "Sat Jan 27 06:14:17 2024",
- "timestampMillis": "1706336057717",
+ "dateTimestamp": "Tue Jan 30 05:01:15 2024",
+ "timestampMillis": "1706590875103",
  "status": {
-  "cmdId": "2a37647c-9350-406e-ac78-60e5190ab6cf",
+  "cmdId": "b729021b-5125-4291-9683-39439023ba77",
   "state": "CS_RUNNING"
  }
 }
@@ -134,10 +134,10 @@
 <ENTRY>
 {
  "type": "ET_Status",
- "dateTimestamp": "Sat Jan 27 06:14:49 2024",
- "timestampMillis": "1706336089849",
+ "dateTimestamp": "Tue Jan 30 05:01:51 2024",
+ "timestampMillis": "1706590911105",
  "status": {
-  "cmdId": "2a37647c-9350-406e-ac78-60e5190ab6cf",
+  "cmdId": "b729021b-5125-4291-9683-39439023ba77",
   "state": "CS_FAILED"
  }
 }
@@ -145,10 +145,10 @@
 <ENTRY>
 {
  "type": "ET_Status",
- "dateTimestamp": "Sat Jan 27 06:14:49 2024",
- "timestampMillis": "1706336089850",
+ "dateTimestamp": "Tue Jan 30 05:01:51 2024",
+ "timestampMillis": "1706590911107",
  "status": {
-  "cmdId": "62335af8-662e-4010-b0f7-0acea0e7a933",
+  "cmdId": "69f7770d-0dcf-4872-ac13-9d3692905000",
   "state": "CS_FAILED"
  }
 }
@@ -156,8 +156,8 @@
 <ENTRY>
 {
  "type": "ET_Report",
- "dateTimestamp": "Sat Jan 27 06:14:49 2024",
- "timestampMillis": "1706336089903",
+ "dateTimestamp": "Tue Jan 30 05:01:51 2024",
+ "timestampMillis": "1706590911162",
  "report": {
   "path": "/home/ayvol/accelerator_wrapper/_x.sw_emu.xilinx_u55c_gen3x16_xdma_3_202210_1/reports/alveo_hls4ml/v++_compile_alveo_hls4ml_guidance.html",
   "name": "",
@@ -170,8 +170,8 @@
 <ENTRY>
 {
  "type": "ET_Report",
- "dateTimestamp": "Sat Jan 27 06:14:49 2024",
- "timestampMillis": "1706336089903",
+ "dateTimestamp": "Tue Jan 30 05:01:51 2024",
+ "timestampMillis": "1706590911162",
  "report": {
   "path": "/home/ayvol/accelerator_wrapper/_x.sw_emu.xilinx_u55c_gen3x16_xdma_3_202210_1/v++_compile_alveo_hls4ml_guidance.pb3",
   "name": "",
