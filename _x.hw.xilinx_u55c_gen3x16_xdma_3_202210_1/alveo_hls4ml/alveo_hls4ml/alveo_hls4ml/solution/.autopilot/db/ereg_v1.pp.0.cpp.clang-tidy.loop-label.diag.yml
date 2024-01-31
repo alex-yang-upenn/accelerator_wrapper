@@ -1,0 +1,1341 @@
+---
+MainSourceFile:  /home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml/solution/.autopilot/db/ereg_v1.pp.0.cpp
+Diagnostics:     
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_1211_1:  '
+    FileOffset:      1211
+    FilePath:        /tools/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot/ap_int_base.h
+    Replacements:    
+      - FilePath:        /home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml/solution/.autopilot/db/ereg_v1.pp.0.cpp
+        Offset:          962413
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_1211_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_676_1:  '
+    FileOffset:      676
+    FilePath:        /tools/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot/ap_int_ref.h
+    Replacements:    
+      - FilePath:        /home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml/solution/.autopilot/db/ereg_v1.pp.0.cpp
+        Offset:          1169933
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_676_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_690_1:  '
+    FileOffset:      690
+    FilePath:        /tools/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot/ap_int_ref.h
+    Replacements:    
+      - FilePath:        /home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml/solution/.autopilot/db/ereg_v1.pp.0.cpp
+        Offset:          1170376
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_690_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_704_1:  '
+    FileOffset:      704
+    FilePath:        /tools/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot/ap_int_ref.h
+    Replacements:    
+      - FilePath:        /home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml/solution/.autopilot/db/ereg_v1.pp.0.cpp
+        Offset:          1170820
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_704_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_1245_1:  '
+    FileOffset:      1245
+    FilePath:        /tools/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot/ap_fixed_base.h
+    Replacements:    
+      - FilePath:        /home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml/solution/.autopilot/db/ereg_v1.pp.0.cpp
+        Offset:          1433218
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_1245_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_45_1:  '
+    FileOffset:      45
+    FilePath:        /home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_common.h
+    Replacements:    
+      - FilePath:        /home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml/solution/.autopilot/db/ereg_v1.pp.0.cpp
+        Offset:          1777652
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_45_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_48_2:  '
+    FileOffset:      48
+    FilePath:        /home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_common.h
+    Replacements:    
+      - FilePath:        /home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml/solution/.autopilot/db/ereg_v1.pp.0.cpp
+        Offset:          1777716
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_48_2: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_124_1:  '
+    FileOffset:      124
+    FilePath:        /home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_helpers.h
+    Replacements:    
+      - FilePath:        /home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml/solution/.autopilot/db/ereg_v1.pp.0.cpp
+        Offset:          2056592
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_124_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_145_1:  '
+    FileOffset:      145
+    FilePath:        /home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_helpers.h
+    Replacements:    
+      - FilePath:        /home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml/solution/.autopilot/db/ereg_v1.pp.0.cpp
+        Offset:          2056998
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_145_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_146_2:  '
+    FileOffset:      146
+    FilePath:        /home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_helpers.h
+    Replacements:    
+      - FilePath:        /home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml/solution/.autopilot/db/ereg_v1.pp.0.cpp
+        Offset:          2057039
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_146_2: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_163_1:  '
+    FileOffset:      163
+    FilePath:        /home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_helpers.h
+    Replacements:    
+      - FilePath:        /home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml/solution/.autopilot/db/ereg_v1.pp.0.cpp
+        Offset:          2057401
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_163_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_172_1:  '
+    FileOffset:      172
+    FilePath:        /home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_helpers.h
+    Replacements:    
+      - FilePath:        /home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml/solution/.autopilot/db/ereg_v1.pp.0.cpp
+        Offset:          2057610
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_172_1: '
+  - DiagnosticName:  clang-diagnostic-error
+    Message:         'Resource with core_name: ROM_2P_BRAM pragma is ignored, because this core doesn''t exist at all '
+    FileOffset:      155
+    FilePath:        /home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense.h
+    Replacements:    
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_34_1:  '
+    FileOffset:      34
+    FilePath:        /home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_compressed.h
+    Replacements:    
+      - FilePath:        /home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml/solution/.autopilot/db/ereg_v1.pp.0.cpp
+        Offset:          2073657
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_34_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_93_1:  '
+    FileOffset:      93
+    FilePath:        /home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_compressed.h
+    Replacements:    
+      - FilePath:        /home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml/solution/.autopilot/db/ereg_v1.pp.0.cpp
+        Offset:          2075500
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_93_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_60_1:  '
+    FileOffset:      60
+    FilePath:        /home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv.h
+    Replacements:    
+      - FilePath:        /home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml/solution/.autopilot/db/ereg_v1.pp.0.cpp
+        Offset:          2077076
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_60_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_61_2:  '
+    FileOffset:      61
+    FilePath:        /home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv.h
+    Replacements:    
+      - FilePath:        /home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml/solution/.autopilot/db/ereg_v1.pp.0.cpp
+        Offset:          2077130
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_61_2: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_62_3:  '
+    FileOffset:      62
+    FilePath:        /home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv.h
+    Replacements:    
+      - FilePath:        /home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml/solution/.autopilot/db/ereg_v1.pp.0.cpp
+        Offset:          2077188
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_62_3: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_63_4:  '
+    FileOffset:      63
+    FilePath:        /home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv.h
+    Replacements:    
+      - FilePath:        /home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml/solution/.autopilot/db/ereg_v1.pp.0.cpp
+        Offset:          2077250
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_63_4: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_135_1:  '
+    FileOffset:      135
+    FilePath:        /home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv.h
+    Replacements:    
+      - FilePath:        /home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml/solution/.autopilot/db/ereg_v1.pp.0.cpp
+        Offset:          2079889
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_135_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_136_2:  '
+    FileOffset:      136
+    FilePath:        /home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv.h
+    Replacements:    
+      - FilePath:        /home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml/solution/.autopilot/db/ereg_v1.pp.0.cpp
+        Offset:          2079943
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_136_2: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_157_3:  '
+    FileOffset:      157
+    FilePath:        /home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv.h
+    Replacements:    
+      - FilePath:        /home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml/solution/.autopilot/db/ereg_v1.pp.0.cpp
+        Offset:          2080595
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_157_3: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_158_4:  '
+    FileOffset:      158
+    FilePath:        /home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv.h
+    Replacements:    
+      - FilePath:        /home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml/solution/.autopilot/db/ereg_v1.pp.0.cpp
+        Offset:          2080649
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_158_4: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_176_1:  '
+    FileOffset:      176
+    FilePath:        /home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv.h
+    Replacements:    
+      - FilePath:        /home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml/solution/.autopilot/db/ereg_v1.pp.0.cpp
+        Offset:          2080923
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_176_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_177_2:  '
+    FileOffset:      177
+    FilePath:        /home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv.h
+    Replacements:    
+      - FilePath:        /home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml/solution/.autopilot/db/ereg_v1.pp.0.cpp
+        Offset:          2080959
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_177_2: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_189_1:  '
+    FileOffset:      189
+    FilePath:        /home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv.h
+    Replacements:    
+      - FilePath:        /home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml/solution/.autopilot/db/ereg_v1.pp.0.cpp
+        Offset:          2081183
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_189_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_190_2:  '
+    FileOffset:      190
+    FilePath:        /home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv.h
+    Replacements:    
+      - FilePath:        /home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml/solution/.autopilot/db/ereg_v1.pp.0.cpp
+        Offset:          2081219
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_190_2: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_13_1:  '
+    FileOffset:      13
+    FilePath:        /home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv_large.h
+    Replacements:    
+      - FilePath:        /home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml/solution/.autopilot/db/ereg_v1.pp.0.cpp
+        Offset:          2081655
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_13_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_15_2:  '
+    FileOffset:      15
+    FilePath:        /home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv_large.h
+    Replacements:    
+      - FilePath:        /home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml/solution/.autopilot/db/ereg_v1.pp.0.cpp
+        Offset:          2081763
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_15_2: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_18_3:  '
+    FileOffset:      18
+    FilePath:        /home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv_large.h
+    Replacements:    
+      - FilePath:        /home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml/solution/.autopilot/db/ereg_v1.pp.0.cpp
+        Offset:          2081942
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_18_3: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_52_1:  '
+    FileOffset:      52
+    FilePath:        /home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv_large.h
+    Replacements:    
+      - FilePath:        /home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml/solution/.autopilot/db/ereg_v1.pp.0.cpp
+        Offset:          2082980
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_52_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_54_2:  '
+    FileOffset:      54
+    FilePath:        /home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv_large.h
+    Replacements:    
+      - FilePath:        /home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml/solution/.autopilot/db/ereg_v1.pp.0.cpp
+        Offset:          2083044
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_54_2: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_58_3:  '
+    FileOffset:      58
+    FilePath:        /home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv_large.h
+    Replacements:    
+      - FilePath:        /home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml/solution/.autopilot/db/ereg_v1.pp.0.cpp
+        Offset:          2083296
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_58_3: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_136_1:  '
+    FileOffset:      136
+    FilePath:        /home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv_large.h
+    Replacements:    
+      - FilePath:        /home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml/solution/.autopilot/db/ereg_v1.pp.0.cpp
+        Offset:          2086013
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_136_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_193_1:  '
+    FileOffset:      193
+    FilePath:        /home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv_large.h
+    Replacements:    
+      - FilePath:        /home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml/solution/.autopilot/db/ereg_v1.pp.0.cpp
+        Offset:          2087904
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_193_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_68_1:  '
+    FileOffset:      68
+    FilePath:        /home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv2d.h
+    Replacements:    
+      - FilePath:        /home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml/solution/.autopilot/db/ereg_v1.pp.0.cpp
+        Offset:          2089722
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_68_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_69_2:  '
+    FileOffset:      69
+    FilePath:        /home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv2d.h
+    Replacements:    
+      - FilePath:        /home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml/solution/.autopilot/db/ereg_v1.pp.0.cpp
+        Offset:          2089781
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_69_2: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_70_3:  '
+    FileOffset:      70
+    FilePath:        /home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv2d.h
+    Replacements:    
+      - FilePath:        /home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml/solution/.autopilot/db/ereg_v1.pp.0.cpp
+        Offset:          2089843
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_70_3: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_71_4:  '
+    FileOffset:      71
+    FilePath:        /home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv2d.h
+    Replacements:    
+      - FilePath:        /home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml/solution/.autopilot/db/ereg_v1.pp.0.cpp
+        Offset:          2089905
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_71_4: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_72_5:  '
+    FileOffset:      72
+    FilePath:        /home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv2d.h
+    Replacements:    
+      - FilePath:        /home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml/solution/.autopilot/db/ereg_v1.pp.0.cpp
+        Offset:          2089971
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_72_5: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_73_6:  '
+    FileOffset:      73
+    FilePath:        /home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv2d.h
+    Replacements:    
+      - FilePath:        /home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml/solution/.autopilot/db/ereg_v1.pp.0.cpp
+        Offset:          2090046
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_73_6: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_169_1:  '
+    FileOffset:      169
+    FilePath:        /home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv2d.h
+    Replacements:    
+      - FilePath:        /home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml/solution/.autopilot/db/ereg_v1.pp.0.cpp
+        Offset:          2094816
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_169_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_170_2:  '
+    FileOffset:      170
+    FilePath:        /home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv2d.h
+    Replacements:    
+      - FilePath:        /home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml/solution/.autopilot/db/ereg_v1.pp.0.cpp
+        Offset:          2094875
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_170_2: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_171_3:  '
+    FileOffset:      171
+    FilePath:        /home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv2d.h
+    Replacements:    
+      - FilePath:        /home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml/solution/.autopilot/db/ereg_v1.pp.0.cpp
+        Offset:          2094937
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_171_3: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_207_4:  '
+    FileOffset:      207
+    FilePath:        /home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv2d.h
+    Replacements:    
+      - FilePath:        /home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml/solution/.autopilot/db/ereg_v1.pp.0.cpp
+        Offset:          2096533
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_207_4: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_208_5:  '
+    FileOffset:      208
+    FilePath:        /home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv2d.h
+    Replacements:    
+      - FilePath:        /home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml/solution/.autopilot/db/ereg_v1.pp.0.cpp
+        Offset:          2096588
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_208_5: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_209_6:  '
+    FileOffset:      209
+    FilePath:        /home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv2d.h
+    Replacements:    
+      - FilePath:        /home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml/solution/.autopilot/db/ereg_v1.pp.0.cpp
+        Offset:          2096651
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_209_6: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_285_1:  '
+    FileOffset:      285
+    FilePath:        /home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv2d.h
+    Replacements:    
+      - FilePath:        /home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml/solution/.autopilot/db/ereg_v1.pp.0.cpp
+        Offset:          2100496
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_285_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_286_2:  '
+    FileOffset:      286
+    FilePath:        /home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv2d.h
+    Replacements:    
+      - FilePath:        /home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml/solution/.autopilot/db/ereg_v1.pp.0.cpp
+        Offset:          2100555
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_286_2: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_287_3:  '
+    FileOffset:      287
+    FilePath:        /home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv2d.h
+    Replacements:    
+      - FilePath:        /home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml/solution/.autopilot/db/ereg_v1.pp.0.cpp
+        Offset:          2100617
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_287_3: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_323_4:  '
+    FileOffset:      323
+    FilePath:        /home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv2d.h
+    Replacements:    
+      - FilePath:        /home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml/solution/.autopilot/db/ereg_v1.pp.0.cpp
+        Offset:          2102213
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_323_4: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_324_5:  '
+    FileOffset:      324
+    FilePath:        /home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv2d.h
+    Replacements:    
+      - FilePath:        /home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml/solution/.autopilot/db/ereg_v1.pp.0.cpp
+        Offset:          2102272
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_324_5: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_325_6:  '
+    FileOffset:      325
+    FilePath:        /home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv2d.h
+    Replacements:    
+      - FilePath:        /home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml/solution/.autopilot/db/ereg_v1.pp.0.cpp
+        Offset:          2102336
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_325_6: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_341_1:  '
+    FileOffset:      341
+    FilePath:        /home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv2d.h
+    Replacements:    
+      - FilePath:        /home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml/solution/.autopilot/db/ereg_v1.pp.0.cpp
+        Offset:          2102687
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_341_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_342_2:  '
+    FileOffset:      342
+    FilePath:        /home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv2d.h
+    Replacements:    
+      - FilePath:        /home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml/solution/.autopilot/db/ereg_v1.pp.0.cpp
+        Offset:          2102723
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_342_2: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_343_3:  '
+    FileOffset:      343
+    FilePath:        /home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv2d.h
+    Replacements:    
+      - FilePath:        /home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml/solution/.autopilot/db/ereg_v1.pp.0.cpp
+        Offset:          2102763
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_343_3: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_357_1:  '
+    FileOffset:      357
+    FilePath:        /home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv2d.h
+    Replacements:    
+      - FilePath:        /home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml/solution/.autopilot/db/ereg_v1.pp.0.cpp
+        Offset:          2103009
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_357_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_358_2:  '
+    FileOffset:      358
+    FilePath:        /home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv2d.h
+    Replacements:    
+      - FilePath:        /home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml/solution/.autopilot/db/ereg_v1.pp.0.cpp
+        Offset:          2103045
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_358_2: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_359_3:  '
+    FileOffset:      359
+    FilePath:        /home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv2d.h
+    Replacements:    
+      - FilePath:        /home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml/solution/.autopilot/db/ereg_v1.pp.0.cpp
+        Offset:          2103085
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_359_3: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_21_1:  '
+    FileOffset:      21
+    FilePath:        /home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv2d_large.h
+    Replacements:    
+      - FilePath:        /home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml/solution/.autopilot/db/ereg_v1.pp.0.cpp
+        Offset:          2104093
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_21_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_22_2:  '
+    FileOffset:      22
+    FilePath:        /home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv2d_large.h
+    Replacements:    
+      - FilePath:        /home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml/solution/.autopilot/db/ereg_v1.pp.0.cpp
+        Offset:          2104173
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_22_2: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_23_3:  '
+    FileOffset:      23
+    FilePath:        /home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv2d_large.h
+    Replacements:    
+      - FilePath:        /home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml/solution/.autopilot/db/ereg_v1.pp.0.cpp
+        Offset:          2104262
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_23_3: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_25_4:  '
+    FileOffset:      25
+    FilePath:        /home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv2d_large.h
+    Replacements:    
+      - FilePath:        /home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml/solution/.autopilot/db/ereg_v1.pp.0.cpp
+        Offset:          2104447
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_25_4: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_27_5:  '
+    FileOffset:      27
+    FilePath:        /home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv2d_large.h
+    Replacements:    
+      - FilePath:        /home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml/solution/.autopilot/db/ereg_v1.pp.0.cpp
+        Offset:          2104610
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_27_5: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_32_6:  '
+    FileOffset:      32
+    FilePath:        /home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv2d_large.h
+    Replacements:    
+      - FilePath:        /home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml/solution/.autopilot/db/ereg_v1.pp.0.cpp
+        Offset:          2104900
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_32_6: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_66_1:  '
+    FileOffset:      66
+    FilePath:        /home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv2d_large.h
+    Replacements:    
+      - FilePath:        /home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml/solution/.autopilot/db/ereg_v1.pp.0.cpp
+        Offset:          2106315
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_66_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_67_2:  '
+    FileOffset:      67
+    FilePath:        /home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv2d_large.h
+    Replacements:    
+      - FilePath:        /home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml/solution/.autopilot/db/ereg_v1.pp.0.cpp
+        Offset:          2106394
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_67_2: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_71_3:  '
+    FileOffset:      71
+    FilePath:        /home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv2d_large.h
+    Replacements:    
+      - FilePath:        /home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml/solution/.autopilot/db/ereg_v1.pp.0.cpp
+        Offset:          2106692
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_71_3: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_87_1:  '
+    FileOffset:      87
+    FilePath:        /home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv2d_large.h
+    Replacements:    
+      - FilePath:        /home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml/solution/.autopilot/db/ereg_v1.pp.0.cpp
+        Offset:          2107198
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_87_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_89_2:  '
+    FileOffset:      89
+    FilePath:        /home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv2d_large.h
+    Replacements:    
+      - FilePath:        /home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml/solution/.autopilot/db/ereg_v1.pp.0.cpp
+        Offset:          2107290
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_89_2: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_91_3:  '
+    FileOffset:      91
+    FilePath:        /home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv2d_large.h
+    Replacements:    
+      - FilePath:        /home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml/solution/.autopilot/db/ereg_v1.pp.0.cpp
+        Offset:          2107500
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_91_3: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_158_1:  '
+    FileOffset:      158
+    FilePath:        /home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv2d_large.h
+    Replacements:    
+      - FilePath:        /home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml/solution/.autopilot/db/ereg_v1.pp.0.cpp
+        Offset:          2109985
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_158_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_160_2:  '
+    FileOffset:      160
+    FilePath:        /home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv2d_large.h
+    Replacements:    
+      - FilePath:        /home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml/solution/.autopilot/db/ereg_v1.pp.0.cpp
+        Offset:          2110063
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_160_2: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_162_3:  '
+    FileOffset:      162
+    FilePath:        /home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv2d_large.h
+    Replacements:    
+      - FilePath:        /home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml/solution/.autopilot/db/ereg_v1.pp.0.cpp
+        Offset:          2110273
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_162_3: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_57_1:  '
+    FileOffset:      57
+    FilePath:        /home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_activation.h
+    Replacements:    
+      - FilePath:        /home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml/solution/.autopilot/db/ereg_v1.pp.0.cpp
+        Offset:          2113402
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_57_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_78_1:  '
+    FileOffset:      78
+    FilePath:        /home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_activation.h
+    Replacements:    
+      - FilePath:        /home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml/solution/.autopilot/db/ereg_v1.pp.0.cpp
+        Offset:          2113770
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_78_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_96_1:  '
+    FileOffset:      96
+    FilePath:        /home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_activation.h
+    Replacements:    
+      - FilePath:        /home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml/solution/.autopilot/db/ereg_v1.pp.0.cpp
+        Offset:          2114220
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_96_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_131_1:  '
+    FileOffset:      131
+    FilePath:        /home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_activation.h
+    Replacements:    
+      - FilePath:        /home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml/solution/.autopilot/db/ereg_v1.pp.0.cpp
+        Offset:          2115066
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_131_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_164_1:  '
+    FileOffset:      164
+    FilePath:        /home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_activation.h
+    Replacements:    
+      - FilePath:        /home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml/solution/.autopilot/db/ereg_v1.pp.0.cpp
+        Offset:          2115765
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_164_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_187_1:  '
+    FileOffset:      187
+    FilePath:        /home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_activation.h
+    Replacements:    
+      - FilePath:        /home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml/solution/.autopilot/db/ereg_v1.pp.0.cpp
+        Offset:          2116345
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_187_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_202_1:  '
+    FileOffset:      202
+    FilePath:        /home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_activation.h
+    Replacements:    
+      - FilePath:        /home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml/solution/.autopilot/db/ereg_v1.pp.0.cpp
+        Offset:          2116687
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_202_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_241_1:  '
+    FileOffset:      241
+    FilePath:        /home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_activation.h
+    Replacements:    
+      - FilePath:        /home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml/solution/.autopilot/db/ereg_v1.pp.0.cpp
+        Offset:          2117593
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_241_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_245_2:  '
+    FileOffset:      245
+    FilePath:        /home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_activation.h
+    Replacements:    
+      - FilePath:        /home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml/solution/.autopilot/db/ereg_v1.pp.0.cpp
+        Offset:          2117701
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_245_2: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_249_3:  '
+    FileOffset:      249
+    FilePath:        /home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_activation.h
+    Replacements:    
+      - FilePath:        /home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml/solution/.autopilot/db/ereg_v1.pp.0.cpp
+        Offset:          2117816
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_249_3: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_263_4:  '
+    FileOffset:      263
+    FilePath:        /home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_activation.h
+    Replacements:    
+      - FilePath:        /home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml/solution/.autopilot/db/ereg_v1.pp.0.cpp
+        Offset:          2118210
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_263_4: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_280_1:  '
+    FileOffset:      280
+    FilePath:        /home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_activation.h
+    Replacements:    
+      - FilePath:        /home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml/solution/.autopilot/db/ereg_v1.pp.0.cpp
+        Offset:          2118636
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_280_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_314_1:  '
+    FileOffset:      314
+    FilePath:        /home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_activation.h
+    Replacements:    
+      - FilePath:        /home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml/solution/.autopilot/db/ereg_v1.pp.0.cpp
+        Offset:          2119311
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_314_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_340_1:  '
+    FileOffset:      340
+    FilePath:        /home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_activation.h
+    Replacements:    
+      - FilePath:        /home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml/solution/.autopilot/db/ereg_v1.pp.0.cpp
+        Offset:          2119988
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_340_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_362_1:  '
+    FileOffset:      362
+    FilePath:        /home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_activation.h
+    Replacements:    
+      - FilePath:        /home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml/solution/.autopilot/db/ereg_v1.pp.0.cpp
+        Offset:          2120498
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_362_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_383_1:  '
+    FileOffset:      383
+    FilePath:        /home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_activation.h
+    Replacements:    
+      - FilePath:        /home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml/solution/.autopilot/db/ereg_v1.pp.0.cpp
+        Offset:          2120974
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_383_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_405_1:  '
+    FileOffset:      405
+    FilePath:        /home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_activation.h
+    Replacements:    
+      - FilePath:        /home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml/solution/.autopilot/db/ereg_v1.pp.0.cpp
+        Offset:          2121413
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_405_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_438_1:  '
+    FileOffset:      438
+    FilePath:        /home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_activation.h
+    Replacements:    
+      - FilePath:        /home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml/solution/.autopilot/db/ereg_v1.pp.0.cpp
+        Offset:          2122117
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_438_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_462_1:  '
+    FileOffset:      462
+    FilePath:        /home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_activation.h
+    Replacements:    
+      - FilePath:        /home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml/solution/.autopilot/db/ereg_v1.pp.0.cpp
+        Offset:          2122724
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_462_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_495_1:  '
+    FileOffset:      495
+    FilePath:        /home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_activation.h
+    Replacements:    
+      - FilePath:        /home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml/solution/.autopilot/db/ereg_v1.pp.0.cpp
+        Offset:          2123428
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_495_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_519_1:  '
+    FileOffset:      519
+    FilePath:        /home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_activation.h
+    Replacements:    
+      - FilePath:        /home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml/solution/.autopilot/db/ereg_v1.pp.0.cpp
+        Offset:          2124015
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_519_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_552_1:  '
+    FileOffset:      552
+    FilePath:        /home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_activation.h
+    Replacements:    
+      - FilePath:        /home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml/solution/.autopilot/db/ereg_v1.pp.0.cpp
+        Offset:          2124691
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_552_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_585_1:  '
+    FileOffset:      585
+    FilePath:        /home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_activation.h
+    Replacements:    
+      - FilePath:        /home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml/solution/.autopilot/db/ereg_v1.pp.0.cpp
+        Offset:          2125553
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_585_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_618_1:  '
+    FileOffset:      618
+    FilePath:        /home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_activation.h
+    Replacements:    
+      - FilePath:        /home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml/solution/.autopilot/db/ereg_v1.pp.0.cpp
+        Offset:          2126215
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_618_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_644_1:  '
+    FileOffset:      644
+    FilePath:        /home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_activation.h
+    Replacements:    
+      - FilePath:        /home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml/solution/.autopilot/db/ereg_v1.pp.0.cpp
+        Offset:          2126915
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_644_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_667_1:  '
+    FileOffset:      667
+    FilePath:        /home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_activation.h
+    Replacements:    
+      - FilePath:        /home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml/solution/.autopilot/db/ereg_v1.pp.0.cpp
+        Offset:          2127382
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_667_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_695_1:  '
+    FileOffset:      695
+    FilePath:        /home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_activation.h
+    Replacements:    
+      - FilePath:        /home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml/solution/.autopilot/db/ereg_v1.pp.0.cpp
+        Offset:          2127828
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_695_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_120_1:  '
+    FileOffset:      120
+    FilePath:        /home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_batchnorm.h
+    Replacements:    
+      - FilePath:        /home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml/solution/.autopilot/db/ereg_v1.pp.0.cpp
+        Offset:          2130724
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_120_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_143_1:  '
+    FileOffset:      143
+    FilePath:        /home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_batchnorm.h
+    Replacements:    
+      - FilePath:        /home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml/solution/.autopilot/db/ereg_v1.pp.0.cpp
+        Offset:          2131354
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_143_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_13_1:  '
+    FileOffset:      13
+    FilePath:        /home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_pooling.h
+    Replacements:    
+      - FilePath:        /home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml/solution/.autopilot/db/ereg_v1.pp.0.cpp
+        Offset:          2131888
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_13_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_23_1:  '
+    FileOffset:      23
+    FilePath:        /home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_pooling.h
+    Replacements:    
+      - FilePath:        /home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml/solution/.autopilot/db/ereg_v1.pp.0.cpp
+        Offset:          2132059
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_23_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_36_1:  '
+    FileOffset:      36
+    FilePath:        /home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_pooling.h
+    Replacements:    
+      - FilePath:        /home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml/solution/.autopilot/db/ereg_v1.pp.0.cpp
+        Offset:          2132290
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_36_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_49_1:  '
+    FileOffset:      49
+    FilePath:        /home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_pooling.h
+    Replacements:    
+      - FilePath:        /home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml/solution/.autopilot/db/ereg_v1.pp.0.cpp
+        Offset:          2132453
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_49_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_99_1:  '
+    FileOffset:      99
+    FilePath:        /home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_pooling.h
+    Replacements:    
+      - FilePath:        /home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml/solution/.autopilot/db/ereg_v1.pp.0.cpp
+        Offset:          2133277
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_99_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_101_2:  '
+    FileOffset:      101
+    FilePath:        /home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_pooling.h
+    Replacements:    
+      - FilePath:        /home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml/solution/.autopilot/db/ereg_v1.pp.0.cpp
+        Offset:          2133365
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_101_2: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_150_1:  '
+    FileOffset:      150
+    FilePath:        /home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_pooling.h
+    Replacements:    
+      - FilePath:        /home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml/solution/.autopilot/db/ereg_v1.pp.0.cpp
+        Offset:          2135263
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_150_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_152_2:  '
+    FileOffset:      152
+    FilePath:        /home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_pooling.h
+    Replacements:    
+      - FilePath:        /home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml/solution/.autopilot/db/ereg_v1.pp.0.cpp
+        Offset:          2135313
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_152_2: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_154_3:  '
+    FileOffset:      154
+    FilePath:        /home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_pooling.h
+    Replacements:    
+      - FilePath:        /home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml/solution/.autopilot/db/ereg_v1.pp.0.cpp
+        Offset:          2135386
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_154_3: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_159_4:  '
+    FileOffset:      159
+    FilePath:        /home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_pooling.h
+    Replacements:    
+      - FilePath:        /home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml/solution/.autopilot/db/ereg_v1.pp.0.cpp
+        Offset:          2135557
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_159_4: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_161_5:  '
+    FileOffset:      161
+    FilePath:        /home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_pooling.h
+    Replacements:    
+      - FilePath:        /home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml/solution/.autopilot/db/ereg_v1.pp.0.cpp
+        Offset:          2135617
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_161_5: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_201_1:  '
+    FileOffset:      201
+    FilePath:        /home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_pooling.h
+    Replacements:    
+      - FilePath:        /home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml/solution/.autopilot/db/ereg_v1.pp.0.cpp
+        Offset:          2137541
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_201_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_203_2:  '
+    FileOffset:      203
+    FilePath:        /home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_pooling.h
+    Replacements:    
+      - FilePath:        /home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml/solution/.autopilot/db/ereg_v1.pp.0.cpp
+        Offset:          2137591
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_203_2: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_205_3:  '
+    FileOffset:      205
+    FilePath:        /home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_pooling.h
+    Replacements:    
+      - FilePath:        /home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml/solution/.autopilot/db/ereg_v1.pp.0.cpp
+        Offset:          2137664
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_205_3: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_210_4:  '
+    FileOffset:      210
+    FilePath:        /home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_pooling.h
+    Replacements:    
+      - FilePath:        /home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml/solution/.autopilot/db/ereg_v1.pp.0.cpp
+        Offset:          2137835
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_210_4: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_212_5:  '
+    FileOffset:      212
+    FilePath:        /home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_pooling.h
+    Replacements:    
+      - FilePath:        /home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml/solution/.autopilot/db/ereg_v1.pp.0.cpp
+        Offset:          2137895
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_212_5: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_51_1:  '
+    FileOffset:      51
+    FilePath:        /home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_merge.h
+    Replacements:    
+      - FilePath:        /home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml/solution/.autopilot/db/ereg_v1.pp.0.cpp
+        Offset:          2139978
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_51_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_62_1:  '
+    FileOffset:      62
+    FilePath:        /home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_merge.h
+    Replacements:    
+      - FilePath:        /home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml/solution/.autopilot/db/ereg_v1.pp.0.cpp
+        Offset:          2140272
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_62_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_73_1:  '
+    FileOffset:      73
+    FilePath:        /home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_merge.h
+    Replacements:    
+      - FilePath:        /home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml/solution/.autopilot/db/ereg_v1.pp.0.cpp
+        Offset:          2140566
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_73_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_84_1:  '
+    FileOffset:      84
+    FilePath:        /home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_merge.h
+    Replacements:    
+      - FilePath:        /home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml/solution/.autopilot/db/ereg_v1.pp.0.cpp
+        Offset:          2140859
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_84_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_95_1:  '
+    FileOffset:      95
+    FilePath:        /home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_merge.h
+    Replacements:    
+      - FilePath:        /home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml/solution/.autopilot/db/ereg_v1.pp.0.cpp
+        Offset:          2141164
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_95_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_106_1:  '
+    FileOffset:      106
+    FilePath:        /home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_merge.h
+    Replacements:    
+      - FilePath:        /home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml/solution/.autopilot/db/ereg_v1.pp.0.cpp
+        Offset:          2141483
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_106_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_117_1:  '
+    FileOffset:      117
+    FilePath:        /home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_merge.h
+    Replacements:    
+      - FilePath:        /home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml/solution/.autopilot/db/ereg_v1.pp.0.cpp
+        Offset:          2141839
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_117_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_120_2:  '
+    FileOffset:      120
+    FilePath:        /home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_merge.h
+    Replacements:    
+      - FilePath:        /home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml/solution/.autopilot/db/ereg_v1.pp.0.cpp
+        Offset:          2141925
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_120_2: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_131_1:  '
+    FileOffset:      131
+    FilePath:        /home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_merge.h
+    Replacements:    
+      - FilePath:        /home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml/solution/.autopilot/db/ereg_v1.pp.0.cpp
+        Offset:          2142358
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_131_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_134_2:  '
+    FileOffset:      134
+    FilePath:        /home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_merge.h
+    Replacements:    
+      - FilePath:        /home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml/solution/.autopilot/db/ereg_v1.pp.0.cpp
+        Offset:          2142466
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_134_2: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_145_1:  '
+    FileOffset:      145
+    FilePath:        /home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_merge.h
+    Replacements:    
+      - FilePath:        /home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml/solution/.autopilot/db/ereg_v1.pp.0.cpp
+        Offset:          2142943
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_145_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_146_2:  '
+    FileOffset:      146
+    FilePath:        /home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_merge.h
+    Replacements:    
+      - FilePath:        /home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml/solution/.autopilot/db/ereg_v1.pp.0.cpp
+        Offset:          2142998
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_146_2: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_149_3:  '
+    FileOffset:      149
+    FilePath:        /home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_merge.h
+    Replacements:    
+      - FilePath:        /home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml/solution/.autopilot/db/ereg_v1.pp.0.cpp
+        Offset:          2143174
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_149_3: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_174_1:  '
+    FileOffset:      174
+    FilePath:        /home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_merge.h
+    Replacements:    
+      - FilePath:        /home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml/solution/.autopilot/db/ereg_v1.pp.0.cpp
+        Offset:          2144342
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_174_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_177_2:  '
+    FileOffset:      177
+    FilePath:        /home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_merge.h
+    Replacements:    
+      - FilePath:        /home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml/solution/.autopilot/db/ereg_v1.pp.0.cpp
+        Offset:          2144472
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_177_2: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_188_1:  '
+    FileOffset:      188
+    FilePath:        /home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_merge.h
+    Replacements:    
+      - FilePath:        /home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml/solution/.autopilot/db/ereg_v1.pp.0.cpp
+        Offset:          2145077
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_188_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_189_2:  '
+    FileOffset:      189
+    FilePath:        /home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_merge.h
+    Replacements:    
+      - FilePath:        /home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml/solution/.autopilot/db/ereg_v1.pp.0.cpp
+        Offset:          2145132
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_189_2: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_190_3:  '
+    FileOffset:      190
+    FilePath:        /home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_merge.h
+    Replacements:    
+      - FilePath:        /home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml/solution/.autopilot/db/ereg_v1.pp.0.cpp
+        Offset:          2145191
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_190_3: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_200_4:  '
+    FileOffset:      200
+    FilePath:        /home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_merge.h
+    Replacements:    
+      - FilePath:        /home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml/solution/.autopilot/db/ereg_v1.pp.0.cpp
+        Offset:          2145677
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_200_4: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_201_5:  '
+    FileOffset:      201
+    FilePath:        /home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_merge.h
+    Replacements:    
+      - FilePath:        /home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml/solution/.autopilot/db/ereg_v1.pp.0.cpp
+        Offset:          2145736
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_201_5: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_220_1:  '
+    FileOffset:      220
+    FilePath:        /home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_merge.h
+    Replacements:    
+      - FilePath:        /home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml/solution/.autopilot/db/ereg_v1.pp.0.cpp
+        Offset:          2146657
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_220_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_221_2:  '
+    FileOffset:      221
+    FilePath:        /home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_merge.h
+    Replacements:    
+      - FilePath:        /home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml/solution/.autopilot/db/ereg_v1.pp.0.cpp
+        Offset:          2146712
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_221_2: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_222_3:  '
+    FileOffset:      222
+    FilePath:        /home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_merge.h
+    Replacements:    
+      - FilePath:        /home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml/solution/.autopilot/db/ereg_v1.pp.0.cpp
+        Offset:          2146771
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_222_3: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_231_4:  '
+    FileOffset:      231
+    FilePath:        /home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_merge.h
+    Replacements:    
+      - FilePath:        /home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml/solution/.autopilot/db/ereg_v1.pp.0.cpp
+        Offset:          2147275
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_231_4: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_27_1:  '
+    FileOffset:      27
+    FilePath:        /home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_array.h
+    Replacements:    
+      - FilePath:        /home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml/solution/.autopilot/db/ereg_v1.pp.0.cpp
+        Offset:          2149724
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_27_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_28_2:  '
+    FileOffset:      28
+    FilePath:        /home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_array.h
+    Replacements:    
+      - FilePath:        /home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml/solution/.autopilot/db/ereg_v1.pp.0.cpp
+        Offset:          2149779
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_28_2: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_29_3:  '
+    FileOffset:      29
+    FilePath:        /home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_array.h
+    Replacements:    
+      - FilePath:        /home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml/solution/.autopilot/db/ereg_v1.pp.0.cpp
+        Offset:          2149838
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_29_3: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_29_1:  '
+    FileOffset:      29
+    FilePath:        /home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_image.h
+    Replacements:    
+      - FilePath:        /home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml/solution/.autopilot/db/ereg_v1.pp.0.cpp
+        Offset:          2151249
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_29_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_30_2:  '
+    FileOffset:      30
+    FilePath:        /home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_image.h
+    Replacements:    
+      - FilePath:        /home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml/solution/.autopilot/db/ereg_v1.pp.0.cpp
+        Offset:          2151306
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_30_2: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_33_3:  '
+    FileOffset:      33
+    FilePath:        /home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_image.h
+    Replacements:    
+      - FilePath:        /home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml/solution/.autopilot/db/ereg_v1.pp.0.cpp
+        Offset:          2151446
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_33_3: '
+...

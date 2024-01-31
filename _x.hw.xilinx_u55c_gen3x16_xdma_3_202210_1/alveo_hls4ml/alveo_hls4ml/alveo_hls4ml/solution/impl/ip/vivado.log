@@ -1,0 +1,19 @@
+#-----------------------------------------------------------
+# Vivado v2022.2 (64-bit)
+# SW Build 3671981 on Fri Oct 14 04:59:54 MDT 2022
+# IP Build 3669848 on Fri Oct 14 08:30:02 MDT 2022
+# Start of session at: Tue Jan 30 21:27:23 2024
+# Process ID: 290564
+# Current directory: /home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml/solution/impl/ip
+# Command line: vivado -notrace -mode batch -source run_ippack.tcl
+# Log file: /home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml/solution/impl/ip/vivado.log
+# Journal file: /home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml/solution/impl/ip/vivado.jou
+# Running On: egl, OS: Linux, CPU Frequency: 3246.224 MHz, CPU Physical cores: 32, Host memory: 540937 MB
+#-----------------------------------------------------------
+source run_ippack.tcl -notrace
+ipx::create_core: Time (s): cpu = 00:00:06 ; elapsed = 00:00:56 . Memory (MB): peak = 1790.055 ; gain = 85.023 ; free physical = 197028 ; free virtual = 460325
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/tools/Xilinx/Vivado/2022.2/data/ip'.
+Running package_xo -xo_path /home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml/solution/impl/export.xo -kernel_name alveo_hls4ml -kernel_xml /home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml/solution/impl/ip/../kernel/kernel.xml -kernel_files {/home/ayvol/accelerator_wrapper/src/ereg_v1.cpp /home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp} -ip_directory /home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml/solution/impl/ip/ip_unzip_dir -design_xml /home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml/solution/.autopilot/db/alveo_hls4ml.design.xml -debug_directory /home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml/solution/.debug -hls_directory /home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml/solution/impl/ip/hls_files
+INFO: [Common 17-206] Exiting Vivado at Tue Jan 30 21:33:39 2024...

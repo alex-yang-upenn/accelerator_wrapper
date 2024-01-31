@@ -1,0 +1,458 @@
+
+
+================================================================
+== Vitis HLS Report for 'VITIS_LOOP_59_3_proc'
+================================================================
+* Date:           Tue Jan 30 21:23:49 2024
+
+* Version:        2022.2 (Build 3670227 on Oct 13 2022)
+* Project:        alveo_hls4ml
+* Solution:       solution (Vitis Kernel Flow Target)
+* Product family: virtexuplus
+* Target device:  xcu55c-fsvh2892-2L-e
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+---------+----------+------------+
+    |  Clock |  Target | Estimated| Uncertainty|
+    +--------+---------+----------+------------+
+    |ap_clk  |  3.33 ns|  2.248 ns|     0.90 ns|
+    +--------+---------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-------+-------+---------+
+    |  Latency (cycles) |  Latency (absolute) |    Interval   | Pipeline|
+    |   min   |   max   |    min   |    max   |  min  |  max  |   Type  |
+    +---------+---------+----------+----------+-------+-------+---------+
+    |    49192|    49192|  0.164 ms|  0.164 ms|  49192|  49192|       no|
+    +---------+---------+----------+----------+-------+-------+---------+
+
+    + Detail: 
+        * Instance: 
+        +--------------------------------------------+----------------------------------+---------+---------+----------+----------+-----+-----+----------+
+        |                                            |                                  |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline |
+        |                  Instance                  |              Module              |   min   |   max   |    min   |    max   | min | max |   Type   |
+        +--------------------------------------------+----------------------------------+---------+---------+----------+----------+-----+-----+----------+
+        |grp_dataflow_in_loop_VITIS_LOOP_59_3_fu_40  |dataflow_in_loop_VITIS_LOOP_59_3  |       41|       41|  0.137 us|  0.137 us|    3|    3|  dataflow|
+        +--------------------------------------------+----------------------------------+---------+---------+----------+----------+-----+-----+----------+
+
+        * Loop: 
+        +-------------------+---------+---------+----------+-----------+-----------+-------+----------+
+        |                   |  Latency (cycles) | Iteration|  Initiation Interval  |  Trip |          |
+        |     Loop Name     |   min   |   max   |  Latency |  achieved |   target  | Count | Pipelined|
+        +-------------------+---------+---------+----------+-----------+-----------+-------+----------+
+        |- VITIS_LOOP_59_3  |    49191|    49191|        43|          -|          -|  16384|        no|
+        +-------------------+---------+---------+----------+-----------+-----------+-------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 2
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 3
+* Pipeline : 0
+* Dataflow Pipeline: 1
+  DF-Pipeline-0: Size = 2, States = { 2 3 }
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 3 
+3 --> 2 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 0.38>
+ST_1 : Operation 4 [1/1] (0.38ns)   --->   "%br_ln0 = br void %for.cond34"   --->   Operation 4 'br' 'br_ln0' <Predicate = true> <Delay = 0.38>
+
+State 2 <SV = 1> <Delay = 1.88>
+ST_2 : Operation 5 [1/1] (0.00ns)   --->   "%i = phi i15 %add_ln59, void %for.inc43, i15 0, void %newFuncRoot" [/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:59]   --->   Operation 5 'phi' 'i' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 6 [1/1] (0.66ns)   --->   "%icmp_ln59 = icmp_eq  i15 %i, i15 16384" [/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:59]   --->   Operation 6 'icmp' 'icmp_ln59' <Predicate = true> <Delay = 0.66> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 0.66> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 7 [1/1] (0.00ns)   --->   "%empty = speclooptripcount i32 @_ssdm_op_SpecLoopTripCount, i64 16384, i64 16384, i64 16384"   --->   Operation 7 'speclooptripcount' 'empty' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 8 [1/1] (0.00ns)   --->   "%specdataflowpipeline_ln59 = specdataflowpipeline void @_ssdm_op_SpecDataflowPipeline, i32 4294967295, i32 0, void @dataflow_parent_loop_str, i15 %i, i15 16384, i32 0" [/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:59]   --->   Operation 8 'specdataflowpipeline' 'specdataflowpipeline_ln59' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 9 [1/1] (0.77ns)   --->   "%add_ln59 = add i15 %i, i15 1" [/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:59]   --->   Operation 9 'add' 'add_ln59' <Predicate = true> <Delay = 0.77> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.77> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 10 [1/1] (0.00ns)   --->   "%br_ln59 = br i1 %icmp_ln59, void %for.inc43, void %for.end45.split.exitStub" [/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:59]   --->   Operation 10 'br' 'br_ln59' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 11 [2/2] (1.21ns)   --->   "%call_ln61 = call void @dataflow_in_loop_VITIS_LOOP_59_3, i288 %in_buf_V, i15 %i, i16 %out_buf_V" [/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:61]   --->   Operation 11 'call' 'call_ln61' <Predicate = (!icmp_ln59)> <Delay = 1.21> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_2 : Operation 12 [1/1] (0.00ns)   --->   "%ret_ln0 = ret"   --->   Operation 12 'ret' 'ret_ln0' <Predicate = (icmp_ln59)> <Delay = 0.00>
+
+State 3 <SV = 2> <Delay = 0.00>
+ST_3 : Operation 13 [1/1] (0.00ns)   --->   "%specloopname_ln61 = specloopname void @_ssdm_op_SpecLoopName, void @empty_5" [/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:61]   --->   Operation 13 'specloopname' 'specloopname_ln61' <Predicate = (!icmp_ln59)> <Delay = 0.00>
+ST_3 : Operation 14 [1/2] (0.00ns)   --->   "%call_ln61 = call void @dataflow_in_loop_VITIS_LOOP_59_3, i288 %in_buf_V, i15 %i, i16 %out_buf_V" [/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:61]   --->   Operation 14 'call' 'call_ln61' <Predicate = (!icmp_ln59)> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_3 : Operation 15 [1/1] (0.00ns)   --->   "%br_ln59 = br void %for.cond34" [/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:59]   --->   Operation 15 'br' 'br_ln59' <Predicate = (!icmp_ln59)> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+STG Binding: 
+---------------- STG Properties BEGIN ----------------
+- Is combinational: 0
+- Is one-state seq: 0
+- Is datapath-only: 0
+- Is pipelined: 0
+- Is top level: 0
+Port [ Return ] is wired: 1; IO mode=ap_ctrl_hs:ce=0
+Port [ in_buf_V]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=1; pingpong=1; private_global=0; MemPort=[13]; IO mode=ap_memory:ce=0
+Port [ out_buf_V]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=1; type=1; pingpong=1; private_global=0; MemPort=[03]; IO mode=ap_memory:ce=0
+---------------- STG Properties END ------------------
+
+---------------- Datapath Model BEGIN ----------------
+
+<LifeTime>
+<method=bitvector/>
+br_ln0                    (br                  ) [ 0111]
+i                         (phi                 ) [ 0011]
+icmp_ln59                 (icmp                ) [ 0011]
+empty                     (speclooptripcount   ) [ 0000]
+specdataflowpipeline_ln59 (specdataflowpipeline) [ 0000]
+add_ln59                  (add                 ) [ 0111]
+br_ln59                   (br                  ) [ 0000]
+ret_ln0                   (ret                 ) [ 0000]
+specloopname_ln61         (specloopname        ) [ 0000]
+call_ln61                 (call                ) [ 0000]
+br_ln59                   (br                  ) [ 0111]
+</LifeTime>
+
+<model>
+
+<comp_list>
+<comp id="0" class="1000" name="in_buf_V">
+<pin_list>
+<pin id="1" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="in_buf_V"/><MemPortTyVec>1 3 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="2" class="1000" name="out_buf_V">
+<pin_list>
+<pin id="3" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="out_buf_V"/><MemPortTyVec>0 3 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="4" class="1001" name="const_4">
+<pin_list>
+<pin id="5" dir="1" index="0" bw="1" slack="1"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="6" class="1001" name="const_6">
+<pin_list>
+<pin id="7" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="8" class="1001" name="const_8">
+<pin_list>
+<pin id="9" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="_ssdm_op_SpecLoopTripCount"/></StgValue>
+</bind>
+</comp>
+
+<comp id="10" class="1001" name="const_10">
+<pin_list>
+<pin id="11" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="12" class="1001" name="const_12">
+<pin_list>
+<pin id="13" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="_ssdm_op_SpecDataflowPipeline"/></StgValue>
+</bind>
+</comp>
+
+<comp id="14" class="1001" name="const_14">
+<pin_list>
+<pin id="15" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="16" class="1001" name="const_16">
+<pin_list>
+<pin id="17" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="18" class="1001" name="const_18">
+<pin_list>
+<pin id="19" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="dataflow_parent_loop_str"/></StgValue>
+</bind>
+</comp>
+
+<comp id="20" class="1001" name="const_20">
+<pin_list>
+<pin id="21" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="22" class="1001" name="const_22">
+<pin_list>
+<pin id="23" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="dataflow_in_loop_VITIS_LOOP_59_3"/></StgValue>
+</bind>
+</comp>
+
+<comp id="24" class="1001" name="const_24">
+<pin_list>
+<pin id="25" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="_ssdm_op_SpecLoopName"/></StgValue>
+</bind>
+</comp>
+
+<comp id="26" class="1001" name="const_26">
+<pin_list>
+<pin id="27" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="empty_5"/></StgValue>
+</bind>
+</comp>
+
+<comp id="28" class="1005" name="i_reg_28">
+<pin_list>
+<pin id="29" dir="0" index="0" bw="15" slack="1"/>
+<pin id="30" dir="1" index="1" bw="15" slack="1"/>
+</pin_list>
+<bind>
+<opset="i (phireg) "/>
+</bind>
+</comp>
+
+<comp id="32" class="1004" name="i_phi_fu_32">
+<pin_list>
+<pin id="33" dir="0" index="0" bw="15" slack="0"/>
+<pin id="34" dir="0" index="1" bw="0" slack="2147483647"/>
+<pin id="35" dir="0" index="2" bw="1" slack="1"/>
+<pin id="36" dir="0" index="3" bw="0" slack="2147483647"/>
+<pin id="37" dir="1" index="4" bw="15" slack="0"/>
+</pin_list>
+<bind>
+<opcode="phi(47) " fcode="phi"/>
+<opset="i/2 "/>
+</bind>
+</comp>
+
+<comp id="40" class="1004" name="grp_dataflow_in_loop_VITIS_LOOP_59_3_fu_40">
+<pin_list>
+<pin id="41" dir="0" index="0" bw="0" slack="0"/>
+<pin id="42" dir="0" index="1" bw="288" slack="0"/>
+<pin id="43" dir="0" index="2" bw="15" slack="0"/>
+<pin id="44" dir="0" index="3" bw="16" slack="0"/>
+<pin id="45" dir="1" index="4" bw="0" slack="2147483647"/>
+</pin_list>
+<bind>
+<opcode="call(48) " fcode="call"/>
+<opset="call_ln61/2 "/>
+</bind>
+</comp>
+
+<comp id="50" class="1004" name="icmp_ln59_fu_50">
+<pin_list>
+<pin id="51" dir="0" index="0" bw="15" slack="0"/>
+<pin id="52" dir="0" index="1" bw="15" slack="0"/>
+<pin id="53" dir="1" index="2" bw="1" slack="1"/>
+</pin_list>
+<bind>
+<opcode="icmp(45) " fcode="icmp"/>
+<opset="icmp_ln59/2 "/>
+</bind>
+</comp>
+
+<comp id="56" class="1004" name="add_ln59_fu_56">
+<pin_list>
+<pin id="57" dir="0" index="0" bw="15" slack="0"/>
+<pin id="58" dir="0" index="1" bw="1" slack="0"/>
+<pin id="59" dir="1" index="2" bw="15" slack="0"/>
+</pin_list>
+<bind>
+<opcode="add(8) " fcode="add"/>
+<opset="add_ln59/2 "/>
+</bind>
+</comp>
+
+<comp id="62" class="1005" name="icmp_ln59_reg_62">
+<pin_list>
+<pin id="63" dir="0" index="0" bw="1" slack="1"/>
+<pin id="64" dir="1" index="1" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<opset="icmp_ln59 "/>
+</bind>
+</comp>
+
+<comp id="66" class="1005" name="add_ln59_reg_66">
+<pin_list>
+<pin id="67" dir="0" index="0" bw="15" slack="0"/>
+<pin id="68" dir="1" index="1" bw="15" slack="0"/>
+</pin_list>
+<bind>
+<opset="add_ln59 "/>
+</bind>
+</comp>
+
+</comp_list>
+
+<net_list>
+<net id="31"><net_src comp="4" pin="0"/><net_sink comp="28" pin=0"/></net>
+
+<net id="38"><net_src comp="28" pin="1"/><net_sink comp="32" pin=2"/></net>
+
+<net id="39"><net_src comp="32" pin="4"/><net_sink comp="28" pin=0"/></net>
+
+<net id="46"><net_src comp="22" pin="0"/><net_sink comp="40" pin=0"/></net>
+
+<net id="47"><net_src comp="0" pin="0"/><net_sink comp="40" pin=1"/></net>
+
+<net id="48"><net_src comp="32" pin="4"/><net_sink comp="40" pin=2"/></net>
+
+<net id="49"><net_src comp="2" pin="0"/><net_sink comp="40" pin=3"/></net>
+
+<net id="54"><net_src comp="32" pin="4"/><net_sink comp="50" pin=0"/></net>
+
+<net id="55"><net_src comp="6" pin="0"/><net_sink comp="50" pin=1"/></net>
+
+<net id="60"><net_src comp="32" pin="4"/><net_sink comp="56" pin=0"/></net>
+
+<net id="61"><net_src comp="20" pin="0"/><net_sink comp="56" pin=1"/></net>
+
+<net id="65"><net_src comp="50" pin="2"/><net_sink comp="62" pin=0"/></net>
+
+<net id="69"><net_src comp="56" pin="2"/><net_sink comp="66" pin=0"/></net>
+
+<net id="70"><net_src comp="66" pin="1"/><net_sink comp="32" pin=0"/></net>
+
+</net_list>
+
+</model> 
+---------------- Datapath Model END ------------------
+
+* FSMD analyzer results:
+  - Output states:
+	Port: out_buf_V | {2 3 }
+ - Input state : 
+	Port: VITIS_LOOP_59_3_proc : in_buf_V | {2 3 }
+  - Chain level:
+	State 1
+	State 2
+		icmp_ln59 : 1
+		specdataflowpipeline_ln59 : 1
+		add_ln59 : 1
+		br_ln59 : 2
+		call_ln61 : 1
+	State 3
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+
+* Functional unit list:
+|----------|--------------------------------------------|---------|---------|---------|---------|
+| Operation|               Functional Unit              |   DSP   |  Delay  |    FF   |   LUT   |
+|----------|--------------------------------------------|---------|---------|---------|---------|
+|   call   | grp_dataflow_in_loop_VITIS_LOOP_59_3_fu_40 |   933   | 983.685 |  55678  |  41045  |
+|----------|--------------------------------------------|---------|---------|---------|---------|
+|    add   |               add_ln59_fu_56               |    0    |    0    |    0    |    22   |
+|----------|--------------------------------------------|---------|---------|---------|---------|
+|   icmp   |               icmp_ln59_fu_50              |    0    |    0    |    0    |    12   |
+|----------|--------------------------------------------|---------|---------|---------|---------|
+|   Total  |                                            |   933   | 983.685 |  55678  |  41079  |
+|----------|--------------------------------------------|---------|---------|---------|---------|
+
+Memories:
+N/A
+
+* Register list:
++----------------+--------+
+|                |   FF   |
++----------------+--------+
+| add_ln59_reg_66|   15   |
+|    i_reg_28    |   15   |
+|icmp_ln59_reg_62|    1   |
++----------------+--------+
+|      Total     |   31   |
++----------------+--------+
+
+* Multiplexer (MUX) list: 
+|----------|------|------|------|--------||---------||---------|
+|   Comp   |  Pin | Size |  BW  | S x BW ||  Delay  ||   LUT   |
+|----------|------|------|------|--------||---------||---------|
+| i_reg_28 |  p0  |   2  |  15  |   30   ||    9    |
+|----------|------|------|------|--------||---------||---------|
+|   Total  |      |      |      |   30   ||  0.387  ||    9    |
+|----------|------|------|------|--------||---------||---------|
+
+
+
+* Summary:
++-----------+--------+--------+--------+--------+
+|           |   DSP  |  Delay |   FF   |   LUT  |
++-----------+--------+--------+--------+--------+
+|  Function |   933  |   983  |  55678 |  41079 |
+|   Memory  |    -   |    -   |    -   |    -   |
+|Multiplexer|    -   |    0   |    -   |    9   |
+|  Register |    -   |    -   |   31   |    -   |
++-----------+--------+--------+--------+--------+
+|   Total   |   933  |   984  |  55709 |  41088 |
++-----------+--------+--------+--------+--------+
