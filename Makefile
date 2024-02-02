@@ -2,7 +2,7 @@
 
 help::
 	$(ECHO) "Makefile Usage:"
-	$(ECHO) "  make all TARGET=<sw_emu/hw_emu/hw> DEVICE=<FPGA platform> HLS4ML_NAME=<kernel name> HLS4ML_PROJ_TYPE=<DENSE/CONV1D> HOST_ARCH=<aarch32/aarch64/x86> SYSROOT=<sysroot_path>"
+	$(ECHO) "  make all TARGET=<sw_emu/hw_emu/hw> DEVICE=<FPGA platform> HLS4ML_NAME=<kernel name> HLS4ML_PROJ_TYPE=<DENSE/CONV2D> HOST_ARCH=<aarch32/aarch64/x86> SYSROOT=<sysroot_path>"
 	$(ECHO) "      Command to generate the design for specified Target and Shell."
 	$(ECHO) "      By default, HOST_ARCH=x86. HOST_ARCH and SYSROOT is required for SoC shells"
 	$(ECHO) ""
@@ -12,19 +12,19 @@ help::
 	$(ECHO) "  make cleanall"
 	$(ECHO) "      Command to remove all the generated files."
 	$(ECHO) ""
-	$(ECHO) "  make build TARGET=<sw_emu/hw_emu/hw> DEVICE=<FPGA platform> HLS4ML_NAME=<kernel name> HLS4ML_PROJ_TYPE=<DENSE/CONV1D> HOST_ARCH=<aarch32/aarch64/x86> SYSROOT=<sysroot_path>"
+	$(ECHO) "  make build TARGET=<sw_emu/hw_emu/hw> DEVICE=<FPGA platform> HLS4ML_NAME=<kernel name> HLS4ML_PROJ_TYPE=<DENSE/CONV2D> HOST_ARCH=<aarch32/aarch64/x86> SYSROOT=<sysroot_path>"
 	$(ECHO) "      Command to build xclbin application."
 	$(ECHO) "      By default, HOST_ARCH=x86. HOST_ARCH and SYSROOT is required for SoC shells"
 	$(ECHO) ""
-	$(ECHO) "  make exe TARGET=<sw_emu/hw_emu/hw> DEVICE=<FPGA platform> HLS4ML_NAME=<kernel name> HLS4ML_PROJ_TYPE=<DENSE/CONV1D> HOST_ARCH=<aarch32/aarch64/x86> SYSROOT=<sysroot_path>"
+	$(ECHO) "  make exe TARGET=<sw_emu/hw_emu/hw> DEVICE=<FPGA platform> HLS4ML_NAME=<kernel name> HLS4ML_PROJ_TYPE=<DENSE/CONV2D> HOST_ARCH=<aarch32/aarch64/x86> SYSROOT=<sysroot_path>"
 	$(ECHO) "      Command to build host executable."
 	$(ECHO) "      By default, HOST_ARCH=x86. HOST_ARCH and SYSROOT is required for SoC shells"
 	$(ECHO) ""
-	$(ECHO) "  make sd_card TARGET=<sw_emu/hw_emu/hw> DEVICE=<FPGA platform> HLS4ML_NAME=<kernel name> HLS4ML_PROJ_TYPE=<DENSE/CONV1D> HOST_ARCH=<aarch32/aarch64/x86> SYSROOT=<sysroot_path>"
+	$(ECHO) "  make sd_card TARGET=<sw_emu/hw_emu/hw> DEVICE=<FPGA platform> HLS4ML_NAME=<kernel name> HLS4ML_PROJ_TYPE=<DENSE/CONV2D> HOST_ARCH=<aarch32/aarch64/x86> SYSROOT=<sysroot_path>"
 	$(ECHO) "      Command to prepare sd_card files."
 	$(ECHO) "      By default, HOST_ARCH=x86. HOST_ARCH and SYSROOT is required for SoC shells"
 	$(ECHO) ""
-	$(ECHO) "  make check TARGET=<sw_emu/hw_emu/hw> DEVICE=<FPGA platform> HLS4ML_NAME=<kernel name> HLS4ML_PROJ_TYPE=<DENSE/CONV1D> HOST_ARCH=<aarch32/aarch64/x86> SYSROOT=<sysroot_path>"
+	$(ECHO) "  make check TARGET=<sw_emu/hw_emu/hw> DEVICE=<FPGA platform> HLS4ML_NAME=<kernel name> HLS4ML_PROJ_TYPE=<DENSE/CONV2D> HOST_ARCH=<aarch32/aarch64/x86> SYSROOT=<sysroot_path>"
 	$(ECHO) "      Command to run application in emulation."
 	$(ECHO) "      By default, HOST_ARCH=x86. HOST_ARCH and SYSROOT is required for SoC shells"
 	$(ECHO) ""
@@ -49,10 +49,10 @@ XO_CONTAINER_FILENAME := $(XO_DIR)/alveo_hls4ml.xo
 #these need to be set by the user for their specific installation
 HLS4ML_NAME := 
 HLS4ML_PROJ_TYPE := 
-#possible options are: DENSE, CONV1D
+#possible options are: DENSE, CONV2D
 #--^--^--
-ifeq ($(filter $(HLS4ML_PROJ_TYPE),DENSE CONV1D),)
-$(error invalid HLS4ML_PROJ_TYPE, must be DENSE or CONV1D)
+ifeq ($(filter $(HLS4ML_PROJ_TYPE),DENSE CONV2D),)
+$(error invalid HLS4ML_PROJ_TYPE, must be DENSE or CONV2D)
 endif
 
 # Include Libraries

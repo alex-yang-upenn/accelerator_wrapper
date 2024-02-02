@@ -31,7 +31,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 Description:
     HLS pragmas can be used to optimize the design : improve throughput, reduce latency and 
     device resource utilization of the resulting RTL code
-    This is a wrapper to be used with an hls4ml project to enable proper handling by SDAccel
+    This is a wrapper to be used with an hls4ml project
 *******************************************************************************/
 #ifndef ALVEO_HLS4ML_H
 #define ALVEO_HLS4ML_H
@@ -40,29 +40,35 @@ Description:
 #include "parameters.h" // Generated from HLS4ML
 
 #ifdef IS_DENSE
-#define STREAMSIZE 8192 // Calculate according to FPGA specs (HBM PC memory size). DO NOT fully use up assigned HBM memory
+/* Calculate according to FPGA specs (HBM PC memory size) and size of input layer. 
+DO NOT fully use up assigned HBM memory. 
+*/
+#define BATCHSIZE 8192
 
 #define DATA_SIZE_IN N_INPUT_1_1
-#define INSTREAMSIZE (STREAMSIZE * DATA_SIZE_IN)
+#define INSTREAMSIZE (BATCHSIZE * DATA_SIZE_IN)
 
 #define DATA_SIZE_OUT N_LAYER_11
-#define OUTSTREAMSIZE (STREAMSIZE * DATA_SIZE_OUT)
+#define OUTSTREAMSIZE (BATCHSIZE * DATA_SIZE_OUT)
 
-typedef model_default_t input_data_t;
+typedef model_default_t input_data_t; 
 typedef model_default_t output_data_t;
 #endif
 
-#ifdef IS_CONV1D
-#define STREAMSIZE 8192 // Calculate according to FPGA specs (HBM PC memory size). DO NOT fully use up assigned HBM memory
+#ifdef IS_CONV2D
+/* Calculate according to FPGA specs (HBM PC memory size) and size of input image. 
+DO NOT fully use up assigned HBM memory. 
+*/
+#define BATCHSIZE 8192
 
 #define X_DIMENSION_IN N_INPUT_1_1
 #define Y_DIMENSION_IN N_INPUT_2_1
 #define Z_DIMENSION_IN N_INPUT_3_1
 #define DATA_SIZE_IN (X_DIMENSION_IN * Y_DIMENSION_IN)
-#define INSTREAMSIZE (STREAMSIZE * DATA_SIZE_IN * Z_DIMENSION_IN)
+#define INSTREAMSIZE (BATCHSIZE * DATA_SIZE_IN * Z_DIMENSION_IN)
 
 #define DATA_SIZE_OUT N_LAYER_26 // Update accordingly
-#define OUTSTREAMSIZE (STREAMSIZE * DATA_SIZE_OUT)
+#define OUTSTREAMSIZE (BATCHSIZE * DATA_SIZE_OUT)
 
 typedef model_default_t input_data_t;
 typedef model_default_t output_data_t;

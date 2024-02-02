@@ -3,7 +3,7 @@
 #define PROJ_HDR <MYPROJ.h>
 #include PROJ_HDR
 
-#ifdef IS_CONV1D
+#ifdef IS_CONV2D
 /**
  * \brief Read data from Global Memory and write into Stream inStream
 */
@@ -41,13 +41,13 @@ extern "C" {
       #ifdef IS_DENSE
       #pragma HLS DATAFLOW
 
-        input_t in_buf[STREAMSIZE][DATA_SIZE_IN];
-        layer11_t out_buf[STREAMSIZE][DATA_SIZE_OUT];
+        input_t in_buf[BATCHSIZE][DATA_SIZE_IN];
+        layer11_t out_buf[BATCHSIZE][DATA_SIZE_OUT];
         #pragma HLS ARRAY_RESHAPE   variable=in_buf  complete dim=2
         #pragma HLS ARRAY_RESHAPE   variable=out_buf complete dim=2
 
         // Read input
-        for (int i = 0; i < STREAMSIZE; i++) {
+        for (int i = 0; i < BATCHSIZE; i++) {
           #pragma HLS PIPELINE
           for(int j = 0; j < DATA_SIZE_IN; j++) { 
             #pragma HLS UNROLL
@@ -56,13 +56,13 @@ extern "C" {
         }
 
         // Run inference
-        for (int i = 0; i < STREAMSIZE; i++) {
+        for (int i = 0; i < BATCHSIZE; i++) {
           #pragma HLS DATAFLOW
           hls4ml: MYPROJ(in_buf[i],out_buf[i]);
         }
 
         // Write output
-        for (int i = 0; i < STREAMSIZE; i++) {
+        for (int i = 0; i < BATCHSIZE; i++) {
           #pragma HLS PIPELINE
           for (int j = 0; j < DATA_SIZE_OUT; j++) {
             #pragma HLS UNROLL
@@ -71,13 +71,13 @@ extern "C" {
         }
       #endif
 
-      #ifdef IS_CONV1D
+      #ifdef IS_CONV2D
         hls::stream<input_stream_t> input("input");
         hls::stream<output_stream_t> output("output");
         #pragma HLS STREAM variable=input depth=DATA_SIZE_IN
         #pragma HLS STREAM variable=output depth=1
         
-        for (int n = 0; n < STREAMSIZE; n++) {
+        for (int n = 0; n < BATCHSIZE; n++) {
         #pragma HLS DATAFLOW          
           read_input(in, input);
           hls4ml: MYPROJ(input, output);
