@@ -38,7 +38,7 @@ struct config2 : nnet::dense_config {
     static const unsigned n_in = 16;
     static const unsigned n_out = 64;
     static const unsigned io_type = nnet::io_parallel;
-    static const unsigned strategy = nnet::latency;
+    // static const unsigned strategy = nnet::latency;
     static const unsigned reuse_factor = 1;
     static const unsigned n_zeros = 783;
     static const unsigned n_nonzeros = 241;
