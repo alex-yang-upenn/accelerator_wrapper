@@ -44,8 +44,8 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #define NUM_CU 3
 #define NBUFFER 8
 
-#define STRINGIFY(x) #x
-#define EXPAND_STRING(x) STRINGIFY(x)
+#define STRINGIFY(var) #var
+#define EXPAND_STRING(var) STRINGIFY(var)
 
 
 void runFPGAHelper(fpgaObj<input_data_t, output_data_t> &theFPGA) {
@@ -101,7 +101,7 @@ int main(int argc, char** argv)
     fpga.finishRun();
 
     auto ts_end = SClock::now();
-    float throughput = (float(NUM_CU * NBUFFER * 500 * STREAMSIZE) /
+    float throughput = (float(NUM_CU * NBUFFER * 500 * BATCHSIZE) /
             float(std::chrono::duration_cast<std::chrono::nanoseconds>(ts_end - ts_start).count())) *
             1000000000.;
     
