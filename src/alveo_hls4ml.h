@@ -36,7 +36,6 @@ Description:
 #ifndef ALVEO_HLS4ML_H
 #define ALVEO_HLS4ML_H
 
-#include "defines.h"
 #include "parameters.h"
 
 #ifdef IS_DENSE

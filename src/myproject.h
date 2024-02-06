@@ -5,7 +5,6 @@
 #include "ap_int.h"
 #include "hls_stream.h"
 
-#include "defines.h"
 
 // Prototype of top level function for C-synthesis
 void myproject(

@@ -9,8 +9,8 @@ void myproject(
 ) {
 
     // hls-fpga-machine-learning insert IO
-    #pragma HLS ARRAY_RESHAPE variable=fc1_input complete dim=0
-    #pragma HLS ARRAY_PARTITION variable=layer13_out complete dim=0
+    // #pragma HLS ARRAY_RESHAPE variable=fc1_input complete dim=0
+    // #pragma HLS ARRAY_PARTITION variable=layer13_out complete dim=0
     #pragma HLS INTERFACE ap_vld port=fc1_input,layer13_out 
     #pragma HLS PIPELINE 
 
