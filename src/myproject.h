@@ -1,8 +1,6 @@
 #ifndef MYPROJECT_H_
 #define MYPROJECT_H_
 
-#include <iostream>
-
 #include "ap_fixed.h"
 #include "ap_int.h"
 #include "hls_stream.h"
