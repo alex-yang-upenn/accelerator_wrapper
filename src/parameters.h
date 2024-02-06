@@ -1,17 +1,26 @@
 #ifndef PARAMETERS_H_
 #define PARAMETERS_H_
 
+#include <complex>
+
 #include "ap_fixed.h"
 #include "ap_int.h"
 
-#include "nnet_utils/nnet_code_gen.h"
-#include "nnet_utils/nnet_helpers.h"
-// hls-fpga-machine-learning insert includes
-#include "nnet_utils/nnet_activation.h"
-#include "nnet_utils/nnet_activation_stream.h"
 #include "nnet_utils/nnet_dense.h"
+#include "nnet_utils/nnet_dense_large.h"
 #include "nnet_utils/nnet_dense_compressed.h"
-#include "nnet_utils/nnet_dense_stream.h"
+#include "nnet_utils/nnet_conv.h"
+#include "nnet_utils/nnet_conv_large.h"
+#include "nnet_utils/nnet_conv2d.h"
+#include "nnet_utils/nnet_conv2d_large.h"
+#include "nnet_utils/nnet_activation.h"
+#include "nnet_utils/nnet_common.h"
+#include "nnet_utils/nnet_batchnorm.h"
+#include "nnet_utils/nnet_pooling.h"
+#include "nnet_utils/nnet_merge.h"
+#include "nnet_utils/nnet_array.h"
+#include "nnet_utils/nnet_image.h"
+#include "nnet_utils/nnet_helpers.h"
 
 // hls-fpga-machine-learning insert weights
 #include "weights/w2.h"
@@ -39,8 +48,8 @@ struct config2 : nnet::dense_config {
     typedef bias2_t bias_t;
     typedef weight2_t weight_t;
     typedef layer2_index index_t;
-    template<class x_T, class y_T>
-    using product = nnet::product::mult<x_T, y_T>;
+    // template<class x_T, class y_T>
+    // using product = nnet::product::mult<x_T, y_T>;
 };
 
 // relu1
@@ -57,7 +66,7 @@ struct config5 : nnet::dense_config {
     static const unsigned n_in = 64;
     static const unsigned n_out = 32;
     static const unsigned io_type = nnet::io_parallel;
-    static const unsigned strategy = nnet::latency;
+    // static const unsigned strategy = nnet::latency;
     static const unsigned reuse_factor = 1;
     static const unsigned n_zeros = 1600;
     static const unsigned n_nonzeros = 448;
@@ -67,8 +76,8 @@ struct config5 : nnet::dense_config {
     typedef bias5_t bias_t;
     typedef weight5_t weight_t;
     typedef layer5_index index_t;
-    template<class x_T, class y_T>
-    using product = nnet::product::mult<x_T, y_T>;
+    // template<class x_T, class y_T>
+    // using product = nnet::product::mult<x_T, y_T>;
 };
 
 // relu2
@@ -85,7 +94,7 @@ struct config8 : nnet::dense_config {
     static const unsigned n_in = 32;
     static const unsigned n_out = 32;
     static const unsigned io_type = nnet::io_parallel;
-    static const unsigned strategy = nnet::latency;
+    // static const unsigned strategy = nnet::latency;
     static const unsigned reuse_factor = 1;
     static const unsigned n_zeros = 779;
     static const unsigned n_nonzeros = 245;
@@ -95,8 +104,8 @@ struct config8 : nnet::dense_config {
     typedef bias8_t bias_t;
     typedef weight8_t weight_t;
     typedef layer8_index index_t;
-    template<class x_T, class y_T>
-    using product = nnet::product::mult<x_T, y_T>;
+    // template<class x_T, class y_T>
+    // using product = nnet::product::mult<x_T, y_T>;
 };
 
 // relu3
@@ -113,7 +122,7 @@ struct config11 : nnet::dense_config {
     static const unsigned n_in = 32;
     static const unsigned n_out = 5;
     static const unsigned io_type = nnet::io_parallel;
-    static const unsigned strategy = nnet::latency;
+    // static const unsigned strategy = nnet::latency;
     static const unsigned reuse_factor = 1;
     static const unsigned n_zeros = 120;
     static const unsigned n_nonzeros = 40;
@@ -123,8 +132,8 @@ struct config11 : nnet::dense_config {
     typedef bias11_t bias_t;
     typedef weight11_t weight_t;
     typedef layer11_index index_t;
-    template<class x_T, class y_T>
-    using product = nnet::product::mult<x_T, y_T>;
+    // template<class x_T, class y_T>
+    // using product = nnet::product::mult<x_T, y_T>;
 };
 
 // softmax
@@ -134,7 +143,7 @@ struct softmax_config13 : nnet::activ_config {
     static const unsigned io_type = nnet::io_parallel;
     static const unsigned reuse_factor = 1;
     static const unsigned axis = -1;
-    static const nnet::softmax_implementation implementation = nnet::softmax_implementation::stable;
+    // static const nnet::softmax_implementation implementation = nnet::softmax_implementation::stable;
     typedef softmax_exp_table_t exp_table_t;
     typedef softmax_inv_table_t inv_table_t;
 };

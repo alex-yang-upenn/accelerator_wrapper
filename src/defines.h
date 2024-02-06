@@ -3,7 +3,7 @@
 
 #include "ap_fixed.h"
 #include "ap_int.h"
-#include "nnet_utils/nnet_types.h"
+
 #include <cstddef>
 #include <cstdio>
 

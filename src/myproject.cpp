@@ -38,7 +38,7 @@ void myproject(
 
     layer2_t layer2_out[N_LAYER_2];
     #pragma HLS ARRAY_PARTITION variable=layer2_out complete dim=0
-    nnet::dense<input_t, layer2_t, config2>(fc1_input, layer2_out, w2, b2); // fc1
+    nnet::dense_latency<input_t, layer2_t, config2>(fc1_input, layer2_out, w2, b2); // fc1
 
     layer4_t layer4_out[N_LAYER_2];
     #pragma HLS ARRAY_PARTITION variable=layer4_out complete dim=0
@@ -46,7 +46,7 @@ void myproject(
 
     layer5_t layer5_out[N_LAYER_5];
     #pragma HLS ARRAY_PARTITION variable=layer5_out complete dim=0
-    nnet::dense<layer4_t, layer5_t, config5>(layer4_out, layer5_out, w5, b5); // fc2
+    nnet::dense_latency<layer4_t, layer5_t, config5>(layer4_out, layer5_out, w5, b5); // fc2
 
     layer7_t layer7_out[N_LAYER_5];
     #pragma HLS ARRAY_PARTITION variable=layer7_out complete dim=0
@@ -54,7 +54,7 @@ void myproject(
 
     layer8_t layer8_out[N_LAYER_8];
     #pragma HLS ARRAY_PARTITION variable=layer8_out complete dim=0
-    nnet::dense<layer7_t, layer8_t, config8>(layer7_out, layer8_out, w8, b8); // fc3
+    nnet::dense_latency<layer7_t, layer8_t, config8>(layer7_out, layer8_out, w8, b8); // fc3
 
     layer10_t layer10_out[N_LAYER_8];
     #pragma HLS ARRAY_PARTITION variable=layer10_out complete dim=0
@@ -62,7 +62,7 @@ void myproject(
 
     layer11_t layer11_out[N_LAYER_11];
     #pragma HLS ARRAY_PARTITION variable=layer11_out complete dim=0
-    nnet::dense<layer10_t, layer11_t, config11>(layer10_out, layer11_out, w11, b11); // output
+    nnet::dense_latency<layer10_t, layer11_t, config11>(layer10_out, layer11_out, w11, b11); // output
 
     nnet::softmax<layer11_t, result_t, softmax_config13>(layer11_out, layer13_out); // softmax
 
