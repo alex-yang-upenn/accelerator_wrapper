@@ -40,7 +40,7 @@ Description:
 #include "parameters.h"
 
 #ifdef IS_DENSE
-#define STREAMSIZE 16384
+#define STREAMSIZE 8192
 
 #define DATA_SIZE_IN N_INPUT_1_1
 #define INSTREAMSIZE (STREAMSIZE * DATA_SIZE_IN)
@@ -52,7 +52,7 @@ typedef input_t input_data_t;
 typedef layer11_t output_data_t;
 #endif
 
-#ifdef IS_CONV1D
+#ifdef IS_CONV2D
 #define STREAMSIZE 8192
 
 #define X_DIMENSION_IN N_INPUT_1_1

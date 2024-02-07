@@ -3,7 +3,7 @@
 #define PROJ_HDR <MYPROJ.h>
 #include PROJ_HDR
 
-#ifdef IS_CONV1D
+#ifdef IS_CONV2D
 /**
  * \brief Read Data from Global Memory and write into Stream inStream
 */
@@ -71,7 +71,7 @@ extern "C" {
         }
       #endif
 
-      #ifdef IS_CONV1D
+      #ifdef IS_CONV2D
         hls::stream<input_stream_t> input("input");
         hls::stream<output_stream_t> output("output");
         #pragma HLS STREAM variable=input depth=DATA_SIZE_IN
