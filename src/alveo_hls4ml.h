@@ -66,7 +66,7 @@ DO NOT fully use up assigned HBM memory.
 #define DATA_SIZE_IN (X_DIMENSION_IN * Y_DIMENSION_IN)
 #define INSTREAMSIZE (BATCHSIZE * DATA_SIZE_IN * Z_DIMENSION_IN)
 
-#define DATA_SIZE_OUT N_LAYER_26 // Update accordingly
+#define DATA_SIZE_OUT N_LAYER_23 // Update accordingly
 #define OUTSTREAMSIZE (BATCHSIZE * DATA_SIZE_OUT)
 
 typedef ap_fixed<16,6> input_data_t; // Update accordingly
