@@ -69,8 +69,8 @@ DO NOT fully use up assigned HBM memory.
 #define DATA_SIZE_OUT N_LAYER_26 // Update accordingly
 #define OUTSTREAMSIZE (BATCHSIZE * DATA_SIZE_OUT)
 
-typedef model_default_t input_data_t;
-typedef model_default_t output_data_t;
+typedef ap_fixed<16,6> input_data_t; // Update accordingly
+typedef ap_fixed<16,6> output_data_t;
 
 typedef input_t input_stream_t;
 typedef result_t output_stream_t;
