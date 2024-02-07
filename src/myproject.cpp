@@ -3,6 +3,24 @@
 #include "myproject.h"
 #include "parameters.h"
 
+// hls-fpga-machine-learning insert weights
+#include "weights/w2.h"
+#include "weights/b2.h"
+#include "weights/w6.h"
+#include "weights/b6.h"
+#include "weights/w10.h"
+#include "weights/b10.h"
+#include "weights/w15.h"
+#include "weights/b15.h"
+#include "weights/s17.h"
+#include "weights/b17.h"
+#include "weights/w19.h"
+#include "weights/b19.h"
+#include "weights/s21.h"
+#include "weights/b21.h"
+#include "weights/w23.h"
+#include "weights/b23.h"
+
 void myproject(
     hls::stream<input_t> &input_2,
     hls::stream<result_t> &layer25_out

@@ -2,10 +2,13 @@
 .vscode/
 
 # Ignore build files
-# build_dir.*/
+build_dir.*/*/*
+build_dir.*/*
+!build_dir.*/alveo_hls4ml.xclbin
 # _x.*/
-# .log
+# *.log
 # host
+u55c_executable_logfile.log
 
 # Ignore server files
 .ipcache/
