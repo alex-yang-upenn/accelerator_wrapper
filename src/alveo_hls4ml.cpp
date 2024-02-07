@@ -5,9 +5,9 @@
 
 #ifdef IS_CONV2D
 /**
- * \brief Read Data from Global Memory and write into Stream inStream
+ * \brief Read data from Global Memory and write into Stream inStream
 */
-static void read_input(const input_data_t *in, hls::stream<input_stream_t> &input, int n) {
+static void read_input(const input_data_t *in, hls::stream<input_stream_t> &input) {
   for (int i = 0; i < DATA_SIZE_IN; i++) {
     #pragma HLS PIPELINE
     input_stream_t tmp;
@@ -20,9 +20,9 @@ static void read_input(const input_data_t *in, hls::stream<input_stream_t> &inpu
 }
 
 /**
- * \brief Read result from output and write the result to Global
+ * \brief Read result from output and write the result to Global Memory
 */
-static void write_result(output_data_t *out, hls::stream<output_stream_t> &output, int n) {
+static void write_result(output_data_t *out, hls::stream<output_stream_t> &output) {
   output_stream_t tmp = output.read();
   for (int i = 0; i < DATA_SIZE_OUT; i++) {
     #pragma HLS UNROLL
@@ -41,13 +41,13 @@ extern "C" {
       #ifdef IS_DENSE
       #pragma HLS DATAFLOW
 
-        input_t in_buf[STREAMSIZE][DATA_SIZE_IN];
-        layer11_t out_buf[STREAMSIZE][DATA_SIZE_OUT];
+        input_t in_buf[BATCHSIZE][DATA_SIZE_IN];
+        layer11_t out_buf[BATCHSIZE][DATA_SIZE_OUT];
         #pragma HLS ARRAY_RESHAPE   variable=in_buf  complete dim=2
         #pragma HLS ARRAY_RESHAPE   variable=out_buf complete dim=2
 
         // Read input
-        for (int i = 0; i < STREAMSIZE; i++) {
+        for (int i = 0; i < BATCHSIZE; i++) {
           #pragma HLS PIPELINE
           for(int j = 0; j < DATA_SIZE_IN; j++) { 
             #pragma HLS UNROLL
@@ -56,13 +56,13 @@ extern "C" {
         }
 
         // Run inference
-        for (int i = 0; i < STREAMSIZE; i++) {
+        for (int i = 0; i < BATCHSIZE; i++) {
           #pragma HLS DATAFLOW
           hls4ml: MYPROJ(in_buf[i],out_buf[i]);
         }
 
         // Write output
-        for (int i = 0; i < STREAMSIZE; i++) {
+        for (int i = 0; i < BATCHSIZE; i++) {
           #pragma HLS PIPELINE
           for (int j = 0; j < DATA_SIZE_OUT; j++) {
             #pragma HLS UNROLL
@@ -77,11 +77,11 @@ extern "C" {
         #pragma HLS STREAM variable=input depth=DATA_SIZE_IN
         #pragma HLS STREAM variable=output depth=1
         
-        for (int n = 0; n < STREAMSIZE; n++) {
+        for (int n = 0; n < BATCHSIZE; n++) {
         #pragma HLS DATAFLOW          
-          read_input(in, input, n);
+          read_input(in, input);
           hls4ml: MYPROJ(input, output);
-          write_result(out, output, n);
+          write_result(out, output);
         }
       #endif
 
