@@ -1,0 +1,139 @@
+
+
+================================================================
+== Vitis HLS Report for 'VITIS_LOOP_59_3_proc'
+================================================================
+* Date:           Tue Feb  6 21:40:36 2024
+
+* Version:        2022.2 (Build 3670227 on Oct 13 2022)
+* Project:        alveo_hls4ml
+* Solution:       solution (Vitis Kernel Flow Target)
+* Product family: virtexuplus
+* Target device:  xcu55c-fsvh2892-2L-e
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+---------+----------+------------+
+    |  Clock |  Target | Estimated| Uncertainty|
+    +--------+---------+----------+------------+
+    |ap_clk  |  3.33 ns|  2.387 ns|     0.90 ns|
+    +--------+---------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+-----------+-----------+-------+-------+---------+
+    |  Latency (cycles) |   Latency (absolute)  |    Interval   | Pipeline|
+    |   min   |   max   |    min    |    max    |  min  |  max  |   Type  |
+    +---------+---------+-----------+-----------+-------+-------+---------+
+    |    24605|    24605|  82.008 us|  82.008 us|  24605|  24605|       no|
+    +---------+---------+-----------+-----------+-------+-------+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +-------------------+---------+---------+----------+-----------+-----------+------+----------+
+        |                   |  Latency (cycles) | Iteration|  Initiation Interval  | Trip |          |
+        |     Loop Name     |   min   |   max   |  Latency |  achieved |   target  | Count| Pipelined|
+        +-------------------+---------+---------+----------+-----------+-----------+------+----------+
+        |- VITIS_LOOP_59_3  |    24604|    24604|        32|          -|          -|  8192|        no|
+        +-------------------+---------+---------+----------+-----------+-----------+------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 2
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 3
+* Pipeline : 0
+* Dataflow Pipeline: 1
+  DF-Pipeline-0: Size = 2, States = { 2 3 }
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 3 
+3 --> 2 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 0.38>
+ST_1 : Operation 4 [1/1] (0.38ns)   --->   "%br_ln0 = br void %for.cond34"   --->   Operation 4 'br' 'br_ln0' <Predicate = true> <Delay = 0.38>
+
+State 2 <SV = 1> <Delay = 1.86>
+ST_2 : Operation 5 [1/1] (0.00ns)   --->   "%i = phi i14 %add_ln59, void %for.inc43, i14 0, void %newFuncRoot" [/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:59]   --->   Operation 5 'phi' 'i' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 6 [1/1] (0.65ns)   --->   "%icmp_ln59 = icmp_eq  i14 %i, i14 8192" [/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:59]   --->   Operation 6 'icmp' 'icmp_ln59' <Predicate = true> <Delay = 0.65> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 0.65> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 7 [1/1] (0.00ns)   --->   "%empty = speclooptripcount i32 @_ssdm_op_SpecLoopTripCount, i64 8192, i64 8192, i64 8192"   --->   Operation 7 'speclooptripcount' 'empty' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 8 [1/1] (0.00ns)   --->   "%specdataflowpipeline_ln59 = specdataflowpipeline void @_ssdm_op_SpecDataflowPipeline, i32 4294967295, i32 0, void @dataflow_parent_loop_str, i14 %i, i14 8192, i32 0" [/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:59]   --->   Operation 8 'specdataflowpipeline' 'specdataflowpipeline_ln59' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 9 [1/1] (0.76ns)   --->   "%add_ln59 = add i14 %i, i14 1" [/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:59]   --->   Operation 9 'add' 'add_ln59' <Predicate = true> <Delay = 0.76> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.76> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 10 [1/1] (0.00ns)   --->   "%br_ln59 = br i1 %icmp_ln59, void %for.inc43, void %for.end45.split.exitStub" [/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:59]   --->   Operation 10 'br' 'br_ln59' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 11 [2/2] (1.21ns)   --->   "%call_ln61 = call void @dataflow_in_loop_VITIS_LOOP_59_3, i256 %in_buf_V, i14 %i, i16 %out_buf_V, i16 %out_buf_V_1, i16 %out_buf_V_2, i16 %out_buf_V_3, i16 %out_buf_V_4, i18 %exp_table, i18 %invert_table" [/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:61]   --->   Operation 11 'call' 'call_ln61' <Predicate = (!icmp_ln59)> <Delay = 1.21> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_2 : Operation 12 [1/1] (0.00ns)   --->   "%ret_ln0 = ret"   --->   Operation 12 'ret' 'ret_ln0' <Predicate = (icmp_ln59)> <Delay = 0.00>
+
+State 3 <SV = 2> <Delay = 0.00>
+ST_3 : Operation 13 [1/1] (0.00ns)   --->   "%specloopname_ln61 = specloopname void @_ssdm_op_SpecLoopName, void @empty_13" [/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:61]   --->   Operation 13 'specloopname' 'specloopname_ln61' <Predicate = (!icmp_ln59)> <Delay = 0.00>
+ST_3 : Operation 14 [1/2] (0.00ns)   --->   "%call_ln61 = call void @dataflow_in_loop_VITIS_LOOP_59_3, i256 %in_buf_V, i14 %i, i16 %out_buf_V, i16 %out_buf_V_1, i16 %out_buf_V_2, i16 %out_buf_V_3, i16 %out_buf_V_4, i18 %exp_table, i18 %invert_table" [/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:61]   --->   Operation 14 'call' 'call_ln61' <Predicate = (!icmp_ln59)> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_3 : Operation 15 [1/1] (0.00ns)   --->   "%br_ln59 = br void %for.cond34" [/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:59]   --->   Operation 15 'br' 'br_ln59' <Predicate = (!icmp_ln59)> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 3.33ns, clock uncertainty: 0.9ns.
+
+ <State 1>: 0.387ns
+The critical path consists of the following:
+	multiplexor before 'phi' operation ('i', /home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:59) with incoming values : ('add_ln59', /home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:59) [11]  (0.387 ns)
+
+ <State 2>: 1.87ns
+The critical path consists of the following:
+	'phi' operation ('i', /home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:59) with incoming values : ('add_ln59', /home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:59) [11]  (0 ns)
+	'call' operation ('call_ln61', /home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:61) to 'dataflow_in_loop_VITIS_LOOP_59_3' [19]  (1.22 ns)
+	blocking operation 0.652 ns on control path)
+
+ <State 3>: 0ns
+The critical path consists of the following:
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

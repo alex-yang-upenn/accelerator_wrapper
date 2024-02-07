@@ -1,33 +1,394 @@
-Tue Jan 30 04:33:50 2024: Running xcd server. This server was built by gradle.
-Tue Jan 30 04:33:50 2024: Server was asked to start on port: '44569'
-Tue Jan 30 04:33:50 2024: Server is using token UUID: '1a2b97d6-784e-4640-8872-5b43a7d3758d'
-Tue Jan 30 04:33:50 2024: SESSION_MGR: creating session with session uuid: '6d04a3e9-ade5-4ab9-8d63-1f78fcd2ec76' and name 'default'
-Tue Jan 30 04:33:50 2024: Attempting to start server on port '44569'
-Tue Jan 30 04:33:50 2024: XCD main fifo: created main fifo '/tmp/xcdmain1a2b97d6-784e-4640-8872-5b43a7d3758d', fd read = 12
-Tue Jan 30 04:33:50 2024: Running Dispatch Server
-Tue Jan 30 04:33:50 2024: Version 2.2.0
-Tue Jan 30 04:33:56 2024: Dispatch Server: Accepted socket connection from client
-Tue Jan 30 04:33:56 2024: Starting Socket connection
-Tue Jan 30 04:33:56 2024: EXCHANGE_TOKEN received, server token: 1a2b97d6-784e-4640-8872-5b43a7d3758d, passed token: 1a2b97d6-784e-4640-8872-5b43a7d3758d
-Tue Jan 30 04:33:58 2024: DISPATCH_HANDLER: Adding handler from function makeHandler in library libxv_system_diagram
-Tue Jan 30 04:33:58 2024: SESSION_MGR: creating session with session uuid: '883c2c98-6d12-4a14-938a-37b0f748136e' and name 'v++_compile_alveo_hls4ml'
-Tue Jan 30 04:33:58 2024: KERNEL_SVC: creating session with uuid: '883c2c98-6d12-4a14-938a-37b0f748136e' and name 'v++_compile_alveo_hls4ml'
-Tue Jan 30 04:33:58 2024: GUIDANCE_SMGR: creating guidance session with uuid: '883c2c98-6d12-4a14-938a-37b0f748136e' and name 'v++_compile_alveo_hls4ml'
-Tue Jan 30 04:33:58 2024: SYSTEM_DIAGRAM: creating session with uuid: '883c2c98-6d12-4a14-938a-37b0f748136e' and name 'v++_compile_alveo_hls4ml'
-Tue Jan 30 04:41:47 2024: Dispatch Server: Accepted socket connection from client
-Tue Jan 30 04:41:47 2024: Starting Socket connection
-Tue Jan 30 04:43:15 2024: SESSION_MGR: closing session for UUID '883c2c98-6d12-4a14-938a-37b0f748136e' with name 'v++_compile_alveo_hls4ml'
-Tue Jan 30 04:43:15 2024: KERNEL_SVC: closing session for UUID '883c2c98-6d12-4a14-938a-37b0f748136e' with name 'v++_compile_alveo_hls4ml'
-Tue Jan 30 04:43:15 2024: GUIDANCE_SMGR: closing session for UUID '883c2c98-6d12-4a14-938a-37b0f748136e' with name 'v++_compile_alveo_hls4ml'
-Tue Jan 30 04:43:17 2024: SYSTEM_DIAGRAM: closing session for UUID '883c2c98-6d12-4a14-938a-37b0f748136e' with name 'v++_compile_alveo_hls4ml'
-Tue Jan 30 04:43:17 2024: STOP_SERVER received, server token: 1a2b97d6-784e-4640-8872-5b43a7d3758d, passed token: 1a2b97d6-784e-4640-8872-5b43a7d3758d
-Tue Jan 30 04:43:17 2024: Socket received request to stop server.
-Tue Jan 30 04:43:17 2024: Dispatch Server: do_await_stop
-Tue Jan 30 04:43:17 2024: Dispatch Server: stopping mainFifo_
-Tue Jan 30 04:43:17 2024: XCD main fifo: Stopping
-Tue Jan 30 04:43:17 2024: XCD main fifo: do_read error code: Operation canceled
-Tue Jan 30 04:43:17 2024: XCD main fifo: bytes_transferred: 0
-Tue Jan 30 04:43:17 2024: SERVER: destructor for server bound to port 44569
-Tue Jan 30 04:43:17 2024: XCD main fifo: Good unlink of /tmp/xcdmain1a2b97d6-784e-4640-8872-5b43a7d3758d
-Tue Jan 30 04:43:17 2024: Server exiting with status 0.
-Tue Jan 30 04:43:17 2024: Closing log file.
+Tue Feb  6 21:26:56 2024: Running xcd server. This server was built by gradle.
+Tue Feb  6 21:26:56 2024: Server was asked to start on port: '37129'
+Tue Feb  6 21:26:56 2024: Server is using token UUID: '848f7431-8c95-4d86-a80c-79b393c5d38f'
+Tue Feb  6 21:26:56 2024: SESSION_MGR: creating session with session uuid: '6d04a3e9-ade5-4ab9-8d63-1f78fcd2ec76' and name 'default'
+Tue Feb  6 21:26:56 2024: Attempting to start server on port '37129'
+Tue Feb  6 21:26:56 2024: XCD main fifo: created main fifo '/tmp/xcdmain848f7431-8c95-4d86-a80c-79b393c5d38f', fd read = 12
+Tue Feb  6 21:26:56 2024: Running Dispatch Server
+Tue Feb  6 21:26:56 2024: Version 2.2.0
+Tue Feb  6 21:27:03 2024: Dispatch Server: Accepted socket connection from client
+Tue Feb  6 21:27:03 2024: Starting Socket connection
+Tue Feb  6 21:27:03 2024: EXCHANGE_TOKEN received, server token: 848f7431-8c95-4d86-a80c-79b393c5d38f, passed token: 848f7431-8c95-4d86-a80c-79b393c5d38f
+Tue Feb  6 21:27:05 2024: DISPATCH_HANDLER: Adding handler from function makeHandler in library libxv_system_diagram
+Tue Feb  6 21:27:05 2024: SESSION_MGR: creating session with session uuid: '8247af37-4371-4dc2-8657-71b6a1b84615' and name 'v++_compile_alveo_hls4ml'
+Tue Feb  6 21:27:05 2024: KERNEL_SVC: creating session with uuid: '8247af37-4371-4dc2-8657-71b6a1b84615' and name 'v++_compile_alveo_hls4ml'
+Tue Feb  6 21:27:05 2024: GUIDANCE_SMGR: creating guidance session with uuid: '8247af37-4371-4dc2-8657-71b6a1b84615' and name 'v++_compile_alveo_hls4ml'
+Tue Feb  6 21:27:05 2024: SYSTEM_DIAGRAM: creating session with uuid: '8247af37-4371-4dc2-8657-71b6a1b84615' and name 'v++_compile_alveo_hls4ml'
+Tue Feb  6 21:33:55 2024: Dispatch Server: Accepted socket connection from client
+Tue Feb  6 21:33:55 2024: Starting Socket connection
+Tue Feb  6 21:52:01 2024: SESSION_MGR: closing session for UUID '8247af37-4371-4dc2-8657-71b6a1b84615' with name 'v++_compile_alveo_hls4ml'
+Tue Feb  6 21:52:01 2024: KERNEL_SVC: closing session for UUID '8247af37-4371-4dc2-8657-71b6a1b84615' with name 'v++_compile_alveo_hls4ml'
+Tue Feb  6 21:52:01 2024: GUIDANCE_SMGR: closing session for UUID '8247af37-4371-4dc2-8657-71b6a1b84615' with name 'v++_compile_alveo_hls4ml'
+Tue Feb  6 21:52:03 2024: SYSTEM_DIAGRAM: closing session for UUID '8247af37-4371-4dc2-8657-71b6a1b84615' with name 'v++_compile_alveo_hls4ml'
+Tue Feb  6 21:52:04 2024: STOP_SERVER received, server token: 848f7431-8c95-4d86-a80c-79b393c5d38f, passed token: 848f7431-8c95-4d86-a80c-79b393c5d38f
+Tue Feb  6 21:52:04 2024: Socket received request to stop server.
+Tue Feb  6 21:52:04 2024: Dispatch Server: do_await_stop
+Tue Feb  6 21:52:04 2024: Dispatch Server: stopping mainFifo_
+Tue Feb  6 21:52:04 2024: XCD main fifo: Stopping
+Tue Feb  6 21:52:04 2024: XCD main fifo: do_read error code: Operation canceled
+Tue Feb  6 21:52:04 2024: XCD main fifo: bytes_transferred: 0
+Tue Feb  6 21:52:04 2024: SERVER: destructor for server bound to port 37129
+Tue Feb  6 21:52:04 2024: XCD main fifo: Good unlink of /tmp/xcdmain848f7431-8c95-4d86-a80c-79b393c5d38f
+Tue Feb  6 21:52:04 2024: Server exiting with status 0.
+Tue Feb  6 21:52:04 2024: Closing log file.
+Tue Feb  6 21:52:07 2024: Running xcd server. This server was built by gradle.
+Tue Feb  6 21:52:07 2024: Server was asked to start on port: '41295'
+Tue Feb  6 21:52:07 2024: Server is using token UUID: '62eb96ae-58c8-487a-8d08-b09ac3796311'
+Tue Feb  6 21:52:07 2024: SESSION_MGR: creating session with session uuid: '6d04a3e9-ade5-4ab9-8d63-1f78fcd2ec76' and name 'default'
+Tue Feb  6 21:52:07 2024: Attempting to start server on port '41295'
+Tue Feb  6 21:52:07 2024: XCD main fifo: created main fifo '/tmp/xcdmain62eb96ae-58c8-487a-8d08-b09ac3796311', fd read = 12
+Tue Feb  6 21:52:07 2024: Running Dispatch Server
+Tue Feb  6 21:52:07 2024: Version 2.2.0
+Tue Feb  6 21:52:16 2024: Dispatch Server: Accepted socket connection from client
+Tue Feb  6 21:52:16 2024: Starting Socket connection
+Tue Feb  6 21:52:16 2024: EXCHANGE_TOKEN received, server token: 62eb96ae-58c8-487a-8d08-b09ac3796311, passed token: 62eb96ae-58c8-487a-8d08-b09ac3796311
+Tue Feb  6 21:52:16 2024: DISPATCH_HANDLER: Adding handler from function makeHandler in library libxv_system_diagram
+Tue Feb  6 21:52:16 2024: SESSION_MGR: creating session with session uuid: '5045fdf7-08df-4664-bd85-b49da30023bd' and name 'v++_link_alveo_hls4ml'
+Tue Feb  6 21:52:16 2024: KERNEL_SVC: creating session with uuid: '5045fdf7-08df-4664-bd85-b49da30023bd' and name 'v++_link_alveo_hls4ml'
+Tue Feb  6 21:52:16 2024: GUIDANCE_SMGR: creating guidance session with uuid: '5045fdf7-08df-4664-bd85-b49da30023bd' and name 'v++_link_alveo_hls4ml'
+Tue Feb  6 21:52:16 2024: SYSTEM_DIAGRAM: creating session with uuid: '5045fdf7-08df-4664-bd85-b49da30023bd' and name 'v++_link_alveo_hls4ml'
+Tue Feb  6 21:54:09 2024: Dispatch Server: Accepted socket connection from client
+Tue Feb  6 21:54:09 2024: Starting Socket connection
+Tue Feb  6 21:55:08 2024: Dispatch Server: Accepted socket connection from client
+Tue Feb  6 21:55:08 2024: Starting Socket connection
+Tue Feb  6 22:32:18 2024: Dispatch Server: Accepted socket connection from client
+Tue Feb  6 22:32:19 2024: Starting Socket connection
+Tue Feb  6 22:32:20 2024: Dispatch Server: Accepted socket connection from client
+Tue Feb  6 22:32:20 2024: Starting Socket connection
+Tue Feb  6 22:32:21 2024: Dispatch Server: Accepted socket connection from client
+Tue Feb  6 22:32:21 2024: Starting Socket connection
+Tue Feb  6 22:32:22 2024: Dispatch Server: Accepted socket connection from client
+Tue Feb  6 22:32:22 2024: Starting Socket connection
+Tue Feb  6 22:32:22 2024: Dispatch Server: Accepted socket connection from client
+Tue Feb  6 22:32:22 2024: Starting Socket connection
+Tue Feb  6 22:32:22 2024: Dispatch Server: Accepted socket connection from client
+Tue Feb  6 22:32:22 2024: Starting Socket connection
+Tue Feb  6 22:32:23 2024: Dispatch Server: Accepted socket connection from client
+Tue Feb  6 22:32:23 2024: Starting Socket connection
+Tue Feb  6 22:32:25 2024: Dispatch Server: Accepted socket connection from client
+Tue Feb  6 22:32:25 2024: Starting Socket connection
+Tue Feb  6 22:36:13 2024: Dispatch Server: Accepted socket connection from client
+Tue Feb  6 22:36:13 2024: Starting Socket connection
+Tue Feb  6 22:36:20 2024: Dispatch Server: Accepted socket connection from client
+Tue Feb  6 22:36:20 2024: Starting Socket connection
+Tue Feb  6 22:36:21 2024: Dispatch Server: Accepted socket connection from client
+Tue Feb  6 22:36:21 2024: Starting Socket connection
+Tue Feb  6 22:36:22 2024: Dispatch Server: Accepted socket connection from client
+Tue Feb  6 22:36:22 2024: Starting Socket connection
+Tue Feb  6 22:36:24 2024: Dispatch Server: Accepted socket connection from client
+Tue Feb  6 22:36:24 2024: Starting Socket connection
+Tue Feb  6 22:36:26 2024: Dispatch Server: Accepted socket connection from client
+Tue Feb  6 22:36:26 2024: Starting Socket connection
+Tue Feb  6 22:36:30 2024: Dispatch Server: Accepted socket connection from client
+Tue Feb  6 22:36:30 2024: Starting Socket connection
+Tue Feb  6 22:36:32 2024: Dispatch Server: Accepted socket connection from client
+Tue Feb  6 22:36:32 2024: Starting Socket connection
+Tue Feb  6 22:37:06 2024: Dispatch Server: Accepted socket connection from client
+Tue Feb  6 22:37:06 2024: Starting Socket connection
+Tue Feb  6 22:37:08 2024: Dispatch Server: Accepted socket connection from client
+Tue Feb  6 22:37:08 2024: Starting Socket connection
+Tue Feb  6 22:37:10 2024: Dispatch Server: Accepted socket connection from client
+Tue Feb  6 22:37:10 2024: Starting Socket connection
+Tue Feb  6 22:37:44 2024: Dispatch Server: Accepted socket connection from client
+Tue Feb  6 22:37:44 2024: Starting Socket connection
+Tue Feb  6 22:38:07 2024: Dispatch Server: Accepted socket connection from client
+Tue Feb  6 22:38:07 2024: Starting Socket connection
+Tue Feb  6 22:38:12 2024: Dispatch Server: Accepted socket connection from client
+Tue Feb  6 22:38:12 2024: Starting Socket connection
+Tue Feb  6 22:38:42 2024: Dispatch Server: Accepted socket connection from client
+Tue Feb  6 22:38:42 2024: Starting Socket connection
+Tue Feb  6 22:38:42 2024: Dispatch Server: Accepted socket connection from client
+Tue Feb  6 22:38:42 2024: Starting Socket connection
+Tue Feb  6 22:38:46 2024: Dispatch Server: Accepted socket connection from client
+Tue Feb  6 22:38:46 2024: Starting Socket connection
+Tue Feb  6 22:38:52 2024: Dispatch Server: Accepted socket connection from client
+Tue Feb  6 22:38:52 2024: Starting Socket connection
+Tue Feb  6 22:38:52 2024: Dispatch Server: Accepted socket connection from client
+Tue Feb  6 22:38:52 2024: Starting Socket connection
+Tue Feb  6 22:39:08 2024: Dispatch Server: Accepted socket connection from client
+Tue Feb  6 22:39:08 2024: Starting Socket connection
+Tue Feb  6 22:39:17 2024: Dispatch Server: Accepted socket connection from client
+Tue Feb  6 22:39:17 2024: Starting Socket connection
+Tue Feb  6 22:39:36 2024: Dispatch Server: Accepted socket connection from client
+Tue Feb  6 22:39:36 2024: Starting Socket connection
+Tue Feb  6 22:39:46 2024: Dispatch Server: Accepted socket connection from client
+Tue Feb  6 22:39:46 2024: Starting Socket connection
+Tue Feb  6 22:39:54 2024: Dispatch Server: Accepted socket connection from client
+Tue Feb  6 22:39:54 2024: Starting Socket connection
+Tue Feb  6 22:40:13 2024: Dispatch Server: Accepted socket connection from client
+Tue Feb  6 22:40:13 2024: Starting Socket connection
+Tue Feb  6 22:40:28 2024: Dispatch Server: Accepted socket connection from client
+Tue Feb  6 22:40:28 2024: Starting Socket connection
+Tue Feb  6 22:40:29 2024: Dispatch Server: Accepted socket connection from client
+Tue Feb  6 22:40:29 2024: Starting Socket connection
+Tue Feb  6 22:40:38 2024: Dispatch Server: Accepted socket connection from client
+Tue Feb  6 22:40:38 2024: Starting Socket connection
+Tue Feb  6 22:40:53 2024: Dispatch Server: Accepted socket connection from client
+Tue Feb  6 22:40:53 2024: Starting Socket connection
+Tue Feb  6 22:40:59 2024: Dispatch Server: Accepted socket connection from client
+Tue Feb  6 22:40:59 2024: Starting Socket connection
+Tue Feb  6 22:41:11 2024: Dispatch Server: Accepted socket connection from client
+Tue Feb  6 22:41:11 2024: Starting Socket connection
+Tue Feb  6 22:41:11 2024: Dispatch Server: Accepted socket connection from client
+Tue Feb  6 22:41:11 2024: Starting Socket connection
+Tue Feb  6 22:41:38 2024: Dispatch Server: Accepted socket connection from client
+Tue Feb  6 22:41:38 2024: Starting Socket connection
+Tue Feb  6 22:42:16 2024: Dispatch Server: Accepted socket connection from client
+Tue Feb  6 22:42:16 2024: Starting Socket connection
+Tue Feb  6 22:42:27 2024: Dispatch Server: Accepted socket connection from client
+Tue Feb  6 22:42:27 2024: Starting Socket connection
+Tue Feb  6 22:42:46 2024: Dispatch Server: Accepted socket connection from client
+Tue Feb  6 22:42:46 2024: Starting Socket connection
+Tue Feb  6 22:42:49 2024: Dispatch Server: Accepted socket connection from client
+Tue Feb  6 22:42:49 2024: Starting Socket connection
+Tue Feb  6 22:42:54 2024: Dispatch Server: Accepted socket connection from client
+Tue Feb  6 22:42:54 2024: Starting Socket connection
+Tue Feb  6 22:43:40 2024: Dispatch Server: Accepted socket connection from client
+Tue Feb  6 22:43:40 2024: Starting Socket connection
+Tue Feb  6 22:43:52 2024: Dispatch Server: Accepted socket connection from client
+Tue Feb  6 22:43:52 2024: Starting Socket connection
+Tue Feb  6 22:44:17 2024: Dispatch Server: Accepted socket connection from client
+Tue Feb  6 22:44:17 2024: Starting Socket connection
+Tue Feb  6 22:44:22 2024: Dispatch Server: Accepted socket connection from client
+Tue Feb  6 22:44:22 2024: Starting Socket connection
+Tue Feb  6 22:44:36 2024: Dispatch Server: Accepted socket connection from client
+Tue Feb  6 22:44:36 2024: Starting Socket connection
+Tue Feb  6 22:45:03 2024: Dispatch Server: Accepted socket connection from client
+Tue Feb  6 22:45:03 2024: Starting Socket connection
+Tue Feb  6 22:45:23 2024: Dispatch Server: Accepted socket connection from client
+Tue Feb  6 22:45:23 2024: Starting Socket connection
+Tue Feb  6 22:45:34 2024: Dispatch Server: Accepted socket connection from client
+Tue Feb  6 22:45:34 2024: Starting Socket connection
+Tue Feb  6 22:45:34 2024: Dispatch Server: Accepted socket connection from client
+Tue Feb  6 22:45:34 2024: Starting Socket connection
+Tue Feb  6 22:45:54 2024: Dispatch Server: Accepted socket connection from client
+Tue Feb  6 22:45:54 2024: Starting Socket connection
+Tue Feb  6 22:46:06 2024: Dispatch Server: Accepted socket connection from client
+Tue Feb  6 22:46:06 2024: Starting Socket connection
+Tue Feb  6 22:46:17 2024: Dispatch Server: Accepted socket connection from client
+Tue Feb  6 22:46:17 2024: Starting Socket connection
+Tue Feb  6 22:46:32 2024: Dispatch Server: Accepted socket connection from client
+Tue Feb  6 22:46:32 2024: Starting Socket connection
+Tue Feb  6 22:46:48 2024: Dispatch Server: Accepted socket connection from client
+Tue Feb  6 22:46:48 2024: Starting Socket connection
+Tue Feb  6 22:46:59 2024: Dispatch Server: Accepted socket connection from client
+Tue Feb  6 22:46:59 2024: Starting Socket connection
+Tue Feb  6 22:47:09 2024: Dispatch Server: Accepted socket connection from client
+Tue Feb  6 22:47:09 2024: Starting Socket connection
+Tue Feb  6 22:47:13 2024: Dispatch Server: Accepted socket connection from client
+Tue Feb  6 22:47:13 2024: Starting Socket connection
+Tue Feb  6 22:47:15 2024: Dispatch Server: Accepted socket connection from client
+Tue Feb  6 22:47:15 2024: Starting Socket connection
+Tue Feb  6 22:47:25 2024: Dispatch Server: Accepted socket connection from client
+Tue Feb  6 22:47:25 2024: Starting Socket connection
+Tue Feb  6 22:47:36 2024: Dispatch Server: Accepted socket connection from client
+Tue Feb  6 22:47:36 2024: Starting Socket connection
+Tue Feb  6 22:47:45 2024: Dispatch Server: Accepted socket connection from client
+Tue Feb  6 22:47:45 2024: Starting Socket connection
+Tue Feb  6 22:47:52 2024: Dispatch Server: Accepted socket connection from client
+Tue Feb  6 22:47:52 2024: Starting Socket connection
+Tue Feb  6 22:47:55 2024: Dispatch Server: Accepted socket connection from client
+Tue Feb  6 22:47:55 2024: Starting Socket connection
+Tue Feb  6 22:47:57 2024: Dispatch Server: Accepted socket connection from client
+Tue Feb  6 22:47:57 2024: Starting Socket connection
+Tue Feb  6 22:47:58 2024: Dispatch Server: Accepted socket connection from client
+Tue Feb  6 22:47:58 2024: Starting Socket connection
+Tue Feb  6 22:48:00 2024: Dispatch Server: Accepted socket connection from client
+Tue Feb  6 22:48:00 2024: Starting Socket connection
+Tue Feb  6 22:48:01 2024: Dispatch Server: Accepted socket connection from client
+Tue Feb  6 22:48:01 2024: Starting Socket connection
+Tue Feb  6 22:48:14 2024: Dispatch Server: Accepted socket connection from client
+Tue Feb  6 22:48:14 2024: Starting Socket connection
+Tue Feb  6 22:48:22 2024: Dispatch Server: Accepted socket connection from client
+Tue Feb  6 22:48:22 2024: Starting Socket connection
+Tue Feb  6 22:48:33 2024: Dispatch Server: Accepted socket connection from client
+Tue Feb  6 22:48:33 2024: Starting Socket connection
+Tue Feb  6 22:48:37 2024: Dispatch Server: Accepted socket connection from client
+Tue Feb  6 22:48:37 2024: Starting Socket connection
+Tue Feb  6 22:48:37 2024: Dispatch Server: Accepted socket connection from client
+Tue Feb  6 22:48:37 2024: Starting Socket connection
+Tue Feb  6 22:48:51 2024: Dispatch Server: Accepted socket connection from client
+Tue Feb  6 22:48:51 2024: Starting Socket connection
+Tue Feb  6 22:49:10 2024: Dispatch Server: Accepted socket connection from client
+Tue Feb  6 22:49:10 2024: Starting Socket connection
+Tue Feb  6 22:49:19 2024: Dispatch Server: Accepted socket connection from client
+Tue Feb  6 22:49:19 2024: Starting Socket connection
+Tue Feb  6 22:49:19 2024: Dispatch Server: Accepted socket connection from client
+Tue Feb  6 22:49:19 2024: Starting Socket connection
+Tue Feb  6 22:49:29 2024: Dispatch Server: Accepted socket connection from client
+Tue Feb  6 22:49:29 2024: Starting Socket connection
+Tue Feb  6 22:49:45 2024: Dispatch Server: Accepted socket connection from client
+Tue Feb  6 22:49:45 2024: Starting Socket connection
+Tue Feb  6 22:49:50 2024: Dispatch Server: Accepted socket connection from client
+Tue Feb  6 22:49:50 2024: Starting Socket connection
+Tue Feb  6 22:49:50 2024: Dispatch Server: Accepted socket connection from client
+Tue Feb  6 22:49:50 2024: Starting Socket connection
+Tue Feb  6 22:49:53 2024: Dispatch Server: Accepted socket connection from client
+Tue Feb  6 22:49:53 2024: Starting Socket connection
+Tue Feb  6 22:49:56 2024: Dispatch Server: Accepted socket connection from client
+Tue Feb  6 22:49:56 2024: Starting Socket connection
+Tue Feb  6 22:49:57 2024: Dispatch Server: Accepted socket connection from client
+Tue Feb  6 22:49:57 2024: Starting Socket connection
+Tue Feb  6 22:50:02 2024: Dispatch Server: Accepted socket connection from client
+Tue Feb  6 22:50:02 2024: Starting Socket connection
+Tue Feb  6 22:50:03 2024: Dispatch Server: Accepted socket connection from client
+Tue Feb  6 22:50:03 2024: Starting Socket connection
+Tue Feb  6 22:50:26 2024: Dispatch Server: Accepted socket connection from client
+Tue Feb  6 22:50:26 2024: Starting Socket connection
+Tue Feb  6 22:50:41 2024: Dispatch Server: Accepted socket connection from client
+Tue Feb  6 22:50:41 2024: Starting Socket connection
+Tue Feb  6 22:50:43 2024: Dispatch Server: Accepted socket connection from client
+Tue Feb  6 22:50:43 2024: Starting Socket connection
+Tue Feb  6 22:51:19 2024: Dispatch Server: Accepted socket connection from client
+Tue Feb  6 22:51:19 2024: Starting Socket connection
+Tue Feb  6 22:51:20 2024: Dispatch Server: Accepted socket connection from client
+Tue Feb  6 22:51:20 2024: Starting Socket connection
+Tue Feb  6 22:51:36 2024: Dispatch Server: Accepted socket connection from client
+Tue Feb  6 22:51:36 2024: Starting Socket connection
+Tue Feb  6 22:51:37 2024: Dispatch Server: Accepted socket connection from client
+Tue Feb  6 22:51:37 2024: Starting Socket connection
+Tue Feb  6 22:51:37 2024: Dispatch Server: Accepted socket connection from client
+Tue Feb  6 22:51:37 2024: Starting Socket connection
+Tue Feb  6 22:51:38 2024: Dispatch Server: Accepted socket connection from client
+Tue Feb  6 22:51:38 2024: Starting Socket connection
+Tue Feb  6 22:51:55 2024: Dispatch Server: Accepted socket connection from client
+Tue Feb  6 22:51:55 2024: Starting Socket connection
+Tue Feb  6 22:52:03 2024: Dispatch Server: Accepted socket connection from client
+Tue Feb  6 22:52:03 2024: Starting Socket connection
+Tue Feb  6 22:52:04 2024: Dispatch Server: Accepted socket connection from client
+Tue Feb  6 22:52:04 2024: Starting Socket connection
+Tue Feb  6 22:52:16 2024: Dispatch Server: Accepted socket connection from client
+Tue Feb  6 22:52:16 2024: Starting Socket connection
+Tue Feb  6 22:52:17 2024: Dispatch Server: Accepted socket connection from client
+Tue Feb  6 22:52:17 2024: Starting Socket connection
+Tue Feb  6 22:52:19 2024: Dispatch Server: Accepted socket connection from client
+Tue Feb  6 22:52:19 2024: Starting Socket connection
+Tue Feb  6 22:52:20 2024: Dispatch Server: Accepted socket connection from client
+Tue Feb  6 22:52:20 2024: Starting Socket connection
+Tue Feb  6 22:52:35 2024: Dispatch Server: Accepted socket connection from client
+Tue Feb  6 22:52:35 2024: Starting Socket connection
+Tue Feb  6 22:52:38 2024: Dispatch Server: Accepted socket connection from client
+Tue Feb  6 22:52:38 2024: Starting Socket connection
+Tue Feb  6 22:52:46 2024: Dispatch Server: Accepted socket connection from client
+Tue Feb  6 22:52:46 2024: Starting Socket connection
+Tue Feb  6 22:52:47 2024: Dispatch Server: Accepted socket connection from client
+Tue Feb  6 22:52:47 2024: Starting Socket connection
+Tue Feb  6 22:52:59 2024: Dispatch Server: Accepted socket connection from client
+Tue Feb  6 22:52:59 2024: Starting Socket connection
+Tue Feb  6 22:52:59 2024: Dispatch Server: Accepted socket connection from client
+Tue Feb  6 22:52:59 2024: Starting Socket connection
+Tue Feb  6 22:53:02 2024: Dispatch Server: Accepted socket connection from client
+Tue Feb  6 22:53:02 2024: Starting Socket connection
+Tue Feb  6 22:53:03 2024: Dispatch Server: Accepted socket connection from client
+Tue Feb  6 22:53:03 2024: Starting Socket connection
+Tue Feb  6 22:53:13 2024: Dispatch Server: Accepted socket connection from client
+Tue Feb  6 22:53:13 2024: Starting Socket connection
+Tue Feb  6 22:53:19 2024: Dispatch Server: Accepted socket connection from client
+Tue Feb  6 22:53:19 2024: Starting Socket connection
+Tue Feb  6 22:53:27 2024: Dispatch Server: Accepted socket connection from client
+Tue Feb  6 22:53:27 2024: Starting Socket connection
+Tue Feb  6 22:53:27 2024: Dispatch Server: Accepted socket connection from client
+Tue Feb  6 22:53:27 2024: Starting Socket connection
+Tue Feb  6 22:53:39 2024: Dispatch Server: Accepted socket connection from client
+Tue Feb  6 22:53:39 2024: Starting Socket connection
+Tue Feb  6 22:53:52 2024: Dispatch Server: Accepted socket connection from client
+Tue Feb  6 22:53:52 2024: Starting Socket connection
+Tue Feb  6 22:54:43 2024: Dispatch Server: Accepted socket connection from client
+Tue Feb  6 22:54:43 2024: Starting Socket connection
+Tue Feb  6 22:54:49 2024: Dispatch Server: Accepted socket connection from client
+Tue Feb  6 22:54:49 2024: Starting Socket connection
+Tue Feb  6 22:54:49 2024: Dispatch Server: Accepted socket connection from client
+Tue Feb  6 22:54:49 2024: Starting Socket connection
+Tue Feb  6 22:54:57 2024: Dispatch Server: Accepted socket connection from client
+Tue Feb  6 22:54:57 2024: Starting Socket connection
+Tue Feb  6 22:55:04 2024: Dispatch Server: Accepted socket connection from client
+Tue Feb  6 22:55:04 2024: Starting Socket connection
+Tue Feb  6 22:55:13 2024: Dispatch Server: Accepted socket connection from client
+Tue Feb  6 22:55:13 2024: Starting Socket connection
+Tue Feb  6 22:55:19 2024: Dispatch Server: Accepted socket connection from client
+Tue Feb  6 22:55:19 2024: Starting Socket connection
+Tue Feb  6 22:55:36 2024: Dispatch Server: Accepted socket connection from client
+Tue Feb  6 22:55:36 2024: Starting Socket connection
+Tue Feb  6 22:55:43 2024: Dispatch Server: Accepted socket connection from client
+Tue Feb  6 22:55:43 2024: Starting Socket connection
+Tue Feb  6 23:00:10 2024: Dispatch Server: Accepted socket connection from client
+Tue Feb  6 23:00:10 2024: Starting Socket connection
+Tue Feb  6 23:00:10 2024: Dispatch Server: Accepted socket connection from client
+Tue Feb  6 23:00:10 2024: Starting Socket connection
+Tue Feb  6 23:00:10 2024: Dispatch Server: Accepted socket connection from client
+Tue Feb  6 23:00:10 2024: Starting Socket connection
+Tue Feb  6 23:00:10 2024: Dispatch Server: Accepted socket connection from client
+Tue Feb  6 23:00:10 2024: Starting Socket connection
+Tue Feb  6 23:00:11 2024: Dispatch Server: Accepted socket connection from client
+Tue Feb  6 23:00:11 2024: Starting Socket connection
+Tue Feb  6 23:00:11 2024: Dispatch Server: Accepted socket connection from client
+Tue Feb  6 23:00:11 2024: Starting Socket connection
+Tue Feb  6 23:00:11 2024: Dispatch Server: Accepted socket connection from client
+Tue Feb  6 23:00:11 2024: Starting Socket connection
+Tue Feb  6 23:00:11 2024: Dispatch Server: Accepted socket connection from client
+Tue Feb  6 23:00:11 2024: Starting Socket connection
+Tue Feb  6 23:05:48 2024: Dispatch Server: Accepted socket connection from client
+Tue Feb  6 23:05:48 2024: Starting Socket connection
+Tue Feb  6 23:05:48 2024: Dispatch Server: Accepted socket connection from client
+Tue Feb  6 23:05:48 2024: Starting Socket connection
+Tue Feb  6 23:05:49 2024: Dispatch Server: Accepted socket connection from client
+Tue Feb  6 23:05:49 2024: Starting Socket connection
+Tue Feb  6 23:05:49 2024: Dispatch Server: Accepted socket connection from client
+Tue Feb  6 23:05:49 2024: Starting Socket connection
+Tue Feb  6 23:05:49 2024: Dispatch Server: Accepted socket connection from client
+Tue Feb  6 23:05:49 2024: Starting Socket connection
+Tue Feb  6 23:05:53 2024: Dispatch Server: Accepted socket connection from client
+Tue Feb  6 23:05:53 2024: Starting Socket connection
+Tue Feb  6 23:05:53 2024: Dispatch Server: Accepted socket connection from client
+Tue Feb  6 23:05:53 2024: Starting Socket connection
+Tue Feb  6 23:06:19 2024: Dispatch Server: Accepted socket connection from client
+Tue Feb  6 23:06:19 2024: Starting Socket connection
+Tue Feb  6 23:06:55 2024: Dispatch Server: Accepted socket connection from client
+Tue Feb  6 23:06:55 2024: Starting Socket connection
+Tue Feb  6 23:07:32 2024: Dispatch Server: Accepted socket connection from client
+Tue Feb  6 23:07:32 2024: Starting Socket connection
+Tue Feb  6 23:07:39 2024: Dispatch Server: Accepted socket connection from client
+Tue Feb  6 23:07:39 2024: Starting Socket connection
+Tue Feb  6 23:07:41 2024: Dispatch Server: Accepted socket connection from client
+Tue Feb  6 23:07:41 2024: Starting Socket connection
+Tue Feb  6 23:07:41 2024: Dispatch Server: Accepted socket connection from client
+Tue Feb  6 23:07:41 2024: Starting Socket connection
+Tue Feb  6 23:07:47 2024: Dispatch Server: Accepted socket connection from client
+Tue Feb  6 23:07:47 2024: Starting Socket connection
+Tue Feb  6 23:07:47 2024: Dispatch Server: Accepted socket connection from client
+Tue Feb  6 23:07:47 2024: Starting Socket connection
+Tue Feb  6 23:07:47 2024: Dispatch Server: Accepted socket connection from client
+Tue Feb  6 23:07:47 2024: Starting Socket connection
+Tue Feb  6 23:08:09 2024: Dispatch Server: Accepted socket connection from client
+Tue Feb  6 23:08:09 2024: Starting Socket connection
+Tue Feb  6 23:08:18 2024: Dispatch Server: Accepted socket connection from client
+Tue Feb  6 23:08:18 2024: Starting Socket connection
+Tue Feb  6 23:08:19 2024: Dispatch Server: Accepted socket connection from client
+Tue Feb  6 23:08:19 2024: Starting Socket connection
+Tue Feb  6 23:09:33 2024: Dispatch Server: Accepted socket connection from client
+Tue Feb  6 23:09:33 2024: Starting Socket connection
+Tue Feb  6 23:09:34 2024: Dispatch Server: Accepted socket connection from client
+Tue Feb  6 23:09:34 2024: Starting Socket connection
+Tue Feb  6 23:09:36 2024: Dispatch Server: Accepted socket connection from client
+Tue Feb  6 23:09:36 2024: Starting Socket connection
+Tue Feb  6 23:09:37 2024: Dispatch Server: Accepted socket connection from client
+Tue Feb  6 23:09:37 2024: Starting Socket connection
+Tue Feb  6 23:11:38 2024: Dispatch Server: Accepted socket connection from client
+Tue Feb  6 23:11:38 2024: Starting Socket connection
+Tue Feb  6 23:17:54 2024: Dispatch Server: Accepted socket connection from client
+Tue Feb  6 23:17:54 2024: Starting Socket connection
+Wed Feb  7 01:07:35 2024: SESSION_MGR: closing session for UUID '5045fdf7-08df-4664-bd85-b49da30023bd' with name 'v++_link_alveo_hls4ml'
+Wed Feb  7 01:07:35 2024: KERNEL_SVC: closing session for UUID '5045fdf7-08df-4664-bd85-b49da30023bd' with name 'v++_link_alveo_hls4ml'
+Wed Feb  7 01:07:35 2024: GUIDANCE_SMGR: closing session for UUID '5045fdf7-08df-4664-bd85-b49da30023bd' with name 'v++_link_alveo_hls4ml'
+Wed Feb  7 01:07:37 2024: SYSTEM_DIAGRAM: closing session for UUID '5045fdf7-08df-4664-bd85-b49da30023bd' with name 'v++_link_alveo_hls4ml'
+Wed Feb  7 01:07:37 2024: STOP_SERVER received, server token: 62eb96ae-58c8-487a-8d08-b09ac3796311, passed token: 62eb96ae-58c8-487a-8d08-b09ac3796311
+Wed Feb  7 01:07:37 2024: Socket received request to stop server.
+Wed Feb  7 01:07:37 2024: Dispatch Server: do_await_stop
+Wed Feb  7 01:07:37 2024: Dispatch Server: stopping mainFifo_
+Wed Feb  7 01:07:37 2024: XCD main fifo: Stopping
+Wed Feb  7 01:07:37 2024: XCD main fifo: do_read error code: Operation canceled
+Wed Feb  7 01:07:37 2024: XCD main fifo: bytes_transferred: 0
+Wed Feb  7 01:07:37 2024: SERVER: destructor for server bound to port 41295
+Wed Feb  7 01:07:37 2024: XCD main fifo: Good unlink of /tmp/xcdmain62eb96ae-58c8-487a-8d08-b09ac3796311
+Wed Feb  7 01:07:37 2024: Server exiting with status 0.
+Wed Feb  7 01:07:37 2024: Closing log file.
