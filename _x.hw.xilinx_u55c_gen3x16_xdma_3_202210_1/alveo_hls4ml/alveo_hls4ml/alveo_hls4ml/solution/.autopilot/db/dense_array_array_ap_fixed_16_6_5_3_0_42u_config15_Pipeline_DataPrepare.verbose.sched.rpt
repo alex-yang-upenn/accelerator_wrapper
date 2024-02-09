@@ -1,0 +1,550 @@
+
+
+================================================================
+== Vitis HLS Report for 'dense_array_array_ap_fixed_16_6_5_3_0_42u_config15_Pipeline_DataPrepare'
+================================================================
+* Date:           Fri Feb  9 01:06:26 2024
+
+* Version:        2022.2 (Build 3670227 on Oct 13 2022)
+* Project:        alveo_hls4ml
+* Solution:       solution (Vitis Kernel Flow Target)
+* Product family: virtexuplus
+* Target device:  xcu55c-fsvh2892-2L-e
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+---------+----------+------------+
+    |  Clock |  Target | Estimated| Uncertainty|
+    +--------+---------+----------+------------+
+    |ap_clk  |  3.33 ns|  1.206 ns|     0.90 ns|
+    +--------+---------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+-----------+-----------+-----+-----+---------+
+    |  Latency (cycles) |   Latency (absolute)  |  Interval | Pipeline|
+    |   min   |   max   |    min    |    max    | min | max |   Type  |
+    +---------+---------+-----------+-----------+-----+-----+---------+
+    |        6|        6|  19.998 ns|  19.998 ns|    6|    6|       no|
+    +---------+---------+-----------+-----------+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +---------------+---------+---------+----------+-----------+-----------+------+----------+
+        |               |  Latency (cycles) | Iteration|  Initiation Interval  | Trip |          |
+        |   Loop Name   |   min   |   max   |  Latency |  achieved |   target  | Count| Pipelined|
+        +---------------+---------+---------+----------+-----------+-----------+------+----------+
+        |- DataPrepare  |        4|        4|         2|          1|          1|     4|       yes|
+        +---------------+---------+---------+----------+-----------+-----------+------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 2
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
++ Individual pipeline summary: 
+  * Pipeline-0: initiation interval (II) = 1, depth = 2
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 2
+* Pipeline : 1
+  Pipeline-0 : II = 1, D = 2, States = { 1 2 }
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 0.95>
+ST_1 : Operation 5 [1/1] (0.00ns)   --->   "%i_in = alloca i32 1"   --->   Operation 5 'alloca' 'i_in' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 6 [1/1] (0.00ns)   --->   "%data_V_296 = alloca i32 1"   --->   Operation 6 'alloca' 'data_V_296' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 7 [1/1] (0.00ns)   --->   "%data_V_297 = alloca i32 1"   --->   Operation 7 'alloca' 'data_V_297' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 8 [1/1] (0.00ns)   --->   "%data_V_298 = alloca i32 1"   --->   Operation 8 'alloca' 'data_V_298' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 9 [1/1] (0.00ns)   --->   "%data_V_299 = alloca i32 1"   --->   Operation 9 'alloca' 'data_V_299' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 10 [1/1] (0.00ns)   --->   "%data_V_300 = alloca i32 1"   --->   Operation 10 'alloca' 'data_V_300' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 11 [1/1] (0.00ns)   --->   "%data_V_301 = alloca i32 1"   --->   Operation 11 'alloca' 'data_V_301' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 12 [1/1] (0.00ns)   --->   "%data_V_302 = alloca i32 1"   --->   Operation 12 'alloca' 'data_V_302' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 13 [1/1] (0.00ns)   --->   "%data_V_303 = alloca i32 1"   --->   Operation 13 'alloca' 'data_V_303' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 14 [1/1] (0.00ns)   --->   "%data_V_304 = alloca i32 1"   --->   Operation 14 'alloca' 'data_V_304' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 15 [1/1] (0.00ns)   --->   "%data_V_305 = alloca i32 1"   --->   Operation 15 'alloca' 'data_V_305' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 16 [1/1] (0.00ns)   --->   "%data_V_306 = alloca i32 1"   --->   Operation 16 'alloca' 'data_V_306' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 17 [1/1] (0.00ns)   --->   "%data_V_307 = alloca i32 1"   --->   Operation 17 'alloca' 'data_V_307' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 18 [1/1] (0.00ns)   --->   "%data_V_308 = alloca i32 1"   --->   Operation 18 'alloca' 'data_V_308' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 19 [1/1] (0.00ns)   --->   "%data_V_309 = alloca i32 1"   --->   Operation 19 'alloca' 'data_V_309' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 20 [1/1] (0.00ns)   --->   "%data_V_310 = alloca i32 1"   --->   Operation 20 'alloca' 'data_V_310' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 21 [1/1] (0.00ns)   --->   "%data_V_311 = alloca i32 1"   --->   Operation 21 'alloca' 'data_V_311' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 22 [1/1] (0.00ns)   --->   "%data_V_163 = alloca i32 1"   --->   Operation 22 'alloca' 'data_V_163' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 23 [1/1] (0.00ns)   --->   "%data_V_313 = alloca i32 1"   --->   Operation 23 'alloca' 'data_V_313' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 24 [1/1] (0.00ns)   --->   "%data_V_314 = alloca i32 1"   --->   Operation 24 'alloca' 'data_V_314' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 25 [1/1] (0.00ns)   --->   "%data_V_315 = alloca i32 1"   --->   Operation 25 'alloca' 'data_V_315' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 26 [1/1] (0.00ns)   --->   "%data_V_316 = alloca i32 1"   --->   Operation 26 'alloca' 'data_V_316' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 27 [1/1] (0.00ns)   --->   "%data_V_317 = alloca i32 1"   --->   Operation 27 'alloca' 'data_V_317' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 28 [1/1] (0.00ns)   --->   "%data_V_318 = alloca i32 1"   --->   Operation 28 'alloca' 'data_V_318' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 29 [1/1] (0.00ns)   --->   "%data_V_319 = alloca i32 1"   --->   Operation 29 'alloca' 'data_V_319' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 30 [1/1] (0.00ns)   --->   "%data_V_320 = alloca i32 1"   --->   Operation 30 'alloca' 'data_V_320' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 31 [1/1] (0.00ns)   --->   "%data_V_321 = alloca i32 1"   --->   Operation 31 'alloca' 'data_V_321' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 32 [1/1] (0.00ns)   --->   "%data_V_322 = alloca i32 1"   --->   Operation 32 'alloca' 'data_V_322' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 33 [1/1] (0.00ns)   --->   "%data_V_323 = alloca i32 1"   --->   Operation 33 'alloca' 'data_V_323' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 34 [1/1] (0.00ns)   --->   "%data_V_324 = alloca i32 1"   --->   Operation 34 'alloca' 'data_V_324' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 35 [1/1] (0.00ns)   --->   "%data_V_325 = alloca i32 1"   --->   Operation 35 'alloca' 'data_V_325' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 36 [1/1] (0.00ns)   --->   "%data_V_326 = alloca i32 1"   --->   Operation 36 'alloca' 'data_V_326' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 37 [1/1] (0.00ns)   --->   "%data_V_327 = alloca i32 1"   --->   Operation 37 'alloca' 'data_V_327' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 38 [1/1] (0.00ns)   --->   "%data_V_328 = alloca i32 1"   --->   Operation 38 'alloca' 'data_V_328' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 39 [1/1] (0.00ns)   --->   "%data_V_329 = alloca i32 1"   --->   Operation 39 'alloca' 'data_V_329' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 40 [1/1] (0.00ns)   --->   "%data_V_330 = alloca i32 1"   --->   Operation 40 'alloca' 'data_V_330' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 41 [1/1] (0.00ns)   --->   "%data_V_331 = alloca i32 1"   --->   Operation 41 'alloca' 'data_V_331' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 42 [1/1] (0.00ns)   --->   "%data_V_332 = alloca i32 1"   --->   Operation 42 'alloca' 'data_V_332' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 43 [1/1] (0.00ns)   --->   "%data_V_333 = alloca i32 1"   --->   Operation 43 'alloca' 'data_V_333' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 44 [1/1] (0.00ns)   --->   "%data_V_334 = alloca i32 1"   --->   Operation 44 'alloca' 'data_V_334' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 45 [1/1] (0.00ns)   --->   "%data_V_335 = alloca i32 1"   --->   Operation 45 'alloca' 'data_V_335' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 46 [1/1] (0.00ns)   --->   "%data_V_164 = alloca i32 1"   --->   Operation 46 'alloca' 'data_V_164' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 47 [1/1] (0.00ns)   --->   "%data_V_337 = alloca i32 1"   --->   Operation 47 'alloca' 'data_V_337' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 48 [1/1] (0.00ns)   --->   "%data_V_338 = alloca i32 1"   --->   Operation 48 'alloca' 'data_V_338' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 49 [1/1] (0.00ns)   --->   "%data_V_339 = alloca i32 1"   --->   Operation 49 'alloca' 'data_V_339' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 50 [1/1] (0.00ns)   --->   "%data_V_340 = alloca i32 1"   --->   Operation 50 'alloca' 'data_V_340' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 51 [1/1] (0.00ns)   --->   "%data_V_341 = alloca i32 1"   --->   Operation 51 'alloca' 'data_V_341' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 52 [1/1] (0.00ns)   --->   "%data_V_342 = alloca i32 1"   --->   Operation 52 'alloca' 'data_V_342' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 53 [1/1] (0.00ns)   --->   "%data_V_343 = alloca i32 1"   --->   Operation 53 'alloca' 'data_V_343' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 54 [1/1] (0.00ns)   --->   "%data_V_344 = alloca i32 1"   --->   Operation 54 'alloca' 'data_V_344' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 55 [1/1] (0.00ns)   --->   "%data_V_345 = alloca i32 1"   --->   Operation 55 'alloca' 'data_V_345' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 56 [1/1] (0.00ns)   --->   "%data_V_346 = alloca i32 1"   --->   Operation 56 'alloca' 'data_V_346' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 57 [1/1] (0.00ns)   --->   "%data_V_347 = alloca i32 1"   --->   Operation 57 'alloca' 'data_V_347' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 58 [1/1] (0.00ns)   --->   "%data_V_348 = alloca i32 1"   --->   Operation 58 'alloca' 'data_V_348' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 59 [1/1] (0.00ns)   --->   "%data_V_349 = alloca i32 1"   --->   Operation 59 'alloca' 'data_V_349' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 60 [1/1] (0.00ns)   --->   "%data_V_350 = alloca i32 1"   --->   Operation 60 'alloca' 'data_V_350' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 61 [1/1] (0.00ns)   --->   "%data_V_351 = alloca i32 1"   --->   Operation 61 'alloca' 'data_V_351' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 62 [1/1] (0.00ns)   --->   "%data_V_352 = alloca i32 1"   --->   Operation 62 'alloca' 'data_V_352' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 63 [1/1] (0.00ns)   --->   "%data_V_353 = alloca i32 1"   --->   Operation 63 'alloca' 'data_V_353' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 64 [1/1] (0.00ns)   --->   "%data_V_354 = alloca i32 1"   --->   Operation 64 'alloca' 'data_V_354' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 65 [1/1] (0.00ns)   --->   "%data_V_355 = alloca i32 1"   --->   Operation 65 'alloca' 'data_V_355' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 66 [1/1] (0.00ns)   --->   "%data_V_356 = alloca i32 1"   --->   Operation 66 'alloca' 'data_V_356' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 67 [1/1] (0.00ns)   --->   "%data_V_357 = alloca i32 1"   --->   Operation 67 'alloca' 'data_V_357' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 68 [1/1] (0.00ns)   --->   "%data_V_358 = alloca i32 1"   --->   Operation 68 'alloca' 'data_V_358' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 69 [1/1] (0.00ns)   --->   "%data_V_359 = alloca i32 1"   --->   Operation 69 'alloca' 'data_V_359' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 70 [1/1] (0.00ns)   --->   "%data_V_165 = alloca i32 1"   --->   Operation 70 'alloca' 'data_V_165' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 71 [1/1] (0.00ns)   --->   "%data_V_361 = alloca i32 1"   --->   Operation 71 'alloca' 'data_V_361' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 72 [1/1] (0.00ns)   --->   "%data_V_362 = alloca i32 1"   --->   Operation 72 'alloca' 'data_V_362' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 73 [1/1] (0.00ns)   --->   "%data_V_363 = alloca i32 1"   --->   Operation 73 'alloca' 'data_V_363' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 74 [1/1] (0.00ns)   --->   "%data_V_364 = alloca i32 1"   --->   Operation 74 'alloca' 'data_V_364' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 75 [1/1] (0.00ns)   --->   "%data_V_365 = alloca i32 1"   --->   Operation 75 'alloca' 'data_V_365' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 76 [1/1] (0.00ns)   --->   "%data_V_366 = alloca i32 1"   --->   Operation 76 'alloca' 'data_V_366' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 77 [1/1] (0.00ns)   --->   "%data_V_367 = alloca i32 1"   --->   Operation 77 'alloca' 'data_V_367' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 78 [1/1] (0.00ns)   --->   "%data_V_368 = alloca i32 1"   --->   Operation 78 'alloca' 'data_V_368' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 79 [1/1] (0.00ns)   --->   "%data_V_369 = alloca i32 1"   --->   Operation 79 'alloca' 'data_V_369' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 80 [1/1] (0.00ns)   --->   "%data_V_370 = alloca i32 1"   --->   Operation 80 'alloca' 'data_V_370' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 81 [1/1] (0.00ns)   --->   "%data_V_371 = alloca i32 1"   --->   Operation 81 'alloca' 'data_V_371' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 82 [1/1] (0.00ns)   --->   "%data_V_372 = alloca i32 1"   --->   Operation 82 'alloca' 'data_V_372' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 83 [1/1] (0.00ns)   --->   "%data_V_373 = alloca i32 1"   --->   Operation 83 'alloca' 'data_V_373' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 84 [1/1] (0.00ns)   --->   "%data_V_374 = alloca i32 1"   --->   Operation 84 'alloca' 'data_V_374' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 85 [1/1] (0.00ns)   --->   "%data_V_375 = alloca i32 1"   --->   Operation 85 'alloca' 'data_V_375' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 86 [1/1] (0.00ns)   --->   "%data_V_376 = alloca i32 1"   --->   Operation 86 'alloca' 'data_V_376' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 87 [1/1] (0.00ns)   --->   "%data_V_377 = alloca i32 1"   --->   Operation 87 'alloca' 'data_V_377' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 88 [1/1] (0.00ns)   --->   "%data_V_378 = alloca i32 1"   --->   Operation 88 'alloca' 'data_V_378' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 89 [1/1] (0.00ns)   --->   "%data_V_379 = alloca i32 1"   --->   Operation 89 'alloca' 'data_V_379' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 90 [1/1] (0.00ns)   --->   "%data_V_380 = alloca i32 1"   --->   Operation 90 'alloca' 'data_V_380' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 91 [1/1] (0.00ns)   --->   "%data_V_381 = alloca i32 1"   --->   Operation 91 'alloca' 'data_V_381' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 92 [1/1] (0.00ns)   --->   "%data_V_382 = alloca i32 1"   --->   Operation 92 'alloca' 'data_V_382' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 93 [1/1] (0.00ns)   --->   "%data_V_383 = alloca i32 1"   --->   Operation 93 'alloca' 'data_V_383' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 94 [1/1] (0.00ns)   --->   "%data_V_384 = alloca i32 1"   --->   Operation 94 'alloca' 'data_V_384' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 95 [1/1] (0.00ns)   --->   "%data_V_385 = alloca i32 1"   --->   Operation 95 'alloca' 'data_V_385' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 96 [1/1] (0.00ns)   --->   "%data_V_386 = alloca i32 1"   --->   Operation 96 'alloca' 'data_V_386' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 97 [1/1] (0.00ns)   --->   "%data_V_387 = alloca i32 1"   --->   Operation 97 'alloca' 'data_V_387' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 98 [1/1] (0.00ns)   --->   "%data_V_388 = alloca i32 1"   --->   Operation 98 'alloca' 'data_V_388' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 99 [1/1] (0.00ns)   --->   "%data_V_389 = alloca i32 1"   --->   Operation 99 'alloca' 'data_V_389' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 100 [1/1] (0.00ns)   --->   "%data_V_390 = alloca i32 1"   --->   Operation 100 'alloca' 'data_V_390' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 101 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i384 %layer13_out, void @empty_29, i32 0, i32 0, void @empty, i32 0, i32 0, void @empty, void @empty, void @empty, i32 0, i32 0, i32 0, i32 0, void @empty, void @empty, i32 4294967295, i32 0"   --->   Operation 101 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 102 [1/1] (0.38ns)   --->   "%store_ln0 = store i3 0, i3 %i_in"   --->   Operation 102 'store' 'store_ln0' <Predicate = true> <Delay = 0.38>
+ST_1 : Operation 103 [1/1] (0.00ns)   --->   "%br_ln0 = br void %for.body4.i"   --->   Operation 103 'br' 'br_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 104 [1/1] (0.00ns)   --->   "%i_in_1 = load i3 %i_in" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:39]   --->   Operation 104 'load' 'i_in_1' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 105 [1/1] (0.49ns)   --->   "%icmp_ln33 = icmp_eq  i3 %i_in_1, i3 4" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:33]   --->   Operation 105 'icmp' 'icmp_ln33' <Predicate = true> <Delay = 0.49> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 0.49> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 106 [1/1] (0.00ns)   --->   "%empty = speclooptripcount i32 @_ssdm_op_SpecLoopTripCount, i64 4, i64 4, i64 4"   --->   Operation 106 'speclooptripcount' 'empty' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 107 [1/1] (0.57ns)   --->   "%add_ln33 = add i3 %i_in_1, i3 1" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:33]   --->   Operation 107 'add' 'add_ln33' <Predicate = true> <Delay = 0.57> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.57> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 108 [1/1] (0.00ns)   --->   "%br_ln33 = br i1 %icmp_ln33, void %for.body4.i.split, void %_ZN4nnet12data_prepareINS_5arrayI8ap_fixedILi16ELi6EL9ap_q_mode5EL9ap_o_mode3ELi0EELj24EEE8config15EEvRN3hls6streamIT_Li0EEEPNSA_10value_typeE.exit.exitStub" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:33]   --->   Operation 108 'br' 'br_ln33' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 109 [1/1] (0.00ns)   --->   "%trunc_ln39 = trunc i3 %i_in_1" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:39]   --->   Operation 109 'trunc' 'trunc_ln39' <Predicate = (!icmp_ln33)> <Delay = 0.00>
+ST_1 : Operation 110 [1/1] (0.34ns)   --->   "%switch_ln39 = switch i2 %trunc_ln39, void %arrayidx.i2.23.case.95, i2 0, void %for.body4.i.split.arrayidx.i2.23.exit_crit_edge1, i2 1, void %arrayidx.i2.23.case.47, i2 2, void %for.body4.i.split.arrayidx.i2.23.exit_crit_edge" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:39]   --->   Operation 110 'switch' 'switch_ln39' <Predicate = (!icmp_ln33)> <Delay = 0.34>
+ST_1 : Operation 111 [1/1] (0.38ns)   --->   "%store_ln33 = store i3 %add_ln33, i3 %i_in" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:33]   --->   Operation 111 'store' 'store_ln33' <Predicate = (!icmp_ln33)> <Delay = 0.38>
+ST_1 : Operation 112 [1/1] (0.00ns)   --->   "%br_ln33 = br void %for.body4.i" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:33]   --->   Operation 112 'br' 'br_ln33' <Predicate = (!icmp_ln33)> <Delay = 0.00>
+ST_1 : Operation 239 [1/1] (0.00ns)   --->   "%data_V_296_load = load i16 %data_V_296"   --->   Operation 239 'load' 'data_V_296_load' <Predicate = (icmp_ln33)> <Delay = 0.00>
+ST_1 : Operation 240 [1/1] (0.00ns)   --->   "%data_V_297_load = load i16 %data_V_297"   --->   Operation 240 'load' 'data_V_297_load' <Predicate = (icmp_ln33)> <Delay = 0.00>
+ST_1 : Operation 241 [1/1] (0.00ns)   --->   "%data_V_298_load = load i16 %data_V_298"   --->   Operation 241 'load' 'data_V_298_load' <Predicate = (icmp_ln33)> <Delay = 0.00>
+ST_1 : Operation 242 [1/1] (0.00ns)   --->   "%data_V_299_load = load i16 %data_V_299"   --->   Operation 242 'load' 'data_V_299_load' <Predicate = (icmp_ln33)> <Delay = 0.00>
+ST_1 : Operation 243 [1/1] (0.00ns)   --->   "%data_V_300_load = load i16 %data_V_300"   --->   Operation 243 'load' 'data_V_300_load' <Predicate = (icmp_ln33)> <Delay = 0.00>
+ST_1 : Operation 244 [1/1] (0.00ns)   --->   "%data_V_301_load = load i16 %data_V_301"   --->   Operation 244 'load' 'data_V_301_load' <Predicate = (icmp_ln33)> <Delay = 0.00>
+ST_1 : Operation 245 [1/1] (0.00ns)   --->   "%data_V_302_load = load i16 %data_V_302"   --->   Operation 245 'load' 'data_V_302_load' <Predicate = (icmp_ln33)> <Delay = 0.00>
+ST_1 : Operation 246 [1/1] (0.00ns)   --->   "%data_V_303_load = load i16 %data_V_303"   --->   Operation 246 'load' 'data_V_303_load' <Predicate = (icmp_ln33)> <Delay = 0.00>
+ST_1 : Operation 247 [1/1] (0.00ns)   --->   "%data_V_304_load = load i16 %data_V_304"   --->   Operation 247 'load' 'data_V_304_load' <Predicate = (icmp_ln33)> <Delay = 0.00>
+ST_1 : Operation 248 [1/1] (0.00ns)   --->   "%data_V_305_load = load i16 %data_V_305"   --->   Operation 248 'load' 'data_V_305_load' <Predicate = (icmp_ln33)> <Delay = 0.00>
+ST_1 : Operation 249 [1/1] (0.00ns)   --->   "%data_V_306_load = load i16 %data_V_306"   --->   Operation 249 'load' 'data_V_306_load' <Predicate = (icmp_ln33)> <Delay = 0.00>
+ST_1 : Operation 250 [1/1] (0.00ns)   --->   "%data_V_307_load = load i16 %data_V_307"   --->   Operation 250 'load' 'data_V_307_load' <Predicate = (icmp_ln33)> <Delay = 0.00>
+ST_1 : Operation 251 [1/1] (0.00ns)   --->   "%data_V_308_load = load i16 %data_V_308"   --->   Operation 251 'load' 'data_V_308_load' <Predicate = (icmp_ln33)> <Delay = 0.00>
+ST_1 : Operation 252 [1/1] (0.00ns)   --->   "%data_V_309_load = load i16 %data_V_309"   --->   Operation 252 'load' 'data_V_309_load' <Predicate = (icmp_ln33)> <Delay = 0.00>
+ST_1 : Operation 253 [1/1] (0.00ns)   --->   "%data_V_310_load = load i16 %data_V_310"   --->   Operation 253 'load' 'data_V_310_load' <Predicate = (icmp_ln33)> <Delay = 0.00>
+ST_1 : Operation 254 [1/1] (0.00ns)   --->   "%data_V_311_load = load i16 %data_V_311"   --->   Operation 254 'load' 'data_V_311_load' <Predicate = (icmp_ln33)> <Delay = 0.00>
+ST_1 : Operation 255 [1/1] (0.00ns)   --->   "%data_V_163_load = load i16 %data_V_163"   --->   Operation 255 'load' 'data_V_163_load' <Predicate = (icmp_ln33)> <Delay = 0.00>
+ST_1 : Operation 256 [1/1] (0.00ns)   --->   "%data_V_313_load = load i16 %data_V_313"   --->   Operation 256 'load' 'data_V_313_load' <Predicate = (icmp_ln33)> <Delay = 0.00>
+ST_1 : Operation 257 [1/1] (0.00ns)   --->   "%data_V_314_load = load i16 %data_V_314"   --->   Operation 257 'load' 'data_V_314_load' <Predicate = (icmp_ln33)> <Delay = 0.00>
+ST_1 : Operation 258 [1/1] (0.00ns)   --->   "%data_V_315_load = load i16 %data_V_315"   --->   Operation 258 'load' 'data_V_315_load' <Predicate = (icmp_ln33)> <Delay = 0.00>
+ST_1 : Operation 259 [1/1] (0.00ns)   --->   "%data_V_316_load = load i16 %data_V_316"   --->   Operation 259 'load' 'data_V_316_load' <Predicate = (icmp_ln33)> <Delay = 0.00>
+ST_1 : Operation 260 [1/1] (0.00ns)   --->   "%data_V_317_load = load i16 %data_V_317"   --->   Operation 260 'load' 'data_V_317_load' <Predicate = (icmp_ln33)> <Delay = 0.00>
+ST_1 : Operation 261 [1/1] (0.00ns)   --->   "%data_V_318_load = load i16 %data_V_318"   --->   Operation 261 'load' 'data_V_318_load' <Predicate = (icmp_ln33)> <Delay = 0.00>
+ST_1 : Operation 262 [1/1] (0.00ns)   --->   "%data_V_319_load = load i16 %data_V_319"   --->   Operation 262 'load' 'data_V_319_load' <Predicate = (icmp_ln33)> <Delay = 0.00>
+ST_1 : Operation 263 [1/1] (0.00ns)   --->   "%data_V_320_load = load i16 %data_V_320"   --->   Operation 263 'load' 'data_V_320_load' <Predicate = (icmp_ln33)> <Delay = 0.00>
+ST_1 : Operation 264 [1/1] (0.00ns)   --->   "%data_V_321_load = load i16 %data_V_321"   --->   Operation 264 'load' 'data_V_321_load' <Predicate = (icmp_ln33)> <Delay = 0.00>
+ST_1 : Operation 265 [1/1] (0.00ns)   --->   "%data_V_322_load = load i16 %data_V_322"   --->   Operation 265 'load' 'data_V_322_load' <Predicate = (icmp_ln33)> <Delay = 0.00>
+ST_1 : Operation 266 [1/1] (0.00ns)   --->   "%data_V_323_load = load i16 %data_V_323"   --->   Operation 266 'load' 'data_V_323_load' <Predicate = (icmp_ln33)> <Delay = 0.00>
+ST_1 : Operation 267 [1/1] (0.00ns)   --->   "%data_V_324_load = load i16 %data_V_324"   --->   Operation 267 'load' 'data_V_324_load' <Predicate = (icmp_ln33)> <Delay = 0.00>
+ST_1 : Operation 268 [1/1] (0.00ns)   --->   "%data_V_325_load = load i16 %data_V_325"   --->   Operation 268 'load' 'data_V_325_load' <Predicate = (icmp_ln33)> <Delay = 0.00>
+ST_1 : Operation 269 [1/1] (0.00ns)   --->   "%data_V_326_load = load i16 %data_V_326"   --->   Operation 269 'load' 'data_V_326_load' <Predicate = (icmp_ln33)> <Delay = 0.00>
+ST_1 : Operation 270 [1/1] (0.00ns)   --->   "%data_V_327_load = load i16 %data_V_327"   --->   Operation 270 'load' 'data_V_327_load' <Predicate = (icmp_ln33)> <Delay = 0.00>
+ST_1 : Operation 271 [1/1] (0.00ns)   --->   "%data_V_328_load = load i16 %data_V_328"   --->   Operation 271 'load' 'data_V_328_load' <Predicate = (icmp_ln33)> <Delay = 0.00>
+ST_1 : Operation 272 [1/1] (0.00ns)   --->   "%data_V_329_load = load i16 %data_V_329"   --->   Operation 272 'load' 'data_V_329_load' <Predicate = (icmp_ln33)> <Delay = 0.00>
+ST_1 : Operation 273 [1/1] (0.00ns)   --->   "%data_V_330_load = load i16 %data_V_330"   --->   Operation 273 'load' 'data_V_330_load' <Predicate = (icmp_ln33)> <Delay = 0.00>
+ST_1 : Operation 274 [1/1] (0.00ns)   --->   "%data_V_331_load = load i16 %data_V_331"   --->   Operation 274 'load' 'data_V_331_load' <Predicate = (icmp_ln33)> <Delay = 0.00>
+ST_1 : Operation 275 [1/1] (0.00ns)   --->   "%data_V_332_load = load i16 %data_V_332"   --->   Operation 275 'load' 'data_V_332_load' <Predicate = (icmp_ln33)> <Delay = 0.00>
+ST_1 : Operation 276 [1/1] (0.00ns)   --->   "%data_V_333_load = load i16 %data_V_333"   --->   Operation 276 'load' 'data_V_333_load' <Predicate = (icmp_ln33)> <Delay = 0.00>
+ST_1 : Operation 277 [1/1] (0.00ns)   --->   "%data_V_334_load = load i16 %data_V_334"   --->   Operation 277 'load' 'data_V_334_load' <Predicate = (icmp_ln33)> <Delay = 0.00>
+ST_1 : Operation 278 [1/1] (0.00ns)   --->   "%data_V_335_load = load i16 %data_V_335"   --->   Operation 278 'load' 'data_V_335_load' <Predicate = (icmp_ln33)> <Delay = 0.00>
+ST_1 : Operation 279 [1/1] (0.00ns)   --->   "%data_V_164_load = load i16 %data_V_164"   --->   Operation 279 'load' 'data_V_164_load' <Predicate = (icmp_ln33)> <Delay = 0.00>
+ST_1 : Operation 280 [1/1] (0.00ns)   --->   "%data_V_337_load = load i16 %data_V_337"   --->   Operation 280 'load' 'data_V_337_load' <Predicate = (icmp_ln33)> <Delay = 0.00>
+ST_1 : Operation 281 [1/1] (0.00ns)   --->   "%data_V_338_load = load i16 %data_V_338"   --->   Operation 281 'load' 'data_V_338_load' <Predicate = (icmp_ln33)> <Delay = 0.00>
+ST_1 : Operation 282 [1/1] (0.00ns)   --->   "%data_V_339_load = load i16 %data_V_339"   --->   Operation 282 'load' 'data_V_339_load' <Predicate = (icmp_ln33)> <Delay = 0.00>
+ST_1 : Operation 283 [1/1] (0.00ns)   --->   "%data_V_340_load = load i16 %data_V_340"   --->   Operation 283 'load' 'data_V_340_load' <Predicate = (icmp_ln33)> <Delay = 0.00>
+ST_1 : Operation 284 [1/1] (0.00ns)   --->   "%data_V_341_load = load i16 %data_V_341"   --->   Operation 284 'load' 'data_V_341_load' <Predicate = (icmp_ln33)> <Delay = 0.00>
+ST_1 : Operation 285 [1/1] (0.00ns)   --->   "%data_V_342_load = load i16 %data_V_342"   --->   Operation 285 'load' 'data_V_342_load' <Predicate = (icmp_ln33)> <Delay = 0.00>
+ST_1 : Operation 286 [1/1] (0.00ns)   --->   "%data_V_343_load = load i16 %data_V_343"   --->   Operation 286 'load' 'data_V_343_load' <Predicate = (icmp_ln33)> <Delay = 0.00>
+ST_1 : Operation 287 [1/1] (0.00ns)   --->   "%data_V_344_load = load i16 %data_V_344"   --->   Operation 287 'load' 'data_V_344_load' <Predicate = (icmp_ln33)> <Delay = 0.00>
+ST_1 : Operation 288 [1/1] (0.00ns)   --->   "%data_V_345_load = load i16 %data_V_345"   --->   Operation 288 'load' 'data_V_345_load' <Predicate = (icmp_ln33)> <Delay = 0.00>
+ST_1 : Operation 289 [1/1] (0.00ns)   --->   "%data_V_346_load = load i16 %data_V_346"   --->   Operation 289 'load' 'data_V_346_load' <Predicate = (icmp_ln33)> <Delay = 0.00>
+ST_1 : Operation 290 [1/1] (0.00ns)   --->   "%data_V_347_load = load i16 %data_V_347"   --->   Operation 290 'load' 'data_V_347_load' <Predicate = (icmp_ln33)> <Delay = 0.00>
+ST_1 : Operation 291 [1/1] (0.00ns)   --->   "%data_V_348_load = load i16 %data_V_348"   --->   Operation 291 'load' 'data_V_348_load' <Predicate = (icmp_ln33)> <Delay = 0.00>
+ST_1 : Operation 292 [1/1] (0.00ns)   --->   "%data_V_349_load = load i16 %data_V_349"   --->   Operation 292 'load' 'data_V_349_load' <Predicate = (icmp_ln33)> <Delay = 0.00>
+ST_1 : Operation 293 [1/1] (0.00ns)   --->   "%data_V_350_load = load i16 %data_V_350"   --->   Operation 293 'load' 'data_V_350_load' <Predicate = (icmp_ln33)> <Delay = 0.00>
+ST_1 : Operation 294 [1/1] (0.00ns)   --->   "%data_V_351_load = load i16 %data_V_351"   --->   Operation 294 'load' 'data_V_351_load' <Predicate = (icmp_ln33)> <Delay = 0.00>
+ST_1 : Operation 295 [1/1] (0.00ns)   --->   "%data_V_352_load = load i16 %data_V_352"   --->   Operation 295 'load' 'data_V_352_load' <Predicate = (icmp_ln33)> <Delay = 0.00>
+ST_1 : Operation 296 [1/1] (0.00ns)   --->   "%data_V_353_load = load i16 %data_V_353"   --->   Operation 296 'load' 'data_V_353_load' <Predicate = (icmp_ln33)> <Delay = 0.00>
+ST_1 : Operation 297 [1/1] (0.00ns)   --->   "%data_V_354_load = load i16 %data_V_354"   --->   Operation 297 'load' 'data_V_354_load' <Predicate = (icmp_ln33)> <Delay = 0.00>
+ST_1 : Operation 298 [1/1] (0.00ns)   --->   "%data_V_355_load = load i16 %data_V_355"   --->   Operation 298 'load' 'data_V_355_load' <Predicate = (icmp_ln33)> <Delay = 0.00>
+ST_1 : Operation 299 [1/1] (0.00ns)   --->   "%data_V_356_load = load i16 %data_V_356"   --->   Operation 299 'load' 'data_V_356_load' <Predicate = (icmp_ln33)> <Delay = 0.00>
+ST_1 : Operation 300 [1/1] (0.00ns)   --->   "%data_V_357_load = load i16 %data_V_357"   --->   Operation 300 'load' 'data_V_357_load' <Predicate = (icmp_ln33)> <Delay = 0.00>
+ST_1 : Operation 301 [1/1] (0.00ns)   --->   "%data_V_358_load = load i16 %data_V_358"   --->   Operation 301 'load' 'data_V_358_load' <Predicate = (icmp_ln33)> <Delay = 0.00>
+ST_1 : Operation 302 [1/1] (0.00ns)   --->   "%data_V_359_load = load i16 %data_V_359"   --->   Operation 302 'load' 'data_V_359_load' <Predicate = (icmp_ln33)> <Delay = 0.00>
+ST_1 : Operation 303 [1/1] (0.00ns)   --->   "%data_V_165_load = load i16 %data_V_165"   --->   Operation 303 'load' 'data_V_165_load' <Predicate = (icmp_ln33)> <Delay = 0.00>
+ST_1 : Operation 304 [1/1] (0.00ns)   --->   "%data_V_361_load = load i16 %data_V_361"   --->   Operation 304 'load' 'data_V_361_load' <Predicate = (icmp_ln33)> <Delay = 0.00>
+ST_1 : Operation 305 [1/1] (0.00ns)   --->   "%data_V_362_load = load i16 %data_V_362"   --->   Operation 305 'load' 'data_V_362_load' <Predicate = (icmp_ln33)> <Delay = 0.00>
+ST_1 : Operation 306 [1/1] (0.00ns)   --->   "%data_V_363_load = load i16 %data_V_363"   --->   Operation 306 'load' 'data_V_363_load' <Predicate = (icmp_ln33)> <Delay = 0.00>
+ST_1 : Operation 307 [1/1] (0.00ns)   --->   "%data_V_364_load = load i16 %data_V_364"   --->   Operation 307 'load' 'data_V_364_load' <Predicate = (icmp_ln33)> <Delay = 0.00>
+ST_1 : Operation 308 [1/1] (0.00ns)   --->   "%data_V_365_load = load i16 %data_V_365"   --->   Operation 308 'load' 'data_V_365_load' <Predicate = (icmp_ln33)> <Delay = 0.00>
+ST_1 : Operation 309 [1/1] (0.00ns)   --->   "%data_V_366_load = load i16 %data_V_366"   --->   Operation 309 'load' 'data_V_366_load' <Predicate = (icmp_ln33)> <Delay = 0.00>
+ST_1 : Operation 310 [1/1] (0.00ns)   --->   "%data_V_367_load = load i16 %data_V_367"   --->   Operation 310 'load' 'data_V_367_load' <Predicate = (icmp_ln33)> <Delay = 0.00>
+ST_1 : Operation 311 [1/1] (0.00ns)   --->   "%data_V_368_load = load i16 %data_V_368"   --->   Operation 311 'load' 'data_V_368_load' <Predicate = (icmp_ln33)> <Delay = 0.00>
+ST_1 : Operation 312 [1/1] (0.00ns)   --->   "%data_V_369_load = load i16 %data_V_369"   --->   Operation 312 'load' 'data_V_369_load' <Predicate = (icmp_ln33)> <Delay = 0.00>
+ST_1 : Operation 313 [1/1] (0.00ns)   --->   "%data_V_370_load = load i16 %data_V_370"   --->   Operation 313 'load' 'data_V_370_load' <Predicate = (icmp_ln33)> <Delay = 0.00>
+ST_1 : Operation 314 [1/1] (0.00ns)   --->   "%data_V_371_load = load i16 %data_V_371"   --->   Operation 314 'load' 'data_V_371_load' <Predicate = (icmp_ln33)> <Delay = 0.00>
+ST_1 : Operation 315 [1/1] (0.00ns)   --->   "%data_V_372_load = load i16 %data_V_372"   --->   Operation 315 'load' 'data_V_372_load' <Predicate = (icmp_ln33)> <Delay = 0.00>
+ST_1 : Operation 316 [1/1] (0.00ns)   --->   "%data_V_373_load = load i16 %data_V_373"   --->   Operation 316 'load' 'data_V_373_load' <Predicate = (icmp_ln33)> <Delay = 0.00>
+ST_1 : Operation 317 [1/1] (0.00ns)   --->   "%data_V_374_load = load i16 %data_V_374"   --->   Operation 317 'load' 'data_V_374_load' <Predicate = (icmp_ln33)> <Delay = 0.00>
+ST_1 : Operation 318 [1/1] (0.00ns)   --->   "%data_V_375_load = load i16 %data_V_375"   --->   Operation 318 'load' 'data_V_375_load' <Predicate = (icmp_ln33)> <Delay = 0.00>
+ST_1 : Operation 319 [1/1] (0.00ns)   --->   "%data_V_376_load = load i16 %data_V_376"   --->   Operation 319 'load' 'data_V_376_load' <Predicate = (icmp_ln33)> <Delay = 0.00>
+ST_1 : Operation 320 [1/1] (0.00ns)   --->   "%data_V_377_load = load i16 %data_V_377"   --->   Operation 320 'load' 'data_V_377_load' <Predicate = (icmp_ln33)> <Delay = 0.00>
+ST_1 : Operation 321 [1/1] (0.00ns)   --->   "%data_V_378_load = load i16 %data_V_378"   --->   Operation 321 'load' 'data_V_378_load' <Predicate = (icmp_ln33)> <Delay = 0.00>
+ST_1 : Operation 322 [1/1] (0.00ns)   --->   "%data_V_379_load = load i16 %data_V_379"   --->   Operation 322 'load' 'data_V_379_load' <Predicate = (icmp_ln33)> <Delay = 0.00>
+ST_1 : Operation 323 [1/1] (0.00ns)   --->   "%data_V_380_load = load i16 %data_V_380"   --->   Operation 323 'load' 'data_V_380_load' <Predicate = (icmp_ln33)> <Delay = 0.00>
+ST_1 : Operation 324 [1/1] (0.00ns)   --->   "%data_V_381_load = load i16 %data_V_381"   --->   Operation 324 'load' 'data_V_381_load' <Predicate = (icmp_ln33)> <Delay = 0.00>
+ST_1 : Operation 325 [1/1] (0.00ns)   --->   "%data_V_382_load = load i16 %data_V_382"   --->   Operation 325 'load' 'data_V_382_load' <Predicate = (icmp_ln33)> <Delay = 0.00>
+ST_1 : Operation 326 [1/1] (0.00ns)   --->   "%data_V_383_load = load i16 %data_V_383"   --->   Operation 326 'load' 'data_V_383_load' <Predicate = (icmp_ln33)> <Delay = 0.00>
+ST_1 : Operation 327 [1/1] (0.00ns)   --->   "%data_V_384_load = load i16 %data_V_384"   --->   Operation 327 'load' 'data_V_384_load' <Predicate = (icmp_ln33)> <Delay = 0.00>
+ST_1 : Operation 328 [1/1] (0.00ns)   --->   "%data_V_385_load = load i16 %data_V_385"   --->   Operation 328 'load' 'data_V_385_load' <Predicate = (icmp_ln33)> <Delay = 0.00>
+ST_1 : Operation 329 [1/1] (0.00ns)   --->   "%data_V_386_load = load i16 %data_V_386"   --->   Operation 329 'load' 'data_V_386_load' <Predicate = (icmp_ln33)> <Delay = 0.00>
+ST_1 : Operation 330 [1/1] (0.00ns)   --->   "%data_V_387_load = load i16 %data_V_387"   --->   Operation 330 'load' 'data_V_387_load' <Predicate = (icmp_ln33)> <Delay = 0.00>
+ST_1 : Operation 331 [1/1] (0.00ns)   --->   "%data_V_388_load = load i16 %data_V_388"   --->   Operation 331 'load' 'data_V_388_load' <Predicate = (icmp_ln33)> <Delay = 0.00>
+ST_1 : Operation 332 [1/1] (0.00ns)   --->   "%data_V_389_load = load i16 %data_V_389"   --->   Operation 332 'load' 'data_V_389_load' <Predicate = (icmp_ln33)> <Delay = 0.00>
+ST_1 : Operation 333 [1/1] (0.00ns)   --->   "%data_V_390_load = load i16 %data_V_390"   --->   Operation 333 'load' 'data_V_390_load' <Predicate = (icmp_ln33)> <Delay = 0.00>
+ST_1 : Operation 334 [1/1] (0.00ns)   --->   "%write_ln0 = write void @_ssdm_op_Write.ap_auto.i16P0A, i16 %data_V_390_out, i16 %data_V_390_load"   --->   Operation 334 'write' 'write_ln0' <Predicate = (icmp_ln33)> <Delay = 0.00>
+ST_1 : Operation 335 [1/1] (0.00ns)   --->   "%write_ln0 = write void @_ssdm_op_Write.ap_auto.i16P0A, i16 %data_V_389_out, i16 %data_V_389_load"   --->   Operation 335 'write' 'write_ln0' <Predicate = (icmp_ln33)> <Delay = 0.00>
+ST_1 : Operation 336 [1/1] (0.00ns)   --->   "%write_ln0 = write void @_ssdm_op_Write.ap_auto.i16P0A, i16 %data_V_388_out, i16 %data_V_388_load"   --->   Operation 336 'write' 'write_ln0' <Predicate = (icmp_ln33)> <Delay = 0.00>
+ST_1 : Operation 337 [1/1] (0.00ns)   --->   "%write_ln0 = write void @_ssdm_op_Write.ap_auto.i16P0A, i16 %data_V_387_out, i16 %data_V_387_load"   --->   Operation 337 'write' 'write_ln0' <Predicate = (icmp_ln33)> <Delay = 0.00>
+ST_1 : Operation 338 [1/1] (0.00ns)   --->   "%write_ln0 = write void @_ssdm_op_Write.ap_auto.i16P0A, i16 %data_V_386_out, i16 %data_V_386_load"   --->   Operation 338 'write' 'write_ln0' <Predicate = (icmp_ln33)> <Delay = 0.00>
+ST_1 : Operation 339 [1/1] (0.00ns)   --->   "%write_ln0 = write void @_ssdm_op_Write.ap_auto.i16P0A, i16 %data_V_385_out, i16 %data_V_385_load"   --->   Operation 339 'write' 'write_ln0' <Predicate = (icmp_ln33)> <Delay = 0.00>
+ST_1 : Operation 340 [1/1] (0.00ns)   --->   "%write_ln0 = write void @_ssdm_op_Write.ap_auto.i16P0A, i16 %data_V_384_out, i16 %data_V_384_load"   --->   Operation 340 'write' 'write_ln0' <Predicate = (icmp_ln33)> <Delay = 0.00>
+ST_1 : Operation 341 [1/1] (0.00ns)   --->   "%write_ln0 = write void @_ssdm_op_Write.ap_auto.i16P0A, i16 %data_V_383_out, i16 %data_V_383_load"   --->   Operation 341 'write' 'write_ln0' <Predicate = (icmp_ln33)> <Delay = 0.00>
+ST_1 : Operation 342 [1/1] (0.00ns)   --->   "%write_ln0 = write void @_ssdm_op_Write.ap_auto.i16P0A, i16 %data_V_382_out, i16 %data_V_382_load"   --->   Operation 342 'write' 'write_ln0' <Predicate = (icmp_ln33)> <Delay = 0.00>
+ST_1 : Operation 343 [1/1] (0.00ns)   --->   "%write_ln0 = write void @_ssdm_op_Write.ap_auto.i16P0A, i16 %data_V_381_out, i16 %data_V_381_load"   --->   Operation 343 'write' 'write_ln0' <Predicate = (icmp_ln33)> <Delay = 0.00>
+ST_1 : Operation 344 [1/1] (0.00ns)   --->   "%write_ln0 = write void @_ssdm_op_Write.ap_auto.i16P0A, i16 %data_V_380_out, i16 %data_V_380_load"   --->   Operation 344 'write' 'write_ln0' <Predicate = (icmp_ln33)> <Delay = 0.00>
+ST_1 : Operation 345 [1/1] (0.00ns)   --->   "%write_ln0 = write void @_ssdm_op_Write.ap_auto.i16P0A, i16 %data_V_379_out, i16 %data_V_379_load"   --->   Operation 345 'write' 'write_ln0' <Predicate = (icmp_ln33)> <Delay = 0.00>
+ST_1 : Operation 346 [1/1] (0.00ns)   --->   "%write_ln0 = write void @_ssdm_op_Write.ap_auto.i16P0A, i16 %data_V_378_out, i16 %data_V_378_load"   --->   Operation 346 'write' 'write_ln0' <Predicate = (icmp_ln33)> <Delay = 0.00>
+ST_1 : Operation 347 [1/1] (0.00ns)   --->   "%write_ln0 = write void @_ssdm_op_Write.ap_auto.i16P0A, i16 %data_V_377_out, i16 %data_V_377_load"   --->   Operation 347 'write' 'write_ln0' <Predicate = (icmp_ln33)> <Delay = 0.00>
+ST_1 : Operation 348 [1/1] (0.00ns)   --->   "%write_ln0 = write void @_ssdm_op_Write.ap_auto.i16P0A, i16 %data_V_376_out, i16 %data_V_376_load"   --->   Operation 348 'write' 'write_ln0' <Predicate = (icmp_ln33)> <Delay = 0.00>
+ST_1 : Operation 349 [1/1] (0.00ns)   --->   "%write_ln0 = write void @_ssdm_op_Write.ap_auto.i16P0A, i16 %data_V_375_out, i16 %data_V_375_load"   --->   Operation 349 'write' 'write_ln0' <Predicate = (icmp_ln33)> <Delay = 0.00>
+ST_1 : Operation 350 [1/1] (0.00ns)   --->   "%write_ln0 = write void @_ssdm_op_Write.ap_auto.i16P0A, i16 %data_V_374_out, i16 %data_V_374_load"   --->   Operation 350 'write' 'write_ln0' <Predicate = (icmp_ln33)> <Delay = 0.00>
+ST_1 : Operation 351 [1/1] (0.00ns)   --->   "%write_ln0 = write void @_ssdm_op_Write.ap_auto.i16P0A, i16 %data_V_373_out, i16 %data_V_373_load"   --->   Operation 351 'write' 'write_ln0' <Predicate = (icmp_ln33)> <Delay = 0.00>
+ST_1 : Operation 352 [1/1] (0.00ns)   --->   "%write_ln0 = write void @_ssdm_op_Write.ap_auto.i16P0A, i16 %data_V_372_out, i16 %data_V_372_load"   --->   Operation 352 'write' 'write_ln0' <Predicate = (icmp_ln33)> <Delay = 0.00>
+ST_1 : Operation 353 [1/1] (0.00ns)   --->   "%write_ln0 = write void @_ssdm_op_Write.ap_auto.i16P0A, i16 %data_V_371_out, i16 %data_V_371_load"   --->   Operation 353 'write' 'write_ln0' <Predicate = (icmp_ln33)> <Delay = 0.00>
+ST_1 : Operation 354 [1/1] (0.00ns)   --->   "%write_ln0 = write void @_ssdm_op_Write.ap_auto.i16P0A, i16 %data_V_370_out, i16 %data_V_370_load"   --->   Operation 354 'write' 'write_ln0' <Predicate = (icmp_ln33)> <Delay = 0.00>
+ST_1 : Operation 355 [1/1] (0.00ns)   --->   "%write_ln0 = write void @_ssdm_op_Write.ap_auto.i16P0A, i16 %data_V_369_out, i16 %data_V_369_load"   --->   Operation 355 'write' 'write_ln0' <Predicate = (icmp_ln33)> <Delay = 0.00>
+ST_1 : Operation 356 [1/1] (0.00ns)   --->   "%write_ln0 = write void @_ssdm_op_Write.ap_auto.i16P0A, i16 %data_V_368_out, i16 %data_V_368_load"   --->   Operation 356 'write' 'write_ln0' <Predicate = (icmp_ln33)> <Delay = 0.00>
+ST_1 : Operation 357 [1/1] (0.00ns)   --->   "%write_ln0 = write void @_ssdm_op_Write.ap_auto.i16P0A, i16 %data_V_367_out, i16 %data_V_367_load"   --->   Operation 357 'write' 'write_ln0' <Predicate = (icmp_ln33)> <Delay = 0.00>
+ST_1 : Operation 358 [1/1] (0.00ns)   --->   "%write_ln0 = write void @_ssdm_op_Write.ap_auto.i16P0A, i16 %data_V_366_out, i16 %data_V_366_load"   --->   Operation 358 'write' 'write_ln0' <Predicate = (icmp_ln33)> <Delay = 0.00>
+ST_1 : Operation 359 [1/1] (0.00ns)   --->   "%write_ln0 = write void @_ssdm_op_Write.ap_auto.i16P0A, i16 %data_V_365_out, i16 %data_V_365_load"   --->   Operation 359 'write' 'write_ln0' <Predicate = (icmp_ln33)> <Delay = 0.00>
+ST_1 : Operation 360 [1/1] (0.00ns)   --->   "%write_ln0 = write void @_ssdm_op_Write.ap_auto.i16P0A, i16 %data_V_364_out, i16 %data_V_364_load"   --->   Operation 360 'write' 'write_ln0' <Predicate = (icmp_ln33)> <Delay = 0.00>
+ST_1 : Operation 361 [1/1] (0.00ns)   --->   "%write_ln0 = write void @_ssdm_op_Write.ap_auto.i16P0A, i16 %data_V_363_out, i16 %data_V_363_load"   --->   Operation 361 'write' 'write_ln0' <Predicate = (icmp_ln33)> <Delay = 0.00>
+ST_1 : Operation 362 [1/1] (0.00ns)   --->   "%write_ln0 = write void @_ssdm_op_Write.ap_auto.i16P0A, i16 %data_V_362_out, i16 %data_V_362_load"   --->   Operation 362 'write' 'write_ln0' <Predicate = (icmp_ln33)> <Delay = 0.00>
+ST_1 : Operation 363 [1/1] (0.00ns)   --->   "%write_ln0 = write void @_ssdm_op_Write.ap_auto.i16P0A, i16 %data_V_361_out, i16 %data_V_361_load"   --->   Operation 363 'write' 'write_ln0' <Predicate = (icmp_ln33)> <Delay = 0.00>
+ST_1 : Operation 364 [1/1] (0.00ns)   --->   "%write_ln0 = write void @_ssdm_op_Write.ap_auto.i16P0A, i16 %data_V_360_out, i16 %data_V_165_load"   --->   Operation 364 'write' 'write_ln0' <Predicate = (icmp_ln33)> <Delay = 0.00>
+ST_1 : Operation 365 [1/1] (0.00ns)   --->   "%write_ln0 = write void @_ssdm_op_Write.ap_auto.i16P0A, i16 %data_V_359_out, i16 %data_V_359_load"   --->   Operation 365 'write' 'write_ln0' <Predicate = (icmp_ln33)> <Delay = 0.00>
+ST_1 : Operation 366 [1/1] (0.00ns)   --->   "%write_ln0 = write void @_ssdm_op_Write.ap_auto.i16P0A, i16 %data_V_358_out, i16 %data_V_358_load"   --->   Operation 366 'write' 'write_ln0' <Predicate = (icmp_ln33)> <Delay = 0.00>
+ST_1 : Operation 367 [1/1] (0.00ns)   --->   "%write_ln0 = write void @_ssdm_op_Write.ap_auto.i16P0A, i16 %data_V_357_out, i16 %data_V_357_load"   --->   Operation 367 'write' 'write_ln0' <Predicate = (icmp_ln33)> <Delay = 0.00>
+ST_1 : Operation 368 [1/1] (0.00ns)   --->   "%write_ln0 = write void @_ssdm_op_Write.ap_auto.i16P0A, i16 %data_V_356_out, i16 %data_V_356_load"   --->   Operation 368 'write' 'write_ln0' <Predicate = (icmp_ln33)> <Delay = 0.00>
+ST_1 : Operation 369 [1/1] (0.00ns)   --->   "%write_ln0 = write void @_ssdm_op_Write.ap_auto.i16P0A, i16 %data_V_355_out, i16 %data_V_355_load"   --->   Operation 369 'write' 'write_ln0' <Predicate = (icmp_ln33)> <Delay = 0.00>
+ST_1 : Operation 370 [1/1] (0.00ns)   --->   "%write_ln0 = write void @_ssdm_op_Write.ap_auto.i16P0A, i16 %data_V_354_out, i16 %data_V_354_load"   --->   Operation 370 'write' 'write_ln0' <Predicate = (icmp_ln33)> <Delay = 0.00>
+ST_1 : Operation 371 [1/1] (0.00ns)   --->   "%write_ln0 = write void @_ssdm_op_Write.ap_auto.i16P0A, i16 %data_V_353_out, i16 %data_V_353_load"   --->   Operation 371 'write' 'write_ln0' <Predicate = (icmp_ln33)> <Delay = 0.00>
+ST_1 : Operation 372 [1/1] (0.00ns)   --->   "%write_ln0 = write void @_ssdm_op_Write.ap_auto.i16P0A, i16 %data_V_352_out, i16 %data_V_352_load"   --->   Operation 372 'write' 'write_ln0' <Predicate = (icmp_ln33)> <Delay = 0.00>
+ST_1 : Operation 373 [1/1] (0.00ns)   --->   "%write_ln0 = write void @_ssdm_op_Write.ap_auto.i16P0A, i16 %data_V_351_out, i16 %data_V_351_load"   --->   Operation 373 'write' 'write_ln0' <Predicate = (icmp_ln33)> <Delay = 0.00>
+ST_1 : Operation 374 [1/1] (0.00ns)   --->   "%write_ln0 = write void @_ssdm_op_Write.ap_auto.i16P0A, i16 %data_V_350_out, i16 %data_V_350_load"   --->   Operation 374 'write' 'write_ln0' <Predicate = (icmp_ln33)> <Delay = 0.00>
+ST_1 : Operation 375 [1/1] (0.00ns)   --->   "%write_ln0 = write void @_ssdm_op_Write.ap_auto.i16P0A, i16 %data_V_349_out, i16 %data_V_349_load"   --->   Operation 375 'write' 'write_ln0' <Predicate = (icmp_ln33)> <Delay = 0.00>
+ST_1 : Operation 376 [1/1] (0.00ns)   --->   "%write_ln0 = write void @_ssdm_op_Write.ap_auto.i16P0A, i16 %data_V_348_out, i16 %data_V_348_load"   --->   Operation 376 'write' 'write_ln0' <Predicate = (icmp_ln33)> <Delay = 0.00>
+ST_1 : Operation 377 [1/1] (0.00ns)   --->   "%write_ln0 = write void @_ssdm_op_Write.ap_auto.i16P0A, i16 %data_V_347_out, i16 %data_V_347_load"   --->   Operation 377 'write' 'write_ln0' <Predicate = (icmp_ln33)> <Delay = 0.00>
+ST_1 : Operation 378 [1/1] (0.00ns)   --->   "%write_ln0 = write void @_ssdm_op_Write.ap_auto.i16P0A, i16 %data_V_346_out, i16 %data_V_346_load"   --->   Operation 378 'write' 'write_ln0' <Predicate = (icmp_ln33)> <Delay = 0.00>
+ST_1 : Operation 379 [1/1] (0.00ns)   --->   "%write_ln0 = write void @_ssdm_op_Write.ap_auto.i16P0A, i16 %data_V_345_out, i16 %data_V_345_load"   --->   Operation 379 'write' 'write_ln0' <Predicate = (icmp_ln33)> <Delay = 0.00>
+ST_1 : Operation 380 [1/1] (0.00ns)   --->   "%write_ln0 = write void @_ssdm_op_Write.ap_auto.i16P0A, i16 %data_V_344_out, i16 %data_V_344_load"   --->   Operation 380 'write' 'write_ln0' <Predicate = (icmp_ln33)> <Delay = 0.00>
+ST_1 : Operation 381 [1/1] (0.00ns)   --->   "%write_ln0 = write void @_ssdm_op_Write.ap_auto.i16P0A, i16 %data_V_343_out, i16 %data_V_343_load"   --->   Operation 381 'write' 'write_ln0' <Predicate = (icmp_ln33)> <Delay = 0.00>
+ST_1 : Operation 382 [1/1] (0.00ns)   --->   "%write_ln0 = write void @_ssdm_op_Write.ap_auto.i16P0A, i16 %data_V_342_out, i16 %data_V_342_load"   --->   Operation 382 'write' 'write_ln0' <Predicate = (icmp_ln33)> <Delay = 0.00>
+ST_1 : Operation 383 [1/1] (0.00ns)   --->   "%write_ln0 = write void @_ssdm_op_Write.ap_auto.i16P0A, i16 %data_V_341_out, i16 %data_V_341_load"   --->   Operation 383 'write' 'write_ln0' <Predicate = (icmp_ln33)> <Delay = 0.00>
+ST_1 : Operation 384 [1/1] (0.00ns)   --->   "%write_ln0 = write void @_ssdm_op_Write.ap_auto.i16P0A, i16 %data_V_340_out, i16 %data_V_340_load"   --->   Operation 384 'write' 'write_ln0' <Predicate = (icmp_ln33)> <Delay = 0.00>
+ST_1 : Operation 385 [1/1] (0.00ns)   --->   "%write_ln0 = write void @_ssdm_op_Write.ap_auto.i16P0A, i16 %data_V_339_out, i16 %data_V_339_load"   --->   Operation 385 'write' 'write_ln0' <Predicate = (icmp_ln33)> <Delay = 0.00>
+ST_1 : Operation 386 [1/1] (0.00ns)   --->   "%write_ln0 = write void @_ssdm_op_Write.ap_auto.i16P0A, i16 %data_V_338_out, i16 %data_V_338_load"   --->   Operation 386 'write' 'write_ln0' <Predicate = (icmp_ln33)> <Delay = 0.00>
+ST_1 : Operation 387 [1/1] (0.00ns)   --->   "%write_ln0 = write void @_ssdm_op_Write.ap_auto.i16P0A, i16 %data_V_337_out, i16 %data_V_337_load"   --->   Operation 387 'write' 'write_ln0' <Predicate = (icmp_ln33)> <Delay = 0.00>
+ST_1 : Operation 388 [1/1] (0.00ns)   --->   "%write_ln0 = write void @_ssdm_op_Write.ap_auto.i16P0A, i16 %data_V_336_out, i16 %data_V_164_load"   --->   Operation 388 'write' 'write_ln0' <Predicate = (icmp_ln33)> <Delay = 0.00>
+ST_1 : Operation 389 [1/1] (0.00ns)   --->   "%write_ln0 = write void @_ssdm_op_Write.ap_auto.i16P0A, i16 %data_V_335_out, i16 %data_V_335_load"   --->   Operation 389 'write' 'write_ln0' <Predicate = (icmp_ln33)> <Delay = 0.00>
+ST_1 : Operation 390 [1/1] (0.00ns)   --->   "%write_ln0 = write void @_ssdm_op_Write.ap_auto.i16P0A, i16 %data_V_334_out, i16 %data_V_334_load"   --->   Operation 390 'write' 'write_ln0' <Predicate = (icmp_ln33)> <Delay = 0.00>
+ST_1 : Operation 391 [1/1] (0.00ns)   --->   "%write_ln0 = write void @_ssdm_op_Write.ap_auto.i16P0A, i16 %data_V_333_out, i16 %data_V_333_load"   --->   Operation 391 'write' 'write_ln0' <Predicate = (icmp_ln33)> <Delay = 0.00>
+ST_1 : Operation 392 [1/1] (0.00ns)   --->   "%write_ln0 = write void @_ssdm_op_Write.ap_auto.i16P0A, i16 %data_V_332_out, i16 %data_V_332_load"   --->   Operation 392 'write' 'write_ln0' <Predicate = (icmp_ln33)> <Delay = 0.00>
+ST_1 : Operation 393 [1/1] (0.00ns)   --->   "%write_ln0 = write void @_ssdm_op_Write.ap_auto.i16P0A, i16 %data_V_331_out, i16 %data_V_331_load"   --->   Operation 393 'write' 'write_ln0' <Predicate = (icmp_ln33)> <Delay = 0.00>
+ST_1 : Operation 394 [1/1] (0.00ns)   --->   "%write_ln0 = write void @_ssdm_op_Write.ap_auto.i16P0A, i16 %data_V_330_out, i16 %data_V_330_load"   --->   Operation 394 'write' 'write_ln0' <Predicate = (icmp_ln33)> <Delay = 0.00>
+ST_1 : Operation 395 [1/1] (0.00ns)   --->   "%write_ln0 = write void @_ssdm_op_Write.ap_auto.i16P0A, i16 %data_V_329_out, i16 %data_V_329_load"   --->   Operation 395 'write' 'write_ln0' <Predicate = (icmp_ln33)> <Delay = 0.00>
+ST_1 : Operation 396 [1/1] (0.00ns)   --->   "%write_ln0 = write void @_ssdm_op_Write.ap_auto.i16P0A, i16 %data_V_328_out, i16 %data_V_328_load"   --->   Operation 396 'write' 'write_ln0' <Predicate = (icmp_ln33)> <Delay = 0.00>
+ST_1 : Operation 397 [1/1] (0.00ns)   --->   "%write_ln0 = write void @_ssdm_op_Write.ap_auto.i16P0A, i16 %data_V_327_out, i16 %data_V_327_load"   --->   Operation 397 'write' 'write_ln0' <Predicate = (icmp_ln33)> <Delay = 0.00>
+ST_1 : Operation 398 [1/1] (0.00ns)   --->   "%write_ln0 = write void @_ssdm_op_Write.ap_auto.i16P0A, i16 %data_V_326_out, i16 %data_V_326_load"   --->   Operation 398 'write' 'write_ln0' <Predicate = (icmp_ln33)> <Delay = 0.00>
+ST_1 : Operation 399 [1/1] (0.00ns)   --->   "%write_ln0 = write void @_ssdm_op_Write.ap_auto.i16P0A, i16 %data_V_325_out, i16 %data_V_325_load"   --->   Operation 399 'write' 'write_ln0' <Predicate = (icmp_ln33)> <Delay = 0.00>
+ST_1 : Operation 400 [1/1] (0.00ns)   --->   "%write_ln0 = write void @_ssdm_op_Write.ap_auto.i16P0A, i16 %data_V_324_out, i16 %data_V_324_load"   --->   Operation 400 'write' 'write_ln0' <Predicate = (icmp_ln33)> <Delay = 0.00>
+ST_1 : Operation 401 [1/1] (0.00ns)   --->   "%write_ln0 = write void @_ssdm_op_Write.ap_auto.i16P0A, i16 %data_V_323_out, i16 %data_V_323_load"   --->   Operation 401 'write' 'write_ln0' <Predicate = (icmp_ln33)> <Delay = 0.00>
+ST_1 : Operation 402 [1/1] (0.00ns)   --->   "%write_ln0 = write void @_ssdm_op_Write.ap_auto.i16P0A, i16 %data_V_322_out, i16 %data_V_322_load"   --->   Operation 402 'write' 'write_ln0' <Predicate = (icmp_ln33)> <Delay = 0.00>
+ST_1 : Operation 403 [1/1] (0.00ns)   --->   "%write_ln0 = write void @_ssdm_op_Write.ap_auto.i16P0A, i16 %data_V_321_out, i16 %data_V_321_load"   --->   Operation 403 'write' 'write_ln0' <Predicate = (icmp_ln33)> <Delay = 0.00>
+ST_1 : Operation 404 [1/1] (0.00ns)   --->   "%write_ln0 = write void @_ssdm_op_Write.ap_auto.i16P0A, i16 %data_V_320_out, i16 %data_V_320_load"   --->   Operation 404 'write' 'write_ln0' <Predicate = (icmp_ln33)> <Delay = 0.00>
+ST_1 : Operation 405 [1/1] (0.00ns)   --->   "%write_ln0 = write void @_ssdm_op_Write.ap_auto.i16P0A, i16 %data_V_319_out, i16 %data_V_319_load"   --->   Operation 405 'write' 'write_ln0' <Predicate = (icmp_ln33)> <Delay = 0.00>
+ST_1 : Operation 406 [1/1] (0.00ns)   --->   "%write_ln0 = write void @_ssdm_op_Write.ap_auto.i16P0A, i16 %data_V_318_out, i16 %data_V_318_load"   --->   Operation 406 'write' 'write_ln0' <Predicate = (icmp_ln33)> <Delay = 0.00>
+ST_1 : Operation 407 [1/1] (0.00ns)   --->   "%write_ln0 = write void @_ssdm_op_Write.ap_auto.i16P0A, i16 %data_V_317_out, i16 %data_V_317_load"   --->   Operation 407 'write' 'write_ln0' <Predicate = (icmp_ln33)> <Delay = 0.00>
+ST_1 : Operation 408 [1/1] (0.00ns)   --->   "%write_ln0 = write void @_ssdm_op_Write.ap_auto.i16P0A, i16 %data_V_316_out, i16 %data_V_316_load"   --->   Operation 408 'write' 'write_ln0' <Predicate = (icmp_ln33)> <Delay = 0.00>
+ST_1 : Operation 409 [1/1] (0.00ns)   --->   "%write_ln0 = write void @_ssdm_op_Write.ap_auto.i16P0A, i16 %data_V_315_out, i16 %data_V_315_load"   --->   Operation 409 'write' 'write_ln0' <Predicate = (icmp_ln33)> <Delay = 0.00>
+ST_1 : Operation 410 [1/1] (0.00ns)   --->   "%write_ln0 = write void @_ssdm_op_Write.ap_auto.i16P0A, i16 %data_V_314_out, i16 %data_V_314_load"   --->   Operation 410 'write' 'write_ln0' <Predicate = (icmp_ln33)> <Delay = 0.00>
+ST_1 : Operation 411 [1/1] (0.00ns)   --->   "%write_ln0 = write void @_ssdm_op_Write.ap_auto.i16P0A, i16 %data_V_313_out, i16 %data_V_313_load"   --->   Operation 411 'write' 'write_ln0' <Predicate = (icmp_ln33)> <Delay = 0.00>
+ST_1 : Operation 412 [1/1] (0.00ns)   --->   "%write_ln0 = write void @_ssdm_op_Write.ap_auto.i16P0A, i16 %data_V_312_out, i16 %data_V_163_load"   --->   Operation 412 'write' 'write_ln0' <Predicate = (icmp_ln33)> <Delay = 0.00>
+ST_1 : Operation 413 [1/1] (0.00ns)   --->   "%write_ln0 = write void @_ssdm_op_Write.ap_auto.i16P0A, i16 %data_V_311_out, i16 %data_V_311_load"   --->   Operation 413 'write' 'write_ln0' <Predicate = (icmp_ln33)> <Delay = 0.00>
+ST_1 : Operation 414 [1/1] (0.00ns)   --->   "%write_ln0 = write void @_ssdm_op_Write.ap_auto.i16P0A, i16 %data_V_310_out, i16 %data_V_310_load"   --->   Operation 414 'write' 'write_ln0' <Predicate = (icmp_ln33)> <Delay = 0.00>
+ST_1 : Operation 415 [1/1] (0.00ns)   --->   "%write_ln0 = write void @_ssdm_op_Write.ap_auto.i16P0A, i16 %data_V_309_out, i16 %data_V_309_load"   --->   Operation 415 'write' 'write_ln0' <Predicate = (icmp_ln33)> <Delay = 0.00>
+ST_1 : Operation 416 [1/1] (0.00ns)   --->   "%write_ln0 = write void @_ssdm_op_Write.ap_auto.i16P0A, i16 %data_V_308_out, i16 %data_V_308_load"   --->   Operation 416 'write' 'write_ln0' <Predicate = (icmp_ln33)> <Delay = 0.00>
+ST_1 : Operation 417 [1/1] (0.00ns)   --->   "%write_ln0 = write void @_ssdm_op_Write.ap_auto.i16P0A, i16 %data_V_307_out, i16 %data_V_307_load"   --->   Operation 417 'write' 'write_ln0' <Predicate = (icmp_ln33)> <Delay = 0.00>
+ST_1 : Operation 418 [1/1] (0.00ns)   --->   "%write_ln0 = write void @_ssdm_op_Write.ap_auto.i16P0A, i16 %data_V_306_out, i16 %data_V_306_load"   --->   Operation 418 'write' 'write_ln0' <Predicate = (icmp_ln33)> <Delay = 0.00>
+ST_1 : Operation 419 [1/1] (0.00ns)   --->   "%write_ln0 = write void @_ssdm_op_Write.ap_auto.i16P0A, i16 %data_V_305_out, i16 %data_V_305_load"   --->   Operation 419 'write' 'write_ln0' <Predicate = (icmp_ln33)> <Delay = 0.00>
+ST_1 : Operation 420 [1/1] (0.00ns)   --->   "%write_ln0 = write void @_ssdm_op_Write.ap_auto.i16P0A, i16 %data_V_304_out, i16 %data_V_304_load"   --->   Operation 420 'write' 'write_ln0' <Predicate = (icmp_ln33)> <Delay = 0.00>
+ST_1 : Operation 421 [1/1] (0.00ns)   --->   "%write_ln0 = write void @_ssdm_op_Write.ap_auto.i16P0A, i16 %data_V_303_out, i16 %data_V_303_load"   --->   Operation 421 'write' 'write_ln0' <Predicate = (icmp_ln33)> <Delay = 0.00>
+ST_1 : Operation 422 [1/1] (0.00ns)   --->   "%write_ln0 = write void @_ssdm_op_Write.ap_auto.i16P0A, i16 %data_V_302_out, i16 %data_V_302_load"   --->   Operation 422 'write' 'write_ln0' <Predicate = (icmp_ln33)> <Delay = 0.00>
+ST_1 : Operation 423 [1/1] (0.00ns)   --->   "%write_ln0 = write void @_ssdm_op_Write.ap_auto.i16P0A, i16 %data_V_301_out, i16 %data_V_301_load"   --->   Operation 423 'write' 'write_ln0' <Predicate = (icmp_ln33)> <Delay = 0.00>
+ST_1 : Operation 424 [1/1] (0.00ns)   --->   "%write_ln0 = write void @_ssdm_op_Write.ap_auto.i16P0A, i16 %data_V_300_out, i16 %data_V_300_load"   --->   Operation 424 'write' 'write_ln0' <Predicate = (icmp_ln33)> <Delay = 0.00>
+ST_1 : Operation 425 [1/1] (0.00ns)   --->   "%write_ln0 = write void @_ssdm_op_Write.ap_auto.i16P0A, i16 %data_V_299_out, i16 %data_V_299_load"   --->   Operation 425 'write' 'write_ln0' <Predicate = (icmp_ln33)> <Delay = 0.00>
+ST_1 : Operation 426 [1/1] (0.00ns)   --->   "%write_ln0 = write void @_ssdm_op_Write.ap_auto.i16P0A, i16 %data_V_298_out, i16 %data_V_298_load"   --->   Operation 426 'write' 'write_ln0' <Predicate = (icmp_ln33)> <Delay = 0.00>
+ST_1 : Operation 427 [1/1] (0.00ns)   --->   "%write_ln0 = write void @_ssdm_op_Write.ap_auto.i16P0A, i16 %data_V_297_out, i16 %data_V_297_load"   --->   Operation 427 'write' 'write_ln0' <Predicate = (icmp_ln33)> <Delay = 0.00>
+ST_1 : Operation 428 [1/1] (0.00ns)   --->   "%write_ln0 = write void @_ssdm_op_Write.ap_auto.i16P0A, i16 %data_V_296_out, i16 %data_V_296_load"   --->   Operation 428 'write' 'write_ln0' <Predicate = (icmp_ln33)> <Delay = 0.00>
+ST_1 : Operation 429 [1/1] (0.00ns)   --->   "%ret_ln0 = ret"   --->   Operation 429 'ret' 'ret_ln0' <Predicate = (icmp_ln33)> <Delay = 0.00>
+
+State 2 <SV = 1> <Delay = 1.20>
+ST_2 : Operation 113 [1/1] (0.00ns)   --->   "%specpipeline_ln34 = specpipeline void @_ssdm_op_SpecPipeline, i32 4294967295, i32 0, i32 0, i32 0, void @empty" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:34]   --->   Operation 113 'specpipeline' 'specpipeline_ln34' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 114 [1/1] (0.00ns)   --->   "%specloopname_ln33 = specloopname void @_ssdm_op_SpecLoopName, void @empty_20" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:33]   --->   Operation 114 'specloopname' 'specloopname_ln33' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 115 [1/1] (1.20ns)   --->   "%layer13_out_read = read i384 @_ssdm_op_Read.ap_fifo.volatile.i384P0A, i384 %layer13_out" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:35]   --->   Operation 115 'read' 'layer13_out_read' <Predicate = true> <Delay = 1.20> <CoreInst = "FIFO">   --->   Core 78 'FIFO' <Latency = 0> <II = 1> <Delay = 1.20> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 384> <Depth = 4> <FIFO>
+ST_2 : Operation 116 [1/1] (0.00ns)   --->   "%trunc_ln35 = trunc i384 %layer13_out_read" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:35]   --->   Operation 116 'trunc' 'trunc_ln35' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 117 [1/1] (0.00ns)   --->   "%trunc_ln35_s = partselect i16 @_ssdm_op_PartSelect.i16.i384.i32.i32, i384 %layer13_out_read, i32 352, i32 367" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:35]   --->   Operation 117 'partselect' 'trunc_ln35_s' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 118 [1/1] (0.00ns)   --->   "%trunc_ln35_1 = partselect i16 @_ssdm_op_PartSelect.i16.i384.i32.i32, i384 %layer13_out_read, i32 368, i32 383" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:35]   --->   Operation 118 'partselect' 'trunc_ln35_1' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 119 [1/1] (0.00ns)   --->   "%tmp_s = partselect i16 @_ssdm_op_PartSelect.i16.i384.i32.i32, i384 %layer13_out_read, i32 16, i32 31" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:35]   --->   Operation 119 'partselect' 'tmp_s' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 120 [1/1] (0.00ns)   --->   "%tmp_349 = partselect i16 @_ssdm_op_PartSelect.i16.i384.i32.i32, i384 %layer13_out_read, i32 32, i32 47" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:35]   --->   Operation 120 'partselect' 'tmp_349' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 121 [1/1] (0.00ns)   --->   "%tmp_350 = partselect i16 @_ssdm_op_PartSelect.i16.i384.i32.i32, i384 %layer13_out_read, i32 48, i32 63" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:35]   --->   Operation 121 'partselect' 'tmp_350' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 122 [1/1] (0.00ns)   --->   "%tmp_351 = partselect i16 @_ssdm_op_PartSelect.i16.i384.i32.i32, i384 %layer13_out_read, i32 64, i32 79" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:35]   --->   Operation 122 'partselect' 'tmp_351' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 123 [1/1] (0.00ns)   --->   "%tmp_352 = partselect i16 @_ssdm_op_PartSelect.i16.i384.i32.i32, i384 %layer13_out_read, i32 80, i32 95" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:35]   --->   Operation 123 'partselect' 'tmp_352' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 124 [1/1] (0.00ns)   --->   "%tmp_353 = partselect i16 @_ssdm_op_PartSelect.i16.i384.i32.i32, i384 %layer13_out_read, i32 96, i32 111" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:35]   --->   Operation 124 'partselect' 'tmp_353' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 125 [1/1] (0.00ns)   --->   "%tmp_354 = partselect i16 @_ssdm_op_PartSelect.i16.i384.i32.i32, i384 %layer13_out_read, i32 112, i32 127" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:35]   --->   Operation 125 'partselect' 'tmp_354' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 126 [1/1] (0.00ns)   --->   "%tmp_355 = partselect i16 @_ssdm_op_PartSelect.i16.i384.i32.i32, i384 %layer13_out_read, i32 128, i32 143" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:35]   --->   Operation 126 'partselect' 'tmp_355' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 127 [1/1] (0.00ns)   --->   "%tmp_356 = partselect i16 @_ssdm_op_PartSelect.i16.i384.i32.i32, i384 %layer13_out_read, i32 144, i32 159" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:35]   --->   Operation 127 'partselect' 'tmp_356' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 128 [1/1] (0.00ns)   --->   "%tmp_357 = partselect i16 @_ssdm_op_PartSelect.i16.i384.i32.i32, i384 %layer13_out_read, i32 160, i32 175" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:35]   --->   Operation 128 'partselect' 'tmp_357' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 129 [1/1] (0.00ns)   --->   "%tmp_358 = partselect i16 @_ssdm_op_PartSelect.i16.i384.i32.i32, i384 %layer13_out_read, i32 176, i32 191" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:35]   --->   Operation 129 'partselect' 'tmp_358' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 130 [1/1] (0.00ns)   --->   "%tmp_359 = partselect i16 @_ssdm_op_PartSelect.i16.i384.i32.i32, i384 %layer13_out_read, i32 192, i32 207" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:35]   --->   Operation 130 'partselect' 'tmp_359' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 131 [1/1] (0.00ns)   --->   "%tmp_360 = partselect i16 @_ssdm_op_PartSelect.i16.i384.i32.i32, i384 %layer13_out_read, i32 208, i32 223" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:35]   --->   Operation 131 'partselect' 'tmp_360' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 132 [1/1] (0.00ns)   --->   "%tmp_361 = partselect i16 @_ssdm_op_PartSelect.i16.i384.i32.i32, i384 %layer13_out_read, i32 224, i32 239" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:35]   --->   Operation 132 'partselect' 'tmp_361' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 133 [1/1] (0.00ns)   --->   "%tmp_362 = partselect i16 @_ssdm_op_PartSelect.i16.i384.i32.i32, i384 %layer13_out_read, i32 240, i32 255" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:35]   --->   Operation 133 'partselect' 'tmp_362' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 134 [1/1] (0.00ns)   --->   "%data_V = partselect i16 @_ssdm_op_PartSelect.i16.i384.i32.i32, i384 %layer13_out_read, i32 256, i32 271" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:35]   --->   Operation 134 'partselect' 'data_V' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 135 [1/1] (0.00ns)   --->   "%tmp_363 = partselect i16 @_ssdm_op_PartSelect.i16.i384.i32.i32, i384 %layer13_out_read, i32 272, i32 287" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:35]   --->   Operation 135 'partselect' 'tmp_363' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 136 [1/1] (0.00ns)   --->   "%tmp_364 = partselect i16 @_ssdm_op_PartSelect.i16.i384.i32.i32, i384 %layer13_out_read, i32 288, i32 303" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:35]   --->   Operation 136 'partselect' 'tmp_364' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 137 [1/1] (0.00ns)   --->   "%tmp_365 = partselect i16 @_ssdm_op_PartSelect.i16.i384.i32.i32, i384 %layer13_out_read, i32 304, i32 319" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:35]   --->   Operation 137 'partselect' 'tmp_365' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 138 [1/1] (0.00ns)   --->   "%tmp_366 = partselect i16 @_ssdm_op_PartSelect.i16.i384.i32.i32, i384 %layer13_out_read, i32 320, i32 335" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:35]   --->   Operation 138 'partselect' 'tmp_366' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 139 [1/1] (0.00ns)   --->   "%tmp_367 = partselect i16 @_ssdm_op_PartSelect.i16.i384.i32.i32, i384 %layer13_out_read, i32 336, i32 351" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:35]   --->   Operation 139 'partselect' 'tmp_367' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 140 [1/1] (0.00ns)   --->   "%store_ln39 = store i16 %trunc_ln35_1, i16 %data_V_319" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:39]   --->   Operation 140 'store' 'store_ln39' <Predicate = (trunc_ln39 == 2)> <Delay = 0.00>
+ST_2 : Operation 141 [1/1] (0.00ns)   --->   "%store_ln39 = store i16 %trunc_ln35_s, i16 %data_V_318" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:39]   --->   Operation 141 'store' 'store_ln39' <Predicate = (trunc_ln39 == 2)> <Delay = 0.00>
+ST_2 : Operation 142 [1/1] (0.00ns)   --->   "%store_ln39 = store i16 %tmp_367, i16 %data_V_317" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:39]   --->   Operation 142 'store' 'store_ln39' <Predicate = (trunc_ln39 == 2)> <Delay = 0.00>
+ST_2 : Operation 143 [1/1] (0.00ns)   --->   "%store_ln39 = store i16 %tmp_366, i16 %data_V_316" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:39]   --->   Operation 143 'store' 'store_ln39' <Predicate = (trunc_ln39 == 2)> <Delay = 0.00>
+ST_2 : Operation 144 [1/1] (0.00ns)   --->   "%store_ln39 = store i16 %tmp_365, i16 %data_V_315" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:39]   --->   Operation 144 'store' 'store_ln39' <Predicate = (trunc_ln39 == 2)> <Delay = 0.00>
+ST_2 : Operation 145 [1/1] (0.00ns)   --->   "%store_ln39 = store i16 %tmp_364, i16 %data_V_314" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:39]   --->   Operation 145 'store' 'store_ln39' <Predicate = (trunc_ln39 == 2)> <Delay = 0.00>
+ST_2 : Operation 146 [1/1] (0.00ns)   --->   "%store_ln39 = store i16 %tmp_363, i16 %data_V_313" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:39]   --->   Operation 146 'store' 'store_ln39' <Predicate = (trunc_ln39 == 2)> <Delay = 0.00>
+ST_2 : Operation 147 [1/1] (0.00ns)   --->   "%store_ln39 = store i16 %data_V, i16 %data_V_163" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:39]   --->   Operation 147 'store' 'store_ln39' <Predicate = (trunc_ln39 == 2)> <Delay = 0.00>
+ST_2 : Operation 148 [1/1] (0.00ns)   --->   "%store_ln39 = store i16 %tmp_362, i16 %data_V_311" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:39]   --->   Operation 148 'store' 'store_ln39' <Predicate = (trunc_ln39 == 2)> <Delay = 0.00>
+ST_2 : Operation 149 [1/1] (0.00ns)   --->   "%store_ln39 = store i16 %tmp_361, i16 %data_V_310" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:39]   --->   Operation 149 'store' 'store_ln39' <Predicate = (trunc_ln39 == 2)> <Delay = 0.00>
+ST_2 : Operation 150 [1/1] (0.00ns)   --->   "%store_ln39 = store i16 %tmp_360, i16 %data_V_309" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:39]   --->   Operation 150 'store' 'store_ln39' <Predicate = (trunc_ln39 == 2)> <Delay = 0.00>
+ST_2 : Operation 151 [1/1] (0.00ns)   --->   "%store_ln39 = store i16 %tmp_359, i16 %data_V_308" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:39]   --->   Operation 151 'store' 'store_ln39' <Predicate = (trunc_ln39 == 2)> <Delay = 0.00>
+ST_2 : Operation 152 [1/1] (0.00ns)   --->   "%store_ln39 = store i16 %tmp_358, i16 %data_V_307" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:39]   --->   Operation 152 'store' 'store_ln39' <Predicate = (trunc_ln39 == 2)> <Delay = 0.00>
+ST_2 : Operation 153 [1/1] (0.00ns)   --->   "%store_ln39 = store i16 %tmp_357, i16 %data_V_306" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:39]   --->   Operation 153 'store' 'store_ln39' <Predicate = (trunc_ln39 == 2)> <Delay = 0.00>
+ST_2 : Operation 154 [1/1] (0.00ns)   --->   "%store_ln39 = store i16 %tmp_356, i16 %data_V_305" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:39]   --->   Operation 154 'store' 'store_ln39' <Predicate = (trunc_ln39 == 2)> <Delay = 0.00>
+ST_2 : Operation 155 [1/1] (0.00ns)   --->   "%store_ln39 = store i16 %tmp_355, i16 %data_V_304" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:39]   --->   Operation 155 'store' 'store_ln39' <Predicate = (trunc_ln39 == 2)> <Delay = 0.00>
+ST_2 : Operation 156 [1/1] (0.00ns)   --->   "%store_ln39 = store i16 %tmp_354, i16 %data_V_303" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:39]   --->   Operation 156 'store' 'store_ln39' <Predicate = (trunc_ln39 == 2)> <Delay = 0.00>
+ST_2 : Operation 157 [1/1] (0.00ns)   --->   "%store_ln39 = store i16 %tmp_353, i16 %data_V_302" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:39]   --->   Operation 157 'store' 'store_ln39' <Predicate = (trunc_ln39 == 2)> <Delay = 0.00>
+ST_2 : Operation 158 [1/1] (0.00ns)   --->   "%store_ln39 = store i16 %tmp_352, i16 %data_V_301" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:39]   --->   Operation 158 'store' 'store_ln39' <Predicate = (trunc_ln39 == 2)> <Delay = 0.00>
+ST_2 : Operation 159 [1/1] (0.00ns)   --->   "%store_ln39 = store i16 %tmp_351, i16 %data_V_300" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:39]   --->   Operation 159 'store' 'store_ln39' <Predicate = (trunc_ln39 == 2)> <Delay = 0.00>
+ST_2 : Operation 160 [1/1] (0.00ns)   --->   "%store_ln39 = store i16 %tmp_350, i16 %data_V_299" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:39]   --->   Operation 160 'store' 'store_ln39' <Predicate = (trunc_ln39 == 2)> <Delay = 0.00>
+ST_2 : Operation 161 [1/1] (0.00ns)   --->   "%store_ln39 = store i16 %tmp_349, i16 %data_V_298" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:39]   --->   Operation 161 'store' 'store_ln39' <Predicate = (trunc_ln39 == 2)> <Delay = 0.00>
+ST_2 : Operation 162 [1/1] (0.00ns)   --->   "%store_ln39 = store i16 %tmp_s, i16 %data_V_297" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:39]   --->   Operation 162 'store' 'store_ln39' <Predicate = (trunc_ln39 == 2)> <Delay = 0.00>
+ST_2 : Operation 163 [1/1] (0.00ns)   --->   "%store_ln39 = store i16 %trunc_ln35, i16 %data_V_296" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:39]   --->   Operation 163 'store' 'store_ln39' <Predicate = (trunc_ln39 == 2)> <Delay = 0.00>
+ST_2 : Operation 164 [1/1] (0.00ns)   --->   "%br_ln39 = br void %arrayidx.i2.23.exit" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:39]   --->   Operation 164 'br' 'br_ln39' <Predicate = (trunc_ln39 == 2)> <Delay = 0.00>
+ST_2 : Operation 165 [1/1] (0.00ns)   --->   "%store_ln39 = store i16 %trunc_ln35_1, i16 %data_V_343" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:39]   --->   Operation 165 'store' 'store_ln39' <Predicate = (trunc_ln39 == 1)> <Delay = 0.00>
+ST_2 : Operation 166 [1/1] (0.00ns)   --->   "%store_ln39 = store i16 %trunc_ln35_s, i16 %data_V_342" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:39]   --->   Operation 166 'store' 'store_ln39' <Predicate = (trunc_ln39 == 1)> <Delay = 0.00>
+ST_2 : Operation 167 [1/1] (0.00ns)   --->   "%store_ln39 = store i16 %tmp_367, i16 %data_V_341" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:39]   --->   Operation 167 'store' 'store_ln39' <Predicate = (trunc_ln39 == 1)> <Delay = 0.00>
+ST_2 : Operation 168 [1/1] (0.00ns)   --->   "%store_ln39 = store i16 %tmp_366, i16 %data_V_340" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:39]   --->   Operation 168 'store' 'store_ln39' <Predicate = (trunc_ln39 == 1)> <Delay = 0.00>
+ST_2 : Operation 169 [1/1] (0.00ns)   --->   "%store_ln39 = store i16 %tmp_365, i16 %data_V_339" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:39]   --->   Operation 169 'store' 'store_ln39' <Predicate = (trunc_ln39 == 1)> <Delay = 0.00>
+ST_2 : Operation 170 [1/1] (0.00ns)   --->   "%store_ln39 = store i16 %tmp_364, i16 %data_V_338" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:39]   --->   Operation 170 'store' 'store_ln39' <Predicate = (trunc_ln39 == 1)> <Delay = 0.00>
+ST_2 : Operation 171 [1/1] (0.00ns)   --->   "%store_ln39 = store i16 %tmp_363, i16 %data_V_337" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:39]   --->   Operation 171 'store' 'store_ln39' <Predicate = (trunc_ln39 == 1)> <Delay = 0.00>
+ST_2 : Operation 172 [1/1] (0.00ns)   --->   "%store_ln39 = store i16 %data_V, i16 %data_V_164" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:39]   --->   Operation 172 'store' 'store_ln39' <Predicate = (trunc_ln39 == 1)> <Delay = 0.00>
+ST_2 : Operation 173 [1/1] (0.00ns)   --->   "%store_ln39 = store i16 %tmp_362, i16 %data_V_335" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:39]   --->   Operation 173 'store' 'store_ln39' <Predicate = (trunc_ln39 == 1)> <Delay = 0.00>
+ST_2 : Operation 174 [1/1] (0.00ns)   --->   "%store_ln39 = store i16 %tmp_361, i16 %data_V_334" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:39]   --->   Operation 174 'store' 'store_ln39' <Predicate = (trunc_ln39 == 1)> <Delay = 0.00>
+ST_2 : Operation 175 [1/1] (0.00ns)   --->   "%store_ln39 = store i16 %tmp_360, i16 %data_V_333" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:39]   --->   Operation 175 'store' 'store_ln39' <Predicate = (trunc_ln39 == 1)> <Delay = 0.00>
+ST_2 : Operation 176 [1/1] (0.00ns)   --->   "%store_ln39 = store i16 %tmp_359, i16 %data_V_332" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:39]   --->   Operation 176 'store' 'store_ln39' <Predicate = (trunc_ln39 == 1)> <Delay = 0.00>
+ST_2 : Operation 177 [1/1] (0.00ns)   --->   "%store_ln39 = store i16 %tmp_358, i16 %data_V_331" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:39]   --->   Operation 177 'store' 'store_ln39' <Predicate = (trunc_ln39 == 1)> <Delay = 0.00>
+ST_2 : Operation 178 [1/1] (0.00ns)   --->   "%store_ln39 = store i16 %tmp_357, i16 %data_V_330" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:39]   --->   Operation 178 'store' 'store_ln39' <Predicate = (trunc_ln39 == 1)> <Delay = 0.00>
+ST_2 : Operation 179 [1/1] (0.00ns)   --->   "%store_ln39 = store i16 %tmp_356, i16 %data_V_329" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:39]   --->   Operation 179 'store' 'store_ln39' <Predicate = (trunc_ln39 == 1)> <Delay = 0.00>
+ST_2 : Operation 180 [1/1] (0.00ns)   --->   "%store_ln39 = store i16 %tmp_355, i16 %data_V_328" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:39]   --->   Operation 180 'store' 'store_ln39' <Predicate = (trunc_ln39 == 1)> <Delay = 0.00>
+ST_2 : Operation 181 [1/1] (0.00ns)   --->   "%store_ln39 = store i16 %tmp_354, i16 %data_V_327" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:39]   --->   Operation 181 'store' 'store_ln39' <Predicate = (trunc_ln39 == 1)> <Delay = 0.00>
+ST_2 : Operation 182 [1/1] (0.00ns)   --->   "%store_ln39 = store i16 %tmp_353, i16 %data_V_326" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:39]   --->   Operation 182 'store' 'store_ln39' <Predicate = (trunc_ln39 == 1)> <Delay = 0.00>
+ST_2 : Operation 183 [1/1] (0.00ns)   --->   "%store_ln39 = store i16 %tmp_352, i16 %data_V_325" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:39]   --->   Operation 183 'store' 'store_ln39' <Predicate = (trunc_ln39 == 1)> <Delay = 0.00>
+ST_2 : Operation 184 [1/1] (0.00ns)   --->   "%store_ln39 = store i16 %tmp_351, i16 %data_V_324" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:39]   --->   Operation 184 'store' 'store_ln39' <Predicate = (trunc_ln39 == 1)> <Delay = 0.00>
+ST_2 : Operation 185 [1/1] (0.00ns)   --->   "%store_ln39 = store i16 %tmp_350, i16 %data_V_323" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:39]   --->   Operation 185 'store' 'store_ln39' <Predicate = (trunc_ln39 == 1)> <Delay = 0.00>
+ST_2 : Operation 186 [1/1] (0.00ns)   --->   "%store_ln39 = store i16 %tmp_349, i16 %data_V_322" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:39]   --->   Operation 186 'store' 'store_ln39' <Predicate = (trunc_ln39 == 1)> <Delay = 0.00>
+ST_2 : Operation 187 [1/1] (0.00ns)   --->   "%store_ln39 = store i16 %tmp_s, i16 %data_V_321" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:39]   --->   Operation 187 'store' 'store_ln39' <Predicate = (trunc_ln39 == 1)> <Delay = 0.00>
+ST_2 : Operation 188 [1/1] (0.00ns)   --->   "%store_ln39 = store i16 %trunc_ln35, i16 %data_V_320" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:39]   --->   Operation 188 'store' 'store_ln39' <Predicate = (trunc_ln39 == 1)> <Delay = 0.00>
+ST_2 : Operation 189 [1/1] (0.00ns)   --->   "%br_ln39 = br void %arrayidx.i2.23.exit" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:39]   --->   Operation 189 'br' 'br_ln39' <Predicate = (trunc_ln39 == 1)> <Delay = 0.00>
+ST_2 : Operation 190 [1/1] (0.00ns)   --->   "%store_ln39 = store i16 %trunc_ln35_1, i16 %data_V_367" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:39]   --->   Operation 190 'store' 'store_ln39' <Predicate = (trunc_ln39 == 0)> <Delay = 0.00>
+ST_2 : Operation 191 [1/1] (0.00ns)   --->   "%store_ln39 = store i16 %trunc_ln35_s, i16 %data_V_366" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:39]   --->   Operation 191 'store' 'store_ln39' <Predicate = (trunc_ln39 == 0)> <Delay = 0.00>
+ST_2 : Operation 192 [1/1] (0.00ns)   --->   "%store_ln39 = store i16 %tmp_367, i16 %data_V_365" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:39]   --->   Operation 192 'store' 'store_ln39' <Predicate = (trunc_ln39 == 0)> <Delay = 0.00>
+ST_2 : Operation 193 [1/1] (0.00ns)   --->   "%store_ln39 = store i16 %tmp_366, i16 %data_V_364" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:39]   --->   Operation 193 'store' 'store_ln39' <Predicate = (trunc_ln39 == 0)> <Delay = 0.00>
+ST_2 : Operation 194 [1/1] (0.00ns)   --->   "%store_ln39 = store i16 %tmp_365, i16 %data_V_363" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:39]   --->   Operation 194 'store' 'store_ln39' <Predicate = (trunc_ln39 == 0)> <Delay = 0.00>
+ST_2 : Operation 195 [1/1] (0.00ns)   --->   "%store_ln39 = store i16 %tmp_364, i16 %data_V_362" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:39]   --->   Operation 195 'store' 'store_ln39' <Predicate = (trunc_ln39 == 0)> <Delay = 0.00>
+ST_2 : Operation 196 [1/1] (0.00ns)   --->   "%store_ln39 = store i16 %tmp_363, i16 %data_V_361" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:39]   --->   Operation 196 'store' 'store_ln39' <Predicate = (trunc_ln39 == 0)> <Delay = 0.00>
+ST_2 : Operation 197 [1/1] (0.00ns)   --->   "%store_ln39 = store i16 %data_V, i16 %data_V_165" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:39]   --->   Operation 197 'store' 'store_ln39' <Predicate = (trunc_ln39 == 0)> <Delay = 0.00>
+ST_2 : Operation 198 [1/1] (0.00ns)   --->   "%store_ln39 = store i16 %tmp_362, i16 %data_V_359" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:39]   --->   Operation 198 'store' 'store_ln39' <Predicate = (trunc_ln39 == 0)> <Delay = 0.00>
+ST_2 : Operation 199 [1/1] (0.00ns)   --->   "%store_ln39 = store i16 %tmp_361, i16 %data_V_358" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:39]   --->   Operation 199 'store' 'store_ln39' <Predicate = (trunc_ln39 == 0)> <Delay = 0.00>
+ST_2 : Operation 200 [1/1] (0.00ns)   --->   "%store_ln39 = store i16 %tmp_360, i16 %data_V_357" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:39]   --->   Operation 200 'store' 'store_ln39' <Predicate = (trunc_ln39 == 0)> <Delay = 0.00>
+ST_2 : Operation 201 [1/1] (0.00ns)   --->   "%store_ln39 = store i16 %tmp_359, i16 %data_V_356" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:39]   --->   Operation 201 'store' 'store_ln39' <Predicate = (trunc_ln39 == 0)> <Delay = 0.00>
+ST_2 : Operation 202 [1/1] (0.00ns)   --->   "%store_ln39 = store i16 %tmp_358, i16 %data_V_355" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:39]   --->   Operation 202 'store' 'store_ln39' <Predicate = (trunc_ln39 == 0)> <Delay = 0.00>
+ST_2 : Operation 203 [1/1] (0.00ns)   --->   "%store_ln39 = store i16 %tmp_357, i16 %data_V_354" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:39]   --->   Operation 203 'store' 'store_ln39' <Predicate = (trunc_ln39 == 0)> <Delay = 0.00>
+ST_2 : Operation 204 [1/1] (0.00ns)   --->   "%store_ln39 = store i16 %tmp_356, i16 %data_V_353" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:39]   --->   Operation 204 'store' 'store_ln39' <Predicate = (trunc_ln39 == 0)> <Delay = 0.00>
+ST_2 : Operation 205 [1/1] (0.00ns)   --->   "%store_ln39 = store i16 %tmp_355, i16 %data_V_352" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:39]   --->   Operation 205 'store' 'store_ln39' <Predicate = (trunc_ln39 == 0)> <Delay = 0.00>
+ST_2 : Operation 206 [1/1] (0.00ns)   --->   "%store_ln39 = store i16 %tmp_354, i16 %data_V_351" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:39]   --->   Operation 206 'store' 'store_ln39' <Predicate = (trunc_ln39 == 0)> <Delay = 0.00>
+ST_2 : Operation 207 [1/1] (0.00ns)   --->   "%store_ln39 = store i16 %tmp_353, i16 %data_V_350" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:39]   --->   Operation 207 'store' 'store_ln39' <Predicate = (trunc_ln39 == 0)> <Delay = 0.00>
+ST_2 : Operation 208 [1/1] (0.00ns)   --->   "%store_ln39 = store i16 %tmp_352, i16 %data_V_349" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:39]   --->   Operation 208 'store' 'store_ln39' <Predicate = (trunc_ln39 == 0)> <Delay = 0.00>
+ST_2 : Operation 209 [1/1] (0.00ns)   --->   "%store_ln39 = store i16 %tmp_351, i16 %data_V_348" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:39]   --->   Operation 209 'store' 'store_ln39' <Predicate = (trunc_ln39 == 0)> <Delay = 0.00>
+ST_2 : Operation 210 [1/1] (0.00ns)   --->   "%store_ln39 = store i16 %tmp_350, i16 %data_V_347" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:39]   --->   Operation 210 'store' 'store_ln39' <Predicate = (trunc_ln39 == 0)> <Delay = 0.00>
+ST_2 : Operation 211 [1/1] (0.00ns)   --->   "%store_ln39 = store i16 %tmp_349, i16 %data_V_346" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:39]   --->   Operation 211 'store' 'store_ln39' <Predicate = (trunc_ln39 == 0)> <Delay = 0.00>
+ST_2 : Operation 212 [1/1] (0.00ns)   --->   "%store_ln39 = store i16 %tmp_s, i16 %data_V_345" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:39]   --->   Operation 212 'store' 'store_ln39' <Predicate = (trunc_ln39 == 0)> <Delay = 0.00>
+ST_2 : Operation 213 [1/1] (0.00ns)   --->   "%store_ln39 = store i16 %trunc_ln35, i16 %data_V_344" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:39]   --->   Operation 213 'store' 'store_ln39' <Predicate = (trunc_ln39 == 0)> <Delay = 0.00>
+ST_2 : Operation 214 [1/1] (0.00ns)   --->   "%br_ln39 = br void %arrayidx.i2.23.exit" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:39]   --->   Operation 214 'br' 'br_ln39' <Predicate = (trunc_ln39 == 0)> <Delay = 0.00>
+ST_2 : Operation 215 [1/1] (0.00ns)   --->   "%store_ln39 = store i16 %trunc_ln35_1, i16 %data_V_390" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:39]   --->   Operation 215 'store' 'store_ln39' <Predicate = (trunc_ln39 == 3)> <Delay = 0.00>
+ST_2 : Operation 216 [1/1] (0.00ns)   --->   "%store_ln39 = store i16 %trunc_ln35_s, i16 %data_V_389" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:39]   --->   Operation 216 'store' 'store_ln39' <Predicate = (trunc_ln39 == 3)> <Delay = 0.00>
+ST_2 : Operation 217 [1/1] (0.00ns)   --->   "%store_ln39 = store i16 %tmp_367, i16 %data_V_388" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:39]   --->   Operation 217 'store' 'store_ln39' <Predicate = (trunc_ln39 == 3)> <Delay = 0.00>
+ST_2 : Operation 218 [1/1] (0.00ns)   --->   "%store_ln39 = store i16 %tmp_366, i16 %data_V_387" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:39]   --->   Operation 218 'store' 'store_ln39' <Predicate = (trunc_ln39 == 3)> <Delay = 0.00>
+ST_2 : Operation 219 [1/1] (0.00ns)   --->   "%store_ln39 = store i16 %tmp_365, i16 %data_V_386" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:39]   --->   Operation 219 'store' 'store_ln39' <Predicate = (trunc_ln39 == 3)> <Delay = 0.00>
+ST_2 : Operation 220 [1/1] (0.00ns)   --->   "%store_ln39 = store i16 %tmp_364, i16 %data_V_385" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:39]   --->   Operation 220 'store' 'store_ln39' <Predicate = (trunc_ln39 == 3)> <Delay = 0.00>
+ST_2 : Operation 221 [1/1] (0.00ns)   --->   "%store_ln39 = store i16 %tmp_363, i16 %data_V_384" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:39]   --->   Operation 221 'store' 'store_ln39' <Predicate = (trunc_ln39 == 3)> <Delay = 0.00>
+ST_2 : Operation 222 [1/1] (0.00ns)   --->   "%store_ln39 = store i16 %tmp_362, i16 %data_V_383" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:39]   --->   Operation 222 'store' 'store_ln39' <Predicate = (trunc_ln39 == 3)> <Delay = 0.00>
+ST_2 : Operation 223 [1/1] (0.00ns)   --->   "%store_ln39 = store i16 %tmp_361, i16 %data_V_382" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:39]   --->   Operation 223 'store' 'store_ln39' <Predicate = (trunc_ln39 == 3)> <Delay = 0.00>
+ST_2 : Operation 224 [1/1] (0.00ns)   --->   "%store_ln39 = store i16 %tmp_360, i16 %data_V_381" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:39]   --->   Operation 224 'store' 'store_ln39' <Predicate = (trunc_ln39 == 3)> <Delay = 0.00>
+ST_2 : Operation 225 [1/1] (0.00ns)   --->   "%store_ln39 = store i16 %tmp_359, i16 %data_V_380" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:39]   --->   Operation 225 'store' 'store_ln39' <Predicate = (trunc_ln39 == 3)> <Delay = 0.00>
+ST_2 : Operation 226 [1/1] (0.00ns)   --->   "%store_ln39 = store i16 %tmp_358, i16 %data_V_379" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:39]   --->   Operation 226 'store' 'store_ln39' <Predicate = (trunc_ln39 == 3)> <Delay = 0.00>
+ST_2 : Operation 227 [1/1] (0.00ns)   --->   "%store_ln39 = store i16 %tmp_357, i16 %data_V_378" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:39]   --->   Operation 227 'store' 'store_ln39' <Predicate = (trunc_ln39 == 3)> <Delay = 0.00>
+ST_2 : Operation 228 [1/1] (0.00ns)   --->   "%store_ln39 = store i16 %tmp_356, i16 %data_V_377" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:39]   --->   Operation 228 'store' 'store_ln39' <Predicate = (trunc_ln39 == 3)> <Delay = 0.00>
+ST_2 : Operation 229 [1/1] (0.00ns)   --->   "%store_ln39 = store i16 %tmp_355, i16 %data_V_376" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:39]   --->   Operation 229 'store' 'store_ln39' <Predicate = (trunc_ln39 == 3)> <Delay = 0.00>
+ST_2 : Operation 230 [1/1] (0.00ns)   --->   "%store_ln39 = store i16 %tmp_354, i16 %data_V_375" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:39]   --->   Operation 230 'store' 'store_ln39' <Predicate = (trunc_ln39 == 3)> <Delay = 0.00>
+ST_2 : Operation 231 [1/1] (0.00ns)   --->   "%store_ln39 = store i16 %tmp_353, i16 %data_V_374" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:39]   --->   Operation 231 'store' 'store_ln39' <Predicate = (trunc_ln39 == 3)> <Delay = 0.00>
+ST_2 : Operation 232 [1/1] (0.00ns)   --->   "%store_ln39 = store i16 %tmp_352, i16 %data_V_373" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:39]   --->   Operation 232 'store' 'store_ln39' <Predicate = (trunc_ln39 == 3)> <Delay = 0.00>
+ST_2 : Operation 233 [1/1] (0.00ns)   --->   "%store_ln39 = store i16 %tmp_351, i16 %data_V_372" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:39]   --->   Operation 233 'store' 'store_ln39' <Predicate = (trunc_ln39 == 3)> <Delay = 0.00>
+ST_2 : Operation 234 [1/1] (0.00ns)   --->   "%store_ln39 = store i16 %tmp_350, i16 %data_V_371" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:39]   --->   Operation 234 'store' 'store_ln39' <Predicate = (trunc_ln39 == 3)> <Delay = 0.00>
+ST_2 : Operation 235 [1/1] (0.00ns)   --->   "%store_ln39 = store i16 %tmp_349, i16 %data_V_370" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:39]   --->   Operation 235 'store' 'store_ln39' <Predicate = (trunc_ln39 == 3)> <Delay = 0.00>
+ST_2 : Operation 236 [1/1] (0.00ns)   --->   "%store_ln39 = store i16 %tmp_s, i16 %data_V_369" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:39]   --->   Operation 236 'store' 'store_ln39' <Predicate = (trunc_ln39 == 3)> <Delay = 0.00>
+ST_2 : Operation 237 [1/1] (0.00ns)   --->   "%store_ln39 = store i16 %trunc_ln35, i16 %data_V_368" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:39]   --->   Operation 237 'store' 'store_ln39' <Predicate = (trunc_ln39 == 3)> <Delay = 0.00>
+ST_2 : Operation 238 [1/1] (0.00ns)   --->   "%br_ln39 = br void %arrayidx.i2.23.exit" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:39]   --->   Operation 238 'br' 'br_ln39' <Predicate = (trunc_ln39 == 3)> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 3.33ns, clock uncertainty: 0.9ns.
+
+ <State 1>: 0.959ns
+The critical path consists of the following:
+	'alloca' operation ('i_in') [97]  (0 ns)
+	'load' operation ('i_in', /home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:39) on local variable 'i_in' [197]  (0 ns)
+	'add' operation ('add_ln33', /home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:33) [200]  (0.572 ns)
+	'store' operation ('store_ln33', /home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:33) of variable 'add_ln33', /home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:33 on local variable 'i_in' [336]  (0.387 ns)
+
+ <State 2>: 1.21ns
+The critical path consists of the following:
+	fifo read operation ('layer13_out_read', /home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:35) on port 'layer13_out' (/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:35) [205]  (1.21 ns)
+	'store' operation ('store_ln39', /home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:39) of variable 'trunc_ln35_1', /home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:35 on local variable 'data_V_343' [259]  (0 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

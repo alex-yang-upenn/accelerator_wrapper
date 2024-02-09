@@ -1,0 +1,252 @@
+<ENTRY>
+{
+ "thisFile": "/home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml.xo.compile_summary",
+ "connectId": "",
+ "serverToken": "",
+ "timestamp": "0"
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_CmdStep",
+ "dateTimestamp": "Fri Feb  9 00:39:30 2024",
+ "timestampMillis": "1707439170683",
+ "buildStep": {
+  "cmdId": "27ac9d08-1815-4443-bda8-b4f2fa8cea2e",
+  "name": "v++",
+  "logFile": "/home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml.steps.log",
+  "commandLine": "/tools/Xilinx/Vitis/2022.2/bin/unwrapped/lnx64.o/v++  --vivado.prop \"run.__KERNEL__.{STEPS.SYNTH_DESIGN.ARGS.MORE OPTIONS}={-directive sdx_optimization_effort_high}\" --advanced.misc \"report=type report_timing_summary name impl_report_timing_summary_route_design_summary steps {route_design} runs {impl_1} options {-max_paths 10}\" --advanced.misc \"report=type report_timing_summary name impl_report_timing_summary_post_route_phys_opt_design_summary steps {post_route_phys_opt_design} runs {impl_1} options {-max_paths 10}\" -t hw --platform xilinx_u55c_gen3x16_xdma_3_202210_1 --save-temps --temp_dir ./_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1 -c -k alveo_hls4ml -Isrc -o_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml.xo src/alveo_hls4ml.cpp src/myproject.cpp -DMYPROJ=myproject -DIS_CONV2D -I./src/ -I./src/weights -I./src/nnet_utils/ --config config.ini ",
+  "args": [
+   "-t",
+   "hw",
+   "--platform",
+   "xilinx_u55c_gen3x16_xdma_3_202210_1",
+   "--save-temps",
+   "--temp_dir",
+   "./_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1",
+   "-c",
+   "-k",
+   "alveo_hls4ml",
+   "-Isrc",
+   "-o_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml.xo",
+   "src/alveo_hls4ml.cpp",
+   "src/myproject.cpp",
+   "-DMYPROJ=myproject",
+   "-DIS_CONV2D",
+   "-I./src/",
+   "-I./src/weights",
+   "-I./src/nnet_utils/",
+   "--config",
+   "config.ini"
+  ],
+  "iniFiles": [
+   {
+    "path": "/home/ayvol/accelerator_wrapper/config.ini",
+    "content": "[advanced]\nprop=kernel.alveo_hls4ml.kernel_flags=-std=c++11\n#param=compiler.normalizeDefaultMemoryBanks=true\n\n[connectivity]\n# nk=\u003ckernel name\u003e:\u003cnumber\u003e:\u003ccu_name\u003e.\u003ccu_name\u003e...\nnk=alveo_hls4ml:3:alveo_hls4ml_0.alveo_hls4ml_1.alveo_hls4ml_2\n# slr=\u003ccompute_unit_name\u003e:\u003cslr_ID\u003e\nslr=alveo_hls4ml_0:SLR0\nslr=alveo_hls4ml_1:SLR1\nslr=alveo_hls4ml_2:SLR2\n# sp=\u003ccompute_unit_name\u003e.\u003cinterface_name\u003e:\u003cbank name\u003e \nsp=alveo_hls4ml_0.in:HBM[0:3]\nsp=alveo_hls4ml_0.out:HBM[4:7]\nsp=alveo_hls4ml_1.in:HBM[8:11]\nsp=alveo_hls4ml_1.out:HBM[12:15]\nsp=alveo_hls4ml_2.in:HBM[16:19]\nsp=alveo_hls4ml_2.out:HBM[20:23]\n\n[hls]\npre_tcl=./config.tcl\n\n[vivado]\nprop=run.impl_1.STEPS.OPT_DESIGN.IS_ENABLED=true\nprop=run.impl_1.STEPS.OPT_DESIGN.ARGS.DIRECTIVE=Explore\n\nprop=run.impl_1.STEPS.PLACE_DESIGN.ARGS.DIRECTIVE=ExtraTimingOpt\n\nprop=run.impl_1.STEPS.PHYS_OPT_DESIGN.IS_ENABLED=true\nprop=run.imp1_1.STEPS.PHYS_OPT_DESIGN.ARGS.DIRECTIVE=Explore\n\nprop=run.impl_1.STEPS.ROUTE_DESIGN.ARGS.DIRECTIVE=Explore\n\nprop=run.impl_1.STEPS.POST_ROUTE_PHYS_OPT_DESIGN.IS_ENABLED=true\nprop=run.impl_1.STEPS.POST_ROUTE_PHYS_OPT_DESIGN.ARGS.DIRECTIVE=AggressiveExplore\n"
+   }
+  ],
+  "cwd": "/home/ayvol/accelerator_wrapper"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Fri Feb  9 00:39:30 2024",
+ "timestampMillis": "1707439170683",
+ "status": {
+  "cmdId": "27ac9d08-1815-4443-bda8-b4f2fa8cea2e",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_FlowMetaData",
+ "dateTimestamp": "Fri Feb  9 00:39:34 2024",
+ "timestampMillis": "1707439174283",
+ "buildSummary": {
+  "hardwarePlatform": "xilinx_u55c_gen3x16_xdma_3_202210_1.xpfm",
+  "hardwareDsa": "",
+  "platformDirectory": "/opt/xilinx/platforms/xilinx_u55c_gen3x16_xdma_3_202210_1",
+  "runtime": "OpenCL",
+  "systemConfig": "Linux",
+  "flow": "BF_COMPILE",
+  "target": "TT_HW",
+  "kernels": [
+   {
+    "base": {
+     "type": "KERNEL",
+     "name": "alveo_hls4ml",
+     "file": "/home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml.xo",
+     "reports": [],
+     "uuid": ""
+    },
+    "sources": [
+     "/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp",
+     "/home/ayvol/accelerator_wrapper/src/myproject.cpp"
+    ],
+    "psSources": [],
+    "cuNames": [],
+    "type": "HLS",
+    "frequency": 0,
+    "freqUnits": ""
+   }
+  ],
+  "toolVersion": "Vitis V++ Compiler Release 2022.2. SW Build 3671529 on 2022-10-13-17:52:11"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "Fri Feb  9 00:39:34 2024",
+ "timestampMillis": "1707439174448",
+ "buildStep": {
+  "cmdId": "7197d6de-8403-4f89-9c46-b24607fb03f5",
+  "name": "vitis_hls",
+  "logFile": "/home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/vitis_hls.log",
+  "commandLine": "vitis_hls -f /home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml.tcl -messageDb vitis_hls.pb",
+  "args": [
+   "vitis_hls",
+   "-f",
+   "/home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml.tcl",
+   "-messageDb",
+   "vitis_hls.pb"
+  ],
+  "iniFiles": [],
+  "cwd": "/home/ayvol/accelerator_wrapper"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Fri Feb  9 00:39:34 2024",
+ "timestampMillis": "1707439174449",
+ "status": {
+  "cmdId": "7197d6de-8403-4f89-9c46-b24607fb03f5",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Fri Feb  9 01:40:25 2024",
+ "timestampMillis": "1707442825000",
+ "status": {
+  "cmdId": "7197d6de-8403-4f89-9c46-b24607fb03f5",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Feb  9 01:40:55 2024",
+ "timestampMillis": "1707442855755",
+ "report": {
+  "path": "/home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml/solution/.autopilot/db/alveo_hls4ml.design.xml",
+  "name": "alveo_hls4ml",
+  "fileType": "XML",
+  "reportType": "KERNEL_HLS_REPORT",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Feb  9 01:40:55 2024",
+ "timestampMillis": "1707442855755",
+ "report": {
+  "path": "/home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml/solution/.autopilot/db/.message_syn.xml",
+  "name": "alveo_hls4ml",
+  "fileType": "XML",
+  "reportType": "KERNEL_HLS_DRC_SYNTHESIS",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Feb  9 01:40:56 2024",
+ "timestampMillis": "1707442856063",
+ "report": {
+  "path": "/home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/reports/alveo_hls4ml/hls_reports/alveo_hls4ml_csynth.rpt",
+  "name": "alveo_hls4ml",
+  "fileType": "TEXT",
+  "reportType": "KERNEL_HLS_CSYNTH",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Feb  9 01:40:56 2024",
+ "timestampMillis": "1707442856063",
+ "report": {
+  "path": "/home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml/solution/syn/report/alveo_hls4ml_csynth.xml",
+  "name": "alveo_hls4ml",
+  "fileType": "XML",
+  "reportType": "KERNEL_HLS_CSYNTH",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Feb  9 01:40:56 2024",
+ "timestampMillis": "1707442856205",
+ "report": {
+  "path": "/home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/reports/alveo_hls4ml/system_estimate_alveo_hls4ml.xtxt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_SYSTEM_ESTIMATE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Fri Feb  9 01:40:59 2024",
+ "timestampMillis": "1707442859757",
+ "status": {
+  "cmdId": "27ac9d08-1815-4443-bda8-b4f2fa8cea2e",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Feb  9 01:41:04 2024",
+ "timestampMillis": "1707442864805",
+ "report": {
+  "path": "/home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/reports/alveo_hls4ml/v++_compile_alveo_hls4ml_guidance.html",
+  "name": "",
+  "fileType": "HTML",
+  "reportType": "GLOBAL_RULECHECK_GUIDANCE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Feb  9 01:41:04 2024",
+ "timestampMillis": "1707442864806",
+ "report": {
+  "path": "/home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/v++_compile_alveo_hls4ml_guidance.pb3",
+  "name": "",
+  "fileType": "BINARY_PROTOBUF",
+  "reportType": "GLOBAL_RULECHECK_GUIDANCE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
