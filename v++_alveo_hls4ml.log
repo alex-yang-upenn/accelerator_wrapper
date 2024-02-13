@@ -1,25 +1,25 @@
 INFO: [v++ 60-1306] Additional information associated with this v++ link can be found at:
 	Reports: /home/ayvol/accelerator_wrapper/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/reports/link
 	Log files: /home/ayvol/accelerator_wrapper/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/logs/link
-INFO: [v++ 60-1548] Creating build summary session with primary output /home/ayvol/accelerator_wrapper/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml.xclbin.link_summary, at Fri Feb  9 01:41:32 2024
-INFO: [v++ 60-1315] Creating rulecheck session with output '/home/ayvol/accelerator_wrapper/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/reports/link/v++_link_alveo_hls4ml_guidance.html', at Fri Feb  9 01:41:33 2024
+INFO: [v++ 60-1548] Creating build summary session with primary output /home/ayvol/accelerator_wrapper/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml.xclbin.link_summary, at Mon Feb 12 06:32:47 2024
+INFO: [v++ 60-1315] Creating rulecheck session with output '/home/ayvol/accelerator_wrapper/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/reports/link/v++_link_alveo_hls4ml_guidance.html', at Mon Feb 12 06:32:47 2024
 INFO: [v++ 60-895]   Target platform: /opt/xilinx/platforms/xilinx_u55c_gen3x16_xdma_3_202210_1/xilinx_u55c_gen3x16_xdma_3_202210_1.xpfm
 INFO: [v++ 60-1578]   This platform contains Xilinx Shell Archive '/opt/xilinx/platforms/xilinx_u55c_gen3x16_xdma_3_202210_1/hw/hw.xsa'
 INFO: [v++ 74-78] Compiler Version string: 2022.2
 INFO: [v++ 60-629] Linking for hardware target
 INFO: [v++ 60-423]   Target device: xilinx_u55c_gen3x16_xdma_3_202210_1
 INFO: [v++ 60-1332] Run 'run_link' status: Not started
-INFO: [v++ 60-1443] [01:42:10] Run run_link: Step system_link: Started
+INFO: [v++ 60-1443] [06:33:22] Run run_link: Step system_link: Started
 INFO: [v++ 60-1453] Command Line: system_link --xo /home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml.xo -keep --config /home/ayvol/accelerator_wrapper/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/link/int/syslinkConfig.ini --xpfm /opt/xilinx/platforms/xilinx_u55c_gen3x16_xdma_3_202210_1/xilinx_u55c_gen3x16_xdma_3_202210_1.xpfm --target hw --output_dir /home/ayvol/accelerator_wrapper/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/link/int --temp_dir /home/ayvol/accelerator_wrapper/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/link/sys_link
 INFO: [v++ 60-1454] Run Directory: /home/ayvol/accelerator_wrapper/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/link/run_link
 INFO: [SYSTEM_LINK 82-70] Extracting xo v3 file /home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml.xo
 INFO: [SYSTEM_LINK 82-53] Creating IP database /home/ayvol/accelerator_wrapper/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/link/sys_link/_sysl/.cdb/xd_ip_db.xml
-INFO: [SYSTEM_LINK 82-38] [01:43:27] build_xd_ip_db started: /tools/Xilinx/Vitis/2022.2/bin/build_xd_ip_db -ip_search 0  -sds-pf /home/ayvol/accelerator_wrapper/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/link/sys_link/hw.hpfm -clkid 0 -ip /home/ayvol/accelerator_wrapper/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/link/sys_link/iprepo/xilinx_com_hls_alveo_hls4ml_1_0,alveo_hls4ml -o /home/ayvol/accelerator_wrapper/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/link/sys_link/_sysl/.cdb/xd_ip_db.xml
-INFO: [SYSTEM_LINK 82-37] [01:43:53] build_xd_ip_db finished successfully
-Time (s): cpu = 00:00:04 ; elapsed = 00:00:26 . Memory (MB): peak = 429.336 ; gain = 0.000 ; free physical = 424600 ; free virtual = 492162
+INFO: [SYSTEM_LINK 82-38] [06:34:27] build_xd_ip_db started: /tools/Xilinx/Vitis/2022.2/bin/build_xd_ip_db -ip_search 0  -sds-pf /home/ayvol/accelerator_wrapper/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/link/sys_link/hw.hpfm -clkid 0 -ip /home/ayvol/accelerator_wrapper/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/link/sys_link/iprepo/xilinx_com_hls_alveo_hls4ml_1_0,alveo_hls4ml -o /home/ayvol/accelerator_wrapper/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/link/sys_link/_sysl/.cdb/xd_ip_db.xml
+INFO: [SYSTEM_LINK 82-37] [06:34:49] build_xd_ip_db finished successfully
+Time (s): cpu = 00:00:04 ; elapsed = 00:00:22 . Memory (MB): peak = 429.336 ; gain = 0.000 ; free physical = 378536 ; free virtual = 749521
 INFO: [SYSTEM_LINK 82-51] Create system connectivity graph
 INFO: [SYSTEM_LINK 82-102] Applying explicit connections to the system connectivity graph: /home/ayvol/accelerator_wrapper/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/link/sys_link/cfgraph/cfgen_cfgraph.xml
-INFO: [SYSTEM_LINK 82-38] [01:43:53] cfgen started: /tools/Xilinx/Vitis/2022.2/bin/cfgen  -nk alveo_hls4ml:3:alveo_hls4ml_0,alveo_hls4ml_1,alveo_hls4ml_2 -slr alveo_hls4ml_0:SLR0 -slr alveo_hls4ml_1:SLR1 -slr alveo_hls4ml_2:SLR2 -sp alveo_hls4ml_0.in:HBM[0:3] -sp alveo_hls4ml_0.out:HBM[4:7] -sp alveo_hls4ml_1.in:HBM[8:11] -sp alveo_hls4ml_1.out:HBM[12:15] -sp alveo_hls4ml_2.in:HBM[16:19] -sp alveo_hls4ml_2.out:HBM[20:23] -dpa_mem_offload false -dmclkid 0 -r /home/ayvol/accelerator_wrapper/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/link/sys_link/_sysl/.cdb/xd_ip_db.xml -o /home/ayvol/accelerator_wrapper/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/link/sys_link/cfgraph/cfgen_cfgraph.xml
+INFO: [SYSTEM_LINK 82-38] [06:34:49] cfgen started: /tools/Xilinx/Vitis/2022.2/bin/cfgen  -nk alveo_hls4ml:3:alveo_hls4ml_0,alveo_hls4ml_1,alveo_hls4ml_2 -sp alveo_hls4ml_0.in:HBM[0:3] -sp alveo_hls4ml_0.out:HBM[4:7] -sp alveo_hls4ml_1.in:HBM[8:11] -sp alveo_hls4ml_1.out:HBM[12:15] -sp alveo_hls4ml_2.in:HBM[16:19] -sp alveo_hls4ml_2.out:HBM[20:23] -clock.freqHz 30000000:alveo_hls4ml_0,alveo_hls4ml_1,alveo_hls4ml_2 -dpa_mem_offload false -dmclkid 0 -r /home/ayvol/accelerator_wrapper/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/link/sys_link/_sysl/.cdb/xd_ip_db.xml -o /home/ayvol/accelerator_wrapper/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/link/sys_link/cfgraph/cfgen_cfgraph.xml
 INFO: [CFGEN 83-0] Kernel Specs: 
 INFO: [CFGEN 83-0]   kernel: alveo_hls4ml, num: 3  {alveo_hls4ml_0 alveo_hls4ml_1 alveo_hls4ml_2}
 INFO: [CFGEN 83-0] Port Specs: 
@@ -29,33 +29,29 @@ INFO: [CFGEN 83-0]   kernel: alveo_hls4ml_1, k_port: in, sptag: HBM[8:11]
 INFO: [CFGEN 83-0]   kernel: alveo_hls4ml_1, k_port: out, sptag: HBM[12:15]
 INFO: [CFGEN 83-0]   kernel: alveo_hls4ml_2, k_port: in, sptag: HBM[16:19]
 INFO: [CFGEN 83-0]   kernel: alveo_hls4ml_2, k_port: out, sptag: HBM[20:23]
-INFO: [CFGEN 83-0] SLR Specs: 
-INFO: [CFGEN 83-0]   instance: alveo_hls4ml_0, SLR: SLR0
-INFO: [CFGEN 83-0]   instance: alveo_hls4ml_1, SLR: SLR1
-INFO: [CFGEN 83-0]   instance: alveo_hls4ml_2, SLR: SLR2
-INFO: [SYSTEM_LINK 82-37] [01:44:03] cfgen finished successfully
-Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 429.336 ; gain = 0.000 ; free physical = 424765 ; free virtual = 492333
+INFO: [SYSTEM_LINK 82-37] [06:34:59] cfgen finished successfully
+Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 429.336 ; gain = 0.000 ; free physical = 378084 ; free virtual = 749314
 INFO: [SYSTEM_LINK 82-52] Create top-level block diagram
-INFO: [SYSTEM_LINK 82-38] [01:44:03] cf2bd started: /tools/Xilinx/Vitis/2022.2/bin/cf2bd  --linux --trace_buffer 1024 --input_file /home/ayvol/accelerator_wrapper/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/link/sys_link/cfgraph/cfgen_cfgraph.xml --ip_db /home/ayvol/accelerator_wrapper/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/link/sys_link/_sysl/.cdb/xd_ip_db.xml --cf_name dr --working_dir /home/ayvol/accelerator_wrapper/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/link/sys_link/_sysl/.xsd --temp_dir /home/ayvol/accelerator_wrapper/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/link/sys_link --output_dir /home/ayvol/accelerator_wrapper/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/link/int --target_bd ulp.bd
+INFO: [SYSTEM_LINK 82-38] [06:34:59] cf2bd started: /tools/Xilinx/Vitis/2022.2/bin/cf2bd  --linux --trace_buffer 1024 --input_file /home/ayvol/accelerator_wrapper/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/link/sys_link/cfgraph/cfgen_cfgraph.xml --ip_db /home/ayvol/accelerator_wrapper/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/link/sys_link/_sysl/.cdb/xd_ip_db.xml --cf_name dr --working_dir /home/ayvol/accelerator_wrapper/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/link/sys_link/_sysl/.xsd --temp_dir /home/ayvol/accelerator_wrapper/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/link/sys_link --output_dir /home/ayvol/accelerator_wrapper/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/link/int --target_bd ulp.bd
 INFO: [CF2BD 82-31] Launching cf2xd: cf2xd -linux -trace-buffer 1024 -i /home/ayvol/accelerator_wrapper/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/link/sys_link/cfgraph/cfgen_cfgraph.xml -r /home/ayvol/accelerator_wrapper/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/link/sys_link/_sysl/.cdb/xd_ip_db.xml -o dr.xml
 INFO: [CF2BD 82-28] cf2xd finished successfully
 INFO: [CF2BD 82-31] Launching cf_xsd: cf_xsd -disable-address-gen -bd ulp.bd -dn dr -dp /home/ayvol/accelerator_wrapper/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/link/sys_link/_sysl/.xsd
 INFO: [CF2BD 82-28] cf_xsd finished successfully
-INFO: [SYSTEM_LINK 82-37] [01:44:16] cf2bd finished successfully
-Time (s): cpu = 00:00:04 ; elapsed = 00:00:13 . Memory (MB): peak = 429.336 ; gain = 0.000 ; free physical = 424258 ; free virtual = 491814
-INFO: [v++ 60-1441] [01:44:16] Run run_link: Step system_link: Completed
-Time (s): cpu = 00:00:19 ; elapsed = 00:02:06 . Memory (MB): peak = 442.477 ; gain = 0.000 ; free physical = 424320 ; free virtual = 491877
-INFO: [v++ 60-1443] [01:44:17] Run run_link: Step cf2sw: Started
+INFO: [SYSTEM_LINK 82-37] [06:35:09] cf2bd finished successfully
+Time (s): cpu = 00:00:04 ; elapsed = 00:00:09 . Memory (MB): peak = 429.336 ; gain = 0.000 ; free physical = 378103 ; free virtual = 749329
+INFO: [v++ 60-1441] [06:35:09] Run run_link: Step system_link: Completed
+Time (s): cpu = 00:00:19 ; elapsed = 00:01:47 . Memory (MB): peak = 435.164 ; gain = 0.000 ; free physical = 378175 ; free virtual = 749401
+INFO: [v++ 60-1443] [06:35:09] Run run_link: Step cf2sw: Started
 INFO: [v++ 60-1453] Command Line: cf2sw -sdsl /home/ayvol/accelerator_wrapper/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/link/int/sdsl.dat -rtd /home/ayvol/accelerator_wrapper/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/link/int/cf2sw.rtd -nofilter /home/ayvol/accelerator_wrapper/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/link/int/cf2sw_full.rtd -xclbin /home/ayvol/accelerator_wrapper/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/link/int/xclbin_orig.xml -o /home/ayvol/accelerator_wrapper/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/link/int/xclbin_orig.1.xml
 INFO: [v++ 60-1454] Run Directory: /home/ayvol/accelerator_wrapper/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/link/run_link
-INFO: [v++ 60-1441] [01:44:29] Run run_link: Step cf2sw: Completed
-Time (s): cpu = 00:00:06 ; elapsed = 00:00:12 . Memory (MB): peak = 442.477 ; gain = 0.000 ; free physical = 425056 ; free virtual = 492673
-INFO: [v++ 60-1443] [01:44:31] Run run_link: Step rtd2_system_diagram: Started
+INFO: [v++ 60-1441] [06:35:18] Run run_link: Step cf2sw: Completed
+Time (s): cpu = 00:00:05 ; elapsed = 00:00:08 . Memory (MB): peak = 435.164 ; gain = 0.000 ; free physical = 378464 ; free virtual = 749706
+INFO: [v++ 60-1443] [06:35:19] Run run_link: Step rtd2_system_diagram: Started
 INFO: [v++ 60-1453] Command Line: rtd2SystemDiagram
 INFO: [v++ 60-1454] Run Directory: /home/ayvol/accelerator_wrapper/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/link/run_link
-INFO: [v++ 60-1441] [01:44:32] Run run_link: Step rtd2_system_diagram: Completed
-Time (s): cpu = 00:00:00 ; elapsed = 00:00:01 . Memory (MB): peak = 442.477 ; gain = 0.000 ; free physical = 424860 ; free virtual = 492473
-INFO: [v++ 60-1443] [01:44:32] Run run_link: Step vpl: Started
+INFO: [v++ 60-1441] [06:35:19] Run run_link: Step rtd2_system_diagram: Completed
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.79 . Memory (MB): peak = 435.164 ; gain = 0.000 ; free physical = 378349 ; free virtual = 749593
+INFO: [v++ 60-1443] [06:35:20] Run run_link: Step vpl: Started
 INFO: [v++ 60-1453] Command Line: vpl -t hw -f xilinx_u55c_gen3x16_xdma_3_202210_1 -s --remote_ip_cache /home/ayvol/accelerator_wrapper/.ipcache --output_dir /home/ayvol/accelerator_wrapper/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/link/int --log_dir /home/ayvol/accelerator_wrapper/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/logs/link --report_dir /home/ayvol/accelerator_wrapper/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/reports/link --config /home/ayvol/accelerator_wrapper/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/link/int/vplConfig.ini -k /home/ayvol/accelerator_wrapper/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/link/int/kernel_info.dat --webtalk_flag Vitis --temp_dir /home/ayvol/accelerator_wrapper/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/link --no-info --iprepo /home/ayvol/accelerator_wrapper/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/link/int/xo/ip_repo/xilinx_com_hls_alveo_hls4ml_1_0 --messageDb /home/ayvol/accelerator_wrapper/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/link/run_link/vpl.pb /home/ayvol/accelerator_wrapper/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/link/int/dr.bd.tcl
 INFO: [v++ 60-1454] Run Directory: /home/ayvol/accelerator_wrapper/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/link/run_link
 
@@ -67,149 +63,291 @@ INFO: [VPL 60-839] Read in kernel information from file '/home/ayvol/accelerator
 INFO: [VPL 74-78] Compiler Version string: 2022.2
 INFO: [VPL 60-423]   Target device: xilinx_u55c_gen3x16_xdma_3_202210_1
 INFO: [VPL 60-1032] Extracting hardware platform to /home/ayvol/accelerator_wrapper/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/link/vivado/vpl/.local/hw_platform
-[01:46:07] Run vpl: Step create_project: Started
+[06:36:25] Run vpl: Step create_project: Started
 Creating Vivado project.
-[01:46:50] Run vpl: Step create_project: Completed
-[01:46:50] Run vpl: Step create_bd: Started
-[01:48:07] Run vpl: Step create_bd: RUNNING...
-[01:49:27] Run vpl: Step create_bd: RUNNING...
-[01:50:44] Run vpl: Step create_bd: RUNNING...
-[01:52:04] Run vpl: Step create_bd: RUNNING...
-[01:53:24] Run vpl: Step create_bd: RUNNING...
-[01:53:47] Run vpl: Step create_bd: Completed
-[01:53:47] Run vpl: Step update_bd: Started
-[01:54:09] Run vpl: Step update_bd: Completed
-[01:54:09] Run vpl: Step generate_target: Started
-[01:55:25] Run vpl: Step generate_target: RUNNING...
-[01:56:46] Run vpl: Step generate_target: RUNNING...
-[01:58:10] Run vpl: Step generate_target: RUNNING...
-[01:59:25] Run vpl: Step generate_target: RUNNING...
-[02:00:40] Run vpl: Step generate_target: RUNNING...
-[02:02:09] Run vpl: Step generate_target: RUNNING...
-[02:03:32] Run vpl: Step generate_target: RUNNING...
-[02:05:13] Run vpl: Step generate_target: RUNNING...
-[02:06:41] Run vpl: Step generate_target: RUNNING...
-[02:08:20] Run vpl: Step generate_target: RUNNING...
-[02:09:48] Run vpl: Step generate_target: RUNNING...
-[02:11:19] Run vpl: Step generate_target: RUNNING...
-[02:12:40] Run vpl: Step generate_target: RUNNING...
-[02:12:50] Run vpl: Step generate_target: Completed
-[02:12:51] Run vpl: Step config_hw_runs: Started
-[02:14:04] Run vpl: Step config_hw_runs: Completed
-[02:14:04] Run vpl: Step synth: Started
-[02:15:38] Block-level synthesis in progress, 0 of 3 jobs complete, 1 job running.
-[02:16:08] Block-level synthesis in progress, 0 of 3 jobs complete, 1 job running.
-[02:16:38] Block-level synthesis in progress, 0 of 3 jobs complete, 1 job running.
-[02:17:09] Block-level synthesis in progress, 0 of 3 jobs complete, 1 job running.
-[02:17:39] Block-level synthesis in progress, 0 of 3 jobs complete, 1 job running.
-[02:18:09] Block-level synthesis in progress, 0 of 3 jobs complete, 1 job running.
-[02:18:40] Block-level synthesis in progress, 0 of 3 jobs complete, 1 job running.
-[02:19:10] Block-level synthesis in progress, 0 of 3 jobs complete, 1 job running.
-[02:19:41] Block-level synthesis in progress, 0 of 3 jobs complete, 1 job running.
-[02:20:11] Block-level synthesis in progress, 0 of 3 jobs complete, 1 job running.
-[02:20:42] Block-level synthesis in progress, 0 of 3 jobs complete, 1 job running.
-[02:21:12] Block-level synthesis in progress, 0 of 3 jobs complete, 1 job running.
-[02:21:42] Block-level synthesis in progress, 0 of 3 jobs complete, 1 job running.
-[02:22:13] Block-level synthesis in progress, 0 of 3 jobs complete, 1 job running.
-[02:22:44] Block-level synthesis in progress, 0 of 3 jobs complete, 1 job running.
-[02:23:14] Block-level synthesis in progress, 1 of 3 jobs complete, 0 jobs running.
-[02:23:29] Run vpl: Step synth: Completed
-[02:23:29] Run vpl: Step impl: Started
-[02:44:10] Finished 2nd of 6 tasks (FPGA linking synthesized kernels to platform). Elapsed time: 00h 59m 33s 
+[06:37:11] Run vpl: Step create_project: Completed
+[06:37:11] Run vpl: Step create_bd: Started
+[06:38:28] Run vpl: Step create_bd: RUNNING...
+[06:39:48] Run vpl: Step create_bd: RUNNING...
+[06:41:04] Run vpl: Step create_bd: RUNNING...
+[06:42:29] Run vpl: Step create_bd: RUNNING...
+[06:42:44] Run vpl: Step create_bd: Completed
+[06:42:44] Run vpl: Step update_bd: Started
+[06:42:55] Run vpl: Step update_bd: Completed
+[06:42:55] Run vpl: Step generate_target: Started
+[06:44:12] Run vpl: Step generate_target: RUNNING...
+[06:45:34] Run vpl: Step generate_target: RUNNING...
+[06:46:54] Run vpl: Step generate_target: RUNNING...
+[06:48:09] Run vpl: Step generate_target: RUNNING...
+[06:49:27] Run vpl: Step generate_target: RUNNING...
+[06:50:56] Run vpl: Step generate_target: RUNNING...
+[06:52:25] Run vpl: Step generate_target: RUNNING...
+[06:54:03] Run vpl: Step generate_target: RUNNING...
+[06:55:34] Run vpl: Step generate_target: RUNNING...
+[06:57:04] Run vpl: Step generate_target: RUNNING...
+[06:58:27] Run vpl: Step generate_target: RUNNING...
+[06:58:36] Run vpl: Step generate_target: Completed
+[06:58:36] Run vpl: Step config_hw_runs: Started
+[06:59:56] Run vpl: Step config_hw_runs: RUNNING...
+[07:00:33] Run vpl: Step config_hw_runs: Completed
+[07:00:33] Run vpl: Step synth: Started
+[07:02:10] Block-level synthesis in progress, 0 of 21 jobs complete, 8 jobs running.
+[07:02:42] Block-level synthesis in progress, 0 of 21 jobs complete, 8 jobs running.
+[07:03:14] Block-level synthesis in progress, 0 of 21 jobs complete, 8 jobs running.
+[07:03:45] Block-level synthesis in progress, 0 of 21 jobs complete, 8 jobs running.
+[07:04:16] Block-level synthesis in progress, 0 of 21 jobs complete, 8 jobs running.
+[07:04:50] Block-level synthesis in progress, 0 of 21 jobs complete, 8 jobs running.
+[07:05:21] Block-level synthesis in progress, 0 of 21 jobs complete, 8 jobs running.
+[07:05:53] Block-level synthesis in progress, 6 of 21 jobs complete, 2 jobs running.
+[07:06:25] Block-level synthesis in progress, 7 of 21 jobs complete, 7 jobs running.
+[07:06:58] Block-level synthesis in progress, 8 of 21 jobs complete, 6 jobs running.
+[07:07:29] Block-level synthesis in progress, 11 of 21 jobs complete, 4 jobs running.
+[07:08:01] Block-level synthesis in progress, 13 of 21 jobs complete, 4 jobs running.
+[07:08:33] Block-level synthesis in progress, 17 of 21 jobs complete, 2 jobs running.
+[07:09:04] Block-level synthesis in progress, 17 of 21 jobs complete, 2 jobs running.
+[07:09:35] Block-level synthesis in progress, 18 of 21 jobs complete, 1 job running.
+[07:10:05] Block-level synthesis in progress, 18 of 21 jobs complete, 1 job running.
+[07:10:36] Block-level synthesis in progress, 18 of 21 jobs complete, 1 job running.
+[07:11:06] Block-level synthesis in progress, 18 of 21 jobs complete, 1 job running.
+[07:11:36] Block-level synthesis in progress, 18 of 21 jobs complete, 1 job running.
+[07:12:07] Block-level synthesis in progress, 18 of 21 jobs complete, 1 job running.
+[07:12:37] Block-level synthesis in progress, 18 of 21 jobs complete, 1 job running.
+[07:13:08] Block-level synthesis in progress, 18 of 21 jobs complete, 1 job running.
+[07:13:38] Block-level synthesis in progress, 18 of 21 jobs complete, 1 job running.
+[07:14:08] Block-level synthesis in progress, 18 of 21 jobs complete, 1 job running.
+[07:14:39] Block-level synthesis in progress, 18 of 21 jobs complete, 1 job running.
+[07:15:09] Block-level synthesis in progress, 18 of 21 jobs complete, 1 job running.
+[07:15:39] Block-level synthesis in progress, 18 of 21 jobs complete, 1 job running.
+[07:16:10] Block-level synthesis in progress, 18 of 21 jobs complete, 1 job running.
+[07:16:40] Block-level synthesis in progress, 18 of 21 jobs complete, 1 job running.
+[07:17:10] Block-level synthesis in progress, 18 of 21 jobs complete, 1 job running.
+[07:17:41] Block-level synthesis in progress, 18 of 21 jobs complete, 1 job running.
+[07:18:11] Block-level synthesis in progress, 18 of 21 jobs complete, 1 job running.
+[07:18:41] Block-level synthesis in progress, 18 of 21 jobs complete, 1 job running.
+[07:19:12] Block-level synthesis in progress, 18 of 21 jobs complete, 1 job running.
+[07:19:42] Block-level synthesis in progress, 18 of 21 jobs complete, 1 job running.
+[07:20:13] Block-level synthesis in progress, 18 of 21 jobs complete, 1 job running.
+[07:20:43] Block-level synthesis in progress, 18 of 21 jobs complete, 1 job running.
+[07:21:14] Block-level synthesis in progress, 18 of 21 jobs complete, 1 job running.
+[07:21:44] Block-level synthesis in progress, 18 of 21 jobs complete, 1 job running.
+[07:22:15] Block-level synthesis in progress, 18 of 21 jobs complete, 1 job running.
+[07:22:45] Block-level synthesis in progress, 18 of 21 jobs complete, 1 job running.
+[07:23:16] Block-level synthesis in progress, 18 of 21 jobs complete, 1 job running.
+[07:23:46] Block-level synthesis in progress, 18 of 21 jobs complete, 1 job running.
+[07:24:16] Block-level synthesis in progress, 18 of 21 jobs complete, 1 job running.
+[07:24:47] Block-level synthesis in progress, 19 of 21 jobs complete, 0 jobs running.
+[07:25:17] Block-level synthesis in progress, 19 of 21 jobs complete, 0 jobs running.
+[07:25:47] Block-level synthesis in progress, 19 of 21 jobs complete, 0 jobs running.
+[07:26:18] Block-level synthesis in progress, 19 of 21 jobs complete, 2 jobs running.
+[07:26:49] Block-level synthesis in progress, 21 of 21 jobs complete, 0 jobs running.
+[07:27:20] Top-level synthesis in progress.
+[07:27:50] Top-level synthesis in progress.
+[07:28:20] Top-level synthesis in progress.
+[07:28:50] Top-level synthesis in progress.
+[07:29:21] Top-level synthesis in progress.
+[07:29:52] Top-level synthesis in progress.
+[07:30:22] Top-level synthesis in progress.
+[07:30:53] Top-level synthesis in progress.
+[07:31:23] Top-level synthesis in progress.
+[07:31:54] Top-level synthesis in progress.
+[07:32:25] Top-level synthesis in progress.
+[07:32:55] Top-level synthesis in progress.
+[07:33:44] Run vpl: Step synth: Completed
+[07:33:44] Run vpl: Step impl: Started
+[08:03:35] Finished 2nd of 6 tasks (FPGA linking synthesized kernels to platform). Elapsed time: 01h 28m 12s 
 
-[02:44:10] Starting logic optimization..
-[02:46:11] Phase 1 Retarget
-[02:46:42] Phase 2 Constant propagation
-[02:47:12] Phase 3 Sweep
-[02:48:13] Phase 4 BUFG optimization
-[02:48:43] Phase 5 Shift Register Optimization
-[02:48:43] Phase 6 Post Processing Netlist
-[02:50:14] Finished 3rd of 6 tasks (FPGA logic optimization). Elapsed time: 00h 06m 03s 
+[08:03:35] Starting logic optimization..
+[08:06:07] Phase 1 Retarget
+[08:06:38] Phase 2 Constant propagation
+[08:07:08] Phase 3 Sweep
+[08:08:09] Phase 4 BUFG optimization
+[08:08:39] Phase 5 Shift Register Optimization
+[08:08:39] Phase 6 Post Processing Netlist
+[08:10:40] Finished 3rd of 6 tasks (FPGA logic optimization). Elapsed time: 00h 07m 05s 
 
-[02:50:14] Starting logic placement..
-[02:51:15] Phase 1 Placer Initialization
-[02:51:15] Phase 1.1 Placer Initialization Netlist Sorting
-[02:54:46] Phase 1.2 IO Placement/ Clock Placement/ Build Placer Device
-[02:56:17] Phase 1.3 Build Placer Netlist Model
-[03:00:49] Phase 1.4 Constrain Clocks/Macros
-[03:01:20] Phase 2 Global Placement
-[03:01:20] Phase 2.1 Floorplanning
-[03:02:20] Phase 2.1.1 Partition Driven Placement
-[03:02:20] Phase 2.1.1.1 PBP: Partition Driven Placement
-[03:03:21] Phase 2.1.1.2 PBP: Clock Region Placement
-[03:04:22] Phase 2.1.1.3 PBP: Compute Congestion
-[03:04:52] Phase 2.1.1.4 PBP: UpdateTiming
-[03:05:23] Phase 2.2 Physical Synthesis After Floorplan
-[03:05:23] Phase 2.3 Update Timing before SLR Path Opt
-[03:05:23] Phase 2.4 Post-Processing in Floorplanning
-[03:05:23] Phase 2.5 Global Placement Core
-[03:17:04] Phase 2.5.1 UpdateTiming Before Physical Synthesis
-[03:17:35] Phase 2.5.2 Physical Synthesis In Placer
-[03:22:10] Phase 3 Detail Placement
-[03:22:10] Phase 3.1 Commit Multi Column Macros
-[03:22:10] Phase 3.2 Commit Most Macros & LUTRAMs
-[03:33:21] Phase 3.3 Small Shape DP
-[03:33:21] Phase 3.3.1 Small Shape Clustering
-[03:36:24] Phase 3.3.2 Flow Legalize Slice Clusters
-[03:36:55] Phase 3.3.3 Slice Area Swap
-[03:36:55] Phase 3.3.3.1 Slice Area Swap Initial
-[03:41:30] Phase 3.4 Place Remaining
-[03:42:01] Phase 3.5 Re-assign LUT pins
-[03:42:32] Phase 3.6 Pipeline Register Optimization
-[03:42:32] Phase 3.7 Fast Optimization
-[03:44:03] Phase 4 Post Placement Optimization and Clean-Up
-[03:44:03] Phase 4.1 Post Commit Optimization
-[03:47:06] Phase 4.1.1 Post Placement Optimization
-[03:47:37] Phase 4.1.1.1 BUFG Insertion
-[03:47:37] Phase 1 Physical Synthesis Initialization
-[03:49:09] Phase 4.1.1.2 BUFG Replication
-[03:49:09] Phase 4.1.1.3 Post Placement Timing Optimization
-[03:54:45] Phase 4.1.1.4 Replication
-[03:56:17] Phase 4.2 Post Placement Cleanup
-[03:56:47] Phase 4.3 Placer Reporting
-[03:56:47] Phase 4.3.1 Print Estimated Congestion
-[03:56:47] Phase 4.4 Final Placement Cleanup
-[04:12:32] Finished 4th of 6 tasks (FPGA logic placement). Elapsed time: 01h 22m 18s 
+[08:10:40] Starting logic placement..
+[08:11:11] Phase 1 Placer Initialization
+[08:11:11] Phase 1.1 Placer Initialization Netlist Sorting
+[08:14:43] Phase 1.2 IO Placement/ Clock Placement/ Build Placer Device
+[08:16:45] Phase 1.3 Build Placer Netlist Model
+[08:21:48] Phase 1.4 Constrain Clocks/Macros
+[08:22:18] Phase 2 Global Placement
+[08:22:18] Phase 2.1 Floorplanning
+[08:23:19] Phase 2.1.1 Partition Driven Placement
+[08:23:19] Phase 2.1.1.1 PBP: Partition Driven Placement
+[08:24:50] Phase 2.1.1.2 PBP: Clock Region Placement
+[08:25:52] Phase 2.1.1.3 PBP: Compute Congestion
+[08:26:22] Phase 2.1.1.4 PBP: UpdateTiming
+[08:26:53] Phase 2.1.1.5 PBP: Add part constraints
+[08:26:53] Phase 2.2 Physical Synthesis After Floorplan
+[08:27:54] Phase 2.3 Update Timing before SLR Path Opt
+[08:27:54] Phase 2.4 Post-Processing in Floorplanning
+[08:28:25] Phase 2.5 Global Placement Core
+[08:38:06] Phase 2.5.1 UpdateTiming Before Physical Synthesis
+[08:38:37] Phase 2.5.2 Physical Synthesis In Placer
+[08:42:11] Phase 3 Detail Placement
+[08:42:42] Phase 3.1 Commit Multi Column Macros
+[08:43:12] Phase 3.2 Commit Most Macros & LUTRAMs
+[08:45:45] Phase 3.3 Small Shape DP
+[08:45:45] Phase 3.3.1 Small Shape Clustering
+[08:46:16] Phase 3.3.2 Flow Legalize Slice Clusters
+[08:46:16] Phase 3.3.3 Slice Area Swap
+[08:46:16] Phase 3.3.3.1 Slice Area Swap Initial
+[08:47:48] Phase 3.4 Place Remaining
+[08:47:48] Phase 3.5 Re-assign LUT pins
+[08:48:49] Phase 3.6 Pipeline Register Optimization
+[08:48:49] Phase 3.7 Fast Optimization
+[08:50:21] Phase 4 Post Placement Optimization and Clean-Up
+[08:50:21] Phase 4.1 Post Commit Optimization
+[08:53:55] Phase 4.1.1 Post Placement Optimization
+[08:54:26] Phase 4.1.1.1 BUFG Insertion
+[08:54:26] Phase 1 Physical Synthesis Initialization
+[08:56:59] Phase 4.1.1.2 BUFG Replication
+[08:56:59] Phase 4.1.1.3 Post Placement Timing Optimization
+[09:13:25] Phase 4.1.1.4 Replication
+[09:15:28] Phase 4.2 Post Placement Cleanup
+[09:15:59] Phase 4.3 Placer Reporting
+[09:15:59] Phase 4.3.1 Print Estimated Congestion
+[09:15:59] Phase 4.4 Final Placement Cleanup
+[09:23:06] Finished 4th of 6 tasks (FPGA logic placement). Elapsed time: 01h 12m 26s 
 
-[04:12:32] Starting logic routing..
-[04:14:04] Phase 1 Build RT Design
-[04:18:08] Phase 2 Router Initialization
-[04:18:08] Phase 2.1 Fix Topology Constraints
-[04:18:39] Phase 2.2 Pre Route Cleanup
-[04:19:09] Phase 2.3 Global Clock Net Routing
-[04:20:10] Phase 2.4 Update Timing
-[04:25:16] Phase 2.5 Update Timing for Bus Skew
-[04:25:16] Phase 2.5.1 Update Timing
-[04:27:49] Phase 3 Initial Routing
-[04:27:49] Phase 3.1 Global Routing
-[04:29:20] Phase 3.2 Update Timing
-[04:33:55] Phase 4 Rip-up And Reroute
-[04:33:55] Phase 4.1 Global Iteration 0
-[04:33:55] Phase 4.1.1 Update Timing
-[04:37:29] Phase 4.2 Global Iteration 1
-[05:54:22] Phase 4.3 Global Iteration 2
-[07:29:51] Phase 5 Delay and Skew Optimization
-[07:30:22] Phase 5.1 Delay CleanUp
-[07:30:22] Phase 5.2 Clock Skew Optimization
-[07:31:23] Phase 6 Post Hold Fix
-[07:31:23] Phase 6.1 Hold Fix Iter
-[07:31:53] Phase 6.2 Additional Hold Fix
-[07:33:25] Phase 7 Route finalize
-[07:33:55] Phase 8 Verifying routed nets
-[07:34:26] Phase 9 Depositing Routes
-[07:40:24] Run vpl: Step impl: Failed
-[07:40:26] Run vpl: FINISHED. Run Status: impl ERROR
+[09:23:06] Starting logic routing..
+[09:24:39] Phase 1 Build RT Design
+[09:28:43] Phase 2 Router Initialization
+[09:29:14] Phase 2.1 Fix Topology Constraints
+[09:29:14] Phase 2.2 Pre Route Cleanup
+[09:30:15] Phase 2.3 Global Clock Net Routing
+[09:31:47] Phase 2.4 Update Timing
+[09:37:54] Phase 2.5 Update Timing for Bus Skew
+[09:37:54] Phase 2.5.1 Update Timing
+[09:40:27] Phase 3 Initial Routing
+[09:40:27] Phase 3.1 Global Routing
+[09:42:29] Phase 4 Rip-up And Reroute
+[09:42:29] Phase 4.1 Global Iteration 0
+[09:55:14] Phase 4.2 Global Iteration 1
+[09:58:49] Phase 4.3 Global Iteration 2
+[10:00:51] Phase 5 Delay and Skew Optimization
+[10:00:51] Phase 5.1 Delay CleanUp
+[10:00:51] Phase 5.1.1 Update Timing
+[10:02:23] Phase 5.1.2 Update Timing
+[10:04:56] Phase 5.2 Clock Skew Optimization
+[10:05:26] Phase 6 Post Hold Fix
+[10:05:26] Phase 6.1 Hold Fix Iter
+[10:05:26] Phase 6.1.1 Update Timing
+[10:07:59] Phase 7 Route finalize
+[10:08:30] Phase 8 Verifying routed nets
+[10:09:00] Phase 9 Depositing Routes
+[10:10:32] Phase 10 Leaf Clock Prog Delay Opt
+[10:13:05] Phase 10.1 Delay CleanUp
+[10:13:05] Phase 10.1.1 Update Timing
+[10:15:08] Phase 10.1.2 Update Timing
+[10:17:10] Phase 10.2 Hold Fix Iter
+[10:17:10] Phase 10.2.1 Update Timing
+[10:22:16] Phase 11 Depositing Routes
+[10:23:17] Phase 12 Resolve XTalk
+[10:23:48] Phase 13 Post Router Timing
+[10:27:53] Phase 14 Route finalize
+[10:27:53] Finished 5th of 6 tasks (FPGA routing). Elapsed time: 01h 04m 46s 
 
-===>The following messages were generated while processing /home/ayvol/accelerator_wrapper/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/link/vivado/vpl/prj/prj.runs/impl_1 :
-ERROR: [VPL 18-1000] Routing results verification failed due to partially-conflicted nets (Up to first 10 of violated nets):  level0_i/ulp/alveo_hls4ml_0/inst/dataflow_in_loop_VITIS_LOOP_89_1_U0/myproject_U0/conv_2d_cl_array_ap_fixed_16u_array_ap_fixed_16_6_5_3_0_16u_config6_U0/grp_compute_output_buffer_2d_array_array_ap_fixed_16_6_5_3_0_16u_config6_s_fu_470/grp_dense_latency_ap_fixed_16_6_5_3_0_ap_fixed_16_6_5_3_0_config6_mult_s_fu_928/mul_16s_5s_21_1_0_U349/dout_carry_n_16 level0_i/ulp/alveo_hls4ml_0/inst/dataflow_in_loop_VITIS_LOOP_89_1_U0/myproject_U0/conv_2d_cl_array_ap_fixed_16u_array_ap_fixed_16_6_5_3_0_16u_config6_U0/grp_compute_output_buffer_2d_array_array_ap_fixed_16_6_5_3_0_16u_config6_s_fu_470/grp_dense_latency_ap_fixed_16_6_5_3_0_ap_fixed_16_6_5_3_0_config6_mult_s_fu_928/mul_16s_5s_21_1_0_U347/dout_carry_n_17 level0_i/ulp/alveo_hls4ml_0/inst/dataflow_in_loop_VITIS_LOOP_89_1_U0/myproject_U0/conv_2d_cl_array_ap_fixed_16u_array_ap_fixed_16_6_5_3_0_16u_config6_U0/grp_compute_output_buffer_2d_array_array_ap_fixed_16_6_5_3_0_16u_config6_s_fu_470/grp_dense_latency_ap_fixed_16_6_5_3_0_ap_fixed_16_6_5_3_0_config6_mult_s_fu_928/mul_16s_5s_21_1_0_U347/dout_carry__0_n_19 level0_i/ulp/alveo_hls4ml_0/inst/dataflow_in_loop_VITIS_LOOP_89_1_U0/myproject_U0/conv_2d_cl_array_ap_fixed_16u_array_ap_fixed_16_6_5_3_0_16u_config6_U0/grp_compute_output_buffer_2d_array_array_ap_fixed_16_6_5_3_0_16u_config6_s_fu_470/grp_dense_latency_ap_fixed_16_6_5_3_0_ap_fixed_16_6_5_3_0_config6_mult_s_fu_928/mul_16s_6ns_21_1_0_U265/add_ln813_454_reg_476420[7]_i_5_n_7 level0_i/ulp/alveo_hls4ml_0/inst/dataflow_in_loop_VITIS_LOOP_89_1_U0/myproject_U0/conv_2d_cl_array_ap_fixed_16u_array_ap_fixed_16_6_5_3_0_16u_config6_U0/grp_compute_output_buffer_2d_array_array_ap_fixed_16_6_5_3_0_16u_config6_s_fu_470/grp_dense_latency_ap_fixed_16_6_5_3_0_ap_fixed_16_6_5_3_0_config6_mult_s_fu_928/mul_16s_6ns_21_1_0_U265/add_ln813_454_reg_476420[7]_i_17_n_7 level0_i/ulp/alveo_hls4ml_0/inst/dataflow_in_loop_VITIS_LOOP_89_1_U0/myproject_U0/conv_2d_cl_array_ap_fixed_16u_array_ap_fixed_16_6_5_3_0_16u_config6_U0/grp_compute_output_buffer_2d_array_array_ap_fixed_16_6_5_3_0_16u_config6_s_fu_470/grp_dense_latency_ap_fixed_16_6_5_3_0_ap_fixed_16_6_5_3_0_config6_mult_s_fu_928/mul_16s_6ns_21_1_0_U265/add_ln813_454_reg_476420[15]_i_6_n_7 level0_i/ulp/alveo_hls4ml_0/inst/dataflow_in_loop_VITIS_LOOP_89_1_U0/myproject_U0/conv_2d_cl_array_ap_fixed_16u_array_ap_fixed_16_6_5_3_0_16u_config6_U0/grp_compute_output_buffer_2d_array_array_ap_fixed_16_6_5_3_0_16u_config6_s_fu_470/grp_dense_latency_ap_fixed_16_6_5_3_0_ap_fixed_16_6_5_3_0_config6_mult_s_fu_928/mul_16s_5s_21_1_0_U315/dout_carry_n_19 level0_i/ulp/alveo_hls4ml_0/inst/dataflow_in_loop_VITIS_LOOP_89_1_U0/myproject_U0/conv_2d_cl_array_ap_fixed_16u_array_ap_fixed_16_6_5_3_0_16u_config6_U0/grp_compute_output_buffer_2d_array_array_ap_fixed_16_6_5_3_0_16u_config6_s_fu_470/grp_dense_latency_ap_fixed_16_6_5_3_0_ap_fixed_16_6_5_3_0_config6_mult_s_fu_928/mul_16s_5s_21_1_0_U319/dout_carry_n_15 level0_i/ulp/alveo_hls4ml_0/inst/dataflow_in_loop_VITIS_LOOP_89_1_U0/myproject_U0/conv_2d_cl_array_ap_fixed_16u_array_ap_fixed_16_6_5_3_0_16u_config6_U0/grp_compute_output_buffer_2d_array_array_ap_fixed_16_6_5_3_0_16u_config6_s_fu_470/grp_dense_latency_ap_fixed_16_6_5_3_0_ap_fixed_16_6_5_3_0_config6_mult_s_fu_928/mul_16s_6s_21_1_0_U336/mult_V_10_reg_473834_reg[13][1] level0_i/ulp/alveo_hls4ml_0/inst/dataflow_in_loop_VITIS_LOOP_89_1_U0/myproject_U0/conv_2d_cl_array_ap_fixed_16u_array_ap_fixed_16_6_5_3_0_16u_config6_U0/grp_compute_output_buffer_2d_array_array_ap_fixed_16_6_5_3_0_16u_config6_s_fu_470/grp_dense_latency_ap_fixed_16_6_5_3_0_ap_fixed_16_6_5_3_0_config6_mult_s_fu_928/mul_16s_6s_21_1_0_U336/O[5] 
-ERROR: [VPL 60-773] In '/home/ayvol/accelerator_wrapper/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/link/vivado/vpl/runme.log', caught Tcl error:  problem implementing dynamic region, impl_1: route_design ERROR, please look at the run log file '/home/ayvol/accelerator_wrapper/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/link/vivado/vpl/prj/prj.runs/impl_1/runme.log' for more information
-WARNING: [VPL 60-732] Link warning: No monitor points found for BD automation.
-ERROR: [VPL 60-704] Integration error, problem implementing dynamic region, impl_1: route_design ERROR, please look at the run log file '/home/ayvol/accelerator_wrapper/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/link/vivado/vpl/prj/prj.runs/impl_1/runme.log' for more information
-ERROR: [VPL 60-1328] Vpl run 'vpl' failed
-ERROR: [VPL 60-806] Failed to finish platform linker
-INFO: [v++ 60-1442] [07:40:31] Run run_link: Step vpl: Failed
-Time (s): cpu = 00:03:52 ; elapsed = 05:55:59 . Memory (MB): peak = 442.477 ; gain = 0.000 ; free physical = 405986 ; free virtual = 470945
-ERROR: [v++ 60-661] v++ link run 'run_link' failed
-ERROR: [v++ 60-626] Kernel link failed to complete
-ERROR: [v++ 60-703] Failed to finish linking
+[10:27:53] Starting bitstream generation..
+Starting optional post-route physical design optimization.
+Finished optional post-route physical design optimization.
+[10:51:22] Creating bitmap...
+[11:05:09] Writing bitstream ./level0_i_ulp_my_rm_partial.bit...
+[11:05:09] Finished 6th of 6 tasks (FPGA bitstream generation). Elapsed time: 00h 37m 16s 
+Check VPL, containing 1 checks, has run: 0 errors
+[11:06:27] Run vpl: Step impl: Completed
+[11:06:29] Run vpl: FINISHED. Run Status: impl Complete!
+INFO: [v++ 60-1441] [11:06:47] Run run_link: Step vpl: Completed
+Time (s): cpu = 00:03:03 ; elapsed = 04:31:27 . Memory (MB): peak = 435.164 ; gain = 0.000 ; free physical = 435994 ; free virtual = 756533
+INFO: [v++ 60-1443] [11:06:48] Run run_link: Step rtdgen: Started
+INFO: [v++ 60-1453] Command Line: rtdgen
+INFO: [v++ 60-1454] Run Directory: /home/ayvol/accelerator_wrapper/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/link/run_link
+INFO: [v++ 60-991] clock name 'ulp_ucs/aclk_kernel_01' (clock ID '1') is being mapped to clock name 'KERNEL_CLK' in the xclbin
+INFO: [v++ 60-991] clock name 'ulp_ucs/aclk_kernel_00' (clock ID '0') is being mapped to clock name 'DATA_CLK' in the xclbin
+INFO: [v++ 60-991] clock name 'hbm_aclk' (clock ID '') is being mapped to clock name 'hbm_aclk' in the xclbin
+INFO: [v++ 60-1230] The compiler selected the following frequencies for the runtime controllable kernel clock(s) and scalable system clock(s): System (SYSTEM) clock: hbm_aclk = 450, Kernel (KERNEL) clock: ulp_ucs/aclk_kernel_01 = 500, Kernel (DATA) clock: ulp_ucs/aclk_kernel_00 = 300
+INFO: [v++ 60-1453] Command Line: cf2sw -a /home/ayvol/accelerator_wrapper/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/link/int/address_map.xml -sdsl /home/ayvol/accelerator_wrapper/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/link/int/sdsl.dat -xclbin /home/ayvol/accelerator_wrapper/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/link/int/xclbin_orig.xml -rtd /home/ayvol/accelerator_wrapper/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/link/int/alveo_hls4ml.rtd -o /home/ayvol/accelerator_wrapper/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/link/int/alveo_hls4ml.xml
+INFO: [v++ 60-1652] Cf2sw returned exit code: 0
+INFO: [v++ 60-1441] [11:07:07] Run run_link: Step rtdgen: Completed
+Time (s): cpu = 00:00:04 ; elapsed = 00:00:19 . Memory (MB): peak = 435.164 ; gain = 0.000 ; free physical = 435006 ; free virtual = 756327
+INFO: [v++ 60-1443] [11:07:09] Run run_link: Step xclbinutil: Started
+INFO: [v++ 60-1453] Command Line: xclbinutil --add-section BITSTREAM:RAW:/home/ayvol/accelerator_wrapper/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/link/int/partial.bit --force --target hw --key-value SYS:dfx_enable:true --add-section :JSON:/home/ayvol/accelerator_wrapper/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/link/int/alveo_hls4ml.rtd --append-section :JSON:/home/ayvol/accelerator_wrapper/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/link/int/appendSection.rtd --add-section CLOCK_FREQ_TOPOLOGY:JSON:/home/ayvol/accelerator_wrapper/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/link/int/alveo_hls4ml_xml.rtd --add-section BUILD_METADATA:JSON:/home/ayvol/accelerator_wrapper/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/link/int/alveo_hls4ml_build.rtd --add-section EMBEDDED_METADATA:RAW:/home/ayvol/accelerator_wrapper/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/link/int/alveo_hls4ml.xml --add-section SYSTEM_METADATA:RAW:/home/ayvol/accelerator_wrapper/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/link/int/systemDiagramModelSlrBaseAddress.json --key-value SYS:PlatformVBNV:xilinx_u55c_gen3x16_xdma_3_202210_1 --output /home/ayvol/accelerator_wrapper/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml.xclbin
+INFO: [v++ 60-1454] Run Directory: /home/ayvol/accelerator_wrapper/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/link/run_link
+XRT Build Version: 2.15.225 (2023.1)
+       Build Date: 2023-05-03 10:13:38
+          Hash ID: adf27adb3cfadc6e4c41d6db814159f1329b24f3
+Creating a default 'in-memory' xclbin image.
+
+Section: 'BITSTREAM'(0) was successfully added.
+Size   : 73542022 bytes
+Format : RAW
+File   : '/home/ayvol/accelerator_wrapper/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/link/int/partial.bit'
+
+Section: 'MEM_TOPOLOGY'(6) was successfully added.
+Format : JSON
+File   : 'mem_topology'
+
+Section: 'IP_LAYOUT'(8) was successfully added.
+Format : JSON
+File   : 'ip_layout'
+
+Section: 'CONNECTIVITY'(7) was successfully added.
+Format : JSON
+File   : 'connectivity'
+
+Section: 'CLOCK_FREQ_TOPOLOGY'(11) was successfully added.
+Size   : 410 bytes
+Format : JSON
+File   : '/home/ayvol/accelerator_wrapper/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/link/int/alveo_hls4ml_xml.rtd'
+
+Section: 'BUILD_METADATA'(14) was successfully added.
+Size   : 3157 bytes
+Format : JSON
+File   : '/home/ayvol/accelerator_wrapper/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/link/int/alveo_hls4ml_build.rtd'
+
+Section: 'EMBEDDED_METADATA'(2) was successfully added.
+Size   : 104014 bytes
+Format : RAW
+File   : '/home/ayvol/accelerator_wrapper/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/link/int/alveo_hls4ml.xml'
+
+Section: 'SYSTEM_METADATA'(22) was successfully added.
+Size   : 47199 bytes
+Format : RAW
+File   : '/home/ayvol/accelerator_wrapper/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/link/int/systemDiagramModelSlrBaseAddress.json'
+
+Section: 'PARTITION_METADATA'(20) was successfully appended to.
+Format : JSON
+File   : 'partition_metadata'
+
+Section: 'IP_LAYOUT'(8) was successfully appended to.
+Format : JSON
+File   : 'ip_layout'
+Successfully wrote (73729468 bytes) to the output file: /home/ayvol/accelerator_wrapper/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml.xclbin
+Leaving xclbinutil.
+INFO: [v++ 60-1441] [11:07:12] Run run_link: Step xclbinutil: Completed
+Time (s): cpu = 00:00:00.06 ; elapsed = 00:00:03 . Memory (MB): peak = 435.164 ; gain = 0.000 ; free physical = 433628 ; free virtual = 756243
+INFO: [v++ 60-1443] [11:07:12] Run run_link: Step xclbinutilinfo: Started
+INFO: [v++ 60-1453] Command Line: xclbinutil --quiet --force --info /home/ayvol/accelerator_wrapper/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml.xclbin.info --input /home/ayvol/accelerator_wrapper/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml.xclbin
+INFO: [v++ 60-1454] Run Directory: /home/ayvol/accelerator_wrapper/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/link/run_link
+INFO: [v++ 60-1441] [11:07:13] Run run_link: Step xclbinutilinfo: Completed
+Time (s): cpu = 00:00:00.59 ; elapsed = 00:00:01 . Memory (MB): peak = 435.164 ; gain = 0.000 ; free physical = 435134 ; free virtual = 756397
+INFO: [v++ 60-1443] [11:07:13] Run run_link: Step generate_sc_driver: Started
+INFO: [v++ 60-1453] Command Line: 
+INFO: [v++ 60-1454] Run Directory: /home/ayvol/accelerator_wrapper/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/link/run_link
+INFO: [v++ 60-1441] [11:07:14] Run run_link: Step generate_sc_driver: Completed
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.5 . Memory (MB): peak = 435.164 ; gain = 0.000 ; free physical = 435079 ; free virtual = 756347
+INFO: [v++ 60-244] Generating system estimate report...
+INFO: [v++ 60-1092] Generated system estimate report: /home/ayvol/accelerator_wrapper/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/reports/link/system_estimate_alveo_hls4ml.xtxt
+INFO: [v++ 60-586] Created /home/ayvol/accelerator_wrapper/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml.ltx
+INFO: [v++ 60-586] Created build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml.xclbin
+INFO: [v++ 60-1307] Run completed. Additional information can be found in:
+	Guidance: /home/ayvol/accelerator_wrapper/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/reports/link/v++_link_alveo_hls4ml_guidance.html
+	Timing Report: /home/ayvol/accelerator_wrapper/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/reports/link/imp/impl_1_hw_bb_locked_timing_summary_routed.rpt
+	Vivado Log: /home/ayvol/accelerator_wrapper/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/logs/link/vivado.log
+	Steps Log File: /home/ayvol/accelerator_wrapper/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/logs/link/link.steps.log
+
+INFO: [v++ 60-2343] Use the vitis_analyzer tool to visualize and navigate the relevant reports. Run the following command. 
+    vitis_analyzer /home/ayvol/accelerator_wrapper/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml.xclbin.link_summary 
+INFO: [v++ 60-791] Total elapsed time: 4h 34m 41s
 INFO: [v++ 60-1653] Closing dispatch client.
