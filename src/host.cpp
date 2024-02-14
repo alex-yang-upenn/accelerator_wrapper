@@ -41,7 +41,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #include "timing.h"
 #include "xcl2.hpp"
 
-#define NUM_CU 3
+#define NUM_CU 4
 #define NBUFFER 8
 
 #define STRINGIFY(var) #var
@@ -61,7 +61,7 @@ int main(int argc, char** argv)
     
     std::cout << "Will run using " << datadir << " to get input features and output predictions (tb_input_features.dat and tb_output_predictions.dat)" << std::endl;
     
-    fpgaObj<input_data_t, output_data_t> fpga(INSTREAMSIZE, OUTSTREAMSIZE, NUM_CU, NBUFFER, 500);
+    fpgaObj<input_data_t, output_data_t> fpga(INSTREAMSIZE, OUTSTREAMSIZE, NUM_CU, NBUFFER, 100);
 
     /* 
     get_xil_devices() is a utility API which will find the xilinx
@@ -101,7 +101,7 @@ int main(int argc, char** argv)
     fpga.finishRun();
 
     auto ts_end = SClock::now();
-    float throughput = (float(NUM_CU * NBUFFER * 500 * BATCHSIZE) /
+    float throughput = (float(NUM_CU * NBUFFER * 100 * BATCHSIZE) /
             float(std::chrono::duration_cast<std::chrono::nanoseconds>(ts_end - ts_start).count())) *
             1000000000.;
     
@@ -118,4 +118,3 @@ int main(int argc, char** argv)
             <<" predictions/second" << std::endl;
     return EXIT_SUCCESS;
 }
-

@@ -1,2 +1,0 @@
-performing high-level synthesis for kernel: alveo_hls4ml
-Log file: /home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/vitis_hls.log
