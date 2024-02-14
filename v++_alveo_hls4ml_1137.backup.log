@@ -1,8 +1,8 @@
 INFO: [v++ 60-1306] Additional information associated with this v++ compile can be found at:
 	Reports: /home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/reports/alveo_hls4ml
 	Log files: /home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/logs/alveo_hls4ml
-INFO: [v++ 60-1548] Creating build summary session with primary output /home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml.xo.compile_summary, at Mon Feb 12 05:33:19 2024
-INFO: [v++ 60-1315] Creating rulecheck session with output '/home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/reports/alveo_hls4ml/v++_compile_alveo_hls4ml_guidance.html', at Mon Feb 12 05:33:20 2024
+INFO: [v++ 60-1548] Creating build summary session with primary output /home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml.xo.compile_summary, at Tue Feb 13 21:27:35 2024
+INFO: [v++ 60-1315] Creating rulecheck session with output '/home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/reports/alveo_hls4ml/v++_compile_alveo_hls4ml_guidance.html', at Tue Feb 13 21:27:35 2024
 INFO: [v++ 60-895]   Target platform: /opt/xilinx/platforms/xilinx_u55c_gen3x16_xdma_3_202210_1/xilinx_u55c_gen3x16_xdma_3_202210_1.xpfm
 INFO: [v++ 60-1578]   This platform contains Xilinx Shell Archive '/opt/xilinx/platforms/xilinx_u55c_gen3x16_xdma_3_202210_1/hw/hw.xsa'
 INFO: [v++ 74-78] Compiler Version string: 2022.2
@@ -59,5 +59,5 @@ INFO: [v++ 60-1092] Generated system estimate report: /home/ayvol/accelerator_wr
 INFO: [v++ 60-586] Created _x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml.xo
 INFO: [v++ 60-2343] Use the vitis_analyzer tool to visualize and navigate the relevant reports. Run the following command. 
     vitis_analyzer /home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml.xo.compile_summary 
-INFO: [v++ 60-791] Total elapsed time: 0h 59m 28s
+INFO: [v++ 60-791] Total elapsed time: 0h 58m 0s
 INFO: [v++ 60-1653] Closing dispatch client.

@@ -2,7 +2,7 @@
 Version:    v++ v2022.2 (64-bit)
 Build:      SW Build 3671529 on 2022-10-13-17:52:11
 Copyright:  Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
-Created:    Mon Feb 12 06:32:29 2024
+Created:    Tue Feb 13 22:25:17 2024
 ===============================================================================
 
 -------------------------------------------------------------------------------
@@ -15,7 +15,7 @@ Total number of kernels: 1
 Kernel Summary
 Kernel Name   Type  Target              OpenCL Library  Compute Units
 ------------  ----  ------------------  --------------  -------------
-alveo_hls4ml  c     fpga0:OCL_REGION_0  alveo_hls4ml    3
+alveo_hls4ml  c     fpga0:OCL_REGION_0  alveo_hls4ml    4
 
 
 -------------------------------------------------------------------------------
@@ -130,6 +130,41 @@ alveo_hls4ml_2  alveo_hls4ml  myproject                                         
 alveo_hls4ml_2  alveo_hls4ml  write_result                                                             300.300293        411.015198
 alveo_hls4ml_2  alveo_hls4ml  dataflow_in_loop_VITIS_LOOP_89_1                                         300.300293        411.015198
 alveo_hls4ml_2  alveo_hls4ml  alveo_hls4ml                                                             300.300293        411.015198
+alveo_hls4ml_3  alveo_hls4ml  entry_proc                                                               300.300293        821.692688
+alveo_hls4ml_3  alveo_hls4ml  read_input_Pipeline_VITIS_LOOP_41_1                                      300.300293        411.015198
+alveo_hls4ml_3  alveo_hls4ml  read_input                                                               300.300293        411.015198
+alveo_hls4ml_3  alveo_hls4ml  shift_line_buffer_array_ap_fixed_16_6_5_3_0_3u_config2_s                 300.300293        818.330627
+alveo_hls4ml_3  alveo_hls4ml  dense_latency_ap_fixed_16_6_5_3_0_ap_fixed_16_6_5_3_0_config2_mult_s     300.300293        431.965424
+alveo_hls4ml_3  alveo_hls4ml  compute_output_buffer_2d_array_array_ap_fixed_16_6_5_3_0_16u_config2_s   300.300293        431.965424
+alveo_hls4ml_3  alveo_hls4ml  conv_2d_cl_array_ap_fixed_3u_array_ap_fixed_16_6_5_3_0_16u_config2_s     300.300293        431.965424
+alveo_hls4ml_3  alveo_hls4ml  relu_array_ap_fixed_16u_array_ap_ufixed_6_0_4_0_0_16u_relu_config4_s     300.300293        455.580872
+alveo_hls4ml_3  alveo_hls4ml  pooling2d_cl_array_array_ap_fixed_16_6_5_3_0_16u_config5_s               300.300293        415.110016
+alveo_hls4ml_3  alveo_hls4ml  shift_line_buffer_array_ap_fixed_16_6_5_3_0_16u_config6_s                300.300293        818.330627
+alveo_hls4ml_3  alveo_hls4ml  dense_latency_ap_fixed_16_6_5_3_0_ap_fixed_16_6_5_3_0_config6_mult_s     300.300293        418.935883
+alveo_hls4ml_3  alveo_hls4ml  compute_output_buffer_2d_array_array_ap_fixed_16_6_5_3_0_16u_config6_s   300.300293        418.935883
+alveo_hls4ml_3  alveo_hls4ml  conv_2d_cl_array_ap_fixed_16u_array_ap_fixed_16_6_5_3_0_16u_config6_s    300.300293        418.935883
+alveo_hls4ml_3  alveo_hls4ml  relu_array_ap_fixed_16u_array_ap_ufixed_6_0_4_0_0_16u_relu_config8_s     300.300293        412.711487
+alveo_hls4ml_3  alveo_hls4ml  pooling2d_cl_array_array_ap_fixed_16_6_5_3_0_16u_config9_s               300.300293        415.282379
+alveo_hls4ml_3  alveo_hls4ml  shift_line_buffer_array_ap_fixed_16_6_5_3_0_16u_config10_s               300.300293        818.330627
+alveo_hls4ml_3  alveo_hls4ml  dense_latency_ap_fixed_16_6_5_3_0_ap_fixed_16_6_5_3_0_config10_mult_s    300.300293        418.935883
+alveo_hls4ml_3  alveo_hls4ml  compute_output_buffer_2d_array_array_ap_fixed_16_6_5_3_0_24u_config10_s  300.300293        418.935883
+alveo_hls4ml_3  alveo_hls4ml  conv_2d_cl_array_ap_fixed_16u_array_ap_fixed_16_6_5_3_0_24u_config10_s   300.300293        418.935883
+alveo_hls4ml_3  alveo_hls4ml  relu_array_ap_fixed_24u_array_ap_ufixed_6_0_4_0_0_24u_relu_config12_s    300.300293        412.711487
+alveo_hls4ml_3  alveo_hls4ml  pooling2d_cl_array_array_ap_fixed_16_6_5_3_0_24u_config13_s              300.300293        417.885529
+alveo_hls4ml_3  alveo_hls4ml  dense_array_array_ap_fixed_16_6_5_3_0_42u_config15_Pipeline_DataPrepare  300.300293        829.187439
+alveo_hls4ml_3  alveo_hls4ml  dense_array_ap_fixed_24u_array_ap_fixed_16_6_5_3_0_42u_config15_s        300.300293        418.935883
+alveo_hls4ml_3  alveo_hls4ml  normalize_array_ap_fixed_42u_array_ap_fixed_16_6_5_3_0_42u_config17_s    300.300293        485.201324
+alveo_hls4ml_3  alveo_hls4ml  relu_array_ap_fixed_42u_array_ap_ufixed_6_0_4_0_0_42u_relu_config18_s    300.300293        412.711487
+alveo_hls4ml_3  alveo_hls4ml  dense_array_ap_ufixed_42u_array_ap_fixed_16_6_5_3_0_64u_config19_s       300.300293        426.985474
+alveo_hls4ml_3  alveo_hls4ml  normalize_array_ap_fixed_64u_array_ap_fixed_16_6_5_3_0_64u_config21_s    300.300293        485.201324
+alveo_hls4ml_3  alveo_hls4ml  relu_array_ap_fixed_64u_array_ap_ufixed_6_0_4_0_0_64u_relu_config22_s    300.300293        412.711487
+alveo_hls4ml_3  alveo_hls4ml  dense_array_ap_ufixed_64u_array_ap_fixed_16_6_5_3_0_10u_config23_s       300.300293        412.371155
+alveo_hls4ml_3  alveo_hls4ml  softmax_stable_array_array_ap_fixed_16_6_5_3_0_10u_softmax_config25_s    300.300293        434.216248
+alveo_hls4ml_3  alveo_hls4ml  softmax_array_array_ap_fixed_16_6_5_3_0_10u_softmax_config25_s           300.300293        434.216248
+alveo_hls4ml_3  alveo_hls4ml  myproject                                                                300.300293        412.371155
+alveo_hls4ml_3  alveo_hls4ml  write_result                                                             300.300293        411.015198
+alveo_hls4ml_3  alveo_hls4ml  dataflow_in_loop_VITIS_LOOP_89_1                                         300.300293        411.015198
+alveo_hls4ml_3  alveo_hls4ml  alveo_hls4ml                                                             300.300293        411.015198
 
 Latency Information
 Compute Unit    Kernel Name   Module Name                                                              Start Interval  Best (cycles)  Avg (cycles)  Worst (cycles)  Best (absolute)  Avg (absolute)  Worst (absolute)
@@ -239,6 +274,41 @@ alveo_hls4ml_2  alveo_hls4ml  myproject                                         
 alveo_hls4ml_2  alveo_hls4ml  write_result                                                             75              75             75            75              0.250 us         0.250 us        0.250 us
 alveo_hls4ml_2  alveo_hls4ml  dataflow_in_loop_VITIS_LOOP_89_1                                         3149            3175           3175          3175            10.582 us        10.582 us       10.582 us
 alveo_hls4ml_2  alveo_hls4ml  alveo_hls4ml                                                             25796638        25796637       25796637      25796637        85.980 ms        85.980 ms       85.980 ms
+alveo_hls4ml_3  alveo_hls4ml  entry_proc                                                               0               0              0             0               0 ns             0 ns            0 ns
+alveo_hls4ml_3  alveo_hls4ml  read_input_Pipeline_VITIS_LOOP_41_1                                      3075            3075           3075          3075            10.249 us        10.249 us       10.249 us
+alveo_hls4ml_3  alveo_hls4ml  read_input                                                               3148            3148           3148          3148            10.492 us        10.492 us       10.492 us
+alveo_hls4ml_3  alveo_hls4ml  shift_line_buffer_array_ap_fixed_16_6_5_3_0_3u_config2_s                 1               0              0             0               0 ns             0 ns            0 ns
+alveo_hls4ml_3  alveo_hls4ml  dense_latency_ap_fixed_16_6_5_3_0_ap_fixed_16_6_5_3_0_config2_mult_s     1               1              1             1               3.333 ns         3.333 ns        3.333 ns
+alveo_hls4ml_3  alveo_hls4ml  compute_output_buffer_2d_array_array_ap_fixed_16_6_5_3_0_16u_config2_s   3               3              3             3               9.999 ns         9.999 ns        9.999 ns
+alveo_hls4ml_3  alveo_hls4ml  conv_2d_cl_array_ap_fixed_3u_array_ap_fixed_16_6_5_3_0_16u_config2_s     3075            3075           3075          3075            10.249 us        10.249 us       10.249 us
+alveo_hls4ml_3  alveo_hls4ml  relu_array_ap_fixed_16u_array_ap_ufixed_6_0_4_0_0_16u_relu_config4_s     903             903            903           903             3.010 us         3.010 us        3.010 us
+alveo_hls4ml_3  alveo_hls4ml  pooling2d_cl_array_array_ap_fixed_16_6_5_3_0_16u_config5_s               903             903            903           903             3.010 us         3.010 us        3.010 us
+alveo_hls4ml_3  alveo_hls4ml  shift_line_buffer_array_ap_fixed_16_6_5_3_0_16u_config6_s                1               0              0             0               0 ns             0 ns            0 ns
+alveo_hls4ml_3  alveo_hls4ml  dense_latency_ap_fixed_16_6_5_3_0_ap_fixed_16_6_5_3_0_config6_mult_s     1               2              2             2               6.666 ns         6.666 ns        6.666 ns
+alveo_hls4ml_3  alveo_hls4ml  compute_output_buffer_2d_array_array_ap_fixed_16_6_5_3_0_16u_config6_s   5               5              5             5               16.665 ns        16.665 ns       16.665 ns
+alveo_hls4ml_3  alveo_hls4ml  conv_2d_cl_array_ap_fixed_16u_array_ap_fixed_16_6_5_3_0_16u_config6_s    1128            1128           1128          1128            3.760 us         3.760 us        3.760 us
+alveo_hls4ml_3  alveo_hls4ml  relu_array_ap_fixed_16u_array_ap_ufixed_6_0_4_0_0_16u_relu_config8_s     172             172            172           172             0.573 us         0.573 us        0.573 us
+alveo_hls4ml_3  alveo_hls4ml  pooling2d_cl_array_array_ap_fixed_16_6_5_3_0_16u_config9_s               172             172            172           172             0.573 us         0.573 us        0.573 us
+alveo_hls4ml_3  alveo_hls4ml  shift_line_buffer_array_ap_fixed_16_6_5_3_0_16u_config10_s               1               0              0             0               0 ns             0 ns            0 ns
+alveo_hls4ml_3  alveo_hls4ml  dense_latency_ap_fixed_16_6_5_3_0_ap_fixed_16_6_5_3_0_config10_mult_s    1               2              2             2               6.666 ns         6.666 ns        6.666 ns
+alveo_hls4ml_3  alveo_hls4ml  compute_output_buffer_2d_array_array_ap_fixed_16_6_5_3_0_24u_config10_s  5               5              5             5               16.665 ns        16.665 ns       16.665 ns
+alveo_hls4ml_3  alveo_hls4ml  conv_2d_cl_array_ap_fixed_16u_array_ap_fixed_16_6_5_3_0_24u_config10_s   183             183            183           183             0.610 us         0.610 us        0.610 us
+alveo_hls4ml_3  alveo_hls4ml  relu_array_ap_fixed_24u_array_ap_ufixed_6_0_4_0_0_24u_relu_config12_s    19              19             19            19              63.327 ns        63.327 ns       63.327 ns
+alveo_hls4ml_3  alveo_hls4ml  pooling2d_cl_array_array_ap_fixed_16_6_5_3_0_24u_config13_s              19              19             19            19              63.327 ns        63.327 ns       63.327 ns
+alveo_hls4ml_3  alveo_hls4ml  dense_array_array_ap_fixed_16_6_5_3_0_42u_config15_Pipeline_DataPrepare  6               6              6             6               19.998 ns        19.998 ns       19.998 ns
+alveo_hls4ml_3  alveo_hls4ml  dense_array_ap_fixed_24u_array_ap_fixed_16_6_5_3_0_42u_config15_s        10              10             10            10              33.330 ns        33.330 ns       33.330 ns
+alveo_hls4ml_3  alveo_hls4ml  normalize_array_ap_fixed_42u_array_ap_fixed_16_6_5_3_0_42u_config17_s    2               2              2             2               6.666 ns         6.666 ns        6.666 ns
+alveo_hls4ml_3  alveo_hls4ml  relu_array_ap_fixed_42u_array_ap_ufixed_6_0_4_0_0_42u_relu_config18_s    1               1              1             1               3.333 ns         3.333 ns        3.333 ns
+alveo_hls4ml_3  alveo_hls4ml  dense_array_ap_ufixed_42u_array_ap_fixed_16_6_5_3_0_64u_config19_s       5               5              5             5               16.665 ns        16.665 ns       16.665 ns
+alveo_hls4ml_3  alveo_hls4ml  normalize_array_ap_fixed_64u_array_ap_fixed_16_6_5_3_0_64u_config21_s    2               2              2             2               6.666 ns         6.666 ns        6.666 ns
+alveo_hls4ml_3  alveo_hls4ml  relu_array_ap_fixed_64u_array_ap_ufixed_6_0_4_0_0_64u_relu_config22_s    1               1              1             1               3.333 ns         3.333 ns        3.333 ns
+alveo_hls4ml_3  alveo_hls4ml  dense_array_ap_ufixed_64u_array_ap_fixed_16_6_5_3_0_10u_config23_s       4               4              4             4               13.332 ns        13.332 ns       13.332 ns
+alveo_hls4ml_3  alveo_hls4ml  softmax_stable_array_array_ap_fixed_16_6_5_3_0_10u_softmax_config25_s    10              10             10            10              33.330 ns        33.330 ns       33.330 ns
+alveo_hls4ml_3  alveo_hls4ml  softmax_array_array_ap_fixed_16_6_5_3_0_10u_softmax_config25_s           11              11             11            11              36.663 ns        36.663 ns       36.663 ns
+alveo_hls4ml_3  alveo_hls4ml  myproject                                                                3076            3099           3099          3099            10.329 us        10.329 us       10.329 us
+alveo_hls4ml_3  alveo_hls4ml  write_result                                                             75              75             75            75              0.250 us         0.250 us        0.250 us
+alveo_hls4ml_3  alveo_hls4ml  dataflow_in_loop_VITIS_LOOP_89_1                                         3149            3175           3175          3175            10.582 us        10.582 us       10.582 us
+alveo_hls4ml_3  alveo_hls4ml  alveo_hls4ml                                                             25796638        25796637       25796637      25796637        85.980 ms        85.980 ms       85.980 ms
 
 Area Information
 Compute Unit    Kernel Name   Module Name                                                              FF     LUT     DSP  BRAM  URAM
@@ -348,4 +418,39 @@ alveo_hls4ml_2  alveo_hls4ml  myproject                                         
 alveo_hls4ml_2  alveo_hls4ml  write_result                                                             378    548     0    0     0
 alveo_hls4ml_2  alveo_hls4ml  dataflow_in_loop_VITIS_LOOP_89_1                                         93133  258611  0    52    0
 alveo_hls4ml_2  alveo_hls4ml  alveo_hls4ml                                                             94998  261073  0    52    0
+alveo_hls4ml_3  alveo_hls4ml  entry_proc                                                               3      29      0    0     0
+alveo_hls4ml_3  alveo_hls4ml  read_input_Pipeline_VITIS_LOOP_41_1                                      66     132     0    0     0
+alveo_hls4ml_3  alveo_hls4ml  read_input                                                               206    759     0    0     0
+alveo_hls4ml_3  alveo_hls4ml  shift_line_buffer_array_ap_fixed_16_6_5_3_0_3u_config2_s                 385    354     0    0     0
+alveo_hls4ml_3  alveo_hls4ml  dense_latency_ap_fixed_16_6_5_3_0_ap_fixed_16_6_5_3_0_config2_mult_s     1661   6723    0    0     0
+alveo_hls4ml_3  alveo_hls4ml  compute_output_buffer_2d_array_array_ap_fixed_16_6_5_3_0_16u_config2_s   2902   7538    0    0     0
+alveo_hls4ml_3  alveo_hls4ml  conv_2d_cl_array_ap_fixed_3u_array_ap_fixed_16_6_5_3_0_16u_config2_s     2922   7690    0    0     0
+alveo_hls4ml_3  alveo_hls4ml  relu_array_ap_fixed_16u_array_ap_ufixed_6_0_4_0_0_16u_relu_config4_s     416    1281    0    0     0
+alveo_hls4ml_3  alveo_hls4ml  pooling2d_cl_array_array_ap_fixed_16_6_5_3_0_16u_config5_s               1704   1976    0    0     0
+alveo_hls4ml_3  alveo_hls4ml  shift_line_buffer_array_ap_fixed_16_6_5_3_0_16u_config6_s                2049   1888    0    0     0
+alveo_hls4ml_3  alveo_hls4ml  dense_latency_ap_fixed_16_6_5_3_0_ap_fixed_16_6_5_3_0_config6_mult_s     11324  38243   0    0     0
+alveo_hls4ml_3  alveo_hls4ml  compute_output_buffer_2d_array_array_ap_fixed_16_6_5_3_0_16u_config6_s   16103  40603   0    0     0
+alveo_hls4ml_3  alveo_hls4ml  conv_2d_cl_array_ap_fixed_16u_array_ap_fixed_16_6_5_3_0_16u_config6_s    16122  40762   0    0     0
+alveo_hls4ml_3  alveo_hls4ml  relu_array_ap_fixed_16u_array_ap_ufixed_6_0_4_0_0_16u_relu_config8_s     414    1279    0    0     0
+alveo_hls4ml_3  alveo_hls4ml  pooling2d_cl_array_array_ap_fixed_16_6_5_3_0_16u_config9_s               1702   1974    0    0     0
+alveo_hls4ml_3  alveo_hls4ml  shift_line_buffer_array_ap_fixed_16_6_5_3_0_16u_config10_s               2049   1888    0    0     0
+alveo_hls4ml_3  alveo_hls4ml  dense_latency_ap_fixed_16_6_5_3_0_ap_fixed_16_6_5_3_0_config10_mult_s    10998  46573   0    0     0
+alveo_hls4ml_3  alveo_hls4ml  compute_output_buffer_2d_array_array_ap_fixed_16_6_5_3_0_24u_config10_s  15905  48933   0    0     0
+alveo_hls4ml_3  alveo_hls4ml  conv_2d_cl_array_ap_fixed_16u_array_ap_fixed_16_6_5_3_0_24u_config10_s   15922  49089   0    0     0
+alveo_hls4ml_3  alveo_hls4ml  relu_array_ap_fixed_24u_array_ap_ufixed_6_0_4_0_0_24u_relu_config12_s    611    1867    0    0     0
+alveo_hls4ml_3  alveo_hls4ml  pooling2d_cl_array_array_ap_fixed_16_6_5_3_0_24u_config13_s              2459   2730    0    0     0
+alveo_hls4ml_3  alveo_hls4ml  dense_array_array_ap_fixed_16_6_5_3_0_42u_config15_Pipeline_DataPrepare  1528   68      0    0     0
+alveo_hls4ml_3  alveo_hls4ml  dense_array_ap_fixed_24u_array_ap_fixed_16_6_5_3_0_42u_config15_s        12288  49896   0    0     0
+alveo_hls4ml_3  alveo_hls4ml  normalize_array_ap_fixed_42u_array_ap_fixed_16_6_5_3_0_42u_config17_s    1769   1654    0    0     0
+alveo_hls4ml_3  alveo_hls4ml  relu_array_ap_fixed_42u_array_ap_ufixed_6_0_4_0_0_42u_relu_config18_s    1054   3160    0    0     0
+alveo_hls4ml_3  alveo_hls4ml  dense_array_ap_ufixed_42u_array_ap_fixed_16_6_5_3_0_64u_config19_s       6871   38965   0    0     0
+alveo_hls4ml_3  alveo_hls4ml  normalize_array_ap_fixed_64u_array_ap_fixed_16_6_5_3_0_64u_config21_s    2693   2490    0    0     0
+alveo_hls4ml_3  alveo_hls4ml  relu_array_ap_fixed_64u_array_ap_ufixed_6_0_4_0_0_64u_relu_config22_s    1604   4788    0    0     0
+alveo_hls4ml_3  alveo_hls4ml  dense_array_ap_ufixed_64u_array_ap_fixed_16_6_5_3_0_10u_config23_s       5671   36697   0    0     0
+alveo_hls4ml_3  alveo_hls4ml  softmax_stable_array_array_ap_fixed_16_6_5_3_0_10u_softmax_config25_s    728    1696    0    10    0
+alveo_hls4ml_3  alveo_hls4ml  softmax_array_array_ap_fixed_16_6_5_3_0_10u_softmax_config25_s           732    1739    0    10    0
+alveo_hls4ml_3  alveo_hls4ml  myproject                                                                91859  256812  0    50    0
+alveo_hls4ml_3  alveo_hls4ml  write_result                                                             378    548     0    0     0
+alveo_hls4ml_3  alveo_hls4ml  dataflow_in_loop_VITIS_LOOP_89_1                                         93133  258611  0    52    0
+alveo_hls4ml_3  alveo_hls4ml  alveo_hls4ml                                                             94998  261073  0    52    0
 -------------------------------------------------------------------------------

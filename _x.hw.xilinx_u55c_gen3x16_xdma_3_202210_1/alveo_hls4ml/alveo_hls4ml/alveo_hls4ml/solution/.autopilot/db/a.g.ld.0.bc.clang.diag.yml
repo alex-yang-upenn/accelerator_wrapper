@@ -31224,7 +31224,7 @@ Args:
 --- !Passed
 Pass:            reflow-auto-array-partition
 Name:            AutoParallelPerformanceDrivenVerbosePassed
-Function:        _ZN4nnet10conv_2d_clINS_5arrayI8ap_fixedILi16ELi6EL9ap_q_mode5EL9ap_o_mode3ELi0EELj3EEENS1_IS5_Lj16EEE7config2EEvRN3hls6streamIT_Li0EEERNSA_IT0_Li0EEEPNT1_8weight_tEPNSH_6bias_tE
+Function:        _ZN4nnet10conv_2d_clINS_5arrayI8ap_fixedILi16ELi6EL9ap_q_mode5EL9ap_o_mode3ELi0EELj16EEES6_7config6EEvRN3hls6streamIT_Li0EEERNS9_IT0_Li0EEEPNT1_8weight_tEPNSG_6bias_tE
 Args:            
   - PragmaType:      array_partition
   - String:          ' '
@@ -31232,7 +31232,7 @@ Args:
   - String:          ' '
   - PragmaIsAuto:    '1'
   - String:          ' '
-  - PragmaFunction:  'nnet::conv_2d_cl<nnet::array<ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, 3u>, nnet::array<ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, 16u>, config2>'
+  - PragmaFunction:  'nnet::conv_2d_cl<nnet::array<ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, 16u>, nnet::array<ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, 16u>, config6>'
   - String:          ' '
   - PragmaSrcLoc:    '/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv2d_stream.h:28:9'
     DebugLoc:        { File: /home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv2d_stream.h, 
@@ -31245,7 +31245,7 @@ Pass:            reflow-auto-array-partition
 Name:            AutoArrayXform
 DebugLoc:        { File: /home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv2d_stream.h, 
                    Line: 28, Column: 9 }
-Function:        _ZN4nnet10conv_2d_clINS_5arrayI8ap_fixedILi16ELi6EL9ap_q_mode5EL9ap_o_mode3ELi0EELj3EEENS1_IS5_Lj16EEE7config2EEvRN3hls6streamIT_Li0EEERNSA_IT0_Li0EEEPNT1_8weight_tEPNSH_6bias_tE
+Function:        _ZN4nnet10conv_2d_clINS_5arrayI8ap_fixedILi16ELi6EL9ap_q_mode5EL9ap_o_mode3ELi0EELj16EEES6_7config6EEvRN3hls6streamIT_Li0EEERNS9_IT0_Li0EEEPNT1_8weight_tEPNSG_6bias_tE
 Args:            
   - String:          'Inferring pragma '''
   - PragmaType:      array_partition
@@ -31302,7 +31302,7 @@ Args:
 --- !Passed
 Pass:            reflow-auto-array-partition
 Name:            AutoParallelPerformanceDrivenVerbosePassed
-Function:        _ZN4nnet10conv_2d_clINS_5arrayI8ap_fixedILi16ELi6EL9ap_q_mode5EL9ap_o_mode3ELi0EELj16EEES6_7config6EEvRN3hls6streamIT_Li0EEERNS9_IT0_Li0EEEPNT1_8weight_tEPNSG_6bias_tE
+Function:        _ZN4nnet10conv_2d_clINS_5arrayI8ap_fixedILi16ELi6EL9ap_q_mode5EL9ap_o_mode3ELi0EELj3EEENS1_IS5_Lj16EEE7config2EEvRN3hls6streamIT_Li0EEERNSA_IT0_Li0EEEPNT1_8weight_tEPNSH_6bias_tE
 Args:            
   - PragmaType:      array_partition
   - String:          ' '
@@ -31310,7 +31310,7 @@ Args:
   - String:          ' '
   - PragmaIsAuto:    '1'
   - String:          ' '
-  - PragmaFunction:  'nnet::conv_2d_cl<nnet::array<ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, 16u>, nnet::array<ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, 16u>, config6>'
+  - PragmaFunction:  'nnet::conv_2d_cl<nnet::array<ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, 3u>, nnet::array<ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, 16u>, config2>'
   - String:          ' '
   - PragmaSrcLoc:    '/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv2d_stream.h:28:9'
     DebugLoc:        { File: /home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv2d_stream.h, 
@@ -31323,7 +31323,7 @@ Pass:            reflow-auto-array-partition
 Name:            AutoArrayXform
 DebugLoc:        { File: /home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv2d_stream.h, 
                    Line: 28, Column: 9 }
-Function:        _ZN4nnet10conv_2d_clINS_5arrayI8ap_fixedILi16ELi6EL9ap_q_mode5EL9ap_o_mode3ELi0EELj16EEES6_7config6EEvRN3hls6streamIT_Li0EEERNS9_IT0_Li0EEEPNT1_8weight_tEPNSG_6bias_tE
+Function:        _ZN4nnet10conv_2d_clINS_5arrayI8ap_fixedILi16ELi6EL9ap_q_mode5EL9ap_o_mode3ELi0EELj3EEENS1_IS5_Lj16EEE7config2EEvRN3hls6streamIT_Li0EEERNSA_IT0_Li0EEEPNT1_8weight_tEPNSH_6bias_tE
 Args:            
   - String:          'Inferring pragma '''
   - PragmaType:      array_partition

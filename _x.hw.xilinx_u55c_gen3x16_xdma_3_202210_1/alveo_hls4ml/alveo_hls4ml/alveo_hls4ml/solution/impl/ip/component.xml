@@ -6013,8 +6013,8 @@
       </xilinx:taxonomies>
       <xilinx:displayName>Alveo_hls4ml</xilinx:displayName>
       <xilinx:definitionSource>HLS</xilinx:definitionSource>
-      <xilinx:coreRevision>2113424424</xilinx:coreRevision>
-      <xilinx:coreCreationDateTime>2024-02-12T06:31:09Z</xilinx:coreCreationDateTime>
+      <xilinx:coreRevision>2113426816</xilinx:coreRevision>
+      <xilinx:coreCreationDateTime>2024-02-13T22:23:31Z</xilinx:coreCreationDateTime>
       <xilinx:sdxKernelAttributes>
         <xilinx:sdx_kernel>true</xilinx:sdx_kernel>
         <xilinx:sdx_kernel_type>hls</xilinx:sdx_kernel_type>
