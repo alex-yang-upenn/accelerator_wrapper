@@ -3,7 +3,7 @@
 ================================================================
 == Vitis HLS Report for 'softmax_stable_array_array_ap_fixed_16_6_5_3_0_10u_softmax_config25_s'
 ================================================================
-* Date:           Tue Feb 13 22:01:56 2024
+* Date:           Thu Feb 15 07:30:33 2024
 
 * Version:        2022.2 (Build 3670227 on Oct 13 2022)
 * Project:        alveo_hls4ml
@@ -480,7 +480,6 @@ The critical path consists of the following:
 	'xor' operation ('xor_ln1651_8') [43]  (0 ns)
 	'select' operation ('x_max.V', /home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_common.h:65) [44]  (0.243 ns)
 	'sub' operation ('ret.V') [47]  (0.785 ns)
-	'xor' operation ('xor_ln302') [52]  (0 ns)
 	'select' operation ('__Result__') [118]  (0.303 ns)
 
  <State 4>: 1.2ns

@@ -11,7 +11,7 @@
 source /tools/Xilinx/Vitis_HLS/2022.2/scripts/vitis_hls/hls.tcl -notrace
 INFO: [HLS 200-10] Running '/tools/Xilinx/Vitis_HLS/2022.2/bin/unwrapped/lnx64.o/vitis_hls'
 /tools/Xilinx/Vitis_HLS/2022.2/tps/tcl/tcl8.5/tzdata/UTC can't be opened.
-INFO: [HLS 200-10] For user 'user' on host 'egl' (Linux_x86_64 version 5.10.187.release.2.9.0r4-amd64) on Tue Feb 13 21:29:20 UTC 2024
+INFO: [HLS 200-10] For user 'user' on host 'egl' (Linux_x86_64 version 5.10.187.release.2.9.0r4-amd64) on Thu Feb 15 06:55:32 UTC 2024
 INFO: [HLS 200-10] On os Ubuntu 20.04.4 LTS
 INFO: [HLS 200-10] In directory '/home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml'
 Sourcing Tcl script 'alveo_hls4ml.tcl'
@@ -46,7 +46,7 @@ INFO: [HLS 200-1907] Replacing 'config_export -deadlock_detection=sim' with 'con
 INFO: [HLS 200-1510] Running: config_interface -m_axi_auto_max_ports=true 
 INFO: [HLS 200-1510] Running: config_interface -m_axi_offset slave 
 INFO: [HLS 200-1510] Running: csynth_design 
-INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0.01 seconds. CPU system time: 0 seconds. Elapsed time: 0.17 seconds; current allocated memory: 754.199 MB.
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0.01 seconds. CPU system time: 0 seconds. Elapsed time: 0.16 seconds; current allocated memory: 754.199 MB.
 INFO: [HLS 200-10] Analyzing design file '/home/ayvol/accelerator_wrapper/src/myproject.cpp' ... 
 WARNING: [HLS 214-113] Either use an argument of the function or declare the variable inside the dataflow loop body (/home/ayvol/accelerator_wrapper/src/myproject.cpp:65:68)
 Resolution: For help on HLS 214-113 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.2;t=hls+guidance;d=214-113.html
@@ -98,7 +98,7 @@ WARNING: [HLS 214-114] Since the only kind of statements allowed in a canonical 
 Resolution: For help on HLS 214-114 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.2;t=hls+guidance;d=214-114.html
 WARNING: [HLS 200-471] Dataflow form checks found 3 issue(s) in file /home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp
 Resolution: For help on HLS 200-471 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.2;t=hls+guidance;d=200-471.html
-INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 20.65 seconds. CPU system time: 1.87 seconds. Elapsed time: 108.22 seconds; current allocated memory: 766.164 MB.
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 20.71 seconds. CPU system time: 2.15 seconds. Elapsed time: 135.56 seconds; current allocated memory: 766.164 MB.
 INFO: [HLS 200-777] Using interface defaults for 'Vitis' flow target.
 INFO: [HLS 214-131] Inlining function 'void nnet::kernel_shift_2d<nnet::array<ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, 3u>, config2>(nnet::array<ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, 3u>::value_type (*) [config2::n_chan], nnet::array<ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, 3u>::value_type*)' into 'void nnet::shift_line_buffer<nnet::array<ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, 3u>, config2>(nnet::array<ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, 3u> const&, ap_shift_reg<nnet::array<ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, 3u>::value_type, config2::in_width> (*) [config2::n_chan], nnet::array<ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, 3u>::value_type*)' (/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv_stream.h:252:5)
 INFO: [HLS 214-131] Inlining function 'nnet::product::mult<ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<6, 1, (ap_q_mode)5, (ap_o_mode)3, 0> >::product(ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<6, 1, (ap_q_mode)5, (ap_o_mode)3, 0>)' into 'void nnet::dense_latency<ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, config2_mult>(ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>*, ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>*, config2_mult::weight_t*, config2_mult::bias_t*)' (/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_latency.h:42:27)
@@ -533,7 +533,7 @@ INFO: [HLS 214-270] Inferring pragma 'array_partition type=complete dim=1' for a
 INFO: [HLS 214-248] Applying array_partition to 'ref.tmp.i': Complete partitioning on dimension 1.
 INFO: [HLS 214-115] Multiple burst reads of length 3072 and bit width 16 in loop 'VITIS_LOOP_41_1'(/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:41:20) has been inferred on bundle 'gmem0'. These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings. (/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:41:20)
 INFO: [HLS 214-115] Multiple burst writes of length 5 and bit width 32 has been inferred on bundle 'gmem1'. These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings. (/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:57:29)
-INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 1128.7 seconds. CPU system time: 2.44 seconds. Elapsed time: 1234.12 seconds; current allocated memory: 790.262 MB.
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 1126.68 seconds. CPU system time: 2.57 seconds. Elapsed time: 1230.97 seconds; current allocated memory: 790.262 MB.
 INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0 seconds; current allocated memory: 790.262 MB.
 INFO: [HLS 200-10] Starting code transformations ...
 INFO: [XFORM 203-603] Inlining function 'nnet::shift_line_buffer<nnet::array<ap_ufixed<6, 0, (ap_q_mode)4, (ap_o_mode)0, 0>, 16u>, config5>' into 'nnet::pooling2d_cl<nnet::array<ap_ufixed<6, 0, (ap_q_mode)4, (ap_o_mode)0, 0>, 16u>, nnet::array<ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, 16u>, config5>' (/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_pooling_stream.h:52).
@@ -598,10 +598,10 @@ INFO: [XFORM 203-603] Inlining function 'nnet::reduce<ap_fixed<16, 8, (ap_q_mode
 INFO: [XFORM 203-603] Inlining function 'nnet::dense_latency_wrapper<ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, config15>' into 'nnet::dense<nnet::array<ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, 24u>, nnet::array<ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, 42u>, config15>' (/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:95).
 INFO: [XFORM 203-603] Inlining function 'nnet::dense_latency_wrapper<ap_ufixed<6, 0, (ap_q_mode)4, (ap_o_mode)0, 0>, ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, config19>' into 'nnet::dense<nnet::array<ap_ufixed<6, 0, (ap_q_mode)4, (ap_o_mode)0, 0>, 42u>, nnet::array<ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, 64u>, config19>' (/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:95).
 INFO: [XFORM 203-603] Inlining function 'nnet::dense_latency_wrapper<ap_ufixed<6, 0, (ap_q_mode)4, (ap_o_mode)0, 0>, ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, config23>' into 'nnet::dense<nnet::array<ap_ufixed<6, 0, (ap_q_mode)4, (ap_o_mode)0, 0>, 64u>, nnet::array<ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, 10u>, config23>' (/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:95).
-INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 6.03 seconds. CPU system time: 0.17 seconds. Elapsed time: 20.22 seconds; current allocated memory: 1.035 GB.
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 5.96 seconds. CPU system time: 0.25 seconds. Elapsed time: 16.42 seconds; current allocated memory: 1.035 GB.
 INFO: [HLS 200-10] Checking synthesizability ...
 INFO: [XFORM 203-602] Inlining function 'nnet::reduce<ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, 10, nnet::Op_max<ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0> > >' into 'nnet::softmax_stable<nnet::array<ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, 10u>, nnet::array<ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, 10u>, softmax_config25>' (/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_activation_stream.h:209) automatically.
-INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 9.83 seconds. CPU system time: 0.17 seconds. Elapsed time: 11.14 seconds; current allocated memory: 1.151 GB.
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 9.74 seconds. CPU system time: 0.13 seconds. Elapsed time: 10.46 seconds; current allocated memory: 1.151 GB.
 INFO: [XFORM 203-102] Partitioning array 'in_elem.data.V' automatically.
 INFO: [XFORM 203-102] Partitioning array 'in_elem.data.V' automatically.
 INFO: [XFORM 203-102] Partitioning array 'in_elem.data.V' automatically.
@@ -644,7 +644,7 @@ INFO: [XFORM 203-11] Balancing expressions in function 'nnet::dense_latency<ap_f
 INFO: [XFORM 203-11] Balancing expressions in function 'nnet::dense<nnet::array<ap_ufixed<6, 0, (ap_q_mode)4, (ap_o_mode)0, 0>, 64u>, nnet::array<ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, 10u>, config23>' (/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_latency.h:17:32)...688 expression(s) balanced.
 INFO: [XFORM 203-11] Balancing expressions in function 'nnet::dense<nnet::array<ap_ufixed<6, 0, (ap_q_mode)4, (ap_o_mode)0, 0>, 42u>, nnet::array<ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, 64u>, config19>' (/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_latency.h:17:32)...953 expression(s) balanced.
 INFO: [XFORM 203-11] Balancing expressions in function 'nnet::dense<nnet::array<ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, 24u>, nnet::array<ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, 42u>, config15>' (/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:17:9)...1658 expression(s) balanced.
-INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 30.59 seconds. CPU system time: 0.48 seconds. Elapsed time: 36.13 seconds; current allocated memory: 1.473 GB.
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 30.07 seconds. CPU system time: 0.32 seconds. Elapsed time: 34.03 seconds; current allocated memory: 1.473 GB.
 INFO: [XFORM 203-541] Flattening a loop nest 'ReadInputHeight' (/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_pooling_stream.h:109:19) in function 'nnet::pooling2d_cl<nnet::array<ap_ufixed<6, 0, (ap_q_mode)4, (ap_o_mode)0, 0>, 24u>, nnet::array<ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, 24u>, config13>'.
 INFO: [XFORM 203-541] Flattening a loop nest 'ReadInputHeight' (/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_pooling_stream.h:109:19) in function 'nnet::pooling2d_cl<nnet::array<ap_ufixed<6, 0, (ap_q_mode)4, (ap_o_mode)0, 0>, 16u>, nnet::array<ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, 16u>, config9>'.
 INFO: [XFORM 203-541] Flattening a loop nest 'ReadInputHeight' (/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_pooling_stream.h:109:19) in function 'nnet::pooling2d_cl<nnet::array<ap_ufixed<6, 0, (ap_q_mode)4, (ap_o_mode)0, 0>, 16u>, nnet::array<ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, 16u>, config5>'.
@@ -652,7 +652,7 @@ INFO: [XFORM 203-541] Flattening a loop nest 'ReadInputHeight' (/home/ayvol/acce
 INFO: [XFORM 203-541] Flattening a loop nest 'ReadInputHeight' (/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv2d_stream.h:24:19) in function 'nnet::conv_2d_cl<nnet::array<ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, 16u>, nnet::array<ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, 24u>, config10>'.
 INFO: [XFORM 203-541] Flattening a loop nest 'ReadInputHeight' (/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv2d_stream.h:24:19) in function 'nnet::conv_2d_cl<nnet::array<ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, 16u>, nnet::array<ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, 16u>, config6>'.
 WARNING: [HLS 200-1449] Process dataflow_in_loop_VITIS_LOOP_89_1 has both a predecessor and reads an input from its caller (see the GUI dataflow viewer). This may lead to lower throughput. Consider copying this input via a predecessor process.
-INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 13.03 seconds. CPU system time: 0.35 seconds. Elapsed time: 15.05 seconds; current allocated memory: 1.986 GB.
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 12.85 seconds. CPU system time: 0.17 seconds. Elapsed time: 14.41 seconds; current allocated memory: 1.985 GB.
 INFO: [HLS 200-10] Starting hardware synthesis ...
 INFO: [HLS 200-10] Synthesizing 'alveo_hls4ml' ...
 WARNING: [SYN 201-103] Legalizing function name 'shift_line_buffer<array<ap_fixed<16, 6, 5, 3, 0>, 3u>, config2>' to 'shift_line_buffer_array_ap_fixed_16_6_5_3_0_3u_config2_s'.
@@ -688,13 +688,13 @@ INFO: [HLS 200-42] -- Implementing module 'entry_proc'
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [SCHED 204-11] Starting scheduling ...
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.79 seconds. CPU system time: 0.11 seconds. Elapsed time: 10.9 seconds; current allocated memory: 1.988 GB.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.8 seconds. CPU system time: 0.11 seconds. Elapsed time: 10.86 seconds; current allocated memory: 1.988 GB.
 INFO: [BIND 205-100] Starting micro-architecture generation ...
 INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Finished Binding: CPU user time: 0.03 seconds. CPU system time: 0 seconds. Elapsed time: 1.16 seconds; current allocated memory: 1.992 GB.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.04 seconds. CPU system time: 0 seconds. Elapsed time: 1.26 seconds; current allocated memory: 1.992 GB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-42] -- Implementing module 'read_input_Pipeline_VITIS_LOOP_41_1' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
@@ -706,25 +706,25 @@ WARNING: [HLS 200-880] The II Violation in module 'read_input_Pipeline_VITIS_LOO
 Resolution: For help on HLS 200-880 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.2;t=hls+guidance;d=200-880.html
 INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 3, Depth = 5, loop 'VITIS_LOOP_41_1'
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.07 seconds. CPU system time: 0.01 seconds. Elapsed time: 1.89 seconds; current allocated memory: 1.992 GB.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.09 seconds. CPU system time: 0 seconds. Elapsed time: 2.26 seconds; current allocated memory: 1.992 GB.
 INFO: [BIND 205-100] Starting micro-architecture generation ...
 INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Finished Binding: CPU user time: 0.06 seconds. CPU system time: 0.01 seconds. Elapsed time: 1.17 seconds; current allocated memory: 1.992 GB.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.07 seconds. CPU system time: 0 seconds. Elapsed time: 1.27 seconds; current allocated memory: 1.992 GB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-42] -- Implementing module 'read_input' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [SCHED 204-11] Starting scheduling ...
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.17 seconds. CPU system time: 0 seconds. Elapsed time: 1.3 seconds; current allocated memory: 1.992 GB.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.17 seconds. CPU system time: 0.02 seconds. Elapsed time: 1.38 seconds; current allocated memory: 1.992 GB.
 INFO: [BIND 205-100] Starting micro-architecture generation ...
 INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Finished Binding: CPU user time: 0.33 seconds. CPU system time: 0 seconds. Elapsed time: 1.44 seconds; current allocated memory: 1.993 GB.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.34 seconds. CPU system time: 0 seconds. Elapsed time: 1.56 seconds; current allocated memory: 1.993 GB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-42] -- Implementing module 'shift_line_buffer_array_ap_fixed_16_6_5_3_0_3u_config2_s' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
@@ -732,13 +732,13 @@ INFO: [SCHED 204-11] Starting scheduling ...
 INFO: [SCHED 204-61] Pipelining function 'shift_line_buffer<array<ap_fixed<16, 6, 5, 3, 0>, 3u>, config2>'.
 INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 1, function 'shift_line_buffer<array<ap_fixed<16, 6, 5, 3, 0>, 3u>, config2>'
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.13 seconds. CPU system time: 0.01 seconds. Elapsed time: 1.62 seconds; current allocated memory: 1.993 GB.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.13 seconds. CPU system time: 0 seconds. Elapsed time: 1.79 seconds; current allocated memory: 1.993 GB.
 INFO: [BIND 205-100] Starting micro-architecture generation ...
 INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Finished Binding: CPU user time: 0.05 seconds. CPU system time: 0 seconds. Elapsed time: 1.17 seconds; current allocated memory: 1.994 GB.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.04 seconds. CPU system time: 0 seconds. Elapsed time: 1.3 seconds; current allocated memory: 1.994 GB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-42] -- Implementing module 'dense_latency_ap_fixed_16_6_5_3_0_ap_fixed_16_6_5_3_0_config2_mult_s' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
@@ -746,14 +746,14 @@ INFO: [SCHED 204-11] Starting scheduling ...
 INFO: [SCHED 204-61] Pipelining function 'dense_latency<ap_fixed<16, 6, 5, 3, 0>, ap_fixed<16, 6, 5, 3, 0>, config2_mult>'.
 INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 2, function 'dense_latency<ap_fixed<16, 6, 5, 3, 0>, ap_fixed<16, 6, 5, 3, 0>, config2_mult>'
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.81 seconds. CPU system time: 0 seconds. Elapsed time: 2.29 seconds; current allocated memory: 1.994 GB.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.8 seconds. CPU system time: 0 seconds. Elapsed time: 2.41 seconds; current allocated memory: 1.994 GB.
 INFO: [BIND 205-100] Starting micro-architecture generation ...
 INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Starting global binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Finished Binding: CPU user time: 0.61 seconds. CPU system time: 0.01 seconds. Elapsed time: 1.92 seconds; current allocated memory: 1.997 GB.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.61 seconds. CPU system time: 0.01 seconds. Elapsed time: 2.01 seconds; current allocated memory: 1.997 GB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-42] -- Implementing module 'compute_output_buffer_2d_array_array_ap_fixed_16_6_5_3_0_16u_config2_s' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
@@ -765,13 +765,13 @@ WARNING: [HLS 200-880] The II Violation in module 'compute_output_buffer_2d_arra
 Resolution: For help on HLS 200-880 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.2;t=hls+guidance;d=200-880.html
 INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 3, Depth = 4, function 'compute_output_buffer_2d<array,array<ap_fixed<16,6,5,3,0>,16u>,config2>'
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111] Finished Scheduling: CPU user time: 1.14 seconds. CPU system time: 0.01 seconds. Elapsed time: 3.06 seconds; current allocated memory: 1.998 GB.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 1.14 seconds. CPU system time: 0.01 seconds. Elapsed time: 3.25 seconds; current allocated memory: 1.998 GB.
 INFO: [BIND 205-100] Starting micro-architecture generation ...
 INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Finished Binding: CPU user time: 0.35 seconds. CPU system time: 0 seconds. Elapsed time: 1.52 seconds; current allocated memory: 1.999 GB.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.35 seconds. CPU system time: 0.01 seconds. Elapsed time: 1.55 seconds; current allocated memory: 1.999 GB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-42] -- Implementing module 'conv_2d_cl_array_ap_fixed_3u_array_ap_fixed_16_6_5_3_0_16u_config2_s' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
@@ -779,13 +779,13 @@ INFO: [SCHED 204-11] Starting scheduling ...
 INFO: [SCHED 204-61] Pipelining loop 'ReadInputHeight_ReadInputWidth'.
 INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 3, Depth = 5, loop 'ReadInputHeight_ReadInputWidth'
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.94 seconds. CPU system time: 0 seconds. Elapsed time: 2.48 seconds; current allocated memory: 1.999 GB.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.92 seconds. CPU system time: 0 seconds. Elapsed time: 2.54 seconds; current allocated memory: 1.999 GB.
 INFO: [BIND 205-100] Starting micro-architecture generation ...
 INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Finished Binding: CPU user time: 0.35 seconds. CPU system time: 0 seconds. Elapsed time: 1.47 seconds; current allocated memory: 1.999 GB.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.36 seconds. CPU system time: 0 seconds. Elapsed time: 1.54 seconds; current allocated memory: 1.999 GB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-42] -- Implementing module 'relu_array_ap_fixed_16u_array_ap_ufixed_6_0_4_0_0_16u_relu_config4_s' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
@@ -793,13 +793,13 @@ INFO: [SCHED 204-11] Starting scheduling ...
 INFO: [SCHED 204-61] Pipelining loop 'ReLUActLoop'.
 INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 3, loop 'ReLUActLoop'
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111] Finished Scheduling: CPU user time: 1.12 seconds. CPU system time: 0 seconds. Elapsed time: 2.61 seconds; current allocated memory: 1.999 GB.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 1.12 seconds. CPU system time: 0 seconds. Elapsed time: 2.71 seconds; current allocated memory: 1.999 GB.
 INFO: [BIND 205-100] Starting micro-architecture generation ...
 INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Finished Binding: CPU user time: 0.32 seconds. CPU system time: 0.01 seconds. Elapsed time: 1.43 seconds; current allocated memory: 2.002 GB.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.31 seconds. CPU system time: 0.01 seconds. Elapsed time: 1.53 seconds; current allocated memory: 2.002 GB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-42] -- Implementing module 'pooling2d_cl_array_array_ap_fixed_16_6_5_3_0_16u_config5_s' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
@@ -807,13 +807,13 @@ INFO: [SCHED 204-11] Starting scheduling ...
 INFO: [SCHED 204-61] Pipelining loop 'ReadInputHeight_ReadInputWidth'.
 INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 3, loop 'ReadInputHeight_ReadInputWidth'
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.87 seconds. CPU system time: 0 seconds. Elapsed time: 2.39 seconds; current allocated memory: 2.002 GB.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.88 seconds. CPU system time: 0.01 seconds. Elapsed time: 2.47 seconds; current allocated memory: 2.002 GB.
 INFO: [BIND 205-100] Starting micro-architecture generation ...
 INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Finished Binding: CPU user time: 0.29 seconds. CPU system time: 0.02 seconds. Elapsed time: 1.45 seconds; current allocated memory: 2.005 GB.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.3 seconds. CPU system time: 0.01 seconds. Elapsed time: 1.52 seconds; current allocated memory: 2.005 GB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-42] -- Implementing module 'shift_line_buffer_array_ap_fixed_16_6_5_3_0_16u_config6_s' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
@@ -821,13 +821,13 @@ INFO: [SCHED 204-11] Starting scheduling ...
 INFO: [SCHED 204-61] Pipelining function 'shift_line_buffer<array<ap_fixed<16, 6, 5, 3, 0>, 16u>, config6>'.
 INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 1, function 'shift_line_buffer<array<ap_fixed<16, 6, 5, 3, 0>, 16u>, config6>'
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.68 seconds. CPU system time: 0.01 seconds. Elapsed time: 2.18 seconds; current allocated memory: 2.005 GB.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.69 seconds. CPU system time: 0.01 seconds. Elapsed time: 2.3 seconds; current allocated memory: 2.005 GB.
 INFO: [BIND 205-100] Starting micro-architecture generation ...
 INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Finished Binding: CPU user time: 0.07 seconds. CPU system time: 0.01 seconds. Elapsed time: 1.23 seconds; current allocated memory: 2.007 GB.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.09 seconds. CPU system time: 0 seconds. Elapsed time: 1.36 seconds; current allocated memory: 2.007 GB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-42] -- Implementing module 'dense_latency_ap_fixed_16_6_5_3_0_ap_fixed_16_6_5_3_0_config6_mult_s' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
@@ -835,14 +835,14 @@ INFO: [SCHED 204-11] Starting scheduling ...
 INFO: [SCHED 204-61] Pipelining function 'dense_latency<ap_fixed<16, 6, 5, 3, 0>, ap_fixed<16, 6, 5, 3, 0>, config6_mult>'.
 INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 3, function 'dense_latency<ap_fixed<16, 6, 5, 3, 0>, ap_fixed<16, 6, 5, 3, 0>, config6_mult>'
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111] Finished Scheduling: CPU user time: 5.18 seconds. CPU system time: 0.06 seconds. Elapsed time: 6.75 seconds; current allocated memory: 2.037 GB.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 5.16 seconds. CPU system time: 0.06 seconds. Elapsed time: 6.78 seconds; current allocated memory: 2.037 GB.
 INFO: [BIND 205-100] Starting micro-architecture generation ...
 INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Starting global binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Finished Binding: CPU user time: 6.31 seconds. CPU system time: 0.09 seconds. Elapsed time: 7.89 seconds; current allocated memory: 2.071 GB.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 6.19 seconds. CPU system time: 0.03 seconds. Elapsed time: 7.97 seconds; current allocated memory: 2.071 GB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-42] -- Implementing module 'compute_output_buffer_2d_array_array_ap_fixed_16_6_5_3_0_16u_config6_s' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
@@ -858,13 +858,13 @@ WARNING: [HLS 200-880] The II Violation in module 'compute_output_buffer_2d_arra
 Resolution: For help on HLS 200-880 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.2;t=hls+guidance;d=200-880.html
 INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 5, Depth = 6, function 'compute_output_buffer_2d<array,array<ap_fixed<16,6,5,3,0>,16u>,config6>'
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111] Finished Scheduling: CPU user time: 6.64 seconds. CPU system time: 0.06 seconds. Elapsed time: 9.03 seconds; current allocated memory: 2.071 GB.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 6.56 seconds. CPU system time: 0.09 seconds. Elapsed time: 9.08 seconds; current allocated memory: 2.071 GB.
 INFO: [BIND 205-100] Starting micro-architecture generation ...
 INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Finished Binding: CPU user time: 1.71 seconds. CPU system time: 0.02 seconds. Elapsed time: 2.92 seconds; current allocated memory: 2.071 GB.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 1.71 seconds. CPU system time: 0.03 seconds. Elapsed time: 2.93 seconds; current allocated memory: 2.071 GB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-42] -- Implementing module 'conv_2d_cl_array_ap_fixed_16u_array_ap_fixed_16_6_5_3_0_16u_config6_s' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
@@ -872,13 +872,13 @@ INFO: [SCHED 204-11] Starting scheduling ...
 INFO: [SCHED 204-61] Pipelining loop 'ReadInputHeight_ReadInputWidth'.
 INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 5, Depth = 7, loop 'ReadInputHeight_ReadInputWidth'
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111] Finished Scheduling: CPU user time: 5.05 seconds. CPU system time: 0.03 seconds. Elapsed time: 6.55 seconds; current allocated memory: 2.071 GB.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 5.03 seconds. CPU system time: 0.03 seconds. Elapsed time: 6.61 seconds; current allocated memory: 2.071 GB.
 INFO: [BIND 205-100] Starting micro-architecture generation ...
 INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Finished Binding: CPU user time: 1.73 seconds. CPU system time: 0 seconds. Elapsed time: 2.84 seconds; current allocated memory: 2.071 GB.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 1.72 seconds. CPU system time: 0 seconds. Elapsed time: 2.92 seconds; current allocated memory: 2.071 GB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-42] -- Implementing module 'relu_array_ap_fixed_16u_array_ap_ufixed_6_0_4_0_0_16u_relu_config8_s' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
@@ -886,13 +886,13 @@ INFO: [SCHED 204-11] Starting scheduling ...
 INFO: [SCHED 204-61] Pipelining loop 'ReLUActLoop'.
 INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 3, loop 'ReLUActLoop'
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111] Finished Scheduling: CPU user time: 5.23 seconds. CPU system time: 0.14 seconds. Elapsed time: 6.96 seconds; current allocated memory: 2.071 GB.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 5.23 seconds. CPU system time: 0.01 seconds. Elapsed time: 6.8 seconds; current allocated memory: 2.071 GB.
 INFO: [BIND 205-100] Starting micro-architecture generation ...
 INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Finished Binding: CPU user time: 0.34 seconds. CPU system time: 0.11 seconds. Elapsed time: 1.61 seconds; current allocated memory: 2.071 GB.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.31 seconds. CPU system time: 0 seconds. Elapsed time: 1.53 seconds; current allocated memory: 2.071 GB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-42] -- Implementing module 'pooling2d_cl_array_array_ap_fixed_16_6_5_3_0_16u_config9_s' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
@@ -900,13 +900,13 @@ INFO: [SCHED 204-11] Starting scheduling ...
 INFO: [SCHED 204-61] Pipelining loop 'ReadInputHeight_ReadInputWidth'.
 INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 3, loop 'ReadInputHeight_ReadInputWidth'
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.91 seconds. CPU system time: 0.13 seconds. Elapsed time: 2.48 seconds; current allocated memory: 2.071 GB.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.89 seconds. CPU system time: 0.01 seconds. Elapsed time: 2.43 seconds; current allocated memory: 2.071 GB.
 INFO: [BIND 205-100] Starting micro-architecture generation ...
 INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Finished Binding: CPU user time: 0.29 seconds. CPU system time: 0.01 seconds. Elapsed time: 1.4 seconds; current allocated memory: 2.071 GB.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.29 seconds. CPU system time: 0 seconds. Elapsed time: 1.48 seconds; current allocated memory: 2.071 GB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-42] -- Implementing module 'shift_line_buffer_array_ap_fixed_16_6_5_3_0_16u_config10_s' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
@@ -914,13 +914,13 @@ INFO: [SCHED 204-11] Starting scheduling ...
 INFO: [SCHED 204-61] Pipelining function 'shift_line_buffer<array<ap_fixed<16, 6, 5, 3, 0>, 16u>, config10>'.
 INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 1, function 'shift_line_buffer<array<ap_fixed<16, 6, 5, 3, 0>, 16u>, config10>'
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.67 seconds. CPU system time: 0.09 seconds. Elapsed time: 2.25 seconds; current allocated memory: 2.071 GB.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.68 seconds. CPU system time: 0.01 seconds. Elapsed time: 2.46 seconds; current allocated memory: 2.071 GB.
 INFO: [BIND 205-100] Starting micro-architecture generation ...
 INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Finished Binding: CPU user time: 0.08 seconds. CPU system time: 0.05 seconds. Elapsed time: 1.38 seconds; current allocated memory: 2.071 GB.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.08 seconds. CPU system time: 0.01 seconds. Elapsed time: 1.25 seconds; current allocated memory: 2.071 GB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-42] -- Implementing module 'dense_latency_ap_fixed_16_6_5_3_0_ap_fixed_16_6_5_3_0_config10_mult_s' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
@@ -928,14 +928,14 @@ INFO: [SCHED 204-11] Starting scheduling ...
 INFO: [SCHED 204-61] Pipelining function 'dense_latency<ap_fixed<16, 6, 5, 3, 0>, ap_fixed<16, 6, 5, 3, 0>, config10_mult>'.
 INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 3, function 'dense_latency<ap_fixed<16, 6, 5, 3, 0>, ap_fixed<16, 6, 5, 3, 0>, config10_mult>'
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111] Finished Scheduling: CPU user time: 6.09 seconds. CPU system time: 0.02 seconds. Elapsed time: 7.6 seconds; current allocated memory: 2.095 GB.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 6.12 seconds. CPU system time: 0.05 seconds. Elapsed time: 7.69 seconds; current allocated memory: 2.095 GB.
 INFO: [BIND 205-100] Starting micro-architecture generation ...
 INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Starting global binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Finished Binding: CPU user time: 7.82 seconds. CPU system time: 0.08 seconds. Elapsed time: 9.38 seconds; current allocated memory: 2.098 GB.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 7.83 seconds. CPU system time: 0.01 seconds. Elapsed time: 9.33 seconds; current allocated memory: 2.098 GB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-42] -- Implementing module 'compute_output_buffer_2d_array_array_ap_fixed_16_6_5_3_0_24u_config10_s' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
@@ -951,13 +951,13 @@ WARNING: [HLS 200-880] The II Violation in module 'compute_output_buffer_2d_arra
 Resolution: For help on HLS 200-880 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.2;t=hls+guidance;d=200-880.html
 INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 5, Depth = 6, function 'compute_output_buffer_2d<array,array<ap_fixed<16,6,5,3,0>,24u>,config10>'
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111] Finished Scheduling: CPU user time: 8.06 seconds. CPU system time: 0.28 seconds. Elapsed time: 10.64 seconds; current allocated memory: 2.100 GB.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 7.92 seconds. CPU system time: 0.05 seconds. Elapsed time: 10.45 seconds; current allocated memory: 2.100 GB.
 INFO: [BIND 205-100] Starting micro-architecture generation ...
 INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Finished Binding: CPU user time: 2.05 seconds. CPU system time: 0 seconds. Elapsed time: 3.17 seconds; current allocated memory: 2.100 GB.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 2.05 seconds. CPU system time: 0.01 seconds. Elapsed time: 3.36 seconds; current allocated memory: 2.100 GB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-42] -- Implementing module 'conv_2d_cl_array_ap_fixed_16u_array_ap_fixed_16_6_5_3_0_24u_config10_s' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
@@ -965,13 +965,13 @@ INFO: [SCHED 204-11] Starting scheduling ...
 INFO: [SCHED 204-61] Pipelining loop 'ReadInputHeight_ReadInputWidth'.
 INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 5, Depth = 7, loop 'ReadInputHeight_ReadInputWidth'
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111] Finished Scheduling: CPU user time: 6.07 seconds. CPU system time: 0.24 seconds. Elapsed time: 7.61 seconds; current allocated memory: 2.100 GB.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 6.02 seconds. CPU system time: 0.01 seconds. Elapsed time: 7.67 seconds; current allocated memory: 2.100 GB.
 INFO: [BIND 205-100] Starting micro-architecture generation ...
 INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Finished Binding: CPU user time: 2.04 seconds. CPU system time: 0.04 seconds. Elapsed time: 3.08 seconds; current allocated memory: 2.100 GB.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 2.05 seconds. CPU system time: 0 seconds. Elapsed time: 3.36 seconds; current allocated memory: 2.100 GB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-42] -- Implementing module 'relu_array_ap_fixed_24u_array_ap_ufixed_6_0_4_0_0_24u_relu_config12_s' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
@@ -979,13 +979,13 @@ INFO: [SCHED 204-11] Starting scheduling ...
 INFO: [SCHED 204-61] Pipelining loop 'ReLUActLoop'.
 INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 3, loop 'ReLUActLoop'
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111] Finished Scheduling: CPU user time: 6.28 seconds. CPU system time: 0.11 seconds. Elapsed time: 7.74 seconds; current allocated memory: 2.101 GB.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 6.29 seconds. CPU system time: 0.01 seconds. Elapsed time: 7.84 seconds; current allocated memory: 2.101 GB.
 INFO: [BIND 205-100] Starting micro-architecture generation ...
 INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Finished Binding: CPU user time: 0.46 seconds. CPU system time: 0.01 seconds. Elapsed time: 1.46 seconds; current allocated memory: 2.104 GB.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.46 seconds. CPU system time: 0.01 seconds. Elapsed time: 1.72 seconds; current allocated memory: 2.104 GB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-42] -- Implementing module 'pooling2d_cl_array_array_ap_fixed_16_6_5_3_0_24u_config13_s' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
@@ -993,13 +993,13 @@ INFO: [SCHED 204-11] Starting scheduling ...
 INFO: [SCHED 204-61] Pipelining loop 'ReadInputHeight_ReadInputWidth'.
 INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 3, loop 'ReadInputHeight_ReadInputWidth'
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111] Finished Scheduling: CPU user time: 1.28 seconds. CPU system time: 0.01 seconds. Elapsed time: 2.6 seconds; current allocated memory: 2.105 GB.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 1.28 seconds. CPU system time: 0 seconds. Elapsed time: 2.85 seconds; current allocated memory: 2.105 GB.
 INFO: [BIND 205-100] Starting micro-architecture generation ...
 INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Finished Binding: CPU user time: 0.41 seconds. CPU system time: 0.01 seconds. Elapsed time: 1.41 seconds; current allocated memory: 2.108 GB.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.41 seconds. CPU system time: 0 seconds. Elapsed time: 1.58 seconds; current allocated memory: 2.108 GB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-42] -- Implementing module 'dense_array_array_ap_fixed_16_6_5_3_0_42u_config15_Pipeline_DataPrepare' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
@@ -1007,127 +1007,127 @@ INFO: [SCHED 204-11] Starting scheduling ...
 INFO: [SCHED 204-61] Pipelining loop 'DataPrepare'.
 INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 2, loop 'DataPrepare'
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.93 seconds. CPU system time: 0 seconds. Elapsed time: 2.25 seconds; current allocated memory: 2.109 GB.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.92 seconds. CPU system time: 0.01 seconds. Elapsed time: 2.53 seconds; current allocated memory: 2.109 GB.
 INFO: [BIND 205-100] Starting micro-architecture generation ...
 INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Finished Binding: CPU user time: 0.08 seconds. CPU system time: 0.01 seconds. Elapsed time: 1.12 seconds; current allocated memory: 2.111 GB.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.09 seconds. CPU system time: 0 seconds. Elapsed time: 1.24 seconds; current allocated memory: 2.111 GB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-42] -- Implementing module 'dense_array_ap_fixed_24u_array_ap_fixed_16_6_5_3_0_42u_config15_s' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [SCHED 204-11] Starting scheduling ...
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111] Finished Scheduling: CPU user time: 6.18 seconds. CPU system time: 0.07 seconds. Elapsed time: 7.27 seconds; current allocated memory: 2.146 GB.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 6.07 seconds. CPU system time: 0.05 seconds. Elapsed time: 7.55 seconds; current allocated memory: 2.146 GB.
 INFO: [BIND 205-100] Starting micro-architecture generation ...
 INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Starting global binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Finished Binding: CPU user time: 8.49 seconds. CPU system time: 0.13 seconds. Elapsed time: 9.91 seconds; current allocated memory: 2.150 GB.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 8.51 seconds. CPU system time: 0.05 seconds. Elapsed time: 10.1 seconds; current allocated memory: 2.150 GB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-42] -- Implementing module 'normalize_array_ap_fixed_42u_array_ap_fixed_16_6_5_3_0_42u_config17_s' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [SCHED 204-11] Starting scheduling ...
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111] Finished Scheduling: CPU user time: 8.73 seconds. CPU system time: 0.02 seconds. Elapsed time: 9.89 seconds; current allocated memory: 2.152 GB.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 8.69 seconds. CPU system time: 0.07 seconds. Elapsed time: 10.09 seconds; current allocated memory: 2.152 GB.
 INFO: [BIND 205-100] Starting micro-architecture generation ...
 INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Starting global binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Finished Binding: CPU user time: 0.27 seconds. CPU system time: 0 seconds. Elapsed time: 1.42 seconds; current allocated memory: 2.153 GB.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.28 seconds. CPU system time: 0.01 seconds. Elapsed time: 1.64 seconds; current allocated memory: 2.153 GB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-42] -- Implementing module 'relu_array_ap_fixed_42u_array_ap_ufixed_6_0_4_0_0_42u_relu_config18_s' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [SCHED 204-11] Starting scheduling ...
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.86 seconds. CPU system time: 0.01 seconds. Elapsed time: 1.86 seconds; current allocated memory: 2.155 GB.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.88 seconds. CPU system time: 0.01 seconds. Elapsed time: 2.06 seconds; current allocated memory: 2.155 GB.
 INFO: [BIND 205-100] Starting micro-architecture generation ...
 INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Finished Binding: CPU user time: 0.76 seconds. CPU system time: 0.01 seconds. Elapsed time: 1.8 seconds; current allocated memory: 2.159 GB.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.79 seconds. CPU system time: 0 seconds. Elapsed time: 1.95 seconds; current allocated memory: 2.159 GB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-42] -- Implementing module 'dense_array_ap_ufixed_42u_array_ap_fixed_16_6_5_3_0_64u_config19_s' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [SCHED 204-11] Starting scheduling ...
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111] Finished Scheduling: CPU user time: 6.22 seconds. CPU system time: 0.03 seconds. Elapsed time: 7.26 seconds; current allocated memory: 2.190 GB.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 6.23 seconds. CPU system time: 0.02 seconds. Elapsed time: 7.44 seconds; current allocated memory: 2.190 GB.
 INFO: [BIND 205-100] Starting micro-architecture generation ...
 INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Starting global binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Finished Binding: CPU user time: 4.57 seconds. CPU system time: 0.13 seconds. Elapsed time: 5.99 seconds; current allocated memory: 2.191 GB.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 4.6 seconds. CPU system time: 0.02 seconds. Elapsed time: 6.19 seconds; current allocated memory: 2.191 GB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-42] -- Implementing module 'normalize_array_ap_fixed_64u_array_ap_fixed_16_6_5_3_0_64u_config21_s' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [SCHED 204-11] Starting scheduling ...
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111] Finished Scheduling: CPU user time: 6.21 seconds. CPU system time: 0.05 seconds. Elapsed time: 7.43 seconds; current allocated memory: 2.191 GB.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 6.12 seconds. CPU system time: 0.03 seconds. Elapsed time: 7.56 seconds; current allocated memory: 2.191 GB.
 INFO: [BIND 205-100] Starting micro-architecture generation ...
 INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Starting global binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Finished Binding: CPU user time: 0.4 seconds. CPU system time: 0 seconds. Elapsed time: 1.56 seconds; current allocated memory: 2.191 GB.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.4 seconds. CPU system time: 0 seconds. Elapsed time: 1.73 seconds; current allocated memory: 2.191 GB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-42] -- Implementing module 'relu_array_ap_fixed_64u_array_ap_ufixed_6_0_4_0_0_64u_relu_config22_s' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [SCHED 204-11] Starting scheduling ...
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111] Finished Scheduling: CPU user time: 1.36 seconds. CPU system time: 0.01 seconds. Elapsed time: 2.37 seconds; current allocated memory: 2.195 GB.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 1.35 seconds. CPU system time: 0.02 seconds. Elapsed time: 2.55 seconds; current allocated memory: 2.195 GB.
 INFO: [BIND 205-100] Starting micro-architecture generation ...
 INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Finished Binding: CPU user time: 1.17 seconds. CPU system time: 0.01 seconds. Elapsed time: 2.3 seconds; current allocated memory: 2.198 GB.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 1.19 seconds. CPU system time: 0 seconds. Elapsed time: 2.35 seconds; current allocated memory: 2.198 GB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-42] -- Implementing module 'dense_array_ap_ufixed_64u_array_ap_fixed_16_6_5_3_0_10u_config23_s' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [SCHED 204-11] Starting scheduling ...
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111] Finished Scheduling: CPU user time: 16.37 seconds. CPU system time: 0.03 seconds. Elapsed time: 17.79 seconds; current allocated memory: 2.220 GB.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 16.39 seconds. CPU system time: 0.04 seconds. Elapsed time: 17.7 seconds; current allocated memory: 2.220 GB.
 INFO: [BIND 205-100] Starting micro-architecture generation ...
 INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Starting global binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Finished Binding: CPU user time: 6.23 seconds. CPU system time: 0.2 seconds. Elapsed time: 8.08 seconds; current allocated memory: 2.359 GB.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 6.1 seconds. CPU system time: 0.09 seconds. Elapsed time: 7.98 seconds; current allocated memory: 2.359 GB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-42] -- Implementing module 'softmax_stable_array_array_ap_fixed_16_6_5_3_0_10u_softmax_config25_s' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [SCHED 204-11] Starting scheduling ...
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111] Finished Scheduling: CPU user time: 4.91 seconds. CPU system time: 0.2 seconds. Elapsed time: 6.46 seconds; current allocated memory: 2.359 GB.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 4.91 seconds. CPU system time: 0.03 seconds. Elapsed time: 6.28 seconds; current allocated memory: 2.359 GB.
 INFO: [BIND 205-100] Starting micro-architecture generation ...
 INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Starting global binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Finished Binding: CPU user time: 0.4 seconds. CPU system time: 0 seconds. Elapsed time: 1.82 seconds; current allocated memory: 2.359 GB.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.38 seconds. CPU system time: 0.02 seconds. Elapsed time: 1.74 seconds; current allocated memory: 2.359 GB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-42] -- Implementing module 'softmax_array_array_ap_fixed_16_6_5_3_0_10u_softmax_config25_s' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [SCHED 204-11] Starting scheduling ...
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.61 seconds. CPU system time: 0.01 seconds. Elapsed time: 1.8 seconds; current allocated memory: 2.359 GB.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.62 seconds. CPU system time: 0.01 seconds. Elapsed time: 1.92 seconds; current allocated memory: 2.359 GB.
 INFO: [BIND 205-100] Starting micro-architecture generation ...
 INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Finished Binding: CPU user time: 0.19 seconds. CPU system time: 0 seconds. Elapsed time: 1.4 seconds; current allocated memory: 2.359 GB.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.19 seconds. CPU system time: 0 seconds. Elapsed time: 1.34 seconds; current allocated memory: 2.359 GB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-42] -- Implementing module 'myproject' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
@@ -1140,55 +1140,55 @@ WARNING: [HLS 200-1018] Consider increasing the depth of FIFO layer19_out (from 
 WARNING: [HLS 200-1018] Consider increasing the depth of FIFO layer21_out (from normalize_array_ap_fixed_64u_array_ap_fixed_16_6_5_3_0_64u_config21_U0 to relu_array_ap_fixed_64u_array_ap_ufixed_6_0_4_0_0_64u_relu_config22_U0) to 2 to improve performance and/or avoid deadlocks.
 WARNING: [HLS 200-1018] Consider increasing the depth of FIFO layer22_out (from relu_array_ap_fixed_64u_array_ap_ufixed_6_0_4_0_0_64u_relu_config22_U0 to dense_array_ap_ufixed_64u_array_ap_fixed_16_6_5_3_0_10u_config23_U0) to 2 to improve performance and/or avoid deadlocks.
 WARNING: [HLS 200-1018] Consider increasing the depth of FIFO layer23_out (from dense_array_ap_ufixed_64u_array_ap_fixed_16_6_5_3_0_10u_config23_U0 to softmax_array_array_ap_fixed_16_6_5_3_0_10u_softmax_config25_U0) to 2 to improve performance and/or avoid deadlocks.
-INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.6 seconds. CPU system time: 0.01 seconds. Elapsed time: 3.14 seconds; current allocated memory: 2.359 GB.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.59 seconds. CPU system time: 0.02 seconds. Elapsed time: 3.06 seconds; current allocated memory: 2.359 GB.
 INFO: [BIND 205-100] Starting micro-architecture generation ...
 INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Finished Binding: CPU user time: 11.16 seconds. CPU system time: 0.08 seconds. Elapsed time: 12.41 seconds; current allocated memory: 2.359 GB.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 11.18 seconds. CPU system time: 0.03 seconds. Elapsed time: 12.36 seconds; current allocated memory: 2.359 GB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-42] -- Implementing module 'write_result' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [SCHED 204-11] Starting scheduling ...
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111] Finished Scheduling: CPU user time: 33.3 seconds. CPU system time: 0.58 seconds. Elapsed time: 35.12 seconds; current allocated memory: 2.359 GB.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 33.09 seconds. CPU system time: 0.09 seconds. Elapsed time: 34.3 seconds; current allocated memory: 2.359 GB.
 INFO: [BIND 205-100] Starting micro-architecture generation ...
 INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Finished Binding: CPU user time: 0.34 seconds. CPU system time: 0.01 seconds. Elapsed time: 1.42 seconds; current allocated memory: 2.359 GB.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.36 seconds. CPU system time: 0.01 seconds. Elapsed time: 1.44 seconds; current allocated memory: 2.359 GB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-42] -- Implementing module 'dataflow_in_loop_VITIS_LOOP_89_1' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [SCHED 204-11] Starting scheduling ...
 INFO: [SCHED 204-11] Finished scheduling.
 WARNING: [HLS 200-1018] Consider increasing the depth of FIFO output2 (from myproject_U0 to write_result_U0) to 2 to improve performance and/or avoid deadlocks.
-INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.15 seconds. CPU system time: 0.01 seconds. Elapsed time: 1.39 seconds; current allocated memory: 2.359 GB.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.16 seconds. CPU system time: 0 seconds. Elapsed time: 1.39 seconds; current allocated memory: 2.359 GB.
 INFO: [BIND 205-100] Starting micro-architecture generation ...
 INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Finished Binding: CPU user time: 11.06 seconds. CPU system time: 0.05 seconds. Elapsed time: 12.16 seconds; current allocated memory: 2.359 GB.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 11.06 seconds. CPU system time: 0.03 seconds. Elapsed time: 12.16 seconds; current allocated memory: 2.359 GB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-42] -- Implementing module 'alveo_hls4ml' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [SCHED 204-11] Starting scheduling ...
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111] Finished Scheduling: CPU user time: 33.14 seconds. CPU system time: 0.25 seconds. Elapsed time: 34.65 seconds; current allocated memory: 2.359 GB.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 32.98 seconds. CPU system time: 0.12 seconds. Elapsed time: 34.2 seconds; current allocated memory: 2.359 GB.
 INFO: [BIND 205-100] Starting micro-architecture generation ...
 INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Finished Binding: CPU user time: 11.15 seconds. CPU system time: 0.08 seconds. Elapsed time: 12.3 seconds; current allocated memory: 2.359 GB.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 11.15 seconds. CPU system time: 0.02 seconds. Elapsed time: 12.25 seconds; current allocated memory: 2.359 GB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Generating RTL for module 'entry_proc' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [RTGEN 206-100] Finished creating RTL model for 'entry_proc'.
-INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 33.24 seconds. CPU system time: 0.28 seconds. Elapsed time: 34.68 seconds; current allocated memory: 2.359 GB.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 33.15 seconds. CPU system time: 0.05 seconds. Elapsed time: 34.25 seconds; current allocated memory: 2.359 GB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Generating RTL for module 'read_input_Pipeline_VITIS_LOOP_41_1' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
@@ -1206,12 +1206,12 @@ WARNING: [RTGEN 206-101] Setting dangling out port 'read_input_Pipeline_VITIS_LO
 WARNING: [RTGEN 206-101] Setting dangling out port 'read_input_Pipeline_VITIS_LOOP_41_1/m_axi_gmem0_ARREGION' to 0.
 WARNING: [RTGEN 206-101] Setting dangling out port 'read_input_Pipeline_VITIS_LOOP_41_1/m_axi_gmem0_ARUSER' to 0.
 INFO: [RTGEN 206-100] Finished creating RTL model for 'read_input_Pipeline_VITIS_LOOP_41_1'.
-INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.17 seconds. CPU system time: 0.02 seconds. Elapsed time: 4.48 seconds; current allocated memory: 2.359 GB.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.2 seconds. CPU system time: 0.01 seconds. Elapsed time: 4.41 seconds; current allocated memory: 2.359 GB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Generating RTL for module 'read_input' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [RTGEN 206-100] Finished creating RTL model for 'read_input'.
-INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.11 seconds. CPU system time: 0.02 seconds. Elapsed time: 3.14 seconds; current allocated memory: 2.359 GB.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.11 seconds. CPU system time: 0.02 seconds. Elapsed time: 2 seconds; current allocated memory: 2.359 GB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Generating RTL for module 'shift_line_buffer_array_ap_fixed_16_6_5_3_0_3u_config2_s' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
@@ -1222,7 +1222,7 @@ INFO: [SYN 201-210] Renamed object name 'shift_line_buffer_array_ap_fixed_16_6_5
 INFO: [SYN 201-210] Renamed object name 'shift_line_buffer_array_ap_fixed_16_6_5_3_0_3u_config2_s_p_ZZN4nnet25conv_2d_buffer_latency_clINS_5arrayI8ap_fixedILi16ELi6EL9ap_q_mode5EL_3_SHIFTREG_AUTO_0R0W' to 'shift_line_buffer_array_ap_fixed_16_6_5_3_0_3u_config2_s_p_ZZN4nnet25conv_2d_fYi' due to the length limit 80
 INFO: [SYN 201-210] Renamed object name 'shift_line_buffer_array_ap_fixed_16_6_5_3_0_3u_config2_s_p_ZZN4nnet25conv_2d_buffer_latency_clINS_5arrayI8ap_fixedILi16ELi6EL9ap_q_mode5EL_SHIFTREG_AUTO_0R0W' to 'shift_line_buffer_array_ap_fixed_16_6_5_3_0_3u_config2_s_p_ZZN4nnet25conv_2d_g8j' due to the length limit 80
 INFO: [RTGEN 206-100] Finished creating RTL model for 'shift_line_buffer_array_ap_fixed_16_6_5_3_0_3u_config2_s'.
-INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.2 seconds. CPU system time: 0.02 seconds. Elapsed time: 5.01 seconds; current allocated memory: 2.359 GB.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.2 seconds. CPU system time: 0.01 seconds. Elapsed time: 6.47 seconds; current allocated memory: 2.359 GB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Generating RTL for module 'dense_latency_ap_fixed_16_6_5_3_0_ap_fixed_16_6_5_3_0_config2_mult_s' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
@@ -1230,7 +1230,7 @@ INFO: [RTGEN 206-100] Generating core module 'mul_16s_5ns_21_1_0': 6 instance(s)
 INFO: [RTGEN 206-100] Generating core module 'mul_16s_6ns_21_1_0': 6 instance(s).
 INFO: [RTGEN 206-100] Generating core module 'mul_16s_6s_21_1_0': 5 instance(s).
 INFO: [RTGEN 206-100] Finished creating RTL model for 'dense_latency_ap_fixed_16_6_5_3_0_ap_fixed_16_6_5_3_0_config2_mult_s'.
-INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.28 seconds. CPU system time: 0.03 seconds. Elapsed time: 5.37 seconds; current allocated memory: 2.359 GB.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.26 seconds. CPU system time: 0.03 seconds. Elapsed time: 7.25 seconds; current allocated memory: 2.359 GB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Generating RTL for module 'compute_output_buffer_2d_array_array_ap_fixed_16_6_5_3_0_16u_config2_s' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
@@ -1267,19 +1267,19 @@ WARNING: [RTGEN 206-101] Register 'pY_3' is power-on initialization.
 WARNING: [RTGEN 206-101] Register 'pX_3' is power-on initialization.
 INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'compute_output_buffer_2d_array_array_ap_fixed_16_6_5_3_0_16u_config2_s' pipeline 'compute_output_buffer_2d<array,array<ap_fixed<16,6,5,3,0>,16u>,config2>' pipeline type 'function pipeline'
 INFO: [RTGEN 206-100] Finished creating RTL model for 'compute_output_buffer_2d_array_array_ap_fixed_16_6_5_3_0_16u_config2_s'.
-INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 3.05 seconds. CPU system time: 0.14 seconds. Elapsed time: 12.39 seconds; current allocated memory: 2.359 GB.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 3.01 seconds. CPU system time: 0.06 seconds. Elapsed time: 10.32 seconds; current allocated memory: 2.359 GB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Generating RTL for module 'conv_2d_cl_array_ap_fixed_3u_array_ap_fixed_16_6_5_3_0_16u_config2_s' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'conv_2d_cl_array_ap_fixed_3u_array_ap_fixed_16_6_5_3_0_16u_config2_s' pipeline 'ReadInputHeight_ReadInputWidth' pipeline type 'loop pipeline'
 INFO: [RTGEN 206-100] Finished creating RTL model for 'conv_2d_cl_array_ap_fixed_3u_array_ap_fixed_16_6_5_3_0_16u_config2_s'.
-INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1.07 seconds. CPU system time: 0 seconds. Elapsed time: 3.49 seconds; current allocated memory: 2.359 GB.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1.09 seconds. CPU system time: 0.01 seconds. Elapsed time: 3.11 seconds; current allocated memory: 2.359 GB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Generating RTL for module 'relu_array_ap_fixed_16u_array_ap_ufixed_6_0_4_0_0_16u_relu_config4_s' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'relu_array_ap_fixed_16u_array_ap_ufixed_6_0_4_0_0_16u_relu_config4_s' pipeline 'ReLUActLoop' pipeline type 'loop pipeline'
 INFO: [RTGEN 206-100] Finished creating RTL model for 'relu_array_ap_fixed_16u_array_ap_ufixed_6_0_4_0_0_16u_relu_config4_s'.
-INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1.04 seconds. CPU system time: 0.01 seconds. Elapsed time: 3.44 seconds; current allocated memory: 2.359 GB.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1.03 seconds. CPU system time: 0.03 seconds. Elapsed time: 3.07 seconds; current allocated memory: 2.359 GB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Generating RTL for module 'pooling2d_cl_array_array_ap_fixed_16_6_5_3_0_16u_config5_s' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
@@ -1337,7 +1337,7 @@ INFO: [SYN 201-210] Renamed object name 'pooling2d_cl_array_array_ap_fixed_16_6_
 INFO: [SYN 201-210] Renamed object name 'pooling2d_cl_array_array_ap_fixed_16_6_5_3_0_16u_config5_s_p_ZZN4nnet12pooling2d_clINS_5arrayI9ap_ufixedILi6ELi0EL9ap_q_mode4EL9ap_o_mode0EL_20_SHIFTREG_AUTO_0R0W' to 'pooling2d_cl_array_array_ap_fixed_16_6_5_3_0_16u_config5_s_p_ZZN4nnet12poolinwdI' due to the length limit 80
 INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'pooling2d_cl_array_array_ap_fixed_16_6_5_3_0_16u_config5_s' pipeline 'ReadInputHeight_ReadInputWidth' pipeline type 'loop pipeline'
 INFO: [RTGEN 206-100] Finished creating RTL model for 'pooling2d_cl_array_array_ap_fixed_16_6_5_3_0_16u_config5_s'.
-INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 2.08 seconds. CPU system time: 0.07 seconds. Elapsed time: 16.37 seconds; current allocated memory: 2.359 GB.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 2.13 seconds. CPU system time: 0.06 seconds. Elapsed time: 12.82 seconds; current allocated memory: 2.359 GB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Generating RTL for module 'shift_line_buffer_array_ap_fixed_16_6_5_3_0_16u_config6_s' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
@@ -1374,7 +1374,7 @@ INFO: [SYN 201-210] Renamed object name 'shift_line_buffer_array_ap_fixed_16_6_5
 INFO: [SYN 201-210] Renamed object name 'shift_line_buffer_array_ap_fixed_16_6_5_3_0_16u_config6_s_p_ZZN4nnet25conv_2d_buffer_latency_clINS_5arrayI8ap_fixedILi16ELi6EL9ap_q_mode5EL_30_SHIFTREG_AUTO_0R0W' to 'shift_line_buffer_array_ap_fixed_16_6_5_3_0_16u_config6_s_p_ZZN4nnet25conv_2d1iI' due to the length limit 80
 INFO: [SYN 201-210] Renamed object name 'shift_line_buffer_array_ap_fixed_16_6_5_3_0_16u_config6_s_p_ZZN4nnet25conv_2d_buffer_latency_clINS_5arrayI8ap_fixedILi16ELi6EL9ap_q_mode5EL_14_SHIFTREG_AUTO_0R0W' to 'shift_line_buffer_array_ap_fixed_16_6_5_3_0_16u_config6_s_p_ZZN4nnet25conv_2d2iS' due to the length limit 80
 INFO: [RTGEN 206-100] Finished creating RTL model for 'shift_line_buffer_array_ap_fixed_16_6_5_3_0_16u_config6_s'.
-INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1.76 seconds. CPU system time: 0.08 seconds. Elapsed time: 11.2 seconds; current allocated memory: 2.359 GB.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1.86 seconds. CPU system time: 0.03 seconds. Elapsed time: 9.22 seconds; current allocated memory: 2.359 GB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Generating RTL for module 'dense_latency_ap_fixed_16_6_5_3_0_ap_fixed_16_6_5_3_0_config6_mult_s' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
@@ -1384,7 +1384,7 @@ INFO: [RTGEN 206-100] Generating core module 'mul_16s_5s_21_1_0': 31 instance(s)
 INFO: [RTGEN 206-100] Generating core module 'mul_16s_6ns_21_1_0': 22 instance(s).
 INFO: [RTGEN 206-100] Generating core module 'mul_16s_6s_21_1_0': 29 instance(s).
 INFO: [RTGEN 206-100] Finished creating RTL model for 'dense_latency_ap_fixed_16_6_5_3_0_ap_fixed_16_6_5_3_0_config6_mult_s'.
-INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 2.58 seconds. CPU system time: 0.03 seconds. Elapsed time: 5.62 seconds; current allocated memory: 2.359 GB.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 2.45 seconds. CPU system time: 0.05 seconds. Elapsed time: 5.42 seconds; current allocated memory: 2.359 GB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Generating RTL for module 'compute_output_buffer_2d_array_array_ap_fixed_16_6_5_3_0_16u_config6_s' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
@@ -1539,20 +1539,20 @@ WARNING: [RTGEN 206-101] Register 'pX_5' is power-on initialization.
 INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'compute_output_buffer_2d_array_array_ap_fixed_16_6_5_3_0_16u_config6_s' pipeline 'compute_output_buffer_2d<array,array<ap_fixed<16,6,5,3,0>,16u>,config6>' pipeline type 'function pipeline'
 INFO: [RTGEN 206-104] Estimated max fanout for 'compute_output_buffer_2d_array_array_ap_fixed_16_6_5_3_0_16u_config6_s' is 11838 from HDL expression: ((1'b1 == ap_ce) & (((1'b0 == ap_block_pp0_stage4_11001_ignoreCallOp65) & (1'b1 == ap_CS_fsm_pp0_stage4)) | ((1'b0 == ap_block_pp0_stage3_11001_ignoreCallOp64) & (1'b1 == ap_CS_fsm_pp0_stage3)) | ((1'b0 == ap_block_pp0_stage2_11001_ignoreCallOp60) & (1'b1 == ap_CS_fsm_pp0_stage2)) | ((1'b0 == ap_block_pp0_stage1_11001_ignoreCallOp39) & (1'b1 == ap_CS_fsm_pp0_stage1))))
 INFO: [RTGEN 206-100] Finished creating RTL model for 'compute_output_buffer_2d_array_array_ap_fixed_16_6_5_3_0_16u_config6_s'.
-INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 18.18 seconds. CPU system time: 0.41 seconds. Elapsed time: 48.01 seconds; current allocated memory: 2.421 GB.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 18.27 seconds. CPU system time: 0.36 seconds. Elapsed time: 47.13 seconds; current allocated memory: 2.421 GB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Generating RTL for module 'conv_2d_cl_array_ap_fixed_16u_array_ap_fixed_16_6_5_3_0_16u_config6_s' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'conv_2d_cl_array_ap_fixed_16u_array_ap_fixed_16_6_5_3_0_16u_config6_s' pipeline 'ReadInputHeight_ReadInputWidth' pipeline type 'loop pipeline'
 INFO: [RTGEN 206-104] Estimated max fanout for 'conv_2d_cl_array_ap_fixed_16u_array_ap_fixed_16_6_5_3_0_16u_config6_s' is 12604 from HDL expression: (((1'b0 == ap_block_pp0_stage0_11001_ignoreCallOp41) & (1'b1 == ap_CS_fsm_pp0_stage0)) | ((1'b0 == ap_block_pp0_stage4_11001_ignoreCallOp40) & (1'b1 == ap_CS_fsm_pp0_stage4)) | ((1'b0 == ap_block_pp0_stage3_11001_ignoreCallOp39) & (1'b1 == ap_CS_fsm_pp0_stage3)) | ((1'b0 == ap_block_pp0_stage2_11001_ignoreCallOp38) & (1'b1 == ap_CS_fsm_pp0_stage2)) | ((1'b0 == ap_block_pp0_stage1_11001_ignoreCallOp37) & (1'b1 == ap_CS_fsm_pp0_stage1)))
 INFO: [RTGEN 206-100] Finished creating RTL model for 'conv_2d_cl_array_ap_fixed_16u_array_ap_fixed_16_6_5_3_0_16u_config6_s'.
-INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 5.33 seconds. CPU system time: 0.03 seconds. Elapsed time: 7.91 seconds; current allocated memory: 2.434 GB.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 5.33 seconds. CPU system time: 0.04 seconds. Elapsed time: 7.63 seconds; current allocated memory: 2.434 GB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Generating RTL for module 'relu_array_ap_fixed_16u_array_ap_ufixed_6_0_4_0_0_16u_relu_config8_s' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'relu_array_ap_fixed_16u_array_ap_ufixed_6_0_4_0_0_16u_relu_config8_s' pipeline 'ReLUActLoop' pipeline type 'loop pipeline'
 INFO: [RTGEN 206-100] Finished creating RTL model for 'relu_array_ap_fixed_16u_array_ap_ufixed_6_0_4_0_0_16u_relu_config8_s'.
-INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 5.24 seconds. CPU system time: 0.04 seconds. Elapsed time: 7.89 seconds; current allocated memory: 2.438 GB.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 5.24 seconds. CPU system time: 0.04 seconds. Elapsed time: 7.36 seconds; current allocated memory: 2.438 GB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Generating RTL for module 'pooling2d_cl_array_array_ap_fixed_16_6_5_3_0_16u_config9_s' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
@@ -1610,7 +1610,7 @@ INFO: [SYN 201-210] Renamed object name 'pooling2d_cl_array_array_ap_fixed_16_6_
 INFO: [SYN 201-210] Renamed object name 'pooling2d_cl_array_array_ap_fixed_16_6_5_3_0_16u_config9_s_p_ZZN4nnet12pooling2d_clINS_5arrayI9ap_ufixedILi6ELi0EL9ap_q_mode4EL9ap_o_mode0EL_14_SHIFTREG_AUTO_0R0W' to 'pooling2d_cl_array_array_ap_fixed_16_6_5_3_0_16u_config9_s_p_ZZN4nnet12poolinbil' due to the length limit 80
 INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'pooling2d_cl_array_array_ap_fixed_16_6_5_3_0_16u_config9_s' pipeline 'ReadInputHeight_ReadInputWidth' pipeline type 'loop pipeline'
 INFO: [RTGEN 206-100] Finished creating RTL model for 'pooling2d_cl_array_array_ap_fixed_16_6_5_3_0_16u_config9_s'.
-INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 2.24 seconds. CPU system time: 0.05 seconds. Elapsed time: 14.43 seconds; current allocated memory: 2.442 GB.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 2.29 seconds. CPU system time: 0.05 seconds. Elapsed time: 13.78 seconds; current allocated memory: 2.442 GB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Generating RTL for module 'shift_line_buffer_array_ap_fixed_16_6_5_3_0_16u_config10_s' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
@@ -1647,7 +1647,7 @@ INFO: [SYN 201-210] Renamed object name 'shift_line_buffer_array_ap_fixed_16_6_5
 INFO: [SYN 201-210] Renamed object name 'shift_line_buffer_array_ap_fixed_16_6_5_3_0_16u_config10_s_p_ZZN4nnet25conv_2d_buffer_latency_clINS_5arrayI8ap_fixedILi16ELi6EL9ap_q_mode5EL_62_SHIFTREG_AUTO_0R0W' to 'shift_line_buffer_array_ap_fixed_16_6_5_3_0_16u_config10_s_p_ZZN4nnet25conv_2bNq' due to the length limit 80
 INFO: [SYN 201-210] Renamed object name 'shift_line_buffer_array_ap_fixed_16_6_5_3_0_16u_config10_s_p_ZZN4nnet25conv_2d_buffer_latency_clINS_5arrayI8ap_fixedILi16ELi6EL9ap_q_mode5EL_46_SHIFTREG_AUTO_0R0W' to 'shift_line_buffer_array_ap_fixed_16_6_5_3_0_16u_config10_s_p_ZZN4nnet25conv_2bOq' due to the length limit 80
 INFO: [RTGEN 206-100] Finished creating RTL model for 'shift_line_buffer_array_ap_fixed_16_6_5_3_0_16u_config10_s'.
-INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1.88 seconds. CPU system time: 0.06 seconds. Elapsed time: 11.33 seconds; current allocated memory: 2.451 GB.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1.91 seconds. CPU system time: 0.07 seconds. Elapsed time: 9.61 seconds; current allocated memory: 2.451 GB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Generating RTL for module 'dense_latency_ap_fixed_16_6_5_3_0_ap_fixed_16_6_5_3_0_config10_mult_s' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
@@ -1657,7 +1657,7 @@ INFO: [RTGEN 206-100] Generating core module 'mul_16s_5s_21_1_0': 7 instance(s).
 INFO: [RTGEN 206-100] Generating core module 'mul_16s_6ns_21_1_0': 3 instance(s).
 INFO: [RTGEN 206-100] Generating core module 'mul_16s_6s_21_1_0': 7 instance(s).
 INFO: [RTGEN 206-100] Finished creating RTL model for 'dense_latency_ap_fixed_16_6_5_3_0_ap_fixed_16_6_5_3_0_config10_mult_s'.
-INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 3.21 seconds. CPU system time: 0.07 seconds. Elapsed time: 6.37 seconds; current allocated memory: 2.493 GB.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 3.24 seconds. CPU system time: 0.08 seconds. Elapsed time: 6.08 seconds; current allocated memory: 2.493 GB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Generating RTL for module 'compute_output_buffer_2d_array_array_ap_fixed_16_6_5_3_0_24u_config10_s' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
@@ -1812,20 +1812,20 @@ WARNING: [RTGEN 206-101] Register 'pX_4' is power-on initialization.
 INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'compute_output_buffer_2d_array_array_ap_fixed_16_6_5_3_0_24u_config10_s' pipeline 'compute_output_buffer_2d<array,array<ap_fixed<16,6,5,3,0>,24u>,config10>' pipeline type 'function pipeline'
 INFO: [RTGEN 206-104] Estimated max fanout for 'compute_output_buffer_2d_array_array_ap_fixed_16_6_5_3_0_24u_config10_s' is 11765 from HDL expression: ((1'b1 == ap_ce) & (((1'b0 == ap_block_pp0_stage4_11001_ignoreCallOp65) & (1'b1 == ap_CS_fsm_pp0_stage4)) | ((1'b0 == ap_block_pp0_stage3_11001_ignoreCallOp64) & (1'b1 == ap_CS_fsm_pp0_stage3)) | ((1'b0 == ap_block_pp0_stage2_11001_ignoreCallOp60) & (1'b1 == ap_CS_fsm_pp0_stage2)) | ((1'b0 == ap_block_pp0_stage1_11001_ignoreCallOp39) & (1'b1 == ap_CS_fsm_pp0_stage1))))
 INFO: [RTGEN 206-100] Finished creating RTL model for 'compute_output_buffer_2d_array_array_ap_fixed_16_6_5_3_0_24u_config10_s'.
-INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 21.84 seconds. CPU system time: 0.4 seconds. Elapsed time: 50.85 seconds; current allocated memory: 2.585 GB.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 21.96 seconds. CPU system time: 0.48 seconds. Elapsed time: 48.48 seconds; current allocated memory: 2.585 GB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Generating RTL for module 'conv_2d_cl_array_ap_fixed_16u_array_ap_fixed_16_6_5_3_0_24u_config10_s' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'conv_2d_cl_array_ap_fixed_16u_array_ap_fixed_16_6_5_3_0_24u_config10_s' pipeline 'ReadInputHeight_ReadInputWidth' pipeline type 'loop pipeline'
 INFO: [RTGEN 206-104] Estimated max fanout for 'conv_2d_cl_array_ap_fixed_16u_array_ap_fixed_16_6_5_3_0_24u_config10_s' is 12787 from HDL expression: (((1'b0 == ap_block_pp0_stage0_11001_ignoreCallOp41) & (1'b1 == ap_CS_fsm_pp0_stage0)) | ((1'b0 == ap_block_pp0_stage4_11001_ignoreCallOp40) & (1'b1 == ap_CS_fsm_pp0_stage4)) | ((1'b0 == ap_block_pp0_stage3_11001_ignoreCallOp39) & (1'b1 == ap_CS_fsm_pp0_stage3)) | ((1'b0 == ap_block_pp0_stage2_11001_ignoreCallOp38) & (1'b1 == ap_CS_fsm_pp0_stage2)) | ((1'b0 == ap_block_pp0_stage1_11001_ignoreCallOp37) & (1'b1 == ap_CS_fsm_pp0_stage1)))
 INFO: [RTGEN 206-100] Finished creating RTL model for 'conv_2d_cl_array_ap_fixed_16u_array_ap_fixed_16_6_5_3_0_24u_config10_s'.
-INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 6.34 seconds. CPU system time: 0.08 seconds. Elapsed time: 8.85 seconds; current allocated memory: 2.614 GB.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 6.31 seconds. CPU system time: 0.09 seconds. Elapsed time: 8.62 seconds; current allocated memory: 2.614 GB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Generating RTL for module 'relu_array_ap_fixed_24u_array_ap_ufixed_6_0_4_0_0_24u_relu_config12_s' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'relu_array_ap_fixed_24u_array_ap_ufixed_6_0_4_0_0_24u_relu_config12_s' pipeline 'ReLUActLoop' pipeline type 'loop pipeline'
 INFO: [RTGEN 206-100] Finished creating RTL model for 'relu_array_ap_fixed_24u_array_ap_ufixed_6_0_4_0_0_24u_relu_config12_s'.
-INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 6.25 seconds. CPU system time: 0.05 seconds. Elapsed time: 8.52 seconds; current allocated memory: 2.618 GB.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 6.28 seconds. CPU system time: 0.04 seconds. Elapsed time: 8.64 seconds; current allocated memory: 2.618 GB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Generating RTL for module 'pooling2d_cl_array_array_ap_fixed_16_6_5_3_0_24u_config13_s' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
@@ -1907,13 +1907,13 @@ INFO: [SYN 201-210] Renamed object name 'pooling2d_cl_array_array_ap_fixed_16_6_
 INFO: [SYN 201-210] Renamed object name 'pooling2d_cl_array_array_ap_fixed_16_6_5_3_0_24u_config13_s_p_ZZN4nnet12pooling2d_clINS_5arrayI9ap_ufixedILi6ELi0EL9ap_q_mode4EL9ap_o_mode0EL_SHIFTREG_AUTO_0R0W' to 'pooling2d_cl_array_array_ap_fixed_16_6_5_3_0_24u_config13_s_p_ZZN4nnet12pooliccu' due to the length limit 80
 INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'pooling2d_cl_array_array_ap_fixed_16_6_5_3_0_24u_config13_s' pipeline 'ReadInputHeight_ReadInputWidth' pipeline type 'loop pipeline'
 INFO: [RTGEN 206-100] Finished creating RTL model for 'pooling2d_cl_array_array_ap_fixed_16_6_5_3_0_24u_config13_s'.
-INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 3.49 seconds. CPU system time: 0.06 seconds. Elapsed time: 19.08 seconds; current allocated memory: 2.623 GB.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 3.6 seconds. CPU system time: 0.09 seconds. Elapsed time: 18.19 seconds; current allocated memory: 2.623 GB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Generating RTL for module 'dense_array_array_ap_fixed_16_6_5_3_0_42u_config15_Pipeline_DataPrepare' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'dense_array_array_ap_fixed_16_6_5_3_0_42u_config15_Pipeline_DataPrepare' pipeline 'DataPrepare' pipeline type 'loop pipeline'
 INFO: [RTGEN 206-100] Finished creating RTL model for 'dense_array_array_ap_fixed_16_6_5_3_0_42u_config15_Pipeline_DataPrepare'.
-INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 2.21 seconds. CPU system time: 0.06 seconds. Elapsed time: 4.42 seconds; current allocated memory: 2.638 GB.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 2.22 seconds. CPU system time: 0.04 seconds. Elapsed time: 4.28 seconds; current allocated memory: 2.638 GB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Generating RTL for module 'dense_array_ap_fixed_24u_array_ap_fixed_16_6_5_3_0_42u_config15_s' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
@@ -1921,38 +1921,38 @@ INFO: [RTGEN 206-104] Estimated max fanout for 'dense_array_ap_fixed_24u_array_a
 INFO: [RTGEN 206-100] Generating core module 'mul_16s_5ns_21_1_0': 11 instance(s).
 INFO: [RTGEN 206-100] Generating core module 'mul_16s_5s_21_1_0': 7 instance(s).
 INFO: [RTGEN 206-100] Finished creating RTL model for 'dense_array_ap_fixed_24u_array_ap_fixed_16_6_5_3_0_42u_config15_s'.
-INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1.8 seconds. CPU system time: 0.07 seconds. Elapsed time: 4.42 seconds; current allocated memory: 2.662 GB.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1.83 seconds. CPU system time: 0.05 seconds. Elapsed time: 4.36 seconds; current allocated memory: 2.662 GB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Generating RTL for module 'normalize_array_ap_fixed_42u_array_ap_fixed_16_6_5_3_0_42u_config17_s' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [RTGEN 206-100] Generating core module 'mul_16s_12ns_26_1_1': 36 instance(s).
 INFO: [RTGEN 206-100] Generating core module 'mul_16s_13ns_26_1_1': 6 instance(s).
 INFO: [RTGEN 206-100] Finished creating RTL model for 'normalize_array_ap_fixed_42u_array_ap_fixed_16_6_5_3_0_42u_config17_s'.
-INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 21.46 seconds. CPU system time: 0.67 seconds. Elapsed time: 25.07 seconds; current allocated memory: 2.753 GB.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 21.32 seconds. CPU system time: 0.39 seconds. Elapsed time: 26.89 seconds; current allocated memory: 2.753 GB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Generating RTL for module 'relu_array_ap_fixed_42u_array_ap_ufixed_6_0_4_0_0_42u_relu_config18_s' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [RTGEN 206-100] Finished creating RTL model for 'relu_array_ap_fixed_42u_array_ap_ufixed_6_0_4_0_0_42u_relu_config18_s'.
-INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1.19 seconds. CPU system time: 0.03 seconds. Elapsed time: 2.92 seconds; current allocated memory: 2.764 GB.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1.17 seconds. CPU system time: 0.07 seconds. Elapsed time: 3.1 seconds; current allocated memory: 2.764 GB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Generating RTL for module 'dense_array_ap_ufixed_42u_array_ap_fixed_16_6_5_3_0_64u_config19_s' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [RTGEN 206-100] Generating core module 'mul_6ns_5ns_10_1_1': 1 instance(s).
 INFO: [RTGEN 206-100] Generating core module 'mul_6ns_5s_11_1_1': 5 instance(s).
 INFO: [RTGEN 206-100] Finished creating RTL model for 'dense_array_ap_ufixed_42u_array_ap_fixed_16_6_5_3_0_64u_config19_s'.
-INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 5.85 seconds. CPU system time: 0.14 seconds. Elapsed time: 10.46 seconds; current allocated memory: 2.805 GB.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 5.9 seconds. CPU system time: 0.11 seconds. Elapsed time: 13.5 seconds; current allocated memory: 2.805 GB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Generating RTL for module 'normalize_array_ap_fixed_64u_array_ap_fixed_16_6_5_3_0_64u_config21_s' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [RTGEN 206-100] Generating core module 'mul_16s_13ns_26_1_1': 5 instance(s).
 INFO: [RTGEN 206-100] Generating core module 'mul_16s_14ns_26_1_1': 59 instance(s).
 INFO: [RTGEN 206-100] Finished creating RTL model for 'normalize_array_ap_fixed_64u_array_ap_fixed_16_6_5_3_0_64u_config21_s'.
-INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 14.81 seconds. CPU system time: 0.3 seconds. Elapsed time: 17.77 seconds; current allocated memory: 2.877 GB.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 14.72 seconds. CPU system time: 0.33 seconds. Elapsed time: 17.71 seconds; current allocated memory: 2.877 GB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Generating RTL for module 'relu_array_ap_fixed_64u_array_ap_ufixed_6_0_4_0_0_64u_relu_config22_s' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [RTGEN 206-100] Finished creating RTL model for 'relu_array_ap_fixed_64u_array_ap_ufixed_6_0_4_0_0_64u_relu_config22_s'.
-INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1.77 seconds. CPU system time: 0.09 seconds. Elapsed time: 4.43 seconds; current allocated memory: 2.888 GB.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1.76 seconds. CPU system time: 0.09 seconds. Elapsed time: 3.64 seconds; current allocated memory: 2.888 GB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Generating RTL for module 'dense_array_ap_ufixed_64u_array_ap_fixed_16_6_5_3_0_10u_config23_s' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
@@ -1972,7 +1972,7 @@ INFO: [RTGEN 206-100] Generating core module 'mul_6ns_8s_14_1_1': 23 instance(s)
 INFO: [RTGEN 206-100] Generating core module 'mul_6ns_9ns_14_1_1': 35 instance(s).
 INFO: [RTGEN 206-100] Generating core module 'mul_6ns_9s_15_1_1': 60 instance(s).
 INFO: [RTGEN 206-100] Finished creating RTL model for 'dense_array_ap_ufixed_64u_array_ap_fixed_16_6_5_3_0_10u_config23_s'.
-INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 7.05 seconds. CPU system time: 0.18 seconds. Elapsed time: 12.7 seconds; current allocated memory: 2.936 GB.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 7.12 seconds. CPU system time: 0.15 seconds. Elapsed time: 13.17 seconds; current allocated memory: 2.936 GB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Generating RTL for module 'softmax_stable_array_array_ap_fixed_16_6_5_3_0_10u_softmax_config25_s' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
@@ -1982,12 +1982,12 @@ INFO: [RTGEN 206-100] Generating core module 'mul_18s_17ns_26_1_1': 10 instance(
 INFO: [RTGEN 206-100] Finished creating RTL model for 'softmax_stable_array_array_ap_fixed_16_6_5_3_0_10u_softmax_config25_s'.
 INFO: [RTMG 210-279] Implementing memory 'alveo_hls4ml_softmax_stable_array_array_ap_fixed_16_6_5_3_0_10u_softmax_config25_s_exp_tabcdu' using auto ROMs.
 INFO: [RTMG 210-279] Implementing memory 'alveo_hls4ml_softmax_stable_array_array_ap_fixed_16_6_5_3_0_10u_softmax_config25_s_invert_ceu' using auto ROMs.
-INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 12.9 seconds. CPU system time: 0.26 seconds. Elapsed time: 17.73 seconds; current allocated memory: 3.008 GB.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 12.81 seconds. CPU system time: 0.28 seconds. Elapsed time: 17.74 seconds; current allocated memory: 3.008 GB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Generating RTL for module 'softmax_array_array_ap_fixed_16_6_5_3_0_10u_softmax_config25_s' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [RTGEN 206-100] Finished creating RTL model for 'softmax_array_array_ap_fixed_16_6_5_3_0_10u_softmax_config25_s'.
-INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1.67 seconds. CPU system time: 0.06 seconds. Elapsed time: 3.99 seconds; current allocated memory: 3.013 GB.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1.69 seconds. CPU system time: 0.07 seconds. Elapsed time: 3.59 seconds; current allocated memory: 3.013 GB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Generating RTL for module 'myproject' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
@@ -2031,12 +2031,12 @@ INFO: [RTMG 210-285] Implementing FIFO 'start_for_normalize_array_ap_fixed_64u_a
 INFO: [RTMG 210-285] Implementing FIFO 'start_for_relu_array_ap_fixed_64u_array_ap_ufixed_6_0_4_0_0_64u_relu_config22clv_U(alveo_hls4ml_start_for_relu_array_ap_fixed_64u_array_ap_ufixed_6_0_4_0_0_64u_relu_config22clv)' using Shift Registers.
 INFO: [RTMG 210-285] Implementing FIFO 'start_for_dense_array_ap_ufixed_64u_array_ap_fixed_16_6_5_3_0_10u_config23_U0_U(alveo_hls4ml_start_for_dense_array_ap_ufixed_64u_array_ap_fixed_16_6_5_3_0_10u_config23_U0)' using Shift Registers.
 INFO: [RTMG 210-285] Implementing FIFO 'start_for_softmax_array_array_ap_fixed_16_6_5_3_0_10u_softmax_config25_U0_U(alveo_hls4ml_start_for_softmax_array_array_ap_fixed_16_6_5_3_0_10u_softmax_config25_U0)' using Shift Registers.
-INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1.31 seconds. CPU system time: 0.16 seconds. Elapsed time: 18.58 seconds; current allocated memory: 3.078 GB.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1.29 seconds. CPU system time: 0.11 seconds. Elapsed time: 17.66 seconds; current allocated memory: 3.078 GB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Generating RTL for module 'write_result' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [RTGEN 206-100] Finished creating RTL model for 'write_result'.
-INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 33.47 seconds. CPU system time: 0.2 seconds. Elapsed time: 35.75 seconds; current allocated memory: 3.081 GB.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 33.35 seconds. CPU system time: 0.18 seconds. Elapsed time: 35.44 seconds; current allocated memory: 3.081 GB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Generating RTL for module 'dataflow_in_loop_VITIS_LOOP_89_1' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
@@ -2080,7 +2080,7 @@ INFO: [RTMG 210-285] Implementing FIFO 'n_c_U(alveo_hls4ml_fifo_w13_d3_S)' using
 INFO: [RTMG 210-285] Implementing FIFO 'output2_U(alveo_hls4ml_fifo_w160_d1_S_x)' using Shift Registers.
 INFO: [RTMG 210-285] Implementing FIFO 'start_for_write_result_U0_U(alveo_hls4ml_start_for_write_result_U0)' using Shift Registers.
 INFO: [RTMG 210-285] Implementing FIFO 'start_for_myproject_U0_U(alveo_hls4ml_start_for_myproject_U0)' using Shift Registers.
-INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.89 seconds. CPU system time: 0.06 seconds. Elapsed time: 11.43 seconds; current allocated memory: 3.084 GB.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.97 seconds. CPU system time: 0.05 seconds. Elapsed time: 10.15 seconds; current allocated memory: 3.084 GB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Generating RTL for module 'alveo_hls4ml' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
@@ -2092,15 +2092,15 @@ INFO: [RTGEN 206-500] Setting interface mode on port 'alveo_hls4ml/out_r' to 's_
 INFO: [RTGEN 206-500] Setting interface mode on function 'alveo_hls4ml' to 's_axilite & ap_ctrl_chain'.
 INFO: [RTGEN 206-100] Bundling port 'in_r', 'out_r' and 'return' to AXI-Lite port control.
 INFO: [RTGEN 206-100] Finished creating RTL model for 'alveo_hls4ml'.
-INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 33.5 seconds. CPU system time: 0.25 seconds. Elapsed time: 41.22 seconds; current allocated memory: 3.086 GB.
-INFO: [HLS 200-111] Finished Generating all RTL models: CPU user time: 56.85 seconds. CPU system time: 0.65 seconds. Elapsed time: 90.75 seconds; current allocated memory: 3.088 GB.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 33.31 seconds. CPU system time: 0.23 seconds. Elapsed time: 44.21 seconds; current allocated memory: 3.086 GB.
+INFO: [HLS 200-111] Finished Generating all RTL models: CPU user time: 56.62 seconds. CPU system time: 0.4 seconds. Elapsed time: 93.22 seconds; current allocated memory: 3.088 GB.
 INFO: [HLS 200-1603] Design has inferred MAXI bursts and missed bursts, see Vitis HLS GUI synthesis summary report for detailed information.
-INFO: [HLS 200-111] Finished Updating report files: CPU user time: 11.41 seconds. CPU system time: 0.17 seconds. Elapsed time: 16.25 seconds; current allocated memory: 3.152 GB.
+INFO: [HLS 200-111] Finished Updating report files: CPU user time: 10.9 seconds. CPU system time: 0.15 seconds. Elapsed time: 15.7 seconds; current allocated memory: 3.152 GB.
 INFO: [VHDL 208-304] Generating VHDL RTL for alveo_hls4ml.
 INFO: [VLOG 209-307] Generating Verilog RTL for alveo_hls4ml.
 INFO: [HLS 200-790] **** Loop Constraint Status: All loop constraints were satisfied.
 INFO: [HLS 200-789] **** Estimated Fmax: 411.00 MHz
-INFO: [HLS 200-111] Finished Command csynth_design CPU user time: 1797.38 seconds. CPU system time: 14.73 seconds. Elapsed time: 2417.7 seconds; current allocated memory: 2.416 GB.
+INFO: [HLS 200-111] Finished Command csynth_design CPU user time: 1792.92 seconds. CPU system time: 11.49 seconds. Elapsed time: 2431.19 seconds; current allocated memory: 2.416 GB.
 INFO: [HLS 200-1510] Running: export_design 
 INFO: [IMPL 213-8] Exporting RTL as a Vivado IP.
 
@@ -2110,15 +2110,15 @@ INFO: [IMPL 213-8] Exporting RTL as a Vivado IP.
     ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 
 source run_ippack.tcl -notrace
-ipx::create_core: Time (s): cpu = 00:00:05 ; elapsed = 00:00:54 . Memory (MB): peak = 1790.086 ; gain = 87.992 ; free physical = 312550 ; free virtual = 388378
+ipx::create_core: Time (s): cpu = 00:00:05 ; elapsed = 00:01:29 . Memory (MB): peak = 1790.055 ; gain = 87.992 ; free physical = 312441 ; free virtual = 384279
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1704] No user IP repositories specified
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/tools/Xilinx/Vivado/2022.2/data/ip'.
 Running package_xo -xo_path /home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml/solution/impl/export.xo -kernel_name alveo_hls4ml -kernel_xml /home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml/solution/impl/ip/../kernel/kernel.xml -kernel_files {/home/ayvol/accelerator_wrapper/src/myproject.cpp /home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp} -ip_directory /home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml/solution/impl/ip/ip_unzip_dir -design_xml /home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml/solution/.autopilot/db/alveo_hls4ml.design.xml -debug_directory /home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml/solution/.debug -hls_directory /home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml/solution/impl/ip/hls_files
-INFO: [Common 17-206] Exiting Vivado at Tue Feb 13 22:24:12 2024...
+INFO: [Common 17-206] Exiting Vivado at Thu Feb 15 07:53:51 2024...
 INFO: [HLS 200-802] Generated output file alveo_hls4ml/solution/impl/export.xo
-INFO: [HLS 200-111] Finished Command export_design CPU user time: 109.07 seconds. CPU system time: 2.37 seconds. Elapsed time: 614.95 seconds; current allocated memory: 14.855 MB.
+INFO: [HLS 200-111] Finished Command export_design CPU user time: 107.22 seconds. CPU system time: 2.44 seconds. Elapsed time: 684.71 seconds; current allocated memory: 14.840 MB.
 INFO: [HLS 200-1510] Running: close_project 
 HLS completed successfully
-INFO: [HLS 200-112] Total CPU user time: 1909.75 seconds. Total CPU system time: 17.91 seconds. Total elapsed time: 3374.97 seconds; peak allocated memory: 3.167 GB.
-INFO: [Common 17-206] Exiting vitis_hls at Tue Feb 13 22:24:27 2024...
+INFO: [HLS 200-112] Total CPU user time: 1903.64 seconds. Total CPU system time: 14.79 seconds. Total elapsed time: 3629.8 seconds; peak allocated memory: 3.167 GB.
+INFO: [Common 17-206] Exiting vitis_hls at Thu Feb 15 07:54:03 2024...

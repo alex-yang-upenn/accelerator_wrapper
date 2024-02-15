@@ -3407,7 +3407,7 @@ window.onload = function () { addSorting(); }
 <center><h1>Design Guidance Report</h1></center><center><table class="header" border="0">
 <tr><td><b>Copyright</b></td><td>Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.</td></tr>
 <tr><td><b>Tool Version</b></td><td>xcd v.2022.2 (lin64) Build 0 </td></tr>
-<tr><td><b>Date</b></td><td>Tue Feb 13 22:25:23 2024</td></tr>
+<tr><td><b>Date</b></td><td>Thu Feb 15 07:54:34 2024</td></tr>
 <tr><td><b>Host</b></td><td>egl running 64-bit Ubuntu 20.04.4 LTS</td></tr>
 <tr><td><b>Command</b></td><td>/tools/Xilinx/Vitis/2022.2/bin/unwrapped/lnx64.o/v++  --vivado.prop "run.__KERNEL__.{STEPS.SYNTH_DESIGN.ARGS.MORE OPTIONS}={-directive sdx_optimization_effort_high}" --advanced.misc "report=type report_timing_summary name impl_report_timing_summary_route_design_summary steps {route_design} runs {impl_1} options {-max_paths 10}" --advanced.misc "report=type report_timing_summary name impl_report_timing_summary_post_route_phys_opt_design_summary steps {post_route_phys_opt_design} runs {impl_1} options {-max_paths 10}" -t hw --platform xilinx_u55c_gen3x16_xdma_3_202210_1 --save-temps --temp_dir ./_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1 -c -k alveo_hls4ml -Isrc -o_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml.xo src/alveo_hls4ml.cpp src/myproject.cpp -DMYPROJ=myproject -DIS_CONV2D -I./src/ -I./src/weights -I./src/nnet_utils/ --config config.ini </td></tr>
 </table></center><br>
@@ -3432,138 +3432,6 @@ window.onload = function () { addSorting(); }
 <th align="left">Categories</th>
 <th align="left" width="350">Details</th>
 <th align="left" width="380">Resolution</th>
-</tr>
-<tr>
-<td align="left">17</td>
-<td align="left">Throughput</td>
-<td align="left">WARNING</td>
-<td align="left"><undefined></td>
-<td align="left">HLS Throughput Related</td>
-<td align="left">Accelerator.alveo_hls4ml.Throughput</td>
-<td align="left">Dataflow form checks found 16 issue(s) in file /home/ayvol/accelerator_wrapper/src/myproject.cpp
-</td>
-<td align="left"><a href="http:///www.xilinx.com/cgi-bin/docs/rdoc?v=2022.2;d=ug1399-vitis-hls.pdf;">Vitis HLS User Guide (UG1399)</a></td>
-</tr>
-<tr>
-<td align="left">18</td>
-<td align="left">Throughput</td>
-<td align="left">WARNING</td>
-<td align="left"><undefined></td>
-<td align="left">HLS Throughput Related</td>
-<td align="left">Accelerator.alveo_hls4ml.Throughput</td>
-<td align="left">Either use an argument of the function or declare the variable inside the dataflow loop body (<a href="file:///home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp#line=91">alveo_hls4ml.cpp</a>)
-</td>
-<td align="left"><a href="http:///www.xilinx.com/cgi-bin/docs/rdoc?v=2022.2;d=ug1399-vitis-hls.pdf;">Vitis HLS User Guide (UG1399)</a></td>
-</tr>
-<tr>
-<td align="left">19</td>
-<td align="left">Throughput</td>
-<td align="left">WARNING</td>
-<td align="left"><undefined></td>
-<td align="left">HLS Throughput Related</td>
-<td align="left">Accelerator.alveo_hls4ml.Throughput</td>
-<td align="left">Either use an argument of the function or declare the variable inside the dataflow loop body (<a href="file:///home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp#line=93">alveo_hls4ml.cpp</a>)
-</td>
-<td align="left"><a href="http:///www.xilinx.com/cgi-bin/docs/rdoc?v=2022.2;d=ug1399-vitis-hls.pdf;">Vitis HLS User Guide (UG1399)</a></td>
-</tr>
-<tr>
-<td align="left">20</td>
-<td align="left">Throughput</td>
-<td align="left">WARNING</td>
-<td align="left"><undefined></td>
-<td align="left">HLS Throughput Related</td>
-<td align="left">Accelerator.alveo_hls4ml.Throughput</td>
-<td align="left">Since the only kind of statements allowed in a canonical dataflow region are variable declarations and function calls, the compiler may not be able to correctly handle the region (<a href="file:///home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp#line=90">alveo_hls4ml.cpp</a>)
-</td>
-<td align="left"><a href="http:///www.xilinx.com/cgi-bin/docs/rdoc?v=2022.2;d=ug1399-vitis-hls.pdf;">Vitis HLS User Guide (UG1399)</a></td>
-</tr>
-<tr>
-<td align="left">21</td>
-<td align="left">Throughput</td>
-<td align="left">WARNING</td>
-<td align="left"><undefined></td>
-<td align="left">HLS Throughput Related</td>
-<td align="left">Accelerator.alveo_hls4ml.Throughput</td>
-<td align="left">Dataflow form checks found 3 issue(s) in file /home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp
-</td>
-<td align="left"><a href="http:///www.xilinx.com/cgi-bin/docs/rdoc?v=2022.2;d=ug1399-vitis-hls.pdf;">Vitis HLS User Guide (UG1399)</a></td>
-</tr>
-<tr>
-<td align="left">22</td>
-<td align="left">Interface</td>
-<td align="left">ADVISORY</td>
-<td align="left"><undefined></td>
-<td align="left">HLS Interface Related</td>
-<td align="left">Accelerator.alveo_hls4ml.Interface</td>
-<td align="left">Multiple burst reads of length 3072 and bit width 16 in loop 'VITIS_LOOP_41_1'(<a href="file:///home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp#line=41">alveo_hls4ml.cpp</a>) has been inferred on bundle 'gmem0'. These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings. (<a href="file:///home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp#line=41">alveo_hls4ml.cpp</a>)
-</td>
-<td align="left"><a href="http:///www.xilinx.com/cgi-bin/docs/rdoc?v=2022.2;d=ug1399-vitis-hls.pdf;">Vitis HLS User Guide (UG1399)</a></td>
-</tr>
-<tr>
-<td align="left">23</td>
-<td align="left">Interface</td>
-<td align="left">ADVISORY</td>
-<td align="left"><undefined></td>
-<td align="left">HLS Interface Related</td>
-<td align="left">Accelerator.alveo_hls4ml.Interface</td>
-<td align="left">Multiple burst writes of length 5 and bit width 32 has been inferred on bundle 'gmem1'. These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings. (<a href="file:///home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp#line=57">alveo_hls4ml.cpp</a>)
-</td>
-<td align="left"><a href="http:///www.xilinx.com/cgi-bin/docs/rdoc?v=2022.2;d=ug1399-vitis-hls.pdf;">Vitis HLS User Guide (UG1399)</a></td>
-</tr>
-<tr>
-<td align="left">24</td>
-<td align="left">Throughput</td>
-<td align="left">WARNING</td>
-<td align="left"><undefined></td>
-<td align="left">HLS Throughput Related</td>
-<td align="left">Accelerator.alveo_hls4ml.Throughput</td>
-<td align="left">The II Violation in module 'read_input_Pipeline_VITIS_LOOP_41_1' (loop 'VITIS_LOOP_41_1'): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1) between bus read operation ('gmem0_addr_read_2', <a href="file:///home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp#line=46">alveo_hls4ml.cpp</a>-><a href="file:///home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp#line=91">alveo_hls4ml.cpp</a>) on port 'gmem0' (<a href="file:///home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp#line=46">alveo_hls4ml.cpp</a>-><a href="file:///home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp#line=91">alveo_hls4ml.cpp</a>) and bus read operation ('gmem0_addr_read', <a href="file:///home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp#line=46">alveo_hls4ml.cpp</a>-><a href="file:///home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp#line=91">alveo_hls4ml.cpp</a>) on port 'gmem0' (<a href="file:///home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp#line=46">alveo_hls4ml.cpp</a>-><a href="file:///home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp#line=91">alveo_hls4ml.cpp</a>).
-</td>
-<td align="left"><a href="http:///www.xilinx.com/cgi-bin/docs/rdoc?v=2022.2;d=ug1399-vitis-hls.pdf;">Vitis HLS User Guide (UG1399)</a></td>
-</tr>
-<tr>
-<td align="left">25</td>
-<td align="left">Throughput</td>
-<td align="left">WARNING</td>
-<td align="left"><undefined></td>
-<td align="left">HLS Throughput Related</td>
-<td align="left">Accelerator.alveo_hls4ml.Throughput</td>
-<td align="left">The II Violation in module 'read_input_Pipeline_VITIS_LOOP_41_1' (loop 'VITIS_LOOP_41_1'): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 1) between bus read operation ('gmem0_addr_read_2', <a href="file:///home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp#line=46">alveo_hls4ml.cpp</a>-><a href="file:///home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp#line=91">alveo_hls4ml.cpp</a>) on port 'gmem0' (<a href="file:///home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp#line=46">alveo_hls4ml.cpp</a>-><a href="file:///home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp#line=91">alveo_hls4ml.cpp</a>) and bus read operation ('gmem0_addr_read', <a href="file:///home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp#line=46">alveo_hls4ml.cpp</a>-><a href="file:///home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp#line=91">alveo_hls4ml.cpp</a>) on port 'gmem0' (<a href="file:///home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp#line=46">alveo_hls4ml.cpp</a>-><a href="file:///home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp#line=91">alveo_hls4ml.cpp</a>).
-</td>
-<td align="left"><a href="http:///www.xilinx.com/cgi-bin/docs/rdoc?v=2022.2;d=ug1399-vitis-hls.pdf;">Vitis HLS User Guide (UG1399)</a></td>
-</tr>
-<tr>
-<td align="left">26</td>
-<td align="left">Throughput</td>
-<td align="left">ADVISORY</td>
-<td align="left"><undefined></td>
-<td align="left">HLS Throughput Related</td>
-<td align="left">Accelerator.alveo_hls4ml.Throughput</td>
-<td align="left">Pipelining result : Target II = NA, Final II = 3, Depth = 5, loop 'VITIS_LOOP_41_1'
-</td>
-<td align="left"><a href="http:///www.xilinx.com/cgi-bin/docs/rdoc?v=2022.2;d=ug1399-vitis-hls.pdf;">Vitis HLS User Guide (UG1399)</a></td>
-</tr>
-<tr>
-<td align="left">27</td>
-<td align="left">Throughput</td>
-<td align="left">ADVISORY</td>
-<td align="left"><undefined></td>
-<td align="left">HLS Throughput Related</td>
-<td align="left">Accelerator.alveo_hls4ml.Throughput</td>
-<td align="left">Pipelining result : Target II = 1, Final II = 1, Depth = 1, function 'shift_line_buffer<array<ap_fixed<16, 6, 5, 3, 0>, 3u>, config2>'
-</td>
-<td align="left"><a href="http:///www.xilinx.com/cgi-bin/docs/rdoc?v=2022.2;d=ug1399-vitis-hls.pdf;">Vitis HLS User Guide (UG1399)</a></td>
-</tr>
-<tr>
-<td align="left">28</td>
-<td align="left">Throughput</td>
-<td align="left">ADVISORY</td>
-<td align="left"><undefined></td>
-<td align="left">HLS Throughput Related</td>
-<td align="left">Accelerator.alveo_hls4ml.Throughput</td>
-<td align="left">Pipelining result : Target II = 1, Final II = 1, Depth = 2, function 'dense_latency<ap_fixed<16, 6, 5, 3, 0>, ap_fixed<16, 6, 5, 3, 0>, config2_mult>'
-</td>
-<td align="left"><a href="http:///www.xilinx.com/cgi-bin/docs/rdoc?v=2022.2;d=ug1399-vitis-hls.pdf;">Vitis HLS User Guide (UG1399)</a></td>
 </tr>
 <tr>
 <td align="left">29</td>
@@ -4068,6 +3936,138 @@ window.onload = function () { addSorting(); }
 <td align="left">HLS Throughput Related</td>
 <td align="left">Accelerator.alveo_hls4ml.Throughput</td>
 <td align="left">Either use an argument of the function or declare the variable inside the dataflow loop body (<a href="file:///home/ayvol/accelerator_wrapper/src/myproject.cpp#line=126">myproject.cpp</a>)
+</td>
+<td align="left"><a href="http:///www.xilinx.com/cgi-bin/docs/rdoc?v=2022.2;d=ug1399-vitis-hls.pdf;">Vitis HLS User Guide (UG1399)</a></td>
+</tr>
+<tr>
+<td align="left">17</td>
+<td align="left">Throughput</td>
+<td align="left">WARNING</td>
+<td align="left"><undefined></td>
+<td align="left">HLS Throughput Related</td>
+<td align="left">Accelerator.alveo_hls4ml.Throughput</td>
+<td align="left">Dataflow form checks found 16 issue(s) in file /home/ayvol/accelerator_wrapper/src/myproject.cpp
+</td>
+<td align="left"><a href="http:///www.xilinx.com/cgi-bin/docs/rdoc?v=2022.2;d=ug1399-vitis-hls.pdf;">Vitis HLS User Guide (UG1399)</a></td>
+</tr>
+<tr>
+<td align="left">18</td>
+<td align="left">Throughput</td>
+<td align="left">WARNING</td>
+<td align="left"><undefined></td>
+<td align="left">HLS Throughput Related</td>
+<td align="left">Accelerator.alveo_hls4ml.Throughput</td>
+<td align="left">Either use an argument of the function or declare the variable inside the dataflow loop body (<a href="file:///home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp#line=91">alveo_hls4ml.cpp</a>)
+</td>
+<td align="left"><a href="http:///www.xilinx.com/cgi-bin/docs/rdoc?v=2022.2;d=ug1399-vitis-hls.pdf;">Vitis HLS User Guide (UG1399)</a></td>
+</tr>
+<tr>
+<td align="left">19</td>
+<td align="left">Throughput</td>
+<td align="left">WARNING</td>
+<td align="left"><undefined></td>
+<td align="left">HLS Throughput Related</td>
+<td align="left">Accelerator.alveo_hls4ml.Throughput</td>
+<td align="left">Either use an argument of the function or declare the variable inside the dataflow loop body (<a href="file:///home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp#line=93">alveo_hls4ml.cpp</a>)
+</td>
+<td align="left"><a href="http:///www.xilinx.com/cgi-bin/docs/rdoc?v=2022.2;d=ug1399-vitis-hls.pdf;">Vitis HLS User Guide (UG1399)</a></td>
+</tr>
+<tr>
+<td align="left">20</td>
+<td align="left">Throughput</td>
+<td align="left">WARNING</td>
+<td align="left"><undefined></td>
+<td align="left">HLS Throughput Related</td>
+<td align="left">Accelerator.alveo_hls4ml.Throughput</td>
+<td align="left">Since the only kind of statements allowed in a canonical dataflow region are variable declarations and function calls, the compiler may not be able to correctly handle the region (<a href="file:///home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp#line=90">alveo_hls4ml.cpp</a>)
+</td>
+<td align="left"><a href="http:///www.xilinx.com/cgi-bin/docs/rdoc?v=2022.2;d=ug1399-vitis-hls.pdf;">Vitis HLS User Guide (UG1399)</a></td>
+</tr>
+<tr>
+<td align="left">21</td>
+<td align="left">Throughput</td>
+<td align="left">WARNING</td>
+<td align="left"><undefined></td>
+<td align="left">HLS Throughput Related</td>
+<td align="left">Accelerator.alveo_hls4ml.Throughput</td>
+<td align="left">Dataflow form checks found 3 issue(s) in file /home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp
+</td>
+<td align="left"><a href="http:///www.xilinx.com/cgi-bin/docs/rdoc?v=2022.2;d=ug1399-vitis-hls.pdf;">Vitis HLS User Guide (UG1399)</a></td>
+</tr>
+<tr>
+<td align="left">22</td>
+<td align="left">Interface</td>
+<td align="left">ADVISORY</td>
+<td align="left"><undefined></td>
+<td align="left">HLS Interface Related</td>
+<td align="left">Accelerator.alveo_hls4ml.Interface</td>
+<td align="left">Multiple burst reads of length 3072 and bit width 16 in loop 'VITIS_LOOP_41_1'(<a href="file:///home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp#line=41">alveo_hls4ml.cpp</a>) has been inferred on bundle 'gmem0'. These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings. (<a href="file:///home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp#line=41">alveo_hls4ml.cpp</a>)
+</td>
+<td align="left"><a href="http:///www.xilinx.com/cgi-bin/docs/rdoc?v=2022.2;d=ug1399-vitis-hls.pdf;">Vitis HLS User Guide (UG1399)</a></td>
+</tr>
+<tr>
+<td align="left">23</td>
+<td align="left">Interface</td>
+<td align="left">ADVISORY</td>
+<td align="left"><undefined></td>
+<td align="left">HLS Interface Related</td>
+<td align="left">Accelerator.alveo_hls4ml.Interface</td>
+<td align="left">Multiple burst writes of length 5 and bit width 32 has been inferred on bundle 'gmem1'. These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings. (<a href="file:///home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp#line=57">alveo_hls4ml.cpp</a>)
+</td>
+<td align="left"><a href="http:///www.xilinx.com/cgi-bin/docs/rdoc?v=2022.2;d=ug1399-vitis-hls.pdf;">Vitis HLS User Guide (UG1399)</a></td>
+</tr>
+<tr>
+<td align="left">24</td>
+<td align="left">Throughput</td>
+<td align="left">WARNING</td>
+<td align="left"><undefined></td>
+<td align="left">HLS Throughput Related</td>
+<td align="left">Accelerator.alveo_hls4ml.Throughput</td>
+<td align="left">The II Violation in module 'read_input_Pipeline_VITIS_LOOP_41_1' (loop 'VITIS_LOOP_41_1'): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1) between bus read operation ('gmem0_addr_read_2', <a href="file:///home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp#line=46">alveo_hls4ml.cpp</a>-><a href="file:///home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp#line=91">alveo_hls4ml.cpp</a>) on port 'gmem0' (<a href="file:///home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp#line=46">alveo_hls4ml.cpp</a>-><a href="file:///home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp#line=91">alveo_hls4ml.cpp</a>) and bus read operation ('gmem0_addr_read', <a href="file:///home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp#line=46">alveo_hls4ml.cpp</a>-><a href="file:///home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp#line=91">alveo_hls4ml.cpp</a>) on port 'gmem0' (<a href="file:///home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp#line=46">alveo_hls4ml.cpp</a>-><a href="file:///home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp#line=91">alveo_hls4ml.cpp</a>).
+</td>
+<td align="left"><a href="http:///www.xilinx.com/cgi-bin/docs/rdoc?v=2022.2;d=ug1399-vitis-hls.pdf;">Vitis HLS User Guide (UG1399)</a></td>
+</tr>
+<tr>
+<td align="left">25</td>
+<td align="left">Throughput</td>
+<td align="left">WARNING</td>
+<td align="left"><undefined></td>
+<td align="left">HLS Throughput Related</td>
+<td align="left">Accelerator.alveo_hls4ml.Throughput</td>
+<td align="left">The II Violation in module 'read_input_Pipeline_VITIS_LOOP_41_1' (loop 'VITIS_LOOP_41_1'): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 1) between bus read operation ('gmem0_addr_read_2', <a href="file:///home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp#line=46">alveo_hls4ml.cpp</a>-><a href="file:///home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp#line=91">alveo_hls4ml.cpp</a>) on port 'gmem0' (<a href="file:///home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp#line=46">alveo_hls4ml.cpp</a>-><a href="file:///home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp#line=91">alveo_hls4ml.cpp</a>) and bus read operation ('gmem0_addr_read', <a href="file:///home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp#line=46">alveo_hls4ml.cpp</a>-><a href="file:///home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp#line=91">alveo_hls4ml.cpp</a>) on port 'gmem0' (<a href="file:///home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp#line=46">alveo_hls4ml.cpp</a>-><a href="file:///home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp#line=91">alveo_hls4ml.cpp</a>).
+</td>
+<td align="left"><a href="http:///www.xilinx.com/cgi-bin/docs/rdoc?v=2022.2;d=ug1399-vitis-hls.pdf;">Vitis HLS User Guide (UG1399)</a></td>
+</tr>
+<tr>
+<td align="left">26</td>
+<td align="left">Throughput</td>
+<td align="left">ADVISORY</td>
+<td align="left"><undefined></td>
+<td align="left">HLS Throughput Related</td>
+<td align="left">Accelerator.alveo_hls4ml.Throughput</td>
+<td align="left">Pipelining result : Target II = NA, Final II = 3, Depth = 5, loop 'VITIS_LOOP_41_1'
+</td>
+<td align="left"><a href="http:///www.xilinx.com/cgi-bin/docs/rdoc?v=2022.2;d=ug1399-vitis-hls.pdf;">Vitis HLS User Guide (UG1399)</a></td>
+</tr>
+<tr>
+<td align="left">27</td>
+<td align="left">Throughput</td>
+<td align="left">ADVISORY</td>
+<td align="left"><undefined></td>
+<td align="left">HLS Throughput Related</td>
+<td align="left">Accelerator.alveo_hls4ml.Throughput</td>
+<td align="left">Pipelining result : Target II = 1, Final II = 1, Depth = 1, function 'shift_line_buffer<array<ap_fixed<16, 6, 5, 3, 0>, 3u>, config2>'
+</td>
+<td align="left"><a href="http:///www.xilinx.com/cgi-bin/docs/rdoc?v=2022.2;d=ug1399-vitis-hls.pdf;">Vitis HLS User Guide (UG1399)</a></td>
+</tr>
+<tr>
+<td align="left">28</td>
+<td align="left">Throughput</td>
+<td align="left">ADVISORY</td>
+<td align="left"><undefined></td>
+<td align="left">HLS Throughput Related</td>
+<td align="left">Accelerator.alveo_hls4ml.Throughput</td>
+<td align="left">Pipelining result : Target II = 1, Final II = 1, Depth = 2, function 'dense_latency<ap_fixed<16, 6, 5, 3, 0>, ap_fixed<16, 6, 5, 3, 0>, config2_mult>'
 </td>
 <td align="left"><a href="http:///www.xilinx.com/cgi-bin/docs/rdoc?v=2022.2;d=ug1399-vitis-hls.pdf;">Vitis HLS User Guide (UG1399)</a></td>
 </tr>
