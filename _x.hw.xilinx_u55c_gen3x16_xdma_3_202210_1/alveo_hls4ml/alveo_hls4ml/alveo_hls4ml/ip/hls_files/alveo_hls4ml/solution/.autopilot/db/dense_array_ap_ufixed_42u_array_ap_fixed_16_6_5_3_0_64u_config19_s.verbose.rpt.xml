@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'dense_array_ap_ufixed_42u_array_ap_fixed_16_6_5_3_0_64u_config19_s'" level="0">
-<item name = "Date">Fri Feb  9 01:16:17 2024
+<item name = "Date">Thu Feb 15 07:38:07 2024
 </item>
 <item name = "Version">2022.2 (Build 3670227 on Oct 13 2022)</item>
 <item name = "Project">alveo_hls4ml</item>

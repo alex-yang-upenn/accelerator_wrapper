@@ -2,6 +2,6 @@
 <Messages>
 	<Message severity="INFO" prefix="[IMPL 213-8]" key="IMPL_8_1776" tag="" content="Exporting RTL as a Vivado IP." resolution=""/>
 	<Message severity="INFO" prefix="[HLS 200-802]" key="HLS 200-802" tag="" content="Generated output file alveo_hls4ml/solution/impl/export.xo" resolution=""/>
-	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="RUNTIME" content="Finished Command export_design CPU user time: 107.13 seconds. CPU system time: 2.47 seconds. Elapsed time: 1156.56 seconds; current allocated memory: 14.859 MB." resolution=""/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="RUNTIME" content="Finished Command export_design CPU user time: 107.22 seconds. CPU system time: 2.44 seconds. Elapsed time: 684.71 seconds; current allocated memory: 14.840 MB." resolution=""/>
 	<Message severity="INFO" prefix="[HLS 200-1510]" key="HLS 200-1510" tag="" content="Running: close_project" resolution=""/>
 </Messages>

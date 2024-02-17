@@ -2,19 +2,18 @@
 # Vivado v2022.2 (64-bit)
 # SW Build 3671981 on Fri Oct 14 04:59:54 MDT 2022
 # IP Build 3669848 on Fri Oct 14 08:30:02 MDT 2022
-# Start of session at: Fri Feb  9 01:24:15 2024
-# Process ID: 705614
+# Start of session at: Thu Feb 15 07:45:40 2024
+# Process ID: 191531
 # Current directory: /home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml/solution/impl/ip
 # Command line: vivado -notrace -mode batch -source run_ippack.tcl
 # Log file: /home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml/solution/impl/ip/vivado.log
 # Journal file: /home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml/solution/impl/ip/vivado.jou
-# Running On: egl, OS: Linux, CPU Frequency: 3692.134 MHz, CPU Physical cores: 32, Host memory: 540946 MB
+# Running On: egl, OS: Linux, CPU Frequency: 2730.902 MHz, CPU Physical cores: 32, Host memory: 540936 MB
 #-----------------------------------------------------------
 source run_ippack.tcl -notrace
-ipx::create_core: Time (s): cpu = 00:00:06 ; elapsed = 00:00:58 . Memory (MB): peak = 1789.727 ; gain = 85.023 ; free physical = 413917 ; free virtual = 480492
+ipx::create_core: Time (s): cpu = 00:00:05 ; elapsed = 00:01:29 . Memory (MB): peak = 1790.055 ; gain = 87.992 ; free physical = 312441 ; free virtual = 384279
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1704] No user IP repositories specified
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/tools/Xilinx/Vivado/2022.2/data/ip'.
 Running package_xo -xo_path /home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml/solution/impl/export.xo -kernel_name alveo_hls4ml -kernel_xml /home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml/solution/impl/ip/../kernel/kernel.xml -kernel_files {/home/ayvol/accelerator_wrapper/src/myproject.cpp /home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp} -ip_directory /home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml/solution/impl/ip/ip_unzip_dir -design_xml /home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml/solution/.autopilot/db/alveo_hls4ml.design.xml -debug_directory /home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml/solution/.debug -hls_directory /home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml/solution/impl/ip/hls_files
-package_xo: Time (s): cpu = 00:00:02 ; elapsed = 00:00:09 . Memory (MB): peak = 1813.539 ; gain = 0.000 ; free physical = 423639 ; free virtual = 490399
-INFO: [Common 17-206] Exiting Vivado at Fri Feb  9 01:40:06 2024...
+INFO: [Common 17-206] Exiting Vivado at Thu Feb 15 07:53:51 2024...
