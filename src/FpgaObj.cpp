@@ -76,8 +76,7 @@ void fpgaObj<T, U>::initializeOpenCL(std::vector<cl::Device> &devices, cl::Progr
         for (int i = 0; i < _numSLR; i++) {
             // Create Kernel objects
             std::string cu_id = std::to_string(i);
-            std::string krnl_name_full =
-                "alveo_hls4ml:{alveo_hls4ml_" + cu_id + "}";
+            std::string krnl_name_full = "alveo_hls4ml:{alveo_hls4ml_" + cu_id + "}";
             printf("Creating a kernel [%s] for CU(%d)\n",
                 krnl_name_full.c_str(),
                 i);
