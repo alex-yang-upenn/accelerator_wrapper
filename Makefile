@@ -43,9 +43,9 @@ XO_CONTAINER_FILENAME := $(XO_DIR)/alveo_hls4ml.xo
 
 #--v--v--
 #these need to be set by the user for their specific installation
-HLS4ML_NAME := myproject
-HLS4ML_PROJ_TYPE := CONV2D
-#possible options are: DENSE, CONV2D
+HLS4ML_NAME := 
+HLS4ML_PROJ_TYPE := 
+#possible options are: DENSE, CONV1D, CONV2D
 #--^--^--
 ifeq ($(filter $(HLS4ML_PROJ_TYPE),DENSE CONV2D),)
 $(error invalid HLS4ML_PROJ_TYPE, must be DENSE or CONV2D)
