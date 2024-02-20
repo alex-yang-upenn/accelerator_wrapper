@@ -4,7 +4,7 @@ help::
 	$(ECHO) "Makefile Usage:"
 	$(ECHO) "  make all TARGET=<sw_emu/hw_emu/hw> DEVICE=<FPGA platform> HLS4ML_NAME=<kernel name> HLS4ML_PROJ_TYPE=<DENSE/CONV2D> HOST_ARCH=<aarch32/aarch64/x86> SYSROOT=<sysroot_path>"
 	$(ECHO) "      Command to generate the design for specified Target and Shell."
-	$(ECHO) "      By default, HOST_ARCH=x86. HOST_ARCH and SYSROOT is required for SoC shells"
+	$(ECHO) "      By default, HOST_ARCH=x86. SYSROOT="
 	$(ECHO) ""
 	$(ECHO) "  make clean "
 	$(ECHO) "      Command to remove the generated non-hardware files."
@@ -14,19 +14,15 @@ help::
 	$(ECHO) ""
 	$(ECHO) "  make build TARGET=<sw_emu/hw_emu/hw> DEVICE=<FPGA platform> HLS4ML_NAME=<kernel name> HLS4ML_PROJ_TYPE=<DENSE/CONV2D> HOST_ARCH=<aarch32/aarch64/x86> SYSROOT=<sysroot_path>"
 	$(ECHO) "      Command to build xclbin application."
-	$(ECHO) "      By default, HOST_ARCH=x86. HOST_ARCH and SYSROOT is required for SoC shells"
+	$(ECHO) "      By default, HOST_ARCH=x86."
 	$(ECHO) ""
 	$(ECHO) "  make exe TARGET=<sw_emu/hw_emu/hw> DEVICE=<FPGA platform> HLS4ML_NAME=<kernel name> HLS4ML_PROJ_TYPE=<DENSE/CONV2D> HOST_ARCH=<aarch32/aarch64/x86> SYSROOT=<sysroot_path>"
 	$(ECHO) "      Command to build host executable."
-	$(ECHO) "      By default, HOST_ARCH=x86. HOST_ARCH and SYSROOT is required for SoC shells"
+	$(ECHO) "      By default, HOST_ARCH=x86."
 	$(ECHO) ""
-	$(ECHO) "  make sd_card TARGET=<sw_emu/hw_emu/hw> DEVICE=<FPGA platform> HLS4ML_NAME=<kernel name> HLS4ML_PROJ_TYPE=<DENSE/CONV2D> HOST_ARCH=<aarch32/aarch64/x86> SYSROOT=<sysroot_path>"
-	$(ECHO) "      Command to prepare sd_card files."
-	$(ECHO) "      By default, HOST_ARCH=x86. HOST_ARCH and SYSROOT is required for SoC shells"
-	$(ECHO) ""
-	$(ECHO) "  make check TARGET=<sw_emu/hw_emu/hw> DEVICE=<FPGA platform> HLS4ML_NAME=<kernel name> HLS4ML_PROJ_TYPE=<DENSE/CONV2D> HOST_ARCH=<aarch32/aarch64/x86> SYSROOT=<sysroot_path>"
-	$(ECHO) "      Command to run application in emulation."
-	$(ECHO) "      By default, HOST_ARCH=x86. HOST_ARCH and SYSROOT is required for SoC shells"
+	$(ECHO) "  make run TARGET=<sw_emu/hw_emu/hw> DEVICE=<FPGA platform> HLS4ML_NAME=<kernel name> HLS4ML_PROJ_TYPE=<DENSE/CONV2D> HOST_ARCH=<aarch32/aarch64/x86> SYSROOT=<sysroot_path>"
+	$(ECHO) "      Command to run application"
+	$(ECHO) "      By default, HOST_ARCH=x86."
 	$(ECHO) ""
 
 # Absolute path to top directory of Git repository
@@ -47,8 +43,8 @@ XO_CONTAINER_FILENAME := $(XO_DIR)/alveo_hls4ml.xo
 
 #--v--v--
 #these need to be set by the user for their specific installation
-HLS4ML_NAME := 
-HLS4ML_PROJ_TYPE := 
+HLS4ML_NAME := myproject
+HLS4ML_PROJ_TYPE := CONV2D
 #possible options are: DENSE, CONV2D
 #--^--^--
 ifeq ($(filter $(HLS4ML_PROJ_TYPE),DENSE CONV2D),)
@@ -80,33 +76,24 @@ endif
 
 # Kernel compiler global settings
 KERN_SRCS += src/$(HLS4ML_NAME).cpp
-CLFLAGS += -t $(TARGET) --platform $(DEVICE) --save-temps 
+VPPFLAGS += -t $(TARGET) --platform $(DEVICE) --save-temps 
 ifneq ($(TARGET), hw)
-	CLFLAGS += -g
+	VPPFLAGS += -g
 endif
 
 EXECUTABLE = host
 EMCONFIG_DIR = $(XO_DIR)
-EMU_DIR = sd_card/data/emulation
 
-CP = cp -rf
-
-.PHONY: all clean cleanall docs emconfig
-all: check-devices $(EXECUTABLE) $(BIN_FILENAME) emconfig sd_card
-
-.PHONY: exe
-exe: $(EXECUTABLE)
-
-.PHONY: build
-build: $(BIN_FILENAME)
+.PHONY: all emconfig
+all: check-devices $(EXECUTABLE) $(BIN_FILENAME) emconfig
 
 # Building kernel
 $(XO_CONTAINER_FILENAME): src/alveo_hls4ml.cpp
 	mkdir -p $(XO_DIR)
-	v++ $(CLFLAGS) --temp_dir $(XO_DIR) -c -k alveo_hls4ml -I'$(<D)' -o'$@' '$<' $(KERN_SRCS) $(KERN_MACROS) -I./src/ -I./src/weights -I./src/nnet_utils/ --config config.ini
+	v++ $(VPPFLAGS) --temp_dir $(XO_DIR) -c -k alveo_hls4ml -I'$(<D)' -o'$@' '$<' $(KERN_SRCS) $(KERN_MACROS) -I./src/ -I./src/weights -I./src/nnet_utils/ --config config.ini
 $(BIN_FILENAME): $(XO_CONTAINER_FILENAME)
 	mkdir -p $(BUILD_DIR)
-	v++ $(CLFLAGS) --temp_dir $(BUILD_DIR) -l $(LDCLFLAGS) -o'$@' $(+) --config config.ini
+	v++ $(VPPFLAGS) --temp_dir $(BUILD_DIR) -l -o'$@' $(+) --config config.ini
 
 # Building Host
 $(EXECUTABLE): check-xrt $(HOST_SRCS) $(HOST_HDRS)
@@ -116,50 +103,34 @@ emconfig:$(EMCONFIG_DIR)/emconfig.json
 $(EMCONFIG_DIR)/emconfig.json:
 	emconfigutil --platform $(DEVICE) --od $(EMCONFIG_DIR)
 
-check: all
-ifeq ($(TARGET),$(filter $(TARGET),sw_emu hw_emu))
+.PHONY: exe
+exe: $(EXECUTABLE)
+
+.PHONY: build
+build: check-devices $(BIN_FILENAME)
+
+.PHONY: run
+run: all
 ifeq ($(HOST_ARCH), x86)
-	$(CP) $(EMCONFIG_DIR)/emconfig.json .
+ifeq ($(TARGET),$(filter $(TARGET),sw_emu hw_emu))
+	cp -rf $(EMCONFIG_DIR)/emconfig.json .
 	XCL_EMULATION_MODE=$(TARGET) ./$(EXECUTABLE) $(BIN_FILENAME)
 else
-	mkdir -p $(EMU_DIR)
-	$(CP) $(XILINX_VITIS)/data/emulation/unified $(EMU_DIR)
-	mkfatimg sd_card sd_card.img 500000
-	launch_emulator -no-reboot -runtime ocl -t $(TARGET) -sd-card-image sd_card.img -device-family $(DEV_FAM)
-endif
-else
-ifeq ($(HOST_ARCH), x86)
 	./$(EXECUTABLE) $(BIN_FILENAME)
 endif
-endif
-ifeq ($(HOST_ARCH), x86)
 	perf_analyze profile -i profile_summary.csv -f html
-endif
-
-sd_card: $(EXECUTABLE) $(BIN_FILENAME) emconfig
-ifneq ($(HOST_ARCH), x86)
-	mkdir -p sd_card/$(BUILD_DIR)
-	$(CP) $(B_NAME)/sw/$(XSA)/boot/generic.readme $(B_NAME)/sw/$(XSA)/xrt/image/* xrt.ini $(EXECUTABLE) sd_card
-	$(CP) $(BUILD_DIR)/*.xclbin sd_card/$(BUILD_DIR)/
-ifeq ($(TARGET),$(filter $(TARGET),sw_emu hw_emu))
-	$(ECHO) 'cd /mnt/' >> sd_card/init.sh
-	$(ECHO) 'export XILINX_VITIS=$$PWD' >> sd_card/init.sh
-	$(ECHO) 'export XCL_EMULATION_MODE=$(TARGET)' >> sd_card/init.sh
-	$(ECHO) './$(EXECUTABLE) $(BIN_FILENAME)' >> sd_card/init.sh
-	$(ECHO) 'reboot' >> sd_card/init.sh
 else
-	[ -f sd_card/BOOT.BIN ] && echo "INFO: BOOT.BIN already exists" || $(CP) $(BUILD_DIR)/sd_card/BOOT.BIN sd_card/
-	$(ECHO) './$(EXECUTABLE) $(BIN_FILENAME)' >> sd_card/init.sh
-endif
+$(error This command only supports x86 Host Architecture)
 endif
 
 # Cleaning stuff
+.PHONY: clean
 clean:
-	-$(RMDIR) $(EXECUTABLE) $(XCLBIN)/{*sw_emu*,*hw_emu*} 
-	-$(RMDIR) profile_* TempConfig system_estimate.xtxt *.rpt *.csv 
-	-$(RMDIR) src/*.ll *v++* .Xil emconfig.json dltmp* xmltmp* *.log *.jou *.wcfg *.wdb
+	-rm -rf $(EXECUTABLE) $(XCLBIN)/{*sw_emu*,*hw_emu*} 
+	-rm -rf profile_* TempConfig system_estimate.xtxt *.rpt *.csv 
+	-rm -rf src/*.ll *v++* .Xil emconfig.json dltmp* xmltmp* *.log *.jou *.wcfg *.wdb
 
+.PHONY: cleanall
 cleanall: clean
-	-$(RMDIR) build_dir* sd_card*
-	-$(RMDIR) _x.* *xclbin.run_summary qemu-memory-_* emulation/ _vimage/ pl* start_simulation.sh *.xclbin
-
+	-rm -rf build_dir* sd_card*
+	-rm -rf _x.* *xclbin.run_summary qemu-memory-_* emulation/ _vimage/ pl* start_simulation.sh *.xclbin
