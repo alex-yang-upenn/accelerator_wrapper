@@ -2,10 +2,9 @@
 .vscode/
 
 # Ignore build files
-build_dir.*/
-_x.*/
+build_dir.*/*/
+!build_dir.*/reports/
 *.log
-host
 
 # Ignore server files
 .ipcache/
