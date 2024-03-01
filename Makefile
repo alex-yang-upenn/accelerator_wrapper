@@ -42,11 +42,11 @@ BIN_FILENAME := $(BUILD_DIR)/alveo_hls4ml.xclbin
 XO_CONTAINER_FILENAME := $(XO_DIR)/alveo_hls4ml.xo
 
 #--v--v--
-HLS4ML_NAME := 
+HLS4ML_NAME := myproject
 #name of the cpp file produced by HLS4ML
-HLS4ML_PROJ_TYPE := 
+HLS4ML_PROJ_TYPE := DENSE
 #possible options are: DENSE, CONV1D, CONV2D
-HLS4ML_IO_TYPE:= 
+HLS4ML_IO_TYPE:= IO_STREAM
 #possible options are: IO_PARALLEL, IO_STREAM
 #--^--^--
 ifeq ($(filter $(HLS4ML_PROJ_TYPE),DENSE CONV1D CONV2D),)
@@ -62,10 +62,6 @@ HOST_SRCS += $(xcl2_SRCS)
 include $(PWD)/libs/opencl/opencl.mk
 CXXFLAGS += $(opencl_CXXFLAGS) -Wall -O0 -g -std=c++11 
 LDFLAGS += $(opencl_LDFLAGS) -I$(XILINX_VIVADO)/include/ -I$(XILINX_HLS)/include/ -Wno-unknown-pragmas
-
-# Include Macro Definitions
-CXXFLAGS += -DIS_$(HLS4ML_PROJ_TYPE) -D$(HLS4ML_IO_TYPE) -DHLS4ML_DATA_DIR=./ -DXCL_BIN_FILENAME=$(BIN_FILENAME)
-KERN_MACROS += -DMYPROJ=$(HLS4ML_NAME) -DIS_$(HLS4ML_PROJ_TYPE) -D$(HLS4ML_IO_TYPE)
 
 # Host compiler global settings
 HOST_SRCS += src/host.cpp
@@ -83,6 +79,10 @@ ifneq ($(TARGET), hw)
 	VPPFLAGS += -g
 endif
 
+# Macro Definitions
+CXX_MACROS += -DIS_$(HLS4ML_PROJ_TYPE) -D$(HLS4ML_IO_TYPE) -DHLS4ML_DATA_DIR=./ -DXCL_BIN_FILENAME=$(BIN_FILENAME)
+KERN_MACROS += -DMYPROJ=$(HLS4ML_NAME) -DIS_$(HLS4ML_PROJ_TYPE) -D$(HLS4ML_IO_TYPE)
+
 EXECUTABLE = host
 EMCONFIG_DIR = $(XO_DIR)
 
@@ -99,7 +99,7 @@ $(BIN_FILENAME): $(XO_CONTAINER_FILENAME)
 
 # Building Host
 $(EXECUTABLE): check-xrt $(HOST_SRCS) $(HOST_HDRS)
-	$(CXX) $(CXXFLAGS) $(HOST_SRCS) $(HOST_HDRS) -o '$@' $(LDFLAGS)
+	$(CXX) $(CXXFLAGS) $(CXX_MACROS) $(HOST_SRCS) $(HOST_HDRS) -o '$@' $(LDFLAGS)
 
 emconfig:$(EMCONFIG_DIR)/emconfig.json
 $(EMCONFIG_DIR)/emconfig.json:
