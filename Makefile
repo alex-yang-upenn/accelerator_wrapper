@@ -47,8 +47,8 @@ HLS4ML_NAME :=
 HLS4ML_PROJ_TYPE := 
 #possible options are: DENSE, CONV1D, CONV2D
 #--^--^--
-ifeq ($(filter $(HLS4ML_PROJ_TYPE),DENSE CONV2D),)
-$(error invalid HLS4ML_PROJ_TYPE, must be DENSE or CONV2D)
+ifeq ($(filter $(HLS4ML_PROJ_TYPE),DENSE CONV1D CONV2D),)
+$(error invalid HLS4ML_PROJ_TYPE, must be DENSE, CONV1D, or CONV2D)
 endif
 
 # Include Libraries
