@@ -42,10 +42,12 @@ BIN_FILENAME := $(BUILD_DIR)/alveo_hls4ml.xclbin
 XO_CONTAINER_FILENAME := $(XO_DIR)/alveo_hls4ml.xo
 
 #--v--v--
-#these need to be set by the user for their specific installation
-HLS4ML_NAME := 
-HLS4ML_PROJ_TYPE := 
+HLS4ML_NAME := myproject
+#name of the cpp file produced by HLS4ML
+HLS4ML_PROJ_TYPE := CONV1D
 #possible options are: DENSE, CONV1D, CONV2D
+HLS4ML_IO_TYPE:= IO_STREAM
+#possible options are: IO_PARALLEL, IO_STREAM
 #--^--^--
 ifeq ($(filter $(HLS4ML_PROJ_TYPE),DENSE CONV2D),)
 $(error invalid HLS4ML_PROJ_TYPE, must be DENSE or CONV2D)
@@ -63,7 +65,7 @@ LDFLAGS += $(opencl_LDFLAGS) -I$(XILINX_VIVADO)/include/ -I$(XILINX_HLS)/include
 
 # Include Macro Definitions
 CXXFLAGS += -DIS_$(HLS4ML_PROJ_TYPE) -DHLS4ML_DATA_DIR=./ -DXCL_BIN_FILENAME=$(BIN_FILENAME)
-KERN_MACROS += -DMYPROJ=$(HLS4ML_NAME) -DIS_$(HLS4ML_PROJ_TYPE)
+KERN_MACROS += -DMYPROJ=$(HLS4ML_NAME) -DIS_$(HLS4ML_PROJ_TYPE) -D$(HLS4ML_IO_TYPE)
 
 # Host compiler global settings
 HOST_SRCS += src/host.cpp
