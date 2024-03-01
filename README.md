@@ -13,7 +13,7 @@ source setup.sh
 ```
 
 ## Move in HLS4ML Firmware Files
-Copy the following HLS4ML-generated files and directories into the src folder
+Place the following HLS4ML-generated files and directories into the src folder
 ```bash
 [HLS4ML Project Directory]/firmware/defines.h
 [HLS4ML Project Directory]/firmware/parameters.h
@@ -25,29 +25,9 @@ Copy the following HLS4ML-generated files and directories into the src folder
 ```
 
 ## Modify connectivity configurations for target platform
-The default "connectivity" section of config.ini is created for the U55C card, which features 3 SLR regions and HBM memory. It places a copy of the kernel into each SLR region and assigns different HBM channels for each kernel's input and output. 
-```bash
-# Modify the following accordingly for the desired target platform.
+By default, config.ini and FpgaObj.cpp are set up for the U55C platform, which has 32 HBM Channels as memory. Four copies of the kernel are created, and each copy is assigned 8 HBM channels, 4 for input and 4 for output, that are memory-mapped to the Host CPU.
 
-# nk=<kernel name>:<number>:<cu_name>.<cu_name>...
-nk=alveo_hls4ml:3:alveo_hls4ml_0.alveo_hls4ml_1.alveo_hls4ml_2
-
-# slr=<compute_unit_name>:<slr_ID>
-slr=alveo_hls4ml_0:SLR0
-slr=alveo_hls4ml_1:SLR1
-.
-.
-.
-
-# sp=<compute_unit_name>.<interface_name>:<bank name> 
-sp=alveo_hls4ml_0.in:HBM[0:3]
-sp=alveo_hls4ml_0.out:HBM[4:7]
-sp=alveo_hls4ml_1.in:HBM[8:11]
-sp=alveo_hls4ml_1.out:HBM[12:15]
-.
-.
-.
-```
+Modify as appropriate for a different target platform.
 
 ## Compile VitisAccel project
 ```bash
@@ -58,7 +38,7 @@ LD_PRELOAD=/lib/x86_64-linux-gnu/libudev.so.1
 
 # Command to generate the entire design for specified Target and Shell.
 # HOST_ARCH and SYSROOT are optional commands. By default, HOST_ARCH=x86. HOST_ARCH and SYSROOT is required for SoC shells
-make all TARGET=<sw_emu/hw_emu/hw> DEVICE=<FPGA platform> HLS4ML_NAME=<kernel name> HLS4ML_PROJ_TYPE=<DENSE/CONV1D> HOST_ARCH=<aarch32/aarch64/x86> SYSROOT=<sysroot_path>
+make all TARGET=<sw_emu/hw_emu/hw> DEVICE=<FPGA platform> HLS4ML_NAME=<kernel name> HLS4ML_PROJ_TYPE=<DENSE/CONV1D/CONV2D> HLS4ML_IO_TYPE=<IO_PARALLEL/IO_STREAM> HOST_ARCH=<aarch32/aarch64/x86> SYSROOT=<sysroot_path>
 
 # Command to remove the generated non-hardware files."
 make clean
@@ -67,13 +47,13 @@ make clean
 make cleanall
 
 # Command to build only the xclbin application
-make build TARGET=<sw_emu/hw_emu/hw> DEVICE=<FPGA platform> HLS4ML_NAME=<kernel name> HLS4ML_PROJ_TYPE=<DENSE/CONV1D> HOST_ARCH=<aarch32/aarch64/x86> SYSROOT=<sysroot_path>
+make build TARGET=<sw_emu/hw_emu/hw> DEVICE=<FPGA platform> HLS4ML_NAME=<kernel name> HLS4ML_PROJ_TYPE=<DENSE/CONV1D/CONV2D> HLS4ML_IO_TYPE=<IO_PARALLEL/IO_STREAM> HOST_ARCH=<aarch32/aarch64/x86> SYSROOT=<sysroot_path>
 
 # Command to build only the host executable
-make exe TARGET=<sw_emu/hw_emu/hw> DEVICE=<FPGA platform> HLS4ML_NAME=<kernel name> HLS4ML_PROJ_TYPE=<DENSE/CONV1D> HOST_ARCH=<aarch32/aarch64/x86> SYSROOT=<sysroot_path>
+make exe TARGET=<sw_emu/hw_emu/hw> DEVICE=<FPGA platform> HLS4ML_NAME=<kernel name> HLS4ML_PROJ_TYPE=<DENSE/CONV1D/CONV2D> HLS4ML_IO_TYPE=<IO_PARALLEL/IO_STREAM> HOST_ARCH=<aarch32/aarch64/x86> SYSROOT=<sysroot_path>
 ```
 
-## Run on accelerator (TARGET=hw only)
+## Run completed design on accelerator (TARGET=hw only)
 ```bash
 # Run command
 ./host
