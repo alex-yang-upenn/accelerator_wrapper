@@ -1,0 +1,461 @@
+
+
+================================================================
+== Vitis HLS Report for 'dense_array_ap_ufixed_64u_array_ap_fixed_16_6_5_3_0_1u_config23_s'
+================================================================
+* Date:           Fri Mar  1 05:38:03 2024
+
+* Version:        2022.2 (Build 3670227 on Oct 13 2022)
+* Project:        alveo_hls4ml
+* Solution:       solution (Vitis Kernel Flow Target)
+* Product family: virtexuplus
+* Target device:  xcu55c-fsvh2892-2L-e
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+---------+----------+------------+
+    |  Clock |  Target | Estimated| Uncertainty|
+    +--------+---------+----------+------------+
+    |ap_clk  |  3.33 ns|  2.235 ns|     0.90 ns|
+    +--------+---------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+-----------+-----------+-----+-----+---------+
+    |  Latency (cycles) |   Latency (absolute)  |  Interval | Pipeline|
+    |   min   |   max   |    min    |    max    | min | max |   Type  |
+    +---------+---------+-----------+-----------+-----+-----+---------+
+    |        4|        4|  13.332 ns|  13.332 ns|    4|    4|       no|
+    +---------+---------+-----------+-----------+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        N/A
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 2
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 5
+* Pipeline : 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 3 
+3 --> 4 
+4 --> 5 
+5 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 1.94>
+ST_1 : Operation 6 [1/1] (1.21ns)   --->   "%layer22_out_read = read i384 @_ssdm_op_Read.ap_fifo.volatile.i384P0A, i384 %layer22_out" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:43]   --->   Operation 6 'read' 'layer22_out_read' <Predicate = true> <Delay = 1.21> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.41> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 384> <Depth = 1> <FIFO>
+ST_1 : Operation 7 [1/1] (0.00ns)   --->   "%trunc_ln43_s = partselect i6 @_ssdm_op_PartSelect.i6.i384.i32.i32, i384 %layer22_out_read, i32 6, i32 11" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:43]   --->   Operation 7 'partselect' 'trunc_ln43_s' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 8 [1/1] (0.00ns)   --->   "%trunc_ln43_1 = partselect i6 @_ssdm_op_PartSelect.i6.i384.i32.i32, i384 %layer22_out_read, i32 12, i32 17" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:43]   --->   Operation 8 'partselect' 'trunc_ln43_1' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 9 [1/1] (0.00ns)   --->   "%trunc_ln43_2 = partselect i6 @_ssdm_op_PartSelect.i6.i384.i32.i32, i384 %layer22_out_read, i32 18, i32 23" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:43]   --->   Operation 9 'partselect' 'trunc_ln43_2' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 10 [1/1] (0.00ns)   --->   "%trunc_ln43_3 = partselect i6 @_ssdm_op_PartSelect.i6.i384.i32.i32, i384 %layer22_out_read, i32 24, i32 29" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:43]   --->   Operation 10 'partselect' 'trunc_ln43_3' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 11 [1/1] (0.00ns)   --->   "%trunc_ln43_4 = partselect i6 @_ssdm_op_PartSelect.i6.i384.i32.i32, i384 %layer22_out_read, i32 30, i32 35" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:43]   --->   Operation 11 'partselect' 'trunc_ln43_4' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 12 [1/1] (0.00ns)   --->   "%trunc_ln43_5 = partselect i6 @_ssdm_op_PartSelect.i6.i384.i32.i32, i384 %layer22_out_read, i32 36, i32 41" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:43]   --->   Operation 12 'partselect' 'trunc_ln43_5' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 13 [1/1] (0.00ns)   --->   "%trunc_ln43_6 = partselect i6 @_ssdm_op_PartSelect.i6.i384.i32.i32, i384 %layer22_out_read, i32 42, i32 47" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:43]   --->   Operation 13 'partselect' 'trunc_ln43_6' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 14 [1/1] (0.00ns)   --->   "%trunc_ln43_7 = partselect i6 @_ssdm_op_PartSelect.i6.i384.i32.i32, i384 %layer22_out_read, i32 48, i32 53" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:43]   --->   Operation 14 'partselect' 'trunc_ln43_7' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 15 [1/1] (0.00ns)   --->   "%trunc_ln43_8 = partselect i6 @_ssdm_op_PartSelect.i6.i384.i32.i32, i384 %layer22_out_read, i32 54, i32 59" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:43]   --->   Operation 15 'partselect' 'trunc_ln43_8' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 16 [1/1] (0.00ns)   --->   "%trunc_ln43_9 = partselect i6 @_ssdm_op_PartSelect.i6.i384.i32.i32, i384 %layer22_out_read, i32 60, i32 65" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:43]   --->   Operation 16 'partselect' 'trunc_ln43_9' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 17 [1/1] (0.00ns)   --->   "%trunc_ln43_10 = partselect i6 @_ssdm_op_PartSelect.i6.i384.i32.i32, i384 %layer22_out_read, i32 66, i32 71" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:43]   --->   Operation 17 'partselect' 'trunc_ln43_10' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 18 [1/1] (0.00ns)   --->   "%trunc_ln43_11 = partselect i6 @_ssdm_op_PartSelect.i6.i384.i32.i32, i384 %layer22_out_read, i32 72, i32 77" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:43]   --->   Operation 18 'partselect' 'trunc_ln43_11' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 19 [1/1] (0.00ns)   --->   "%trunc_ln43_12 = partselect i6 @_ssdm_op_PartSelect.i6.i384.i32.i32, i384 %layer22_out_read, i32 78, i32 83" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:43]   --->   Operation 19 'partselect' 'trunc_ln43_12' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 20 [1/1] (0.00ns)   --->   "%trunc_ln43_13 = partselect i6 @_ssdm_op_PartSelect.i6.i384.i32.i32, i384 %layer22_out_read, i32 84, i32 89" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:43]   --->   Operation 20 'partselect' 'trunc_ln43_13' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 21 [1/1] (0.00ns)   --->   "%trunc_ln43_14 = partselect i6 @_ssdm_op_PartSelect.i6.i384.i32.i32, i384 %layer22_out_read, i32 90, i32 95" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:43]   --->   Operation 21 'partselect' 'trunc_ln43_14' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 22 [1/1] (0.00ns)   --->   "%trunc_ln43_15 = partselect i6 @_ssdm_op_PartSelect.i6.i384.i32.i32, i384 %layer22_out_read, i32 96, i32 101" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:43]   --->   Operation 22 'partselect' 'trunc_ln43_15' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 23 [1/1] (0.00ns)   --->   "%trunc_ln43_16 = partselect i6 @_ssdm_op_PartSelect.i6.i384.i32.i32, i384 %layer22_out_read, i32 102, i32 107" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:43]   --->   Operation 23 'partselect' 'trunc_ln43_16' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 24 [1/1] (0.00ns)   --->   "%trunc_ln43_17 = partselect i6 @_ssdm_op_PartSelect.i6.i384.i32.i32, i384 %layer22_out_read, i32 108, i32 113" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:43]   --->   Operation 24 'partselect' 'trunc_ln43_17' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 25 [1/1] (0.00ns)   --->   "%trunc_ln43_18 = partselect i6 @_ssdm_op_PartSelect.i6.i384.i32.i32, i384 %layer22_out_read, i32 114, i32 119" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:43]   --->   Operation 25 'partselect' 'trunc_ln43_18' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 26 [1/1] (0.00ns)   --->   "%trunc_ln43_19 = partselect i6 @_ssdm_op_PartSelect.i6.i384.i32.i32, i384 %layer22_out_read, i32 120, i32 125" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:43]   --->   Operation 26 'partselect' 'trunc_ln43_19' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 27 [1/1] (0.00ns)   --->   "%trunc_ln43_20 = partselect i6 @_ssdm_op_PartSelect.i6.i384.i32.i32, i384 %layer22_out_read, i32 126, i32 131" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:43]   --->   Operation 27 'partselect' 'trunc_ln43_20' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 28 [1/1] (0.00ns)   --->   "%trunc_ln43_21 = partselect i6 @_ssdm_op_PartSelect.i6.i384.i32.i32, i384 %layer22_out_read, i32 132, i32 137" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:43]   --->   Operation 28 'partselect' 'trunc_ln43_21' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 29 [1/1] (0.00ns)   --->   "%trunc_ln43_22 = partselect i6 @_ssdm_op_PartSelect.i6.i384.i32.i32, i384 %layer22_out_read, i32 138, i32 143" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:43]   --->   Operation 29 'partselect' 'trunc_ln43_22' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 30 [1/1] (0.00ns)   --->   "%trunc_ln43_23 = partselect i6 @_ssdm_op_PartSelect.i6.i384.i32.i32, i384 %layer22_out_read, i32 144, i32 149" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:43]   --->   Operation 30 'partselect' 'trunc_ln43_23' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 31 [1/1] (0.00ns)   --->   "%trunc_ln43_24 = partselect i6 @_ssdm_op_PartSelect.i6.i384.i32.i32, i384 %layer22_out_read, i32 150, i32 155" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:43]   --->   Operation 31 'partselect' 'trunc_ln43_24' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 32 [1/1] (0.00ns)   --->   "%trunc_ln43_25 = partselect i6 @_ssdm_op_PartSelect.i6.i384.i32.i32, i384 %layer22_out_read, i32 156, i32 161" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:43]   --->   Operation 32 'partselect' 'trunc_ln43_25' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 33 [1/1] (0.00ns)   --->   "%trunc_ln43_26 = partselect i6 @_ssdm_op_PartSelect.i6.i384.i32.i32, i384 %layer22_out_read, i32 162, i32 167" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:43]   --->   Operation 33 'partselect' 'trunc_ln43_26' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 34 [1/1] (0.00ns)   --->   "%trunc_ln43_27 = partselect i6 @_ssdm_op_PartSelect.i6.i384.i32.i32, i384 %layer22_out_read, i32 168, i32 173" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:43]   --->   Operation 34 'partselect' 'trunc_ln43_27' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 35 [1/1] (0.00ns)   --->   "%trunc_ln43_28 = partselect i6 @_ssdm_op_PartSelect.i6.i384.i32.i32, i384 %layer22_out_read, i32 174, i32 179" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:43]   --->   Operation 35 'partselect' 'trunc_ln43_28' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 36 [1/1] (0.00ns)   --->   "%trunc_ln43_29 = partselect i6 @_ssdm_op_PartSelect.i6.i384.i32.i32, i384 %layer22_out_read, i32 180, i32 185" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:43]   --->   Operation 36 'partselect' 'trunc_ln43_29' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 37 [1/1] (0.00ns)   --->   "%trunc_ln43_30 = partselect i6 @_ssdm_op_PartSelect.i6.i384.i32.i32, i384 %layer22_out_read, i32 186, i32 191" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:43]   --->   Operation 37 'partselect' 'trunc_ln43_30' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 38 [1/1] (0.00ns)   --->   "%trunc_ln43_31 = partselect i6 @_ssdm_op_PartSelect.i6.i384.i32.i32, i384 %layer22_out_read, i32 192, i32 197" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:43]   --->   Operation 38 'partselect' 'trunc_ln43_31' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 39 [1/1] (0.00ns)   --->   "%trunc_ln43_32 = partselect i6 @_ssdm_op_PartSelect.i6.i384.i32.i32, i384 %layer22_out_read, i32 198, i32 203" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:43]   --->   Operation 39 'partselect' 'trunc_ln43_32' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 40 [1/1] (0.00ns)   --->   "%trunc_ln43_33 = partselect i6 @_ssdm_op_PartSelect.i6.i384.i32.i32, i384 %layer22_out_read, i32 204, i32 209" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:43]   --->   Operation 40 'partselect' 'trunc_ln43_33' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 41 [1/1] (0.00ns)   --->   "%trunc_ln43_34 = partselect i6 @_ssdm_op_PartSelect.i6.i384.i32.i32, i384 %layer22_out_read, i32 210, i32 215" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:43]   --->   Operation 41 'partselect' 'trunc_ln43_34' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 42 [1/1] (0.00ns)   --->   "%trunc_ln43_35 = partselect i6 @_ssdm_op_PartSelect.i6.i384.i32.i32, i384 %layer22_out_read, i32 216, i32 221" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:43]   --->   Operation 42 'partselect' 'trunc_ln43_35' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 43 [1/1] (0.00ns)   --->   "%trunc_ln43_36 = partselect i6 @_ssdm_op_PartSelect.i6.i384.i32.i32, i384 %layer22_out_read, i32 222, i32 227" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:43]   --->   Operation 43 'partselect' 'trunc_ln43_36' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 44 [1/1] (0.00ns)   --->   "%trunc_ln43_37 = partselect i6 @_ssdm_op_PartSelect.i6.i384.i32.i32, i384 %layer22_out_read, i32 228, i32 233" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:43]   --->   Operation 44 'partselect' 'trunc_ln43_37' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 45 [1/1] (0.00ns)   --->   "%trunc_ln43_38 = partselect i6 @_ssdm_op_PartSelect.i6.i384.i32.i32, i384 %layer22_out_read, i32 234, i32 239" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:43]   --->   Operation 45 'partselect' 'trunc_ln43_38' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 46 [1/1] (0.00ns)   --->   "%trunc_ln43_39 = partselect i6 @_ssdm_op_PartSelect.i6.i384.i32.i32, i384 %layer22_out_read, i32 240, i32 245" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:43]   --->   Operation 46 'partselect' 'trunc_ln43_39' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 47 [1/1] (0.00ns)   --->   "%trunc_ln43_40 = partselect i6 @_ssdm_op_PartSelect.i6.i384.i32.i32, i384 %layer22_out_read, i32 246, i32 251" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:43]   --->   Operation 47 'partselect' 'trunc_ln43_40' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 48 [1/1] (0.00ns)   --->   "%trunc_ln43_41 = partselect i6 @_ssdm_op_PartSelect.i6.i384.i32.i32, i384 %layer22_out_read, i32 252, i32 257" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:43]   --->   Operation 48 'partselect' 'trunc_ln43_41' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 49 [1/1] (0.00ns)   --->   "%trunc_ln43_42 = partselect i6 @_ssdm_op_PartSelect.i6.i384.i32.i32, i384 %layer22_out_read, i32 258, i32 263" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:43]   --->   Operation 49 'partselect' 'trunc_ln43_42' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 50 [1/1] (0.00ns)   --->   "%trunc_ln43_43 = partselect i6 @_ssdm_op_PartSelect.i6.i384.i32.i32, i384 %layer22_out_read, i32 264, i32 269" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:43]   --->   Operation 50 'partselect' 'trunc_ln43_43' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 51 [1/1] (0.00ns)   --->   "%trunc_ln43_44 = partselect i6 @_ssdm_op_PartSelect.i6.i384.i32.i32, i384 %layer22_out_read, i32 270, i32 275" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:43]   --->   Operation 51 'partselect' 'trunc_ln43_44' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 52 [1/1] (0.00ns)   --->   "%trunc_ln43_45 = partselect i6 @_ssdm_op_PartSelect.i6.i384.i32.i32, i384 %layer22_out_read, i32 276, i32 281" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:43]   --->   Operation 52 'partselect' 'trunc_ln43_45' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 53 [1/1] (0.00ns)   --->   "%trunc_ln43_46 = partselect i6 @_ssdm_op_PartSelect.i6.i384.i32.i32, i384 %layer22_out_read, i32 282, i32 287" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:43]   --->   Operation 53 'partselect' 'trunc_ln43_46' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 54 [1/1] (0.00ns)   --->   "%trunc_ln43_47 = partselect i6 @_ssdm_op_PartSelect.i6.i384.i32.i32, i384 %layer22_out_read, i32 288, i32 293" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:43]   --->   Operation 54 'partselect' 'trunc_ln43_47' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 55 [1/1] (0.00ns)   --->   "%trunc_ln43_48 = partselect i6 @_ssdm_op_PartSelect.i6.i384.i32.i32, i384 %layer22_out_read, i32 294, i32 299" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:43]   --->   Operation 55 'partselect' 'trunc_ln43_48' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 56 [1/1] (0.00ns)   --->   "%trunc_ln43_49 = partselect i6 @_ssdm_op_PartSelect.i6.i384.i32.i32, i384 %layer22_out_read, i32 300, i32 305" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:43]   --->   Operation 56 'partselect' 'trunc_ln43_49' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 57 [1/1] (0.00ns)   --->   "%trunc_ln43_50 = partselect i6 @_ssdm_op_PartSelect.i6.i384.i32.i32, i384 %layer22_out_read, i32 306, i32 311" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:43]   --->   Operation 57 'partselect' 'trunc_ln43_50' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 58 [1/1] (0.00ns)   --->   "%trunc_ln43_51 = partselect i6 @_ssdm_op_PartSelect.i6.i384.i32.i32, i384 %layer22_out_read, i32 312, i32 317" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:43]   --->   Operation 58 'partselect' 'trunc_ln43_51' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 59 [1/1] (0.00ns)   --->   "%trunc_ln43_52 = partselect i6 @_ssdm_op_PartSelect.i6.i384.i32.i32, i384 %layer22_out_read, i32 318, i32 323" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:43]   --->   Operation 59 'partselect' 'trunc_ln43_52' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 60 [1/1] (0.00ns)   --->   "%trunc_ln43_53 = partselect i6 @_ssdm_op_PartSelect.i6.i384.i32.i32, i384 %layer22_out_read, i32 324, i32 329" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:43]   --->   Operation 60 'partselect' 'trunc_ln43_53' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 61 [1/1] (0.00ns)   --->   "%trunc_ln43_54 = partselect i6 @_ssdm_op_PartSelect.i6.i384.i32.i32, i384 %layer22_out_read, i32 330, i32 335" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:43]   --->   Operation 61 'partselect' 'trunc_ln43_54' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 62 [1/1] (0.00ns)   --->   "%trunc_ln43_55 = partselect i6 @_ssdm_op_PartSelect.i6.i384.i32.i32, i384 %layer22_out_read, i32 336, i32 341" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:43]   --->   Operation 62 'partselect' 'trunc_ln43_55' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 63 [1/1] (0.00ns)   --->   "%trunc_ln43_56 = partselect i6 @_ssdm_op_PartSelect.i6.i384.i32.i32, i384 %layer22_out_read, i32 342, i32 347" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:43]   --->   Operation 63 'partselect' 'trunc_ln43_56' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 64 [1/1] (0.00ns)   --->   "%trunc_ln43_57 = partselect i6 @_ssdm_op_PartSelect.i6.i384.i32.i32, i384 %layer22_out_read, i32 348, i32 353" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:43]   --->   Operation 64 'partselect' 'trunc_ln43_57' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 65 [1/1] (0.00ns)   --->   "%trunc_ln43_58 = partselect i6 @_ssdm_op_PartSelect.i6.i384.i32.i32, i384 %layer22_out_read, i32 354, i32 359" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:43]   --->   Operation 65 'partselect' 'trunc_ln43_58' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 66 [1/1] (0.00ns)   --->   "%trunc_ln818 = trunc i384 %layer22_out_read"   --->   Operation 66 'trunc' 'trunc_ln818' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 67 [1/1] (0.00ns)   --->   "%shl_ln818_1 = bitconcatenate i10 @_ssdm_op_BitConcatenate.i10.i6.i4, i6 %trunc_ln43_s, i4 0"   --->   Operation 67 'bitconcatenate' 'shl_ln818_1' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 68 [1/1] (0.00ns)   --->   "%shl_ln818_2 = bitconcatenate i10 @_ssdm_op_BitConcatenate.i10.i6.i4, i6 %trunc_ln43_1, i4 0"   --->   Operation 68 'bitconcatenate' 'shl_ln818_2' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 69 [1/1] (0.00ns)   --->   "%shl_ln818_5 = bitconcatenate i10 @_ssdm_op_BitConcatenate.i10.i6.i4, i6 %trunc_ln43_4, i4 0"   --->   Operation 69 'bitconcatenate' 'shl_ln818_5' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 70 [1/1] (0.00ns)   --->   "%shl_ln818_6 = bitconcatenate i10 @_ssdm_op_BitConcatenate.i10.i6.i4, i6 %trunc_ln43_5, i4 0"   --->   Operation 70 'bitconcatenate' 'shl_ln818_6' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 71 [1/1] (0.00ns)   --->   "%shl_ln818_8 = bitconcatenate i10 @_ssdm_op_BitConcatenate.i10.i6.i4, i6 %trunc_ln43_7, i4 0"   --->   Operation 71 'bitconcatenate' 'shl_ln818_8' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 72 [1/1] (0.00ns)   --->   "%shl_ln818_9 = bitconcatenate i10 @_ssdm_op_BitConcatenate.i10.i6.i4, i6 %trunc_ln43_8, i4 0"   --->   Operation 72 'bitconcatenate' 'shl_ln818_9' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 73 [1/1] (0.00ns)   --->   "%shl_ln818_s = bitconcatenate i10 @_ssdm_op_BitConcatenate.i10.i6.i4, i6 %trunc_ln43_9, i4 0"   --->   Operation 73 'bitconcatenate' 'shl_ln818_s' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 74 [1/1] (0.00ns)   --->   "%shl_ln818_10 = bitconcatenate i10 @_ssdm_op_BitConcatenate.i10.i6.i4, i6 %trunc_ln43_10, i4 0"   --->   Operation 74 'bitconcatenate' 'shl_ln818_10' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 75 [1/1] (0.00ns)   --->   "%shl_ln818_12 = bitconcatenate i10 @_ssdm_op_BitConcatenate.i10.i6.i4, i6 %trunc_ln43_12, i4 0"   --->   Operation 75 'bitconcatenate' 'shl_ln818_12' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 76 [1/1] (0.00ns)   --->   "%shl_ln818_13 = bitconcatenate i10 @_ssdm_op_BitConcatenate.i10.i6.i4, i6 %trunc_ln43_13, i4 0"   --->   Operation 76 'bitconcatenate' 'shl_ln818_13' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 77 [1/1] (0.00ns)   --->   "%shl_ln818_15 = bitconcatenate i10 @_ssdm_op_BitConcatenate.i10.i6.i4, i6 %trunc_ln43_15, i4 0"   --->   Operation 77 'bitconcatenate' 'shl_ln818_15' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 78 [1/1] (0.00ns)   --->   "%shl_ln818_16 = bitconcatenate i10 @_ssdm_op_BitConcatenate.i10.i6.i4, i6 %trunc_ln43_16, i4 0"   --->   Operation 78 'bitconcatenate' 'shl_ln818_16' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 79 [1/1] (0.00ns)   --->   "%shl_ln818_17 = bitconcatenate i10 @_ssdm_op_BitConcatenate.i10.i6.i4, i6 %trunc_ln43_17, i4 0"   --->   Operation 79 'bitconcatenate' 'shl_ln818_17' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 80 [1/1] (0.00ns)   --->   "%shl_ln818_18 = bitconcatenate i10 @_ssdm_op_BitConcatenate.i10.i6.i4, i6 %trunc_ln43_18, i4 0"   --->   Operation 80 'bitconcatenate' 'shl_ln818_18' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 81 [1/1] (0.00ns)   --->   "%shl_ln818_19 = bitconcatenate i10 @_ssdm_op_BitConcatenate.i10.i6.i4, i6 %trunc_ln43_19, i4 0"   --->   Operation 81 'bitconcatenate' 'shl_ln818_19' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 82 [1/1] (0.00ns)   --->   "%shl_ln818_20 = bitconcatenate i10 @_ssdm_op_BitConcatenate.i10.i6.i4, i6 %trunc_ln43_20, i4 0"   --->   Operation 82 'bitconcatenate' 'shl_ln818_20' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 83 [1/1] (0.00ns)   --->   "%shl_ln818_21 = bitconcatenate i10 @_ssdm_op_BitConcatenate.i10.i6.i4, i6 %trunc_ln43_21, i4 0"   --->   Operation 83 'bitconcatenate' 'shl_ln818_21' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 84 [1/1] (0.00ns)   --->   "%shl_ln818_22 = bitconcatenate i10 @_ssdm_op_BitConcatenate.i10.i6.i4, i6 %trunc_ln43_22, i4 0"   --->   Operation 84 'bitconcatenate' 'shl_ln818_22' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 85 [1/1] (0.00ns)   --->   "%shl_ln818_23 = bitconcatenate i10 @_ssdm_op_BitConcatenate.i10.i6.i4, i6 %trunc_ln43_23, i4 0"   --->   Operation 85 'bitconcatenate' 'shl_ln818_23' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 86 [1/1] (0.00ns)   --->   "%shl_ln818_24 = bitconcatenate i10 @_ssdm_op_BitConcatenate.i10.i6.i4, i6 %trunc_ln43_24, i4 0"   --->   Operation 86 'bitconcatenate' 'shl_ln818_24' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 87 [1/1] (0.00ns)   --->   "%shl_ln818_25 = bitconcatenate i10 @_ssdm_op_BitConcatenate.i10.i6.i4, i6 %trunc_ln43_25, i4 0"   --->   Operation 87 'bitconcatenate' 'shl_ln818_25' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 88 [1/1] (0.00ns)   --->   "%shl_ln818_26 = bitconcatenate i10 @_ssdm_op_BitConcatenate.i10.i6.i4, i6 %trunc_ln43_26, i4 0"   --->   Operation 88 'bitconcatenate' 'shl_ln818_26' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 89 [1/1] (0.00ns)   --->   "%shl_ln818_28 = bitconcatenate i10 @_ssdm_op_BitConcatenate.i10.i6.i4, i6 %trunc_ln43_28, i4 0"   --->   Operation 89 'bitconcatenate' 'shl_ln818_28' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 90 [1/1] (0.00ns)   --->   "%shl_ln818_29 = bitconcatenate i10 @_ssdm_op_BitConcatenate.i10.i6.i4, i6 %trunc_ln43_29, i4 0"   --->   Operation 90 'bitconcatenate' 'shl_ln818_29' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 91 [1/1] (0.00ns)   --->   "%shl_ln818_31 = bitconcatenate i10 @_ssdm_op_BitConcatenate.i10.i6.i4, i6 %trunc_ln43_31, i4 0"   --->   Operation 91 'bitconcatenate' 'shl_ln818_31' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 92 [1/1] (0.00ns)   --->   "%shl_ln818_32 = bitconcatenate i10 @_ssdm_op_BitConcatenate.i10.i6.i4, i6 %trunc_ln43_32, i4 0"   --->   Operation 92 'bitconcatenate' 'shl_ln818_32' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 93 [1/1] (0.00ns)   --->   "%shl_ln818_33 = bitconcatenate i10 @_ssdm_op_BitConcatenate.i10.i6.i4, i6 %trunc_ln43_33, i4 0"   --->   Operation 93 'bitconcatenate' 'shl_ln818_33' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 94 [1/1] (0.00ns)   --->   "%shl_ln818_34 = bitconcatenate i10 @_ssdm_op_BitConcatenate.i10.i6.i4, i6 %trunc_ln43_34, i4 0"   --->   Operation 94 'bitconcatenate' 'shl_ln818_34' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 95 [1/1] (0.00ns)   --->   "%shl_ln818_35 = bitconcatenate i10 @_ssdm_op_BitConcatenate.i10.i6.i4, i6 %trunc_ln43_35, i4 0"   --->   Operation 95 'bitconcatenate' 'shl_ln818_35' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 96 [1/1] (0.00ns)   --->   "%shl_ln818_36 = bitconcatenate i10 @_ssdm_op_BitConcatenate.i10.i6.i4, i6 %trunc_ln43_36, i4 0"   --->   Operation 96 'bitconcatenate' 'shl_ln818_36' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 97 [1/1] (0.00ns)   --->   "%shl_ln818_37 = bitconcatenate i10 @_ssdm_op_BitConcatenate.i10.i6.i4, i6 %trunc_ln43_37, i4 0"   --->   Operation 97 'bitconcatenate' 'shl_ln818_37' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 98 [1/1] (0.00ns)   --->   "%shl_ln818_38 = bitconcatenate i10 @_ssdm_op_BitConcatenate.i10.i6.i4, i6 %trunc_ln43_38, i4 0"   --->   Operation 98 'bitconcatenate' 'shl_ln818_38' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 99 [1/1] (0.00ns)   --->   "%shl_ln818_39 = bitconcatenate i10 @_ssdm_op_BitConcatenate.i10.i6.i4, i6 %trunc_ln43_39, i4 0"   --->   Operation 99 'bitconcatenate' 'shl_ln818_39' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 100 [1/1] (0.00ns)   --->   "%shl_ln818_40 = bitconcatenate i10 @_ssdm_op_BitConcatenate.i10.i6.i4, i6 %trunc_ln43_40, i4 0"   --->   Operation 100 'bitconcatenate' 'shl_ln818_40' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 101 [1/1] (0.00ns)   --->   "%shl_ln818_41 = bitconcatenate i10 @_ssdm_op_BitConcatenate.i10.i6.i4, i6 %trunc_ln43_41, i4 0"   --->   Operation 101 'bitconcatenate' 'shl_ln818_41' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 102 [1/1] (0.00ns)   --->   "%shl_ln818_42 = bitconcatenate i10 @_ssdm_op_BitConcatenate.i10.i6.i4, i6 %trunc_ln43_42, i4 0"   --->   Operation 102 'bitconcatenate' 'shl_ln818_42' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 103 [1/1] (0.00ns)   --->   "%shl_ln818_44 = bitconcatenate i10 @_ssdm_op_BitConcatenate.i10.i6.i4, i6 %trunc_ln43_44, i4 0"   --->   Operation 103 'bitconcatenate' 'shl_ln818_44' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 104 [1/1] (0.00ns)   --->   "%shl_ln818_45 = bitconcatenate i10 @_ssdm_op_BitConcatenate.i10.i6.i4, i6 %trunc_ln43_45, i4 0"   --->   Operation 104 'bitconcatenate' 'shl_ln818_45' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 105 [1/1] (0.00ns)   --->   "%shl_ln818_46 = bitconcatenate i10 @_ssdm_op_BitConcatenate.i10.i6.i4, i6 %trunc_ln43_46, i4 0"   --->   Operation 105 'bitconcatenate' 'shl_ln818_46' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 106 [1/1] (0.00ns)   --->   "%shl_ln818_47 = bitconcatenate i10 @_ssdm_op_BitConcatenate.i10.i6.i4, i6 %trunc_ln43_47, i4 0"   --->   Operation 106 'bitconcatenate' 'shl_ln818_47' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 107 [1/1] (0.00ns)   --->   "%shl_ln818_48 = bitconcatenate i10 @_ssdm_op_BitConcatenate.i10.i6.i4, i6 %trunc_ln43_48, i4 0"   --->   Operation 107 'bitconcatenate' 'shl_ln818_48' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 108 [1/1] (0.00ns)   --->   "%shl_ln818_49 = bitconcatenate i10 @_ssdm_op_BitConcatenate.i10.i6.i4, i6 %trunc_ln43_49, i4 0"   --->   Operation 108 'bitconcatenate' 'shl_ln818_49' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 109 [1/1] (0.00ns)   --->   "%shl_ln818_50 = bitconcatenate i10 @_ssdm_op_BitConcatenate.i10.i6.i4, i6 %trunc_ln43_50, i4 0"   --->   Operation 109 'bitconcatenate' 'shl_ln818_50' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 110 [1/1] (0.00ns)   --->   "%shl_ln818_51 = bitconcatenate i10 @_ssdm_op_BitConcatenate.i10.i6.i4, i6 %trunc_ln43_51, i4 0"   --->   Operation 110 'bitconcatenate' 'shl_ln818_51' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 111 [1/1] (0.00ns)   --->   "%shl_ln818_52 = bitconcatenate i10 @_ssdm_op_BitConcatenate.i10.i6.i4, i6 %trunc_ln43_52, i4 0"   --->   Operation 111 'bitconcatenate' 'shl_ln818_52' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 112 [1/1] (0.00ns)   --->   "%shl_ln818_53 = bitconcatenate i10 @_ssdm_op_BitConcatenate.i10.i6.i4, i6 %trunc_ln43_53, i4 0"   --->   Operation 112 'bitconcatenate' 'shl_ln818_53' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 113 [1/1] (0.00ns)   --->   "%shl_ln818_54 = bitconcatenate i10 @_ssdm_op_BitConcatenate.i10.i6.i4, i6 %trunc_ln43_54, i4 0"   --->   Operation 113 'bitconcatenate' 'shl_ln818_54' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 114 [1/1] (0.00ns)   --->   "%shl_ln818_55 = bitconcatenate i10 @_ssdm_op_BitConcatenate.i10.i6.i4, i6 %trunc_ln43_55, i4 0"   --->   Operation 114 'bitconcatenate' 'shl_ln818_55' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 115 [1/1] (0.00ns)   --->   "%shl_ln818_56 = bitconcatenate i10 @_ssdm_op_BitConcatenate.i10.i6.i4, i6 %trunc_ln43_56, i4 0"   --->   Operation 115 'bitconcatenate' 'shl_ln818_56' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 116 [1/1] (0.00ns)   --->   "%shl_ln818_57 = bitconcatenate i10 @_ssdm_op_BitConcatenate.i10.i6.i4, i6 %trunc_ln43_57, i4 0"   --->   Operation 116 'bitconcatenate' 'shl_ln818_57' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 117 [1/1] (0.00ns)   --->   "%shl_ln818_58 = bitconcatenate i10 @_ssdm_op_BitConcatenate.i10.i6.i4, i6 %trunc_ln43_58, i4 0"   --->   Operation 117 'bitconcatenate' 'shl_ln818_58' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 118 [1/1] (0.00ns)   --->   "%tmp_158 = partselect i6 @_ssdm_op_PartSelect.i6.i384.i32.i32, i384 %layer22_out_read, i32 360, i32 365"   --->   Operation 118 'partselect' 'tmp_158' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 119 [1/1] (0.00ns)   --->   "%shl_ln818_59 = bitconcatenate i10 @_ssdm_op_BitConcatenate.i10.i6.i4, i6 %tmp_158, i4 0"   --->   Operation 119 'bitconcatenate' 'shl_ln818_59' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 120 [1/1] (0.00ns)   --->   "%tmp_159 = partselect i6 @_ssdm_op_PartSelect.i6.i384.i32.i32, i384 %layer22_out_read, i32 366, i32 371"   --->   Operation 120 'partselect' 'tmp_159' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 121 [1/1] (0.00ns)   --->   "%tmp_160 = partselect i6 @_ssdm_op_PartSelect.i6.i384.i32.i32, i384 %layer22_out_read, i32 372, i32 377"   --->   Operation 121 'partselect' 'tmp_160' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 122 [1/1] (0.00ns)   --->   "%shl_ln818_61 = bitconcatenate i10 @_ssdm_op_BitConcatenate.i10.i6.i4, i6 %tmp_160, i4 0"   --->   Operation 122 'bitconcatenate' 'shl_ln818_61' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 123 [1/1] (0.00ns)   --->   "%tmp_161 = partselect i6 @_ssdm_op_PartSelect.i6.i384.i32.i32, i384 %layer22_out_read, i32 378, i32 383"   --->   Operation 123 'partselect' 'tmp_161' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 124 [1/1] (0.00ns)   --->   "%shl_ln818_62 = bitconcatenate i10 @_ssdm_op_BitConcatenate.i10.i6.i4, i6 %tmp_161, i4 0"   --->   Operation 124 'bitconcatenate' 'shl_ln818_62' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 125 [1/1] (0.00ns)   --->   "%zext_ln813_1 = zext i10 %shl_ln818_1"   --->   Operation 125 'zext' 'zext_ln813_1' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 126 [1/1] (0.00ns)   --->   "%zext_ln813_2 = zext i10 %shl_ln818_2"   --->   Operation 126 'zext' 'zext_ln813_2' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 127 [1/1] (0.00ns)   --->   "%zext_ln813_5 = zext i10 %shl_ln818_5"   --->   Operation 127 'zext' 'zext_ln813_5' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 128 [1/1] (0.00ns)   --->   "%zext_ln813_6 = zext i10 %shl_ln818_6"   --->   Operation 128 'zext' 'zext_ln813_6' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 129 [1/1] (0.00ns)   --->   "%zext_ln813_8 = zext i10 %shl_ln818_8"   --->   Operation 129 'zext' 'zext_ln813_8' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 130 [1/1] (0.00ns)   --->   "%zext_ln813_9 = zext i10 %shl_ln818_9"   --->   Operation 130 'zext' 'zext_ln813_9' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 131 [1/1] (0.00ns)   --->   "%zext_ln813_10 = zext i10 %shl_ln818_s"   --->   Operation 131 'zext' 'zext_ln813_10' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 132 [1/1] (0.00ns)   --->   "%zext_ln813_11 = zext i10 %shl_ln818_10"   --->   Operation 132 'zext' 'zext_ln813_11' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 133 [1/1] (0.00ns)   --->   "%zext_ln813_13 = zext i10 %shl_ln818_12"   --->   Operation 133 'zext' 'zext_ln813_13' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 134 [1/1] (0.00ns)   --->   "%zext_ln813_14 = zext i10 %shl_ln818_13"   --->   Operation 134 'zext' 'zext_ln813_14' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 135 [1/1] (0.00ns)   --->   "%zext_ln813_16 = zext i10 %shl_ln818_15"   --->   Operation 135 'zext' 'zext_ln813_16' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 136 [1/1] (0.00ns)   --->   "%zext_ln813_17 = zext i10 %shl_ln818_16"   --->   Operation 136 'zext' 'zext_ln813_17' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 137 [1/1] (0.00ns)   --->   "%zext_ln813_18 = zext i10 %shl_ln818_17"   --->   Operation 137 'zext' 'zext_ln813_18' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 138 [1/1] (0.00ns)   --->   "%zext_ln813_19 = zext i10 %shl_ln818_18"   --->   Operation 138 'zext' 'zext_ln813_19' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 139 [1/1] (0.00ns)   --->   "%zext_ln813_20 = zext i10 %shl_ln818_19"   --->   Operation 139 'zext' 'zext_ln813_20' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 140 [1/1] (0.00ns)   --->   "%zext_ln813_21 = zext i10 %shl_ln818_20"   --->   Operation 140 'zext' 'zext_ln813_21' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 141 [1/1] (0.00ns)   --->   "%zext_ln813_22 = zext i10 %shl_ln818_21"   --->   Operation 141 'zext' 'zext_ln813_22' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 142 [1/1] (0.00ns)   --->   "%zext_ln813_23 = zext i10 %shl_ln818_22"   --->   Operation 142 'zext' 'zext_ln813_23' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 143 [1/1] (0.00ns)   --->   "%zext_ln813_24 = zext i10 %shl_ln818_23"   --->   Operation 143 'zext' 'zext_ln813_24' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 144 [1/1] (0.00ns)   --->   "%zext_ln813_25 = zext i10 %shl_ln818_24"   --->   Operation 144 'zext' 'zext_ln813_25' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 145 [1/1] (0.00ns)   --->   "%zext_ln813_26 = zext i10 %shl_ln818_25"   --->   Operation 145 'zext' 'zext_ln813_26' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 146 [1/1] (0.00ns)   --->   "%zext_ln813_27 = zext i10 %shl_ln818_26"   --->   Operation 146 'zext' 'zext_ln813_27' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 147 [1/1] (0.00ns)   --->   "%zext_ln813_29 = zext i10 %shl_ln818_28"   --->   Operation 147 'zext' 'zext_ln813_29' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 148 [1/1] (0.00ns)   --->   "%zext_ln813_30 = zext i10 %shl_ln818_29"   --->   Operation 148 'zext' 'zext_ln813_30' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 149 [1/1] (0.00ns)   --->   "%zext_ln813_32 = zext i10 %shl_ln818_31"   --->   Operation 149 'zext' 'zext_ln813_32' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 150 [1/1] (0.00ns)   --->   "%zext_ln813_33 = zext i10 %shl_ln818_32"   --->   Operation 150 'zext' 'zext_ln813_33' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 151 [1/1] (0.00ns)   --->   "%zext_ln813_34 = zext i10 %shl_ln818_33"   --->   Operation 151 'zext' 'zext_ln813_34' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 152 [1/1] (0.00ns)   --->   "%zext_ln813_35 = zext i10 %shl_ln818_34"   --->   Operation 152 'zext' 'zext_ln813_35' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 153 [1/1] (0.00ns)   --->   "%zext_ln813_36 = zext i10 %shl_ln818_35"   --->   Operation 153 'zext' 'zext_ln813_36' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 154 [1/1] (0.00ns)   --->   "%zext_ln813_37 = zext i10 %shl_ln818_36"   --->   Operation 154 'zext' 'zext_ln813_37' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 155 [1/1] (0.00ns)   --->   "%zext_ln813_38 = zext i10 %shl_ln818_37"   --->   Operation 155 'zext' 'zext_ln813_38' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 156 [1/1] (0.00ns)   --->   "%zext_ln813_39 = zext i10 %shl_ln818_38"   --->   Operation 156 'zext' 'zext_ln813_39' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 157 [1/1] (0.00ns)   --->   "%zext_ln813_40 = zext i10 %shl_ln818_39"   --->   Operation 157 'zext' 'zext_ln813_40' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 158 [1/1] (0.00ns)   --->   "%zext_ln813_41 = zext i10 %shl_ln818_40"   --->   Operation 158 'zext' 'zext_ln813_41' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 159 [1/1] (0.00ns)   --->   "%zext_ln813_42 = zext i10 %shl_ln818_41"   --->   Operation 159 'zext' 'zext_ln813_42' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 160 [1/1] (0.00ns)   --->   "%zext_ln813_43 = zext i10 %shl_ln818_42"   --->   Operation 160 'zext' 'zext_ln813_43' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 161 [1/1] (0.00ns)   --->   "%zext_ln813_45 = zext i10 %shl_ln818_44"   --->   Operation 161 'zext' 'zext_ln813_45' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 162 [1/1] (0.00ns)   --->   "%zext_ln813_46 = zext i10 %shl_ln818_45"   --->   Operation 162 'zext' 'zext_ln813_46' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 163 [1/1] (0.00ns)   --->   "%zext_ln813_47 = zext i10 %shl_ln818_46"   --->   Operation 163 'zext' 'zext_ln813_47' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 164 [1/1] (0.00ns)   --->   "%zext_ln813_48 = zext i10 %shl_ln818_47"   --->   Operation 164 'zext' 'zext_ln813_48' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 165 [1/1] (0.00ns)   --->   "%zext_ln813_49 = zext i10 %shl_ln818_48"   --->   Operation 165 'zext' 'zext_ln813_49' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 166 [1/1] (0.00ns)   --->   "%zext_ln813_50 = zext i10 %shl_ln818_49"   --->   Operation 166 'zext' 'zext_ln813_50' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 167 [1/1] (0.00ns)   --->   "%zext_ln813_51 = zext i10 %shl_ln818_50"   --->   Operation 167 'zext' 'zext_ln813_51' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 168 [1/1] (0.00ns)   --->   "%zext_ln813_52 = zext i10 %shl_ln818_51"   --->   Operation 168 'zext' 'zext_ln813_52' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 169 [1/1] (0.00ns)   --->   "%zext_ln813_53 = zext i10 %shl_ln818_52"   --->   Operation 169 'zext' 'zext_ln813_53' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 170 [1/1] (0.00ns)   --->   "%zext_ln813_54 = zext i10 %shl_ln818_53"   --->   Operation 170 'zext' 'zext_ln813_54' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 171 [1/1] (0.00ns)   --->   "%zext_ln813_55 = zext i10 %shl_ln818_54"   --->   Operation 171 'zext' 'zext_ln813_55' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 172 [1/1] (0.00ns)   --->   "%zext_ln813_56 = zext i10 %shl_ln818_55"   --->   Operation 172 'zext' 'zext_ln813_56' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 173 [1/1] (0.00ns)   --->   "%zext_ln813_57 = zext i10 %shl_ln818_56"   --->   Operation 173 'zext' 'zext_ln813_57' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 174 [1/1] (0.00ns)   --->   "%zext_ln813_58 = zext i10 %shl_ln818_57"   --->   Operation 174 'zext' 'zext_ln813_58' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 175 [1/1] (0.00ns)   --->   "%zext_ln813_59 = zext i10 %shl_ln818_58"   --->   Operation 175 'zext' 'zext_ln813_59' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 176 [1/1] (0.00ns)   --->   "%zext_ln813_60 = zext i10 %shl_ln818_59"   --->   Operation 176 'zext' 'zext_ln813_60' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 177 [1/1] (0.00ns)   --->   "%zext_ln813_62 = zext i10 %shl_ln818_61"   --->   Operation 177 'zext' 'zext_ln813_62' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 178 [1/1] (0.00ns)   --->   "%zext_ln813_63 = zext i10 %shl_ln818_62"   --->   Operation 178 'zext' 'zext_ln813_63' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 179 [1/1] (0.72ns)   --->   "%add_ln813 = add i11 %zext_ln813_2, i11 %zext_ln813_1"   --->   Operation 179 'add' 'add_ln813' <Predicate = true> <Delay = 0.72> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.72> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 180 [1/1] (0.72ns)   --->   "%add_ln813_3 = add i11 %zext_ln813_5, i11 %zext_ln813_6"   --->   Operation 180 'add' 'add_ln813_3' <Predicate = true> <Delay = 0.72> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.72> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 181 [1/1] (0.72ns)   --->   "%add_ln813_7 = add i11 %zext_ln813_8, i11 %zext_ln813_9"   --->   Operation 181 'add' 'add_ln813_7' <Predicate = true> <Delay = 0.72> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.72> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 182 [1/1] (0.72ns)   --->   "%add_ln813_9 = add i11 %zext_ln813_10, i11 %zext_ln813_11"   --->   Operation 182 'add' 'add_ln813_9' <Predicate = true> <Delay = 0.72> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.72> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 183 [1/1] (0.72ns)   --->   "%add_ln813_10 = add i11 %zext_ln813_13, i11 %zext_ln813_14"   --->   Operation 183 'add' 'add_ln813_10' <Predicate = true> <Delay = 0.72> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.72> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 184 [1/1] (0.72ns)   --->   "%add_ln813_15 = add i11 %zext_ln813_16, i11 %zext_ln813_17"   --->   Operation 184 'add' 'add_ln813_15' <Predicate = true> <Delay = 0.72> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.72> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 185 [1/1] (0.72ns)   --->   "%add_ln813_17 = add i11 %zext_ln813_18, i11 %zext_ln813_19"   --->   Operation 185 'add' 'add_ln813_17' <Predicate = true> <Delay = 0.72> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.72> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 186 [1/1] (0.72ns)   --->   "%add_ln813_18 = add i11 %zext_ln813_20, i11 %zext_ln813_21"   --->   Operation 186 'add' 'add_ln813_18' <Predicate = true> <Delay = 0.72> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.72> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 187 [1/1] (0.72ns)   --->   "%add_ln813_21 = add i11 %zext_ln813_22, i11 %zext_ln813_23"   --->   Operation 187 'add' 'add_ln813_21' <Predicate = true> <Delay = 0.72> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.72> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 188 [1/1] (0.72ns)   --->   "%add_ln813_22 = add i11 %zext_ln813_24, i11 %zext_ln813_25"   --->   Operation 188 'add' 'add_ln813_22' <Predicate = true> <Delay = 0.72> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.72> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 189 [1/1] (0.72ns)   --->   "%add_ln813_24 = add i11 %zext_ln813_26, i11 %zext_ln813_27"   --->   Operation 189 'add' 'add_ln813_24' <Predicate = true> <Delay = 0.72> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.72> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 190 [1/1] (0.72ns)   --->   "%add_ln813_25 = add i11 %zext_ln813_29, i11 %zext_ln813_30"   --->   Operation 190 'add' 'add_ln813_25' <Predicate = true> <Delay = 0.72> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.72> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 191 [1/1] (0.72ns)   --->   "%add_ln813_31 = add i11 %zext_ln813_32, i11 %zext_ln813_33"   --->   Operation 191 'add' 'add_ln813_31' <Predicate = true> <Delay = 0.72> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.72> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 192 [1/1] (0.72ns)   --->   "%add_ln813_33 = add i11 %zext_ln813_34, i11 %zext_ln813_35"   --->   Operation 192 'add' 'add_ln813_33' <Predicate = true> <Delay = 0.72> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.72> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 193 [1/1] (0.72ns)   --->   "%add_ln813_34 = add i11 %zext_ln813_36, i11 %zext_ln813_37"   --->   Operation 193 'add' 'add_ln813_34' <Predicate = true> <Delay = 0.72> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.72> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 194 [1/1] (0.72ns)   --->   "%add_ln813_37 = add i11 %zext_ln813_38, i11 %zext_ln813_39"   --->   Operation 194 'add' 'add_ln813_37' <Predicate = true> <Delay = 0.72> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.72> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 195 [1/1] (0.72ns)   --->   "%add_ln813_38 = add i11 %zext_ln813_40, i11 %zext_ln813_41"   --->   Operation 195 'add' 'add_ln813_38' <Predicate = true> <Delay = 0.72> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.72> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 196 [1/1] (0.72ns)   --->   "%add_ln813_40 = add i11 %zext_ln813_42, i11 %zext_ln813_43"   --->   Operation 196 'add' 'add_ln813_40' <Predicate = true> <Delay = 0.72> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.72> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 197 [1/1] (0.72ns)   --->   "%add_ln813_41 = add i11 %zext_ln813_45, i11 %zext_ln813_46"   --->   Operation 197 'add' 'add_ln813_41' <Predicate = true> <Delay = 0.72> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.72> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 198 [1/1] (0.72ns)   --->   "%add_ln813_46 = add i11 %zext_ln813_47, i11 %zext_ln813_48"   --->   Operation 198 'add' 'add_ln813_46' <Predicate = true> <Delay = 0.72> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.72> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 199 [1/1] (0.72ns)   --->   "%add_ln813_47 = add i11 %zext_ln813_49, i11 %zext_ln813_50"   --->   Operation 199 'add' 'add_ln813_47' <Predicate = true> <Delay = 0.72> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.72> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 200 [1/1] (0.72ns)   --->   "%add_ln813_49 = add i11 %zext_ln813_51, i11 %zext_ln813_52"   --->   Operation 200 'add' 'add_ln813_49' <Predicate = true> <Delay = 0.72> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.72> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 201 [1/1] (0.72ns)   --->   "%add_ln813_50 = add i11 %zext_ln813_53, i11 %zext_ln813_54"   --->   Operation 201 'add' 'add_ln813_50' <Predicate = true> <Delay = 0.72> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.72> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 202 [1/1] (0.72ns)   --->   "%add_ln813_53 = add i11 %zext_ln813_55, i11 %zext_ln813_56"   --->   Operation 202 'add' 'add_ln813_53' <Predicate = true> <Delay = 0.72> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.72> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 203 [1/1] (0.72ns)   --->   "%add_ln813_54 = add i11 %zext_ln813_57, i11 %zext_ln813_58"   --->   Operation 203 'add' 'add_ln813_54' <Predicate = true> <Delay = 0.72> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.72> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 204 [1/1] (0.72ns)   --->   "%add_ln813_56 = add i11 %zext_ln813_59, i11 %zext_ln813_60"   --->   Operation 204 'add' 'add_ln813_56' <Predicate = true> <Delay = 0.72> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.72> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 205 [1/1] (0.72ns)   --->   "%add_ln813_57 = add i11 %zext_ln813_62, i11 %zext_ln813_63"   --->   Operation 205 'add' 'add_ln813_57' <Predicate = true> <Delay = 0.72> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.72> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+
+State 2 <SV = 1> <Delay = 2.23>
+ST_2 : Operation 206 [1/1] (0.00ns)   --->   "%shl_ln818_3 = bitconcatenate i10 @_ssdm_op_BitConcatenate.i10.i6.i4, i6 %trunc_ln43_2, i4 0"   --->   Operation 206 'bitconcatenate' 'shl_ln818_3' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 207 [1/1] (0.00ns)   --->   "%shl_ln818_4 = bitconcatenate i10 @_ssdm_op_BitConcatenate.i10.i6.i4, i6 %trunc_ln43_3, i4 0"   --->   Operation 207 'bitconcatenate' 'shl_ln818_4' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 208 [1/1] (0.00ns)   --->   "%shl_ln818_7 = bitconcatenate i10 @_ssdm_op_BitConcatenate.i10.i6.i4, i6 %trunc_ln43_6, i4 0"   --->   Operation 208 'bitconcatenate' 'shl_ln818_7' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 209 [1/1] (0.00ns)   --->   "%shl_ln818_11 = bitconcatenate i10 @_ssdm_op_BitConcatenate.i10.i6.i4, i6 %trunc_ln43_11, i4 0"   --->   Operation 209 'bitconcatenate' 'shl_ln818_11' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 210 [1/1] (0.00ns)   --->   "%shl_ln818_27 = bitconcatenate i10 @_ssdm_op_BitConcatenate.i10.i6.i4, i6 %trunc_ln43_27, i4 0"   --->   Operation 210 'bitconcatenate' 'shl_ln818_27' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 211 [1/1] (0.00ns)   --->   "%shl_ln818_43 = bitconcatenate i10 @_ssdm_op_BitConcatenate.i10.i6.i4, i6 %trunc_ln43_43, i4 0"   --->   Operation 211 'bitconcatenate' 'shl_ln818_43' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 212 [1/1] (0.00ns)   --->   "%shl_ln818_60 = bitconcatenate i10 @_ssdm_op_BitConcatenate.i10.i6.i4, i6 %tmp_159, i4 0"   --->   Operation 212 'bitconcatenate' 'shl_ln818_60' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 213 [1/1] (0.00ns)   --->   "%zext_ln813_cast = bitconcatenate i11 @_ssdm_op_BitConcatenate.i11.i1.i6.i4, i1 1, i6 %trunc_ln818, i4 0"   --->   Operation 213 'bitconcatenate' 'zext_ln813_cast' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 214 [1/1] (0.00ns)   --->   "%zext_ln813 = zext i11 %zext_ln813_cast"   --->   Operation 214 'zext' 'zext_ln813' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 215 [1/1] (0.00ns)   --->   "%zext_ln813_3 = zext i10 %shl_ln818_3"   --->   Operation 215 'zext' 'zext_ln813_3' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 216 [1/1] (0.00ns)   --->   "%zext_ln813_4 = zext i10 %shl_ln818_4"   --->   Operation 216 'zext' 'zext_ln813_4' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 217 [1/1] (0.00ns)   --->   "%zext_ln813_7 = zext i10 %shl_ln818_7"   --->   Operation 217 'zext' 'zext_ln813_7' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 218 [1/1] (0.00ns)   --->   "%zext_ln813_12 = zext i10 %shl_ln818_11"   --->   Operation 218 'zext' 'zext_ln813_12' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 219 [1/1] (0.00ns)   --->   "%zext_ln813_28 = zext i10 %shl_ln818_27"   --->   Operation 219 'zext' 'zext_ln813_28' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 220 [1/1] (0.00ns)   --->   "%zext_ln813_44 = zext i10 %shl_ln818_43"   --->   Operation 220 'zext' 'zext_ln813_44' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 221 [1/1] (0.00ns)   --->   "%zext_ln813_61 = zext i10 %shl_ln818_60"   --->   Operation 221 'zext' 'zext_ln813_61' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 222 [1/1] (0.00ns)   --->   "%zext_ln813_64 = zext i11 %add_ln813"   --->   Operation 222 'zext' 'zext_ln813_64' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 223 [1/1] (0.73ns)   --->   "%add_ln813_1 = add i12 %zext_ln813_64, i12 %zext_ln813"   --->   Operation 223 'add' 'add_ln813_1' <Predicate = true> <Delay = 0.73> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.73> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 224 [1/1] (0.00ns)   --->   "%zext_ln813_65 = zext i12 %add_ln813_1"   --->   Operation 224 'zext' 'zext_ln813_65' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 225 [1/1] (0.00ns) (grouped into TernaryAdder)   --->   "%add_ln813_2 = add i13 %zext_ln813_65, i13 %zext_ln813_3"   --->   Operation 225 'add' 'add_ln813_2' <Predicate = true> <Delay = 0.00> <CoreInst = "TAddSub">   --->   Core 10 'TAddSub' <Latency = 0> <II = 1> <Delay = 0.33> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_2 : Operation 226 [1/1] (0.00ns)   --->   "%zext_ln813_66 = zext i11 %add_ln813_3"   --->   Operation 226 'zext' 'zext_ln813_66' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 227 [1/1] (0.73ns)   --->   "%add_ln813_4 = add i12 %zext_ln813_66, i12 %zext_ln813_4"   --->   Operation 227 'add' 'add_ln813_4' <Predicate = true> <Delay = 0.73> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.73> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 228 [1/1] (0.00ns)   --->   "%zext_ln813_70 = zext i12 %add_ln813_4"   --->   Operation 228 'zext' 'zext_ln813_70' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 229 [1/1] (0.73ns) (root node of TernaryAdder)   --->   "%add_ln813_5 = add i13 %zext_ln813_70, i13 %add_ln813_2"   --->   Operation 229 'add' 'add_ln813_5' <Predicate = true> <Delay = 0.73> <CoreInst = "TAddSub">   --->   Core 10 'TAddSub' <Latency = 0> <II = 1> <Delay = 0.33> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_2 : Operation 230 [1/1] (0.00ns)   --->   "%zext_ln813_67 = zext i13 %add_ln813_5"   --->   Operation 230 'zext' 'zext_ln813_67' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 231 [1/1] (0.75ns)   --->   "%add_ln813_6 = add i14 %zext_ln813_67, i14 %zext_ln813_7"   --->   Operation 231 'add' 'add_ln813_6' <Predicate = true> <Delay = 0.75> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.75> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 232 [1/1] (0.00ns)   --->   "%zext_ln813_72 = zext i11 %add_ln813_9"   --->   Operation 232 'zext' 'zext_ln813_72' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 233 [1/1] (0.00ns)   --->   "%zext_ln813_73 = zext i11 %add_ln813_10"   --->   Operation 233 'zext' 'zext_ln813_73' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 234 [1/1] (0.73ns)   --->   "%add_ln813_11 = add i12 %zext_ln813_73, i12 %zext_ln813_12"   --->   Operation 234 'add' 'add_ln813_11' <Predicate = true> <Delay = 0.73> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.73> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 235 [1/1] (0.00ns)   --->   "%zext_ln813_74 = zext i12 %add_ln813_11"   --->   Operation 235 'zext' 'zext_ln813_74' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 236 [1/1] (0.74ns)   --->   "%add_ln813_12 = add i13 %zext_ln813_74, i13 %zext_ln813_72"   --->   Operation 236 'add' 'add_ln813_12' <Predicate = true> <Delay = 0.74> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.74> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 237 [1/1] (0.00ns)   --->   "%zext_ln813_77 = zext i11 %add_ln813_17"   --->   Operation 237 'zext' 'zext_ln813_77' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 238 [1/1] (0.00ns)   --->   "%zext_ln813_78 = zext i11 %add_ln813_18"   --->   Operation 238 'zext' 'zext_ln813_78' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 239 [1/1] (0.73ns)   --->   "%add_ln813_19 = add i12 %zext_ln813_78, i12 %zext_ln813_77"   --->   Operation 239 'add' 'add_ln813_19' <Predicate = true> <Delay = 0.73> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.73> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 240 [1/1] (0.00ns)   --->   "%zext_ln813_80 = zext i11 %add_ln813_21"   --->   Operation 240 'zext' 'zext_ln813_80' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 241 [1/1] (0.00ns)   --->   "%zext_ln813_81 = zext i11 %add_ln813_22"   --->   Operation 241 'zext' 'zext_ln813_81' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 242 [1/1] (0.73ns)   --->   "%add_ln813_23 = add i12 %zext_ln813_81, i12 %zext_ln813_80"   --->   Operation 242 'add' 'add_ln813_23' <Predicate = true> <Delay = 0.73> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.73> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 243 [1/1] (0.00ns)   --->   "%zext_ln813_82 = zext i12 %add_ln813_23"   --->   Operation 243 'zext' 'zext_ln813_82' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 244 [1/1] (0.00ns)   --->   "%zext_ln813_83 = zext i11 %add_ln813_24"   --->   Operation 244 'zext' 'zext_ln813_83' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 245 [1/1] (0.00ns)   --->   "%zext_ln813_84 = zext i11 %add_ln813_25"   --->   Operation 245 'zext' 'zext_ln813_84' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 246 [1/1] (0.73ns)   --->   "%add_ln813_26 = add i12 %zext_ln813_84, i12 %zext_ln813_28"   --->   Operation 246 'add' 'add_ln813_26' <Predicate = true> <Delay = 0.73> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.73> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 247 [1/1] (0.00ns)   --->   "%zext_ln813_85 = zext i12 %add_ln813_26"   --->   Operation 247 'zext' 'zext_ln813_85' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 248 [1/1] (0.74ns)   --->   "%add_ln813_27 = add i13 %zext_ln813_85, i13 %zext_ln813_83"   --->   Operation 248 'add' 'add_ln813_27' <Predicate = true> <Delay = 0.74> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.74> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 249 [1/1] (0.00ns)   --->   "%zext_ln813_86 = zext i13 %add_ln813_27"   --->   Operation 249 'zext' 'zext_ln813_86' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 250 [1/1] (0.75ns)   --->   "%add_ln813_28 = add i14 %zext_ln813_86, i14 %zext_ln813_82"   --->   Operation 250 'add' 'add_ln813_28' <Predicate = true> <Delay = 0.75> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.75> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 251 [1/1] (0.00ns)   --->   "%zext_ln813_89 = zext i11 %add_ln813_33"   --->   Operation 251 'zext' 'zext_ln813_89' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 252 [1/1] (0.00ns)   --->   "%zext_ln813_90 = zext i11 %add_ln813_34"   --->   Operation 252 'zext' 'zext_ln813_90' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 253 [1/1] (0.73ns)   --->   "%add_ln813_35 = add i12 %zext_ln813_90, i12 %zext_ln813_89"   --->   Operation 253 'add' 'add_ln813_35' <Predicate = true> <Delay = 0.73> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.73> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 254 [1/1] (0.00ns)   --->   "%zext_ln813_92 = zext i11 %add_ln813_37"   --->   Operation 254 'zext' 'zext_ln813_92' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 255 [1/1] (0.00ns)   --->   "%zext_ln813_93 = zext i11 %add_ln813_38"   --->   Operation 255 'zext' 'zext_ln813_93' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 256 [1/1] (0.73ns)   --->   "%add_ln813_39 = add i12 %zext_ln813_93, i12 %zext_ln813_92"   --->   Operation 256 'add' 'add_ln813_39' <Predicate = true> <Delay = 0.73> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.73> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 257 [1/1] (0.00ns)   --->   "%zext_ln813_94 = zext i12 %add_ln813_39"   --->   Operation 257 'zext' 'zext_ln813_94' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 258 [1/1] (0.00ns)   --->   "%zext_ln813_95 = zext i11 %add_ln813_40"   --->   Operation 258 'zext' 'zext_ln813_95' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 259 [1/1] (0.00ns)   --->   "%zext_ln813_96 = zext i11 %add_ln813_41"   --->   Operation 259 'zext' 'zext_ln813_96' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 260 [1/1] (0.73ns)   --->   "%add_ln813_42 = add i12 %zext_ln813_96, i12 %zext_ln813_44"   --->   Operation 260 'add' 'add_ln813_42' <Predicate = true> <Delay = 0.73> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.73> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 261 [1/1] (0.00ns)   --->   "%zext_ln813_97 = zext i12 %add_ln813_42"   --->   Operation 261 'zext' 'zext_ln813_97' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 262 [1/1] (0.74ns)   --->   "%add_ln813_43 = add i13 %zext_ln813_97, i13 %zext_ln813_95"   --->   Operation 262 'add' 'add_ln813_43' <Predicate = true> <Delay = 0.74> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.74> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 263 [1/1] (0.00ns)   --->   "%zext_ln813_98 = zext i13 %add_ln813_43"   --->   Operation 263 'zext' 'zext_ln813_98' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 264 [1/1] (0.75ns)   --->   "%add_ln813_44 = add i14 %zext_ln813_98, i14 %zext_ln813_94"   --->   Operation 264 'add' 'add_ln813_44' <Predicate = true> <Delay = 0.75> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.75> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 265 [1/1] (0.00ns)   --->   "%zext_ln813_100 = zext i11 %add_ln813_46"   --->   Operation 265 'zext' 'zext_ln813_100' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 266 [1/1] (0.00ns)   --->   "%zext_ln813_101 = zext i11 %add_ln813_47"   --->   Operation 266 'zext' 'zext_ln813_101' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 267 [1/1] (0.73ns)   --->   "%add_ln813_48 = add i12 %zext_ln813_101, i12 %zext_ln813_100"   --->   Operation 267 'add' 'add_ln813_48' <Predicate = true> <Delay = 0.73> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.73> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 268 [1/1] (0.00ns)   --->   "%zext_ln813_102 = zext i12 %add_ln813_48"   --->   Operation 268 'zext' 'zext_ln813_102' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 269 [1/1] (0.00ns)   --->   "%zext_ln813_103 = zext i11 %add_ln813_49"   --->   Operation 269 'zext' 'zext_ln813_103' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 270 [1/1] (0.00ns)   --->   "%zext_ln813_104 = zext i11 %add_ln813_50"   --->   Operation 270 'zext' 'zext_ln813_104' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 271 [1/1] (0.73ns)   --->   "%add_ln813_51 = add i12 %zext_ln813_104, i12 %zext_ln813_103"   --->   Operation 271 'add' 'add_ln813_51' <Predicate = true> <Delay = 0.73> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.73> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 272 [1/1] (0.00ns)   --->   "%zext_ln813_105 = zext i12 %add_ln813_51"   --->   Operation 272 'zext' 'zext_ln813_105' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 273 [1/1] (0.74ns)   --->   "%add_ln813_52 = add i13 %zext_ln813_105, i13 %zext_ln813_102"   --->   Operation 273 'add' 'add_ln813_52' <Predicate = true> <Delay = 0.74> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.74> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 274 [1/1] (0.00ns)   --->   "%zext_ln813_107 = zext i11 %add_ln813_53"   --->   Operation 274 'zext' 'zext_ln813_107' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 275 [1/1] (0.00ns)   --->   "%zext_ln813_108 = zext i11 %add_ln813_54"   --->   Operation 275 'zext' 'zext_ln813_108' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 276 [1/1] (0.73ns)   --->   "%add_ln813_55 = add i12 %zext_ln813_108, i12 %zext_ln813_107"   --->   Operation 276 'add' 'add_ln813_55' <Predicate = true> <Delay = 0.73> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.73> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 277 [1/1] (0.00ns)   --->   "%zext_ln813_109 = zext i12 %add_ln813_55"   --->   Operation 277 'zext' 'zext_ln813_109' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 278 [1/1] (0.00ns)   --->   "%zext_ln813_110 = zext i11 %add_ln813_56"   --->   Operation 278 'zext' 'zext_ln813_110' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 279 [1/1] (0.00ns)   --->   "%zext_ln813_111 = zext i11 %add_ln813_57"   --->   Operation 279 'zext' 'zext_ln813_111' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 280 [1/1] (0.73ns)   --->   "%add_ln813_58 = add i12 %zext_ln813_111, i12 %zext_ln813_61"   --->   Operation 280 'add' 'add_ln813_58' <Predicate = true> <Delay = 0.73> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.73> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 281 [1/1] (0.00ns)   --->   "%zext_ln813_112 = zext i12 %add_ln813_58"   --->   Operation 281 'zext' 'zext_ln813_112' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 282 [1/1] (0.74ns)   --->   "%add_ln813_59 = add i13 %zext_ln813_112, i13 %zext_ln813_110"   --->   Operation 282 'add' 'add_ln813_59' <Predicate = true> <Delay = 0.74> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.74> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 283 [1/1] (0.00ns)   --->   "%zext_ln813_113 = zext i13 %add_ln813_59"   --->   Operation 283 'zext' 'zext_ln813_113' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 284 [1/1] (0.75ns)   --->   "%add_ln813_60 = add i14 %zext_ln813_113, i14 %zext_ln813_109"   --->   Operation 284 'add' 'add_ln813_60' <Predicate = true> <Delay = 0.75> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.75> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+
+State 3 <SV = 2> <Delay = 2.10>
+ST_3 : Operation 285 [1/1] (0.00ns)   --->   "%shl_ln818_14 = bitconcatenate i10 @_ssdm_op_BitConcatenate.i10.i6.i4, i6 %trunc_ln43_14, i4 0"   --->   Operation 285 'bitconcatenate' 'shl_ln818_14' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 286 [1/1] (0.00ns)   --->   "%zext_ln813_15 = zext i10 %shl_ln818_14"   --->   Operation 286 'zext' 'zext_ln813_15' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 287 [1/1] (0.00ns)   --->   "%zext_ln813_71 = zext i11 %add_ln813_7"   --->   Operation 287 'zext' 'zext_ln813_71' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 288 [1/1] (0.00ns) (grouped into TernaryAdder)   --->   "%add_ln813_8 = add i14 %zext_ln813_71, i14 %add_ln813_6"   --->   Operation 288 'add' 'add_ln813_8' <Predicate = true> <Delay = 0.00> <CoreInst = "TAddSub">   --->   Core 10 'TAddSub' <Latency = 0> <II = 1> <Delay = 0.33> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_3 : Operation 289 [1/1] (0.00ns)   --->   "%zext_ln813_75 = zext i13 %add_ln813_12"   --->   Operation 289 'zext' 'zext_ln813_75' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 290 [1/1] (0.71ns) (root node of TernaryAdder)   --->   "%add_ln813_13 = add i14 %zext_ln813_75, i14 %add_ln813_8"   --->   Operation 290 'add' 'add_ln813_13' <Predicate = true> <Delay = 0.71> <CoreInst = "TAddSub">   --->   Core 10 'TAddSub' <Latency = 0> <II = 1> <Delay = 0.33> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_3 : Operation 291 [1/1] (0.00ns)   --->   "%zext_ln813_68 = zext i14 %add_ln813_13"   --->   Operation 291 'zext' 'zext_ln813_68' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 292 [1/1] (0.00ns) (grouped into TernaryAdder)   --->   "%add_ln813_14 = add i15 %zext_ln813_68, i15 %zext_ln813_15"   --->   Operation 292 'add' 'add_ln813_14' <Predicate = true> <Delay = 0.00> <CoreInst = "TAddSub">   --->   Core 10 'TAddSub' <Latency = 0> <II = 1> <Delay = 0.33> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_3 : Operation 293 [1/1] (0.00ns)   --->   "%zext_ln813_76 = zext i11 %add_ln813_15"   --->   Operation 293 'zext' 'zext_ln813_76' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 294 [1/1] (0.69ns) (root node of TernaryAdder)   --->   "%add_ln813_16 = add i15 %zext_ln813_76, i15 %add_ln813_14"   --->   Operation 294 'add' 'add_ln813_16' <Predicate = true> <Delay = 0.69> <CoreInst = "TAddSub">   --->   Core 10 'TAddSub' <Latency = 0> <II = 1> <Delay = 0.33> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_3 : Operation 295 [1/1] (0.00ns)   --->   "%zext_ln813_79 = zext i12 %add_ln813_19"   --->   Operation 295 'zext' 'zext_ln813_79' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 296 [1/1] (0.00ns) (grouped into TernaryAdder)   --->   "%add_ln813_20 = add i15 %zext_ln813_79, i15 %add_ln813_16"   --->   Operation 296 'add' 'add_ln813_20' <Predicate = true> <Delay = 0.00> <CoreInst = "TAddSub">   --->   Core 10 'TAddSub' <Latency = 0> <II = 1> <Delay = 0.33> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_3 : Operation 297 [1/1] (0.00ns)   --->   "%zext_ln813_87 = zext i14 %add_ln813_28"   --->   Operation 297 'zext' 'zext_ln813_87' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 298 [1/1] (0.69ns) (root node of TernaryAdder)   --->   "%add_ln813_29 = add i15 %zext_ln813_87, i15 %add_ln813_20"   --->   Operation 298 'add' 'add_ln813_29' <Predicate = true> <Delay = 0.69> <CoreInst = "TAddSub">   --->   Core 10 'TAddSub' <Latency = 0> <II = 1> <Delay = 0.33> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_3 : Operation 299 [1/1] (0.00ns)   --->   "%zext_ln813_106 = zext i13 %add_ln813_52"   --->   Operation 299 'zext' 'zext_ln813_106' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 300 [1/1] (0.00ns)   --->   "%zext_ln813_114 = zext i14 %add_ln813_60"   --->   Operation 300 'zext' 'zext_ln813_114' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 301 [1/1] (0.76ns)   --->   "%add_ln813_61 = add i15 %zext_ln813_114, i15 %zext_ln813_106"   --->   Operation 301 'add' 'add_ln813_61' <Predicate = true> <Delay = 0.76> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.76> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+
+State 4 <SV = 3> <Delay = 2.12>
+ST_4 : Operation 302 [1/1] (0.00ns)   --->   "%shl_ln818_30 = bitconcatenate i10 @_ssdm_op_BitConcatenate.i10.i6.i4, i6 %trunc_ln43_30, i4 0"   --->   Operation 302 'bitconcatenate' 'shl_ln818_30' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 303 [1/1] (0.00ns)   --->   "%zext_ln813_31 = zext i10 %shl_ln818_30"   --->   Operation 303 'zext' 'zext_ln813_31' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 304 [1/1] (0.00ns)   --->   "%zext_ln813_69 = zext i15 %add_ln813_29"   --->   Operation 304 'zext' 'zext_ln813_69' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 305 [1/1] (0.77ns)   --->   "%add_ln813_30 = add i16 %zext_ln813_69, i16 %zext_ln813_31"   --->   Operation 305 'add' 'add_ln813_30' <Predicate = true> <Delay = 0.77> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.77> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 306 [1/1] (0.00ns)   --->   "%zext_ln813_88 = zext i11 %add_ln813_31"   --->   Operation 306 'zext' 'zext_ln813_88' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 307 [1/1] (0.00ns) (grouped into TernaryAdder)   --->   "%add_ln813_32 = add i16 %zext_ln813_88, i16 %add_ln813_30"   --->   Operation 307 'add' 'add_ln813_32' <Predicate = true> <Delay = 0.00> <CoreInst = "TAddSub">   --->   Core 10 'TAddSub' <Latency = 0> <II = 1> <Delay = 0.33> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_4 : Operation 308 [1/1] (0.00ns)   --->   "%zext_ln813_91 = zext i12 %add_ln813_35"   --->   Operation 308 'zext' 'zext_ln813_91' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 309 [1/1] (0.67ns) (root node of TernaryAdder)   --->   "%add_ln813_36 = add i16 %zext_ln813_91, i16 %add_ln813_32"   --->   Operation 309 'add' 'add_ln813_36' <Predicate = true> <Delay = 0.67> <CoreInst = "TAddSub">   --->   Core 10 'TAddSub' <Latency = 0> <II = 1> <Delay = 0.33> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_4 : Operation 310 [1/1] (0.00ns)   --->   "%zext_ln813_99 = zext i14 %add_ln813_44"   --->   Operation 310 'zext' 'zext_ln813_99' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 311 [1/1] (0.00ns) (grouped into TernaryAdder)   --->   "%add_ln813_45 = add i16 %zext_ln813_99, i16 %add_ln813_36"   --->   Operation 311 'add' 'add_ln813_45' <Predicate = true> <Delay = 0.00> <CoreInst = "TAddSub">   --->   Core 10 'TAddSub' <Latency = 0> <II = 1> <Delay = 0.33> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_4 : Operation 312 [1/1] (0.00ns)   --->   "%zext_ln813_115 = zext i15 %add_ln813_61"   --->   Operation 312 'zext' 'zext_ln813_115' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 313 [1/1] (0.67ns) (root node of TernaryAdder)   --->   "%res_V = add i16 %zext_ln813_115, i16 %add_ln813_45"   --->   Operation 313 'add' 'res_V' <Predicate = true> <Delay = 0.67> <CoreInst = "TAddSub">   --->   Core 10 'TAddSub' <Latency = 0> <II = 1> <Delay = 0.33> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+
+State 5 <SV = 4> <Delay = 1.21>
+ST_5 : Operation 314 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i384 %layer22_out, void @empty_14, i32 0, i32 0, void @empty_1, i32 0, i32 0, void @empty_1, void @empty_1, void @empty_1, i32 0, i32 0, i32 0, i32 0, void @empty_1, void @empty_1, i32 4294967295, i32 0"   --->   Operation 314 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 315 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i16 %output_r, void @empty_14, i32 0, i32 0, void @empty_1, i32 0, i32 0, void @empty_1, void @empty_1, void @empty_1, i32 0, i32 0, i32 0, i32 0, void @empty_1, void @empty_1, i32 4294967295, i32 0"   --->   Operation 315 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 316 [1/1] (0.00ns)   --->   "%specresourcelimit_ln33 = specresourcelimit void @_ssdm_op_SpecResourceLimit, i64 64, void @empty_15, void @empty_1, void @empty_1, void @empty_1" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_latency.h:33]   --->   Operation 316 'specresourcelimit' 'specresourcelimit_ln33' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 317 [1/1] (1.21ns)   --->   "%write_ln77 = write void @_ssdm_op_Write.ap_fifo.volatile.i16P0A, i16 %output_r, i16 %res_V" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:77]   --->   Operation 317 'write' 'write_ln77' <Predicate = true> <Delay = 1.21> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.34> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 16> <Depth = 1> <FIFO>
+ST_5 : Operation 318 [1/1] (0.00ns)   --->   "%ret_ln101 = ret" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:101]   --->   Operation 318 'ret' 'ret_ln101' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 3.33ns, clock uncertainty: 0.9ns.
+
+ <State 1>: 1.94ns
+The critical path consists of the following:
+	fifo read operation ('layer22_out_read', /home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:43) on port 'layer22_out' (/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:43) [5]  (1.22 ns)
+	'add' operation ('add_ln813') [199]  (0.725 ns)
+
+ <State 2>: 2.23ns
+The critical path consists of the following:
+	'add' operation ('add_ln813_26') [245]  (0.735 ns)
+	'add' operation ('add_ln813_27') [247]  (0.745 ns)
+	'add' operation ('add_ln813_28') [249]  (0.755 ns)
+
+ <State 3>: 2.11ns
+The critical path consists of the following:
+	'add' operation ('add_ln813_8') [213]  (0 ns)
+	'add' operation ('add_ln813_13') [222]  (0.716 ns)
+	'add' operation ('add_ln813_14') [224]  (0 ns)
+	'add' operation ('add_ln813_16') [227]  (0.695 ns)
+	'add' operation ('add_ln813_20') [234]  (0 ns)
+	'add' operation ('add_ln813_29') [251]  (0.695 ns)
+
+ <State 4>: 2.12ns
+The critical path consists of the following:
+	'add' operation ('add_ln813_30') [253]  (0.775 ns)
+	'add' operation ('add_ln813_32') [256]  (0 ns)
+	'add' operation ('add_ln813_36') [263]  (0.675 ns)
+	'add' operation ('add_ln813_45') [280]  (0 ns)
+	'add' operation ('res.V') [313]  (0.675 ns)
+
+ <State 5>: 1.22ns
+The critical path consists of the following:
+	fifo write operation ('write_ln77', /home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:77) on port 'output_r' (/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:77) [314]  (1.22 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

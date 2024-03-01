@@ -1,0 +1,167 @@
+
+
+================================================================
+== Vitis HLS Report for 'zeropad1d_cl_array_array_ap_fixed_16_6_5_3_0_16u_config27_s'
+================================================================
+* Date:           Fri Mar  1 05:36:40 2024
+
+* Version:        2022.2 (Build 3670227 on Oct 13 2022)
+* Project:        alveo_hls4ml
+* Solution:       solution (Vitis Kernel Flow Target)
+* Product family: virtexuplus
+* Target device:  xcu55c-fsvh2892-2L-e
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+---------+----------+------------+
+    |  Clock |  Target | Estimated| Uncertainty|
+    +--------+---------+----------+------------+
+    |ap_clk  |  3.33 ns|  2.356 ns|     0.90 ns|
+    +--------+---------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+-----------+-----------+-----+-----+---------+
+    |  Latency (cycles) |   Latency (absolute)  |  Interval | Pipeline|
+    |   min   |   max   |    min    |    max    | min | max |   Type  |
+    +---------+---------+-----------+-----------+-----+-----+---------+
+    |       13|       13|  43.329 ns|  43.329 ns|   13|   13|       no|
+    +---------+---------+-----------+-----------+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +------------+---------+---------+----------+-----------+-----------+------+----------+
+        |            |  Latency (cycles) | Iteration|  Initiation Interval  | Trip |          |
+        |  Loop Name |   min   |   max   |  Latency |  achieved |   target  | Count| Pipelined|
+        +------------+---------+---------+----------+-----------+-----------+------+----------+
+        |- PadLeft   |        7|        7|         1|          -|          -|     7|        no|
+        |- CopyMain  |        4|        4|         2|          -|          -|     2|        no|
+        +------------+---------+---------+----------+-----------+-----------+------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 2
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 4
+* Pipeline : 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 2 3 
+3 --> 4 
+4 --> 3 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 0.38>
+ST_1 : Operation 5 [1/1] (0.00ns)   --->   "%i = alloca i32 1"   --->   Operation 5 'alloca' 'i' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 6 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i256 %layer27_out, void @empty_14, i32 0, i32 0, void @empty_1, i32 0, i32 0, void @empty_1, void @empty_1, void @empty_1, i32 0, i32 0, i32 0, i32 0, void @empty_1, void @empty_1, i32 4294967295, i32 0"   --->   Operation 6 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 7 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i256 %layer9_out, void @empty_14, i32 0, i32 0, void @empty_1, i32 0, i32 0, void @empty_1, void @empty_1, void @empty_1, i32 0, i32 0, i32 0, i32 0, void @empty_1, void @empty_1, i32 4294967295, i32 0"   --->   Operation 7 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 8 [1/1] (0.38ns)   --->   "%store_ln32 = store i3 0, i3 %i" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_padding_stream.h:32]   --->   Operation 8 'store' 'store_ln32' <Predicate = true> <Delay = 0.38>
+ST_1 : Operation 9 [1/1] (0.00ns)   --->   "%br_ln32 = br void %for.inc" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_padding_stream.h:32]   --->   Operation 9 'br' 'br_ln32' <Predicate = true> <Delay = 0.00>
+
+State 2 <SV = 1> <Delay = 1.63>
+ST_2 : Operation 10 [1/1] (0.00ns)   --->   "%i_7 = load i3 %i" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_padding_stream.h:32]   --->   Operation 10 'load' 'i_7' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 11 [1/1] (0.49ns)   --->   "%icmp_ln32 = icmp_eq  i3 %i_7, i3 7" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_padding_stream.h:32]   --->   Operation 11 'icmp' 'icmp_ln32' <Predicate = true> <Delay = 0.49> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 0.49> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 12 [1/1] (0.00ns)   --->   "%empty = speclooptripcount i32 @_ssdm_op_SpecLoopTripCount, i64 7, i64 7, i64 7"   --->   Operation 12 'speclooptripcount' 'empty' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 13 [1/1] (0.57ns)   --->   "%i_8 = add i3 %i_7, i3 1" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_padding_stream.h:32]   --->   Operation 13 'add' 'i_8' <Predicate = true> <Delay = 0.57> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.57> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 14 [1/1] (0.00ns)   --->   "%br_ln32 = br i1 %icmp_ln32, void %for.inc.split, void %for.body.i7.preheader" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_padding_stream.h:32]   --->   Operation 14 'br' 'br_ln32' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 15 [1/1] (0.00ns)   --->   "%specloopname_ln32 = specloopname void @_ssdm_op_SpecLoopName, void @empty_21" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_padding_stream.h:32]   --->   Operation 15 'specloopname' 'specloopname_ln32' <Predicate = (!icmp_ln32)> <Delay = 0.00>
+ST_2 : Operation 16 [1/1] (1.13ns)   --->   "%write_ln15 = write void @_ssdm_op_Write.ap_fifo.volatile.i256P0A, i256 %layer27_out, i256 0" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_padding_stream.h:15]   --->   Operation 16 'write' 'write_ln15' <Predicate = (!icmp_ln32)> <Delay = 1.13> <CoreInst = "FIFO">   --->   Core 78 'FIFO' <Latency = 0> <II = 1> <Delay = 1.13> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 256> <Depth = 9> <FIFO>
+ST_2 : Operation 17 [1/1] (0.38ns)   --->   "%store_ln32 = store i3 %i_8, i3 %i" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_padding_stream.h:32]   --->   Operation 17 'store' 'store_ln32' <Predicate = (!icmp_ln32)> <Delay = 0.38>
+ST_2 : Operation 18 [1/1] (0.00ns)   --->   "%br_ln32 = br void %for.inc" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_padding_stream.h:32]   --->   Operation 18 'br' 'br_ln32' <Predicate = (!icmp_ln32)> <Delay = 0.00>
+ST_2 : Operation 19 [1/1] (0.00ns)   --->   "%i_5 = alloca i32 1"   --->   Operation 19 'alloca' 'i_5' <Predicate = (icmp_ln32)> <Delay = 0.00>
+ST_2 : Operation 20 [1/1] (0.38ns)   --->   "%store_ln37 = store i2 0, i2 %i_5" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_padding_stream.h:37]   --->   Operation 20 'store' 'store_ln37' <Predicate = (icmp_ln32)> <Delay = 0.38>
+ST_2 : Operation 21 [1/1] (0.00ns)   --->   "%br_ln37 = br void %for.body.i7" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_padding_stream.h:37]   --->   Operation 21 'br' 'br_ln37' <Predicate = (icmp_ln32)> <Delay = 0.00>
+
+State 3 <SV = 2> <Delay = 0.82>
+ST_3 : Operation 22 [1/1] (0.00ns)   --->   "%i_9 = load i2 %i_5" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_padding_stream.h:37]   --->   Operation 22 'load' 'i_9' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 23 [1/1] (0.34ns)   --->   "%icmp_ln37 = icmp_eq  i2 %i_9, i2 2" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_padding_stream.h:37]   --->   Operation 23 'icmp' 'icmp_ln37' <Predicate = true> <Delay = 0.34> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 0.34> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 24 [1/1] (0.00ns)   --->   "%empty_69 = speclooptripcount i32 @_ssdm_op_SpecLoopTripCount, i64 2, i64 2, i64 2"   --->   Operation 24 'speclooptripcount' 'empty_69' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 25 [1/1] (0.43ns)   --->   "%i_10 = add i2 %i_9, i2 1" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_padding_stream.h:37]   --->   Operation 25 'add' 'i_10' <Predicate = true> <Delay = 0.43> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.43> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 26 [1/1] (0.00ns)   --->   "%br_ln37 = br i1 %icmp_ln37, void %for.body.i7.split, void %for.end16" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_padding_stream.h:37]   --->   Operation 26 'br' 'br_ln37' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 27 [1/1] (0.38ns)   --->   "%store_ln37 = store i2 %i_10, i2 %i_5" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_padding_stream.h:37]   --->   Operation 27 'store' 'store_ln37' <Predicate = (!icmp_ln37)> <Delay = 0.38>
+ST_3 : Operation 28 [1/1] (0.00ns)   --->   "%ret_ln45 = ret" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_padding_stream.h:45]   --->   Operation 28 'ret' 'ret_ln45' <Predicate = (icmp_ln37)> <Delay = 0.00>
+
+State 4 <SV = 3> <Delay = 2.35>
+ST_4 : Operation 29 [1/1] (0.00ns)   --->   "%specloopname_ln37 = specloopname void @_ssdm_op_SpecLoopName, void @empty_20" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_padding_stream.h:37]   --->   Operation 29 'specloopname' 'specloopname_ln37' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 30 [1/1] (1.21ns)   --->   "%layer9_out_read = read i256 @_ssdm_op_Read.ap_fifo.volatile.i256P0A, i256 %layer9_out" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_padding_stream.h:20]   --->   Operation 30 'read' 'layer9_out_read' <Predicate = true> <Delay = 1.21> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.42> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 256> <Depth = 2> <FIFO>
+ST_4 : Operation 31 [1/1] (1.13ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.ap_fifo.volatile.i256P0A, i256 %layer27_out, i256 %layer9_out_read" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_padding_stream.h:26]   --->   Operation 31 'write' 'write_ln26' <Predicate = true> <Delay = 1.13> <CoreInst = "FIFO">   --->   Core 78 'FIFO' <Latency = 0> <II = 1> <Delay = 1.13> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 256> <Depth = 9> <FIFO>
+ST_4 : Operation 32 [1/1] (0.00ns)   --->   "%br_ln37 = br void %for.body.i7" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_padding_stream.h:37]   --->   Operation 32 'br' 'br_ln37' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 3.33ns, clock uncertainty: 0.9ns.
+
+ <State 1>: 0.387ns
+The critical path consists of the following:
+	'alloca' operation ('i') [3]  (0 ns)
+	'store' operation ('store_ln32', /home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_padding_stream.h:32) of constant 0 on local variable 'i' [6]  (0.387 ns)
+
+ <State 2>: 1.64ns
+The critical path consists of the following:
+	fifo write operation ('write_ln15', /home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_padding_stream.h:15) on port 'layer27_out' (/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_padding_stream.h:15) [16]  (1.14 ns)
+	blocking operation 0.5 ns on control path)
+
+ <State 3>: 0.823ns
+The critical path consists of the following:
+	'load' operation ('i', /home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_padding_stream.h:37) on local variable 'i' [24]  (0 ns)
+	'add' operation ('i', /home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_padding_stream.h:37) [27]  (0.436 ns)
+	'store' operation ('store_ln37', /home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_padding_stream.h:37) of variable 'i', /home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_padding_stream.h:37 on local variable 'i' [33]  (0.387 ns)
+
+ <State 4>: 2.36ns
+The critical path consists of the following:
+	fifo read operation ('layer9_out_read', /home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_padding_stream.h:20) on port 'layer9_out' (/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_padding_stream.h:20) [31]  (1.22 ns)
+	fifo write operation ('write_ln26', /home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_padding_stream.h:26) on port 'layer27_out' (/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_padding_stream.h:26) [32]  (1.14 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

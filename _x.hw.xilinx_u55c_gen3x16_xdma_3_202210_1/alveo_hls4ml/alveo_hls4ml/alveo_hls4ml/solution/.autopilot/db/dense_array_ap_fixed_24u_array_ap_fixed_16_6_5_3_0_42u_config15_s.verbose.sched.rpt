@@ -1,0 +1,252 @@
+
+
+================================================================
+== Vitis HLS Report for 'dense_array_ap_fixed_24u_array_ap_fixed_16_6_5_3_0_42u_config15_s'
+================================================================
+* Date:           Fri Mar  1 05:37:15 2024
+
+* Version:        2022.2 (Build 3670227 on Oct 13 2022)
+* Project:        alveo_hls4ml
+* Solution:       solution (Vitis Kernel Flow Target)
+* Product family: virtexuplus
+* Target device:  xcu55c-fsvh2892-2L-e
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+---------+----------+------------+
+    |  Clock |  Target | Estimated| Uncertainty|
+    +--------+---------+----------+------------+
+    |ap_clk  |  3.33 ns|  2.275 ns|     0.90 ns|
+    +--------+---------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-----+-----+---------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline|
+    |   min   |   max   |    min   |    max   | min | max |   Type  |
+    +---------+---------+----------+----------+-----+-----+---------+
+    |        2|        2|  6.666 ns|  6.666 ns|    2|    2|       no|
+    +---------+---------+----------+----------+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        N/A
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 2
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 3
+* Pipeline : 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 3 
+3 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 2.03>
+ST_1 : Operation 4 [1/1] (1.21ns)   --->   "%layer13_out_read = read i384 @_ssdm_op_Read.ap_fifo.volatile.i384P0A, i384 %layer13_out" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:43]   --->   Operation 4 'read' 'layer13_out_read' <Predicate = true> <Delay = 1.21> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.41> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 384> <Depth = 1> <FIFO>
+ST_1 : Operation 5 [1/1] (0.00ns)   --->   "%trunc_ln1273 = trunc i384 %layer13_out_read"   --->   Operation 5 'trunc' 'trunc_ln1273' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 6 [1/1] (0.00ns)   --->   "%tmp_166 = partselect i16 @_ssdm_op_PartSelect.i16.i384.i32.i32, i384 %layer13_out_read, i32 16, i32 31"   --->   Operation 6 'partselect' 'tmp_166' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 7 [1/1] (0.00ns)   --->   "%tmp_167 = partselect i16 @_ssdm_op_PartSelect.i16.i384.i32.i32, i384 %layer13_out_read, i32 32, i32 47"   --->   Operation 7 'partselect' 'tmp_167' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 8 [1/1] (0.00ns)   --->   "%tmp_168 = partselect i16 @_ssdm_op_PartSelect.i16.i384.i32.i32, i384 %layer13_out_read, i32 48, i32 63"   --->   Operation 8 'partselect' 'tmp_168' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 9 [1/1] (0.00ns)   --->   "%tmp_169 = partselect i16 @_ssdm_op_PartSelect.i16.i384.i32.i32, i384 %layer13_out_read, i32 64, i32 79"   --->   Operation 9 'partselect' 'tmp_169' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 10 [1/1] (0.00ns)   --->   "%tmp_170 = partselect i16 @_ssdm_op_PartSelect.i16.i384.i32.i32, i384 %layer13_out_read, i32 80, i32 95"   --->   Operation 10 'partselect' 'tmp_170' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 11 [1/1] (0.00ns)   --->   "%tmp_171 = partselect i16 @_ssdm_op_PartSelect.i16.i384.i32.i32, i384 %layer13_out_read, i32 96, i32 111"   --->   Operation 11 'partselect' 'tmp_171' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 12 [1/1] (0.00ns)   --->   "%shl_ln1273_45 = bitconcatenate i21 @_ssdm_op_BitConcatenate.i21.i16.i5, i16 %tmp_171, i5 0"   --->   Operation 12 'bitconcatenate' 'shl_ln1273_45' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 13 [1/1] (0.81ns)   --->   "%r_V_151 = sub i21 0, i21 %shl_ln1273_45"   --->   Operation 13 'sub' 'r_V_151' <Predicate = true> <Delay = 0.81> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.81> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 14 [1/1] (0.00ns)   --->   "%mult_V_47 = partselect i16 @_ssdm_op_PartSelect.i16.i21.i32.i32, i21 %r_V_151, i32 5, i32 20"   --->   Operation 14 'partselect' 'mult_V_47' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 15 [1/1] (0.00ns)   --->   "%tmp_172 = partselect i16 @_ssdm_op_PartSelect.i16.i384.i32.i32, i384 %layer13_out_read, i32 112, i32 127"   --->   Operation 15 'partselect' 'tmp_172' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 16 [1/1] (0.00ns)   --->   "%tmp_173 = partselect i16 @_ssdm_op_PartSelect.i16.i384.i32.i32, i384 %layer13_out_read, i32 128, i32 143"   --->   Operation 16 'partselect' 'tmp_173' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 17 [1/1] (0.00ns)   --->   "%shl_ln1273_47 = bitconcatenate i21 @_ssdm_op_BitConcatenate.i21.i16.i5, i16 %tmp_173, i5 0"   --->   Operation 17 'bitconcatenate' 'shl_ln1273_47' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 18 [1/1] (0.81ns)   --->   "%r_V_153 = sub i21 0, i21 %shl_ln1273_47"   --->   Operation 18 'sub' 'r_V_153' <Predicate = true> <Delay = 0.81> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.81> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 19 [1/1] (0.00ns)   --->   "%mult_V_49 = partselect i16 @_ssdm_op_PartSelect.i16.i21.i32.i32, i21 %r_V_153, i32 5, i32 20"   --->   Operation 19 'partselect' 'mult_V_49' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 20 [1/1] (0.00ns)   --->   "%tmp_174 = partselect i16 @_ssdm_op_PartSelect.i16.i384.i32.i32, i384 %layer13_out_read, i32 144, i32 159"   --->   Operation 20 'partselect' 'tmp_174' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 21 [1/1] (0.00ns)   --->   "%shl_ln1273_48 = bitconcatenate i21 @_ssdm_op_BitConcatenate.i21.i16.i5, i16 %tmp_174, i5 0"   --->   Operation 21 'bitconcatenate' 'shl_ln1273_48' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 22 [1/1] (0.81ns)   --->   "%r_V_154 = sub i21 0, i21 %shl_ln1273_48"   --->   Operation 22 'sub' 'r_V_154' <Predicate = true> <Delay = 0.81> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.81> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 23 [1/1] (0.00ns)   --->   "%mult_V_50 = partselect i16 @_ssdm_op_PartSelect.i16.i21.i32.i32, i21 %r_V_154, i32 5, i32 20"   --->   Operation 23 'partselect' 'mult_V_50' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 24 [1/1] (0.00ns)   --->   "%tmp_175 = partselect i16 @_ssdm_op_PartSelect.i16.i384.i32.i32, i384 %layer13_out_read, i32 160, i32 175"   --->   Operation 24 'partselect' 'tmp_175' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 25 [1/1] (0.00ns)   --->   "%shl_ln1273_49 = bitconcatenate i21 @_ssdm_op_BitConcatenate.i21.i16.i5, i16 %tmp_175, i5 0"   --->   Operation 25 'bitconcatenate' 'shl_ln1273_49' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 26 [1/1] (0.81ns)   --->   "%r_V_155 = sub i21 0, i21 %shl_ln1273_49"   --->   Operation 26 'sub' 'r_V_155' <Predicate = true> <Delay = 0.81> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.81> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 27 [1/1] (0.00ns)   --->   "%mult_V_51 = partselect i16 @_ssdm_op_PartSelect.i16.i21.i32.i32, i21 %r_V_155, i32 5, i32 20"   --->   Operation 27 'partselect' 'mult_V_51' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 28 [1/1] (0.00ns)   --->   "%tmp_176 = partselect i16 @_ssdm_op_PartSelect.i16.i384.i32.i32, i384 %layer13_out_read, i32 176, i32 191"   --->   Operation 28 'partselect' 'tmp_176' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 29 [1/1] (0.00ns)   --->   "%tmp_177 = partselect i16 @_ssdm_op_PartSelect.i16.i384.i32.i32, i384 %layer13_out_read, i32 192, i32 207"   --->   Operation 29 'partselect' 'tmp_177' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 30 [1/1] (0.00ns)   --->   "%tmp_178 = partselect i16 @_ssdm_op_PartSelect.i16.i384.i32.i32, i384 %layer13_out_read, i32 208, i32 223"   --->   Operation 30 'partselect' 'tmp_178' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 31 [1/1] (0.00ns)   --->   "%tmp_179 = partselect i16 @_ssdm_op_PartSelect.i16.i384.i32.i32, i384 %layer13_out_read, i32 224, i32 239"   --->   Operation 31 'partselect' 'tmp_179' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 32 [1/1] (0.00ns)   --->   "%tmp_180 = partselect i16 @_ssdm_op_PartSelect.i16.i384.i32.i32, i384 %layer13_out_read, i32 240, i32 255"   --->   Operation 32 'partselect' 'tmp_180' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 33 [1/1] (0.00ns)   --->   "%tmp_181 = partselect i16 @_ssdm_op_PartSelect.i16.i384.i32.i32, i384 %layer13_out_read, i32 256, i32 271"   --->   Operation 33 'partselect' 'tmp_181' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 34 [1/1] (0.00ns)   --->   "%tmp_182 = partselect i16 @_ssdm_op_PartSelect.i16.i384.i32.i32, i384 %layer13_out_read, i32 272, i32 287"   --->   Operation 34 'partselect' 'tmp_182' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 35 [1/1] (0.00ns)   --->   "%tmp_183 = partselect i16 @_ssdm_op_PartSelect.i16.i384.i32.i32, i384 %layer13_out_read, i32 288, i32 303"   --->   Operation 35 'partselect' 'tmp_183' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 36 [1/1] (0.00ns)   --->   "%tmp_184 = partselect i16 @_ssdm_op_PartSelect.i16.i384.i32.i32, i384 %layer13_out_read, i32 304, i32 319"   --->   Operation 36 'partselect' 'tmp_184' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 37 [1/1] (0.00ns)   --->   "%tmp_185 = partselect i16 @_ssdm_op_PartSelect.i16.i384.i32.i32, i384 %layer13_out_read, i32 320, i32 335"   --->   Operation 37 'partselect' 'tmp_185' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 38 [1/1] (0.00ns)   --->   "%tmp_186 = partselect i16 @_ssdm_op_PartSelect.i16.i384.i32.i32, i384 %layer13_out_read, i32 336, i32 351"   --->   Operation 38 'partselect' 'tmp_186' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 39 [1/1] (0.00ns)   --->   "%tmp_187 = partselect i16 @_ssdm_op_PartSelect.i16.i384.i32.i32, i384 %layer13_out_read, i32 352, i32 367"   --->   Operation 39 'partselect' 'tmp_187' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 40 [1/1] (0.00ns)   --->   "%tmp_188 = partselect i16 @_ssdm_op_PartSelect.i16.i384.i32.i32, i384 %layer13_out_read, i32 368, i32 383"   --->   Operation 40 'partselect' 'tmp_188' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 41 [1/1] (0.00ns)   --->   "%shl_ln1273_62 = bitconcatenate i21 @_ssdm_op_BitConcatenate.i21.i16.i5, i16 %tmp_188, i5 0"   --->   Operation 41 'bitconcatenate' 'shl_ln1273_62' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 42 [1/1] (0.81ns)   --->   "%r_V_168 = sub i21 0, i21 %shl_ln1273_62"   --->   Operation 42 'sub' 'r_V_168' <Predicate = true> <Delay = 0.81> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.81> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 43 [1/1] (0.00ns)   --->   "%mult_V_64 = partselect i16 @_ssdm_op_PartSelect.i16.i21.i32.i32, i21 %r_V_168, i32 5, i32 20"   --->   Operation 43 'partselect' 'mult_V_64' <Predicate = true> <Delay = 0.00>
+
+State 2 <SV = 1> <Delay = 2.27>
+ST_2 : Operation 44 [1/1] (0.00ns)   --->   "%shl_ln = bitconcatenate i21 @_ssdm_op_BitConcatenate.i21.i16.i5, i16 %trunc_ln1273, i5 0"   --->   Operation 44 'bitconcatenate' 'shl_ln' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 45 [1/1] (0.81ns)   --->   "%r_V = sub i21 0, i21 %shl_ln"   --->   Operation 45 'sub' 'r_V' <Predicate = true> <Delay = 0.81> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.81> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 46 [1/1] (0.00ns)   --->   "%mult_V = partselect i16 @_ssdm_op_PartSelect.i16.i21.i32.i32, i21 %r_V, i32 5, i32 20"   --->   Operation 46 'partselect' 'mult_V' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 47 [1/1] (0.00ns)   --->   "%shl_ln1273_s = bitconcatenate i21 @_ssdm_op_BitConcatenate.i21.i16.i5, i16 %tmp_166, i5 0"   --->   Operation 47 'bitconcatenate' 'shl_ln1273_s' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 48 [1/1] (0.81ns)   --->   "%r_V_146 = sub i21 0, i21 %shl_ln1273_s"   --->   Operation 48 'sub' 'r_V_146' <Predicate = true> <Delay = 0.81> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.81> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 49 [1/1] (0.00ns)   --->   "%mult_V_42 = partselect i16 @_ssdm_op_PartSelect.i16.i21.i32.i32, i21 %r_V_146, i32 5, i32 20"   --->   Operation 49 'partselect' 'mult_V_42' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 50 [1/1] (0.00ns)   --->   "%shl_ln1273_41 = bitconcatenate i21 @_ssdm_op_BitConcatenate.i21.i16.i5, i16 %tmp_167, i5 0"   --->   Operation 50 'bitconcatenate' 'shl_ln1273_41' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 51 [1/1] (0.81ns)   --->   "%r_V_147 = sub i21 0, i21 %shl_ln1273_41"   --->   Operation 51 'sub' 'r_V_147' <Predicate = true> <Delay = 0.81> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.81> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 52 [1/1] (0.00ns)   --->   "%mult_V_43 = partselect i16 @_ssdm_op_PartSelect.i16.i21.i32.i32, i21 %r_V_147, i32 5, i32 20"   --->   Operation 52 'partselect' 'mult_V_43' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 53 [1/1] (0.00ns)   --->   "%shl_ln1273_42 = bitconcatenate i21 @_ssdm_op_BitConcatenate.i21.i16.i5, i16 %tmp_168, i5 0"   --->   Operation 53 'bitconcatenate' 'shl_ln1273_42' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 54 [1/1] (0.81ns)   --->   "%r_V_148 = sub i21 0, i21 %shl_ln1273_42"   --->   Operation 54 'sub' 'r_V_148' <Predicate = true> <Delay = 0.81> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.81> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 55 [1/1] (0.00ns)   --->   "%mult_V_44 = partselect i16 @_ssdm_op_PartSelect.i16.i21.i32.i32, i21 %r_V_148, i32 5, i32 20"   --->   Operation 55 'partselect' 'mult_V_44' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 56 [1/1] (0.00ns)   --->   "%shl_ln1273_43 = bitconcatenate i21 @_ssdm_op_BitConcatenate.i21.i16.i5, i16 %tmp_169, i5 0"   --->   Operation 56 'bitconcatenate' 'shl_ln1273_43' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 57 [1/1] (0.81ns)   --->   "%r_V_149 = sub i21 0, i21 %shl_ln1273_43"   --->   Operation 57 'sub' 'r_V_149' <Predicate = true> <Delay = 0.81> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.81> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 58 [1/1] (0.00ns)   --->   "%mult_V_45 = partselect i16 @_ssdm_op_PartSelect.i16.i21.i32.i32, i21 %r_V_149, i32 5, i32 20"   --->   Operation 58 'partselect' 'mult_V_45' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 59 [1/1] (0.00ns)   --->   "%shl_ln1273_44 = bitconcatenate i21 @_ssdm_op_BitConcatenate.i21.i16.i5, i16 %tmp_170, i5 0"   --->   Operation 59 'bitconcatenate' 'shl_ln1273_44' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 60 [1/1] (0.81ns)   --->   "%r_V_150 = sub i21 0, i21 %shl_ln1273_44"   --->   Operation 60 'sub' 'r_V_150' <Predicate = true> <Delay = 0.81> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.81> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 61 [1/1] (0.00ns)   --->   "%mult_V_46 = partselect i16 @_ssdm_op_PartSelect.i16.i21.i32.i32, i21 %r_V_150, i32 5, i32 20"   --->   Operation 61 'partselect' 'mult_V_46' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 62 [1/1] (0.00ns)   --->   "%shl_ln1273_46 = bitconcatenate i21 @_ssdm_op_BitConcatenate.i21.i16.i5, i16 %tmp_172, i5 0"   --->   Operation 62 'bitconcatenate' 'shl_ln1273_46' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 63 [1/1] (0.81ns)   --->   "%r_V_152 = sub i21 0, i21 %shl_ln1273_46"   --->   Operation 63 'sub' 'r_V_152' <Predicate = true> <Delay = 0.81> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.81> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 64 [1/1] (0.00ns)   --->   "%mult_V_48 = partselect i16 @_ssdm_op_PartSelect.i16.i21.i32.i32, i21 %r_V_152, i32 5, i32 20"   --->   Operation 64 'partselect' 'mult_V_48' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 65 [1/1] (0.00ns)   --->   "%shl_ln1273_50 = bitconcatenate i21 @_ssdm_op_BitConcatenate.i21.i16.i5, i16 %tmp_176, i5 0"   --->   Operation 65 'bitconcatenate' 'shl_ln1273_50' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 66 [1/1] (0.81ns)   --->   "%r_V_156 = sub i21 0, i21 %shl_ln1273_50"   --->   Operation 66 'sub' 'r_V_156' <Predicate = true> <Delay = 0.81> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.81> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 67 [1/1] (0.00ns)   --->   "%mult_V_52 = partselect i16 @_ssdm_op_PartSelect.i16.i21.i32.i32, i21 %r_V_156, i32 5, i32 20"   --->   Operation 67 'partselect' 'mult_V_52' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 68 [1/1] (0.00ns)   --->   "%shl_ln1273_51 = bitconcatenate i21 @_ssdm_op_BitConcatenate.i21.i16.i5, i16 %tmp_177, i5 0"   --->   Operation 68 'bitconcatenate' 'shl_ln1273_51' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 69 [1/1] (0.81ns)   --->   "%r_V_157 = sub i21 0, i21 %shl_ln1273_51"   --->   Operation 69 'sub' 'r_V_157' <Predicate = true> <Delay = 0.81> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.81> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 70 [1/1] (0.00ns)   --->   "%mult_V_53 = partselect i16 @_ssdm_op_PartSelect.i16.i21.i32.i32, i21 %r_V_157, i32 5, i32 20"   --->   Operation 70 'partselect' 'mult_V_53' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 71 [1/1] (0.00ns)   --->   "%shl_ln1273_52 = bitconcatenate i21 @_ssdm_op_BitConcatenate.i21.i16.i5, i16 %tmp_178, i5 0"   --->   Operation 71 'bitconcatenate' 'shl_ln1273_52' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 72 [1/1] (0.81ns)   --->   "%r_V_158 = sub i21 0, i21 %shl_ln1273_52"   --->   Operation 72 'sub' 'r_V_158' <Predicate = true> <Delay = 0.81> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.81> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 73 [1/1] (0.00ns)   --->   "%mult_V_54 = partselect i16 @_ssdm_op_PartSelect.i16.i21.i32.i32, i21 %r_V_158, i32 5, i32 20"   --->   Operation 73 'partselect' 'mult_V_54' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 74 [1/1] (0.00ns)   --->   "%shl_ln1273_53 = bitconcatenate i21 @_ssdm_op_BitConcatenate.i21.i16.i5, i16 %tmp_179, i5 0"   --->   Operation 74 'bitconcatenate' 'shl_ln1273_53' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 75 [1/1] (0.81ns)   --->   "%r_V_159 = sub i21 0, i21 %shl_ln1273_53"   --->   Operation 75 'sub' 'r_V_159' <Predicate = true> <Delay = 0.81> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.81> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 76 [1/1] (0.00ns)   --->   "%mult_V_55 = partselect i16 @_ssdm_op_PartSelect.i16.i21.i32.i32, i21 %r_V_159, i32 5, i32 20"   --->   Operation 76 'partselect' 'mult_V_55' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 77 [1/1] (0.00ns)   --->   "%shl_ln1273_54 = bitconcatenate i21 @_ssdm_op_BitConcatenate.i21.i16.i5, i16 %tmp_180, i5 0"   --->   Operation 77 'bitconcatenate' 'shl_ln1273_54' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 78 [1/1] (0.81ns)   --->   "%r_V_160 = sub i21 0, i21 %shl_ln1273_54"   --->   Operation 78 'sub' 'r_V_160' <Predicate = true> <Delay = 0.81> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.81> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 79 [1/1] (0.00ns)   --->   "%mult_V_56 = partselect i16 @_ssdm_op_PartSelect.i16.i21.i32.i32, i21 %r_V_160, i32 5, i32 20"   --->   Operation 79 'partselect' 'mult_V_56' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 80 [1/1] (0.00ns)   --->   "%shl_ln1273_55 = bitconcatenate i21 @_ssdm_op_BitConcatenate.i21.i16.i5, i16 %tmp_181, i5 0"   --->   Operation 80 'bitconcatenate' 'shl_ln1273_55' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 81 [1/1] (0.81ns)   --->   "%r_V_161 = sub i21 0, i21 %shl_ln1273_55"   --->   Operation 81 'sub' 'r_V_161' <Predicate = true> <Delay = 0.81> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.81> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 82 [1/1] (0.00ns)   --->   "%mult_V_57 = partselect i16 @_ssdm_op_PartSelect.i16.i21.i32.i32, i21 %r_V_161, i32 5, i32 20"   --->   Operation 82 'partselect' 'mult_V_57' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 83 [1/1] (0.00ns)   --->   "%shl_ln1273_56 = bitconcatenate i21 @_ssdm_op_BitConcatenate.i21.i16.i5, i16 %tmp_182, i5 0"   --->   Operation 83 'bitconcatenate' 'shl_ln1273_56' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 84 [1/1] (0.81ns)   --->   "%r_V_162 = sub i21 0, i21 %shl_ln1273_56"   --->   Operation 84 'sub' 'r_V_162' <Predicate = true> <Delay = 0.81> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.81> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 85 [1/1] (0.00ns)   --->   "%mult_V_58 = partselect i16 @_ssdm_op_PartSelect.i16.i21.i32.i32, i21 %r_V_162, i32 5, i32 20"   --->   Operation 85 'partselect' 'mult_V_58' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 86 [1/1] (0.00ns)   --->   "%shl_ln1273_57 = bitconcatenate i21 @_ssdm_op_BitConcatenate.i21.i16.i5, i16 %tmp_183, i5 0"   --->   Operation 86 'bitconcatenate' 'shl_ln1273_57' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 87 [1/1] (0.81ns)   --->   "%r_V_163 = sub i21 0, i21 %shl_ln1273_57"   --->   Operation 87 'sub' 'r_V_163' <Predicate = true> <Delay = 0.81> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.81> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 88 [1/1] (0.00ns)   --->   "%mult_V_59 = partselect i16 @_ssdm_op_PartSelect.i16.i21.i32.i32, i21 %r_V_163, i32 5, i32 20"   --->   Operation 88 'partselect' 'mult_V_59' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 89 [1/1] (0.00ns)   --->   "%shl_ln1273_58 = bitconcatenate i21 @_ssdm_op_BitConcatenate.i21.i16.i5, i16 %tmp_184, i5 0"   --->   Operation 89 'bitconcatenate' 'shl_ln1273_58' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 90 [1/1] (0.81ns)   --->   "%r_V_164 = sub i21 0, i21 %shl_ln1273_58"   --->   Operation 90 'sub' 'r_V_164' <Predicate = true> <Delay = 0.81> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.81> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 91 [1/1] (0.00ns)   --->   "%mult_V_60 = partselect i16 @_ssdm_op_PartSelect.i16.i21.i32.i32, i21 %r_V_164, i32 5, i32 20"   --->   Operation 91 'partselect' 'mult_V_60' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 92 [1/1] (0.00ns)   --->   "%shl_ln1273_59 = bitconcatenate i21 @_ssdm_op_BitConcatenate.i21.i16.i5, i16 %tmp_185, i5 0"   --->   Operation 92 'bitconcatenate' 'shl_ln1273_59' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 93 [1/1] (0.81ns)   --->   "%r_V_165 = sub i21 0, i21 %shl_ln1273_59"   --->   Operation 93 'sub' 'r_V_165' <Predicate = true> <Delay = 0.81> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.81> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 94 [1/1] (0.00ns)   --->   "%mult_V_61 = partselect i16 @_ssdm_op_PartSelect.i16.i21.i32.i32, i21 %r_V_165, i32 5, i32 20"   --->   Operation 94 'partselect' 'mult_V_61' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 95 [1/1] (0.00ns)   --->   "%shl_ln1273_60 = bitconcatenate i21 @_ssdm_op_BitConcatenate.i21.i16.i5, i16 %tmp_186, i5 0"   --->   Operation 95 'bitconcatenate' 'shl_ln1273_60' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 96 [1/1] (0.81ns)   --->   "%r_V_166 = sub i21 0, i21 %shl_ln1273_60"   --->   Operation 96 'sub' 'r_V_166' <Predicate = true> <Delay = 0.81> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.81> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 97 [1/1] (0.00ns)   --->   "%mult_V_62 = partselect i16 @_ssdm_op_PartSelect.i16.i21.i32.i32, i21 %r_V_166, i32 5, i32 20"   --->   Operation 97 'partselect' 'mult_V_62' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 98 [1/1] (0.00ns)   --->   "%shl_ln1273_61 = bitconcatenate i21 @_ssdm_op_BitConcatenate.i21.i16.i5, i16 %tmp_187, i5 0"   --->   Operation 98 'bitconcatenate' 'shl_ln1273_61' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 99 [1/1] (0.81ns)   --->   "%r_V_167 = sub i21 0, i21 %shl_ln1273_61"   --->   Operation 99 'sub' 'r_V_167' <Predicate = true> <Delay = 0.81> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.81> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 100 [1/1] (0.00ns)   --->   "%mult_V_63 = partselect i16 @_ssdm_op_PartSelect.i16.i21.i32.i32, i21 %r_V_167, i32 5, i32 20"   --->   Operation 100 'partselect' 'mult_V_63' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 101 [1/1] (0.78ns)   --->   "%add_ln813 = add i16 %mult_V_63, i16 %mult_V_61"   --->   Operation 101 'add' 'add_ln813' <Predicate = true> <Delay = 0.78> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 102 [1/1] (0.00ns) (grouped into TernaryAdder)   --->   "%add_ln813_103 = add i16 %add_ln813, i16 %mult_V_62"   --->   Operation 102 'add' 'add_ln813_103' <Predicate = true> <Delay = 0.00> <CoreInst = "TAddSub">   --->   Core 10 'TAddSub' <Latency = 0> <II = 1> <Delay = 0.33> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_2 : Operation 103 [1/1] (0.00ns) (grouped into TernaryAdder)   --->   "%add_ln813_104 = add i16 %mult_V_60, i16 %mult_V_59"   --->   Operation 103 'add' 'add_ln813_104' <Predicate = true> <Delay = 0.00> <CoreInst = "TAddSub">   --->   Core 10 'TAddSub' <Latency = 0> <II = 1> <Delay = 0.33> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_2 : Operation 104 [1/1] (0.67ns) (root node of TernaryAdder)   --->   "%add_ln813_105 = add i16 %add_ln813_104, i16 %mult_V_58"   --->   Operation 104 'add' 'add_ln813_105' <Predicate = true> <Delay = 0.67> <CoreInst = "TAddSub">   --->   Core 10 'TAddSub' <Latency = 0> <II = 1> <Delay = 0.33> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_2 : Operation 105 [1/1] (0.67ns) (root node of TernaryAdder)   --->   "%add_ln813_106 = add i16 %add_ln813_105, i16 %add_ln813_103"   --->   Operation 105 'add' 'add_ln813_106' <Predicate = true> <Delay = 0.67> <CoreInst = "TAddSub">   --->   Core 10 'TAddSub' <Latency = 0> <II = 1> <Delay = 0.33> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_2 : Operation 106 [1/1] (0.78ns)   --->   "%add_ln813_107 = add i16 %mult_V_54, i16 %mult_V_53"   --->   Operation 106 'add' 'add_ln813_107' <Predicate = true> <Delay = 0.78> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 107 [1/1] (0.00ns) (grouped into TernaryAdder)   --->   "%add_ln813_108 = add i16 %add_ln813_107, i16 %mult_V_52"   --->   Operation 107 'add' 'add_ln813_108' <Predicate = true> <Delay = 0.00> <CoreInst = "TAddSub">   --->   Core 10 'TAddSub' <Latency = 0> <II = 1> <Delay = 0.33> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_2 : Operation 108 [1/1] (0.00ns) (grouped into TernaryAdder)   --->   "%add_ln813_109 = add i16 %mult_V_57, i16 %mult_V_56"   --->   Operation 108 'add' 'add_ln813_109' <Predicate = true> <Delay = 0.00> <CoreInst = "TAddSub">   --->   Core 10 'TAddSub' <Latency = 0> <II = 1> <Delay = 0.33> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_2 : Operation 109 [1/1] (0.67ns) (root node of TernaryAdder)   --->   "%add_ln813_110 = add i16 %add_ln813_109, i16 %mult_V_55"   --->   Operation 109 'add' 'add_ln813_110' <Predicate = true> <Delay = 0.67> <CoreInst = "TAddSub">   --->   Core 10 'TAddSub' <Latency = 0> <II = 1> <Delay = 0.33> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_2 : Operation 110 [1/1] (0.67ns) (root node of TernaryAdder)   --->   "%add_ln813_111 = add i16 %add_ln813_110, i16 %add_ln813_108"   --->   Operation 110 'add' 'add_ln813_111' <Predicate = true> <Delay = 0.67> <CoreInst = "TAddSub">   --->   Core 10 'TAddSub' <Latency = 0> <II = 1> <Delay = 0.33> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_2 : Operation 111 [1/1] (0.00ns) (grouped into TernaryAdder)   --->   "%add_ln813_113 = add i16 %mult_V_42, i16 %mult_V_43"   --->   Operation 111 'add' 'add_ln813_113' <Predicate = true> <Delay = 0.00> <CoreInst = "TAddSub">   --->   Core 10 'TAddSub' <Latency = 0> <II = 1> <Delay = 0.33> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_2 : Operation 112 [1/1] (0.67ns) (root node of TernaryAdder)   --->   "%add_ln813_114 = add i16 %add_ln813_113, i16 %mult_V"   --->   Operation 112 'add' 'add_ln813_114' <Predicate = true> <Delay = 0.67> <CoreInst = "TAddSub">   --->   Core 10 'TAddSub' <Latency = 0> <II = 1> <Delay = 0.33> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_2 : Operation 113 [1/1] (0.00ns) (grouped into TernaryAdder)   --->   "%add_ln813_115 = add i16 %mult_V_44, i16 %mult_V_46"   --->   Operation 113 'add' 'add_ln813_115' <Predicate = true> <Delay = 0.00> <CoreInst = "TAddSub">   --->   Core 10 'TAddSub' <Latency = 0> <II = 1> <Delay = 0.33> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_2 : Operation 114 [1/1] (0.67ns) (root node of TernaryAdder)   --->   "%add_ln813_116 = add i16 %add_ln813_115, i16 %mult_V_45"   --->   Operation 114 'add' 'add_ln813_116' <Predicate = true> <Delay = 0.67> <CoreInst = "TAddSub">   --->   Core 10 'TAddSub' <Latency = 0> <II = 1> <Delay = 0.33> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_2 : Operation 115 [1/1] (0.00ns) (grouped into TernaryAdder)   --->   "%add_ln813_117 = add i16 %add_ln813_116, i16 %add_ln813_114"   --->   Operation 115 'add' 'add_ln813_117' <Predicate = true> <Delay = 0.00> <CoreInst = "TAddSub">   --->   Core 10 'TAddSub' <Latency = 0> <II = 1> <Delay = 0.33> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_2 : Operation 116 [1/1] (0.78ns)   --->   "%add_ln813_118 = add i16 %mult_V_47, i16 %mult_V_49"   --->   Operation 116 'add' 'add_ln813_118' <Predicate = true> <Delay = 0.78> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 117 [1/1] (0.00ns) (grouped into TernaryAdder)   --->   "%add_ln813_119 = add i16 %add_ln813_118, i16 %mult_V_48"   --->   Operation 117 'add' 'add_ln813_119' <Predicate = true> <Delay = 0.00> <CoreInst = "TAddSub">   --->   Core 10 'TAddSub' <Latency = 0> <II = 1> <Delay = 0.33> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_2 : Operation 118 [1/1] (0.00ns) (grouped into TernaryAdder)   --->   "%add_ln813_120 = add i16 %mult_V_50, i16 %mult_V_64"   --->   Operation 118 'add' 'add_ln813_120' <Predicate = true> <Delay = 0.00> <CoreInst = "TAddSub">   --->   Core 10 'TAddSub' <Latency = 0> <II = 1> <Delay = 0.33> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_2 : Operation 119 [1/1] (0.67ns) (root node of TernaryAdder)   --->   "%add_ln813_121 = add i16 %add_ln813_120, i16 %mult_V_51"   --->   Operation 119 'add' 'add_ln813_121' <Predicate = true> <Delay = 0.67> <CoreInst = "TAddSub">   --->   Core 10 'TAddSub' <Latency = 0> <II = 1> <Delay = 0.33> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_2 : Operation 120 [1/1] (0.67ns) (root node of TernaryAdder)   --->   "%add_ln813_122 = add i16 %add_ln813_121, i16 %add_ln813_119"   --->   Operation 120 'add' 'add_ln813_122' <Predicate = true> <Delay = 0.67> <CoreInst = "TAddSub">   --->   Core 10 'TAddSub' <Latency = 0> <II = 1> <Delay = 0.33> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_2 : Operation 121 [1/1] (0.67ns) (root node of TernaryAdder)   --->   "%add_ln813_123 = add i16 %add_ln813_122, i16 %add_ln813_117"   --->   Operation 121 'add' 'add_ln813_123' <Predicate = true> <Delay = 0.67> <CoreInst = "TAddSub">   --->   Core 10 'TAddSub' <Latency = 0> <II = 1> <Delay = 0.33> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+
+State 3 <SV = 2> <Delay = 1.89>
+ST_3 : Operation 122 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i672 %layer15_out, void @empty_14, i32 0, i32 0, void @empty_1, i32 0, i32 0, void @empty_1, void @empty_1, void @empty_1, i32 0, i32 0, i32 0, i32 0, void @empty_1, void @empty_1, i32 4294967295, i32 0"   --->   Operation 122 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 123 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i384 %layer13_out, void @empty_14, i32 0, i32 0, void @empty_1, i32 0, i32 0, void @empty_1, void @empty_1, void @empty_1, i32 0, i32 0, i32 0, i32 0, void @empty_1, void @empty_1, i32 4294967295, i32 0"   --->   Operation 123 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 124 [1/1] (0.00ns)   --->   "%specresourcelimit_ln33 = specresourcelimit void @_ssdm_op_SpecResourceLimit, i64 1008, void @empty_15, void @empty_1, void @empty_1, void @empty_1" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_latency.h:33]   --->   Operation 124 'specresourcelimit' 'specresourcelimit_ln33' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 125 [1/1] (0.00ns) (grouped into TernaryAdder)   --->   "%add_ln813_112 = add i16 %add_ln813_111, i16 %add_ln813_106"   --->   Operation 125 'add' 'add_ln813_112' <Predicate = true> <Delay = 0.00> <CoreInst = "TAddSub">   --->   Core 10 'TAddSub' <Latency = 0> <II = 1> <Delay = 0.33> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_3 : Operation 126 [1/1] (0.67ns) (root node of TernaryAdder)   --->   "%res_V = add i16 %add_ln813_123, i16 %add_ln813_112"   --->   Operation 126 'add' 'res_V' <Predicate = true> <Delay = 0.67> <CoreInst = "TAddSub">   --->   Core 10 'TAddSub' <Latency = 0> <II = 1> <Delay = 0.33> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_3 : Operation 127 [1/1] (0.00ns)   --->   "%p_0 = bitconcatenate i672 @_ssdm_op_BitConcatenate.i672.i16.i16.i16.i16.i16.i16.i16.i16.i16.i16.i16.i16.i16.i16.i16.i16.i16.i16.i16.i16.i16.i16.i16.i16.i16.i16.i16.i16.i16.i16.i16.i16.i16.i16.i16.i16.i16.i16.i16.i16.i16.i16, i16 %res_V, i16 %res_V, i16 %res_V, i16 %res_V, i16 %res_V, i16 %res_V, i16 %res_V, i16 %res_V, i16 %res_V, i16 %res_V, i16 %res_V, i16 %res_V, i16 %res_V, i16 %res_V, i16 %res_V, i16 %res_V, i16 %res_V, i16 %res_V, i16 %res_V, i16 %res_V, i16 %res_V, i16 %res_V, i16 %res_V, i16 %res_V, i16 %res_V, i16 %res_V, i16 %res_V, i16 %res_V, i16 %res_V, i16 %res_V, i16 %res_V, i16 %res_V, i16 %res_V, i16 %res_V, i16 %res_V, i16 %res_V, i16 %res_V, i16 %res_V, i16 %res_V, i16 %res_V, i16 %res_V, i16 %res_V" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:77]   --->   Operation 127 'bitconcatenate' 'p_0' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 128 [1/1] (1.21ns)   --->   "%write_ln77 = write void @_ssdm_op_Write.ap_fifo.volatile.i672P0A, i672 %layer15_out, i672 %p_0" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:77]   --->   Operation 128 'write' 'write_ln77' <Predicate = true> <Delay = 1.21> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.33> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 672> <Depth = 1> <FIFO>
+ST_3 : Operation 129 [1/1] (0.00ns)   --->   "%ret_ln101 = ret" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:101]   --->   Operation 129 'ret' 'ret_ln101' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 3.33ns, clock uncertainty: 0.9ns.
+
+ <State 1>: 2.03ns
+The critical path consists of the following:
+	fifo read operation ('layer13_out_read', /home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:43) on port 'layer13_out' (/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:43) [5]  (1.22 ns)
+	'sub' operation ('r.V') [33]  (0.815 ns)
+
+ <State 2>: 2.27ns
+The critical path consists of the following:
+	'sub' operation ('r.V') [89]  (0.815 ns)
+	'add' operation ('add_ln813') [103]  (0.785 ns)
+	'add' operation ('add_ln813_103') [104]  (0 ns)
+	'add' operation ('add_ln813_106') [107]  (0.675 ns)
+
+ <State 3>: 1.89ns
+The critical path consists of the following:
+	'add' operation ('add_ln813_112') [113]  (0 ns)
+	'add' operation ('res.V') [125]  (0.675 ns)
+	fifo write operation ('write_ln77', /home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:77) on port 'layer15_out' (/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:77) [127]  (1.22 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

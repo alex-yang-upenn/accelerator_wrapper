@@ -1,0 +1,163 @@
+
+
+================================================================
+== Vitis HLS Report for 'zeropad1d_cl_array_array_ap_fixed_16_6_5_3_0_16u_config26_s'
+================================================================
+* Date:           Fri Mar  1 05:40:04 2024
+
+* Version:        2022.2 (Build 3670227 on Oct 13 2022)
+* Project:        alveo_hls4ml
+* Solution:       solution (Vitis Kernel Flow Target)
+* Product family: virtexuplus
+* Target device:  xcu55c-fsvh2892-2L-e
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+---------+----------+------------+
+    |  Clock |  Target | Estimated| Uncertainty|
+    +--------+---------+----------+------------+
+    |ap_clk  |  3.33 ns|  2.127 ns|     0.90 ns|
+    +--------+---------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+-----------+-----------+-----+-----+---------+
+    |  Latency (cycles) |   Latency (absolute)  |  Interval | Pipeline|
+    |   min   |   max   |    min    |    max    | min | max |   Type  |
+    +---------+---------+-----------+-----------+-----+-----+---------+
+    |       17|       17|  56.661 ns|  56.661 ns|   17|   17|       no|
+    +---------+---------+-----------+-----------+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +------------+---------+---------+----------+-----------+-----------+------+----------+
+        |            |  Latency (cycles) | Iteration|  Initiation Interval  | Trip |          |
+        |  Loop Name |   min   |   max   |  Latency |  achieved |   target  | Count| Pipelined|
+        +------------+---------+---------+----------+-----------+-----------+------+----------+
+        |- PadLeft   |        7|        7|         1|          -|          -|     7|        no|
+        |- CopyMain  |        8|        8|         2|          -|          -|     4|        no|
+        +------------+---------+---------+----------+-----------+-----------+------+----------+
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++---------------------+---------+------+---------+---------+-----+
+|         Name        | BRAM_18K|  DSP |    FF   |   LUT   | URAM|
++---------------------+---------+------+---------+---------+-----+
+|DSP                  |        -|     -|        -|        -|    -|
+|Expression           |        -|     -|        0|       43|    -|
+|FIFO                 |        -|     -|        -|        -|    -|
+|Instance             |        -|     -|        -|        -|    -|
+|Memory               |        -|     -|        -|        -|    -|
+|Multiplexer          |        -|     -|        -|       94|    -|
+|Register             |        -|     -|       12|        -|    -|
++---------------------+---------+------+---------+---------+-----+
+|Total                |        0|     0|       12|      137|    0|
++---------------------+---------+------+---------+---------+-----+
+|Available SLR        |     1344|  3008|   869120|   434560|  320|
++---------------------+---------+------+---------+---------+-----+
+|Utilization SLR (%)  |        0|     0|       ~0|       ~0|    0|
++---------------------+---------+------+---------+---------+-----+
+|Available            |     4032|  9024|  2607360|  1303680|  960|
++---------------------+---------+------+---------+---------+-----+
+|Utilization (%)      |        0|     0|       ~0|       ~0|    0|
++---------------------+---------+------+---------+---------+-----+
+
++ Detail: 
+    * Instance: 
+    N/A
+
+    * DSP: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +--------------------+----------+----+---+----+------------+------------+
+    |    Variable Name   | Operation| DSP| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +--------------------+----------+----+---+----+------------+------------+
+    |i_12_fu_79_p2       |         +|   0|  0|  10|           3|           1|
+    |i_14_fu_104_p2      |         +|   0|  0|  10|           3|           1|
+    |ap_block_state2     |       and|   0|  0|   2|           1|           1|
+    |icmp_ln32_fu_73_p2  |      icmp|   0|  0|   8|           3|           2|
+    |icmp_ln37_fu_98_p2  |      icmp|   0|  0|   9|           3|           4|
+    |ap_block_state1     |        or|   0|  0|   2|           1|           1|
+    |ap_block_state4     |        or|   0|  0|   2|           1|           1|
+    +--------------------+----------+----+---+----+------------+------------+
+    |Total               |          |   0|  0|  43|          15|          11|
+    +--------------------+----------+----+---+----+------------+------------+
+
+    * Multiplexer: 
+    +-------------------+----+-----------+-----+-----------+
+    |        Name       | LUT| Input Size| Bits| Total Bits|
+    +-------------------+----+-----------+-----+-----------+
+    |ap_NS_fsm          |  26|          5|    1|          5|
+    |ap_done            |   9|          2|    1|          2|
+    |i_8_fu_46          |   9|          2|    3|          6|
+    |i_fu_42            |   9|          2|    3|          6|
+    |layer26_out_blk_n  |   9|          2|    1|          2|
+    |layer26_out_din    |  14|          3|  256|        768|
+    |layer5_out_blk_n   |   9|          2|    1|          2|
+    |real_start         |   9|          2|    1|          2|
+    +-------------------+----+-----------+-----+-----------+
+    |Total              |  94|         20|  267|        793|
+    +-------------------+----+-----------+-----+-----------+
+
+    * Register: 
+    +----------------+---+----+-----+-----------+
+    |      Name      | FF| LUT| Bits| Const Bits|
+    +----------------+---+----+-----+-----------+
+    |ap_CS_fsm       |  4|   0|    4|          0|
+    |ap_done_reg     |  1|   0|    1|          0|
+    |i_8_fu_46       |  3|   0|    3|          0|
+    |i_fu_42         |  3|   0|    3|          0|
+    |start_once_reg  |  1|   0|    1|          0|
+    +----------------+---+----+-----+-----------+
+    |Total           | 12|   0|   12|          0|
+    +----------------+---+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++----------------------------+-----+-----+------------+--------------------------------------------------------------+--------------+
+|          RTL Ports         | Dir | Bits|  Protocol  |                         Source Object                        |    C Type    |
++----------------------------+-----+-----+------------+--------------------------------------------------------------+--------------+
+|ap_clk                      |   in|    1|  ap_ctrl_hs|  zeropad1d_cl<array,array<ap_fixed<16,6,5,3,0>,16u>,config26>|  return value|
+|ap_rst                      |   in|    1|  ap_ctrl_hs|  zeropad1d_cl<array,array<ap_fixed<16,6,5,3,0>,16u>,config26>|  return value|
+|ap_start                    |   in|    1|  ap_ctrl_hs|  zeropad1d_cl<array,array<ap_fixed<16,6,5,3,0>,16u>,config26>|  return value|
+|start_full_n                |   in|    1|  ap_ctrl_hs|  zeropad1d_cl<array,array<ap_fixed<16,6,5,3,0>,16u>,config26>|  return value|
+|ap_done                     |  out|    1|  ap_ctrl_hs|  zeropad1d_cl<array,array<ap_fixed<16,6,5,3,0>,16u>,config26>|  return value|
+|ap_continue                 |   in|    1|  ap_ctrl_hs|  zeropad1d_cl<array,array<ap_fixed<16,6,5,3,0>,16u>,config26>|  return value|
+|ap_idle                     |  out|    1|  ap_ctrl_hs|  zeropad1d_cl<array,array<ap_fixed<16,6,5,3,0>,16u>,config26>|  return value|
+|ap_ready                    |  out|    1|  ap_ctrl_hs|  zeropad1d_cl<array,array<ap_fixed<16,6,5,3,0>,16u>,config26>|  return value|
+|start_out                   |  out|    1|  ap_ctrl_hs|  zeropad1d_cl<array,array<ap_fixed<16,6,5,3,0>,16u>,config26>|  return value|
+|start_write                 |  out|    1|  ap_ctrl_hs|  zeropad1d_cl<array,array<ap_fixed<16,6,5,3,0>,16u>,config26>|  return value|
+|layer5_out_dout             |   in|  256|     ap_fifo|                                                    layer5_out|       pointer|
+|layer5_out_num_data_valid   |   in|    3|     ap_fifo|                                                    layer5_out|       pointer|
+|layer5_out_fifo_cap         |   in|    3|     ap_fifo|                                                    layer5_out|       pointer|
+|layer5_out_empty_n          |   in|    1|     ap_fifo|                                                    layer5_out|       pointer|
+|layer5_out_read             |  out|    1|     ap_fifo|                                                    layer5_out|       pointer|
+|layer26_out_din             |  out|  256|     ap_fifo|                                                   layer26_out|       pointer|
+|layer26_out_num_data_valid  |   in|    5|     ap_fifo|                                                   layer26_out|       pointer|
+|layer26_out_fifo_cap        |   in|    5|     ap_fifo|                                                   layer26_out|       pointer|
+|layer26_out_full_n          |   in|    1|     ap_fifo|                                                   layer26_out|       pointer|
+|layer26_out_write           |  out|    1|     ap_fifo|                                                   layer26_out|       pointer|
++----------------------------+-----+-----+------------+--------------------------------------------------------------+--------------+
+

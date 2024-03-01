@@ -1,0 +1,578 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cdfg:DBCdfg xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cdfg="http://www.autoesl.com/DBCdfg" timeStamp="1709271913475">
+  <ports id="1" name="gmem0" type="PortType" coreId="3621216858" bitwidth="128" iftype="IfTypeFifo">
+    <dataOutputObjs>call</dataOutputObjs>
+  </ports>
+  <ports id="2" name="gmem1" type="PortType" coreId="724376400" bitwidth="16" direction="DirOut" iftype="IfTypeFifo">
+    <dataInputObjs>call</dataInputObjs>
+  </ports>
+  <ports id="3" name="in_r" type="PortType" originalName="in.V" coreId="714621904" bitwidth="64">
+    <dataOutputObjs>read</dataOutputObjs>
+  </ports>
+  <ports id="4" name="out_r" type="PortType" originalName="out.V" coreId="586929664" bitwidth="64">
+    <dataOutputObjs>read</dataOutputObjs>
+  </ports>
+  <edges id="336" source_obj="//@ports.3" sink_obj="//@blocks.0/@node_objs.0"/>
+  <edges id="338" source_obj="//@ports.2" sink_obj="//@blocks.0/@node_objs.1"/>
+  <edges id="339" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.0" sink_obj="//@blocks.0/@node_objs.2"/>
+  <edges id="342" edge_type="CtrlEdge" source_obj="//@blocks.0" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.0"/>
+  <edges id="343" source_obj="//@regions.0/@basic_blocks.0/@node_objs.2" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.0" is_back_edge="1"/>
+  <edges id="344" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.1" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.0" is_back_edge="1"/>
+  <edges id="345" source_obj="//@regions.0/@basic_blocks.0/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.1"/>
+  <edges id="348" source_obj="//@regions.0/@basic_blocks.0/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.2"/>
+  <edges id="351" source_obj="//@regions.0/@basic_blocks.0/@node_objs.1" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.3"/>
+  <edges id="352" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.1" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.3"/>
+  <edges id="353" edge_type="CtrlEdge" source_obj="//@blocks.1" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.3"/>
+  <edges id="356" source_obj="//@ports.0" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="357" source_obj="//@blocks.0/@node_objs.1" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="358" source_obj="//@regions.0/@basic_blocks.0/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="359" source_obj="//@regions.0/@basic_blocks.1/@node_objs.0" sink_obj="//@ports.1"/>
+  <edges id="360" source_obj="//@blocks.0/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="361" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.0" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.1"/>
+  <edges id="362" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="363" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="364" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="365" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="366" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="367" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="368" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="369" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="370" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="371" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="372" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="373" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="374" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="375" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="376" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="377" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="378" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="379" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="380" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="381" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="382" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="383" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="384" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="385" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="386" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="387" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="388" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="389" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="390" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="391" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="392" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="393" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="394" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="395" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="396" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="397" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="398" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="399" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="400" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="401" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="402" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="403" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="404" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="405" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="406" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="407" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="408" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="409" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="410" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="411" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="412" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="413" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="414" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="415" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="416" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="417" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="418" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="419" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="420" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="421" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="422" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="423" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="424" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="425" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="426" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="427" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="428" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="429" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="430" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="431" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="432" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="433" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="434" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="435" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="436" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="437" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="438" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="439" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="440" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="441" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="442" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="443" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="444" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="445" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="446" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="447" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="448" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="449" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="450" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="451" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="452" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="453" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="454" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="455" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="456" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="457" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="458" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="459" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="460" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="461" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="462" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="463" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="464" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="465" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="466" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="467" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="468" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="469" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="470" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="471" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="472" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="473" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="474" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="475" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="476" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="477" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="478" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="479" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="480" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="481" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="482" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="483" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="484" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="485" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="486" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="487" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="488" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="489" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="490" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="491" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="492" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="493" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="494" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="495" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="496" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="497" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="498" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="499" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="500" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="501" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="502" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="503" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="504" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="505" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="506" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="507" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="508" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="509" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="510" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="511" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="512" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="513" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="514" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="515" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="516" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="517" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="518" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="519" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="520" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="521" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="522" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="523" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="524" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="525" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="526" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="527" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="528" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="529" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="530" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="531" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="532" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="533" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="534" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="535" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="536" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="537" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="538" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="539" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="540" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="541" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="542" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="543" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="544" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="545" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="546" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="547" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="548" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="549" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="550" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="551" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="552" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="553" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="554" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="555" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="556" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="557" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="558" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="559" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="560" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="561" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="562" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="563" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="564" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="565" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="566" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="567" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="568" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="569" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="570" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="571" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="572" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="573" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="574" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="575" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="576" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="577" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="578" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="579" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="580" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="581" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="582" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="583" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="584" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="585" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="586" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="587" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="588" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="589" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="590" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="591" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="592" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="593" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="594" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="595" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="596" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="597" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="598" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="599" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="600" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="601" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="602" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="603" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="604" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="605" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="606" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="607" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="608" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="609" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="610" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="611" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="612" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="613" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="614" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="615" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="616" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="617" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="618" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="619" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="620" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="621" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="622" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="623" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="624" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="625" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="626" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="627" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="628" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="629" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="630" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="631" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="632" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="633" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="634" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="635" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="636" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="637" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="638" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="639" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="640" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="641" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="642" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="643" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="644" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="645" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="646" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="647" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="648" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="649" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="650" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="651" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="652" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="653" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="654" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="655" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="656" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="657" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="658" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="659" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="660" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="898" edge_type="CtrlEdge" source_obj="//@blocks.0" sink_obj="//@regions.0/@basic_blocks.0"/>
+  <edges id="899" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.0" sink_obj="//@blocks.1"/>
+  <edges id="900" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.0" sink_obj="//@regions.0/@basic_blocks.1"/>
+  <edges id="901" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.1" sink_obj="//@regions.0/@basic_blocks.0" is_back_edge="1"/>
+  <blocks id="320" name="entry" type="BlockType">
+    <controlOutputObjs>phi</controlOutputObjs>
+    <controlOutputObjs>for.cond.i.i</controlOutputObjs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="317" name="out_r_read" lineNumber="95" fileName="/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp" fileDirectory=".." coreName="s_axilite" implIndex="s_axilite" control="no" opType="adapter" coreId="122" contextFuncName="alveo_hls4ml" bitwidth="64" opcode="read" m_display="0" m_delay="1.0" m_topoIndex="1" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp" linenumber="95" fileDirectory="/home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml" functionName="alveo_hls4ml"/>
+      <dataInputObjs>out_r</dataInputObjs>
+      <dataOutputObjs>call</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="318" name="in_r_read" lineNumber="95" fileName="/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp" fileDirectory=".." coreName="s_axilite" implIndex="s_axilite" control="no" opType="adapter" coreId="122" contextFuncName="alveo_hls4ml" bitwidth="64" opcode="read" m_display="0" m_delay="1.0" m_topoIndex="2" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp" linenumber="95" fileDirectory="/home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml" functionName="alveo_hls4ml"/>
+      <dataInputObjs>in_r</dataInputObjs>
+      <dataOutputObjs>call</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="319" name="br_ln0" coreId="694510703" opcode="br" m_display="0" m_delay="0.38" m_topoIndex="3" m_clusterGroupNumber="-1">
+      <controlInputObjs>for.cond.i.i</controlInputObjs>
+    </node_objs>
+    <fileValidLineNumbers fileName="/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp">
+      <validLinenumbers>95</validLinenumbers>
+    </fileValidLineNumbers>
+  </blocks>
+  <blocks id="333" name="alveo_hls4ml_for.cond.i.exit" type="BlockType">
+    <controlInputObjs>for.cond.i.i</controlInputObjs>
+    <controlOutputObjs>br</controlOutputObjs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="332" name="_ln125" lineNumber="125" fileName="/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp" fileDirectory=".." coreId="714620976" contextFuncName="alveo_hls4ml" opcode="ret" nodeLabel="1.0" m_display="0" m_topoIndex="8" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp" linenumber="125" fileDirectory="/home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml" functionName="alveo_hls4ml"/>
+    </node_objs>
+    <fileValidLineNumbers fileName="/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp">
+      <validLinenumbers>125</validLinenumbers>
+    </fileValidLineNumbers>
+  </blocks>
+  <regions anchor_node="-1" region_type="16" typeName="Dataflow" iiViolation="" id="405" RegionName="VITIS_LOOP_117_1">
+    <basic_blocks id="327" name="for.cond.i.i" type="BlockType">
+      <controlInputObjs>entry</controlInputObjs>
+      <controlInputObjs>for.inc.i.i</controlInputObjs>
+      <controlOutputObjs>br</controlOutputObjs>
+      <controlOutputObjs>br</controlOutputObjs>
+      <controlOutputObjs>alveo_hls4ml_for.cond.i.exit</controlOutputObjs>
+      <controlOutputObjs>for.inc.i.i</controlOutputObjs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="321" name="n" originalName="n" coreId="694510703" bitwidth="14" opcode="phi" nodeLabel="1.0" m_display="0" m_topoIndex="4" m_clusterGroupNumber="-1">
+        <dataInputObjs>add</dataInputObjs>
+        <dataOutputObjs>icmp</dataOutputObjs>
+        <dataOutputObjs>add</dataOutputObjs>
+        <dataOutputObjs>call</dataOutputObjs>
+        <controlInputObjs>entry</controlInputObjs>
+        <controlInputObjs>for.inc.i.i</controlInputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="322" name="icmp_ln117" lineNumber="117" fileName="/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp" fileDirectory=".." coreName="Cmp" implIndex="auto" control="no" opType="icmp" coreId="9" contextFuncName="alveo_hls4ml" bitwidth="1" opcode="icmp" nodeLabel="1.0" m_display="0" m_delay="0.65" m_topoIndex="5" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp" linenumber="117" fileDirectory="/home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml" functionName="alveo_hls4ml"/>
+        <dataInputObjs>phi</dataInputObjs>
+        <dataOutputObjs>br</dataOutputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="325" name="n_1" lineNumber="117" originalName="n" fileName="/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp" fileDirectory=".." coreName="Adder" implIndex="fabric" control="no" opType="add" coreId="1" contextFuncName="alveo_hls4ml" bitwidth="14" opcode="add" nodeLabel="1.0" m_display="0" m_delay="0.76" m_topoIndex="6" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp" linenumber="117" fileDirectory="/home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml" functionName="alveo_hls4ml"/>
+        <dataInputObjs>phi</dataInputObjs>
+        <dataOutputObjs>phi</dataOutputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="326" name="br_ln117" lineNumber="117" fileName="/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp" fileDirectory=".." coreId="714620368" contextFuncName="alveo_hls4ml" opcode="br" nodeLabel="1.0" m_display="0" m_topoIndex="7" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp" linenumber="117" fileDirectory="/home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml" functionName="alveo_hls4ml"/>
+        <dataInputObjs>icmp</dataInputObjs>
+        <controlInputObjs>for.inc.i.i</controlInputObjs>
+        <controlInputObjs>alveo_hls4ml_for.cond.i.exit</controlInputObjs>
+      </node_objs>
+      <fileValidLineNumbers fileName="/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp">
+        <validLinenumbers>117</validLinenumbers>
+      </fileValidLineNumbers>
+    </basic_blocks>
+    <basic_blocks id="331" name="for.inc.i.i" type="BlockType">
+      <controlInputObjs>for.cond.i.i</controlInputObjs>
+      <controlOutputObjs>phi</controlOutputObjs>
+      <controlOutputObjs>br</controlOutputObjs>
+      <controlOutputObjs>for.cond.i.i</controlOutputObjs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="329" name="_ln121" lineNumber="121" fileName="/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp" fileDirectory=".." rtlName="dataflow_in_loop_VITIS_LOOP_117_1_U0" coreId="562297216" contextFuncName="alveo_hls4ml" opcode="call" nodeLabel="2.0" nodeLatency="1" m_display="0" m_delay="2.43" m_topoIndex="9" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp" linenumber="121" fileDirectory="/home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml" functionName="alveo_hls4ml"/>
+        <dataInputObjs>gmem0</dataInputObjs>
+        <dataInputObjs>read</dataInputObjs>
+        <dataInputObjs>phi</dataInputObjs>
+        <dataInputObjs>read</dataInputObjs>
+        <dataOutputObjs>gmem1</dataOutputObjs>
+        <constName>dataflow_in_loop_VITIS_LOOP_117_1</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="330" name="br_ln117" lineNumber="117" fileName="/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp" fileDirectory=".." coreId="1952804462" contextFuncName="alveo_hls4ml" opcode="br" nodeLabel="3.0" m_display="0" m_topoIndex="10" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp" linenumber="117" fileDirectory="/home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml" functionName="alveo_hls4ml"/>
+        <controlInputObjs>for.cond.i.i</controlInputObjs>
+      </node_objs>
+      <fileValidLineNumbers fileName="/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp">
+        <validLinenumbers>121</validLinenumbers>
+        <validLinenumbers>117</validLinenumbers>
+      </fileValidLineNumbers>
+    </basic_blocks>
+  </regions>
+  <ScheduleInfo time="0"/>
+  <ScheduleInfo time="1"/>
+  <ScheduleInfo time="2"/>
+  <ScheduleInfo time="3"/>
+  <regnodes realName="icmp_ln117_reg_1328">
+    <nodeIds>322</nodeIds>
+  </regnodes>
+  <regnodes realName="in_r_read_reg_1323">
+    <nodeIds>318</nodeIds>
+  </regnodes>
+  <regnodes realName="n_reg_684">
+    <nodeIds>321</nodeIds>
+  </regnodes>
+  <regnodes realName="out_r_read_reg_1318">
+    <nodeIds>317</nodeIds>
+  </regnodes>
+  <regnodes realName="n_1_reg_1332">
+    <nodeIds>325</nodeIds>
+  </regnodes>
+  <expressionNodes realName="n_1_fu_1312">
+    <nodeIds>325</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="icmp_ln117_fu_1306">
+    <nodeIds>322</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="n_phi_fu_688">
+    <nodeIds>321</nodeIds>
+  </expressionNodes>
+  <moduleNodes realName="grp_dataflow_in_loop_VITIS_LOOP_117_1_fu_696">
+    <nodeIds>329</nodeIds>
+  </moduleNodes>
+  <ioNodes realName="out_r_read_read_fu_672">
+    <nodeIds>317</nodeIds>
+  </ioNodes>
+  <ioNodes realName="in_r_read_read_fu_678">
+    <nodeIds>318</nodeIds>
+  </ioNodes>
+  <ioPorts name="gmem0">
+    <contents name="call">
+      <nodeIds>329</nodeIds>
+    </contents>
+  </ioPorts>
+  <ioPorts name="gmem1">
+    <contents name="call">
+      <nodeIds>329</nodeIds>
+    </contents>
+  </ioPorts>
+  <ioPorts name="in_r">
+    <contents name="read">
+      <nodeIds>318</nodeIds>
+    </contents>
+  </ioPorts>
+  <ioPorts name="out_r">
+    <contents name="read">
+      <nodeIds>317</nodeIds>
+    </contents>
+  </ioPorts>
+  <fsm>
+    <states id="1">
+      <operations id="304" stage="1" latency="1"/>
+      <operations id="305" stage="1" latency="1"/>
+      <operations id="306" stage="1" latency="1"/>
+      <operations id="307" stage="1" latency="1"/>
+      <operations id="308" stage="1" latency="1"/>
+      <operations id="309" stage="1" latency="1"/>
+      <operations id="310" stage="1" latency="1"/>
+      <operations id="311" stage="1" latency="1"/>
+      <operations id="312" stage="1" latency="1"/>
+      <operations id="313" stage="1" latency="1"/>
+      <operations id="314" stage="1" latency="1"/>
+      <operations id="315" stage="1" latency="1"/>
+      <operations id="316" stage="1" latency="1"/>
+      <operations id="317" stage="1" latency="1"/>
+      <operations id="318" stage="1" latency="1"/>
+      <operations id="319" stage="1" latency="1"/>
+    </states>
+    <states id="2">
+      <operations id="321" stage="1" latency="1"/>
+      <operations id="322" stage="1" latency="1"/>
+      <operations id="323" stage="1" latency="1"/>
+      <operations id="324" stage="1" latency="1"/>
+      <operations id="325" stage="1" latency="1"/>
+      <operations id="326" stage="1" latency="1"/>
+      <operations id="332" stage="1" latency="1"/>
+    </states>
+    <states id="3">
+      <operations id="329" stage="2" latency="2"/>
+    </states>
+    <states id="4">
+      <operations id="328" stage="1" latency="1"/>
+      <operations id="329" stage="1" latency="2"/>
+      <operations id="330" stage="1" latency="1"/>
+    </states>
+    <transitions inState="1" outState="2">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="2" outState="3">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="3" outState="4">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="4" outState="2">
+      <condition id="-1"/>
+    </transitions>
+  </fsm>
+  <CFGRegionsRoot>
+    <cfgRegions mId="1" mTag="alveo_hls4ml" mII="-1" mDepth="-1" mMinTripCount="-1" mMaxTripCount="-1" mMinLatency="688230" mMaxLatency="688230">
+      <subRegions>2</subRegions>
+      <subRegions>3</subRegions>
+      <subRegions>4</subRegions>
+      <mDfPipe/>
+    </cfgRegions>
+    <cfgRegions mId="2" mTag="Entry" mII="-1" mDepth="-1" mMinTripCount="-1" mMaxTripCount="-1">
+      <basicBlocks>320</basicBlocks>
+      <mDfPipe/>
+    </cfgRegions>
+    <cfgRegions mId="3" mTag="VITIS_LOOP_117_1" mII="-1" mDepth="-1" mMinTripCount="8192" mMaxTripCount="8192" mMinLatency="688229" mMaxLatency="688229" mIsDfPipe="true" mType="1">
+      <basicBlocks>327</basicBlocks>
+      <basicBlocks>331</basicBlocks>
+      <mDfPipe allPipePinInst="//@CFGRegionsRoot/@cfgRegions.2/@mDfPipe/@processe_list.0/@pins.0/@inst">
+        <processe_list name="dataflow_in_loop_VITIS_LOOP_117_1_U0" ssdmobj_id="329">
+          <pins>
+            <port name="gmem0" type="BUSType" need_hs="true" top_port_object_id="" top_port_object_id_reference="_351" chan_object_id="" chan_object_id_reference=""/>
+            <inst name="dataflow_in_loop_VITIS_LOOP_117_1_U0" ssdmobj_id="329" object_id="_358"/>
+          </pins>
+          <pins>
+            <port name="in_r" type="SIOType" need_hs="true" top_port_object_id="" top_port_object_id_reference="_353" chan_object_id="" chan_object_id_reference=""/>
+            <inst name="dataflow_in_loop_VITIS_LOOP_117_1_U0" ssdmobj_id="329" object_id="_358"/>
+          </pins>
+          <pins>
+            <port name="n" type="SIOType" need_hs="true" top_port_object_id="" top_port_object_id_reference="" chan_object_id="" chan_object_id_reference=""/>
+            <inst name="dataflow_in_loop_VITIS_LOOP_117_1_U0" ssdmobj_id="329" object_id="_358"/>
+          </pins>
+          <pins>
+            <port name="gmem1" dir="DirOut" type="BUSType" need_hs="true" top_port_object_id="" top_port_object_id_reference="_352" chan_object_id="" chan_object_id_reference=""/>
+            <inst name="dataflow_in_loop_VITIS_LOOP_117_1_U0" ssdmobj_id="329" object_id="_358"/>
+          </pins>
+          <pins>
+            <port name="out_r" type="SIOType" need_hs="true" top_port_object_id="" top_port_object_id_reference="_354" chan_object_id="" chan_object_id_reference=""/>
+            <inst name="dataflow_in_loop_VITIS_LOOP_117_1_U0" ssdmobj_id="329" object_id="_358"/>
+          </pins>
+        </processe_list>
+      </mDfPipe>
+    </cfgRegions>
+    <cfgRegions mId="4" mTag="Return" mII="-1" mDepth="-1" mMinTripCount="-1" mMaxTripCount="-1">
+      <basicBlocks>333</basicBlocks>
+      <mDfPipe/>
+    </cfgRegions>
+  </CFGRegionsRoot>
+</cdfg:DBCdfg>
