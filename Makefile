@@ -50,7 +50,7 @@ HLS4ML_IO_TYPE:= IO_STREAM
 #possible options are: IO_PARALLEL, IO_STREAM
 #--^--^--
 ifeq ($(filter $(HLS4ML_PROJ_TYPE),DENSE CONV1D CONV2D),)
-$(error invalid HLS4ML_PROJ_TYPE, must be DENSE or CONV2D)
+$(error invalid HLS4ML_PROJ_TYPE, must be DENSE, CONV1D, or CONV2D)
 endif
 
 # Include Libraries
