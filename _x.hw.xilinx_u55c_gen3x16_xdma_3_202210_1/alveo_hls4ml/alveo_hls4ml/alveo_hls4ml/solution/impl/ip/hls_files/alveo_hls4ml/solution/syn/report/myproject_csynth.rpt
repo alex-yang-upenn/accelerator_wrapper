@@ -1,0 +1,158 @@
+
+
+================================================================
+== Vitis HLS Report for 'myproject'
+================================================================
+* Date:           Sat Mar  2 01:10:01 2024
+
+* Version:        2022.2 (Build 3670227 on Oct 13 2022)
+* Project:        alveo_hls4ml
+* Solution:       solution (Vitis Kernel Flow Target)
+* Product family: virtexuplus
+* Target device:  xcu55c-fsvh2892-2L-e
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+---------+----------+------------+
+    |  Clock |  Target | Estimated| Uncertainty|
+    +--------+---------+----------+------------+
+    |ap_clk  |  3.33 ns|  2.423 ns|     0.90 ns|
+    +--------+---------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-----+-----+----------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline |
+    |   min   |   max   |    min   |    max   | min | max |   Type   |
+    +---------+---------+----------+----------+-----+-----+----------+
+    |       32|       32|  0.107 us|  0.107 us|    9|    9|  dataflow|
+    +---------+---------+----------+----------+-----+-----+----------+
+
+    + Detail: 
+        * Instance: 
+        +------------------------------------------------------------------------+-----------------------------------------------------------------------+---------+---------+-----------+-----------+-----+-----+---------+
+        |                                                                        |                                                                       |  Latency (cycles) |   Latency (absolute)  |  Interval | Pipeline|
+        |                                Instance                                |                                 Module                                |   min   |   max   |    min    |    max    | min | max |   Type  |
+        +------------------------------------------------------------------------+-----------------------------------------------------------------------+---------+---------+-----------+-----------+-----+-----+---------+
+        |dense_array_ap_fixed_16u_array_ap_fixed_16_6_5_3_0_64u_config2_U0       |dense_array_ap_fixed_16u_array_ap_fixed_16_6_5_3_0_64u_config2_s       |        3|        3|   9.999 ns|   9.999 ns|    3|    3|       no|
+        |relu_array_ap_fixed_64u_array_ap_ufixed_6_0_4_0_0_64u_relu_config4_U0   |relu_array_ap_fixed_64u_array_ap_ufixed_6_0_4_0_0_64u_relu_config4_s   |        1|        1|   3.333 ns|   3.333 ns|    1|    1|       no|
+        |dense_array_ap_ufixed_64u_array_ap_fixed_16_6_5_3_0_32u_config5_U0      |dense_array_ap_ufixed_64u_array_ap_fixed_16_6_5_3_0_32u_config5_s      |        4|        4|  13.332 ns|  13.332 ns|    4|    4|       no|
+        |relu_array_ap_fixed_32u_array_ap_ufixed_6_0_4_0_0_32u_relu_config7_U0   |relu_array_ap_fixed_32u_array_ap_ufixed_6_0_4_0_0_32u_relu_config7_s   |        1|        1|   3.333 ns|   3.333 ns|    1|    1|       no|
+        |dense_array_ap_ufixed_32u_array_ap_fixed_16_6_5_3_0_32u_config8_U0      |dense_array_ap_ufixed_32u_array_ap_fixed_16_6_5_3_0_32u_config8_s      |        4|        4|  13.332 ns|  13.332 ns|    4|    4|       no|
+        |relu_array_ap_fixed_32u_array_ap_ufixed_6_0_4_0_0_32u_relu_config10_U0  |relu_array_ap_fixed_32u_array_ap_ufixed_6_0_4_0_0_32u_relu_config10_s  |        1|        1|   3.333 ns|   3.333 ns|    1|    1|       no|
+        |dense_array_ap_ufixed_32u_array_ap_fixed_16_6_5_3_0_5u_config11_U0      |dense_array_ap_ufixed_32u_array_ap_fixed_16_6_5_3_0_5u_config11_s      |        3|        3|   9.999 ns|   9.999 ns|    3|    3|       no|
+        |softmax_array_array_ap_fixed_16_6_5_3_0_5u_softmax_config13_U0          |softmax_array_array_ap_fixed_16_6_5_3_0_5u_softmax_config13_s          |        8|        8|  26.664 ns|  26.664 ns|    8|    8|       no|
+        +------------------------------------------------------------------------+-----------------------------------------------------------------------+---------+---------+-----------+-----------+-----+-----+---------+
+
+        * Loop: 
+        N/A
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++---------------------+---------+------+---------+---------+-----+
+|         Name        | BRAM_18K|  DSP |    FF   |   LUT   | URAM|
++---------------------+---------+------+---------+---------+-----+
+|DSP                  |        -|     -|        -|        -|    -|
+|Expression           |        -|     -|        0|        2|    -|
+|FIFO                 |        -|     -|     6434|     3251|    -|
+|Instance             |        8|    38|    11406|    46290|    -|
+|Memory               |        -|     -|        -|        -|    -|
+|Multiplexer          |        -|     -|        -|        -|    -|
+|Register             |        -|     -|        -|        -|    -|
++---------------------+---------+------+---------+---------+-----+
+|Total                |        8|    38|    17840|    49543|    0|
++---------------------+---------+------+---------+---------+-----+
+|Available SLR        |     1344|  3008|   869120|   434560|  320|
++---------------------+---------+------+---------+---------+-----+
+|Utilization SLR (%)  |       ~0|     1|        2|       11|    0|
++---------------------+---------+------+---------+---------+-----+
+|Available            |     4032|  9024|  2607360|  1303680|  960|
++---------------------+---------+------+---------+---------+-----+
+|Utilization (%)      |       ~0|    ~0|       ~0|        3|    0|
++---------------------+---------+------+---------+---------+-----+
+
++ Detail: 
+    * Instance: 
+    +------------------------------------------------------------------------+-----------------------------------------------------------------------+---------+----+------+-------+-----+
+    |                                Instance                                |                                 Module                                | BRAM_18K| DSP|  FF  |  LUT  | URAM|
+    +------------------------------------------------------------------------+-----------------------------------------------------------------------+---------+----+------+-------+-----+
+    |dense_array_ap_fixed_16u_array_ap_fixed_16_6_5_3_0_64u_config2_U0       |dense_array_ap_fixed_16u_array_ap_fixed_16_6_5_3_0_64u_config2_s       |        0|  33|  2529|   9422|    0|
+    |dense_array_ap_ufixed_32u_array_ap_fixed_16_6_5_3_0_32u_config8_U0      |dense_array_ap_ufixed_32u_array_ap_fixed_16_6_5_3_0_32u_config8_s      |        0|   0|  1831|   9577|    0|
+    |dense_array_ap_ufixed_32u_array_ap_fixed_16_6_5_3_0_5u_config11_U0      |dense_array_ap_ufixed_32u_array_ap_fixed_16_6_5_3_0_5u_config11_s      |        0|   0|   397|   1512|    0|
+    |dense_array_ap_ufixed_64u_array_ap_fixed_16_6_5_3_0_32u_config5_U0      |dense_array_ap_ufixed_64u_array_ap_fixed_16_6_5_3_0_32u_config5_s      |        0|   0|  3121|  15563|    0|
+    |relu_array_ap_fixed_32u_array_ap_ufixed_6_0_4_0_0_32u_relu_config10_U0  |relu_array_ap_fixed_32u_array_ap_ufixed_6_0_4_0_0_32u_relu_config10_s  |        0|   0|   804|   2420|    0|
+    |relu_array_ap_fixed_32u_array_ap_ufixed_6_0_4_0_0_32u_relu_config7_U0   |relu_array_ap_fixed_32u_array_ap_ufixed_6_0_4_0_0_32u_relu_config7_s   |        0|   0|   804|   2420|    0|
+    |relu_array_ap_fixed_64u_array_ap_ufixed_6_0_4_0_0_64u_relu_config4_U0   |relu_array_ap_fixed_64u_array_ap_ufixed_6_0_4_0_0_64u_relu_config4_s   |        0|   0|  1604|   4788|    0|
+    |softmax_array_array_ap_fixed_16_6_5_3_0_5u_softmax_config13_U0          |softmax_array_array_ap_fixed_16_6_5_3_0_5u_softmax_config13_s          |        8|   5|   316|    588|    0|
+    +------------------------------------------------------------------------+-----------------------------------------------------------------------+---------+----+------+-------+-----+
+    |Total                                                                   |                                                                       |        8|  38| 11406|  46290|    0|
+    +------------------------------------------------------------------------+-----------------------------------------------------------------------+---------+----+------+-------+-----+
+
+    * DSP: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    +---------------+---------+------+----+-----+------+------+---------+
+    |      Name     | BRAM_18K|  FF  | LUT| URAM| Depth| Bits | Size:D*B|
+    +---------------+---------+------+----+-----+------+------+---------+
+    |layer10_out_U  |        0|   516|   0|    -|     1|   192|      192|
+    |layer11_out_U  |        0|   260|   0|    -|     1|    80|       80|
+    |layer2_out_U   |        0|  2058|   0|    -|     1|  1024|     1024|
+    |layer4_out_U   |        0|  1028|   0|    -|     1|   384|      384|
+    |layer5_out_U   |        0|  1028|   0|    -|     1|   512|      512|
+    |layer7_out_U   |        0|   516|   0|    -|     1|   192|      192|
+    |layer8_out_U   |        0|  1028|   0|    -|     1|   512|      512|
+    +---------------+---------+------+----+-----+------+------+---------+
+    |Total          |        0|  6434|   0|    0|     7|  2896|     2896|
+    +---------------+---------+------+----+-----+------+------+---------+
+
+    * Expression: 
+    +--------------+----------+----+---+----+------------+------------+
+    | Variable Name| Operation| DSP| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +--------------+----------+----+---+----+------------+------------+
+    |ap_idle       |       and|   0|  0|   2|           1|           1|
+    +--------------+----------+----+---+----+------------+------------+
+    |Total         |          |   0|  0|   2|           1|           1|
+    +--------------+----------+----+---+----+------------+------------+
+
+    * Multiplexer: 
+    N/A
+
+    * Register: 
+    N/A
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++-----------------+-----+-----+------------+--------------+--------------+
+|    RTL Ports    | Dir | Bits|  Protocol  | Source Object|    C Type    |
++-----------------+-----+-----+------------+--------------+--------------+
+|input_r_dout     |   in|  256|     ap_fifo|       input_r|       pointer|
+|input_r_empty_n  |   in|    1|     ap_fifo|       input_r|       pointer|
+|input_r_read     |  out|    1|     ap_fifo|       input_r|       pointer|
+|output_r_din     |  out|   80|     ap_fifo|      output_r|       pointer|
+|output_r_full_n  |   in|    1|     ap_fifo|      output_r|       pointer|
+|output_r_write   |  out|    1|     ap_fifo|      output_r|       pointer|
+|ap_clk           |   in|    1|  ap_ctrl_hs|     myproject|  return value|
+|ap_rst           |   in|    1|  ap_ctrl_hs|     myproject|  return value|
+|ap_start         |   in|    1|  ap_ctrl_hs|     myproject|  return value|
+|ap_done          |  out|    1|  ap_ctrl_hs|     myproject|  return value|
+|ap_ready         |  out|    1|  ap_ctrl_hs|     myproject|  return value|
+|ap_idle          |  out|    1|  ap_ctrl_hs|     myproject|  return value|
+|ap_continue      |   in|    1|  ap_ctrl_hs|     myproject|  return value|
++-----------------+-----+-----+------------+--------------+--------------+
+
