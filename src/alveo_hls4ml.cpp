@@ -40,6 +40,21 @@ static void write_result(const input_data_t *in, input_data_t (&out_buf)[BATCHSI
 
 #ifdef IO_STREAM
 #ifdef IS_DENSE
+static void read_input(const input_data_t *in, hls::stream<input_stream_t> &input, int n) {
+  input_stream_t tmp;
+  for (int i = 0; i < X_DIMENSION_IN; i++) {
+    #pragma HLS UNROLL
+    tmp[i] = in[(n * X_DIMENSION_IN) + i];
+  }
+  input << tmp;
+}
+static void write_result(output_data_t *out, hls::stream<output_stream_t> &output, int n) {
+  output_stream_t tmp = output.read();
+  for (int i = 0; i < DATA_SIZE_OUT; i++) {
+    #pragma HLS UNROLL
+    out[(n * DATA_SIZE_OUT) + i] = tmp[i];
+  }
+}
 #endif
 
 #ifdef IS_CONV1D
@@ -94,7 +109,6 @@ extern "C" {
 */
   void alveo_hls4ml(const input_data_t *in, output_data_t *out) {
     #ifdef IO_PARALLEL
-    #ifdef IS_DENSE
       input_data_t in_buf[BATCHSIZE][DATA_SIZE_IN];
       output_data_t out_buf[BATCHSIZE][DATA_SIZE_OUT];
       #pragma HLS ARRAY_RESHAPE   variable=in_buf  complete dim=2
@@ -105,10 +119,8 @@ extern "C" {
       run_inference(in_buf, out_buf);
       write_output(out, out_buf);
     #endif
-    #endif
 
     #ifdef IO_STREAM
-    #if defined(IS_CONV1D) || defined(IS_CONV2D)
       hls::stream<input_stream_t> input("input");
       hls::stream<output_stream_t> output("output");
       #pragma HLS STREAM variable=input depth=DATA_SIZE_IN
@@ -120,7 +132,6 @@ extern "C" {
         hls4ml: MYPROJ(input, output);
         write_result(out, output, n);
       }
-    #endif
     #endif
   }
 }

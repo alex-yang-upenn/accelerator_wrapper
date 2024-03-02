@@ -63,10 +63,6 @@ include $(PWD)/libs/opencl/opencl.mk
 CXXFLAGS += $(opencl_CXXFLAGS) -Wall -O0 -g -std=c++11 
 LDFLAGS += $(opencl_LDFLAGS) -I$(XILINX_VIVADO)/include/ -I$(XILINX_HLS)/include/ -Wno-unknown-pragmas
 
-# Include Macro Definitions
-CXXFLAGS += -DIS_$(HLS4ML_PROJ_TYPE) -D$(HLS4ML_IO_TYPE) -DHLS4ML_DATA_DIR=./ -DXCL_BIN_FILENAME=$(BIN_FILENAME)
-KERN_MACROS += -DMYPROJ=$(HLS4ML_NAME) -DIS_$(HLS4ML_PROJ_TYPE) -D$(HLS4ML_IO_TYPE)
-
 # Host compiler global settings
 HOST_SRCS += src/host.cpp
 CXXFLAGS += -fmessage-length=0
@@ -82,6 +78,10 @@ VPPFLAGS += -t $(TARGET) --platform $(DEVICE) --save-temps
 ifneq ($(TARGET), hw)
 	VPPFLAGS += -g
 endif
+
+# Macro Definitions
+CXX_MACROS += -DIS_$(HLS4ML_PROJ_TYPE) -D$(HLS4ML_IO_TYPE) -DHLS4ML_DATA_DIR=./ -DXCL_BIN_FILENAME=$(BIN_FILENAME)
+KERN_MACROS += -DMYPROJ=$(HLS4ML_NAME) -DIS_$(HLS4ML_PROJ_TYPE) -D$(HLS4ML_IO_TYPE)
 
 EXECUTABLE = host
 EMCONFIG_DIR = $(XO_DIR)
@@ -99,7 +99,7 @@ $(BIN_FILENAME): $(XO_CONTAINER_FILENAME)
 
 # Building Host
 $(EXECUTABLE): check-xrt $(HOST_SRCS) $(HOST_HDRS)
-	$(CXX) $(CXXFLAGS) $(HOST_SRCS) $(HOST_HDRS) -o '$@' $(LDFLAGS)
+	$(CXX) $(CXXFLAGS) $(CXX_MACROS) $(HOST_SRCS) $(HOST_HDRS) -o '$@' $(LDFLAGS)
 
 emconfig:$(EMCONFIG_DIR)/emconfig.json
 $(EMCONFIG_DIR)/emconfig.json:
