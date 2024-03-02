@@ -63,7 +63,7 @@ DO NOT fully use up assigned HBM memory.
 */
 #define BATCHSIZE 8192
 
-#define X_DIMENSION_IN N_LAYER_1_1 // Update accordingly
+#define X_DIMENSION_IN N_INPUT_1_1 // Update accordingly
 #define DATA_SIZE_IN 1
 #define INSTREAMSIZE (BATCHSIZE * DATA_SIZE_IN * X_DIMENSION_IN) 
 
