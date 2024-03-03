@@ -4,7 +4,6 @@
 #include PROJ_HDR
 
 #ifdef IO_PARALLEL
-#ifdef IS_DENSE
 static void read_input(const input_data_t *in, input_data_t (&in_buf)[BATCHSIZE][DATA_SIZE_IN]) {
   for (int i = 0; i < BATCHSIZE; i++) {
       #pragma HLS PIPELINE
@@ -29,13 +28,6 @@ static void write_result(const input_data_t *in, input_data_t (&out_buf)[BATCHSI
     }
   }
 }
-#endif
-
-#ifdef IS_CONV1D
-#endif
-
-#ifdef IS_CONV2D
-#endif
 #endif
 
 #ifdef IO_STREAM
