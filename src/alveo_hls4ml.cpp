@@ -40,13 +40,6 @@ static void read_input(const input_data_t *in, hls::stream<input_stream_t> &inpu
   }
   input << tmp;
 }
-static void write_result(output_data_t *out, hls::stream<output_stream_t> &output, int n) {
-  output_stream_t tmp = output.read();
-  for (int i = 0; i < DATA_SIZE_OUT; i++) {
-    #pragma HLS UNROLL
-    out[(n * DATA_SIZE_OUT) + i] = tmp[i];
-  }
-}
 #endif
 
 #ifdef IS_CONV1D
@@ -59,13 +52,6 @@ static void read_input(const input_data_t *in, hls::stream<input_stream_t> &inpu
       tmp[j] = in[(n * DATA_SIZE_IN * Y_DIMENSION_IN) + (i * Y_DIMENSION_IN) + j];
     }
     input << tmp;
-  }
-}
-static void write_result(output_data_t *out, hls::stream<output_stream_t> &output, int n) {
-  output_stream_t tmp = output.read();
-  for (int i = 0; i < DATA_SIZE_OUT; i++) {
-    #pragma HLS UNROLL
-    out[(n * DATA_SIZE_OUT) + i] = tmp[i];
   }
 }
 #endif
@@ -82,6 +68,7 @@ static void read_input(const input_data_t *in, hls::stream<input_stream_t> &inpu
     input << tmp;
   }
 }
+#endif
 
 static void write_result(output_data_t *out, hls::stream<output_stream_t> &output, int n) {
   output_stream_t tmp = output.read();
@@ -90,7 +77,6 @@ static void write_result(output_data_t *out, hls::stream<output_stream_t> &outpu
     out[(n * DATA_SIZE_OUT) + i] = tmp[i];
   }
 }
-#endif
 #endif
 
 extern "C" {
