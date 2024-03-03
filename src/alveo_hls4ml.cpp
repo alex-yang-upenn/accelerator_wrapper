@@ -13,13 +13,13 @@ static void read_input(const input_data_t *in, input_data_t (&in_buf)[BATCHSIZE]
       }
     }
 }
-static void run_inference(input_data_t (&in_buf)[BATCHSIZE][DATA_SIZE_IN], output_data_t (&out_buf)[BATCHSIZE][DATA_SIZE_IN]) {
+static void run_inference(input_data_t (&in_buf)[BATCHSIZE][DATA_SIZE_IN], output_data_t (&out_buf)[BATCHSIZE][DATA_SIZE_OUT]) {
   for (int i = 0; i < BATCHSIZE; i++) {
       #pragma HLS DATAFLOW
       hls4ml: MYPROJ(in_buf[i],out_buf[i]);
     }
 }
-static void write_result(const input_data_t *out, input_data_t (&out_buf)[BATCHSIZE][DATA_SIZE_IN]) {
+static void write_result(const input_data_t *out, input_data_t (&out_buf)[BATCHSIZE][DATA_SIZE_OUT]) {
   for (int i = 0; i < BATCHSIZE; i++) {
     #pragma HLS PIPELINE
     for (int j = 0; j < DATA_SIZE_OUT; j++) {
