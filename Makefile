@@ -42,11 +42,11 @@ BIN_FILENAME := $(BUILD_DIR)/alveo_hls4ml.xclbin
 XO_CONTAINER_FILENAME := $(XO_DIR)/alveo_hls4ml.xo
 
 #--v--v--
-HLS4ML_NAME := 
+HLS4ML_NAME := myproject
 #name of the cpp file produced by HLS4ML
-HLS4ML_PROJ_TYPE := 
+HLS4ML_PROJ_TYPE := CONV2D
 #possible options are: DENSE, CONV1D, CONV2D
-HLS4ML_IO_TYPE:= 
+HLS4ML_IO_TYPE:= IO_PARALLEL
 #possible options are: IO_PARALLEL, IO_STREAM
 #--^--^--
 ifeq ($(filter $(HLS4ML_PROJ_TYPE),DENSE CONV1D CONV2D),)

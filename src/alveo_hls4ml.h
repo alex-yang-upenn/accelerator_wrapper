@@ -48,11 +48,29 @@ DO NOT fully use up assigned HBM memory.
 #define DATA_SIZE_IN N_INPUT_1_1
 #define INSTREAMSIZE (BATCHSIZE * DATA_SIZE_IN)
 
-#define DATA_SIZE_OUT N_LAYER_11
+#define DATA_SIZE_OUT N_LAYER_11 // Update accordingly
 #define OUTSTREAMSIZE (BATCHSIZE * DATA_SIZE_OUT)
 
 typedef model_default_t input_data_t; // Update accordingly
 typedef model_default_t output_data_t;
+#endif
+
+#ifdef IS_CONV1D
+/* Calculate according to FPGA specs (HBM PC memory size) and size of input layer. 
+DO NOT fully use up assigned HBM memory. 
+*/
+#define BATCHSIZE 8192
+
+#define X_DIMENSION_IN N_INPUT_1_1
+#define Y_DIMENSION_IN N_INPUT_2_1
+#define DATA_SIZE_IN (X_DIMENSION_IN * Y_DIMENSION_IN)
+#define INSTREAMSIZE (BATCHSIZE * DATA_SIZE_IN)
+
+#define DATA_SIZE_OUT N_LAYER_23 // Update accordingly
+#define OUTSTREAMSIZE (BATCHSIZE * DATA_SIZE_OUT)
+
+typedef input_t input_data_t;
+typedef result_t output_data_t;
 #endif
 #endif
 
