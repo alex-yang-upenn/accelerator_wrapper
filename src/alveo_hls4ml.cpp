@@ -19,7 +19,7 @@ static void run_inference(input_data_t (&in_buf)[BATCHSIZE][DATA_SIZE_IN], outpu
       hls4ml: MYPROJ(in_buf[i],out_buf[i]);
     }
 }
-static void write_result(const input_data_t *out, input_data_t (&out_buf)[BATCHSIZE][DATA_SIZE_OUT]) {
+static void write_result(input_data_t *out, input_data_t (&out_buf)[BATCHSIZE][DATA_SIZE_OUT]) {
   for (int i = 0; i < BATCHSIZE; i++) {
     #pragma HLS PIPELINE
     for (int j = 0; j < DATA_SIZE_OUT; j++) {
