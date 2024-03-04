@@ -1,0 +1,446 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cdfg:DBCdfg xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cdfg="http://www.autoesl.com/DBCdfg" timeStamp="1709501578519">
+  <ports id="1" name="gmem0" type="PortType" coreId="3621216858" bitwidth="512" iftype="IfTypeFifo">
+    <dataOutputObjs>getelementptr</dataOutputObjs>
+  </ports>
+  <ports id="2" name="sext_ln8" type="PortType" coreId="1869635878" bitwidth="58">
+    <dataOutputObjs>read</dataOutputObjs>
+  </ports>
+  <ports id="3" name="in_buf" type="PortType" coreName="RAM" coreId="543255911" bitwidth="128" direction="DirOut" iftype="IfTypeRegister" arraysize="8192">
+    <dataInputObjs>getelementptr</dataInputObjs>
+  </ports>
+  <edges id="48" source_obj="//@ports.1" sink_obj="//@blocks.0/@node_objs.2"/>
+  <edges id="49" source_obj="//@blocks.0/@node_objs.2" sink_obj="//@blocks.0/@node_objs.3"/>
+  <edges id="52" source_obj="//@blocks.0/@node_objs.1" sink_obj="//@blocks.0/@node_objs.4"/>
+  <edges id="55" source_obj="//@blocks.0/@node_objs.0" sink_obj="//@blocks.0/@node_objs.5"/>
+  <edges id="56" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.0" sink_obj="//@blocks.0/@node_objs.6"/>
+  <edges id="57" source_obj="//@blocks.0/@node_objs.1" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.0"/>
+  <edges id="58" source_obj="//@ports.0" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.1"/>
+  <edges id="59" source_obj="//@blocks.0/@node_objs.3" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.1"/>
+  <edges id="60" source_obj="//@regions.0/@basic_blocks.0/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.2"/>
+  <edges id="63" source_obj="//@regions.0/@basic_blocks.0/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.3"/>
+  <edges id="66" source_obj="//@regions.0/@basic_blocks.0/@node_objs.2" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.4"/>
+  <edges id="67" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.1" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.4"/>
+  <edges id="68" edge_type="CtrlEdge" source_obj="//@blocks.1" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.4"/>
+  <edges id="69" source_obj="//@regions.0/@basic_blocks.2/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.3/@node_objs.0"/>
+  <edges id="70" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.2" sink_obj="//@regions.0/@basic_blocks.3/@node_objs.0"/>
+  <edges id="71" source_obj="//@regions.0/@basic_blocks.1/@node_objs.1" sink_obj="//@regions.0/@basic_blocks.3/@node_objs.0"/>
+  <edges id="72" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.1" sink_obj="//@regions.0/@basic_blocks.3/@node_objs.0"/>
+  <edges id="75" source_obj="//@regions.0/@basic_blocks.3/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.3/@node_objs.1"/>
+  <edges id="80" source_obj="//@regions.0/@basic_blocks.3/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.3/@node_objs.2"/>
+  <edges id="81" source_obj="//@regions.0/@basic_blocks.3/@node_objs.2" sink_obj="//@regions.0/@basic_blocks.3/@node_objs.3"/>
+  <edges id="82" source_obj="//@regions.0/@basic_blocks.1/@node_objs.4" sink_obj="//@regions.0/@basic_blocks.3/@node_objs.3"/>
+  <edges id="83" source_obj="//@regions.0/@basic_blocks.0/@node_objs.3" sink_obj="//@regions.0/@basic_blocks.3/@node_objs.4"/>
+  <edges id="84" source_obj="//@blocks.0/@node_objs.1" sink_obj="//@regions.0/@basic_blocks.3/@node_objs.4"/>
+  <edges id="85" source_obj="//@regions.0/@basic_blocks.3/@node_objs.1" sink_obj="//@regions.0/@basic_blocks.3/@node_objs.5"/>
+  <edges id="86" source_obj="//@blocks.0/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.3/@node_objs.5"/>
+  <edges id="87" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.0" sink_obj="//@regions.0/@basic_blocks.3/@node_objs.6"/>
+  <edges id="88" source_obj="//@blocks.0/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="89" source_obj="//@regions.0/@basic_blocks.1/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.1"/>
+  <edges id="90" source_obj="//@regions.0/@basic_blocks.0/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.2"/>
+  <edges id="91" source_obj="//@regions.0/@basic_blocks.0/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.3"/>
+  <edges id="92" source_obj="//@regions.0/@basic_blocks.1/@node_objs.4" sink_obj="//@ports.2"/>
+  <edges id="95" source_obj="//@regions.0/@basic_blocks.1/@node_objs.2" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.4"/>
+  <edges id="96" source_obj="//@regions.0/@basic_blocks.1/@node_objs.3" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.5"/>
+  <edges id="99" source_obj="//@regions.0/@basic_blocks.1/@node_objs.5" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.6"/>
+  <edges id="100" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.3" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.6"/>
+  <edges id="101" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.2" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.6"/>
+  <edges id="104" source_obj="//@regions.0/@basic_blocks.0/@node_objs.1" sink_obj="//@regions.0/@basic_blocks.2/@node_objs.0"/>
+  <edges id="105" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.3" sink_obj="//@regions.0/@basic_blocks.2/@node_objs.1"/>
+  <edges id="151" edge_type="CtrlEdge" source_obj="//@blocks.0" sink_obj="//@regions.0/@basic_blocks.0"/>
+  <edges id="152" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.0" sink_obj="//@blocks.1"/>
+  <edges id="153" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.0" sink_obj="//@regions.0/@basic_blocks.1"/>
+  <edges id="154" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.1" sink_obj="//@regions.0/@basic_blocks.2"/>
+  <edges id="155" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.1" sink_obj="//@regions.0/@basic_blocks.3"/>
+  <edges id="156" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.2" sink_obj="//@regions.0/@basic_blocks.3"/>
+  <edges id="157" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.3" sink_obj="//@regions.0/@basic_blocks.0" is_back_edge="1"/>
+  <edges id="158" edge_type="VirtEdge" source_obj="//@blocks.0/@node_objs.4" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.0"/>
+  <edges id="159" edge_type="VirtEdge" source_obj="//@blocks.0/@node_objs.5" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="160" edge_type="VirtEdge" source_obj="//@blocks.0/@node_objs.4" sink_obj="//@regions.0/@basic_blocks.3/@node_objs.4"/>
+  <edges id="161" edge_type="VirtEdge" source_obj="//@blocks.0/@node_objs.5" sink_obj="//@regions.0/@basic_blocks.3/@node_objs.5"/>
+  <edges id="162" edge_type="VirtEdge" source_obj="//@regions.0/@basic_blocks.0/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.3/@node_objs.4"/>
+  <edges id="163" edge_type="VirtEdge" source_obj="//@regions.0/@basic_blocks.1/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.3/@node_objs.5"/>
+  <blocks id="12" name="newFuncRoot" type="BlockType">
+    <controlOutputObjs>for.inc</controlOutputObjs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="4" name="shiftreg" coreId="741615973" bitwidth="384" opcode="alloca" m_display="0" m_topoIndex="1" m_clusterGroupNumber="-1">
+      <dataOutputObjs>store</dataOutputObjs>
+      <dataOutputObjs>store</dataOutputObjs>
+      <dataOutputObjs>load</dataOutputObjs>
+      <constName>empty</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="5" name="i" originalName="i" coreId="539767849" bitwidth="14" opcode="alloca" m_display="0" m_topoIndex="2" m_clusterGroupNumber="-1">
+      <dataOutputObjs>store</dataOutputObjs>
+      <dataOutputObjs>load</dataOutputObjs>
+      <dataOutputObjs>store</dataOutputObjs>
+      <constName>empty</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="6" name="sext_ln8_read" coreId="539767849" bitwidth="58" opcode="read" m_display="0" m_topoIndex="3" m_clusterGroupNumber="-1">
+      <dataInputObjs>sext_ln8</dataInputObjs>
+      <dataOutputObjs>sext</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="7" name="sext_ln8_cast" coreId="741615973" bitwidth="64" opcode="sext" m_display="0" m_topoIndex="4" m_clusterGroupNumber="-1">
+      <dataInputObjs>read</dataInputObjs>
+      <dataOutputObjs>getelementptr</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="9" name="i_write_ln0" coreId="741615973" opcode="store" m_display="0" m_delay="0.38" m_topoIndex="5" m_clusterGroupNumber="-1">
+      <dataInputObjs>alloca</dataInputObjs>
+      <constName>empty</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="10" name="shiftreg_write_ln0" coreId="39659072" opcode="store" m_display="0" m_delay="0.38" m_topoIndex="6" m_clusterGroupNumber="-1">
+      <dataInputObjs>alloca</dataInputObjs>
+      <constName>empty</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="11" name="br_ln0" coreId="1916886893" opcode="br" m_display="0" m_topoIndex="7" m_clusterGroupNumber="-1">
+      <controlInputObjs>for.inc</controlInputObjs>
+    </node_objs>
+  </blocks>
+  <blocks id="42" name="for.end11.exitStub" type="BlockType">
+    <controlInputObjs>for.inc</controlInputObjs>
+    <controlOutputObjs>br</controlOutputObjs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="41" name="_ln0" coreId="39089872" opcode="ret" nodeLabel="1.0" m_display="0" m_topoIndex="19" m_clusterGroupNumber="-1"/>
+  </blocks>
+  <regions anchor_node="-1" region_type="8" interval="1" typeName="Pipeline" iiViolation="" id="153" pipe_depth="3" RegionName="VITIS_LOOP_8_1">
+    <basic_blocks id="19" name="for.inc" type="BlockType">
+      <controlInputObjs>newFuncRoot</controlInputObjs>
+      <controlInputObjs>for.inc.split._crit_edge</controlInputObjs>
+      <controlOutputObjs>br</controlOutputObjs>
+      <controlOutputObjs>br</controlOutputObjs>
+      <controlOutputObjs>for.end11.exitStub</controlOutputObjs>
+      <controlOutputObjs>for.inc.split</controlOutputObjs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="13" name="i_2" lineNumber="8" originalName="i" fileName="/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp" fileDirectory=".." coreId="826041445" contextFuncName="read_input" bitwidth="14" opcode="load" m_display="0" m_topoIndex="8" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp" linenumber="8" fileDirectory="/home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml" functionName="read_input"/>
+        <dataInputObjs>alloca</dataInputObjs>
+        <dataOutputObjs>icmp</dataOutputObjs>
+        <dataOutputObjs>add</dataOutputObjs>
+        <dataOutputObjs>zext</dataOutputObjs>
+        <dataOutputObjs>trunc</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="14" name="gmem0_addr" lineNumber="8" fileName="/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp" fileDirectory=".." coreId="807414835" contextFuncName="read_input" bitwidth="512" opcode="getelementptr" nodeLabel="1.0" m_display="0" m_topoIndex="17" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp" linenumber="8" fileDirectory="/home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml" functionName="read_input"/>
+        <dataInputObjs>gmem0</dataInputObjs>
+        <dataInputObjs>sext</dataInputObjs>
+        <dataOutputObjs>read</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="15" name="icmp_ln8" lineNumber="8" fileName="/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp" fileDirectory=".." rtlName="icmp_ln8_fu_115_p2" coreName="Cmp" implIndex="auto" control="no" opType="icmp" coreId="9" contextFuncName="read_input" bitwidth="1" opcode="icmp" m_display="0" m_delay="0.65" m_topoIndex="9" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp" linenumber="8" fileDirectory="/home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml" functionName="read_input"/>
+        <dataInputObjs>load</dataInputObjs>
+        <dataOutputObjs>br</dataOutputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="17" name="add_ln8" lineNumber="8" fileName="/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp" fileDirectory=".." rtlName="add_ln8_fu_121_p2" coreName="Adder" implIndex="fabric" control="no" opType="add" coreId="1" contextFuncName="read_input" bitwidth="14" opcode="add" m_display="0" m_delay="0.76" m_topoIndex="10" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp" linenumber="8" fileDirectory="/home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml" functionName="read_input"/>
+        <dataInputObjs>load</dataInputObjs>
+        <dataOutputObjs>store</dataOutputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="18" name="br_ln8" lineNumber="8" fileName="/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp" fileDirectory=".." coreId="11" contextFuncName="read_input" opcode="br" m_display="0" m_topoIndex="11" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp" linenumber="8" fileDirectory="/home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml" functionName="read_input"/>
+        <dataInputObjs>icmp</dataInputObjs>
+        <controlInputObjs>for.inc.split</controlInputObjs>
+        <controlInputObjs>for.end11.exitStub</controlInputObjs>
+      </node_objs>
+      <fileValidLineNumbers fileName="/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp">
+        <validLinenumbers>8</validLinenumbers>
+      </fileValidLineNumbers>
+    </basic_blocks>
+    <basic_blocks id="29" name="for.inc.split" type="BlockType">
+      <controlInputObjs>for.inc</controlInputObjs>
+      <controlOutputObjs>br</controlOutputObjs>
+      <controlOutputObjs>phi</controlOutputObjs>
+      <controlOutputObjs>block_32</controlOutputObjs>
+      <controlOutputObjs>for.inc.split._crit_edge</controlOutputObjs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="20" name="shiftreg_load" lineNumber="8" fileName="/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp" fileDirectory=".." coreId="3708850144" contextFuncName="read_input" bitwidth="384" opcode="load" nodeLabel="2.0" m_display="0" m_topoIndex="20" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp" linenumber="8" fileDirectory="/home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml" functionName="read_input"/>
+        <dataInputObjs>alloca</dataInputObjs>
+        <dataOutputObjs>zext</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="21" name="zext_ln8" lineNumber="8" fileName="/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp" fileDirectory=".." rtlName="zext_ln8_fu_156_p1" coreId="3947296672" contextFuncName="read_input" bitwidth="512" opcode="zext" nodeLabel="2.0" m_display="0" m_topoIndex="21" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp" linenumber="8" fileDirectory="/home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml" functionName="read_input"/>
+        <dataInputObjs>load</dataInputObjs>
+        <dataOutputObjs>phi</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="22" name="zext_ln8_1" lineNumber="8" fileName="/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp" fileDirectory=".." rtlName="zext_ln8_1_fu_127_p1" coreId="3946932208" contextFuncName="read_input" bitwidth="64" opcode="zext" m_display="0" m_topoIndex="12" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp" linenumber="8" fileDirectory="/home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml" functionName="read_input"/>
+        <dataInputObjs>load</dataInputObjs>
+        <dataOutputObjs>getelementptr</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="23" name="trunc_ln8" lineNumber="8" fileName="/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp" fileDirectory=".." rtlName="trunc_ln8_fu_132_p1" coreId="6775156" contextFuncName="read_input" bitwidth="2" opcode="trunc" m_display="0" m_topoIndex="13" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp" linenumber="8" fileDirectory="/home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml" functionName="read_input"/>
+        <dataInputObjs>load</dataInputObjs>
+        <dataOutputObjs>icmp</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="26" name="in_buf_addr" lineNumber="12" fileName="/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp" fileDirectory=".." coreId="0" contextFuncName="read_input" bitwidth="13" opcode="getelementptr" m_display="0" m_topoIndex="14" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp" linenumber="12" fileDirectory="/home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml" functionName="read_input"/>
+        <dataInputObjs>zext</dataInputObjs>
+        <dataOutputObjs>store</dataOutputObjs>
+        <dataOutputObjs>in_buf</dataOutputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="27" name="icmp_ln12" lineNumber="12" fileName="/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp" fileDirectory=".." rtlName="icmp_ln12_fu_136_p2" coreName="Cmp" implIndex="auto" control="no" opType="icmp" coreId="9" contextFuncName="read_input" bitwidth="1" opcode="icmp" m_display="0" m_delay="0.34" m_topoIndex="15" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp" linenumber="12" fileDirectory="/home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml" functionName="read_input"/>
+        <dataInputObjs>trunc</dataInputObjs>
+        <dataOutputObjs>br</dataOutputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="28" name="br_ln12" lineNumber="12" fileName="/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp" fileDirectory=".." coreId="39055872" contextFuncName="read_input" opcode="br" nodeLabel="2.0" m_display="0" m_delay="0.38" m_topoIndex="22" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp" linenumber="12" fileDirectory="/home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml" functionName="read_input"/>
+        <dataInputObjs>icmp</dataInputObjs>
+        <controlInputObjs>for.inc.split._crit_edge</controlInputObjs>
+        <controlInputObjs>block_32</controlInputObjs>
+      </node_objs>
+      <fileValidLineNumbers fileName="/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp">
+        <validLinenumbers>8</validLinenumbers>
+        <validLinenumbers>12</validLinenumbers>
+      </fileValidLineNumbers>
+    </basic_blocks>
+    <basic_blocks id="32" name="block_32" type="BlockType">
+      <controlInputObjs>for.inc.split</controlInputObjs>
+      <controlOutputObjs>phi</controlOutputObjs>
+      <controlOutputObjs>br</controlOutputObjs>
+      <controlOutputObjs>for.inc.split._crit_edge</controlOutputObjs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="30" name="gmem0_addr_read" lineNumber="12" fileName="/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp" fileDirectory=".." coreName="m_axi" implIndex="m_axi" control="no" opType="adapter" coreId="121" contextFuncName="read_input" bitwidth="512" opcode="read" nodeLabel="1.0" m_display="0" m_delay="2.43" m_topoIndex="18" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp" linenumber="12" fileDirectory="/home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml" functionName="read_input"/>
+        <dataInputObjs>getelementptr</dataInputObjs>
+        <dataOutputObjs>phi</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="31" name="br_ln12" lineNumber="12" fileName="/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp" fileDirectory=".." coreId="39091776" contextFuncName="read_input" opcode="br" nodeLabel="2.0" m_display="0" m_delay="0.38" m_topoIndex="23" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp" linenumber="12" fileDirectory="/home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml" functionName="read_input"/>
+        <controlInputObjs>for.inc.split._crit_edge</controlInputObjs>
+      </node_objs>
+      <fileValidLineNumbers fileName="/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp">
+        <validLinenumbers>12</validLinenumbers>
+      </fileValidLineNumbers>
+    </basic_blocks>
+    <basic_blocks id="40" name="for.inc.split._crit_edge" type="BlockType">
+      <controlInputObjs>for.inc.split</controlInputObjs>
+      <controlInputObjs>block_32</controlInputObjs>
+      <controlOutputObjs>br</controlOutputObjs>
+      <controlOutputObjs>br</controlOutputObjs>
+      <controlOutputObjs>for.inc</controlOutputObjs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="33" name="empty_39" lineNumber="12" fileName="/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp" fileDirectory=".." coreId="39093968" contextFuncName="read_input" bitwidth="512" opcode="phi" nodeLabel="2.0" m_display="0" m_topoIndex="24" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp" linenumber="12" fileDirectory="/home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml" functionName="read_input"/>
+        <dataInputObjs>read</dataInputObjs>
+        <dataInputObjs>zext</dataInputObjs>
+        <dataOutputObjs>partselect</dataOutputObjs>
+        <dataOutputObjs>trunc</dataOutputObjs>
+        <controlInputObjs>block_32</controlInputObjs>
+        <controlInputObjs>for.inc.split</controlInputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="34" name="trunc_ln12_s" lineNumber="12" fileName="/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp" fileDirectory=".." rtlName="shiftreg_fu_58" coreId="38082832" contextFuncName="read_input" bitwidth="384" opcode="partselect" nodeLabel="2.0" m_display="0" m_topoIndex="25" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp" linenumber="12" fileDirectory="/home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml" functionName="read_input"/>
+        <dataInputObjs>phi</dataInputObjs>
+        <dataOutputObjs>store</dataOutputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="35" name="trunc_ln12" lineNumber="12" fileName="/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp" fileDirectory=".." rtlName="in_buf_d0" coreId="3947982080" contextFuncName="read_input" bitwidth="128" opcode="trunc" nodeLabel="2.0" m_display="0" m_topoIndex="26" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp" linenumber="12" fileDirectory="/home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml" functionName="read_input"/>
+        <dataInputObjs>phi</dataInputObjs>
+        <dataOutputObjs>store</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="36" name="in_buf_addr_write_ln12" lineNumber="12" fileName="/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp" fileDirectory=".." coreName="RAM" implIndex="auto" control="no" opType="ram" coreId="83" contextFuncName="read_input" opcode="store" nodeLabel="2.0" m_display="0" m_delay="1.08" m_topoIndex="27" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp" linenumber="12" fileDirectory="/home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml" functionName="read_input"/>
+        <dataInputObjs>trunc</dataInputObjs>
+        <dataInputObjs>getelementptr</dataInputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="37" name="i_write_ln8" lineNumber="8" fileName="/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp" fileDirectory=".." coreId="3947983088" contextFuncName="read_input" opcode="store" m_display="0" m_delay="0.38" m_topoIndex="16" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp" linenumber="8" fileDirectory="/home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml" functionName="read_input"/>
+        <dataInputObjs>add</dataInputObjs>
+        <dataInputObjs>alloca</dataInputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="38" name="shiftreg_write_ln8" lineNumber="8" fileName="/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp" fileDirectory=".." coreId="40612576" contextFuncName="read_input" opcode="store" nodeLabel="2.0" m_display="0" m_delay="0.38" m_topoIndex="28" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp" linenumber="8" fileDirectory="/home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml" functionName="read_input"/>
+        <dataInputObjs>partselect</dataInputObjs>
+        <dataInputObjs>alloca</dataInputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="39" name="br_ln8" lineNumber="8" fileName="/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp" fileDirectory=".." coreId="40613008" contextFuncName="read_input" opcode="br" nodeLabel="2.0" m_display="0" m_topoIndex="29" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp" linenumber="8" fileDirectory="/home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml" functionName="read_input"/>
+        <controlInputObjs>for.inc</controlInputObjs>
+      </node_objs>
+      <fileValidLineNumbers fileName="/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp">
+        <validLinenumbers>12</validLinenumbers>
+        <validLinenumbers>8</validLinenumbers>
+      </fileValidLineNumbers>
+    </basic_blocks>
+  </regions>
+  <ScheduleInfo time="0"/>
+  <ScheduleInfo time="1"/>
+  <ScheduleInfo time="2"/>
+  <regnodes realName="icmp_ln12_reg_209">
+    <nodeIds>27</nodeIds>
+  </regnodes>
+  <regnodes realName="shiftreg_reg_181">
+    <nodeIds>4</nodeIds>
+  </regnodes>
+  <regnodes realName="i_reg_188">
+    <nodeIds>5</nodeIds>
+  </regnodes>
+  <regnodes realName="gmem0_addr_read_reg_213">
+    <nodeIds>30</nodeIds>
+  </regnodes>
+  <regnodes realName="icmp_ln8_reg_200">
+    <nodeIds>15</nodeIds>
+  </regnodes>
+  <regnodes realName="empty_39_reg_89">
+    <nodeIds>33</nodeIds>
+  </regnodes>
+  <regnodes realName="sext_ln8_cast_reg_195">
+    <nodeIds>7</nodeIds>
+  </regnodes>
+  <regnodes realName="in_buf_addr_reg_204">
+    <nodeIds>26</nodeIds>
+  </regnodes>
+  <expressionNodes realName="shiftreg_fu_58">
+    <nodeIds>4</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="i_fu_62">
+    <nodeIds>5</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="icmp_ln12_fu_136">
+    <nodeIds>27</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="zext_ln8_1_fu_127">
+    <nodeIds>22</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="gmem0_addr_fu_147">
+    <nodeIds>14</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="icmp_ln8_fu_115">
+    <nodeIds>15</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="trunc_ln12_s_fu_161">
+    <nodeIds>34</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="trunc_ln8_fu_132">
+    <nodeIds>23</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="trunc_ln12_fu_171">
+    <nodeIds>35</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="empty_39_phi_fu_92">
+    <nodeIds>33</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="zext_ln8_fu_156">
+    <nodeIds>21</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="add_ln8_fu_121">
+    <nodeIds>17</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="sext_ln8_cast_fu_98">
+    <nodeIds>7</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="in_buf_addr_gep_fu_77">
+    <nodeIds>26</nodeIds>
+  </expressionNodes>
+  <ioNodes realName="shiftreg_load_load_fu_153">
+    <nodeIds>20</nodeIds>
+  </ioNodes>
+  <ioNodes realName="gmem0_addr_read_read_fu_72">
+    <nodeIds>30</nodeIds>
+  </ioNodes>
+  <ioNodes realName="sext_ln8_read_read_fu_66">
+    <nodeIds>6</nodeIds>
+  </ioNodes>
+  <ioNodes realName="store_ln0_store_fu_107">
+    <nodeIds>10</nodeIds>
+  </ioNodes>
+  <ioNodes realName="i_2_load_fu_112">
+    <nodeIds>13</nodeIds>
+  </ioNodes>
+  <ioNodes realName="store_ln0_store_fu_102">
+    <nodeIds>9</nodeIds>
+  </ioNodes>
+  <ioNodes realName="store_ln8_store_fu_176">
+    <nodeIds>38</nodeIds>
+  </ioNodes>
+  <ioNodes realName="store_ln8_store_fu_142">
+    <nodeIds>37</nodeIds>
+  </ioNodes>
+  <memoryPorts dataString="in_buf">
+    <nodeIds>36</nodeIds>
+  </memoryPorts>
+  <ioPorts name="gmem0">
+    <contents name="read">
+      <nodeIds>30</nodeIds>
+    </contents>
+  </ioPorts>
+  <ioPorts name="in_buf(p0)">
+    <contents name="store">
+      <nodeIds>36</nodeIds>
+    </contents>
+  </ioPorts>
+  <ioPorts name="sext_ln8">
+    <contents name="read">
+      <nodeIds>6</nodeIds>
+    </contents>
+  </ioPorts>
+  <fsm>
+    <states id="1">
+      <operations id="4" stage="1" latency="1"/>
+      <operations id="5" stage="1" latency="1"/>
+      <operations id="6" stage="1" latency="1"/>
+      <operations id="7" stage="1" latency="1"/>
+      <operations id="8" stage="1" latency="1"/>
+      <operations id="9" stage="1" latency="1"/>
+      <operations id="10" stage="1" latency="1"/>
+      <operations id="11" stage="1" latency="1"/>
+      <operations id="13" stage="1" latency="1"/>
+      <operations id="15" stage="1" latency="1"/>
+      <operations id="17" stage="1" latency="1"/>
+      <operations id="18" stage="1" latency="1"/>
+      <operations id="22" stage="1" latency="1"/>
+      <operations id="23" stage="1" latency="1"/>
+      <operations id="26" stage="1" latency="1"/>
+      <operations id="27" stage="1" latency="1"/>
+      <operations id="37" stage="1" latency="1"/>
+    </states>
+    <states id="2">
+      <operations id="14" stage="1" latency="1"/>
+      <operations id="16" stage="1" latency="1"/>
+      <operations id="30" stage="1" latency="1"/>
+      <operations id="41" stage="1" latency="1"/>
+    </states>
+    <states id="3">
+      <operations id="20" stage="1" latency="1"/>
+      <operations id="21" stage="1" latency="1"/>
+      <operations id="24" stage="1" latency="1"/>
+      <operations id="25" stage="1" latency="1"/>
+      <operations id="28" stage="1" latency="1"/>
+      <operations id="31" stage="1" latency="1"/>
+      <operations id="33" stage="1" latency="1"/>
+      <operations id="34" stage="1" latency="1"/>
+      <operations id="35" stage="1" latency="1"/>
+      <operations id="36" stage="1" latency="1"/>
+      <operations id="38" stage="1" latency="1"/>
+      <operations id="39" stage="1" latency="1"/>
+    </states>
+    <transitions inState="1" outState="2">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="2" outState="3">
+      <condition id="-1"/>
+    </transitions>
+  </fsm>
+  <CFGRegionsRoot>
+    <cfgRegions mId="1" mTag="read_input_Pipeline_VITIS_LOOP_8_1" mII="-1" mDepth="-1" mMinTripCount="-1" mMaxTripCount="-1" mMinLatency="8195" mMaxLatency="8195">
+      <subRegions>2</subRegions>
+      <subRegions>3</subRegions>
+      <subRegions>4</subRegions>
+      <mDfPipe/>
+    </cfgRegions>
+    <cfgRegions mId="2" mTag="Entry" mII="-1" mDepth="-1" mMinTripCount="-1" mMaxTripCount="-1">
+      <basicBlocks>12</basicBlocks>
+      <mDfPipe/>
+    </cfgRegions>
+    <cfgRegions mId="3" mTag="VITIS_LOOP_8_1" mII="1" mDepth="3" mMinTripCount="8192" mMaxTripCount="8192" mMinLatency="8193" mMaxLatency="8193" mType="1">
+      <basicBlocks>19</basicBlocks>
+      <basicBlocks>29</basicBlocks>
+      <basicBlocks>32</basicBlocks>
+      <basicBlocks>40</basicBlocks>
+      <mDfPipe/>
+    </cfgRegions>
+    <cfgRegions mId="4" mTag="Return" mII="-1" mDepth="-1" mMinTripCount="-1" mMaxTripCount="-1">
+      <basicBlocks>42</basicBlocks>
+      <mDfPipe/>
+    </cfgRegions>
+  </CFGRegionsRoot>
+</cdfg:DBCdfg>

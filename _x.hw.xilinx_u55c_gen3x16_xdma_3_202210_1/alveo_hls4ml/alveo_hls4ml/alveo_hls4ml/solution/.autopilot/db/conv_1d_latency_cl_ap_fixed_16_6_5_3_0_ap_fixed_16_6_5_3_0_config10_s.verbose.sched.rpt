@@ -1,0 +1,353 @@
+
+
+================================================================
+== Vitis HLS Report for 'conv_1d_latency_cl_ap_fixed_16_6_5_3_0_ap_fixed_16_6_5_3_0_config10_s'
+================================================================
+* Date:           Sun Mar  3 21:31:01 2024
+
+* Version:        2022.2 (Build 3670227 on Oct 13 2022)
+* Project:        alveo_hls4ml
+* Solution:       solution (Vitis Kernel Flow Target)
+* Product family: virtexuplus
+* Target device:  xcu55c-fsvh2892-2L-e
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+---------+----------+------------+
+    |  Clock |  Target | Estimated| Uncertainty|
+    +--------+---------+----------+------------+
+    |ap_clk  |  3.33 ns|  2.284 ns|     0.90 ns|
+    +--------+---------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+-----------+-----+-----+------------------------------------------+
+    |  Latency (cycles) |  Latency (absolute)  |  Interval |                 Pipeline                 |
+    |   min   |   max   |    min   |    max    | min | max |                   Type                   |
+    +---------+---------+----------+-----------+-----+-----+------------------------------------------+
+    |        3|        4|  9.999 ns|  13.332 ns|    2|    2|  loop rewind stp(delay=0 clock cycles(s))|
+    +---------+---------+----------+-----------+-----+-----+------------------------------------------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +-----------------+---------+---------+----------+-----------+-----------+------+----------+
+        |                 |  Latency (cycles) | Iteration|  Initiation Interval  | Trip |          |
+        |    Loop Name    |   min   |   max   |  Latency |  achieved |   target  | Count| Pipelined|
+        +-----------------+---------+---------+----------+-----------+-----------+------+----------+
+        |- PartitionLoop  |        3|        3|         3|          1|          1|     2|       yes|
+        +-----------------+---------+---------+----------+-----------+-----------+------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 2
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
++ Individual pipeline summary: 
+  * Pipeline-0: initiation interval (II) = 1, depth = 3
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 3
+* Pipeline : 1
+  Pipeline-0 : II = 1, D = 3, States = { 1 2 3 }
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 3 
+3 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 2.28>
+ST_1 : Operation 5 [1/1] (0.38ns)   --->   "%br_ln34 = br void %rewind_header" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv1d_latency.h:34]   --->   Operation 5 'br' 'br_ln34' <Predicate = true> <Delay = 0.38>
+ST_1 : Operation 6 [1/1] (0.00ns)   --->   "%do_init = phi i1 1, void %entry, i1 0, void %arrayidx96.1112.exit, i1 1, void %for.end105"   --->   Operation 6 'phi' 'do_init' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 7 [1/1] (0.00ns)   --->   "%p_read16_rewind = phi i10 0, void %entry, i10 %p_read16_phi, void %arrayidx96.1112.exit, i10 0, void %for.end105" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv1d_latency.h:34]   --->   Operation 7 'phi' 'p_read16_rewind' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 8 [1/1] (0.00ns)   --->   "%p_read117_rewind = phi i10 0, void %entry, i10 %p_read117_phi, void %arrayidx96.1112.exit, i10 0, void %for.end105" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv1d_latency.h:34]   --->   Operation 8 'phi' 'p_read117_rewind' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 9 [1/1] (0.00ns)   --->   "%p_read218_rewind = phi i10 0, void %entry, i10 %p_read218_phi, void %arrayidx96.1112.exit, i10 0, void %for.end105" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv1d_latency.h:34]   --->   Operation 9 'phi' 'p_read218_rewind' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 10 [1/1] (0.00ns)   --->   "%p_read319_rewind = phi i10 0, void %entry, i10 %p_read319_phi, void %arrayidx96.1112.exit, i10 0, void %for.end105" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv1d_latency.h:34]   --->   Operation 10 'phi' 'p_read319_rewind' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 11 [1/1] (0.00ns)   --->   "%p_read420_rewind = phi i10 0, void %entry, i10 %p_read420_phi, void %arrayidx96.1112.exit, i10 0, void %for.end105" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv1d_latency.h:34]   --->   Operation 11 'phi' 'p_read420_rewind' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 12 [1/1] (0.00ns)   --->   "%p_read521_rewind = phi i10 0, void %entry, i10 %p_read521_phi, void %arrayidx96.1112.exit, i10 0, void %for.end105" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv1d_latency.h:34]   --->   Operation 12 'phi' 'p_read521_rewind' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 13 [1/1] (0.00ns)   --->   "%p_read622_rewind = phi i10 0, void %entry, i10 %p_read622_phi, void %arrayidx96.1112.exit, i10 0, void %for.end105" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv1d_latency.h:34]   --->   Operation 13 'phi' 'p_read622_rewind' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 14 [1/1] (0.00ns)   --->   "%p_read723_rewind = phi i10 0, void %entry, i10 %p_read723_phi, void %arrayidx96.1112.exit, i10 0, void %for.end105" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv1d_latency.h:34]   --->   Operation 14 'phi' 'p_read723_rewind' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 15 [1/1] (0.00ns)   --->   "%p_read824_rewind = phi i10 0, void %entry, i10 %p_read824_phi, void %arrayidx96.1112.exit, i10 0, void %for.end105" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv1d_latency.h:34]   --->   Operation 15 'phi' 'p_read824_rewind' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 16 [1/1] (0.00ns)   --->   "%p_read925_rewind = phi i10 0, void %entry, i10 %p_read925_phi, void %arrayidx96.1112.exit, i10 0, void %for.end105" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv1d_latency.h:34]   --->   Operation 16 'phi' 'p_read925_rewind' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 17 [1/1] (0.00ns)   --->   "%p_read1026_rewind = phi i10 0, void %entry, i10 %p_read1026_phi, void %arrayidx96.1112.exit, i10 0, void %for.end105" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv1d_latency.h:34]   --->   Operation 17 'phi' 'p_read1026_rewind' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 18 [1/1] (0.00ns)   --->   "%p_read1127_rewind = phi i10 0, void %entry, i10 %p_read1127_phi, void %arrayidx96.1112.exit, i10 0, void %for.end105" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv1d_latency.h:34]   --->   Operation 18 'phi' 'p_read1127_rewind' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 19 [1/1] (0.00ns)   --->   "%p_read1228_rewind = phi i10 0, void %entry, i10 %p_read1228_phi, void %arrayidx96.1112.exit, i10 0, void %for.end105" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv1d_latency.h:34]   --->   Operation 19 'phi' 'p_read1228_rewind' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 20 [1/1] (0.00ns)   --->   "%p_read1329_rewind = phi i10 0, void %entry, i10 %p_read1329_phi, void %arrayidx96.1112.exit, i10 0, void %for.end105" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv1d_latency.h:34]   --->   Operation 20 'phi' 'p_read1329_rewind' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 21 [1/1] (0.00ns)   --->   "%p_read1430_rewind = phi i10 0, void %entry, i10 %p_read1430_phi, void %arrayidx96.1112.exit, i10 0, void %for.end105" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv1d_latency.h:34]   --->   Operation 21 'phi' 'p_read1430_rewind' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 22 [1/1] (0.00ns)   --->   "%p_read1531_rewind = phi i10 0, void %entry, i10 %p_read1531_phi, void %arrayidx96.1112.exit, i10 0, void %for.end105" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv1d_latency.h:34]   --->   Operation 22 'phi' 'p_read1531_rewind' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 23 [1/1] (0.00ns)   --->   "%i_part_21 = phi i1 0, void %entry, i1 %i_part, void %arrayidx96.1112.exit, i1 0, void %for.end105"   --->   Operation 23 'phi' 'i_part_21' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 24 [1/1] (0.38ns)   --->   "%br_ln0 = br i1 %do_init, void %for.body36.split, void %rewind_init"   --->   Operation 24 'br' 'br_ln0' <Predicate = true> <Delay = 0.38>
+ST_1 : Operation 25 [1/1] (0.00ns)   --->   "%specresourcelimit_ln31 = specresourcelimit void @_ssdm_op_SpecResourceLimit, i64 384, void @empty_5, void @empty_3, void @empty_3, void @empty_3" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv1d_latency.h:31]   --->   Operation 25 'specresourcelimit' 'specresourcelimit_ln31' <Predicate = (do_init)> <Delay = 0.00>
+ST_1 : Operation 26 [1/1] (0.00ns)   --->   "%p_read_207 = read i10 @_ssdm_op_Read.ap_auto.i10, i10 %p_read15" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv1d_latency.h:34]   --->   Operation 26 'read' 'p_read_207' <Predicate = (do_init)> <Delay = 0.00>
+ST_1 : Operation 27 [1/1] (0.00ns)   --->   "%p_read_208 = read i10 @_ssdm_op_Read.ap_auto.i10, i10 %p_read14" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv1d_latency.h:34]   --->   Operation 27 'read' 'p_read_208' <Predicate = (do_init)> <Delay = 0.00>
+ST_1 : Operation 28 [1/1] (0.00ns)   --->   "%p_read_209 = read i10 @_ssdm_op_Read.ap_auto.i10, i10 %p_read13" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv1d_latency.h:34]   --->   Operation 28 'read' 'p_read_209' <Predicate = (do_init)> <Delay = 0.00>
+ST_1 : Operation 29 [1/1] (0.00ns)   --->   "%p_read_210 = read i10 @_ssdm_op_Read.ap_auto.i10, i10 %p_read12" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv1d_latency.h:34]   --->   Operation 29 'read' 'p_read_210' <Predicate = (do_init)> <Delay = 0.00>
+ST_1 : Operation 30 [1/1] (0.00ns)   --->   "%p_read1127 = read i10 @_ssdm_op_Read.ap_auto.i10, i10 %p_read11" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv1d_latency.h:34]   --->   Operation 30 'read' 'p_read1127' <Predicate = (do_init)> <Delay = 0.00>
+ST_1 : Operation 31 [1/1] (0.00ns)   --->   "%p_read1026 = read i10 @_ssdm_op_Read.ap_auto.i10, i10 %p_read10" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv1d_latency.h:34]   --->   Operation 31 'read' 'p_read1026' <Predicate = (do_init)> <Delay = 0.00>
+ST_1 : Operation 32 [1/1] (0.00ns)   --->   "%p_read925 = read i10 @_ssdm_op_Read.ap_auto.i10, i10 %p_read9" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv1d_latency.h:34]   --->   Operation 32 'read' 'p_read925' <Predicate = (do_init)> <Delay = 0.00>
+ST_1 : Operation 33 [1/1] (0.00ns)   --->   "%p_read824 = read i10 @_ssdm_op_Read.ap_auto.i10, i10 %p_read8" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv1d_latency.h:34]   --->   Operation 33 'read' 'p_read824' <Predicate = (do_init)> <Delay = 0.00>
+ST_1 : Operation 34 [1/1] (0.00ns)   --->   "%p_read723 = read i10 @_ssdm_op_Read.ap_auto.i10, i10 %p_read7" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv1d_latency.h:34]   --->   Operation 34 'read' 'p_read723' <Predicate = (do_init)> <Delay = 0.00>
+ST_1 : Operation 35 [1/1] (0.00ns)   --->   "%p_read622 = read i10 @_ssdm_op_Read.ap_auto.i10, i10 %p_read6" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv1d_latency.h:34]   --->   Operation 35 'read' 'p_read622' <Predicate = (do_init)> <Delay = 0.00>
+ST_1 : Operation 36 [1/1] (0.00ns)   --->   "%p_read521 = read i10 @_ssdm_op_Read.ap_auto.i10, i10 %p_read5" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv1d_latency.h:34]   --->   Operation 36 'read' 'p_read521' <Predicate = (do_init)> <Delay = 0.00>
+ST_1 : Operation 37 [1/1] (0.00ns)   --->   "%p_read420 = read i10 @_ssdm_op_Read.ap_auto.i10, i10 %p_read4" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv1d_latency.h:34]   --->   Operation 37 'read' 'p_read420' <Predicate = (do_init)> <Delay = 0.00>
+ST_1 : Operation 38 [1/1] (0.00ns)   --->   "%p_read319 = read i10 @_ssdm_op_Read.ap_auto.i10, i10 %p_read3" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv1d_latency.h:34]   --->   Operation 38 'read' 'p_read319' <Predicate = (do_init)> <Delay = 0.00>
+ST_1 : Operation 39 [1/1] (0.00ns)   --->   "%p_read218 = read i10 @_ssdm_op_Read.ap_auto.i10, i10 %p_read2" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv1d_latency.h:34]   --->   Operation 39 'read' 'p_read218' <Predicate = (do_init)> <Delay = 0.00>
+ST_1 : Operation 40 [1/1] (0.00ns)   --->   "%p_read117 = read i10 @_ssdm_op_Read.ap_auto.i10, i10 %p_read1" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv1d_latency.h:34]   --->   Operation 40 'read' 'p_read117' <Predicate = (do_init)> <Delay = 0.00>
+ST_1 : Operation 41 [1/1] (0.00ns)   --->   "%p_read16 = read i10 @_ssdm_op_Read.ap_auto.i10, i10 %p_read" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv1d_latency.h:34]   --->   Operation 41 'read' 'p_read16' <Predicate = (do_init)> <Delay = 0.00>
+ST_1 : Operation 42 [1/1] (0.38ns)   --->   "%br_ln34 = br void %for.body36.split" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv1d_latency.h:34]   --->   Operation 42 'br' 'br_ln34' <Predicate = (do_init)> <Delay = 0.38>
+ST_1 : Operation 43 [1/1] (0.00ns)   --->   "%p_read16_phi = phi i10 %p_read16, void %rewind_init, i10 %p_read16_rewind, void %rewind_header" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv1d_latency.h:34]   --->   Operation 43 'phi' 'p_read16_phi' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 44 [1/1] (0.00ns)   --->   "%p_read117_phi = phi i10 %p_read117, void %rewind_init, i10 %p_read117_rewind, void %rewind_header" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv1d_latency.h:34]   --->   Operation 44 'phi' 'p_read117_phi' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 45 [1/1] (0.00ns)   --->   "%p_read218_phi = phi i10 %p_read218, void %rewind_init, i10 %p_read218_rewind, void %rewind_header" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv1d_latency.h:34]   --->   Operation 45 'phi' 'p_read218_phi' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 46 [1/1] (0.00ns)   --->   "%p_read319_phi = phi i10 %p_read319, void %rewind_init, i10 %p_read319_rewind, void %rewind_header" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv1d_latency.h:34]   --->   Operation 46 'phi' 'p_read319_phi' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 47 [1/1] (0.00ns)   --->   "%p_read420_phi = phi i10 %p_read420, void %rewind_init, i10 %p_read420_rewind, void %rewind_header" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv1d_latency.h:34]   --->   Operation 47 'phi' 'p_read420_phi' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 48 [1/1] (0.00ns)   --->   "%p_read521_phi = phi i10 %p_read521, void %rewind_init, i10 %p_read521_rewind, void %rewind_header" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv1d_latency.h:34]   --->   Operation 48 'phi' 'p_read521_phi' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 49 [1/1] (0.00ns)   --->   "%p_read622_phi = phi i10 %p_read622, void %rewind_init, i10 %p_read622_rewind, void %rewind_header" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv1d_latency.h:34]   --->   Operation 49 'phi' 'p_read622_phi' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 50 [1/1] (0.00ns)   --->   "%p_read723_phi = phi i10 %p_read723, void %rewind_init, i10 %p_read723_rewind, void %rewind_header" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv1d_latency.h:34]   --->   Operation 50 'phi' 'p_read723_phi' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 51 [1/1] (0.00ns)   --->   "%p_read824_phi = phi i10 %p_read824, void %rewind_init, i10 %p_read824_rewind, void %rewind_header" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv1d_latency.h:34]   --->   Operation 51 'phi' 'p_read824_phi' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 52 [1/1] (0.00ns)   --->   "%p_read925_phi = phi i10 %p_read925, void %rewind_init, i10 %p_read925_rewind, void %rewind_header" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv1d_latency.h:34]   --->   Operation 52 'phi' 'p_read925_phi' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 53 [1/1] (0.00ns)   --->   "%p_read1026_phi = phi i10 %p_read1026, void %rewind_init, i10 %p_read1026_rewind, void %rewind_header" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv1d_latency.h:34]   --->   Operation 53 'phi' 'p_read1026_phi' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 54 [1/1] (0.00ns)   --->   "%p_read1127_phi = phi i10 %p_read1127, void %rewind_init, i10 %p_read1127_rewind, void %rewind_header" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv1d_latency.h:34]   --->   Operation 54 'phi' 'p_read1127_phi' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 55 [1/1] (0.00ns)   --->   "%p_read1228_phi = phi i10 %p_read_210, void %rewind_init, i10 %p_read1228_rewind, void %rewind_header" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv1d_latency.h:34]   --->   Operation 55 'phi' 'p_read1228_phi' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 56 [1/1] (0.00ns)   --->   "%p_read1329_phi = phi i10 %p_read_209, void %rewind_init, i10 %p_read1329_rewind, void %rewind_header" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv1d_latency.h:34]   --->   Operation 56 'phi' 'p_read1329_phi' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 57 [1/1] (0.00ns)   --->   "%p_read1430_phi = phi i10 %p_read_208, void %rewind_init, i10 %p_read1430_rewind, void %rewind_header" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv1d_latency.h:34]   --->   Operation 57 'phi' 'p_read1430_phi' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 58 [1/1] (0.00ns)   --->   "%p_read1531_phi = phi i10 %p_read_207, void %rewind_init, i10 %p_read1531_rewind, void %rewind_header" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv1d_latency.h:34]   --->   Operation 58 'phi' 'p_read1531_phi' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 59 [1/1] (0.00ns) (grouped into LUT with out node r_V)   --->   "%select_ln105 = select i1 %i_part_21, i10 %p_read16_phi, i10 0" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_code_gen.h:105]   --->   Operation 59 'select' 'select_ln105' <Predicate = true> <Delay = 0.00> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.30> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_1 : Operation 60 [1/1] (0.00ns) (grouped into LUT with out node r_V)   --->   "%shl_ln = bitconcatenate i15 @_ssdm_op_BitConcatenate.i15.i10.i5, i10 %select_ln105, i5 0"   --->   Operation 60 'bitconcatenate' 'shl_ln' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 61 [1/1] (0.00ns) (grouped into LUT with out node r_V)   --->   "%zext_ln1273 = zext i15 %shl_ln"   --->   Operation 61 'zext' 'zext_ln1273' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 62 [1/1] (0.77ns) (out node of the LUT)   --->   "%r_V = sub i16 0, i16 %zext_ln1273"   --->   Operation 62 'sub' 'r_V' <Predicate = true> <Delay = 0.77> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.77> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 63 [1/1] (0.00ns)   --->   "%trunc_ln = partselect i11 @_ssdm_op_PartSelect.i11.i16.i32.i32, i16 %r_V, i32 5, i32 15"   --->   Operation 63 'partselect' 'trunc_ln' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 64 [1/1] (0.00ns)   --->   "%sext_ln70 = sext i11 %trunc_ln" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_mult.h:70]   --->   Operation 64 'sext' 'sext_ln70' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 65 [1/1] (0.00ns) (grouped into LUT with out node r_V_115)   --->   "%select_ln105_1 = select i1 %i_part_21, i10 %p_read117_phi, i10 0" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_code_gen.h:105]   --->   Operation 65 'select' 'select_ln105_1' <Predicate = true> <Delay = 0.00> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.30> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_1 : Operation 66 [1/1] (0.00ns) (grouped into LUT with out node r_V_115)   --->   "%shl_ln1273_s = bitconcatenate i15 @_ssdm_op_BitConcatenate.i15.i10.i5, i10 %select_ln105_1, i5 0"   --->   Operation 66 'bitconcatenate' 'shl_ln1273_s' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 67 [1/1] (0.00ns) (grouped into LUT with out node r_V_115)   --->   "%zext_ln1273_52 = zext i15 %shl_ln1273_s"   --->   Operation 67 'zext' 'zext_ln1273_52' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 68 [1/1] (0.77ns) (out node of the LUT)   --->   "%r_V_115 = sub i16 0, i16 %zext_ln1273_52"   --->   Operation 68 'sub' 'r_V_115' <Predicate = true> <Delay = 0.77> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.77> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 69 [1/1] (0.00ns)   --->   "%trunc_ln818_s = partselect i11 @_ssdm_op_PartSelect.i11.i16.i32.i32, i16 %r_V_115, i32 5, i32 15"   --->   Operation 69 'partselect' 'trunc_ln818_s' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 70 [1/1] (0.00ns)   --->   "%sext_ln70_46 = sext i11 %trunc_ln818_s" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_mult.h:70]   --->   Operation 70 'sext' 'sext_ln70_46' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 71 [1/1] (0.00ns) (grouped into LUT with out node r_V_116)   --->   "%select_ln105_2 = select i1 %i_part_21, i10 %p_read218_phi, i10 0" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_code_gen.h:105]   --->   Operation 71 'select' 'select_ln105_2' <Predicate = true> <Delay = 0.00> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.30> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_1 : Operation 72 [1/1] (0.00ns) (grouped into LUT with out node r_V_116)   --->   "%shl_ln1273_43 = bitconcatenate i15 @_ssdm_op_BitConcatenate.i15.i10.i5, i10 %select_ln105_2, i5 0"   --->   Operation 72 'bitconcatenate' 'shl_ln1273_43' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 73 [1/1] (0.00ns) (grouped into LUT with out node r_V_116)   --->   "%zext_ln1273_53 = zext i15 %shl_ln1273_43"   --->   Operation 73 'zext' 'zext_ln1273_53' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 74 [1/1] (0.77ns) (out node of the LUT)   --->   "%r_V_116 = sub i16 0, i16 %zext_ln1273_53"   --->   Operation 74 'sub' 'r_V_116' <Predicate = true> <Delay = 0.77> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.77> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 75 [1/1] (0.00ns)   --->   "%trunc_ln818_73 = partselect i11 @_ssdm_op_PartSelect.i11.i16.i32.i32, i16 %r_V_116, i32 5, i32 15"   --->   Operation 75 'partselect' 'trunc_ln818_73' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 76 [1/1] (0.00ns) (grouped into LUT with out node r_V_117)   --->   "%select_ln105_3 = select i1 %i_part_21, i10 %p_read319_phi, i10 0" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_code_gen.h:105]   --->   Operation 76 'select' 'select_ln105_3' <Predicate = true> <Delay = 0.00> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.30> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_1 : Operation 77 [1/1] (0.00ns) (grouped into LUT with out node r_V_117)   --->   "%shl_ln1273_44 = bitconcatenate i15 @_ssdm_op_BitConcatenate.i15.i10.i5, i10 %select_ln105_3, i5 0"   --->   Operation 77 'bitconcatenate' 'shl_ln1273_44' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 78 [1/1] (0.00ns) (grouped into LUT with out node r_V_117)   --->   "%zext_ln1273_54 = zext i15 %shl_ln1273_44"   --->   Operation 78 'zext' 'zext_ln1273_54' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 79 [1/1] (0.77ns) (out node of the LUT)   --->   "%r_V_117 = sub i16 0, i16 %zext_ln1273_54"   --->   Operation 79 'sub' 'r_V_117' <Predicate = true> <Delay = 0.77> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.77> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 80 [1/1] (0.00ns)   --->   "%trunc_ln818_74 = partselect i11 @_ssdm_op_PartSelect.i11.i16.i32.i32, i16 %r_V_117, i32 5, i32 15"   --->   Operation 80 'partselect' 'trunc_ln818_74' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 81 [1/1] (0.00ns)   --->   "%sext_ln70_48 = sext i11 %trunc_ln818_74" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_mult.h:70]   --->   Operation 81 'sext' 'sext_ln70_48' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 82 [1/1] (0.00ns) (grouped into LUT with out node r_V_118)   --->   "%select_ln105_4 = select i1 %i_part_21, i10 %p_read420_phi, i10 0" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_code_gen.h:105]   --->   Operation 82 'select' 'select_ln105_4' <Predicate = true> <Delay = 0.00> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.30> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_1 : Operation 83 [1/1] (0.00ns) (grouped into LUT with out node r_V_118)   --->   "%shl_ln1273_45 = bitconcatenate i15 @_ssdm_op_BitConcatenate.i15.i10.i5, i10 %select_ln105_4, i5 0"   --->   Operation 83 'bitconcatenate' 'shl_ln1273_45' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 84 [1/1] (0.00ns) (grouped into LUT with out node r_V_118)   --->   "%zext_ln1273_55 = zext i15 %shl_ln1273_45"   --->   Operation 84 'zext' 'zext_ln1273_55' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 85 [1/1] (0.77ns) (out node of the LUT)   --->   "%r_V_118 = sub i16 0, i16 %zext_ln1273_55"   --->   Operation 85 'sub' 'r_V_118' <Predicate = true> <Delay = 0.77> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.77> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 86 [1/1] (0.00ns)   --->   "%trunc_ln818_75 = partselect i11 @_ssdm_op_PartSelect.i11.i16.i32.i32, i16 %r_V_118, i32 5, i32 15"   --->   Operation 86 'partselect' 'trunc_ln818_75' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 87 [1/1] (0.00ns)   --->   "%sext_ln70_49 = sext i11 %trunc_ln818_75" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_mult.h:70]   --->   Operation 87 'sext' 'sext_ln70_49' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 88 [1/1] (0.00ns) (grouped into LUT with out node r_V_119)   --->   "%select_ln105_5 = select i1 %i_part_21, i10 %p_read521_phi, i10 0" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_code_gen.h:105]   --->   Operation 88 'select' 'select_ln105_5' <Predicate = true> <Delay = 0.00> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.30> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_1 : Operation 89 [1/1] (0.00ns) (grouped into LUT with out node r_V_119)   --->   "%shl_ln1273_46 = bitconcatenate i15 @_ssdm_op_BitConcatenate.i15.i10.i5, i10 %select_ln105_5, i5 0"   --->   Operation 89 'bitconcatenate' 'shl_ln1273_46' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 90 [1/1] (0.00ns) (grouped into LUT with out node r_V_119)   --->   "%zext_ln1273_56 = zext i15 %shl_ln1273_46"   --->   Operation 90 'zext' 'zext_ln1273_56' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 91 [1/1] (0.77ns) (out node of the LUT)   --->   "%r_V_119 = sub i16 0, i16 %zext_ln1273_56"   --->   Operation 91 'sub' 'r_V_119' <Predicate = true> <Delay = 0.77> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.77> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 92 [1/1] (0.00ns)   --->   "%trunc_ln818_76 = partselect i11 @_ssdm_op_PartSelect.i11.i16.i32.i32, i16 %r_V_119, i32 5, i32 15"   --->   Operation 92 'partselect' 'trunc_ln818_76' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 93 [1/1] (0.00ns)   --->   "%sext_ln70_50 = sext i11 %trunc_ln818_76" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_mult.h:70]   --->   Operation 93 'sext' 'sext_ln70_50' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 94 [1/1] (0.00ns) (grouped into LUT with out node r_V_120)   --->   "%select_ln105_6 = select i1 %i_part_21, i10 %p_read622_phi, i10 0" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_code_gen.h:105]   --->   Operation 94 'select' 'select_ln105_6' <Predicate = true> <Delay = 0.00> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.30> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_1 : Operation 95 [1/1] (0.00ns) (grouped into LUT with out node r_V_120)   --->   "%shl_ln1273_47 = bitconcatenate i15 @_ssdm_op_BitConcatenate.i15.i10.i5, i10 %select_ln105_6, i5 0"   --->   Operation 95 'bitconcatenate' 'shl_ln1273_47' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 96 [1/1] (0.00ns) (grouped into LUT with out node r_V_120)   --->   "%zext_ln1273_57 = zext i15 %shl_ln1273_47"   --->   Operation 96 'zext' 'zext_ln1273_57' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 97 [1/1] (0.77ns) (out node of the LUT)   --->   "%r_V_120 = sub i16 0, i16 %zext_ln1273_57"   --->   Operation 97 'sub' 'r_V_120' <Predicate = true> <Delay = 0.77> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.77> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 98 [1/1] (0.00ns)   --->   "%trunc_ln818_77 = partselect i11 @_ssdm_op_PartSelect.i11.i16.i32.i32, i16 %r_V_120, i32 5, i32 15"   --->   Operation 98 'partselect' 'trunc_ln818_77' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 99 [1/1] (0.00ns)   --->   "%sext_ln70_51 = sext i11 %trunc_ln818_77" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_mult.h:70]   --->   Operation 99 'sext' 'sext_ln70_51' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 100 [1/1] (0.00ns) (grouped into LUT with out node r_V_121)   --->   "%select_ln105_7 = select i1 %i_part_21, i10 %p_read723_phi, i10 0" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_code_gen.h:105]   --->   Operation 100 'select' 'select_ln105_7' <Predicate = true> <Delay = 0.00> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.30> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_1 : Operation 101 [1/1] (0.00ns) (grouped into LUT with out node r_V_121)   --->   "%shl_ln1273_48 = bitconcatenate i15 @_ssdm_op_BitConcatenate.i15.i10.i5, i10 %select_ln105_7, i5 0"   --->   Operation 101 'bitconcatenate' 'shl_ln1273_48' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 102 [1/1] (0.00ns) (grouped into LUT with out node r_V_121)   --->   "%zext_ln1273_58 = zext i15 %shl_ln1273_48"   --->   Operation 102 'zext' 'zext_ln1273_58' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 103 [1/1] (0.77ns) (out node of the LUT)   --->   "%r_V_121 = sub i16 0, i16 %zext_ln1273_58"   --->   Operation 103 'sub' 'r_V_121' <Predicate = true> <Delay = 0.77> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.77> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 104 [1/1] (0.00ns)   --->   "%trunc_ln818_78 = partselect i11 @_ssdm_op_PartSelect.i11.i16.i32.i32, i16 %r_V_121, i32 5, i32 15"   --->   Operation 104 'partselect' 'trunc_ln818_78' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 105 [1/1] (0.00ns)   --->   "%sext_ln70_52 = sext i11 %trunc_ln818_78" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_mult.h:70]   --->   Operation 105 'sext' 'sext_ln70_52' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 106 [1/1] (0.00ns) (grouped into LUT with out node r_V_122)   --->   "%select_ln105_8 = select i1 %i_part_21, i10 %p_read824_phi, i10 %p_read16_phi" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_code_gen.h:105]   --->   Operation 106 'select' 'select_ln105_8' <Predicate = true> <Delay = 0.00> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.30> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_1 : Operation 107 [1/1] (0.00ns) (grouped into LUT with out node r_V_122)   --->   "%shl_ln1273_49 = bitconcatenate i15 @_ssdm_op_BitConcatenate.i15.i10.i5, i10 %select_ln105_8, i5 0"   --->   Operation 107 'bitconcatenate' 'shl_ln1273_49' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 108 [1/1] (0.00ns) (grouped into LUT with out node r_V_122)   --->   "%zext_ln1273_59 = zext i15 %shl_ln1273_49"   --->   Operation 108 'zext' 'zext_ln1273_59' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 109 [1/1] (0.77ns) (out node of the LUT)   --->   "%r_V_122 = sub i16 0, i16 %zext_ln1273_59"   --->   Operation 109 'sub' 'r_V_122' <Predicate = true> <Delay = 0.77> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.77> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 110 [1/1] (0.00ns)   --->   "%trunc_ln818_79 = partselect i11 @_ssdm_op_PartSelect.i11.i16.i32.i32, i16 %r_V_122, i32 5, i32 15"   --->   Operation 110 'partselect' 'trunc_ln818_79' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 111 [1/1] (0.00ns)   --->   "%sext_ln70_53 = sext i11 %trunc_ln818_79" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_mult.h:70]   --->   Operation 111 'sext' 'sext_ln70_53' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 112 [1/1] (0.00ns) (grouped into LUT with out node r_V_123)   --->   "%select_ln105_9 = select i1 %i_part_21, i10 %p_read925_phi, i10 %p_read117_phi" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_code_gen.h:105]   --->   Operation 112 'select' 'select_ln105_9' <Predicate = true> <Delay = 0.00> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.30> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_1 : Operation 113 [1/1] (0.00ns) (grouped into LUT with out node r_V_123)   --->   "%shl_ln1273_50 = bitconcatenate i15 @_ssdm_op_BitConcatenate.i15.i10.i5, i10 %select_ln105_9, i5 0"   --->   Operation 113 'bitconcatenate' 'shl_ln1273_50' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 114 [1/1] (0.00ns) (grouped into LUT with out node r_V_123)   --->   "%zext_ln1273_60 = zext i15 %shl_ln1273_50"   --->   Operation 114 'zext' 'zext_ln1273_60' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 115 [1/1] (0.77ns) (out node of the LUT)   --->   "%r_V_123 = sub i16 0, i16 %zext_ln1273_60"   --->   Operation 115 'sub' 'r_V_123' <Predicate = true> <Delay = 0.77> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.77> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 116 [1/1] (0.00ns)   --->   "%trunc_ln818_80 = partselect i11 @_ssdm_op_PartSelect.i11.i16.i32.i32, i16 %r_V_123, i32 5, i32 15"   --->   Operation 116 'partselect' 'trunc_ln818_80' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 117 [1/1] (0.00ns) (grouped into LUT with out node r_V_124)   --->   "%select_ln105_10 = select i1 %i_part_21, i10 %p_read1026_phi, i10 %p_read218_phi" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_code_gen.h:105]   --->   Operation 117 'select' 'select_ln105_10' <Predicate = true> <Delay = 0.00> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.30> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_1 : Operation 118 [1/1] (0.00ns) (grouped into LUT with out node r_V_124)   --->   "%shl_ln1273_51 = bitconcatenate i15 @_ssdm_op_BitConcatenate.i15.i10.i5, i10 %select_ln105_10, i5 0"   --->   Operation 118 'bitconcatenate' 'shl_ln1273_51' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 119 [1/1] (0.00ns) (grouped into LUT with out node r_V_124)   --->   "%zext_ln1273_61 = zext i15 %shl_ln1273_51"   --->   Operation 119 'zext' 'zext_ln1273_61' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 120 [1/1] (0.77ns) (out node of the LUT)   --->   "%r_V_124 = sub i16 0, i16 %zext_ln1273_61"   --->   Operation 120 'sub' 'r_V_124' <Predicate = true> <Delay = 0.77> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.77> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 121 [1/1] (0.00ns)   --->   "%trunc_ln818_81 = partselect i11 @_ssdm_op_PartSelect.i11.i16.i32.i32, i16 %r_V_124, i32 5, i32 15"   --->   Operation 121 'partselect' 'trunc_ln818_81' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 122 [1/1] (0.00ns)   --->   "%sext_ln70_55 = sext i11 %trunc_ln818_81" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_mult.h:70]   --->   Operation 122 'sext' 'sext_ln70_55' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 123 [1/1] (0.00ns) (grouped into LUT with out node r_V_125)   --->   "%select_ln105_11 = select i1 %i_part_21, i10 %p_read1127_phi, i10 %p_read319_phi" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_code_gen.h:105]   --->   Operation 123 'select' 'select_ln105_11' <Predicate = true> <Delay = 0.00> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.30> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_1 : Operation 124 [1/1] (0.00ns) (grouped into LUT with out node r_V_125)   --->   "%shl_ln1273_52 = bitconcatenate i15 @_ssdm_op_BitConcatenate.i15.i10.i5, i10 %select_ln105_11, i5 0"   --->   Operation 124 'bitconcatenate' 'shl_ln1273_52' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 125 [1/1] (0.00ns) (grouped into LUT with out node r_V_125)   --->   "%zext_ln1273_62 = zext i15 %shl_ln1273_52"   --->   Operation 125 'zext' 'zext_ln1273_62' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 126 [1/1] (0.77ns) (out node of the LUT)   --->   "%r_V_125 = sub i16 0, i16 %zext_ln1273_62"   --->   Operation 126 'sub' 'r_V_125' <Predicate = true> <Delay = 0.77> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.77> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 127 [1/1] (0.00ns)   --->   "%trunc_ln818_82 = partselect i11 @_ssdm_op_PartSelect.i11.i16.i32.i32, i16 %r_V_125, i32 5, i32 15"   --->   Operation 127 'partselect' 'trunc_ln818_82' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 128 [1/1] (0.00ns)   --->   "%sext_ln70_56 = sext i11 %trunc_ln818_82" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_mult.h:70]   --->   Operation 128 'sext' 'sext_ln70_56' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 129 [1/1] (0.00ns) (grouped into LUT with out node r_V_126)   --->   "%select_ln105_12 = select i1 %i_part_21, i10 %p_read1228_phi, i10 %p_read420_phi" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_code_gen.h:105]   --->   Operation 129 'select' 'select_ln105_12' <Predicate = true> <Delay = 0.00> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.30> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_1 : Operation 130 [1/1] (0.00ns) (grouped into LUT with out node r_V_126)   --->   "%shl_ln1273_53 = bitconcatenate i15 @_ssdm_op_BitConcatenate.i15.i10.i5, i10 %select_ln105_12, i5 0"   --->   Operation 130 'bitconcatenate' 'shl_ln1273_53' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 131 [1/1] (0.00ns) (grouped into LUT with out node r_V_126)   --->   "%zext_ln1273_63 = zext i15 %shl_ln1273_53"   --->   Operation 131 'zext' 'zext_ln1273_63' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 132 [1/1] (0.77ns) (out node of the LUT)   --->   "%r_V_126 = sub i16 0, i16 %zext_ln1273_63"   --->   Operation 132 'sub' 'r_V_126' <Predicate = true> <Delay = 0.77> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.77> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 133 [1/1] (0.00ns)   --->   "%trunc_ln818_83 = partselect i11 @_ssdm_op_PartSelect.i11.i16.i32.i32, i16 %r_V_126, i32 5, i32 15"   --->   Operation 133 'partselect' 'trunc_ln818_83' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 134 [1/1] (0.00ns)   --->   "%sext_ln70_57 = sext i11 %trunc_ln818_83" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_mult.h:70]   --->   Operation 134 'sext' 'sext_ln70_57' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 135 [1/1] (0.00ns) (grouped into LUT with out node r_V_127)   --->   "%select_ln105_13 = select i1 %i_part_21, i10 %p_read1329_phi, i10 %p_read521_phi" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_code_gen.h:105]   --->   Operation 135 'select' 'select_ln105_13' <Predicate = true> <Delay = 0.00> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.30> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_1 : Operation 136 [1/1] (0.00ns) (grouped into LUT with out node r_V_127)   --->   "%shl_ln1273_54 = bitconcatenate i15 @_ssdm_op_BitConcatenate.i15.i10.i5, i10 %select_ln105_13, i5 0"   --->   Operation 136 'bitconcatenate' 'shl_ln1273_54' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 137 [1/1] (0.00ns) (grouped into LUT with out node r_V_127)   --->   "%zext_ln1273_64 = zext i15 %shl_ln1273_54"   --->   Operation 137 'zext' 'zext_ln1273_64' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 138 [1/1] (0.77ns) (out node of the LUT)   --->   "%r_V_127 = sub i16 0, i16 %zext_ln1273_64"   --->   Operation 138 'sub' 'r_V_127' <Predicate = true> <Delay = 0.77> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.77> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 139 [1/1] (0.00ns)   --->   "%trunc_ln818_84 = partselect i11 @_ssdm_op_PartSelect.i11.i16.i32.i32, i16 %r_V_127, i32 5, i32 15"   --->   Operation 139 'partselect' 'trunc_ln818_84' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 140 [1/1] (0.00ns)   --->   "%sext_ln70_58 = sext i11 %trunc_ln818_84" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_mult.h:70]   --->   Operation 140 'sext' 'sext_ln70_58' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 141 [1/1] (0.00ns) (grouped into LUT with out node r_V_128)   --->   "%select_ln105_14 = select i1 %i_part_21, i10 %p_read1430_phi, i10 %p_read622_phi" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_code_gen.h:105]   --->   Operation 141 'select' 'select_ln105_14' <Predicate = true> <Delay = 0.00> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.30> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_1 : Operation 142 [1/1] (0.00ns) (grouped into LUT with out node r_V_128)   --->   "%shl_ln1273_55 = bitconcatenate i15 @_ssdm_op_BitConcatenate.i15.i10.i5, i10 %select_ln105_14, i5 0"   --->   Operation 142 'bitconcatenate' 'shl_ln1273_55' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 143 [1/1] (0.00ns) (grouped into LUT with out node r_V_128)   --->   "%zext_ln1273_65 = zext i15 %shl_ln1273_55"   --->   Operation 143 'zext' 'zext_ln1273_65' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 144 [1/1] (0.77ns) (out node of the LUT)   --->   "%r_V_128 = sub i16 0, i16 %zext_ln1273_65"   --->   Operation 144 'sub' 'r_V_128' <Predicate = true> <Delay = 0.77> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.77> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 145 [1/1] (0.00ns)   --->   "%trunc_ln818_85 = partselect i11 @_ssdm_op_PartSelect.i11.i16.i32.i32, i16 %r_V_128, i32 5, i32 15"   --->   Operation 145 'partselect' 'trunc_ln818_85' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 146 [1/1] (0.00ns)   --->   "%sext_ln70_59 = sext i11 %trunc_ln818_85" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_mult.h:70]   --->   Operation 146 'sext' 'sext_ln70_59' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 147 [1/1] (0.00ns) (grouped into LUT with out node r_V_129)   --->   "%select_ln105_15 = select i1 %i_part_21, i10 %p_read1531_phi, i10 %p_read723_phi" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_code_gen.h:105]   --->   Operation 147 'select' 'select_ln105_15' <Predicate = true> <Delay = 0.00> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.30> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_1 : Operation 148 [1/1] (0.00ns) (grouped into LUT with out node r_V_129)   --->   "%shl_ln1273_56 = bitconcatenate i15 @_ssdm_op_BitConcatenate.i15.i10.i5, i10 %select_ln105_15, i5 0"   --->   Operation 148 'bitconcatenate' 'shl_ln1273_56' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 149 [1/1] (0.00ns) (grouped into LUT with out node r_V_129)   --->   "%zext_ln1273_66 = zext i15 %shl_ln1273_56"   --->   Operation 149 'zext' 'zext_ln1273_66' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 150 [1/1] (0.77ns) (out node of the LUT)   --->   "%r_V_129 = sub i16 0, i16 %zext_ln1273_66"   --->   Operation 150 'sub' 'r_V_129' <Predicate = true> <Delay = 0.77> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.77> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 151 [1/1] (0.00ns)   --->   "%trunc_ln818_86 = partselect i11 @_ssdm_op_PartSelect.i11.i16.i32.i32, i16 %r_V_129, i32 5, i32 15"   --->   Operation 151 'partselect' 'trunc_ln818_86' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 152 [1/1] (0.00ns)   --->   "%sext_ln813 = sext i11 %trunc_ln818_86"   --->   Operation 152 'sext' 'sext_ln813' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 153 [1/1] (0.73ns)   --->   "%add_ln813_67 = add i12 %sext_ln70_46, i12 %sext_ln70_48"   --->   Operation 153 'add' 'add_ln813_67' <Predicate = true> <Delay = 0.73> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.73> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 154 [1/1] (0.73ns)   --->   "%add_ln813_69 = add i12 %sext_ln70_49, i12 %sext_ln70_52"   --->   Operation 154 'add' 'add_ln813_69' <Predicate = true> <Delay = 0.73> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.73> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 155 [1/1] (0.73ns)   --->   "%add_ln813_70 = add i12 %sext_ln70_53, i12 %sext_ln70_50"   --->   Operation 155 'add' 'add_ln813_70' <Predicate = true> <Delay = 0.73> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.73> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 156 [1/1] (0.73ns)   --->   "%add_ln813_73 = add i12 %sext_ln70_51, i12 %sext_ln813"   --->   Operation 156 'add' 'add_ln813_73' <Predicate = true> <Delay = 0.73> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.73> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 157 [1/1] (0.73ns)   --->   "%add_ln813_74 = add i12 %sext_ln70_58, i12 %sext_ln70_59"   --->   Operation 157 'add' 'add_ln813_74' <Predicate = true> <Delay = 0.73> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.73> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 158 [1/1] (0.73ns)   --->   "%add_ln813_76 = add i12 %sext_ln70_56, i12 %sext_ln70_57"   --->   Operation 158 'add' 'add_ln813_76' <Predicate = true> <Delay = 0.73> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.73> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 159 [1/1] (0.73ns)   --->   "%add_ln813_77 = add i12 %sext_ln70_55, i12 %sext_ln70"   --->   Operation 159 'add' 'add_ln813_77' <Predicate = true> <Delay = 0.73> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.73> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 160 [1/1] (0.12ns)   --->   "%i_part = xor i1 %i_part_21, i1 1" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv1d_latency.h:34]   --->   Operation 160 'xor' 'i_part' <Predicate = true> <Delay = 0.12> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.12> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 161 [1/1] (0.00ns)   --->   "%br_ln81 = br i1 %i_part_21, void %arrayidx96.1112.case.11, void %arrayidx96.1112.case.23" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv1d_latency.h:81]   --->   Operation 161 'br' 'br_ln81' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 162 [1/1] (0.00ns)   --->   "%br_ln34 = br i1 %i_part_21, void %rewind_header, void %for.end105" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv1d_latency.h:34]   --->   Operation 162 'br' 'br_ln34' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 163 [1/1] (0.00ns)   --->   "%br_ln86 = br void %rewind_header" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv1d_latency.h:86]   --->   Operation 163 'br' 'br_ln86' <Predicate = (i_part_21)> <Delay = 0.00>
+
+State 2 <SV = 1> <Delay = 2.26>
+ST_2 : Operation 164 [1/1] (0.00ns)   --->   "%sext_ln70_47 = sext i11 %trunc_ln818_73" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_mult.h:70]   --->   Operation 164 'sext' 'sext_ln70_47' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 165 [1/1] (0.00ns)   --->   "%sext_ln70_54 = sext i11 %trunc_ln818_80" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_mult.h:70]   --->   Operation 165 'sext' 'sext_ln70_54' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 166 [1/1] (0.73ns)   --->   "%add_ln813 = add i12 %sext_ln70_47, i12 3072"   --->   Operation 166 'add' 'add_ln813' <Predicate = true> <Delay = 0.73> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.73> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 167 [1/1] (0.00ns)   --->   "%sext_ln813_48 = sext i12 %add_ln813"   --->   Operation 167 'sext' 'sext_ln813_48' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 168 [1/1] (0.00ns)   --->   "%sext_ln813_49 = sext i12 %add_ln813_67"   --->   Operation 168 'sext' 'sext_ln813_49' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 169 [1/1] (0.74ns)   --->   "%add_ln813_68 = add i13 %sext_ln813_49, i13 %sext_ln813_48"   --->   Operation 169 'add' 'add_ln813_68' <Predicate = true> <Delay = 0.74> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.74> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 170 [1/1] (0.00ns)   --->   "%sext_ln813_50 = sext i13 %add_ln813_68"   --->   Operation 170 'sext' 'sext_ln813_50' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 171 [1/1] (0.00ns)   --->   "%sext_ln813_51 = sext i12 %add_ln813_69"   --->   Operation 171 'sext' 'sext_ln813_51' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 172 [1/1] (0.00ns)   --->   "%sext_ln813_52 = sext i12 %add_ln813_70"   --->   Operation 172 'sext' 'sext_ln813_52' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 173 [1/1] (0.74ns)   --->   "%add_ln813_71 = add i13 %sext_ln813_52, i13 %sext_ln813_51"   --->   Operation 173 'add' 'add_ln813_71' <Predicate = true> <Delay = 0.74> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.74> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 174 [1/1] (0.00ns)   --->   "%sext_ln813_53 = sext i13 %add_ln813_71"   --->   Operation 174 'sext' 'sext_ln813_53' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 175 [1/1] (0.75ns)   --->   "%add_ln813_72 = add i14 %sext_ln813_53, i14 %sext_ln813_50"   --->   Operation 175 'add' 'add_ln813_72' <Predicate = true> <Delay = 0.75> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.75> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 176 [1/1] (0.00ns)   --->   "%sext_ln813_55 = sext i12 %add_ln813_73"   --->   Operation 176 'sext' 'sext_ln813_55' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 177 [1/1] (0.00ns)   --->   "%sext_ln813_56 = sext i12 %add_ln813_74"   --->   Operation 177 'sext' 'sext_ln813_56' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 178 [1/1] (0.74ns)   --->   "%add_ln813_75 = add i13 %sext_ln813_56, i13 %sext_ln813_55"   --->   Operation 178 'add' 'add_ln813_75' <Predicate = true> <Delay = 0.74> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.74> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 179 [1/1] (0.00ns)   --->   "%sext_ln813_57 = sext i13 %add_ln813_75"   --->   Operation 179 'sext' 'sext_ln813_57' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 180 [1/1] (0.00ns)   --->   "%sext_ln813_58 = sext i12 %add_ln813_76"   --->   Operation 180 'sext' 'sext_ln813_58' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 181 [1/1] (0.00ns)   --->   "%sext_ln813_59 = sext i12 %add_ln813_77"   --->   Operation 181 'sext' 'sext_ln813_59' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 182 [1/1] (0.74ns)   --->   "%add_ln813_78 = add i13 %sext_ln813_59, i13 %sext_ln70_54"   --->   Operation 182 'add' 'add_ln813_78' <Predicate = true> <Delay = 0.74> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.74> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 183 [1/1] (0.00ns)   --->   "%sext_ln813_60 = sext i13 %add_ln813_78"   --->   Operation 183 'sext' 'sext_ln813_60' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 184 [1/1] (0.75ns)   --->   "%add_ln813_79 = add i14 %sext_ln813_60, i14 %sext_ln813_58"   --->   Operation 184 'add' 'add_ln813_79' <Predicate = true> <Delay = 0.75> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.75> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 185 [1/1] (0.00ns)   --->   "%sext_ln813_61 = sext i14 %add_ln813_79"   --->   Operation 185 'sext' 'sext_ln813_61' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 186 [1/1] (0.76ns)   --->   "%add_ln813_80 = add i15 %sext_ln813_61, i15 %sext_ln813_57"   --->   Operation 186 'add' 'add_ln813_80' <Predicate = true> <Delay = 0.76> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.76> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+
+State 3 <SV = 2> <Delay = 0.77>
+ST_3 : Operation 187 [1/1] (0.00ns)   --->   "%empty = speclooptripcount i32 @_ssdm_op_SpecLoopTripCount, i64 2, i64 2, i64 2"   --->   Operation 187 'speclooptripcount' 'empty' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 188 [1/1] (0.00ns)   --->   "%specpipeline_ln35 = specpipeline void @_ssdm_op_SpecPipeline, i32 1, i32 0, i32 0, i32 0, void @empty_3" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv1d_latency.h:35]   --->   Operation 188 'specpipeline' 'specpipeline_ln35' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 189 [1/1] (0.00ns)   --->   "%specloopname_ln34 = specloopname void @_ssdm_op_SpecLoopName, void @empty_8" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv1d_latency.h:34]   --->   Operation 189 'specloopname' 'specloopname_ln34' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 190 [1/1] (0.00ns)   --->   "%sext_ln813_54 = sext i14 %add_ln813_72"   --->   Operation 190 'sext' 'sext_ln813_54' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 191 [1/1] (0.00ns)   --->   "%sext_ln813_62 = sext i15 %add_ln813_80"   --->   Operation 191 'sext' 'sext_ln813_62' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 192 [1/1] (0.77ns)   --->   "%add_ln813_81 = add i16 %sext_ln813_62, i16 %sext_ln813_54"   --->   Operation 192 'add' 'add_ln813_81' <Predicate = true> <Delay = 0.77> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.77> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 193 [1/1] (0.00ns)   --->   "%write_ln81 = write void @_ssdm_op_Write.ap_auto.i16P0A, i16 %res_0, i16 %add_ln813_81" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv1d_latency.h:81]   --->   Operation 193 'write' 'write_ln81' <Predicate = (!i_part_21)> <Delay = 0.00>
+ST_3 : Operation 194 [1/1] (0.00ns)   --->   "%write_ln81 = write void @_ssdm_op_Write.ap_auto.i16P0A, i16 %res_1, i16 %add_ln813_81" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv1d_latency.h:81]   --->   Operation 194 'write' 'write_ln81' <Predicate = (!i_part_21)> <Delay = 0.00>
+ST_3 : Operation 195 [1/1] (0.00ns)   --->   "%write_ln81 = write void @_ssdm_op_Write.ap_auto.i16P0A, i16 %res_2, i16 %add_ln813_81" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv1d_latency.h:81]   --->   Operation 195 'write' 'write_ln81' <Predicate = (!i_part_21)> <Delay = 0.00>
+ST_3 : Operation 196 [1/1] (0.00ns)   --->   "%write_ln81 = write void @_ssdm_op_Write.ap_auto.i16P0A, i16 %res_3, i16 %add_ln813_81" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv1d_latency.h:81]   --->   Operation 196 'write' 'write_ln81' <Predicate = (!i_part_21)> <Delay = 0.00>
+ST_3 : Operation 197 [1/1] (0.00ns)   --->   "%write_ln81 = write void @_ssdm_op_Write.ap_auto.i16P0A, i16 %res_4, i16 %add_ln813_81" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv1d_latency.h:81]   --->   Operation 197 'write' 'write_ln81' <Predicate = (!i_part_21)> <Delay = 0.00>
+ST_3 : Operation 198 [1/1] (0.00ns)   --->   "%write_ln81 = write void @_ssdm_op_Write.ap_auto.i16P0A, i16 %res_5, i16 %add_ln813_81" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv1d_latency.h:81]   --->   Operation 198 'write' 'write_ln81' <Predicate = (!i_part_21)> <Delay = 0.00>
+ST_3 : Operation 199 [1/1] (0.00ns)   --->   "%write_ln81 = write void @_ssdm_op_Write.ap_auto.i16P0A, i16 %res_6, i16 %add_ln813_81" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv1d_latency.h:81]   --->   Operation 199 'write' 'write_ln81' <Predicate = (!i_part_21)> <Delay = 0.00>
+ST_3 : Operation 200 [1/1] (0.00ns)   --->   "%write_ln81 = write void @_ssdm_op_Write.ap_auto.i16P0A, i16 %res_7, i16 %add_ln813_81" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv1d_latency.h:81]   --->   Operation 200 'write' 'write_ln81' <Predicate = (!i_part_21)> <Delay = 0.00>
+ST_3 : Operation 201 [1/1] (0.00ns)   --->   "%write_ln81 = write void @_ssdm_op_Write.ap_auto.i16P0A, i16 %res_8, i16 %add_ln813_81" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv1d_latency.h:81]   --->   Operation 201 'write' 'write_ln81' <Predicate = (!i_part_21)> <Delay = 0.00>
+ST_3 : Operation 202 [1/1] (0.00ns)   --->   "%write_ln81 = write void @_ssdm_op_Write.ap_auto.i16P0A, i16 %res_9, i16 %add_ln813_81" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv1d_latency.h:81]   --->   Operation 202 'write' 'write_ln81' <Predicate = (!i_part_21)> <Delay = 0.00>
+ST_3 : Operation 203 [1/1] (0.00ns)   --->   "%write_ln81 = write void @_ssdm_op_Write.ap_auto.i16P0A, i16 %res_10, i16 %add_ln813_81" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv1d_latency.h:81]   --->   Operation 203 'write' 'write_ln81' <Predicate = (!i_part_21)> <Delay = 0.00>
+ST_3 : Operation 204 [1/1] (0.00ns)   --->   "%write_ln81 = write void @_ssdm_op_Write.ap_auto.i16P0A, i16 %res_11, i16 %add_ln813_81" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv1d_latency.h:81]   --->   Operation 204 'write' 'write_ln81' <Predicate = (!i_part_21)> <Delay = 0.00>
+ST_3 : Operation 205 [1/1] (0.00ns)   --->   "%br_ln81 = br void %arrayidx96.1112.exit" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv1d_latency.h:81]   --->   Operation 205 'br' 'br_ln81' <Predicate = (!i_part_21)> <Delay = 0.00>
+ST_3 : Operation 206 [1/1] (0.00ns)   --->   "%write_ln81 = write void @_ssdm_op_Write.ap_auto.i16P0A, i16 %res_12, i16 %add_ln813_81" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv1d_latency.h:81]   --->   Operation 206 'write' 'write_ln81' <Predicate = (i_part_21)> <Delay = 0.00>
+ST_3 : Operation 207 [1/1] (0.00ns)   --->   "%write_ln81 = write void @_ssdm_op_Write.ap_auto.i16P0A, i16 %res_13, i16 %add_ln813_81" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv1d_latency.h:81]   --->   Operation 207 'write' 'write_ln81' <Predicate = (i_part_21)> <Delay = 0.00>
+ST_3 : Operation 208 [1/1] (0.00ns)   --->   "%write_ln81 = write void @_ssdm_op_Write.ap_auto.i16P0A, i16 %res_14, i16 %add_ln813_81" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv1d_latency.h:81]   --->   Operation 208 'write' 'write_ln81' <Predicate = (i_part_21)> <Delay = 0.00>
+ST_3 : Operation 209 [1/1] (0.00ns)   --->   "%write_ln81 = write void @_ssdm_op_Write.ap_auto.i16P0A, i16 %res_15, i16 %add_ln813_81" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv1d_latency.h:81]   --->   Operation 209 'write' 'write_ln81' <Predicate = (i_part_21)> <Delay = 0.00>
+ST_3 : Operation 210 [1/1] (0.00ns)   --->   "%write_ln81 = write void @_ssdm_op_Write.ap_auto.i16P0A, i16 %res_16, i16 %add_ln813_81" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv1d_latency.h:81]   --->   Operation 210 'write' 'write_ln81' <Predicate = (i_part_21)> <Delay = 0.00>
+ST_3 : Operation 211 [1/1] (0.00ns)   --->   "%write_ln81 = write void @_ssdm_op_Write.ap_auto.i16P0A, i16 %res_17, i16 %add_ln813_81" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv1d_latency.h:81]   --->   Operation 211 'write' 'write_ln81' <Predicate = (i_part_21)> <Delay = 0.00>
+ST_3 : Operation 212 [1/1] (0.00ns)   --->   "%write_ln81 = write void @_ssdm_op_Write.ap_auto.i16P0A, i16 %res_18, i16 %add_ln813_81" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv1d_latency.h:81]   --->   Operation 212 'write' 'write_ln81' <Predicate = (i_part_21)> <Delay = 0.00>
+ST_3 : Operation 213 [1/1] (0.00ns)   --->   "%write_ln81 = write void @_ssdm_op_Write.ap_auto.i16P0A, i16 %res_19, i16 %add_ln813_81" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv1d_latency.h:81]   --->   Operation 213 'write' 'write_ln81' <Predicate = (i_part_21)> <Delay = 0.00>
+ST_3 : Operation 214 [1/1] (0.00ns)   --->   "%write_ln81 = write void @_ssdm_op_Write.ap_auto.i16P0A, i16 %res_20, i16 %add_ln813_81" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv1d_latency.h:81]   --->   Operation 214 'write' 'write_ln81' <Predicate = (i_part_21)> <Delay = 0.00>
+ST_3 : Operation 215 [1/1] (0.00ns)   --->   "%write_ln81 = write void @_ssdm_op_Write.ap_auto.i16P0A, i16 %res_21, i16 %add_ln813_81" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv1d_latency.h:81]   --->   Operation 215 'write' 'write_ln81' <Predicate = (i_part_21)> <Delay = 0.00>
+ST_3 : Operation 216 [1/1] (0.00ns)   --->   "%write_ln81 = write void @_ssdm_op_Write.ap_auto.i16P0A, i16 %res_22, i16 %add_ln813_81" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv1d_latency.h:81]   --->   Operation 216 'write' 'write_ln81' <Predicate = (i_part_21)> <Delay = 0.00>
+ST_3 : Operation 217 [1/1] (0.00ns)   --->   "%write_ln81 = write void @_ssdm_op_Write.ap_auto.i16P0A, i16 %res_23, i16 %add_ln813_81" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv1d_latency.h:81]   --->   Operation 217 'write' 'write_ln81' <Predicate = (i_part_21)> <Delay = 0.00>
+ST_3 : Operation 218 [1/1] (0.00ns)   --->   "%br_ln81 = br void %arrayidx96.1112.exit" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv1d_latency.h:81]   --->   Operation 218 'br' 'br_ln81' <Predicate = (i_part_21)> <Delay = 0.00>
+ST_3 : Operation 219 [1/1] (0.00ns)   --->   "%return_ln86 = return void @_ssdm_op_Return" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv1d_latency.h:86]   --->   Operation 219 'return' 'return_ln86' <Predicate = (i_part_21)> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 3.33ns, clock uncertainty: 0.9ns.
+
+ <State 1>: 2.28ns
+The critical path consists of the following:
+	multiplexor before 'phi' operation ('do_init') [43]  (0.387 ns)
+	'phi' operation ('do_init') [43]  (0 ns)
+	multiplexor before 'phi' operation ('p_read319_phi', /home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv1d_latency.h:34) with incoming values : ('p_read319', /home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv1d_latency.h:34) [85]  (0.387 ns)
+	'phi' operation ('p_read319_phi', /home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv1d_latency.h:34) with incoming values : ('p_read319', /home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv1d_latency.h:34) [85]  (0 ns)
+	'select' operation ('select_ln105_3', /home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_code_gen.h:105) [119]  (0 ns)
+	'sub' operation ('r.V') [122]  (0.775 ns)
+	'add' operation ('add_ln813_67') [199]  (0.735 ns)
+
+ <State 2>: 2.27ns
+The critical path consists of the following:
+	'add' operation ('add_ln813_78') [221]  (0.745 ns)
+	'add' operation ('add_ln813_79') [223]  (0.755 ns)
+	'add' operation ('add_ln813_80') [225]  (0.765 ns)
+
+ <State 3>: 0.775ns
+The critical path consists of the following:
+	'add' operation ('add_ln813_81') [227]  (0.775 ns)
+	wire write operation ('write_ln81', /home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv1d_latency.h:81) on port 'res_0' (/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv1d_latency.h:81) [231]  (0 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

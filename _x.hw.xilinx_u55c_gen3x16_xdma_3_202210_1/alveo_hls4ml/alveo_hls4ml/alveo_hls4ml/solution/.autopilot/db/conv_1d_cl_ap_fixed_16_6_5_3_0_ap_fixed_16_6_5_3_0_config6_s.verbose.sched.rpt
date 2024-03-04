@@ -1,0 +1,251 @@
+
+
+================================================================
+== Vitis HLS Report for 'conv_1d_cl_ap_fixed_16_6_5_3_0_ap_fixed_16_6_5_3_0_config6_s'
+================================================================
+* Date:           Sun Mar  3 21:30:46 2024
+
+* Version:        2022.2 (Build 3670227 on Oct 13 2022)
+* Project:        alveo_hls4ml
+* Solution:       solution (Vitis Kernel Flow Target)
+* Product family: virtexuplus
+* Target device:  xcu55c-fsvh2892-2L-e
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+---------+----------+------------+
+    |  Clock |  Target | Estimated| Uncertainty|
+    +--------+---------+----------+------------+
+    |ap_clk  |  3.33 ns|  2.255 ns|     0.90 ns|
+    +--------+---------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+-----------+-----------+-----+-----+---------+
+    |  Latency (cycles) |   Latency (absolute)  |  Interval | Pipeline|
+    |   min   |   max   |    min    |    max    | min | max |   Type  |
+    +---------+---------+-----------+-----------+-----+-----+---------+
+    |        7|        8|  23.331 ns|  26.664 ns|    7|    8|       no|
+    +---------+---------+-----------+-----------+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        N/A
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 2
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 3
+* Pipeline : 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 3 
+3 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 2.05>
+ST_1 : Operation 4 [1/1] (1.21ns)   --->   "%p_read3163 = read i10 @_ssdm_op_Read.ap_auto.i10, i10 %p_read31" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv1d.h:42]   --->   Operation 4 'read' 'p_read3163' <Predicate = true> <Delay = 1.21> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.42> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = -1> <Depth = -1> <FIFO>
+ST_1 : Operation 5 [1/1] (1.21ns)   --->   "%p_read3062 = read i10 @_ssdm_op_Read.ap_auto.i10, i10 %p_read30" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv1d.h:42]   --->   Operation 5 'read' 'p_read3062' <Predicate = true> <Delay = 1.21> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.42> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = -1> <Depth = -1> <FIFO>
+ST_1 : Operation 6 [1/1] (1.21ns)   --->   "%p_read_211 = read i10 @_ssdm_op_Read.ap_auto.i10, i10 %p_read29" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv1d.h:42]   --->   Operation 6 'read' 'p_read_211' <Predicate = true> <Delay = 1.21> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.42> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = -1> <Depth = -1> <FIFO>
+ST_1 : Operation 7 [1/1] (1.21ns)   --->   "%p_read_212 = read i10 @_ssdm_op_Read.ap_auto.i10, i10 %p_read28" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv1d.h:42]   --->   Operation 7 'read' 'p_read_212' <Predicate = true> <Delay = 1.21> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.42> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = -1> <Depth = -1> <FIFO>
+ST_1 : Operation 8 [1/1] (1.21ns)   --->   "%p_read_213 = read i10 @_ssdm_op_Read.ap_auto.i10, i10 %p_read27" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv1d.h:42]   --->   Operation 8 'read' 'p_read_213' <Predicate = true> <Delay = 1.21> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.42> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = -1> <Depth = -1> <FIFO>
+ST_1 : Operation 9 [1/1] (1.21ns)   --->   "%p_read_214 = read i10 @_ssdm_op_Read.ap_auto.i10, i10 %p_read26" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv1d.h:42]   --->   Operation 9 'read' 'p_read_214' <Predicate = true> <Delay = 1.21> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.42> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = -1> <Depth = -1> <FIFO>
+ST_1 : Operation 10 [1/1] (1.21ns)   --->   "%p_read_215 = read i10 @_ssdm_op_Read.ap_auto.i10, i10 %p_read25" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv1d.h:42]   --->   Operation 10 'read' 'p_read_215' <Predicate = true> <Delay = 1.21> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.42> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = -1> <Depth = -1> <FIFO>
+ST_1 : Operation 11 [1/1] (1.21ns)   --->   "%p_read_216 = read i10 @_ssdm_op_Read.ap_auto.i10, i10 %p_read24" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv1d.h:42]   --->   Operation 11 'read' 'p_read_216' <Predicate = true> <Delay = 1.21> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.42> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = -1> <Depth = -1> <FIFO>
+ST_1 : Operation 12 [1/1] (1.21ns)   --->   "%p_read_217 = read i10 @_ssdm_op_Read.ap_auto.i10, i10 %p_read23" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv1d.h:42]   --->   Operation 12 'read' 'p_read_217' <Predicate = true> <Delay = 1.21> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.42> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = -1> <Depth = -1> <FIFO>
+ST_1 : Operation 13 [1/1] (1.21ns)   --->   "%p_read_218 = read i10 @_ssdm_op_Read.ap_auto.i10, i10 %p_read22" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv1d.h:42]   --->   Operation 13 'read' 'p_read_218' <Predicate = true> <Delay = 1.21> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.42> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = -1> <Depth = -1> <FIFO>
+ST_1 : Operation 14 [1/1] (1.21ns)   --->   "%p_read2153 = read i10 @_ssdm_op_Read.ap_auto.i10, i10 %p_read21" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv1d.h:42]   --->   Operation 14 'read' 'p_read2153' <Predicate = true> <Delay = 1.21> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.42> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = -1> <Depth = -1> <FIFO>
+ST_1 : Operation 15 [1/1] (1.21ns)   --->   "%p_read2052 = read i10 @_ssdm_op_Read.ap_auto.i10, i10 %p_read20" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv1d.h:42]   --->   Operation 15 'read' 'p_read2052' <Predicate = true> <Delay = 1.21> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.42> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = -1> <Depth = -1> <FIFO>
+ST_1 : Operation 16 [1/1] (1.21ns)   --->   "%p_read_219 = read i10 @_ssdm_op_Read.ap_auto.i10, i10 %p_read19" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv1d.h:42]   --->   Operation 16 'read' 'p_read_219' <Predicate = true> <Delay = 1.21> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.42> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = -1> <Depth = -1> <FIFO>
+ST_1 : Operation 17 [1/1] (1.21ns)   --->   "%p_read_220 = read i10 @_ssdm_op_Read.ap_auto.i10, i10 %p_read18" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv1d.h:42]   --->   Operation 17 'read' 'p_read_220' <Predicate = true> <Delay = 1.21> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.42> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = -1> <Depth = -1> <FIFO>
+ST_1 : Operation 18 [1/1] (1.21ns)   --->   "%p_read_221 = read i10 @_ssdm_op_Read.ap_auto.i10, i10 %p_read17" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv1d.h:42]   --->   Operation 18 'read' 'p_read_221' <Predicate = true> <Delay = 1.21> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.42> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = -1> <Depth = -1> <FIFO>
+ST_1 : Operation 19 [1/1] (1.21ns)   --->   "%p_read_222 = read i10 @_ssdm_op_Read.ap_auto.i10, i10 %p_read16" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv1d.h:42]   --->   Operation 19 'read' 'p_read_222' <Predicate = true> <Delay = 1.21> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.42> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = -1> <Depth = -1> <FIFO>
+ST_1 : Operation 20 [1/1] (1.21ns)   --->   "%p_read_223 = read i10 @_ssdm_op_Read.ap_auto.i10, i10 %p_read15" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv1d.h:42]   --->   Operation 20 'read' 'p_read_223' <Predicate = true> <Delay = 1.21> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.42> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = -1> <Depth = -1> <FIFO>
+ST_1 : Operation 21 [1/1] (1.21ns)   --->   "%p_read_224 = read i10 @_ssdm_op_Read.ap_auto.i10, i10 %p_read14" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv1d.h:42]   --->   Operation 21 'read' 'p_read_224' <Predicate = true> <Delay = 1.21> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.42> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = -1> <Depth = -1> <FIFO>
+ST_1 : Operation 22 [1/1] (1.21ns)   --->   "%p_read_225 = read i10 @_ssdm_op_Read.ap_auto.i10, i10 %p_read13" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv1d.h:42]   --->   Operation 22 'read' 'p_read_225' <Predicate = true> <Delay = 1.21> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.42> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = -1> <Depth = -1> <FIFO>
+ST_1 : Operation 23 [1/1] (1.21ns)   --->   "%p_read_226 = read i10 @_ssdm_op_Read.ap_auto.i10, i10 %p_read12" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv1d.h:42]   --->   Operation 23 'read' 'p_read_226' <Predicate = true> <Delay = 1.21> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.42> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = -1> <Depth = -1> <FIFO>
+ST_1 : Operation 24 [1/1] (1.21ns)   --->   "%p_read1143 = read i10 @_ssdm_op_Read.ap_auto.i10, i10 %p_read11" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv1d.h:42]   --->   Operation 24 'read' 'p_read1143' <Predicate = true> <Delay = 1.21> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.42> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = -1> <Depth = -1> <FIFO>
+ST_1 : Operation 25 [1/1] (1.21ns)   --->   "%p_read1042 = read i10 @_ssdm_op_Read.ap_auto.i10, i10 %p_read10" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv1d.h:42]   --->   Operation 25 'read' 'p_read1042' <Predicate = true> <Delay = 1.21> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.42> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = -1> <Depth = -1> <FIFO>
+ST_1 : Operation 26 [1/1] (1.21ns)   --->   "%p_read941 = read i10 @_ssdm_op_Read.ap_auto.i10, i10 %p_read9" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv1d.h:42]   --->   Operation 26 'read' 'p_read941' <Predicate = true> <Delay = 1.21> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.42> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = -1> <Depth = -1> <FIFO>
+ST_1 : Operation 27 [1/1] (1.21ns)   --->   "%p_read840 = read i10 @_ssdm_op_Read.ap_auto.i10, i10 %p_read8" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv1d.h:42]   --->   Operation 27 'read' 'p_read840' <Predicate = true> <Delay = 1.21> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.42> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = -1> <Depth = -1> <FIFO>
+ST_1 : Operation 28 [1/1] (1.21ns)   --->   "%p_read739 = read i10 @_ssdm_op_Read.ap_auto.i10, i10 %p_read7" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv1d.h:42]   --->   Operation 28 'read' 'p_read739' <Predicate = true> <Delay = 1.21> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.42> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = -1> <Depth = -1> <FIFO>
+ST_1 : Operation 29 [1/1] (1.21ns)   --->   "%p_read638 = read i10 @_ssdm_op_Read.ap_auto.i10, i10 %p_read6" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv1d.h:42]   --->   Operation 29 'read' 'p_read638' <Predicate = true> <Delay = 1.21> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.42> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = -1> <Depth = -1> <FIFO>
+ST_1 : Operation 30 [1/1] (1.21ns)   --->   "%p_read537 = read i10 @_ssdm_op_Read.ap_auto.i10, i10 %p_read5" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv1d.h:42]   --->   Operation 30 'read' 'p_read537' <Predicate = true> <Delay = 1.21> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.42> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = -1> <Depth = -1> <FIFO>
+ST_1 : Operation 31 [1/1] (1.21ns)   --->   "%p_read436 = read i10 @_ssdm_op_Read.ap_auto.i10, i10 %p_read4" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv1d.h:42]   --->   Operation 31 'read' 'p_read436' <Predicate = true> <Delay = 1.21> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.42> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = -1> <Depth = -1> <FIFO>
+ST_1 : Operation 32 [1/1] (1.21ns)   --->   "%p_read335 = read i10 @_ssdm_op_Read.ap_auto.i10, i10 %p_read3" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv1d.h:42]   --->   Operation 32 'read' 'p_read335' <Predicate = true> <Delay = 1.21> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.42> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = -1> <Depth = -1> <FIFO>
+ST_1 : Operation 33 [1/1] (1.21ns)   --->   "%p_read234 = read i10 @_ssdm_op_Read.ap_auto.i10, i10 %p_read2" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv1d.h:42]   --->   Operation 33 'read' 'p_read234' <Predicate = true> <Delay = 1.21> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.42> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = -1> <Depth = -1> <FIFO>
+ST_1 : Operation 34 [1/1] (1.21ns)   --->   "%p_read133 = read i10 @_ssdm_op_Read.ap_auto.i10, i10 %p_read1" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv1d.h:42]   --->   Operation 34 'read' 'p_read133' <Predicate = true> <Delay = 1.21> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.42> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = -1> <Depth = -1> <FIFO>
+ST_1 : Operation 35 [1/1] (1.21ns)   --->   "%p_read32 = read i10 @_ssdm_op_Read.ap_auto.i10, i10 %p_read" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv1d.h:42]   --->   Operation 35 'read' 'p_read32' <Predicate = true> <Delay = 1.21> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.42> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = -1> <Depth = -1> <FIFO>
+ST_1 : Operation 36 [1/1] (0.00ns)   --->   "%res_31_copy = alloca i64 1" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv1d.h:42]   --->   Operation 36 'alloca' 'res_31_copy' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 37 [1/1] (0.00ns)   --->   "%res_30_copy = alloca i64 1" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv1d.h:42]   --->   Operation 37 'alloca' 'res_30_copy' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 38 [1/1] (0.00ns)   --->   "%res_29_copy = alloca i64 1" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv1d.h:42]   --->   Operation 38 'alloca' 'res_29_copy' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 39 [1/1] (0.00ns)   --->   "%res_28_copy = alloca i64 1" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv1d.h:42]   --->   Operation 39 'alloca' 'res_28_copy' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 40 [1/1] (0.00ns)   --->   "%res_27_copy = alloca i64 1" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv1d.h:42]   --->   Operation 40 'alloca' 'res_27_copy' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 41 [1/1] (0.00ns)   --->   "%res_26_copy = alloca i64 1" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv1d.h:42]   --->   Operation 41 'alloca' 'res_26_copy' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 42 [1/1] (0.00ns)   --->   "%res_25_copy = alloca i64 1" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv1d.h:42]   --->   Operation 42 'alloca' 'res_25_copy' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 43 [1/1] (0.00ns)   --->   "%res_24_copy = alloca i64 1" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv1d.h:42]   --->   Operation 43 'alloca' 'res_24_copy' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 44 [1/1] (0.00ns)   --->   "%res_23_copy = alloca i64 1" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv1d.h:42]   --->   Operation 44 'alloca' 'res_23_copy' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 45 [1/1] (0.00ns)   --->   "%res_22_copy = alloca i64 1" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv1d.h:42]   --->   Operation 45 'alloca' 'res_22_copy' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 46 [1/1] (0.00ns)   --->   "%res_21_copy = alloca i64 1" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv1d.h:42]   --->   Operation 46 'alloca' 'res_21_copy' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 47 [1/1] (0.00ns)   --->   "%res_20_copy = alloca i64 1" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv1d.h:42]   --->   Operation 47 'alloca' 'res_20_copy' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 48 [1/1] (0.00ns)   --->   "%res_19_copy = alloca i64 1" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv1d.h:42]   --->   Operation 48 'alloca' 'res_19_copy' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 49 [1/1] (0.00ns)   --->   "%res_18_copy = alloca i64 1" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv1d.h:42]   --->   Operation 49 'alloca' 'res_18_copy' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 50 [1/1] (0.00ns)   --->   "%res_17_copy = alloca i64 1" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv1d.h:42]   --->   Operation 50 'alloca' 'res_17_copy' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 51 [1/1] (0.00ns)   --->   "%res_16_copy = alloca i64 1" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv1d.h:42]   --->   Operation 51 'alloca' 'res_16_copy' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 52 [1/1] (0.00ns)   --->   "%res_15_copy = alloca i64 1" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv1d.h:42]   --->   Operation 52 'alloca' 'res_15_copy' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 53 [1/1] (0.00ns)   --->   "%res_14_copy = alloca i64 1" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv1d.h:42]   --->   Operation 53 'alloca' 'res_14_copy' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 54 [1/1] (0.00ns)   --->   "%res_13_copy = alloca i64 1" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv1d.h:42]   --->   Operation 54 'alloca' 'res_13_copy' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 55 [1/1] (0.00ns)   --->   "%res_12_copy = alloca i64 1" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv1d.h:42]   --->   Operation 55 'alloca' 'res_12_copy' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 56 [1/1] (0.00ns)   --->   "%res_11_copy = alloca i64 1" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv1d.h:42]   --->   Operation 56 'alloca' 'res_11_copy' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 57 [1/1] (0.00ns)   --->   "%res_10_copy = alloca i64 1" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv1d.h:42]   --->   Operation 57 'alloca' 'res_10_copy' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 58 [1/1] (0.00ns)   --->   "%res_9_copy = alloca i64 1" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv1d.h:42]   --->   Operation 58 'alloca' 'res_9_copy' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 59 [1/1] (0.00ns)   --->   "%res_8_copy = alloca i64 1" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv1d.h:42]   --->   Operation 59 'alloca' 'res_8_copy' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 60 [1/1] (0.00ns)   --->   "%res_7_copy = alloca i64 1" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv1d.h:42]   --->   Operation 60 'alloca' 'res_7_copy' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 61 [1/1] (0.00ns)   --->   "%res_6_copy = alloca i64 1" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv1d.h:42]   --->   Operation 61 'alloca' 'res_6_copy' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 62 [1/1] (0.00ns)   --->   "%res_5_copy = alloca i64 1" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv1d.h:42]   --->   Operation 62 'alloca' 'res_5_copy' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 63 [1/1] (0.00ns)   --->   "%res_4_copy = alloca i64 1" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv1d.h:42]   --->   Operation 63 'alloca' 'res_4_copy' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 64 [1/1] (0.00ns)   --->   "%res_3_copy = alloca i64 1" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv1d.h:42]   --->   Operation 64 'alloca' 'res_3_copy' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 65 [1/1] (0.00ns)   --->   "%res_2_copy = alloca i64 1" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv1d.h:42]   --->   Operation 65 'alloca' 'res_2_copy' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 66 [1/1] (0.00ns)   --->   "%res_1_copy = alloca i64 1" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv1d.h:42]   --->   Operation 66 'alloca' 'res_1_copy' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 67 [1/1] (0.00ns)   --->   "%res_0_copy = alloca i64 1" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv1d.h:42]   --->   Operation 67 'alloca' 'res_0_copy' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 68 [2/2] (0.83ns)   --->   "%call_ln42 = call void @conv_1d_latency_cl<ap_fixed<16, 6, 5, 3, 0>, ap_fixed<16, 6, 5, 3, 0>, config6>, i10 %p_read32, i10 %p_read133, i10 %p_read234, i10 %p_read335, i10 %p_read436, i10 %p_read537, i10 %p_read638, i10 %p_read739, i10 %p_read840, i10 %p_read941, i10 %p_read1042, i10 %p_read1143, i10 %p_read_226, i10 %p_read_225, i10 %p_read_224, i10 %p_read_223, i10 %p_read_222, i10 %p_read_221, i10 %p_read_220, i10 %p_read_219, i10 %p_read2052, i10 %p_read2153, i10 %p_read_218, i10 %p_read_217, i10 %p_read_216, i10 %p_read_215, i10 %p_read_214, i10 %p_read_213, i10 %p_read_212, i10 %p_read_211, i10 %p_read3062, i10 %p_read3163, i16 %res_0_copy, i16 %res_1_copy, i16 %res_2_copy, i16 %res_3_copy, i16 %res_4_copy, i16 %res_5_copy, i16 %res_6_copy, i16 %res_7_copy, i16 %res_8_copy, i16 %res_9_copy, i16 %res_10_copy, i16 %res_11_copy, i16 %res_12_copy, i16 %res_13_copy, i16 %res_14_copy, i16 %res_15_copy, i16 %res_16_copy, i16 %res_17_copy, i16 %res_18_copy, i16 %res_19_copy, i16 %res_20_copy, i16 %res_21_copy, i16 %res_22_copy, i16 %res_23_copy, i16 %res_24_copy, i16 %res_25_copy, i16 %res_26_copy, i16 %res_27_copy, i16 %res_28_copy, i16 %res_29_copy, i16 %res_30_copy, i16 %res_31_copy" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv1d.h:42]   --->   Operation 68 'call' 'call_ln42' <Predicate = true> <Delay = 0.83> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 2 <SV = 1> <Delay = 2.19>
+ST_2 : Operation 69 [1/2] (2.19ns)   --->   "%call_ln42 = call void @conv_1d_latency_cl<ap_fixed<16, 6, 5, 3, 0>, ap_fixed<16, 6, 5, 3, 0>, config6>, i10 %p_read32, i10 %p_read133, i10 %p_read234, i10 %p_read335, i10 %p_read436, i10 %p_read537, i10 %p_read638, i10 %p_read739, i10 %p_read840, i10 %p_read941, i10 %p_read1042, i10 %p_read1143, i10 %p_read_226, i10 %p_read_225, i10 %p_read_224, i10 %p_read_223, i10 %p_read_222, i10 %p_read_221, i10 %p_read_220, i10 %p_read_219, i10 %p_read2052, i10 %p_read2153, i10 %p_read_218, i10 %p_read_217, i10 %p_read_216, i10 %p_read_215, i10 %p_read_214, i10 %p_read_213, i10 %p_read_212, i10 %p_read_211, i10 %p_read3062, i10 %p_read3163, i16 %res_0_copy, i16 %res_1_copy, i16 %res_2_copy, i16 %res_3_copy, i16 %res_4_copy, i16 %res_5_copy, i16 %res_6_copy, i16 %res_7_copy, i16 %res_8_copy, i16 %res_9_copy, i16 %res_10_copy, i16 %res_11_copy, i16 %res_12_copy, i16 %res_13_copy, i16 %res_14_copy, i16 %res_15_copy, i16 %res_16_copy, i16 %res_17_copy, i16 %res_18_copy, i16 %res_19_copy, i16 %res_20_copy, i16 %res_21_copy, i16 %res_22_copy, i16 %res_23_copy, i16 %res_24_copy, i16 %res_25_copy, i16 %res_26_copy, i16 %res_27_copy, i16 %res_28_copy, i16 %res_29_copy, i16 %res_30_copy, i16 %res_31_copy" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv1d.h:42]   --->   Operation 69 'call' 'call_ln42' <Predicate = true> <Delay = 2.19> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 3 <SV = 2> <Delay = 0.00>
+ST_3 : Operation 70 [1/1] (0.00ns)   --->   "%res_0_copy_load = load i16 %res_0_copy" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv1d.h:46]   --->   Operation 70 'load' 'res_0_copy_load' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 71 [1/1] (0.00ns)   --->   "%res_1_copy_load = load i16 %res_1_copy" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv1d.h:46]   --->   Operation 71 'load' 'res_1_copy_load' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 72 [1/1] (0.00ns)   --->   "%res_2_copy_load = load i16 %res_2_copy" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv1d.h:46]   --->   Operation 72 'load' 'res_2_copy_load' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 73 [1/1] (0.00ns)   --->   "%res_3_copy_load = load i16 %res_3_copy" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv1d.h:46]   --->   Operation 73 'load' 'res_3_copy_load' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 74 [1/1] (0.00ns)   --->   "%res_4_copy_load = load i16 %res_4_copy" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv1d.h:46]   --->   Operation 74 'load' 'res_4_copy_load' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 75 [1/1] (0.00ns)   --->   "%res_5_copy_load = load i16 %res_5_copy" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv1d.h:46]   --->   Operation 75 'load' 'res_5_copy_load' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 76 [1/1] (0.00ns)   --->   "%res_6_copy_load = load i16 %res_6_copy" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv1d.h:46]   --->   Operation 76 'load' 'res_6_copy_load' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 77 [1/1] (0.00ns)   --->   "%res_7_copy_load = load i16 %res_7_copy" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv1d.h:46]   --->   Operation 77 'load' 'res_7_copy_load' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 78 [1/1] (0.00ns)   --->   "%res_8_copy_load = load i16 %res_8_copy" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv1d.h:46]   --->   Operation 78 'load' 'res_8_copy_load' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 79 [1/1] (0.00ns)   --->   "%res_9_copy_load = load i16 %res_9_copy" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv1d.h:46]   --->   Operation 79 'load' 'res_9_copy_load' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 80 [1/1] (0.00ns)   --->   "%res_10_copy_load = load i16 %res_10_copy" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv1d.h:46]   --->   Operation 80 'load' 'res_10_copy_load' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 81 [1/1] (0.00ns)   --->   "%res_11_copy_load = load i16 %res_11_copy" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv1d.h:46]   --->   Operation 81 'load' 'res_11_copy_load' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 82 [1/1] (0.00ns)   --->   "%res_12_copy_load = load i16 %res_12_copy" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv1d.h:46]   --->   Operation 82 'load' 'res_12_copy_load' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 83 [1/1] (0.00ns)   --->   "%res_13_copy_load = load i16 %res_13_copy" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv1d.h:46]   --->   Operation 83 'load' 'res_13_copy_load' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 84 [1/1] (0.00ns)   --->   "%res_14_copy_load = load i16 %res_14_copy" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv1d.h:46]   --->   Operation 84 'load' 'res_14_copy_load' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 85 [1/1] (0.00ns)   --->   "%res_15_copy_load = load i16 %res_15_copy" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv1d.h:46]   --->   Operation 85 'load' 'res_15_copy_load' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 86 [1/1] (0.00ns)   --->   "%res_16_copy_load = load i16 %res_16_copy" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv1d.h:46]   --->   Operation 86 'load' 'res_16_copy_load' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 87 [1/1] (0.00ns)   --->   "%res_17_copy_load = load i16 %res_17_copy" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv1d.h:46]   --->   Operation 87 'load' 'res_17_copy_load' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 88 [1/1] (0.00ns)   --->   "%res_18_copy_load = load i16 %res_18_copy" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv1d.h:46]   --->   Operation 88 'load' 'res_18_copy_load' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 89 [1/1] (0.00ns)   --->   "%res_19_copy_load = load i16 %res_19_copy" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv1d.h:46]   --->   Operation 89 'load' 'res_19_copy_load' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 90 [1/1] (0.00ns)   --->   "%res_20_copy_load = load i16 %res_20_copy" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv1d.h:46]   --->   Operation 90 'load' 'res_20_copy_load' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 91 [1/1] (0.00ns)   --->   "%res_21_copy_load = load i16 %res_21_copy" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv1d.h:46]   --->   Operation 91 'load' 'res_21_copy_load' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 92 [1/1] (0.00ns)   --->   "%res_22_copy_load = load i16 %res_22_copy" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv1d.h:46]   --->   Operation 92 'load' 'res_22_copy_load' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 93 [1/1] (0.00ns)   --->   "%res_23_copy_load = load i16 %res_23_copy" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv1d.h:46]   --->   Operation 93 'load' 'res_23_copy_load' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 94 [1/1] (0.00ns)   --->   "%res_24_copy_load = load i16 %res_24_copy" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv1d.h:46]   --->   Operation 94 'load' 'res_24_copy_load' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 95 [1/1] (0.00ns)   --->   "%res_25_copy_load = load i16 %res_25_copy" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv1d.h:46]   --->   Operation 95 'load' 'res_25_copy_load' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 96 [1/1] (0.00ns)   --->   "%res_26_copy_load = load i16 %res_26_copy" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv1d.h:46]   --->   Operation 96 'load' 'res_26_copy_load' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 97 [1/1] (0.00ns)   --->   "%res_27_copy_load = load i16 %res_27_copy" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv1d.h:46]   --->   Operation 97 'load' 'res_27_copy_load' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 98 [1/1] (0.00ns)   --->   "%res_28_copy_load = load i16 %res_28_copy" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv1d.h:46]   --->   Operation 98 'load' 'res_28_copy_load' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 99 [1/1] (0.00ns)   --->   "%res_29_copy_load = load i16 %res_29_copy" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv1d.h:46]   --->   Operation 99 'load' 'res_29_copy_load' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 100 [1/1] (0.00ns)   --->   "%res_30_copy_load = load i16 %res_30_copy" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv1d.h:46]   --->   Operation 100 'load' 'res_30_copy_load' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 101 [1/1] (0.00ns)   --->   "%res_31_copy_load = load i16 %res_31_copy" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv1d.h:46]   --->   Operation 101 'load' 'res_31_copy_load' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 102 [1/1] (0.00ns)   --->   "%mrv = insertvalue i512 <undef>, i16 %res_0_copy_load" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv1d.h:46]   --->   Operation 102 'insertvalue' 'mrv' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 103 [1/1] (0.00ns)   --->   "%mrv_1 = insertvalue i512 %mrv, i16 %res_1_copy_load" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv1d.h:46]   --->   Operation 103 'insertvalue' 'mrv_1' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 104 [1/1] (0.00ns)   --->   "%mrv_2 = insertvalue i512 %mrv_1, i16 %res_2_copy_load" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv1d.h:46]   --->   Operation 104 'insertvalue' 'mrv_2' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 105 [1/1] (0.00ns)   --->   "%mrv_3 = insertvalue i512 %mrv_2, i16 %res_3_copy_load" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv1d.h:46]   --->   Operation 105 'insertvalue' 'mrv_3' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 106 [1/1] (0.00ns)   --->   "%mrv_4 = insertvalue i512 %mrv_3, i16 %res_4_copy_load" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv1d.h:46]   --->   Operation 106 'insertvalue' 'mrv_4' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 107 [1/1] (0.00ns)   --->   "%mrv_5 = insertvalue i512 %mrv_4, i16 %res_5_copy_load" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv1d.h:46]   --->   Operation 107 'insertvalue' 'mrv_5' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 108 [1/1] (0.00ns)   --->   "%mrv_6 = insertvalue i512 %mrv_5, i16 %res_6_copy_load" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv1d.h:46]   --->   Operation 108 'insertvalue' 'mrv_6' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 109 [1/1] (0.00ns)   --->   "%mrv_7 = insertvalue i512 %mrv_6, i16 %res_7_copy_load" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv1d.h:46]   --->   Operation 109 'insertvalue' 'mrv_7' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 110 [1/1] (0.00ns)   --->   "%mrv_8 = insertvalue i512 %mrv_7, i16 %res_8_copy_load" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv1d.h:46]   --->   Operation 110 'insertvalue' 'mrv_8' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 111 [1/1] (0.00ns)   --->   "%mrv_9 = insertvalue i512 %mrv_8, i16 %res_9_copy_load" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv1d.h:46]   --->   Operation 111 'insertvalue' 'mrv_9' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 112 [1/1] (0.00ns)   --->   "%mrv_10 = insertvalue i512 %mrv_9, i16 %res_10_copy_load" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv1d.h:46]   --->   Operation 112 'insertvalue' 'mrv_10' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 113 [1/1] (0.00ns)   --->   "%mrv_11 = insertvalue i512 %mrv_10, i16 %res_11_copy_load" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv1d.h:46]   --->   Operation 113 'insertvalue' 'mrv_11' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 114 [1/1] (0.00ns)   --->   "%mrv_12 = insertvalue i512 %mrv_11, i16 %res_12_copy_load" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv1d.h:46]   --->   Operation 114 'insertvalue' 'mrv_12' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 115 [1/1] (0.00ns)   --->   "%mrv_13 = insertvalue i512 %mrv_12, i16 %res_13_copy_load" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv1d.h:46]   --->   Operation 115 'insertvalue' 'mrv_13' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 116 [1/1] (0.00ns)   --->   "%mrv_14 = insertvalue i512 %mrv_13, i16 %res_14_copy_load" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv1d.h:46]   --->   Operation 116 'insertvalue' 'mrv_14' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 117 [1/1] (0.00ns)   --->   "%mrv_15 = insertvalue i512 %mrv_14, i16 %res_15_copy_load" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv1d.h:46]   --->   Operation 117 'insertvalue' 'mrv_15' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 118 [1/1] (0.00ns)   --->   "%mrv_16 = insertvalue i512 %mrv_15, i16 %res_16_copy_load" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv1d.h:46]   --->   Operation 118 'insertvalue' 'mrv_16' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 119 [1/1] (0.00ns)   --->   "%mrv_17 = insertvalue i512 %mrv_16, i16 %res_17_copy_load" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv1d.h:46]   --->   Operation 119 'insertvalue' 'mrv_17' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 120 [1/1] (0.00ns)   --->   "%mrv_18 = insertvalue i512 %mrv_17, i16 %res_18_copy_load" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv1d.h:46]   --->   Operation 120 'insertvalue' 'mrv_18' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 121 [1/1] (0.00ns)   --->   "%mrv_19 = insertvalue i512 %mrv_18, i16 %res_19_copy_load" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv1d.h:46]   --->   Operation 121 'insertvalue' 'mrv_19' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 122 [1/1] (0.00ns)   --->   "%mrv_20 = insertvalue i512 %mrv_19, i16 %res_20_copy_load" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv1d.h:46]   --->   Operation 122 'insertvalue' 'mrv_20' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 123 [1/1] (0.00ns)   --->   "%mrv_21 = insertvalue i512 %mrv_20, i16 %res_21_copy_load" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv1d.h:46]   --->   Operation 123 'insertvalue' 'mrv_21' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 124 [1/1] (0.00ns)   --->   "%mrv_22 = insertvalue i512 %mrv_21, i16 %res_22_copy_load" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv1d.h:46]   --->   Operation 124 'insertvalue' 'mrv_22' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 125 [1/1] (0.00ns)   --->   "%mrv_23 = insertvalue i512 %mrv_22, i16 %res_23_copy_load" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv1d.h:46]   --->   Operation 125 'insertvalue' 'mrv_23' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 126 [1/1] (0.00ns)   --->   "%mrv_24 = insertvalue i512 %mrv_23, i16 %res_24_copy_load" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv1d.h:46]   --->   Operation 126 'insertvalue' 'mrv_24' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 127 [1/1] (0.00ns)   --->   "%mrv_25 = insertvalue i512 %mrv_24, i16 %res_25_copy_load" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv1d.h:46]   --->   Operation 127 'insertvalue' 'mrv_25' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 128 [1/1] (0.00ns)   --->   "%mrv_26 = insertvalue i512 %mrv_25, i16 %res_26_copy_load" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv1d.h:46]   --->   Operation 128 'insertvalue' 'mrv_26' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 129 [1/1] (0.00ns)   --->   "%mrv_27 = insertvalue i512 %mrv_26, i16 %res_27_copy_load" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv1d.h:46]   --->   Operation 129 'insertvalue' 'mrv_27' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 130 [1/1] (0.00ns)   --->   "%mrv_28 = insertvalue i512 %mrv_27, i16 %res_28_copy_load" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv1d.h:46]   --->   Operation 130 'insertvalue' 'mrv_28' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 131 [1/1] (0.00ns)   --->   "%mrv_29 = insertvalue i512 %mrv_28, i16 %res_29_copy_load" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv1d.h:46]   --->   Operation 131 'insertvalue' 'mrv_29' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 132 [1/1] (0.00ns)   --->   "%mrv_30 = insertvalue i512 %mrv_29, i16 %res_30_copy_load" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv1d.h:46]   --->   Operation 132 'insertvalue' 'mrv_30' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 133 [1/1] (0.00ns)   --->   "%mrv_31 = insertvalue i512 %mrv_30, i16 %res_31_copy_load" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv1d.h:46]   --->   Operation 133 'insertvalue' 'mrv_31' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 134 [1/1] (0.00ns)   --->   "%ret_ln46 = ret i512 %mrv_31" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv1d.h:46]   --->   Operation 134 'ret' 'ret_ln46' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 3.33ns, clock uncertainty: 0.9ns.
+
+ <State 1>: 2.06ns
+The critical path consists of the following:
+	wire read operation ('p_read3163', /home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv1d.h:42) on port 'p_read31' (/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv1d.h:42) [33]  (1.22 ns)
+	'call' operation ('call_ln42', /home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv1d.h:42) to 'conv_1d_latency_cl<ap_fixed<16, 6, 5, 3, 0>, ap_fixed<16, 6, 5, 3, 0>, config6>' [97]  (0.84 ns)
+
+ <State 2>: 2.2ns
+The critical path consists of the following:
+	'call' operation ('call_ln42', /home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv1d.h:42) to 'conv_1d_latency_cl<ap_fixed<16, 6, 5, 3, 0>, ap_fixed<16, 6, 5, 3, 0>, config6>' [97]  (2.2 ns)
+
+ <State 3>: 0ns
+The critical path consists of the following:
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

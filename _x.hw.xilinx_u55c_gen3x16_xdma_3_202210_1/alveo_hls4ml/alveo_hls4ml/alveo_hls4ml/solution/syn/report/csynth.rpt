@@ -1,0 +1,1217 @@
+
+
+================================================================
+== Synthesis Summary Report of 'alveo_hls4ml'
+================================================================
++ General Information: 
+    * Date:           Sun Mar  3 21:39:42 2024
+    * Version:        2022.2 (Build 3670227 on Oct 13 2022)
+    * Project:        alveo_hls4ml
+    * Solution:       solution (Vitis Kernel Flow Target)
+    * Product family: virtexuplus
+    * Target device:  xcu55c-fsvh2892-2L-e
+    
+
++ Performance & Resource Estimates: 
+    
+    PS: '+' for module; 'o' for loop; '*' for dataflow
+    +-------------------------------------------------------------------------------+--------+-------+---------+-----------+----------+---------+------+----------+---------+----+-------------+------------+-----+
+    |                                    Modules                                    |  Issue |       | Latency |  Latency  | Iteration|         | Trip |          |         |    |             |            |     |
+    |                                    & Loops                                    |  Type  | Slack | (cycles)|    (ns)   |  Latency | Interval| Count| Pipelined|  BRAM   | DSP|      FF     |     LUT    | URAM|
+    +-------------------------------------------------------------------------------+--------+-------+---------+-----------+----------+---------+------+----------+---------+----+-------------+------------+-----+
+    |+ alveo_hls4ml*                                                                |  Timing|  -0.00|   131266|  4.375e+05|         -|   114733|     -|  dataflow|  72 (1%)|   -|   32178 (1%)|  51832 (3%)|    -|
+    | + read_input                                                                  |  Timing|  -0.00|     8266|  2.755e+04|         -|     8266|     -|        no|        -|   -|   1077 (~0%)|   600 (~0%)|    -|
+    |  + read_input_Pipeline_VITIS_LOOP_8_1                                         |  Timing|  -0.00|     8195|  2.731e+04|         -|     8195|     -|        no|        -|   -|    945 (~0%)|   117 (~0%)|    -|
+    |   o VITIS_LOOP_8_1                                                            |       -|   2.43|     8193|  2.731e+04|         3|        1|  8192|       yes|        -|   -|            -|           -|    -|
+    | + run_inference                                                               |  Timing|  -0.00|   114732|  3.824e+05|         -|   114732|     -|        no|        -|   -|  21145 (~0%)|  33808 (2%)|    -|
+    |  o VITIS_LOOP_17_1                                                            |       -|   2.43|   114731|  3.824e+05|        58|        -|  8192|        no|        -|   -|            -|           -|    -|
+    |   + dataflow_in_loop_VITIS_LOOP_17_1*                                         |  Timing|  -0.00|       55|    183.315|         -|       14|     -|  dataflow|        -|   -|  20912 (~0%)|  33741 (2%)|    -|
+    |    + myproject*                                                               |  Timing|  -0.00|       55|    183.315|         -|       14|     -|  dataflow|        -|   -|  20912 (~0%)|  33741 (2%)|    -|
+    |     + conv_1d_cl_ap_fixed_16_6_5_3_0_ap_fixed_16_6_5_3_0_config2_2            |       -|   0.27|       13|     43.329|         -|       13|     -|        no|        -|   -|   1363 (~0%)|   510 (~0%)|    -|
+    |      + conv_1d_latency_cl_ap_fixed_16_6_5_3_0_ap_fixed_16_6_5_3_0_config2_s   |      II|   0.27|        9|     29.997|         -|        8|     -|    rewind|        -|   -|    204 (~0%)|   459 (~0%)|    -|
+    |       o PartitionLoop                                                         |       -|   2.43|        8|     26.664|         2|        1|     8|       yes|        -|   -|            -|           -|    -|
+    |     + relu_ap_fixed_16_6_5_3_0_ap_ufixed_6_0_4_0_0_relu_config4_s             |      II|   0.01|        1|      3.333|         -|        1|     -|       yes|        -|   -|   1923 (~0%)|  5327 (~0%)|    -|
+    |     + pooling1d_cl_ap_ufixed_6_0_4_0_0_ap_fixed_16_6_5_3_0_config5_s          |       -|   0.30|        0|      0.000|         -|        1|     -|       yes|        -|   -|    194 (~0%)|   811 (~0%)|    -|
+    |     + conv_1d_cl_ap_fixed_16_6_5_3_0_ap_fixed_16_6_5_3_0_config6_s            |       -|   0.18|        8|     26.664|         -|        8|     -|        no|        -|   -|   1287 (~0%)|  3051 (~0%)|    -|
+    |      + conv_1d_latency_cl_ap_fixed_16_6_5_3_0_ap_fixed_16_6_5_3_0_config6_s   |      II|   0.18|        6|     19.998|         -|        4|     -|    rewind|        -|   -|    770 (~0%)|  3020 (~0%)|    -|
+    |       o PartitionLoop                                                         |       -|   2.43|        5|     16.665|         3|        1|     4|       yes|        -|   -|            -|           -|    -|
+    |     + relu_ap_fixed_16_6_5_3_0_ap_ufixed_6_0_4_0_0_relu_config8_s             |      II|   0.01|        1|      3.333|         -|        1|     -|       yes|        -|   -|    963 (~0%)|  2671 (~0%)|    -|
+    |     + pooling1d_cl_ap_ufixed_6_0_4_0_0_ap_fixed_16_6_5_3_0_config9_s          |       -|   0.30|        0|      0.000|         -|        1|     -|       yes|        -|   -|     98 (~0%)|   411 (~0%)|    -|
+    |     + conv_1d_cl_ap_fixed_16_6_5_3_0_ap_fixed_16_6_5_3_0_config10_s           |       -|   0.15|        7|     23.331|         -|        7|     -|        no|        -|   -|    695 (~0%)|  1393 (~0%)|    -|
+    |      + conv_1d_latency_cl_ap_fixed_16_6_5_3_0_ap_fixed_16_6_5_3_0_config10_s  |      II|   0.15|        4|     13.332|         -|        2|     -|    rewind|        -|   -|    305 (~0%)|  1356 (~0%)|    -|
+    |       o PartitionLoop                                                         |       -|   2.43|        3|      9.999|         3|        1|     2|       yes|        -|   -|            -|           -|    -|
+    |     + relu_ap_fixed_16_6_5_3_0_ap_ufixed_6_0_4_0_0_relu_config12_s            |      II|   0.01|        1|      3.333|         -|        1|     -|       yes|        -|   -|    723 (~0%)|  2007 (~0%)|    -|
+    |     + pooling1d_cl_ap_ufixed_6_0_4_0_0_ap_fixed_16_6_5_3_0_config13_s         |       -|   0.30|        0|      0.000|         -|        1|     -|       yes|        -|   -|     74 (~0%)|   311 (~0%)|    -|
+    |     + dense_latency_ap_fixed_16_6_5_3_0_ap_fixed_16_6_5_3_0_config15_s        |       -|   0.16|        2|      6.666|         -|        1|     -|       yes|        -|   -|    320 (~0%)|   599 (~0%)|    -|
+    |     + normalize_ap_fixed_16_6_5_3_0_ap_fixed_16_6_5_3_0_config17_s            |       -|   0.37|        0|      0.000|         -|        1|     -|       yes|        -|   -|    162 (~0%)|   431 (~0%)|    -|
+    |     + relu_ap_fixed_16_6_5_3_0_ap_ufixed_6_0_4_0_0_relu_config18_s            |      II|   0.01|        1|      3.333|         -|        1|     -|       yes|        -|   -|    303 (~0%)|   843 (~0%)|    -|
+    |     + dense_latency_ap_ufixed_6_0_4_0_0_ap_fixed_16_6_5_3_0_config19_s        |       -|   0.20|        2|      6.666|         -|        1|     -|       yes|        -|   -|    276 (~0%)|   517 (~0%)|    -|
+    |     + normalize_ap_fixed_16_6_5_3_0_ap_fixed_16_6_5_3_0_config21_s            |       -|   0.37|        0|      0.000|         -|        1|     -|       yes|        -|   -|    258 (~0%)|   683 (~0%)|    -|
+    |     + relu_ap_fixed_16_6_5_3_0_ap_ufixed_6_0_4_0_0_relu_config22_s            |      II|   0.01|        1|      3.333|         -|        1|     -|       yes|        -|   -|    483 (~0%)|  1341 (~0%)|    -|
+    |     + dense_latency_ap_ufixed_6_0_4_0_0_ap_fixed_16_6_5_3_0_config23_s        |       -|   0.20|        3|      9.999|         -|        1|     -|       yes|        -|   -|    132 (~0%)|   298 (~0%)|    -|
+    | + entry_proc                                                                  |       -|   1.21|        0|      0.000|         -|        0|     -|        no|        -|   -|      2 (~0%)|    20 (~0%)|    -|
+    | + write_result                                                                |  Timing|  -0.00|     8266|  2.755e+04|         -|     8266|     -|        no|        -|   -|    634 (~0%)|  1034 (~0%)|    -|
+    |  + write_result_Pipeline_VITIS_LOOP_23_1                                      |  Timing|  -0.00|     8195|  2.731e+04|         -|     8195|     -|        no|        -|   -|    502 (~0%)|   519 (~0%)|    -|
+    |   o VITIS_LOOP_23_1                                                           |       -|   2.43|     8193|  2.731e+04|         3|        1|  8192|       yes|        -|   -|            -|           -|    -|
+    +-------------------------------------------------------------------------------+--------+-------+---------+-----------+----------+---------+------+----------+---------+----+-------------+------------+-----+
+
+
+================================================================
+== HW Interfaces
+================================================================
+* M_AXI
++-------------+------------+---------------+---------+--------+----------+-----------+--------------+--------------+-------------+-------------+
+| Interface   | Data Width | Address Width | Latency | Offset | Register | Max Widen | Max Read     | Max Write    | Num Read    | Num Write   |
+|             | (SW->HW)   |               |         |        |          | Bitwidth  | Burst Length | Burst Length | Outstanding | Outstanding |
++-------------+------------+---------------+---------+--------+----------+-----------+--------------+--------------+-------------+-------------+
+| m_axi_gmem0 | 16 -> 512  | 64            | 64      | slave  | 0        | 512       | 16           | 16           | 16          | 16          |
+| m_axi_gmem1 | 16 -> 512  | 64            | 64      | slave  | 0        | 512       | 16           | 16           | 16          | 16          |
++-------------+------------+---------------+---------+--------+----------+-----------+--------------+--------------+-------------+-------------+
+
+* S_AXILITE Interfaces
++---------------+------------+---------------+--------+----------+
+| Interface     | Data Width | Address Width | Offset | Register |
++---------------+------------+---------------+--------+----------+
+| s_axi_control | 32         | 6             | 16     | 0        |
++---------------+------------+---------------+--------+----------+
+
+* S_AXILITE Registers
++---------------+----------+--------+-------+--------+----------------------------------+------------------------------------------------------------------------------------+
+| Interface     | Register | Offset | Width | Access | Description                      | Bit Fields                                                                         |
++---------------+----------+--------+-------+--------+----------------------------------+------------------------------------------------------------------------------------+
+| s_axi_control | CTRL     | 0x00   | 32    | RW     | Control signals                  | 0=AP_START 1=AP_DONE 2=AP_IDLE 3=AP_READY 4=AP_CONTINUE 7=AUTO_RESTART 9=INTERRUPT |
+| s_axi_control | GIER     | 0x04   | 32    | RW     | Global Interrupt Enable Register | 0=Enable                                                                           |
+| s_axi_control | IP_IER   | 0x08   | 32    | RW     | IP Interrupt Enable Register     | 0=CHAN0_INT_EN 1=CHAN1_INT_EN                                                      |
+| s_axi_control | IP_ISR   | 0x0c   | 32    | RW     | IP Interrupt Status Register     | 0=CHAN0_INT_ST 1=CHAN1_INT_ST                                                      |
+| s_axi_control | in_r_1   | 0x10   | 32    | W      | Data signal of in_r              |                                                                                    |
+| s_axi_control | in_r_2   | 0x14   | 32    | W      | Data signal of in_r              |                                                                                    |
+| s_axi_control | out_r_1  | 0x1c   | 32    | W      | Data signal of out_r             |                                                                                    |
+| s_axi_control | out_r_2  | 0x20   | 32    | W      | Data signal of out_r             |                                                                                    |
++---------------+----------+--------+-------+--------+----------------------------------+------------------------------------------------------------------------------------+
+
+* TOP LEVEL CONTROL
++-----------+---------------+-----------+
+| Interface | Type          | Ports     |
++-----------+---------------+-----------+
+| ap_clk    | clock         | ap_clk    |
+| ap_rst_n  | reset         | ap_rst_n  |
+| interrupt | interrupt     | interrupt |
+| ap_ctrl   | ap_ctrl_chain |           |
++-----------+---------------+-----------+
+
+
+================================================================
+== SW I/O Information
+================================================================
+* Top Function Arguments
++----------+-----------+---------------------------------------------+
+| Argument | Direction | Datatype                                    |
++----------+-----------+---------------------------------------------+
+| in       | in        | ap_fixed<16, 6, AP_TRN, AP_WRAP, 0> const * |
+| out      | out       | ap_fixed<16, 6, AP_TRN, AP_WRAP, 0>*        |
++----------+-----------+---------------------------------------------+
+
+* SW-to-HW Mapping
++----------+---------------+-----------+----------+
+| Argument | HW Interface  | HW Type   | HW Usage |
++----------+---------------+-----------+----------+
+| in       | m_axi_gmem0   | interface |          |
+| in       | s_axi_control | interface | offset   |
+| out      | m_axi_gmem1   | interface |          |
+| out      | s_axi_control | interface | offset   |
++----------+---------------+-----------+----------+
+
+
+================================================================
+== M_AXI Burst Information
+================================================================
+ Note: All burst requests might be further partitioned into multiple requests during RTL generation based on max_read_burst_length or max_write_burst_length settings.
+
+* Inferred Burst Summary
++--------------+-----------+--------+-------+------------------------------------------------------------+
+| HW Interface | Direction | Length | Width | Location                                                   |
++--------------+-----------+--------+-------+------------------------------------------------------------+
+| m_axi_gmem0  | read      | 2048   | 512   | /home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:8:19  |
+| m_axi_gmem1  | write     | 256    | 512   | /home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:23:20 |
++--------------+-----------+--------+-------+------------------------------------------------------------+
+
+
+================================================================
+== Bind Op Report
+================================================================
++------------------------------------------------------------------------------+-----+--------+------------------+------+--------+---------+
+| Name                                                                         | DSP | Pragma | Variable         | Op   | Impl   | Latency |
++------------------------------------------------------------------------------+-----+--------+------------------+------+--------+---------+
+| + alveo_hls4ml                                                               | 0   |        |                  |      |        |         |
+|  + read_input                                                                | 0   |        |                  |      |        |         |
+|   + read_input_Pipeline_VITIS_LOOP_8_1                                       | 0   |        |                  |      |        |         |
+|     add_ln8_fu_121_p2                                                        | -   |        | add_ln8          | add  | fabric | 0       |
+|  + run_inference                                                             | 0   |        |                  |      |        |         |
+|   + dataflow_in_loop_VITIS_LOOP_17_1                                         | 0   |        |                  |      |        |         |
+|    + myproject                                                               | 0   |        |                  |      |        |         |
+|      layer2_out_V_U                                                          | -   |        | layer2_out_V     | fifo | srl    | 0       |
+|      layer2_out_V_1_U                                                        | -   |        | layer2_out_V_1   | fifo | srl    | 0       |
+|      layer2_out_V_2_U                                                        | -   |        | layer2_out_V_2   | fifo | srl    | 0       |
+|      layer2_out_V_3_U                                                        | -   |        | layer2_out_V_3   | fifo | srl    | 0       |
+|      layer2_out_V_4_U                                                        | -   |        | layer2_out_V_4   | fifo | srl    | 0       |
+|      layer2_out_V_5_U                                                        | -   |        | layer2_out_V_5   | fifo | srl    | 0       |
+|      layer2_out_V_6_U                                                        | -   |        | layer2_out_V_6   | fifo | srl    | 0       |
+|      layer2_out_V_7_U                                                        | -   |        | layer2_out_V_7   | fifo | srl    | 0       |
+|      layer2_out_V_8_U                                                        | -   |        | layer2_out_V_8   | fifo | srl    | 0       |
+|      layer2_out_V_9_U                                                        | -   |        | layer2_out_V_9   | fifo | srl    | 0       |
+|      layer2_out_V_10_U                                                       | -   |        | layer2_out_V_10  | fifo | srl    | 0       |
+|      layer2_out_V_11_U                                                       | -   |        | layer2_out_V_11  | fifo | srl    | 0       |
+|      layer2_out_V_12_U                                                       | -   |        | layer2_out_V_12  | fifo | srl    | 0       |
+|      layer2_out_V_13_U                                                       | -   |        | layer2_out_V_13  | fifo | srl    | 0       |
+|      layer2_out_V_14_U                                                       | -   |        | layer2_out_V_14  | fifo | srl    | 0       |
+|      layer2_out_V_15_U                                                       | -   |        | layer2_out_V_15  | fifo | srl    | 0       |
+|      layer2_out_V_16_U                                                       | -   |        | layer2_out_V_16  | fifo | srl    | 0       |
+|      layer2_out_V_17_U                                                       | -   |        | layer2_out_V_17  | fifo | srl    | 0       |
+|      layer2_out_V_18_U                                                       | -   |        | layer2_out_V_18  | fifo | srl    | 0       |
+|      layer2_out_V_19_U                                                       | -   |        | layer2_out_V_19  | fifo | srl    | 0       |
+|      layer2_out_V_20_U                                                       | -   |        | layer2_out_V_20  | fifo | srl    | 0       |
+|      layer2_out_V_21_U                                                       | -   |        | layer2_out_V_21  | fifo | srl    | 0       |
+|      layer2_out_V_22_U                                                       | -   |        | layer2_out_V_22  | fifo | srl    | 0       |
+|      layer2_out_V_23_U                                                       | -   |        | layer2_out_V_23  | fifo | srl    | 0       |
+|      layer2_out_V_24_U                                                       | -   |        | layer2_out_V_24  | fifo | srl    | 0       |
+|      layer2_out_V_25_U                                                       | -   |        | layer2_out_V_25  | fifo | srl    | 0       |
+|      layer2_out_V_26_U                                                       | -   |        | layer2_out_V_26  | fifo | srl    | 0       |
+|      layer2_out_V_27_U                                                       | -   |        | layer2_out_V_27  | fifo | srl    | 0       |
+|      layer2_out_V_28_U                                                       | -   |        | layer2_out_V_28  | fifo | srl    | 0       |
+|      layer2_out_V_29_U                                                       | -   |        | layer2_out_V_29  | fifo | srl    | 0       |
+|      layer2_out_V_30_U                                                       | -   |        | layer2_out_V_30  | fifo | srl    | 0       |
+|      layer2_out_V_31_U                                                       | -   |        | layer2_out_V_31  | fifo | srl    | 0       |
+|      layer2_out_V_32_U                                                       | -   |        | layer2_out_V_32  | fifo | srl    | 0       |
+|      layer2_out_V_33_U                                                       | -   |        | layer2_out_V_33  | fifo | srl    | 0       |
+|      layer2_out_V_34_U                                                       | -   |        | layer2_out_V_34  | fifo | srl    | 0       |
+|      layer2_out_V_35_U                                                       | -   |        | layer2_out_V_35  | fifo | srl    | 0       |
+|      layer2_out_V_36_U                                                       | -   |        | layer2_out_V_36  | fifo | srl    | 0       |
+|      layer2_out_V_37_U                                                       | -   |        | layer2_out_V_37  | fifo | srl    | 0       |
+|      layer2_out_V_38_U                                                       | -   |        | layer2_out_V_38  | fifo | srl    | 0       |
+|      layer2_out_V_39_U                                                       | -   |        | layer2_out_V_39  | fifo | srl    | 0       |
+|      layer2_out_V_40_U                                                       | -   |        | layer2_out_V_40  | fifo | srl    | 0       |
+|      layer2_out_V_41_U                                                       | -   |        | layer2_out_V_41  | fifo | srl    | 0       |
+|      layer2_out_V_42_U                                                       | -   |        | layer2_out_V_42  | fifo | srl    | 0       |
+|      layer2_out_V_43_U                                                       | -   |        | layer2_out_V_43  | fifo | srl    | 0       |
+|      layer2_out_V_44_U                                                       | -   |        | layer2_out_V_44  | fifo | srl    | 0       |
+|      layer2_out_V_45_U                                                       | -   |        | layer2_out_V_45  | fifo | srl    | 0       |
+|      layer2_out_V_46_U                                                       | -   |        | layer2_out_V_46  | fifo | srl    | 0       |
+|      layer2_out_V_47_U                                                       | -   |        | layer2_out_V_47  | fifo | srl    | 0       |
+|      layer2_out_V_48_U                                                       | -   |        | layer2_out_V_48  | fifo | srl    | 0       |
+|      layer2_out_V_49_U                                                       | -   |        | layer2_out_V_49  | fifo | srl    | 0       |
+|      layer2_out_V_50_U                                                       | -   |        | layer2_out_V_50  | fifo | srl    | 0       |
+|      layer2_out_V_51_U                                                       | -   |        | layer2_out_V_51  | fifo | srl    | 0       |
+|      layer2_out_V_52_U                                                       | -   |        | layer2_out_V_52  | fifo | srl    | 0       |
+|      layer2_out_V_53_U                                                       | -   |        | layer2_out_V_53  | fifo | srl    | 0       |
+|      layer2_out_V_54_U                                                       | -   |        | layer2_out_V_54  | fifo | srl    | 0       |
+|      layer2_out_V_55_U                                                       | -   |        | layer2_out_V_55  | fifo | srl    | 0       |
+|      layer2_out_V_56_U                                                       | -   |        | layer2_out_V_56  | fifo | srl    | 0       |
+|      layer2_out_V_57_U                                                       | -   |        | layer2_out_V_57  | fifo | srl    | 0       |
+|      layer2_out_V_58_U                                                       | -   |        | layer2_out_V_58  | fifo | srl    | 0       |
+|      layer2_out_V_59_U                                                       | -   |        | layer2_out_V_59  | fifo | srl    | 0       |
+|      layer2_out_V_60_U                                                       | -   |        | layer2_out_V_60  | fifo | srl    | 0       |
+|      layer2_out_V_61_U                                                       | -   |        | layer2_out_V_61  | fifo | srl    | 0       |
+|      layer2_out_V_62_U                                                       | -   |        | layer2_out_V_62  | fifo | srl    | 0       |
+|      layer2_out_V_63_U                                                       | -   |        | layer2_out_V_63  | fifo | srl    | 0       |
+|      layer4_out_V_U                                                          | -   |        | layer4_out_V     | fifo | srl    | 0       |
+|      layer4_out_V_1_U                                                        | -   |        | layer4_out_V_1   | fifo | srl    | 0       |
+|      layer4_out_V_2_U                                                        | -   |        | layer4_out_V_2   | fifo | srl    | 0       |
+|      layer4_out_V_3_U                                                        | -   |        | layer4_out_V_3   | fifo | srl    | 0       |
+|      layer4_out_V_4_U                                                        | -   |        | layer4_out_V_4   | fifo | srl    | 0       |
+|      layer4_out_V_5_U                                                        | -   |        | layer4_out_V_5   | fifo | srl    | 0       |
+|      layer4_out_V_6_U                                                        | -   |        | layer4_out_V_6   | fifo | srl    | 0       |
+|      layer4_out_V_7_U                                                        | -   |        | layer4_out_V_7   | fifo | srl    | 0       |
+|      layer4_out_V_8_U                                                        | -   |        | layer4_out_V_8   | fifo | srl    | 0       |
+|      layer4_out_V_9_U                                                        | -   |        | layer4_out_V_9   | fifo | srl    | 0       |
+|      layer4_out_V_10_U                                                       | -   |        | layer4_out_V_10  | fifo | srl    | 0       |
+|      layer4_out_V_11_U                                                       | -   |        | layer4_out_V_11  | fifo | srl    | 0       |
+|      layer4_out_V_12_U                                                       | -   |        | layer4_out_V_12  | fifo | srl    | 0       |
+|      layer4_out_V_13_U                                                       | -   |        | layer4_out_V_13  | fifo | srl    | 0       |
+|      layer4_out_V_14_U                                                       | -   |        | layer4_out_V_14  | fifo | srl    | 0       |
+|      layer4_out_V_15_U                                                       | -   |        | layer4_out_V_15  | fifo | srl    | 0       |
+|      layer4_out_V_16_U                                                       | -   |        | layer4_out_V_16  | fifo | srl    | 0       |
+|      layer4_out_V_17_U                                                       | -   |        | layer4_out_V_17  | fifo | srl    | 0       |
+|      layer4_out_V_18_U                                                       | -   |        | layer4_out_V_18  | fifo | srl    | 0       |
+|      layer4_out_V_19_U                                                       | -   |        | layer4_out_V_19  | fifo | srl    | 0       |
+|      layer4_out_V_20_U                                                       | -   |        | layer4_out_V_20  | fifo | srl    | 0       |
+|      layer4_out_V_21_U                                                       | -   |        | layer4_out_V_21  | fifo | srl    | 0       |
+|      layer4_out_V_22_U                                                       | -   |        | layer4_out_V_22  | fifo | srl    | 0       |
+|      layer4_out_V_23_U                                                       | -   |        | layer4_out_V_23  | fifo | srl    | 0       |
+|      layer4_out_V_24_U                                                       | -   |        | layer4_out_V_24  | fifo | srl    | 0       |
+|      layer4_out_V_25_U                                                       | -   |        | layer4_out_V_25  | fifo | srl    | 0       |
+|      layer4_out_V_26_U                                                       | -   |        | layer4_out_V_26  | fifo | srl    | 0       |
+|      layer4_out_V_27_U                                                       | -   |        | layer4_out_V_27  | fifo | srl    | 0       |
+|      layer4_out_V_28_U                                                       | -   |        | layer4_out_V_28  | fifo | srl    | 0       |
+|      layer4_out_V_29_U                                                       | -   |        | layer4_out_V_29  | fifo | srl    | 0       |
+|      layer4_out_V_30_U                                                       | -   |        | layer4_out_V_30  | fifo | srl    | 0       |
+|      layer4_out_V_31_U                                                       | -   |        | layer4_out_V_31  | fifo | srl    | 0       |
+|      layer4_out_V_32_U                                                       | -   |        | layer4_out_V_32  | fifo | srl    | 0       |
+|      layer4_out_V_33_U                                                       | -   |        | layer4_out_V_33  | fifo | srl    | 0       |
+|      layer4_out_V_34_U                                                       | -   |        | layer4_out_V_34  | fifo | srl    | 0       |
+|      layer4_out_V_35_U                                                       | -   |        | layer4_out_V_35  | fifo | srl    | 0       |
+|      layer4_out_V_36_U                                                       | -   |        | layer4_out_V_36  | fifo | srl    | 0       |
+|      layer4_out_V_37_U                                                       | -   |        | layer4_out_V_37  | fifo | srl    | 0       |
+|      layer4_out_V_38_U                                                       | -   |        | layer4_out_V_38  | fifo | srl    | 0       |
+|      layer4_out_V_39_U                                                       | -   |        | layer4_out_V_39  | fifo | srl    | 0       |
+|      layer4_out_V_40_U                                                       | -   |        | layer4_out_V_40  | fifo | srl    | 0       |
+|      layer4_out_V_41_U                                                       | -   |        | layer4_out_V_41  | fifo | srl    | 0       |
+|      layer4_out_V_42_U                                                       | -   |        | layer4_out_V_42  | fifo | srl    | 0       |
+|      layer4_out_V_43_U                                                       | -   |        | layer4_out_V_43  | fifo | srl    | 0       |
+|      layer4_out_V_44_U                                                       | -   |        | layer4_out_V_44  | fifo | srl    | 0       |
+|      layer4_out_V_45_U                                                       | -   |        | layer4_out_V_45  | fifo | srl    | 0       |
+|      layer4_out_V_46_U                                                       | -   |        | layer4_out_V_46  | fifo | srl    | 0       |
+|      layer4_out_V_47_U                                                       | -   |        | layer4_out_V_47  | fifo | srl    | 0       |
+|      layer4_out_V_48_U                                                       | -   |        | layer4_out_V_48  | fifo | srl    | 0       |
+|      layer4_out_V_49_U                                                       | -   |        | layer4_out_V_49  | fifo | srl    | 0       |
+|      layer4_out_V_50_U                                                       | -   |        | layer4_out_V_50  | fifo | srl    | 0       |
+|      layer4_out_V_51_U                                                       | -   |        | layer4_out_V_51  | fifo | srl    | 0       |
+|      layer4_out_V_52_U                                                       | -   |        | layer4_out_V_52  | fifo | srl    | 0       |
+|      layer4_out_V_53_U                                                       | -   |        | layer4_out_V_53  | fifo | srl    | 0       |
+|      layer4_out_V_54_U                                                       | -   |        | layer4_out_V_54  | fifo | srl    | 0       |
+|      layer4_out_V_55_U                                                       | -   |        | layer4_out_V_55  | fifo | srl    | 0       |
+|      layer4_out_V_56_U                                                       | -   |        | layer4_out_V_56  | fifo | srl    | 0       |
+|      layer4_out_V_57_U                                                       | -   |        | layer4_out_V_57  | fifo | srl    | 0       |
+|      layer4_out_V_58_U                                                       | -   |        | layer4_out_V_58  | fifo | srl    | 0       |
+|      layer4_out_V_59_U                                                       | -   |        | layer4_out_V_59  | fifo | srl    | 0       |
+|      layer4_out_V_60_U                                                       | -   |        | layer4_out_V_60  | fifo | srl    | 0       |
+|      layer4_out_V_61_U                                                       | -   |        | layer4_out_V_61  | fifo | srl    | 0       |
+|      layer4_out_V_62_U                                                       | -   |        | layer4_out_V_62  | fifo | srl    | 0       |
+|      layer4_out_V_63_U                                                       | -   |        | layer4_out_V_63  | fifo | srl    | 0       |
+|      layer5_out_V_U                                                          | -   |        | layer5_out_V     | fifo | srl    | 0       |
+|      layer5_out_V_1_U                                                        | -   |        | layer5_out_V_1   | fifo | srl    | 0       |
+|      layer5_out_V_2_U                                                        | -   |        | layer5_out_V_2   | fifo | srl    | 0       |
+|      layer5_out_V_3_U                                                        | -   |        | layer5_out_V_3   | fifo | srl    | 0       |
+|      layer5_out_V_4_U                                                        | -   |        | layer5_out_V_4   | fifo | srl    | 0       |
+|      layer5_out_V_5_U                                                        | -   |        | layer5_out_V_5   | fifo | srl    | 0       |
+|      layer5_out_V_6_U                                                        | -   |        | layer5_out_V_6   | fifo | srl    | 0       |
+|      layer5_out_V_7_U                                                        | -   |        | layer5_out_V_7   | fifo | srl    | 0       |
+|      layer5_out_V_8_U                                                        | -   |        | layer5_out_V_8   | fifo | srl    | 0       |
+|      layer5_out_V_9_U                                                        | -   |        | layer5_out_V_9   | fifo | srl    | 0       |
+|      layer5_out_V_10_U                                                       | -   |        | layer5_out_V_10  | fifo | srl    | 0       |
+|      layer5_out_V_11_U                                                       | -   |        | layer5_out_V_11  | fifo | srl    | 0       |
+|      layer5_out_V_12_U                                                       | -   |        | layer5_out_V_12  | fifo | srl    | 0       |
+|      layer5_out_V_13_U                                                       | -   |        | layer5_out_V_13  | fifo | srl    | 0       |
+|      layer5_out_V_14_U                                                       | -   |        | layer5_out_V_14  | fifo | srl    | 0       |
+|      layer5_out_V_15_U                                                       | -   |        | layer5_out_V_15  | fifo | srl    | 0       |
+|      layer5_out_V_16_U                                                       | -   |        | layer5_out_V_16  | fifo | srl    | 0       |
+|      layer5_out_V_17_U                                                       | -   |        | layer5_out_V_17  | fifo | srl    | 0       |
+|      layer5_out_V_18_U                                                       | -   |        | layer5_out_V_18  | fifo | srl    | 0       |
+|      layer5_out_V_19_U                                                       | -   |        | layer5_out_V_19  | fifo | srl    | 0       |
+|      layer5_out_V_20_U                                                       | -   |        | layer5_out_V_20  | fifo | srl    | 0       |
+|      layer5_out_V_21_U                                                       | -   |        | layer5_out_V_21  | fifo | srl    | 0       |
+|      layer5_out_V_22_U                                                       | -   |        | layer5_out_V_22  | fifo | srl    | 0       |
+|      layer5_out_V_23_U                                                       | -   |        | layer5_out_V_23  | fifo | srl    | 0       |
+|      layer5_out_V_24_U                                                       | -   |        | layer5_out_V_24  | fifo | srl    | 0       |
+|      layer5_out_V_25_U                                                       | -   |        | layer5_out_V_25  | fifo | srl    | 0       |
+|      layer5_out_V_26_U                                                       | -   |        | layer5_out_V_26  | fifo | srl    | 0       |
+|      layer5_out_V_27_U                                                       | -   |        | layer5_out_V_27  | fifo | srl    | 0       |
+|      layer5_out_V_28_U                                                       | -   |        | layer5_out_V_28  | fifo | srl    | 0       |
+|      layer5_out_V_29_U                                                       | -   |        | layer5_out_V_29  | fifo | srl    | 0       |
+|      layer5_out_V_30_U                                                       | -   |        | layer5_out_V_30  | fifo | srl    | 0       |
+|      layer5_out_V_31_U                                                       | -   |        | layer5_out_V_31  | fifo | srl    | 0       |
+|      layer6_out_V_U                                                          | -   |        | layer6_out_V     | fifo | srl    | 0       |
+|      layer6_out_V_1_U                                                        | -   |        | layer6_out_V_1   | fifo | srl    | 0       |
+|      layer6_out_V_2_U                                                        | -   |        | layer6_out_V_2   | fifo | srl    | 0       |
+|      layer6_out_V_3_U                                                        | -   |        | layer6_out_V_3   | fifo | srl    | 0       |
+|      layer6_out_V_4_U                                                        | -   |        | layer6_out_V_4   | fifo | srl    | 0       |
+|      layer6_out_V_5_U                                                        | -   |        | layer6_out_V_5   | fifo | srl    | 0       |
+|      layer6_out_V_6_U                                                        | -   |        | layer6_out_V_6   | fifo | srl    | 0       |
+|      layer6_out_V_7_U                                                        | -   |        | layer6_out_V_7   | fifo | srl    | 0       |
+|      layer6_out_V_8_U                                                        | -   |        | layer6_out_V_8   | fifo | srl    | 0       |
+|      layer6_out_V_9_U                                                        | -   |        | layer6_out_V_9   | fifo | srl    | 0       |
+|      layer6_out_V_10_U                                                       | -   |        | layer6_out_V_10  | fifo | srl    | 0       |
+|      layer6_out_V_11_U                                                       | -   |        | layer6_out_V_11  | fifo | srl    | 0       |
+|      layer6_out_V_12_U                                                       | -   |        | layer6_out_V_12  | fifo | srl    | 0       |
+|      layer6_out_V_13_U                                                       | -   |        | layer6_out_V_13  | fifo | srl    | 0       |
+|      layer6_out_V_14_U                                                       | -   |        | layer6_out_V_14  | fifo | srl    | 0       |
+|      layer6_out_V_15_U                                                       | -   |        | layer6_out_V_15  | fifo | srl    | 0       |
+|      layer6_out_V_16_U                                                       | -   |        | layer6_out_V_16  | fifo | srl    | 0       |
+|      layer6_out_V_17_U                                                       | -   |        | layer6_out_V_17  | fifo | srl    | 0       |
+|      layer6_out_V_18_U                                                       | -   |        | layer6_out_V_18  | fifo | srl    | 0       |
+|      layer6_out_V_19_U                                                       | -   |        | layer6_out_V_19  | fifo | srl    | 0       |
+|      layer6_out_V_20_U                                                       | -   |        | layer6_out_V_20  | fifo | srl    | 0       |
+|      layer6_out_V_21_U                                                       | -   |        | layer6_out_V_21  | fifo | srl    | 0       |
+|      layer6_out_V_22_U                                                       | -   |        | layer6_out_V_22  | fifo | srl    | 0       |
+|      layer6_out_V_23_U                                                       | -   |        | layer6_out_V_23  | fifo | srl    | 0       |
+|      layer6_out_V_24_U                                                       | -   |        | layer6_out_V_24  | fifo | srl    | 0       |
+|      layer6_out_V_25_U                                                       | -   |        | layer6_out_V_25  | fifo | srl    | 0       |
+|      layer6_out_V_26_U                                                       | -   |        | layer6_out_V_26  | fifo | srl    | 0       |
+|      layer6_out_V_27_U                                                       | -   |        | layer6_out_V_27  | fifo | srl    | 0       |
+|      layer6_out_V_28_U                                                       | -   |        | layer6_out_V_28  | fifo | srl    | 0       |
+|      layer6_out_V_29_U                                                       | -   |        | layer6_out_V_29  | fifo | srl    | 0       |
+|      layer6_out_V_30_U                                                       | -   |        | layer6_out_V_30  | fifo | srl    | 0       |
+|      layer6_out_V_31_U                                                       | -   |        | layer6_out_V_31  | fifo | srl    | 0       |
+|      layer8_out_V_U                                                          | -   |        | layer8_out_V     | fifo | srl    | 0       |
+|      layer8_out_V_1_U                                                        | -   |        | layer8_out_V_1   | fifo | srl    | 0       |
+|      layer8_out_V_2_U                                                        | -   |        | layer8_out_V_2   | fifo | srl    | 0       |
+|      layer8_out_V_3_U                                                        | -   |        | layer8_out_V_3   | fifo | srl    | 0       |
+|      layer8_out_V_4_U                                                        | -   |        | layer8_out_V_4   | fifo | srl    | 0       |
+|      layer8_out_V_5_U                                                        | -   |        | layer8_out_V_5   | fifo | srl    | 0       |
+|      layer8_out_V_6_U                                                        | -   |        | layer8_out_V_6   | fifo | srl    | 0       |
+|      layer8_out_V_7_U                                                        | -   |        | layer8_out_V_7   | fifo | srl    | 0       |
+|      layer8_out_V_8_U                                                        | -   |        | layer8_out_V_8   | fifo | srl    | 0       |
+|      layer8_out_V_9_U                                                        | -   |        | layer8_out_V_9   | fifo | srl    | 0       |
+|      layer8_out_V_10_U                                                       | -   |        | layer8_out_V_10  | fifo | srl    | 0       |
+|      layer8_out_V_11_U                                                       | -   |        | layer8_out_V_11  | fifo | srl    | 0       |
+|      layer8_out_V_12_U                                                       | -   |        | layer8_out_V_12  | fifo | srl    | 0       |
+|      layer8_out_V_13_U                                                       | -   |        | layer8_out_V_13  | fifo | srl    | 0       |
+|      layer8_out_V_14_U                                                       | -   |        | layer8_out_V_14  | fifo | srl    | 0       |
+|      layer8_out_V_15_U                                                       | -   |        | layer8_out_V_15  | fifo | srl    | 0       |
+|      layer8_out_V_16_U                                                       | -   |        | layer8_out_V_16  | fifo | srl    | 0       |
+|      layer8_out_V_17_U                                                       | -   |        | layer8_out_V_17  | fifo | srl    | 0       |
+|      layer8_out_V_18_U                                                       | -   |        | layer8_out_V_18  | fifo | srl    | 0       |
+|      layer8_out_V_19_U                                                       | -   |        | layer8_out_V_19  | fifo | srl    | 0       |
+|      layer8_out_V_20_U                                                       | -   |        | layer8_out_V_20  | fifo | srl    | 0       |
+|      layer8_out_V_21_U                                                       | -   |        | layer8_out_V_21  | fifo | srl    | 0       |
+|      layer8_out_V_22_U                                                       | -   |        | layer8_out_V_22  | fifo | srl    | 0       |
+|      layer8_out_V_23_U                                                       | -   |        | layer8_out_V_23  | fifo | srl    | 0       |
+|      layer8_out_V_24_U                                                       | -   |        | layer8_out_V_24  | fifo | srl    | 0       |
+|      layer8_out_V_25_U                                                       | -   |        | layer8_out_V_25  | fifo | srl    | 0       |
+|      layer8_out_V_26_U                                                       | -   |        | layer8_out_V_26  | fifo | srl    | 0       |
+|      layer8_out_V_27_U                                                       | -   |        | layer8_out_V_27  | fifo | srl    | 0       |
+|      layer8_out_V_28_U                                                       | -   |        | layer8_out_V_28  | fifo | srl    | 0       |
+|      layer8_out_V_29_U                                                       | -   |        | layer8_out_V_29  | fifo | srl    | 0       |
+|      layer8_out_V_30_U                                                       | -   |        | layer8_out_V_30  | fifo | srl    | 0       |
+|      layer8_out_V_31_U                                                       | -   |        | layer8_out_V_31  | fifo | srl    | 0       |
+|      layer9_out_V_U                                                          | -   |        | layer9_out_V     | fifo | srl    | 0       |
+|      layer9_out_V_1_U                                                        | -   |        | layer9_out_V_1   | fifo | srl    | 0       |
+|      layer9_out_V_2_U                                                        | -   |        | layer9_out_V_2   | fifo | srl    | 0       |
+|      layer9_out_V_3_U                                                        | -   |        | layer9_out_V_3   | fifo | srl    | 0       |
+|      layer9_out_V_4_U                                                        | -   |        | layer9_out_V_4   | fifo | srl    | 0       |
+|      layer9_out_V_5_U                                                        | -   |        | layer9_out_V_5   | fifo | srl    | 0       |
+|      layer9_out_V_6_U                                                        | -   |        | layer9_out_V_6   | fifo | srl    | 0       |
+|      layer9_out_V_7_U                                                        | -   |        | layer9_out_V_7   | fifo | srl    | 0       |
+|      layer9_out_V_8_U                                                        | -   |        | layer9_out_V_8   | fifo | srl    | 0       |
+|      layer9_out_V_9_U                                                        | -   |        | layer9_out_V_9   | fifo | srl    | 0       |
+|      layer9_out_V_10_U                                                       | -   |        | layer9_out_V_10  | fifo | srl    | 0       |
+|      layer9_out_V_11_U                                                       | -   |        | layer9_out_V_11  | fifo | srl    | 0       |
+|      layer9_out_V_12_U                                                       | -   |        | layer9_out_V_12  | fifo | srl    | 0       |
+|      layer9_out_V_13_U                                                       | -   |        | layer9_out_V_13  | fifo | srl    | 0       |
+|      layer9_out_V_14_U                                                       | -   |        | layer9_out_V_14  | fifo | srl    | 0       |
+|      layer9_out_V_15_U                                                       | -   |        | layer9_out_V_15  | fifo | srl    | 0       |
+|      layer10_out_V_U                                                         | -   |        | layer10_out_V    | fifo | srl    | 0       |
+|      layer10_out_V_1_U                                                       | -   |        | layer10_out_V_1  | fifo | srl    | 0       |
+|      layer10_out_V_2_U                                                       | -   |        | layer10_out_V_2  | fifo | srl    | 0       |
+|      layer10_out_V_3_U                                                       | -   |        | layer10_out_V_3  | fifo | srl    | 0       |
+|      layer10_out_V_4_U                                                       | -   |        | layer10_out_V_4  | fifo | srl    | 0       |
+|      layer10_out_V_5_U                                                       | -   |        | layer10_out_V_5  | fifo | srl    | 0       |
+|      layer10_out_V_6_U                                                       | -   |        | layer10_out_V_6  | fifo | srl    | 0       |
+|      layer10_out_V_7_U                                                       | -   |        | layer10_out_V_7  | fifo | srl    | 0       |
+|      layer10_out_V_8_U                                                       | -   |        | layer10_out_V_8  | fifo | srl    | 0       |
+|      layer10_out_V_9_U                                                       | -   |        | layer10_out_V_9  | fifo | srl    | 0       |
+|      layer10_out_V_10_U                                                      | -   |        | layer10_out_V_10 | fifo | srl    | 0       |
+|      layer10_out_V_11_U                                                      | -   |        | layer10_out_V_11 | fifo | srl    | 0       |
+|      layer10_out_V_12_U                                                      | -   |        | layer10_out_V_12 | fifo | srl    | 0       |
+|      layer10_out_V_13_U                                                      | -   |        | layer10_out_V_13 | fifo | srl    | 0       |
+|      layer10_out_V_14_U                                                      | -   |        | layer10_out_V_14 | fifo | srl    | 0       |
+|      layer10_out_V_15_U                                                      | -   |        | layer10_out_V_15 | fifo | srl    | 0       |
+|      layer10_out_V_16_U                                                      | -   |        | layer10_out_V_16 | fifo | srl    | 0       |
+|      layer10_out_V_17_U                                                      | -   |        | layer10_out_V_17 | fifo | srl    | 0       |
+|      layer10_out_V_18_U                                                      | -   |        | layer10_out_V_18 | fifo | srl    | 0       |
+|      layer10_out_V_19_U                                                      | -   |        | layer10_out_V_19 | fifo | srl    | 0       |
+|      layer10_out_V_20_U                                                      | -   |        | layer10_out_V_20 | fifo | srl    | 0       |
+|      layer10_out_V_21_U                                                      | -   |        | layer10_out_V_21 | fifo | srl    | 0       |
+|      layer10_out_V_22_U                                                      | -   |        | layer10_out_V_22 | fifo | srl    | 0       |
+|      layer10_out_V_23_U                                                      | -   |        | layer10_out_V_23 | fifo | srl    | 0       |
+|      layer12_out_V_U                                                         | -   |        | layer12_out_V    | fifo | srl    | 0       |
+|      layer12_out_V_1_U                                                       | -   |        | layer12_out_V_1  | fifo | srl    | 0       |
+|      layer12_out_V_2_U                                                       | -   |        | layer12_out_V_2  | fifo | srl    | 0       |
+|      layer12_out_V_3_U                                                       | -   |        | layer12_out_V_3  | fifo | srl    | 0       |
+|      layer12_out_V_4_U                                                       | -   |        | layer12_out_V_4  | fifo | srl    | 0       |
+|      layer12_out_V_5_U                                                       | -   |        | layer12_out_V_5  | fifo | srl    | 0       |
+|      layer12_out_V_6_U                                                       | -   |        | layer12_out_V_6  | fifo | srl    | 0       |
+|      layer12_out_V_7_U                                                       | -   |        | layer12_out_V_7  | fifo | srl    | 0       |
+|      layer12_out_V_8_U                                                       | -   |        | layer12_out_V_8  | fifo | srl    | 0       |
+|      layer12_out_V_9_U                                                       | -   |        | layer12_out_V_9  | fifo | srl    | 0       |
+|      layer12_out_V_10_U                                                      | -   |        | layer12_out_V_10 | fifo | srl    | 0       |
+|      layer12_out_V_11_U                                                      | -   |        | layer12_out_V_11 | fifo | srl    | 0       |
+|      layer12_out_V_12_U                                                      | -   |        | layer12_out_V_12 | fifo | srl    | 0       |
+|      layer12_out_V_13_U                                                      | -   |        | layer12_out_V_13 | fifo | srl    | 0       |
+|      layer12_out_V_14_U                                                      | -   |        | layer12_out_V_14 | fifo | srl    | 0       |
+|      layer12_out_V_15_U                                                      | -   |        | layer12_out_V_15 | fifo | srl    | 0       |
+|      layer12_out_V_16_U                                                      | -   |        | layer12_out_V_16 | fifo | srl    | 0       |
+|      layer12_out_V_17_U                                                      | -   |        | layer12_out_V_17 | fifo | srl    | 0       |
+|      layer12_out_V_18_U                                                      | -   |        | layer12_out_V_18 | fifo | srl    | 0       |
+|      layer12_out_V_19_U                                                      | -   |        | layer12_out_V_19 | fifo | srl    | 0       |
+|      layer12_out_V_20_U                                                      | -   |        | layer12_out_V_20 | fifo | srl    | 0       |
+|      layer12_out_V_21_U                                                      | -   |        | layer12_out_V_21 | fifo | srl    | 0       |
+|      layer12_out_V_22_U                                                      | -   |        | layer12_out_V_22 | fifo | srl    | 0       |
+|      layer12_out_V_23_U                                                      | -   |        | layer12_out_V_23 | fifo | srl    | 0       |
+|      layer13_out_V_U                                                         | -   |        | layer13_out_V    | fifo | srl    | 0       |
+|      layer13_out_V_1_U                                                       | -   |        | layer13_out_V_1  | fifo | srl    | 0       |
+|      layer13_out_V_2_U                                                       | -   |        | layer13_out_V_2  | fifo | srl    | 0       |
+|      layer13_out_V_3_U                                                       | -   |        | layer13_out_V_3  | fifo | srl    | 0       |
+|      layer13_out_V_4_U                                                       | -   |        | layer13_out_V_4  | fifo | srl    | 0       |
+|      layer13_out_V_5_U                                                       | -   |        | layer13_out_V_5  | fifo | srl    | 0       |
+|      layer13_out_V_6_U                                                       | -   |        | layer13_out_V_6  | fifo | srl    | 0       |
+|      layer13_out_V_7_U                                                       | -   |        | layer13_out_V_7  | fifo | srl    | 0       |
+|      layer13_out_V_8_U                                                       | -   |        | layer13_out_V_8  | fifo | srl    | 0       |
+|      layer13_out_V_9_U                                                       | -   |        | layer13_out_V_9  | fifo | srl    | 0       |
+|      layer13_out_V_10_U                                                      | -   |        | layer13_out_V_10 | fifo | srl    | 0       |
+|      layer13_out_V_11_U                                                      | -   |        | layer13_out_V_11 | fifo | srl    | 0       |
+|      layer15_out_V_U                                                         | -   |        | layer15_out_V    | fifo | srl    | 0       |
+|      layer15_out_V_1_U                                                       | -   |        | layer15_out_V_1  | fifo | srl    | 0       |
+|      layer15_out_V_2_U                                                       | -   |        | layer15_out_V_2  | fifo | srl    | 0       |
+|      layer15_out_V_3_U                                                       | -   |        | layer15_out_V_3  | fifo | srl    | 0       |
+|      layer15_out_V_4_U                                                       | -   |        | layer15_out_V_4  | fifo | srl    | 0       |
+|      layer15_out_V_5_U                                                       | -   |        | layer15_out_V_5  | fifo | srl    | 0       |
+|      layer15_out_V_6_U                                                       | -   |        | layer15_out_V_6  | fifo | srl    | 0       |
+|      layer15_out_V_7_U                                                       | -   |        | layer15_out_V_7  | fifo | srl    | 0       |
+|      layer15_out_V_8_U                                                       | -   |        | layer15_out_V_8  | fifo | srl    | 0       |
+|      layer15_out_V_9_U                                                       | -   |        | layer15_out_V_9  | fifo | srl    | 0       |
+|      layer17_out_V_U                                                         | -   |        | layer17_out_V    | fifo | srl    | 0       |
+|      layer17_out_V_1_U                                                       | -   |        | layer17_out_V_1  | fifo | srl    | 0       |
+|      layer17_out_V_2_U                                                       | -   |        | layer17_out_V_2  | fifo | srl    | 0       |
+|      layer17_out_V_3_U                                                       | -   |        | layer17_out_V_3  | fifo | srl    | 0       |
+|      layer17_out_V_4_U                                                       | -   |        | layer17_out_V_4  | fifo | srl    | 0       |
+|      layer17_out_V_5_U                                                       | -   |        | layer17_out_V_5  | fifo | srl    | 0       |
+|      layer17_out_V_6_U                                                       | -   |        | layer17_out_V_6  | fifo | srl    | 0       |
+|      layer17_out_V_7_U                                                       | -   |        | layer17_out_V_7  | fifo | srl    | 0       |
+|      layer17_out_V_8_U                                                       | -   |        | layer17_out_V_8  | fifo | srl    | 0       |
+|      layer17_out_V_9_U                                                       | -   |        | layer17_out_V_9  | fifo | srl    | 0       |
+|      layer18_out_V_U                                                         | -   |        | layer18_out_V    | fifo | srl    | 0       |
+|      layer18_out_V_1_U                                                       | -   |        | layer18_out_V_1  | fifo | srl    | 0       |
+|      layer18_out_V_2_U                                                       | -   |        | layer18_out_V_2  | fifo | srl    | 0       |
+|      layer18_out_V_3_U                                                       | -   |        | layer18_out_V_3  | fifo | srl    | 0       |
+|      layer18_out_V_4_U                                                       | -   |        | layer18_out_V_4  | fifo | srl    | 0       |
+|      layer18_out_V_5_U                                                       | -   |        | layer18_out_V_5  | fifo | srl    | 0       |
+|      layer18_out_V_6_U                                                       | -   |        | layer18_out_V_6  | fifo | srl    | 0       |
+|      layer18_out_V_7_U                                                       | -   |        | layer18_out_V_7  | fifo | srl    | 0       |
+|      layer18_out_V_8_U                                                       | -   |        | layer18_out_V_8  | fifo | srl    | 0       |
+|      layer18_out_V_9_U                                                       | -   |        | layer18_out_V_9  | fifo | srl    | 0       |
+|      layer19_out_V_U                                                         | -   |        | layer19_out_V    | fifo | srl    | 0       |
+|      layer19_out_V_1_U                                                       | -   |        | layer19_out_V_1  | fifo | srl    | 0       |
+|      layer19_out_V_2_U                                                       | -   |        | layer19_out_V_2  | fifo | srl    | 0       |
+|      layer19_out_V_3_U                                                       | -   |        | layer19_out_V_3  | fifo | srl    | 0       |
+|      layer19_out_V_4_U                                                       | -   |        | layer19_out_V_4  | fifo | srl    | 0       |
+|      layer19_out_V_5_U                                                       | -   |        | layer19_out_V_5  | fifo | srl    | 0       |
+|      layer19_out_V_6_U                                                       | -   |        | layer19_out_V_6  | fifo | srl    | 0       |
+|      layer19_out_V_7_U                                                       | -   |        | layer19_out_V_7  | fifo | srl    | 0       |
+|      layer19_out_V_8_U                                                       | -   |        | layer19_out_V_8  | fifo | srl    | 0       |
+|      layer19_out_V_9_U                                                       | -   |        | layer19_out_V_9  | fifo | srl    | 0       |
+|      layer19_out_V_10_U                                                      | -   |        | layer19_out_V_10 | fifo | srl    | 0       |
+|      layer19_out_V_11_U                                                      | -   |        | layer19_out_V_11 | fifo | srl    | 0       |
+|      layer19_out_V_12_U                                                      | -   |        | layer19_out_V_12 | fifo | srl    | 0       |
+|      layer19_out_V_13_U                                                      | -   |        | layer19_out_V_13 | fifo | srl    | 0       |
+|      layer19_out_V_14_U                                                      | -   |        | layer19_out_V_14 | fifo | srl    | 0       |
+|      layer19_out_V_15_U                                                      | -   |        | layer19_out_V_15 | fifo | srl    | 0       |
+|      layer21_out_V_U                                                         | -   |        | layer21_out_V    | fifo | srl    | 0       |
+|      layer21_out_V_1_U                                                       | -   |        | layer21_out_V_1  | fifo | srl    | 0       |
+|      layer21_out_V_2_U                                                       | -   |        | layer21_out_V_2  | fifo | srl    | 0       |
+|      layer21_out_V_3_U                                                       | -   |        | layer21_out_V_3  | fifo | srl    | 0       |
+|      layer21_out_V_4_U                                                       | -   |        | layer21_out_V_4  | fifo | srl    | 0       |
+|      layer21_out_V_5_U                                                       | -   |        | layer21_out_V_5  | fifo | srl    | 0       |
+|      layer21_out_V_6_U                                                       | -   |        | layer21_out_V_6  | fifo | srl    | 0       |
+|      layer21_out_V_7_U                                                       | -   |        | layer21_out_V_7  | fifo | srl    | 0       |
+|      layer21_out_V_8_U                                                       | -   |        | layer21_out_V_8  | fifo | srl    | 0       |
+|      layer21_out_V_9_U                                                       | -   |        | layer21_out_V_9  | fifo | srl    | 0       |
+|      layer21_out_V_10_U                                                      | -   |        | layer21_out_V_10 | fifo | srl    | 0       |
+|      layer21_out_V_11_U                                                      | -   |        | layer21_out_V_11 | fifo | srl    | 0       |
+|      layer21_out_V_12_U                                                      | -   |        | layer21_out_V_12 | fifo | srl    | 0       |
+|      layer21_out_V_13_U                                                      | -   |        | layer21_out_V_13 | fifo | srl    | 0       |
+|      layer21_out_V_14_U                                                      | -   |        | layer21_out_V_14 | fifo | srl    | 0       |
+|      layer21_out_V_15_U                                                      | -   |        | layer21_out_V_15 | fifo | srl    | 0       |
+|      layer22_out_V_U                                                         | -   |        | layer22_out_V    | fifo | srl    | 0       |
+|      layer22_out_V_1_U                                                       | -   |        | layer22_out_V_1  | fifo | srl    | 0       |
+|      layer22_out_V_2_U                                                       | -   |        | layer22_out_V_2  | fifo | srl    | 0       |
+|      layer22_out_V_3_U                                                       | -   |        | layer22_out_V_3  | fifo | srl    | 0       |
+|      layer22_out_V_4_U                                                       | -   |        | layer22_out_V_4  | fifo | srl    | 0       |
+|      layer22_out_V_5_U                                                       | -   |        | layer22_out_V_5  | fifo | srl    | 0       |
+|      layer22_out_V_6_U                                                       | -   |        | layer22_out_V_6  | fifo | srl    | 0       |
+|      layer22_out_V_7_U                                                       | -   |        | layer22_out_V_7  | fifo | srl    | 0       |
+|      layer22_out_V_8_U                                                       | -   |        | layer22_out_V_8  | fifo | srl    | 0       |
+|      layer22_out_V_9_U                                                       | -   |        | layer22_out_V_9  | fifo | srl    | 0       |
+|      layer22_out_V_10_U                                                      | -   |        | layer22_out_V_10 | fifo | srl    | 0       |
+|      layer22_out_V_11_U                                                      | -   |        | layer22_out_V_11 | fifo | srl    | 0       |
+|      layer22_out_V_12_U                                                      | -   |        | layer22_out_V_12 | fifo | srl    | 0       |
+|      layer22_out_V_13_U                                                      | -   |        | layer22_out_V_13 | fifo | srl    | 0       |
+|      layer22_out_V_14_U                                                      | -   |        | layer22_out_V_14 | fifo | srl    | 0       |
+|      layer22_out_V_15_U                                                      | -   |        | layer22_out_V_15 | fifo | srl    | 0       |
+|     + conv_1d_cl_ap_fixed_16_6_5_3_0_ap_fixed_16_6_5_3_0_config2_2           | 0   |        |                  |      |        |         |
+|      + conv_1d_latency_cl_ap_fixed_16_6_5_3_0_ap_fixed_16_6_5_3_0_config2_s  | 0   |        |                  |      |        |         |
+|        i_part_fu_931_p2                                                      | -   |        | i_part           | add  | fabric | 0       |
+|        r_V_108_fu_977_p2                                                     | -   |        | r_V_108          | sub  | fabric | 0       |
+|        r_V_110_fu_1001_p2                                                    | -   |        | r_V_110          | sub  | fabric | 0       |
+|        r_V_112_fu_1025_p2                                                    | -   |        | r_V_112          | sub  | fabric | 0       |
+|        r_V_114_fu_1049_p2                                                    | -   |        | r_V_114          | sub  | fabric | 0       |
+|     + relu_ap_fixed_16_6_5_3_0_ap_ufixed_6_0_4_0_0_relu_config4_s            | 0   |        |                  |      |        |         |
+|       p_Val2_64_fu_602_p2                                                    | -   |        | p_Val2_64        | add  | fabric | 0       |
+|       p_Val2_66_fu_682_p2                                                    | -   |        | p_Val2_66        | add  | fabric | 0       |
+|       p_Val2_68_fu_762_p2                                                    | -   |        | p_Val2_68        | add  | fabric | 0       |
+|       p_Val2_70_fu_842_p2                                                    | -   |        | p_Val2_70        | add  | fabric | 0       |
+|       p_Val2_72_fu_922_p2                                                    | -   |        | p_Val2_72        | add  | fabric | 0       |
+|       p_Val2_74_fu_1002_p2                                                   | -   |        | p_Val2_74        | add  | fabric | 0       |
+|       p_Val2_76_fu_1082_p2                                                   | -   |        | p_Val2_76        | add  | fabric | 0       |
+|       p_Val2_78_fu_1162_p2                                                   | -   |        | p_Val2_78        | add  | fabric | 0       |
+|       p_Val2_80_fu_1242_p2                                                   | -   |        | p_Val2_80        | add  | fabric | 0       |
+|       p_Val2_82_fu_1322_p2                                                   | -   |        | p_Val2_82        | add  | fabric | 0       |
+|       p_Val2_84_fu_1402_p2                                                   | -   |        | p_Val2_84        | add  | fabric | 0       |
+|       p_Val2_86_fu_1482_p2                                                   | -   |        | p_Val2_86        | add  | fabric | 0       |
+|       p_Val2_88_fu_1562_p2                                                   | -   |        | p_Val2_88        | add  | fabric | 0       |
+|       p_Val2_90_fu_1642_p2                                                   | -   |        | p_Val2_90        | add  | fabric | 0       |
+|       p_Val2_92_fu_1722_p2                                                   | -   |        | p_Val2_92        | add  | fabric | 0       |
+|       p_Val2_94_fu_1802_p2                                                   | -   |        | p_Val2_94        | add  | fabric | 0       |
+|       p_Val2_96_fu_1882_p2                                                   | -   |        | p_Val2_96        | add  | fabric | 0       |
+|       p_Val2_98_fu_1962_p2                                                   | -   |        | p_Val2_98        | add  | fabric | 0       |
+|       p_Val2_100_fu_2042_p2                                                  | -   |        | p_Val2_100       | add  | fabric | 0       |
+|       p_Val2_102_fu_2122_p2                                                  | -   |        | p_Val2_102       | add  | fabric | 0       |
+|       p_Val2_104_fu_2202_p2                                                  | -   |        | p_Val2_104       | add  | fabric | 0       |
+|       p_Val2_106_fu_2282_p2                                                  | -   |        | p_Val2_106       | add  | fabric | 0       |
+|       p_Val2_108_fu_2362_p2                                                  | -   |        | p_Val2_108       | add  | fabric | 0       |
+|       p_Val2_110_fu_2442_p2                                                  | -   |        | p_Val2_110       | add  | fabric | 0       |
+|       p_Val2_112_fu_2522_p2                                                  | -   |        | p_Val2_112       | add  | fabric | 0       |
+|       p_Val2_114_fu_2602_p2                                                  | -   |        | p_Val2_114       | add  | fabric | 0       |
+|       p_Val2_116_fu_2682_p2                                                  | -   |        | p_Val2_116       | add  | fabric | 0       |
+|       p_Val2_118_fu_2762_p2                                                  | -   |        | p_Val2_118       | add  | fabric | 0       |
+|       p_Val2_120_fu_2842_p2                                                  | -   |        | p_Val2_120       | add  | fabric | 0       |
+|       p_Val2_122_fu_2922_p2                                                  | -   |        | p_Val2_122       | add  | fabric | 0       |
+|       p_Val2_124_fu_3002_p2                                                  | -   |        | p_Val2_124       | add  | fabric | 0       |
+|       p_Val2_126_fu_3082_p2                                                  | -   |        | p_Val2_126       | add  | fabric | 0       |
+|       p_Val2_128_fu_3162_p2                                                  | -   |        | p_Val2_128       | add  | fabric | 0       |
+|       p_Val2_130_fu_3242_p2                                                  | -   |        | p_Val2_130       | add  | fabric | 0       |
+|       p_Val2_132_fu_3322_p2                                                  | -   |        | p_Val2_132       | add  | fabric | 0       |
+|       p_Val2_134_fu_3402_p2                                                  | -   |        | p_Val2_134       | add  | fabric | 0       |
+|       p_Val2_136_fu_3482_p2                                                  | -   |        | p_Val2_136       | add  | fabric | 0       |
+|       p_Val2_138_fu_3562_p2                                                  | -   |        | p_Val2_138       | add  | fabric | 0       |
+|       p_Val2_140_fu_3642_p2                                                  | -   |        | p_Val2_140       | add  | fabric | 0       |
+|       p_Val2_142_fu_3722_p2                                                  | -   |        | p_Val2_142       | add  | fabric | 0       |
+|       p_Val2_144_fu_3802_p2                                                  | -   |        | p_Val2_144       | add  | fabric | 0       |
+|       p_Val2_146_fu_3882_p2                                                  | -   |        | p_Val2_146       | add  | fabric | 0       |
+|       p_Val2_148_fu_3962_p2                                                  | -   |        | p_Val2_148       | add  | fabric | 0       |
+|       p_Val2_150_fu_4042_p2                                                  | -   |        | p_Val2_150       | add  | fabric | 0       |
+|       p_Val2_152_fu_4122_p2                                                  | -   |        | p_Val2_152       | add  | fabric | 0       |
+|       p_Val2_154_fu_4202_p2                                                  | -   |        | p_Val2_154       | add  | fabric | 0       |
+|       p_Val2_156_fu_4282_p2                                                  | -   |        | p_Val2_156       | add  | fabric | 0       |
+|       p_Val2_158_fu_4362_p2                                                  | -   |        | p_Val2_158       | add  | fabric | 0       |
+|       p_Val2_160_fu_4442_p2                                                  | -   |        | p_Val2_160       | add  | fabric | 0       |
+|       p_Val2_162_fu_4522_p2                                                  | -   |        | p_Val2_162       | add  | fabric | 0       |
+|       p_Val2_164_fu_4602_p2                                                  | -   |        | p_Val2_164       | add  | fabric | 0       |
+|       p_Val2_166_fu_4682_p2                                                  | -   |        | p_Val2_166       | add  | fabric | 0       |
+|       p_Val2_168_fu_4762_p2                                                  | -   |        | p_Val2_168       | add  | fabric | 0       |
+|       p_Val2_170_fu_4842_p2                                                  | -   |        | p_Val2_170       | add  | fabric | 0       |
+|       p_Val2_172_fu_4922_p2                                                  | -   |        | p_Val2_172       | add  | fabric | 0       |
+|       p_Val2_174_fu_5002_p2                                                  | -   |        | p_Val2_174       | add  | fabric | 0       |
+|       p_Val2_176_fu_5082_p2                                                  | -   |        | p_Val2_176       | add  | fabric | 0       |
+|       p_Val2_178_fu_5162_p2                                                  | -   |        | p_Val2_178       | add  | fabric | 0       |
+|       p_Val2_180_fu_5242_p2                                                  | -   |        | p_Val2_180       | add  | fabric | 0       |
+|       p_Val2_182_fu_5322_p2                                                  | -   |        | p_Val2_182       | add  | fabric | 0       |
+|       p_Val2_184_fu_5402_p2                                                  | -   |        | p_Val2_184       | add  | fabric | 0       |
+|       p_Val2_186_fu_5482_p2                                                  | -   |        | p_Val2_186       | add  | fabric | 0       |
+|       p_Val2_188_fu_5562_p2                                                  | -   |        | p_Val2_188       | add  | fabric | 0       |
+|       p_Val2_190_fu_5642_p2                                                  | -   |        | p_Val2_190       | add  | fabric | 0       |
+|     + conv_1d_cl_ap_fixed_16_6_5_3_0_ap_fixed_16_6_5_3_0_config6_s           | 0   |        |                  |      |        |         |
+|      + conv_1d_latency_cl_ap_fixed_16_6_5_3_0_ap_fixed_16_6_5_3_0_config6_s  | 0   |        |                  |      |        |         |
+|        i_part_fu_2029_p2                                                     | -   |        | i_part           | add  | fabric | 0       |
+|        r_V_45_fu_2053_p2                                                     | -   |        | r_V_45           | sub  | fabric | 0       |
+|        r_V_47_fu_2085_p2                                                     | -   |        | r_V_47           | sub  | fabric | 0       |
+|        r_V_49_fu_2117_p2                                                     | -   |        | r_V_49           | sub  | fabric | 0       |
+|        r_V_51_fu_2149_p2                                                     | -   |        | r_V_51           | sub  | fabric | 0       |
+|        r_V_53_fu_2181_p2                                                     | -   |        | r_V_53           | sub  | fabric | 0       |
+|        r_V_55_fu_2213_p2                                                     | -   |        | r_V_55           | sub  | fabric | 0       |
+|        r_V_57_fu_2245_p2                                                     | -   |        | r_V_57           | sub  | fabric | 0       |
+|        r_V_59_fu_2277_p2                                                     | -   |        | r_V_59           | sub  | fabric | 0       |
+|        r_V_61_fu_2309_p2                                                     | -   |        | r_V_61           | sub  | fabric | 0       |
+|        r_V_63_fu_2341_p2                                                     | -   |        | r_V_63           | sub  | fabric | 0       |
+|        r_V_65_fu_2373_p2                                                     | -   |        | r_V_65           | sub  | fabric | 0       |
+|        r_V_67_fu_2405_p2                                                     | -   |        | r_V_67           | sub  | fabric | 0       |
+|        r_V_69_fu_2437_p2                                                     | -   |        | r_V_69           | sub  | fabric | 0       |
+|        r_V_71_fu_2469_p2                                                     | -   |        | r_V_71           | sub  | fabric | 0       |
+|        r_V_73_fu_2501_p2                                                     | -   |        | r_V_73           | sub  | fabric | 0       |
+|        r_V_75_fu_2533_p2                                                     | -   |        | r_V_75           | sub  | fabric | 0       |
+|        r_V_77_fu_2565_p2                                                     | -   |        | r_V_77           | sub  | fabric | 0       |
+|        r_V_79_fu_2597_p2                                                     | -   |        | r_V_79           | sub  | fabric | 0       |
+|        r_V_81_fu_2629_p2                                                     | -   |        | r_V_81           | sub  | fabric | 0       |
+|        r_V_83_fu_2661_p2                                                     | -   |        | r_V_83           | sub  | fabric | 0       |
+|        r_V_85_fu_2693_p2                                                     | -   |        | r_V_85           | sub  | fabric | 0       |
+|        r_V_87_fu_2725_p2                                                     | -   |        | r_V_87           | sub  | fabric | 0       |
+|        r_V_89_fu_2757_p2                                                     | -   |        | r_V_89           | sub  | fabric | 0       |
+|        r_V_91_fu_2789_p2                                                     | -   |        | r_V_91           | sub  | fabric | 0       |
+|        r_V_93_fu_2821_p2                                                     | -   |        | r_V_93           | sub  | fabric | 0       |
+|        r_V_95_fu_2853_p2                                                     | -   |        | r_V_95           | sub  | fabric | 0       |
+|        r_V_97_fu_2885_p2                                                     | -   |        | r_V_97           | sub  | fabric | 0       |
+|        r_V_99_fu_2917_p2                                                     | -   |        | r_V_99           | sub  | fabric | 0       |
+|        r_V_101_fu_2949_p2                                                    | -   |        | r_V_101          | sub  | fabric | 0       |
+|        r_V_103_fu_2981_p2                                                    | -   |        | r_V_103          | sub  | fabric | 0       |
+|        r_V_105_fu_3013_p2                                                    | -   |        | r_V_105          | sub  | fabric | 0       |
+|        r_V_107_fu_3045_p2                                                    | -   |        | r_V_107          | sub  | fabric | 0       |
+|        add_ln813_fu_3065_p2                                                  | -   |        | add_ln813        | add  | fabric | 0       |
+|        add_ln813_33_fu_3075_p2                                               | -   |        | add_ln813_33     | add  | fabric | 0       |
+|        add_ln813_34_fu_3085_p2                                               | -   |        | add_ln813_34     | add  | fabric | 0       |
+|        add_ln813_35_fu_3091_p2                                               | -   |        | add_ln813_35     | add  | fabric | 0       |
+|        add_ln813_36_fu_3101_p2                                               | -   |        | add_ln813_36     | add  | fabric | 0       |
+|        add_ln813_37_fu_3111_p2                                               | -   |        | add_ln813_37     | add  | fabric | 0       |
+|        add_ln813_38_fu_3275_p2                                               | -   |        | add_ln813_38     | add  | fabric | 0       |
+|        add_ln813_39_fu_3117_p2                                               | -   |        | add_ln813_39     | add  | fabric | 0       |
+|        add_ln813_40_fu_3127_p2                                               | -   |        | add_ln813_40     | add  | fabric | 0       |
+|        add_ln813_41_fu_3137_p2                                               | -   |        | add_ln813_41     | add  | fabric | 0       |
+|        add_ln813_42_fu_3143_p2                                               | -   |        | add_ln813_42     | add  | fabric | 0       |
+|        add_ln813_43_fu_3153_p2                                               | -   |        | add_ln813_43     | add  | fabric | 0       |
+|        add_ln813_44_fu_3163_p2                                               | -   |        | add_ln813_44     | add  | fabric | 0       |
+|        add_ln813_45_fu_3291_p2                                               | -   |        | add_ln813_45     | add  | fabric | 0       |
+|        add_ln813_46_fu_3301_p2                                               | -   |        | add_ln813_46     | add  | fabric | 0       |
+|        add_ln813_47_fu_3169_p2                                               | -   |        | add_ln813_47     | add  | fabric | 0       |
+|        add_ln813_48_fu_3179_p2                                               | -   |        | add_ln813_48     | add  | fabric | 0       |
+|        add_ln813_49_fu_3189_p2                                               | -   |        | add_ln813_49     | add  | fabric | 0       |
+|        add_ln813_50_fu_3195_p2                                               | -   |        | add_ln813_50     | add  | fabric | 0       |
+|        add_ln813_51_fu_3205_p2                                               | -   |        | add_ln813_51     | add  | fabric | 0       |
+|        add_ln813_52_fu_3215_p2                                               | -   |        | add_ln813_52     | add  | fabric | 0       |
+|        add_ln813_53_fu_3317_p2                                               | -   |        | add_ln813_53     | add  | fabric | 0       |
+|        add_ln813_54_fu_3221_p2                                               | -   |        | add_ln813_54     | add  | fabric | 0       |
+|        add_ln813_55_fu_3231_p2                                               | -   |        | add_ln813_55     | add  | fabric | 0       |
+|        add_ln813_56_fu_3241_p2                                               | -   |        | add_ln813_56     | add  | fabric | 0       |
+|        add_ln813_57_fu_3247_p2                                               | -   |        | add_ln813_57     | add  | fabric | 0       |
+|        add_ln813_58_fu_3253_p2                                               | -   |        | add_ln813_58     | add  | fabric | 0       |
+|        add_ln813_59_fu_3263_p2                                               | -   |        | add_ln813_59     | add  | fabric | 0       |
+|        add_ln813_60_fu_3336_p2                                               | -   |        | add_ln813_60     | add  | fabric | 0       |
+|        add_ln813_61_fu_3346_p2                                               | -   |        | add_ln813_61     | add  | fabric | 0       |
+|     + relu_ap_fixed_16_6_5_3_0_ap_ufixed_6_0_4_0_0_relu_config8_s            | 0   |        |                  |      |        |         |
+|       p_Val2_1_fu_346_p2                                                     | -   |        | p_Val2_1         | add  | fabric | 0       |
+|       p_Val2_3_fu_426_p2                                                     | -   |        | p_Val2_3         | add  | fabric | 0       |
+|       p_Val2_5_fu_506_p2                                                     | -   |        | p_Val2_5         | add  | fabric | 0       |
+|       p_Val2_7_fu_586_p2                                                     | -   |        | p_Val2_7         | add  | fabric | 0       |
+|       p_Val2_9_fu_666_p2                                                     | -   |        | p_Val2_9         | add  | fabric | 0       |
+|       p_Val2_11_fu_746_p2                                                    | -   |        | p_Val2_11        | add  | fabric | 0       |
+|       p_Val2_13_fu_826_p2                                                    | -   |        | p_Val2_13        | add  | fabric | 0       |
+|       p_Val2_15_fu_906_p2                                                    | -   |        | p_Val2_15        | add  | fabric | 0       |
+|       p_Val2_17_fu_986_p2                                                    | -   |        | p_Val2_17        | add  | fabric | 0       |
+|       p_Val2_19_fu_1066_p2                                                   | -   |        | p_Val2_19        | add  | fabric | 0       |
+|       p_Val2_21_fu_1146_p2                                                   | -   |        | p_Val2_21        | add  | fabric | 0       |
+|       p_Val2_23_fu_1226_p2                                                   | -   |        | p_Val2_23        | add  | fabric | 0       |
+|       p_Val2_25_fu_1306_p2                                                   | -   |        | p_Val2_25        | add  | fabric | 0       |
+|       p_Val2_27_fu_1386_p2                                                   | -   |        | p_Val2_27        | add  | fabric | 0       |
+|       p_Val2_29_fu_1466_p2                                                   | -   |        | p_Val2_29        | add  | fabric | 0       |
+|       p_Val2_31_fu_1546_p2                                                   | -   |        | p_Val2_31        | add  | fabric | 0       |
+|       p_Val2_33_fu_1626_p2                                                   | -   |        | p_Val2_33        | add  | fabric | 0       |
+|       p_Val2_35_fu_1706_p2                                                   | -   |        | p_Val2_35        | add  | fabric | 0       |
+|       p_Val2_37_fu_1786_p2                                                   | -   |        | p_Val2_37        | add  | fabric | 0       |
+|       p_Val2_39_fu_1866_p2                                                   | -   |        | p_Val2_39        | add  | fabric | 0       |
+|       p_Val2_41_fu_1946_p2                                                   | -   |        | p_Val2_41        | add  | fabric | 0       |
+|       p_Val2_43_fu_2026_p2                                                   | -   |        | p_Val2_43        | add  | fabric | 0       |
+|       p_Val2_45_fu_2106_p2                                                   | -   |        | p_Val2_45        | add  | fabric | 0       |
+|       p_Val2_47_fu_2186_p2                                                   | -   |        | p_Val2_47        | add  | fabric | 0       |
+|       p_Val2_49_fu_2266_p2                                                   | -   |        | p_Val2_49        | add  | fabric | 0       |
+|       p_Val2_51_fu_2346_p2                                                   | -   |        | p_Val2_51        | add  | fabric | 0       |
+|       p_Val2_53_fu_2426_p2                                                   | -   |        | p_Val2_53        | add  | fabric | 0       |
+|       p_Val2_55_fu_2506_p2                                                   | -   |        | p_Val2_55        | add  | fabric | 0       |
+|       p_Val2_57_fu_2586_p2                                                   | -   |        | p_Val2_57        | add  | fabric | 0       |
+|       p_Val2_59_fu_2666_p2                                                   | -   |        | p_Val2_59        | add  | fabric | 0       |
+|       p_Val2_61_fu_2746_p2                                                   | -   |        | p_Val2_61        | add  | fabric | 0       |
+|       p_Val2_63_fu_2826_p2                                                   | -   |        | p_Val2_63        | add  | fabric | 0       |
+|     + conv_1d_cl_ap_fixed_16_6_5_3_0_ap_fixed_16_6_5_3_0_config10_s          | 0   |        |                  |      |        |         |
+|      + conv_1d_latency_cl_ap_fixed_16_6_5_3_0_ap_fixed_16_6_5_3_0_config10_s | 0   |        |                  |      |        |         |
+|        r_V_fu_857_p2                                                         | -   |        | r_V              | sub  | fabric | 0       |
+|        r_V_115_fu_897_p2                                                     | -   |        | r_V_115          | sub  | fabric | 0       |
+|        r_V_116_fu_937_p2                                                     | -   |        | r_V_116          | sub  | fabric | 0       |
+|        r_V_117_fu_973_p2                                                     | -   |        | r_V_117          | sub  | fabric | 0       |
+|        r_V_118_fu_1013_p2                                                    | -   |        | r_V_118          | sub  | fabric | 0       |
+|        r_V_119_fu_1053_p2                                                    | -   |        | r_V_119          | sub  | fabric | 0       |
+|        r_V_120_fu_1093_p2                                                    | -   |        | r_V_120          | sub  | fabric | 0       |
+|        r_V_121_fu_1133_p2                                                    | -   |        | r_V_121          | sub  | fabric | 0       |
+|        r_V_122_fu_1173_p2                                                    | -   |        | r_V_122          | sub  | fabric | 0       |
+|        r_V_123_fu_1213_p2                                                    | -   |        | r_V_123          | sub  | fabric | 0       |
+|        r_V_124_fu_1249_p2                                                    | -   |        | r_V_124          | sub  | fabric | 0       |
+|        r_V_125_fu_1289_p2                                                    | -   |        | r_V_125          | sub  | fabric | 0       |
+|        r_V_126_fu_1329_p2                                                    | -   |        | r_V_126          | sub  | fabric | 0       |
+|        r_V_127_fu_1369_p2                                                    | -   |        | r_V_127          | sub  | fabric | 0       |
+|        r_V_128_fu_1409_p2                                                    | -   |        | r_V_128          | sub  | fabric | 0       |
+|        r_V_129_fu_1449_p2                                                    | -   |        | r_V_129          | sub  | fabric | 0       |
+|        add_ln813_fu_1523_p2                                                  | -   |        | add_ln813        | add  | fabric | 0       |
+|        add_ln813_67_fu_1469_p2                                               | -   |        | add_ln813_67     | add  | fabric | 0       |
+|        add_ln813_68_fu_1536_p2                                               | -   |        | add_ln813_68     | add  | fabric | 0       |
+|        add_ln813_69_fu_1475_p2                                               | -   |        | add_ln813_69     | add  | fabric | 0       |
+|        add_ln813_70_fu_1481_p2                                               | -   |        | add_ln813_70     | add  | fabric | 0       |
+|        add_ln813_71_fu_1552_p2                                               | -   |        | add_ln813_71     | add  | fabric | 0       |
+|        add_ln813_72_fu_1562_p2                                               | -   |        | add_ln813_72     | add  | fabric | 0       |
+|        add_ln813_73_fu_1487_p2                                               | -   |        | add_ln813_73     | add  | fabric | 0       |
+|        add_ln813_74_fu_1493_p2                                               | -   |        | add_ln813_74     | add  | fabric | 0       |
+|        add_ln813_75_fu_1574_p2                                               | -   |        | add_ln813_75     | add  | fabric | 0       |
+|        add_ln813_76_fu_1499_p2                                               | -   |        | add_ln813_76     | add  | fabric | 0       |
+|        add_ln813_77_fu_1505_p2                                               | -   |        | add_ln813_77     | add  | fabric | 0       |
+|        add_ln813_78_fu_1590_p2                                               | -   |        | add_ln813_78     | add  | fabric | 0       |
+|        add_ln813_79_fu_1600_p2                                               | -   |        | add_ln813_79     | add  | fabric | 0       |
+|        add_ln813_80_fu_1610_p2                                               | -   |        | add_ln813_80     | add  | fabric | 0       |
+|        add_ln813_81_fu_1622_p2                                               | -   |        | add_ln813_81     | add  | fabric | 0       |
+|     + relu_ap_fixed_16_6_5_3_0_ap_ufixed_6_0_4_0_0_relu_config12_s           | 0   |        |                  |      |        |         |
+|       p_Val2_241_fu_282_p2                                                   | -   |        | p_Val2_241       | add  | fabric | 0       |
+|       p_Val2_243_fu_362_p2                                                   | -   |        | p_Val2_243       | add  | fabric | 0       |
+|       p_Val2_245_fu_442_p2                                                   | -   |        | p_Val2_245       | add  | fabric | 0       |
+|       p_Val2_247_fu_522_p2                                                   | -   |        | p_Val2_247       | add  | fabric | 0       |
+|       p_Val2_249_fu_602_p2                                                   | -   |        | p_Val2_249       | add  | fabric | 0       |
+|       p_Val2_251_fu_682_p2                                                   | -   |        | p_Val2_251       | add  | fabric | 0       |
+|       p_Val2_253_fu_762_p2                                                   | -   |        | p_Val2_253       | add  | fabric | 0       |
+|       p_Val2_255_fu_842_p2                                                   | -   |        | p_Val2_255       | add  | fabric | 0       |
+|       p_Val2_257_fu_922_p2                                                   | -   |        | p_Val2_257       | add  | fabric | 0       |
+|       p_Val2_259_fu_1002_p2                                                  | -   |        | p_Val2_259       | add  | fabric | 0       |
+|       p_Val2_261_fu_1082_p2                                                  | -   |        | p_Val2_261       | add  | fabric | 0       |
+|       p_Val2_263_fu_1162_p2                                                  | -   |        | p_Val2_263       | add  | fabric | 0       |
+|       p_Val2_265_fu_1242_p2                                                  | -   |        | p_Val2_265       | add  | fabric | 0       |
+|       p_Val2_267_fu_1322_p2                                                  | -   |        | p_Val2_267       | add  | fabric | 0       |
+|       p_Val2_269_fu_1402_p2                                                  | -   |        | p_Val2_269       | add  | fabric | 0       |
+|       p_Val2_271_fu_1482_p2                                                  | -   |        | p_Val2_271       | add  | fabric | 0       |
+|       p_Val2_273_fu_1562_p2                                                  | -   |        | p_Val2_273       | add  | fabric | 0       |
+|       p_Val2_275_fu_1642_p2                                                  | -   |        | p_Val2_275       | add  | fabric | 0       |
+|       p_Val2_277_fu_1722_p2                                                  | -   |        | p_Val2_277       | add  | fabric | 0       |
+|       p_Val2_279_fu_1802_p2                                                  | -   |        | p_Val2_279       | add  | fabric | 0       |
+|       p_Val2_281_fu_1882_p2                                                  | -   |        | p_Val2_281       | add  | fabric | 0       |
+|       p_Val2_283_fu_1962_p2                                                  | -   |        | p_Val2_283       | add  | fabric | 0       |
+|       p_Val2_285_fu_2042_p2                                                  | -   |        | p_Val2_285       | add  | fabric | 0       |
+|       p_Val2_287_fu_2122_p2                                                  | -   |        | p_Val2_287       | add  | fabric | 0       |
+|     + dense_latency_ap_fixed_16_6_5_3_0_ap_fixed_16_6_5_3_0_config15_s       | 0   |        |                  |      |        |         |
+|       r_V_fu_361_p2                                                          | -   |        | r_V              | sub  | fabric | 0       |
+|       r_V_34_fu_138_p2                                                       | -   |        | r_V_34           | sub  | fabric | 0       |
+|       r_V_35_fu_166_p2                                                       | -   |        | r_V_35           | sub  | fabric | 0       |
+|       r_V_36_fu_194_p2                                                       | -   |        | r_V_36           | sub  | fabric | 0       |
+|       r_V_37_fu_401_p2                                                       | -   |        | r_V_37           | sub  | fabric | 0       |
+|       r_V_38_fu_432_p2                                                       | -   |        | r_V_38           | sub  | fabric | 0       |
+|       r_V_39_fu_222_p2                                                       | -   |        | r_V_39           | sub  | fabric | 0       |
+|       r_V_40_fu_250_p2                                                       | -   |        | r_V_40           | sub  | fabric | 0       |
+|       r_V_41_fu_278_p2                                                       | -   |        | r_V_41           | sub  | fabric | 0       |
+|       r_V_42_fu_472_p2                                                       | -   |        | r_V_42           | sub  | fabric | 0       |
+|       r_V_43_fu_306_p2                                                       | -   |        | r_V_43           | sub  | fabric | 0       |
+|       r_V_44_fu_334_p2                                                       | -   |        | r_V_44           | sub  | fabric | 0       |
+|       add_ln813_fu_498_p2                                                    | -   |        | add_ln813        | add  | fabric | 0       |
+|       add_ln813_23_fu_508_p2                                                 | -   |        | add_ln813_23     | add  | fabric | 0       |
+|       add_ln813_24_fu_518_p2                                                 | -   |        | add_ln813_24     | add  | fabric | 0       |
+|       add_ln813_25_fu_528_p2                                                 | -   |        | add_ln813_25     | add  | fabric | 0       |
+|       add_ln813_26_fu_538_p2                                                 | -   |        | add_ln813_26     | add  | fabric | 0       |
+|       add_ln813_27_fu_544_p2                                                 | -   |        | add_ln813_27     | add  | fabric | 0       |
+|       add_ln813_28_fu_554_p2                                                 | -   |        | add_ln813_28     | add  | fabric | 0       |
+|       add_ln813_29_fu_564_p2                                                 | -   |        | add_ln813_29     | add  | fabric | 0       |
+|       add_ln813_30_fu_574_p2                                                 | -   |        | add_ln813_30     | add  | fabric | 0       |
+|       add_ln813_31_fu_584_p2                                                 | -   |        | add_ln813_31     | add  | fabric | 0       |
+|       add_ln813_32_fu_596_p2                                                 | -   |        | add_ln813_32     | add  | fabric | 0       |
+|     + normalize_ap_fixed_16_6_5_3_0_ap_fixed_16_6_5_3_0_config17_s           | 0   |        |                  |      |        |         |
+|       add_ln1347_fu_118_p2                                                   | -   |        | add_ln1347       | add  | fabric | 0       |
+|       add_ln1347_16_fu_142_p2                                                | -   |        | add_ln1347_16    | add  | fabric | 0       |
+|       add_ln1347_17_fu_166_p2                                                | -   |        | add_ln1347_17    | add  | fabric | 0       |
+|       add_ln1347_18_fu_190_p2                                                | -   |        | add_ln1347_18    | add  | fabric | 0       |
+|       add_ln1347_19_fu_214_p2                                                | -   |        | add_ln1347_19    | add  | fabric | 0       |
+|       add_ln1347_20_fu_238_p2                                                | -   |        | add_ln1347_20    | add  | fabric | 0       |
+|       add_ln1347_21_fu_262_p2                                                | -   |        | add_ln1347_21    | add  | fabric | 0       |
+|       add_ln1347_22_fu_286_p2                                                | -   |        | add_ln1347_22    | add  | fabric | 0       |
+|       add_ln1347_23_fu_310_p2                                                | -   |        | add_ln1347_23    | add  | fabric | 0       |
+|       add_ln1347_24_fu_334_p2                                                | -   |        | add_ln1347_24    | add  | fabric | 0       |
+|     + relu_ap_fixed_16_6_5_3_0_ap_ufixed_6_0_4_0_0_relu_config18_s           | 0   |        |                  |      |        |         |
+|       p_Val2_222_fu_170_p2                                                   | -   |        | p_Val2_222       | add  | fabric | 0       |
+|       p_Val2_224_fu_250_p2                                                   | -   |        | p_Val2_224       | add  | fabric | 0       |
+|       p_Val2_226_fu_330_p2                                                   | -   |        | p_Val2_226       | add  | fabric | 0       |
+|       p_Val2_228_fu_410_p2                                                   | -   |        | p_Val2_228       | add  | fabric | 0       |
+|       p_Val2_230_fu_490_p2                                                   | -   |        | p_Val2_230       | add  | fabric | 0       |
+|       p_Val2_232_fu_570_p2                                                   | -   |        | p_Val2_232       | add  | fabric | 0       |
+|       p_Val2_234_fu_650_p2                                                   | -   |        | p_Val2_234       | add  | fabric | 0       |
+|       p_Val2_236_fu_730_p2                                                   | -   |        | p_Val2_236       | add  | fabric | 0       |
+|       p_Val2_238_fu_810_p2                                                   | -   |        | p_Val2_238       | add  | fabric | 0       |
+|       p_Val2_240_fu_890_p2                                                   | -   |        | p_Val2_240       | add  | fabric | 0       |
+|     + dense_latency_ap_ufixed_6_0_4_0_0_ap_fixed_16_6_5_3_0_config19_s       | 0   |        |                  |      |        |         |
+|       r_V_fu_119_p2                                                          | -   |        | r_V              | sub  | fabric | 0       |
+|       r_V_25_fu_150_p2                                                       | -   |        | r_V_25           | sub  | fabric | 0       |
+|       r_V_26_fu_181_p2                                                       | -   |        | r_V_26           | sub  | fabric | 0       |
+|       r_V_27_fu_212_p2                                                       | -   |        | r_V_27           | sub  | fabric | 0       |
+|       r_V_28_fu_378_p2                                                       | -   |        | r_V_28           | sub  | fabric | 0       |
+|       r_V_29_fu_243_p2                                                       | -   |        | r_V_29           | sub  | fabric | 0       |
+|       r_V_30_fu_274_p2                                                       | -   |        | r_V_30           | sub  | fabric | 0       |
+|       r_V_31_fu_305_p2                                                       | -   |        | r_V_31           | sub  | fabric | 0       |
+|       r_V_32_fu_409_p2                                                       | -   |        | r_V_32           | sub  | fabric | 0       |
+|       r_V_33_fu_440_p2                                                       | -   |        | r_V_33           | sub  | fabric | 0       |
+|       add_ln813_fu_325_p2                                                    | -   |        | add_ln813        | add  | fabric | 0       |
+|       add_ln813_15_fu_335_p2                                                 | -   |        | add_ln813_15     | add  | fabric | 0       |
+|       add_ln813_16_fu_345_p2                                                 | -   |        | add_ln813_16     | add  | fabric | 0       |
+|       add_ln813_18_fu_351_p2                                                 | -   |        | add_ln813_18     | add  | fabric | 0       |
+|       add_ln813_19_fu_361_p2                                                 | -   |        | add_ln813_19     | add  | fabric | 0       |
+|       add_ln813_21_fu_482_p2                                                 | -   |        | add_ln813_21     | add  | fabric | 0       |
+|       add_ln813_22_fu_492_p2                                                 | -   |        | add_ln813_22     | add  | fabric | 0       |
+|     + normalize_ap_fixed_16_6_5_3_0_ap_fixed_16_6_5_3_0_config21_s           | 0   |        |                  |      |        |         |
+|       add_ln1347_fu_170_p2                                                   | -   |        | add_ln1347       | add  | fabric | 0       |
+|       add_ln1347_1_fu_198_p2                                                 | -   |        | add_ln1347_1     | add  | fabric | 0       |
+|       add_ln1347_2_fu_226_p2                                                 | -   |        | add_ln1347_2     | add  | fabric | 0       |
+|       add_ln1347_3_fu_254_p2                                                 | -   |        | add_ln1347_3     | add  | fabric | 0       |
+|       add_ln1347_4_fu_282_p2                                                 | -   |        | add_ln1347_4     | add  | fabric | 0       |
+|       add_ln1347_5_fu_310_p2                                                 | -   |        | add_ln1347_5     | add  | fabric | 0       |
+|       add_ln1347_6_fu_338_p2                                                 | -   |        | add_ln1347_6     | add  | fabric | 0       |
+|       add_ln1347_7_fu_366_p2                                                 | -   |        | add_ln1347_7     | add  | fabric | 0       |
+|       add_ln1347_8_fu_394_p2                                                 | -   |        | add_ln1347_8     | add  | fabric | 0       |
+|       add_ln1347_9_fu_422_p2                                                 | -   |        | add_ln1347_9     | add  | fabric | 0       |
+|       add_ln1347_10_fu_450_p2                                                | -   |        | add_ln1347_10    | add  | fabric | 0       |
+|       add_ln1347_11_fu_478_p2                                                | -   |        | add_ln1347_11    | add  | fabric | 0       |
+|       add_ln1347_12_fu_506_p2                                                | -   |        | add_ln1347_12    | add  | fabric | 0       |
+|       add_ln1347_13_fu_534_p2                                                | -   |        | add_ln1347_13    | add  | fabric | 0       |
+|       add_ln1347_14_fu_562_p2                                                | -   |        | add_ln1347_14    | add  | fabric | 0       |
+|       add_ln1347_15_fu_590_p2                                                | -   |        | add_ln1347_15    | add  | fabric | 0       |
+|     + relu_ap_fixed_16_6_5_3_0_ap_ufixed_6_0_4_0_0_relu_config22_s           | 0   |        |                  |      |        |         |
+|       p_Val2_191_fu_218_p2                                                   | -   |        | p_Val2_191       | add  | fabric | 0       |
+|       p_Val2_193_fu_298_p2                                                   | -   |        | p_Val2_193       | add  | fabric | 0       |
+|       p_Val2_195_fu_378_p2                                                   | -   |        | p_Val2_195       | add  | fabric | 0       |
+|       p_Val2_197_fu_458_p2                                                   | -   |        | p_Val2_197       | add  | fabric | 0       |
+|       p_Val2_199_fu_538_p2                                                   | -   |        | p_Val2_199       | add  | fabric | 0       |
+|       p_Val2_201_fu_618_p2                                                   | -   |        | p_Val2_201       | add  | fabric | 0       |
+|       p_Val2_203_fu_698_p2                                                   | -   |        | p_Val2_203       | add  | fabric | 0       |
+|       p_Val2_205_fu_778_p2                                                   | -   |        | p_Val2_205       | add  | fabric | 0       |
+|       p_Val2_207_fu_858_p2                                                   | -   |        | p_Val2_207       | add  | fabric | 0       |
+|       p_Val2_209_fu_938_p2                                                   | -   |        | p_Val2_209       | add  | fabric | 0       |
+|       p_Val2_211_fu_1018_p2                                                  | -   |        | p_Val2_211       | add  | fabric | 0       |
+|       p_Val2_213_fu_1098_p2                                                  | -   |        | p_Val2_213       | add  | fabric | 0       |
+|       p_Val2_215_fu_1178_p2                                                  | -   |        | p_Val2_215       | add  | fabric | 0       |
+|       p_Val2_217_fu_1258_p2                                                  | -   |        | p_Val2_217       | add  | fabric | 0       |
+|       p_Val2_219_fu_1338_p2                                                  | -   |        | p_Val2_219       | add  | fabric | 0       |
+|       p_Val2_221_fu_1418_p2                                                  | -   |        | p_Val2_221       | add  | fabric | 0       |
+|     + dense_latency_ap_ufixed_6_0_4_0_0_ap_fixed_16_6_5_3_0_config23_s       | 0   |        |                  |      |        |         |
+|       add_ln813_fu_313_p2                                                    | -   |        | add_ln813        | add  | fabric | 0       |
+|       add_ln813_1_fu_403_p2                                                  | -   |        | add_ln813_1      | add  | fabric | 0       |
+|       add_ln813_3_fu_319_p2                                                  | -   |        | add_ln813_3      | add  | fabric | 0       |
+|       add_ln813_4_fu_422_p2                                                  | -   |        | add_ln813_4      | add  | fabric | 0       |
+|       add_ln813_6_fu_442_p2                                                  | -   |        | add_ln813_6      | add  | fabric | 0       |
+|       add_ln813_7_fu_325_p2                                                  | -   |        | add_ln813_7      | add  | fabric | 0       |
+|       add_ln813_9_fu_331_p2                                                  | -   |        | add_ln813_9      | add  | fabric | 0       |
+|       add_ln813_10_fu_337_p2                                                 | -   |        | add_ln813_10     | add  | fabric | 0       |
+|       add_ln813_11_fu_454_p2                                                 | -   |        | add_ln813_11     | add  | fabric | 0       |
+|       add_ln813_12_fu_464_p2                                                 | -   |        | add_ln813_12     | add  | fabric | 0       |
+|       add_ln813_14_fu_502_p2                                                 | -   |        | add_ln813_14     | add  | fabric | 0       |
+|  + write_result                                                              | 0   |        |                  |      |        |         |
+|   + write_result_Pipeline_VITIS_LOOP_23_1                                    | 0   |        |                  |      |        |         |
+|     add_ln23_fu_122_p2                                                       | -   |        | add_ln23         | add  | fabric | 0       |
++------------------------------------------------------------------------------+-----+--------+------------------+------+--------+---------+
+
+
+================================================================
+== Bind Storage Report
+================================================================
++--------------------------------------+------+------+--------+-----------+---------+------+---------+
+| Name                                 | BRAM | URAM | Pragma | Variable  | Storage | Impl | Latency |
++--------------------------------------+------+------+--------+-----------+---------+------+---------+
+| + alveo_hls4ml                       | 72   | 0    |        |           |         |      |         |
+|   out_r_c_U                          | -    | -    |        | out_r_c   | fifo    | srl  | 0       |
+|   in_buf_V_U                         | 64   | -    |        | in_buf_V  | ram_1p  | auto | 2       |
+|   out_buf_V_U                        | 8    | -    |        | out_buf_V | ram_1p  | auto | 1       |
+|  + run_inference                     | 0    | 0    |        |           |         |      |         |
+|   + dataflow_in_loop_VITIS_LOOP_17_1 | 0    | 0    |        |           |         |      |         |
+|    + myproject                       | 0    | 0    |        |           |         |      |         |
+|      i_c_i_U                         | -    | -    |        | i_c_i     | fifo    | srl  | 0       |
++--------------------------------------+------+------+--------+-----------+---------+------+---------+
+
+
+================================================================
+== Pragma Report
+================================================================
+* Pragmas with Warnings
++------------+-----------------------------------------------------------------------------------------+------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Type       | Options                                                                                 | Location                                                   | Messages                                                                                                                                                                           |
++------------+-----------------------------------------------------------------------------------------+------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| dataflow   |                                                                                         | ../../../src/alveo_hls4ml.cpp:18 in run_inference          | Since the only kind of statements allowed in a canonical dataflow region are variable declarations and function calls, the compiler may not be able to correctly handle the region |
+| allocation | function instances=pool_op<data_T, CONFIG_T::pool_width, CONFIG_T::pool_op> limit=limit | ../../../src/nnet_utils/nnet_pooling.h:107 in pooling1d_cl | Ignoring ALLOCATION pragma, because the corresponding call is removed                                                                                                              |
++------------+-----------------------------------------------------------------------------------------+------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+* Valid Pragma Syntax
++----------------------+-----------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------+
+| Type                 | Options                                                                                                         | Location                                                                                   |
++----------------------+-----------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------+
+| pipeline             |                                                                                                                 | ../../../src/alveo_hls4ml.cpp:9 in read_input                                              |
+| unroll               |                                                                                                                 | ../../../src/alveo_hls4ml.cpp:11 in read_input                                             |
+| pipeline             |                                                                                                                 | ../../../src/alveo_hls4ml.cpp:24 in write_result                                           |
+| unroll               |                                                                                                                 | ../../../src/alveo_hls4ml.cpp:26 in write_result                                           |
+| array_reshape        | variable=in_buf complete dim=2                                                                                  | ../../../src/alveo_hls4ml.cpp:106 in alveo_hls4ml, in_buf                                  |
+| array_reshape        | variable=out_buf complete dim=2                                                                                 | ../../../src/alveo_hls4ml.cpp:107 in alveo_hls4ml, out_buf                                 |
+| dataflow             |                                                                                                                 | ../../../src/alveo_hls4ml.cpp:109 in alveo_hls4ml                                          |
+| array_reshape        | variable=input_2 complete dim=0                                                                                 | ../../../src/myproject.cpp:12 in myproject, input_2                                        |
+| array_partition      | variable=layer23_out complete dim=0                                                                             | ../../../src/myproject.cpp:13 in myproject, layer23_out                                    |
+| interface            | ap_vld port=input_2,layer23_out                                                                                 | ../../../src/myproject.cpp:14 in myproject, input_2,layer23_out                            |
+| dataflow             |                                                                                                                 | ../../../src/myproject.cpp:15 in myproject                                                 |
+| array_partition      | variable=layer2_out complete dim=0                                                                              | ../../../src/myproject.cpp:48 in myproject, layer2_out                                     |
+| array_partition      | variable=layer4_out complete dim=0                                                                              | ../../../src/myproject.cpp:52 in myproject, layer4_out                                     |
+| array_partition      | variable=layer5_out complete dim=0                                                                              | ../../../src/myproject.cpp:56 in myproject, layer5_out                                     |
+| array_partition      | variable=layer6_out complete dim=0                                                                              | ../../../src/myproject.cpp:60 in myproject, layer6_out                                     |
+| array_partition      | variable=layer8_out complete dim=0                                                                              | ../../../src/myproject.cpp:64 in myproject, layer8_out                                     |
+| array_partition      | variable=layer9_out complete dim=0                                                                              | ../../../src/myproject.cpp:68 in myproject, layer9_out                                     |
+| array_partition      | variable=layer10_out complete dim=0                                                                             | ../../../src/myproject.cpp:72 in myproject, layer10_out                                    |
+| array_partition      | variable=layer12_out complete dim=0                                                                             | ../../../src/myproject.cpp:76 in myproject, layer12_out                                    |
+| array_partition      | variable=layer13_out complete dim=0                                                                             | ../../../src/myproject.cpp:80 in myproject, layer13_out                                    |
+| array_partition      | variable=layer15_out complete dim=0                                                                             | ../../../src/myproject.cpp:85 in myproject, layer15_out                                    |
+| array_partition      | variable=layer17_out complete dim=0                                                                             | ../../../src/myproject.cpp:89 in myproject, layer17_out                                    |
+| array_partition      | variable=layer18_out complete dim=0                                                                             | ../../../src/myproject.cpp:93 in myproject, layer18_out                                    |
+| array_partition      | variable=layer19_out complete dim=0                                                                             | ../../../src/myproject.cpp:97 in myproject, layer19_out                                    |
+| array_partition      | variable=layer21_out complete dim=0                                                                             | ../../../src/myproject.cpp:101 in myproject, layer21_out                                   |
+| array_partition      | variable=layer22_out complete dim=0                                                                             | ../../../src/myproject.cpp:105 in myproject, layer22_out                                   |
+| pipeline             |                                                                                                                 | ../../../src/nnet_utils/nnet_activation.h:29 in linear                                     |
+| pipeline             |                                                                                                                 | ../../../src/nnet_utils/nnet_activation.h:40 in relu                                       |
+| pipeline             |                                                                                                                 | ../../../src/nnet_utils/nnet_activation.h:54 in relu_max                                   |
+| pipeline             |                                                                                                                 | ../../../src/nnet_utils/nnet_activation.h:109 in sigmoid                                   |
+| pipeline             |                                                                                                                 | ../../../src/nnet_utils/nnet_activation.h:171 in softmax_latency                           |
+| array_partition      | variable=exp_res complete                                                                                       | ../../../src/nnet_utils/nnet_activation.h:193 in softmax_latency, exp_res                  |
+| unroll               |                                                                                                                 | ../../../src/nnet_utils/nnet_activation.h:196 in softmax_latency                           |
+| unroll               |                                                                                                                 | ../../../src/nnet_utils/nnet_activation.h:210 in softmax_latency                           |
+| pipeline             |                                                                                                                 | ../../../src/nnet_utils/nnet_activation.h:217 in softmax_stable                            |
+| unroll               |                                                                                                                 | ../../../src/nnet_utils/nnet_activation.h:244 in softmax_stable                            |
+| array_partition      | variable=exp_res complete                                                                                       | ../../../src/nnet_utils/nnet_activation.h:250 in softmax_stable, exp_res                   |
+| unroll               |                                                                                                                 | ../../../src/nnet_utils/nnet_activation.h:253 in softmax_stable                            |
+| unroll               |                                                                                                                 | ../../../src/nnet_utils/nnet_activation.h:267 in softmax_stable                            |
+| pipeline             |                                                                                                                 | ../../../src/nnet_utils/nnet_activation.h:315 in softmax_legacy                            |
+| unroll               |                                                                                                                 | ../../../src/nnet_utils/nnet_activation.h:360 in softmax_argmax                            |
+| pipeline             |                                                                                                                 | ../../../src/nnet_utils/nnet_activation.h:368 in softmax_argmax                            |
+| inline               |                                                                                                                 | ../../../src/nnet_utils/nnet_activation.h:380 in softmax                                   |
+| pipeline             |                                                                                                                 | ../../../src/nnet_utils/nnet_activation.h:427 in tanh                                      |
+| pipeline             |                                                                                                                 | ../../../src/nnet_utils/nnet_activation.h:449 in hard_sigmoid                              |
+| pipeline             |                                                                                                                 | ../../../src/nnet_utils/nnet_activation.h:464 in hard_tanh                                 |
+| pipeline             |                                                                                                                 | ../../../src/nnet_utils/nnet_activation.h:482 in leaky_relu                                |
+| pipeline             |                                                                                                                 | ../../../src/nnet_utils/nnet_activation.h:499 in thresholded_relu                          |
+| pipeline             |                                                                                                                 | ../../../src/nnet_utils/nnet_activation.h:544 in softplus                                  |
+| pipeline             |                                                                                                                 | ../../../src/nnet_utils/nnet_activation.h:593 in softsign                                  |
+| pipeline             |                                                                                                                 | ../../../src/nnet_utils/nnet_activation.h:642 in elu                                       |
+| pipeline             |                                                                                                                 | ../../../src/nnet_utils/nnet_activation.h:698 in selu                                      |
+| pipeline             |                                                                                                                 | ../../../src/nnet_utils/nnet_activation.h:721 in prelu                                     |
+| pipeline             |                                                                                                                 | ../../../src/nnet_utils/nnet_activation.h:738 in binary_tanh                               |
+| pipeline             |                                                                                                                 | ../../../src/nnet_utils/nnet_activation.h:758 in ternary_tanh                              |
+| pipeline             |                                                                                                                 | ../../../src/nnet_utils/nnet_activation_stream.h:20 in linear                              |
+| unroll               |                                                                                                                 | ../../../src/nnet_utils/nnet_activation_stream.h:28 in linear                              |
+| pipeline             |                                                                                                                 | ../../../src/nnet_utils/nnet_activation_stream.h:42 in relu                                |
+| unroll               |                                                                                                                 | ../../../src/nnet_utils/nnet_activation_stream.h:50 in relu                                |
+| pipeline             |                                                                                                                 | ../../../src/nnet_utils/nnet_activation_stream.h:81 in sigmoid                             |
+| unroll               |                                                                                                                 | ../../../src/nnet_utils/nnet_activation_stream.h:89 in sigmoid                             |
+| array_partition      | variable=exp_res complete                                                                                       | ../../../src/nnet_utils/nnet_activation_stream.h:133 in softmax_latency, exp_res           |
+| pipeline             | II=ii                                                                                                           | ../../../src/nnet_utils/nnet_activation_stream.h:137 in softmax_latency                    |
+| unroll               |                                                                                                                 | ../../../src/nnet_utils/nnet_activation_stream.h:142 in softmax_latency                    |
+| unroll               |                                                                                                                 | ../../../src/nnet_utils/nnet_activation_stream.h:161 in softmax_latency                    |
+| allocation           | operation instances=mul limit=multiplier_limit                                                                  | ../../../src/nnet_utils/nnet_activation_stream.h:162 in softmax_latency                    |
+| array_partition      | variable=data_array complete                                                                                    | ../../../src/nnet_utils/nnet_activation_stream.h:194 in softmax_stable, data_array         |
+| pipeline             | II=ii                                                                                                           | ../../../src/nnet_utils/nnet_activation_stream.h:197 in softmax_stable                     |
+| unroll               |                                                                                                                 | ../../../src/nnet_utils/nnet_activation_stream.h:202 in softmax_stable                     |
+| unroll               |                                                                                                                 | ../../../src/nnet_utils/nnet_activation_stream.h:214 in softmax_stable                     |
+| array_partition      | variable=exp_res complete                                                                                       | ../../../src/nnet_utils/nnet_activation_stream.h:220 in softmax_stable, exp_res            |
+| unroll               |                                                                                                                 | ../../../src/nnet_utils/nnet_activation_stream.h:223 in softmax_stable                     |
+| unroll               |                                                                                                                 | ../../../src/nnet_utils/nnet_activation_stream.h:242 in softmax_stable                     |
+| allocation           | operation instances=mul limit=multiplier_limit                                                                  | ../../../src/nnet_utils/nnet_activation_stream.h:243 in softmax_stable                     |
+| pipeline             |                                                                                                                 | ../../../src/nnet_utils/nnet_activation_stream.h:275 in softmax_legacy                     |
+| unroll               |                                                                                                                 | ../../../src/nnet_utils/nnet_activation_stream.h:279 in softmax_legacy                     |
+| unroll               |                                                                                                                 | ../../../src/nnet_utils/nnet_activation_stream.h:286 in softmax_legacy                     |
+| unroll               |                                                                                                                 | ../../../src/nnet_utils/nnet_activation_stream.h:289 in softmax_legacy                     |
+| unroll               |                                                                                                                 | ../../../src/nnet_utils/nnet_activation_stream.h:312 in softmax_legacy                     |
+| pipeline             |                                                                                                                 | ../../../src/nnet_utils/nnet_activation_stream.h:329 in softmax_argmax                     |
+| unroll               |                                                                                                                 | ../../../src/nnet_utils/nnet_activation_stream.h:334 in softmax_argmax                     |
+| pipeline             |                                                                                                                 | ../../../src/nnet_utils/nnet_activation_stream.h:342 in softmax_argmax                     |
+| pipeline             |                                                                                                                 | ../../../src/nnet_utils/nnet_activation_stream.h:393 in tanh                               |
+| unroll               |                                                                                                                 | ../../../src/nnet_utils/nnet_activation_stream.h:401 in tanh                               |
+| pipeline             |                                                                                                                 | ../../../src/nnet_utils/nnet_activation_stream.h:424 in hard_sigmoid                       |
+| unroll               |                                                                                                                 | ../../../src/nnet_utils/nnet_activation_stream.h:432 in hard_sigmoid                       |
+| pipeline             |                                                                                                                 | ../../../src/nnet_utils/nnet_activation_stream.h:449 in hard_tanh                          |
+| unroll               |                                                                                                                 | ../../../src/nnet_utils/nnet_activation_stream.h:457 in hard_tanh                          |
+| pipeline             |                                                                                                                 | ../../../src/nnet_utils/nnet_activation_stream.h:478 in leaky_relu                         |
+| unroll               |                                                                                                                 | ../../../src/nnet_utils/nnet_activation_stream.h:486 in leaky_relu                         |
+| pipeline             |                                                                                                                 | ../../../src/nnet_utils/nnet_activation_stream.h:504 in thresholded_relu                   |
+| unroll               |                                                                                                                 | ../../../src/nnet_utils/nnet_activation_stream.h:512 in thresholded_relu                   |
+| pipeline             |                                                                                                                 | ../../../src/nnet_utils/nnet_activation_stream.h:543 in softplus                           |
+| unroll               |                                                                                                                 | ../../../src/nnet_utils/nnet_activation_stream.h:551 in softplus                           |
+| pipeline             |                                                                                                                 | ../../../src/nnet_utils/nnet_activation_stream.h:584 in softsign                           |
+| unroll               |                                                                                                                 | ../../../src/nnet_utils/nnet_activation_stream.h:592 in softsign                           |
+| pipeline             |                                                                                                                 | ../../../src/nnet_utils/nnet_activation_stream.h:625 in elu                                |
+| unroll               |                                                                                                                 | ../../../src/nnet_utils/nnet_activation_stream.h:633 in elu                                |
+| pipeline             |                                                                                                                 | ../../../src/nnet_utils/nnet_activation_stream.h:673 in selu                               |
+| unroll               |                                                                                                                 | ../../../src/nnet_utils/nnet_activation_stream.h:681 in selu                               |
+| pipeline             |                                                                                                                 | ../../../src/nnet_utils/nnet_activation_stream.h:705 in prelu                              |
+| unroll               |                                                                                                                 | ../../../src/nnet_utils/nnet_activation_stream.h:713 in prelu                              |
+| pipeline             |                                                                                                                 | ../../../src/nnet_utils/nnet_activation_stream.h:730 in binary_tanh                        |
+| unroll               |                                                                                                                 | ../../../src/nnet_utils/nnet_activation_stream.h:738 in binary_tanh                        |
+| pipeline             |                                                                                                                 | ../../../src/nnet_utils/nnet_activation_stream.h:755 in ternary_tanh                       |
+| unroll               |                                                                                                                 | ../../../src/nnet_utils/nnet_activation_stream.h:763 in ternary_tanh                       |
+| function_instantiate | variable=scale,bias                                                                                             | ../../../src/nnet_utils/nnet_batchnorm.h:37 in normalize, scale,bias                       |
+| pipeline             | II=CONFIG_T::reuse_factor                                                                                       | ../../../src/nnet_utils/nnet_batchnorm.h:42 in normalize                                   |
+| array_partition      | variable=scale complete                                                                                         | ../../../src/nnet_utils/nnet_batchnorm.h:45 in normalize, scale                            |
+| array_partition      | variable=bias complete                                                                                          | ../../../src/nnet_utils/nnet_batchnorm.h:46 in normalize, bias                             |
+| allocation           | operation instances=mul limit=CONFIG_T::multiplier_limit                                                        | ../../../src/nnet_utils/nnet_batchnorm.h:48 in normalize                                   |
+| pipeline             |                                                                                                                 | ../../../src/nnet_utils/nnet_batchnorm.h:83 in normalize_binary_tanh                       |
+| array_partition      | variable=res complete                                                                                           | ../../../src/nnet_utils/nnet_batchnorm.h:84 in normalize_binary_tanh, res                  |
+| pipeline             |                                                                                                                 | ../../../src/nnet_utils/nnet_batchnorm.h:103 in normalize_ternary_tanh                     |
+| array_partition      | variable=res complete                                                                                           | ../../../src/nnet_utils/nnet_batchnorm.h:104 in normalize_ternary_tanh, res                |
+| array_partition      | variable=scale complete                                                                                         | ../../../src/nnet_utils/nnet_batchnorm_stream.h:18 in normalize, scale                     |
+| array_partition      | variable=bias complete                                                                                          | ../../../src/nnet_utils/nnet_batchnorm_stream.h:19 in normalize, bias                      |
+| allocation           | operation instances=mul limit=CONFIG_T::multiplier_limit                                                        | ../../../src/nnet_utils/nnet_batchnorm_stream.h:22 in normalize                            |
+| pipeline             | II=ii                                                                                                           | ../../../src/nnet_utils/nnet_batchnorm_stream.h:26 in normalize                            |
+| unroll               |                                                                                                                 | ../../../src/nnet_utils/nnet_batchnorm_stream.h:34 in normalize                            |
+| array_partition      | variable=threshold complete                                                                                     | ../../../src/nnet_utils/nnet_batchnorm_stream.h:56 in normalize_binary_tanh, threshold     |
+| pipeline             |                                                                                                                 | ../../../src/nnet_utils/nnet_batchnorm_stream.h:60 in normalize_binary_tanh                |
+| unroll               |                                                                                                                 | ../../../src/nnet_utils/nnet_batchnorm_stream.h:68 in normalize_binary_tanh                |
+| array_partition      | variable=threshold_hi complete                                                                                  | ../../../src/nnet_utils/nnet_batchnorm_stream.h:86 in normalize_ternary_tanh, threshold_hi |
+| array_partition      | variable=threshold_lo complete                                                                                  | ../../../src/nnet_utils/nnet_batchnorm_stream.h:87 in normalize_ternary_tanh, threshold_lo |
+| pipeline             |                                                                                                                 | ../../../src/nnet_utils/nnet_batchnorm_stream.h:91 in normalize_ternary_tanh               |
+| unroll               |                                                                                                                 | ../../../src/nnet_utils/nnet_batchnorm_stream.h:99 in normalize_ternary_tanh               |
+| array_partition      | variable=data_buf complete dim=0                                                                                | ../../../src/nnet_utils/nnet_conv1d_latency.h:19 in conv_1d_latency_cl, data_buf           |
+| array_partition      | variable=mult complete                                                                                          | ../../../src/nnet_utils/nnet_conv1d_latency.h:22 in conv_1d_latency_cl, mult               |
+| array_partition      | variable=acc complete                                                                                           | ../../../src/nnet_utils/nnet_conv1d_latency.h:25 in conv_1d_latency_cl, acc                |
+| array_partition      | variable=weights complete                                                                                       | ../../../src/nnet_utils/nnet_conv1d_latency.h:27 in conv_1d_latency_cl, weights            |
+| array_partition      | variable=biases complete                                                                                        | ../../../src/nnet_utils/nnet_conv1d_latency.h:28 in conv_1d_latency_cl, biases             |
+| allocation           | operation instances=mul limit=CONFIG_T::mult_config::multiplier_limit                                           | ../../../src/nnet_utils/nnet_conv1d_latency.h:31 in conv_1d_latency_cl                     |
+| pipeline             | II=CONFIG_T::reuse_factor rewind                                                                                | ../../../src/nnet_utils/nnet_conv1d_latency.h:35 in conv_1d_latency_cl                     |
+| unroll               |                                                                                                                 | ../../../src/nnet_utils/nnet_conv1d_latency.h:41 in conv_1d_latency_cl                     |
+| unroll               |                                                                                                                 | ../../../src/nnet_utils/nnet_conv1d_latency.h:48 in conv_1d_latency_cl                     |
+| unroll               |                                                                                                                 | ../../../src/nnet_utils/nnet_conv1d_latency.h:52 in conv_1d_latency_cl                     |
+| unroll               |                                                                                                                 | ../../../src/nnet_utils/nnet_conv1d_latency.h:62 in conv_1d_latency_cl                     |
+| unroll               |                                                                                                                 | ../../../src/nnet_utils/nnet_conv1d_latency.h:69 in conv_1d_latency_cl                     |
+| unroll               |                                                                                                                 | ../../../src/nnet_utils/nnet_conv1d_latency.h:72 in conv_1d_latency_cl                     |
+| unroll               |                                                                                                                 | ../../../src/nnet_utils/nnet_conv1d_latency.h:80 in conv_1d_latency_cl                     |
+| array_partition      | variable=data_buf complete dim=0                                                                                | ../../../src/nnet_utils/nnet_conv1d_resource.h:30 in conv_1d_resource_cl, data_buf         |
+| array_partition      | variable=biases complete                                                                                        | ../../../src/nnet_utils/nnet_conv1d_resource.h:32 in conv_1d_resource_cl, biases           |
+| array_partition      | variable=acc complete dim=0                                                                                     | ../../../src/nnet_utils/nnet_conv1d_resource.h:35 in conv_1d_resource_cl, acc              |
+| unroll               |                                                                                                                 | ../../../src/nnet_utils/nnet_conv1d_resource.h:45 in conv_1d_resource_cl                   |
+| unroll               |                                                                                                                 | ../../../src/nnet_utils/nnet_conv1d_resource.h:49 in conv_1d_resource_cl                   |
+| pipeline             | II=1 rewind                                                                                                     | ../../../src/nnet_utils/nnet_conv1d_resource.h:56 in conv_1d_resource_cl                   |
+| unroll               |                                                                                                                 | ../../../src/nnet_utils/nnet_conv1d_resource.h:64 in conv_1d_resource_cl                   |
+| unroll               |                                                                                                                 | ../../../src/nnet_utils/nnet_conv1d_resource.h:68 in conv_1d_resource_cl                   |
+| unroll               |                                                                                                                 | ../../../src/nnet_utils/nnet_conv1d_resource.h:92 in conv_1d_resource_cl                   |
+| unroll               |                                                                                                                 | ../../../src/nnet_utils/nnet_conv1d_resource.h:96 in conv_1d_resource_cl                   |
+| pipeline             | II=CONFIG_T::reuse_factor                                                                                       | ../../../src/nnet_utils/nnet_conv1d_stream.h:22 in conv_1d_cl                              |
+| inline               |                                                                                                                 | ../../../src/nnet_utils/nnet_conv_stream.h:17 in scale_index_k_gte_s                       |
+| inline               |                                                                                                                 | ../../../src/nnet_utils/nnet_conv_stream.h:38 in scale_index_k_lt_s                        |
+| inline               |                                                                                                                 | ../../../src/nnet_utils/nnet_conv_stream.h:61 in scale_index                               |
+| inline               |                                                                                                                 | ../../../src/nnet_utils/nnet_conv_stream.h:74 in scale_index                               |
+| inline               |                                                                                                                 | ../../../src/nnet_utils/nnet_conv_stream.h:84 in mult_buffer                               |
+| array_partition      | variable = data complete                                                                                        | ../../../src/nnet_utils/nnet_conv_stream.h:87 in mult_buffer                               |
+| array_partition      | variable = res complete                                                                                         | ../../../src/nnet_utils/nnet_conv_stream.h:89 in mult_buffer                               |
+| unroll               |                                                                                                                 | ../../../src/nnet_utils/nnet_conv_stream.h:93 in mult_buffer                               |
+| inline               | recursive                                                                                                       | ../../../src/nnet_utils/nnet_conv_stream.h:97 in mult_buffer                               |
+| unroll               |                                                                                                                 | ../../../src/nnet_utils/nnet_conv_stream.h:108 in mult_buffer                              |
+| inline               |                                                                                                                 | ../../../src/nnet_utils/nnet_conv_stream.h:134 in compute_output_encoded                   |
+| pipeline             | II = CONFIG_T::reuse_factor                                                                                     | ../../../src/nnet_utils/nnet_conv_stream.h:138 in compute_output_encoded                   |
+| unroll               |                                                                                                                 | ../../../src/nnet_utils/nnet_conv_stream.h:141 in compute_output_encoded                   |
+| unroll               |                                                                                                                 | ../../../src/nnet_utils/nnet_conv_stream.h:144 in compute_output_encoded                   |
+| inline               |                                                                                                                 | ../../../src/nnet_utils/nnet_conv_stream.h:161 in kernel_shift_1d                          |
+| pipeline             | II = 1                                                                                                          | ../../../src/nnet_utils/nnet_conv_stream.h:167 in kernel_shift_1d                          |
+| unroll               |                                                                                                                 | ../../../src/nnet_utils/nnet_conv_stream.h:170 in kernel_shift_1d                          |
+| unroll               |                                                                                                                 | ../../../src/nnet_utils/nnet_conv_stream.h:180 in kernel_shift_1d                          |
+| inline               |                                                                                                                 | ../../../src/nnet_utils/nnet_conv_stream.h:189 in kernel_shift_2d                          |
+| pipeline             | II = 1                                                                                                          | ../../../src/nnet_utils/nnet_conv_stream.h:195 in kernel_shift_2d                          |
+| unroll               |                                                                                                                 | ../../../src/nnet_utils/nnet_conv_stream.h:211 in kernel_shift_2d                          |
+| pipeline             |                                                                                                                 | ../../../src/nnet_utils/nnet_conv_stream.h:226 in shift_line_buffer                        |
+| array_partition      | variable = shift_buffer complete dim = 0                                                                        | ../../../src/nnet_utils/nnet_conv_stream.h:230 in shift_line_buffer                        |
+| unroll               |                                                                                                                 | ../../../src/nnet_utils/nnet_conv_stream.h:234 in shift_line_buffer                        |
+| unroll               |                                                                                                                 | ../../../src/nnet_utils/nnet_conv_stream.h:245 in shift_line_buffer                        |
+| inline               | OFF                                                                                                             | ../../../src/nnet_utils/nnet_conv_stream.h:263 in compute_output_buffer_2d                 |
+| array_partition      | variable = kernel_data complete                                                                                 | ../../../src/nnet_utils/nnet_conv_stream.h:277 in compute_output_buffer_2d                 |
+| array_partition      | variable = res_out complete dim = 0                                                                             | ../../../src/nnet_utils/nnet_conv_stream.h:280 in compute_output_buffer_2d                 |
+| unroll               |                                                                                                                 | ../../../src/nnet_utils/nnet_conv_stream.h:304 in compute_output_buffer_2d                 |
+| inline               |                                                                                                                 | ../../../src/nnet_utils/nnet_conv_stream.h:338 in compute_output_buffer_1d                 |
+| array_partition      | variable = kernel_data complete                                                                                 | ../../../src/nnet_utils/nnet_conv_stream.h:348 in compute_output_buffer_1d                 |
+| array_partition      | variable = res_out complete dim = 0                                                                             | ../../../src/nnet_utils/nnet_conv_stream.h:351 in compute_output_buffer_1d                 |
+| inline               | recursive                                                                                                       | ../../../src/nnet_utils/nnet_conv_stream.h:363 in compute_output_buffer_1d                 |
+| unroll               |                                                                                                                 | ../../../src/nnet_utils/nnet_conv_stream.h:375 in compute_output_buffer_1d                 |
+| inline               |                                                                                                                 | ../../../src/nnet_utils/nnet_dense.h:39 in dense                                           |
+| unroll               |                                                                                                                 | ../../../src/nnet_utils/nnet_dense_compressed.h:15 in fill_mult                            |
+| array_partition      | variable=acc complete                                                                                           | ../../../src/nnet_utils/nnet_dense_compressed.h:29 in dense_compressed, acc                |
+| array_partition      | variable=biases complete                                                                                        | ../../../src/nnet_utils/nnet_dense_compressed.h:30 in dense_compressed, biases             |
+| array_reshape        | variable=weights block factor=multiplier_limit                                                                  | ../../../src/nnet_utils/nnet_dense_compressed.h:31 in dense_compressed, weights            |
+| aggregate            | variable=weights                                                                                                | ../../../src/nnet_utils/nnet_dense_compressed.h:34 in dense_compressed, weights            |
+| unroll               |                                                                                                                 | ../../../src/nnet_utils/nnet_dense_compressed.h:41 in dense_compressed                     |
+| pipeline             | II=1 rewind                                                                                                     | ../../../src/nnet_utils/nnet_dense_compressed.h:49 in dense_compressed                     |
+| array_partition      | variable=mult complete                                                                                          | ../../../src/nnet_utils/nnet_dense_compressed.h:52 in dense_compressed, mult               |
+| unroll               |                                                                                                                 | ../../../src/nnet_utils/nnet_dense_compressed.h:56 in dense_compressed                     |
+| unroll               |                                                                                                                 | ../../../src/nnet_utils/nnet_dense_compressed.h:62 in dense_compressed                     |
+| unroll               |                                                                                                                 | ../../../src/nnet_utils/nnet_dense_compressed.h:82 in dense_compressed                     |
+| function_instantiate | variable=weights,biases                                                                                         | ../../../src/nnet_utils/nnet_dense_latency.h:21 in dense_latency, weights,biases           |
+| pipeline             | II=CONFIG_T::reuse_factor                                                                                       | ../../../src/nnet_utils/nnet_dense_latency.h:26 in dense_latency                           |
+| array_partition      | variable=biases complete                                                                                        | ../../../src/nnet_utils/nnet_dense_latency.h:29 in dense_latency, biases                   |
+| array_partition      | variable=mult complete                                                                                          | ../../../src/nnet_utils/nnet_dense_latency.h:30 in dense_latency, mult                     |
+| array_partition      | variable=acc complete                                                                                           | ../../../src/nnet_utils/nnet_dense_latency.h:31 in dense_latency, acc                      |
+| allocation           | operation instances=mul limit=CONFIG_T::multiplier_limit                                                        | ../../../src/nnet_utils/nnet_dense_latency.h:33 in dense_latency                           |
+| array_partition      | variable=biases complete                                                                                        | ../../../src/nnet_utils/nnet_dense_resource.h:30 in dense_resource_rf_leq_nin, biases      |
+| array_partition      | variable=acc complete                                                                                           | ../../../src/nnet_utils/nnet_dense_resource.h:33 in dense_resource_rf_leq_nin, acc         |
+| unroll               |                                                                                                                 | ../../../src/nnet_utils/nnet_dense_resource.h:37 in dense_resource_rf_leq_nin              |
+| pipeline             | II=1 rewind                                                                                                     | ../../../src/nnet_utils/nnet_dense_resource.h:43 in dense_resource_rf_leq_nin              |
+| unroll               |                                                                                                                 | ../../../src/nnet_utils/nnet_dense_resource.h:51 in dense_resource_rf_leq_nin              |
+| unroll               |                                                                                                                 | ../../../src/nnet_utils/nnet_dense_resource.h:75 in dense_resource_rf_leq_nin              |
+| array_partition      | variable=biases complete                                                                                        | ../../../src/nnet_utils/nnet_dense_resource.h:98 in dense_resource_rf_gt_nin_rem0, biases  |
+| array_partition      | variable=acc complete                                                                                           | ../../../src/nnet_utils/nnet_dense_resource.h:101 in dense_resource_rf_gt_nin_rem0, acc    |
+| unroll               |                                                                                                                 | ../../../src/nnet_utils/nnet_dense_resource.h:105 in dense_resource_rf_gt_nin_rem0         |
+| pipeline             | II=1 rewind                                                                                                     | ../../../src/nnet_utils/nnet_dense_resource.h:125 in dense_resource_rf_gt_nin_rem0         |
+| unroll               |                                                                                                                 | ../../../src/nnet_utils/nnet_dense_resource.h:131 in dense_resource_rf_gt_nin_rem0         |
+| unroll               |                                                                                                                 | ../../../src/nnet_utils/nnet_dense_resource.h:150 in dense_resource_rf_gt_nin_rem0         |
+| array_partition      | variable=biases complete                                                                                        | ../../../src/nnet_utils/nnet_dense_resource.h:172 in dense_resource_rf_gt_nin, biases      |
+| array_partition      | variable=acc complete                                                                                           | ../../../src/nnet_utils/nnet_dense_resource.h:175 in dense_resource_rf_gt_nin, acc         |
+| unroll               |                                                                                                                 | ../../../src/nnet_utils/nnet_dense_resource.h:179 in dense_resource_rf_gt_nin              |
+| pipeline             | II=1 rewind                                                                                                     | ../../../src/nnet_utils/nnet_dense_resource.h:185 in dense_resource_rf_gt_nin              |
+| array_partition      | variable=tmpmult complete                                                                                       | ../../../src/nnet_utils/nnet_dense_resource.h:187 in dense_resource_rf_gt_nin, tmpmult     |
+| unroll               |                                                                                                                 | ../../../src/nnet_utils/nnet_dense_resource.h:191 in dense_resource_rf_gt_nin              |
+| array_partition      | variable=mult complete                                                                                          | ../../../src/nnet_utils/nnet_dense_resource.h:199 in dense_resource_rf_gt_nin, mult        |
+| unroll               |                                                                                                                 | ../../../src/nnet_utils/nnet_dense_resource.h:203 in dense_resource_rf_gt_nin              |
+| unroll               |                                                                                                                 | ../../../src/nnet_utils/nnet_dense_resource.h:209 in dense_resource_rf_gt_nin              |
+| unroll               |                                                                                                                 | ../../../src/nnet_utils/nnet_dense_resource.h:219 in dense_resource_rf_gt_nin              |
+| unroll               |                                                                                                                 | ../../../src/nnet_utils/nnet_dense_resource.h:227 in dense_resource_rf_gt_nin              |
+| inline               | recursive                                                                                                       | ../../../src/nnet_utils/nnet_dense_resource.h:237 in dense_resource                        |
+| pipeline             | II=CONFIG_T::reuse_factor                                                                                       | ../../../src/nnet_utils/nnet_dense_stream.h:16 in dense_latency_wrapper                    |
+| inline               |                                                                                                                 | ../../../src/nnet_utils/nnet_dense_stream.h:29 in data_prepare                             |
+| pipeline             |                                                                                                                 | ../../../src/nnet_utils/nnet_dense_stream.h:34 in data_prepare                             |
+| unroll               |                                                                                                                 | ../../../src/nnet_utils/nnet_dense_stream.h:38 in data_prepare                             |
+| unroll               |                                                                                                                 | ../../../src/nnet_utils/nnet_dense_stream.h:46 in data_prepare                             |
+| inline               |                                                                                                                 | ../../../src/nnet_utils/nnet_dense_stream.h:54 in res_write                                |
+| pipeline             |                                                                                                                 | ../../../src/nnet_utils/nnet_dense_stream.h:59 in res_write                                |
+| unroll               |                                                                                                                 | ../../../src/nnet_utils/nnet_dense_stream.h:64 in res_write                                |
+| unroll               |                                                                                                                 | ../../../src/nnet_utils/nnet_dense_stream.h:74 in res_write                                |
+| inline               | recursive                                                                                                       | ../../../src/nnet_utils/nnet_dense_stream.h:85 in dense                                    |
+| array_partition      | variable=data complete                                                                                          | ../../../src/nnet_utils/nnet_dense_stream.h:88 in dense, data                              |
+| array_partition      | variable=res complete                                                                                           | ../../../src/nnet_utils/nnet_dense_stream.h:91 in dense, res                               |
+| inline               |                                                                                                                 | ../../../src/nnet_utils/nnet_mult.h:25 in product                                          |
+| inline               |                                                                                                                 | ../../../src/nnet_utils/nnet_mult.h:34 in product                                          |
+| inline               |                                                                                                                 | ../../../src/nnet_utils/nnet_mult.h:46 in product                                          |
+| inline               |                                                                                                                 | ../../../src/nnet_utils/nnet_mult.h:58 in product                                          |
+| inline               |                                                                                                                 | ../../../src/nnet_utils/nnet_mult.h:72 in product                                          |
+| inline               |                                                                                                                 | ../../../src/nnet_utils/nnet_mult.h:82 in product                                          |
+| pipeline             | II=CONFIG_T::reuse_factor                                                                                       | ../../../src/nnet_utils/nnet_pooling.h:103 in pooling1d_cl                                 |
+| pipeline             | II=CONFIG_T::reuse_factor                                                                                       | ../../../src/nnet_utils/nnet_pooling.h:146 in global_pooling1d_cl                          |
+| allocation           | function instances=pool_op<data_T, CONFIG_T::pool_width, CONFIG_T::pool_op> limit=limit                         | ../../../src/nnet_utils/nnet_pooling.h:153 in global_pooling1d_cl                          |
+| pipeline             | II=CONFIG_T::reuse_factor                                                                                       | ../../../src/nnet_utils/nnet_pooling.h:197 in pooling2d_cl                                 |
+| allocation           | function instances=pool_op<data_T, CONFIG_T::pool_height*CONFIG_T::pool_width, CONFIG_T::pool_op> limit=limit   | ../../../src/nnet_utils/nnet_pooling.h:201 in pooling2d_cl                                 |
+| pipeline             | II=CONFIG_T::reuse_factor                                                                                       | ../../../src/nnet_utils/nnet_pooling.h:256 in pooling2d_cf                                 |
+| allocation           | function instances=pool_op<data_T, CONFIG_T::pool_height*CONFIG_T::pool_width, CONFIG_T::pool_op> limit=limit   | ../../../src/nnet_utils/nnet_pooling.h:260 in pooling2d_cf                                 |
+| pipeline             | II=CONFIG_T::reuse_factor                                                                                       | ../../../src/nnet_utils/nnet_pooling.h:320 in global_pooling2d_cl                          |
+| allocation           | function instances=pool_op<data_T, CONFIG_T::pool_width * CONFIG_T::pool_height, CONFIG_T::pool_op> limit=limit | ../../../src/nnet_utils/nnet_pooling.h:323 in global_pooling2d_cl                          |
+| inline               |                                                                                                                 | ../../../src/nnet_utils/nnet_pooling_stream.h:18 in reduce_pool                            |
+| inline               |                                                                                                                 | ../../../src/nnet_utils/nnet_pooling_stream.h:34 in compute_pool_buffer_2d                 |
+| array_partition      | variable=pool_window complete                                                                                   | ../../../src/nnet_utils/nnet_pooling_stream.h:43 in compute_pool_buffer_2d, pool_window    |
+| array_partition      | variable = kernel_data complete dim = 0                                                                         | ../../../src/nnet_utils/nnet_pooling_stream.h:46 in compute_pool_buffer_2d                 |
+| pipeline             |                                                                                                                 | ../../../src/nnet_utils/nnet_pooling_stream.h:58 in compute_pool_buffer_2d                 |
+| inline               | recursive                                                                                                       | ../../../src/nnet_utils/nnet_pooling_stream.h:100 in pooling2d_cl                          |
+| array_partition      | variable = line_buffer complete dim = 2                                                                         | ../../../src/nnet_utils/nnet_pooling_stream.h:106 in pooling2d_cl                          |
+| loop_flatten         |                                                                                                                 | ../../../src/nnet_utils/nnet_pooling_stream.h:112 in pooling2d_cl                          |
+| pipeline             |                                                                                                                 | ../../../src/nnet_utils/nnet_pooling_stream.h:113 in pooling2d_cl                          |
+| inline               |                                                                                                                 | ../../../src/nnet_utils/nnet_pooling_stream.h:125 in compute_pool_buffer_1d                |
+| array_partition      | variable=pool_window complete                                                                                   | ../../../src/nnet_utils/nnet_pooling_stream.h:132 in compute_pool_buffer_1d, pool_window   |
+| array_partition      | variable = kernel_data complete dim = 0                                                                         | ../../../src/nnet_utils/nnet_pooling_stream.h:135 in compute_pool_buffer_1d                |
+| pipeline             |                                                                                                                 | ../../../src/nnet_utils/nnet_pooling_stream.h:148 in compute_pool_buffer_1d                |
+| inline               | recursive                                                                                                       | ../../../src/nnet_utils/nnet_pooling_stream.h:182 in pooling1d_cl                          |
+| pipeline             |                                                                                                                 | ../../../src/nnet_utils/nnet_pooling_stream.h:186 in pooling1d_cl                          |
+| inline               |                                                                                                                 | ../../../src/nnet_utils/nnet_pooling_stream.h:196 in reduce_global_pool                    |
+| unroll               |                                                                                                                 | ../../../src/nnet_utils/nnet_pooling_stream.h:212 in compute_global_pool                   |
+| array_partition      | variable=data_pack complete dim=0                                                                               | ../../../src/nnet_utils/nnet_pooling_stream.h:215 in compute_global_pool, data_pack        |
+| unroll               |                                                                                                                 | ../../../src/nnet_utils/nnet_pooling_stream.h:219 in compute_global_pool                   |
+| array_partition      | variable=data_window complete                                                                                   | ../../../src/nnet_utils/nnet_pooling_stream.h:233 in global_pooling2d_cl, data_window      |
+| unroll               |                                                                                                                 | ../../../src/nnet_utils/nnet_pooling_stream.h:242 in global_pooling2d_cl                   |
+| loop_flatten         |                                                                                                                 | ../../../src/nnet_utils/nnet_pooling_stream.h:250 in global_pooling2d_cl                   |
+| pipeline             |                                                                                                                 | ../../../src/nnet_utils/nnet_pooling_stream.h:258 in global_pooling2d_cl                   |
+| unroll               |                                                                                                                 | ../../../src/nnet_utils/nnet_pooling_stream.h:264 in global_pooling2d_cl                   |
+| pipeline             |                                                                                                                 | ../../../src/nnet_utils/nnet_pooling_stream.h:272 in global_pooling2d_cl                   |
+| unroll               |                                                                                                                 | ../../../src/nnet_utils/nnet_pooling_stream.h:278 in global_pooling2d_cl                   |
+| array_partition      | variable=data_window complete                                                                                   | ../../../src/nnet_utils/nnet_pooling_stream.h:292 in global_pooling1d_cl, data_window      |
+| unroll               |                                                                                                                 | ../../../src/nnet_utils/nnet_pooling_stream.h:301 in global_pooling1d_cl                   |
+| loop_flatten         |                                                                                                                 | ../../../src/nnet_utils/nnet_pooling_stream.h:307 in global_pooling1d_cl                   |
+| pipeline             |                                                                                                                 | ../../../src/nnet_utils/nnet_pooling_stream.h:314 in global_pooling1d_cl                   |
+| unroll               |                                                                                                                 | ../../../src/nnet_utils/nnet_pooling_stream.h:320 in global_pooling1d_cl                   |
+| pipeline             |                                                                                                                 | ../../../src/nnet_utils/nnet_pooling_stream.h:328 in global_pooling1d_cl                   |
+| unroll               |                                                                                                                 | ../../../src/nnet_utils/nnet_pooling_stream.h:334 in global_pooling1d_cl                   |
+| pipeline             |                                                                                                                 | ../../../src/nnet_utils/nnet_stream.h:23 in clone_stream                                   |
+| unroll               |                                                                                                                 | ../../../src/nnet_utils/nnet_stream.h:33 in clone_stream                                   |
+| pipeline             |                                                                                                                 | ../../../src/nnet_utils/nnet_stream.h:47 in clone_stream                                   |
+| unroll               |                                                                                                                 | ../../../src/nnet_utils/nnet_stream.h:59 in clone_stream                                   |
+| pipeline             |                                                                                                                 | ../../../src/nnet_utils/nnet_stream.h:74 in repack_stream                                  |
+| unroll               |                                                                                                                 | ../../../src/nnet_utils/nnet_stream.h:81 in repack_stream                                  |
+| pipeline             |                                                                                                                 | ../../../src/nnet_utils/nnet_stream.h:91 in repack_stream                                  |
+| pipeline             |                                                                                                                 | ../../../src/nnet_utils/nnet_stream.h:99 in repack_stream                                  |
+| unroll               |                                                                                                                 | ../../../src/nnet_utils/nnet_stream.h:103 in repack_stream                                 |
+| pipeline             |                                                                                                                 | ../../../src/nnet_utils/nnet_stream.h:114 in repack_stream                                 |
+| unroll               |                                                                                                                 | ../../../src/nnet_utils/nnet_stream.h:118 in repack_stream                                 |
+| pipeline             |                                                                                                                 | ../../../src/nnet_utils/nnet_stream.h:139 in broadcast_stream_1x1xc                        |
+| pipeline             |                                                                                                                 | ../../../src/nnet_utils/nnet_stream.h:142 in broadcast_stream_1x1xc                        |
+| unroll               |                                                                                                                 | ../../../src/nnet_utils/nnet_stream.h:146 in broadcast_stream_1x1xc                        |
+| pipeline             |                                                                                                                 | ../../../src/nnet_utils/nnet_stream.h:160 in broadcast_stream_hxwx1                        |
+| unroll               |                                                                                                                 | ../../../src/nnet_utils/nnet_stream.h:165 in broadcast_stream_hxwx1                        |
+| array_partition      | variable=data_array complete                                                                                    | ../../../src/nnet_utils/nnet_stream.h:185 in transpose_2d, data_array                      |
+| pipeline             |                                                                                                                 | ../../../src/nnet_utils/nnet_stream.h:188 in transpose_2d                                  |
+| pipeline             |                                                                                                                 | ../../../src/nnet_utils/nnet_stream.h:196 in transpose_2d                                  |
+| unroll               |                                                                                                                 | ../../../src/nnet_utils/nnet_types.h:28 in operator=                                       |
++----------------------+-----------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------+
+
+

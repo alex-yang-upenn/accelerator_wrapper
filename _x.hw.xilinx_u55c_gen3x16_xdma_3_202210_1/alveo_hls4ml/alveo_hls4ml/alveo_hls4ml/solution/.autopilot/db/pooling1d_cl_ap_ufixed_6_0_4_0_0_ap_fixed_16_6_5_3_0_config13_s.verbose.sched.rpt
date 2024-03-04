@@ -1,0 +1,184 @@
+
+
+================================================================
+== Vitis HLS Report for 'pooling1d_cl_ap_ufixed_6_0_4_0_0_ap_fixed_16_6_5_3_0_config13_s'
+================================================================
+* Date:           Sun Mar  3 21:31:15 2024
+
+* Version:        2022.2 (Build 3670227 on Oct 13 2022)
+* Project:        alveo_hls4ml
+* Solution:       solution (Vitis Kernel Flow Target)
+* Product family: virtexuplus
+* Target device:  xcu55c-fsvh2892-2L-e
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+---------+----------+------------+
+    |  Clock |  Target | Estimated| Uncertainty|
+    +--------+---------+----------+------------+
+    |ap_clk  |  3.33 ns|  2.128 ns|     0.90 ns|
+    +--------+---------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-----+-----+---------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline|
+    |   min   |   max   |    min   |    max   | min | max |   Type  |
+    +---------+---------+----------+----------+-----+-----+---------+
+    |        0|        0|      0 ns|      0 ns|    1|    1|      yes|
+    +---------+---------+----------+----------+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        N/A
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 2
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 2
+HasVarLatency: 0
+IsPipeline: 1
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
++ Individual pipeline summary: 
+  * Pipeline-0: initiation interval (II) = 1, depth = 1
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 1
+* Pipeline : 1
+  Pipeline-0 : II = 1, D = 1, States = { 1 }
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 2.12>
+ST_1 : Operation 2 [1/1] (0.00ns)   --->   "%specpipeline_ln103 = specpipeline void @_ssdm_op_SpecPipeline, i32 1, i32 0, i32 0, i32 0, void @empty_3" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_pooling.h:103]   --->   Operation 2 'specpipeline' 'specpipeline_ln103' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 3 [1/1] (1.21ns)   --->   "%p_read_170 = read i6 @_ssdm_op_Read.ap_auto.i6, i6 %p_read23" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_pooling.h:117]   --->   Operation 3 'read' 'p_read_170' <Predicate = true> <Delay = 1.21> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.42> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = -1> <Depth = -1> <FIFO>
+ST_1 : Operation 4 [1/1] (1.21ns)   --->   "%p_read_171 = read i6 @_ssdm_op_Read.ap_auto.i6, i6 %p_read22" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_pooling.h:117]   --->   Operation 4 'read' 'p_read_171' <Predicate = true> <Delay = 1.21> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.42> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = -1> <Depth = -1> <FIFO>
+ST_1 : Operation 5 [1/1] (1.21ns)   --->   "%p_read2145 = read i6 @_ssdm_op_Read.ap_auto.i6, i6 %p_read21" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_pooling.h:117]   --->   Operation 5 'read' 'p_read2145' <Predicate = true> <Delay = 1.21> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.42> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = -1> <Depth = -1> <FIFO>
+ST_1 : Operation 6 [1/1] (1.21ns)   --->   "%p_read2044 = read i6 @_ssdm_op_Read.ap_auto.i6, i6 %p_read20" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_pooling.h:117]   --->   Operation 6 'read' 'p_read2044' <Predicate = true> <Delay = 1.21> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.42> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = -1> <Depth = -1> <FIFO>
+ST_1 : Operation 7 [1/1] (1.21ns)   --->   "%p_read_172 = read i6 @_ssdm_op_Read.ap_auto.i6, i6 %p_read19" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_pooling.h:117]   --->   Operation 7 'read' 'p_read_172' <Predicate = true> <Delay = 1.21> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.42> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = -1> <Depth = -1> <FIFO>
+ST_1 : Operation 8 [1/1] (1.21ns)   --->   "%p_read_173 = read i6 @_ssdm_op_Read.ap_auto.i6, i6 %p_read18" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_pooling.h:117]   --->   Operation 8 'read' 'p_read_173' <Predicate = true> <Delay = 1.21> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.42> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = -1> <Depth = -1> <FIFO>
+ST_1 : Operation 9 [1/1] (1.21ns)   --->   "%p_read_174 = read i6 @_ssdm_op_Read.ap_auto.i6, i6 %p_read17" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_pooling.h:117]   --->   Operation 9 'read' 'p_read_174' <Predicate = true> <Delay = 1.21> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.42> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = -1> <Depth = -1> <FIFO>
+ST_1 : Operation 10 [1/1] (1.21ns)   --->   "%p_read_175 = read i6 @_ssdm_op_Read.ap_auto.i6, i6 %p_read16" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_pooling.h:117]   --->   Operation 10 'read' 'p_read_175' <Predicate = true> <Delay = 1.21> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.42> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = -1> <Depth = -1> <FIFO>
+ST_1 : Operation 11 [1/1] (1.21ns)   --->   "%p_read_176 = read i6 @_ssdm_op_Read.ap_auto.i6, i6 %p_read15" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_pooling.h:117]   --->   Operation 11 'read' 'p_read_176' <Predicate = true> <Delay = 1.21> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.42> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = -1> <Depth = -1> <FIFO>
+ST_1 : Operation 12 [1/1] (1.21ns)   --->   "%p_read_177 = read i6 @_ssdm_op_Read.ap_auto.i6, i6 %p_read14" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_pooling.h:117]   --->   Operation 12 'read' 'p_read_177' <Predicate = true> <Delay = 1.21> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.42> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = -1> <Depth = -1> <FIFO>
+ST_1 : Operation 13 [1/1] (1.21ns)   --->   "%p_read_178 = read i6 @_ssdm_op_Read.ap_auto.i6, i6 %p_read13" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_pooling.h:117]   --->   Operation 13 'read' 'p_read_178' <Predicate = true> <Delay = 1.21> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.42> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = -1> <Depth = -1> <FIFO>
+ST_1 : Operation 14 [1/1] (1.21ns)   --->   "%p_read_179 = read i6 @_ssdm_op_Read.ap_auto.i6, i6 %p_read12" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_pooling.h:117]   --->   Operation 14 'read' 'p_read_179' <Predicate = true> <Delay = 1.21> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.42> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = -1> <Depth = -1> <FIFO>
+ST_1 : Operation 15 [1/1] (1.21ns)   --->   "%p_read1135 = read i6 @_ssdm_op_Read.ap_auto.i6, i6 %p_read11" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_pooling.h:117]   --->   Operation 15 'read' 'p_read1135' <Predicate = true> <Delay = 1.21> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.42> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = -1> <Depth = -1> <FIFO>
+ST_1 : Operation 16 [1/1] (1.21ns)   --->   "%p_read1034 = read i6 @_ssdm_op_Read.ap_auto.i6, i6 %p_read10" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_pooling.h:117]   --->   Operation 16 'read' 'p_read1034' <Predicate = true> <Delay = 1.21> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.42> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = -1> <Depth = -1> <FIFO>
+ST_1 : Operation 17 [1/1] (1.21ns)   --->   "%p_read933 = read i6 @_ssdm_op_Read.ap_auto.i6, i6 %p_read9" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_pooling.h:117]   --->   Operation 17 'read' 'p_read933' <Predicate = true> <Delay = 1.21> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.42> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = -1> <Depth = -1> <FIFO>
+ST_1 : Operation 18 [1/1] (1.21ns)   --->   "%p_read832 = read i6 @_ssdm_op_Read.ap_auto.i6, i6 %p_read8" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_pooling.h:117]   --->   Operation 18 'read' 'p_read832' <Predicate = true> <Delay = 1.21> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.42> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = -1> <Depth = -1> <FIFO>
+ST_1 : Operation 19 [1/1] (1.21ns)   --->   "%p_read731 = read i6 @_ssdm_op_Read.ap_auto.i6, i6 %p_read7" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_pooling.h:117]   --->   Operation 19 'read' 'p_read731' <Predicate = true> <Delay = 1.21> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.42> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = -1> <Depth = -1> <FIFO>
+ST_1 : Operation 20 [1/1] (1.21ns)   --->   "%p_read630 = read i6 @_ssdm_op_Read.ap_auto.i6, i6 %p_read6" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_pooling.h:117]   --->   Operation 20 'read' 'p_read630' <Predicate = true> <Delay = 1.21> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.42> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = -1> <Depth = -1> <FIFO>
+ST_1 : Operation 21 [1/1] (1.21ns)   --->   "%p_read529 = read i6 @_ssdm_op_Read.ap_auto.i6, i6 %p_read5" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_pooling.h:117]   --->   Operation 21 'read' 'p_read529' <Predicate = true> <Delay = 1.21> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.42> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = -1> <Depth = -1> <FIFO>
+ST_1 : Operation 22 [1/1] (1.21ns)   --->   "%p_read428 = read i6 @_ssdm_op_Read.ap_auto.i6, i6 %p_read4" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_pooling.h:117]   --->   Operation 22 'read' 'p_read428' <Predicate = true> <Delay = 1.21> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.42> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = -1> <Depth = -1> <FIFO>
+ST_1 : Operation 23 [1/1] (1.21ns)   --->   "%p_read327 = read i6 @_ssdm_op_Read.ap_auto.i6, i6 %p_read3" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_pooling.h:117]   --->   Operation 23 'read' 'p_read327' <Predicate = true> <Delay = 1.21> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.42> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = -1> <Depth = -1> <FIFO>
+ST_1 : Operation 24 [1/1] (1.21ns)   --->   "%p_read226 = read i6 @_ssdm_op_Read.ap_auto.i6, i6 %p_read2" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_pooling.h:117]   --->   Operation 24 'read' 'p_read226' <Predicate = true> <Delay = 1.21> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.42> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = -1> <Depth = -1> <FIFO>
+ST_1 : Operation 25 [1/1] (1.21ns)   --->   "%p_read125 = read i6 @_ssdm_op_Read.ap_auto.i6, i6 %p_read1" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_pooling.h:117]   --->   Operation 25 'read' 'p_read125' <Predicate = true> <Delay = 1.21> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.42> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = -1> <Depth = -1> <FIFO>
+ST_1 : Operation 26 [1/1] (1.21ns)   --->   "%p_read24 = read i6 @_ssdm_op_Read.ap_auto.i6, i6 %p_read" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_pooling.h:117]   --->   Operation 26 'read' 'p_read24' <Predicate = true> <Delay = 1.21> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.42> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = -1> <Depth = -1> <FIFO>
+ST_1 : Operation 27 [1/1] (0.61ns)   --->   "%icmp_ln1649 = icmp_ugt  i6 %p_read_179, i6 %p_read24"   --->   Operation 27 'icmp' 'icmp_ln1649' <Predicate = true> <Delay = 0.61> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 0.61> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 28 [1/1] (0.29ns)   --->   "%select_ln14 = select i1 %icmp_ln1649, i6 %p_read_179, i6 %p_read24" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_pooling.h:14]   --->   Operation 28 'select' 'select_ln14' <Predicate = true> <Delay = 0.29> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.29> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_1 : Operation 29 [1/1] (0.00ns)   --->   "%shl_ln = bitconcatenate i10 @_ssdm_op_BitConcatenate.i10.i6.i4, i6 %select_ln14, i4 0"   --->   Operation 29 'bitconcatenate' 'shl_ln' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 30 [1/1] (0.61ns)   --->   "%icmp_ln1649_188 = icmp_ugt  i6 %p_read_178, i6 %p_read125"   --->   Operation 30 'icmp' 'icmp_ln1649_188' <Predicate = true> <Delay = 0.61> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 0.61> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 31 [1/1] (0.29ns)   --->   "%select_ln14_47 = select i1 %icmp_ln1649_188, i6 %p_read_178, i6 %p_read125" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_pooling.h:14]   --->   Operation 31 'select' 'select_ln14_47' <Predicate = true> <Delay = 0.29> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.29> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_1 : Operation 32 [1/1] (0.00ns)   --->   "%shl_ln838_s = bitconcatenate i10 @_ssdm_op_BitConcatenate.i10.i6.i4, i6 %select_ln14_47, i4 0"   --->   Operation 32 'bitconcatenate' 'shl_ln838_s' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 33 [1/1] (0.61ns)   --->   "%icmp_ln1649_189 = icmp_ugt  i6 %p_read_177, i6 %p_read226"   --->   Operation 33 'icmp' 'icmp_ln1649_189' <Predicate = true> <Delay = 0.61> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 0.61> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 34 [1/1] (0.29ns)   --->   "%select_ln14_48 = select i1 %icmp_ln1649_189, i6 %p_read_177, i6 %p_read226" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_pooling.h:14]   --->   Operation 34 'select' 'select_ln14_48' <Predicate = true> <Delay = 0.29> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.29> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_1 : Operation 35 [1/1] (0.00ns)   --->   "%shl_ln838_45 = bitconcatenate i10 @_ssdm_op_BitConcatenate.i10.i6.i4, i6 %select_ln14_48, i4 0"   --->   Operation 35 'bitconcatenate' 'shl_ln838_45' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 36 [1/1] (0.61ns)   --->   "%icmp_ln1649_190 = icmp_ugt  i6 %p_read_176, i6 %p_read327"   --->   Operation 36 'icmp' 'icmp_ln1649_190' <Predicate = true> <Delay = 0.61> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 0.61> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 37 [1/1] (0.29ns)   --->   "%select_ln14_49 = select i1 %icmp_ln1649_190, i6 %p_read_176, i6 %p_read327" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_pooling.h:14]   --->   Operation 37 'select' 'select_ln14_49' <Predicate = true> <Delay = 0.29> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.29> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_1 : Operation 38 [1/1] (0.00ns)   --->   "%shl_ln838_46 = bitconcatenate i10 @_ssdm_op_BitConcatenate.i10.i6.i4, i6 %select_ln14_49, i4 0"   --->   Operation 38 'bitconcatenate' 'shl_ln838_46' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 39 [1/1] (0.61ns)   --->   "%icmp_ln1649_191 = icmp_ugt  i6 %p_read_175, i6 %p_read428"   --->   Operation 39 'icmp' 'icmp_ln1649_191' <Predicate = true> <Delay = 0.61> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 0.61> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 40 [1/1] (0.29ns)   --->   "%select_ln14_50 = select i1 %icmp_ln1649_191, i6 %p_read_175, i6 %p_read428" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_pooling.h:14]   --->   Operation 40 'select' 'select_ln14_50' <Predicate = true> <Delay = 0.29> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.29> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_1 : Operation 41 [1/1] (0.00ns)   --->   "%shl_ln838_47 = bitconcatenate i10 @_ssdm_op_BitConcatenate.i10.i6.i4, i6 %select_ln14_50, i4 0"   --->   Operation 41 'bitconcatenate' 'shl_ln838_47' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 42 [1/1] (0.61ns)   --->   "%icmp_ln1649_192 = icmp_ugt  i6 %p_read_174, i6 %p_read529"   --->   Operation 42 'icmp' 'icmp_ln1649_192' <Predicate = true> <Delay = 0.61> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 0.61> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 43 [1/1] (0.29ns)   --->   "%select_ln14_51 = select i1 %icmp_ln1649_192, i6 %p_read_174, i6 %p_read529" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_pooling.h:14]   --->   Operation 43 'select' 'select_ln14_51' <Predicate = true> <Delay = 0.29> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.29> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_1 : Operation 44 [1/1] (0.00ns)   --->   "%shl_ln838_48 = bitconcatenate i10 @_ssdm_op_BitConcatenate.i10.i6.i4, i6 %select_ln14_51, i4 0"   --->   Operation 44 'bitconcatenate' 'shl_ln838_48' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 45 [1/1] (0.61ns)   --->   "%icmp_ln1649_193 = icmp_ugt  i6 %p_read_173, i6 %p_read630"   --->   Operation 45 'icmp' 'icmp_ln1649_193' <Predicate = true> <Delay = 0.61> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 0.61> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 46 [1/1] (0.29ns)   --->   "%select_ln14_52 = select i1 %icmp_ln1649_193, i6 %p_read_173, i6 %p_read630" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_pooling.h:14]   --->   Operation 46 'select' 'select_ln14_52' <Predicate = true> <Delay = 0.29> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.29> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_1 : Operation 47 [1/1] (0.00ns)   --->   "%shl_ln838_49 = bitconcatenate i10 @_ssdm_op_BitConcatenate.i10.i6.i4, i6 %select_ln14_52, i4 0"   --->   Operation 47 'bitconcatenate' 'shl_ln838_49' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 48 [1/1] (0.61ns)   --->   "%icmp_ln1649_194 = icmp_ugt  i6 %p_read_172, i6 %p_read731"   --->   Operation 48 'icmp' 'icmp_ln1649_194' <Predicate = true> <Delay = 0.61> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 0.61> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 49 [1/1] (0.29ns)   --->   "%select_ln14_53 = select i1 %icmp_ln1649_194, i6 %p_read_172, i6 %p_read731" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_pooling.h:14]   --->   Operation 49 'select' 'select_ln14_53' <Predicate = true> <Delay = 0.29> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.29> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_1 : Operation 50 [1/1] (0.00ns)   --->   "%shl_ln838_50 = bitconcatenate i10 @_ssdm_op_BitConcatenate.i10.i6.i4, i6 %select_ln14_53, i4 0"   --->   Operation 50 'bitconcatenate' 'shl_ln838_50' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 51 [1/1] (0.61ns)   --->   "%icmp_ln1649_195 = icmp_ugt  i6 %p_read2044, i6 %p_read832"   --->   Operation 51 'icmp' 'icmp_ln1649_195' <Predicate = true> <Delay = 0.61> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 0.61> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 52 [1/1] (0.29ns)   --->   "%select_ln14_54 = select i1 %icmp_ln1649_195, i6 %p_read2044, i6 %p_read832" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_pooling.h:14]   --->   Operation 52 'select' 'select_ln14_54' <Predicate = true> <Delay = 0.29> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.29> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_1 : Operation 53 [1/1] (0.00ns)   --->   "%shl_ln838_51 = bitconcatenate i10 @_ssdm_op_BitConcatenate.i10.i6.i4, i6 %select_ln14_54, i4 0"   --->   Operation 53 'bitconcatenate' 'shl_ln838_51' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 54 [1/1] (0.61ns)   --->   "%icmp_ln1649_196 = icmp_ugt  i6 %p_read2145, i6 %p_read933"   --->   Operation 54 'icmp' 'icmp_ln1649_196' <Predicate = true> <Delay = 0.61> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 0.61> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 55 [1/1] (0.29ns)   --->   "%select_ln14_55 = select i1 %icmp_ln1649_196, i6 %p_read2145, i6 %p_read933" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_pooling.h:14]   --->   Operation 55 'select' 'select_ln14_55' <Predicate = true> <Delay = 0.29> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.29> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_1 : Operation 56 [1/1] (0.00ns)   --->   "%shl_ln838_52 = bitconcatenate i10 @_ssdm_op_BitConcatenate.i10.i6.i4, i6 %select_ln14_55, i4 0"   --->   Operation 56 'bitconcatenate' 'shl_ln838_52' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 57 [1/1] (0.61ns)   --->   "%icmp_ln1649_197 = icmp_ugt  i6 %p_read_171, i6 %p_read1034"   --->   Operation 57 'icmp' 'icmp_ln1649_197' <Predicate = true> <Delay = 0.61> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 0.61> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 58 [1/1] (0.29ns)   --->   "%select_ln14_56 = select i1 %icmp_ln1649_197, i6 %p_read_171, i6 %p_read1034" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_pooling.h:14]   --->   Operation 58 'select' 'select_ln14_56' <Predicate = true> <Delay = 0.29> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.29> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_1 : Operation 59 [1/1] (0.00ns)   --->   "%shl_ln838_53 = bitconcatenate i10 @_ssdm_op_BitConcatenate.i10.i6.i4, i6 %select_ln14_56, i4 0"   --->   Operation 59 'bitconcatenate' 'shl_ln838_53' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 60 [1/1] (0.61ns)   --->   "%icmp_ln1649_198 = icmp_ugt  i6 %p_read_170, i6 %p_read1135"   --->   Operation 60 'icmp' 'icmp_ln1649_198' <Predicate = true> <Delay = 0.61> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 0.61> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 61 [1/1] (0.29ns)   --->   "%select_ln14_57 = select i1 %icmp_ln1649_198, i6 %p_read_170, i6 %p_read1135" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_pooling.h:14]   --->   Operation 61 'select' 'select_ln14_57' <Predicate = true> <Delay = 0.29> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.29> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_1 : Operation 62 [1/1] (0.00ns)   --->   "%shl_ln838_54 = bitconcatenate i10 @_ssdm_op_BitConcatenate.i10.i6.i4, i6 %select_ln14_57, i4 0"   --->   Operation 62 'bitconcatenate' 'shl_ln838_54' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 63 [1/1] (0.00ns)   --->   "%mrv = insertvalue i120 <undef>, i10 %shl_ln" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_pooling.h:142]   --->   Operation 63 'insertvalue' 'mrv' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 64 [1/1] (0.00ns)   --->   "%mrv_1 = insertvalue i120 %mrv, i10 %shl_ln838_s" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_pooling.h:142]   --->   Operation 64 'insertvalue' 'mrv_1' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 65 [1/1] (0.00ns)   --->   "%mrv_2 = insertvalue i120 %mrv_1, i10 %shl_ln838_45" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_pooling.h:142]   --->   Operation 65 'insertvalue' 'mrv_2' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 66 [1/1] (0.00ns)   --->   "%mrv_3 = insertvalue i120 %mrv_2, i10 %shl_ln838_46" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_pooling.h:142]   --->   Operation 66 'insertvalue' 'mrv_3' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 67 [1/1] (0.00ns)   --->   "%mrv_4 = insertvalue i120 %mrv_3, i10 %shl_ln838_47" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_pooling.h:142]   --->   Operation 67 'insertvalue' 'mrv_4' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 68 [1/1] (0.00ns)   --->   "%mrv_5 = insertvalue i120 %mrv_4, i10 %shl_ln838_48" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_pooling.h:142]   --->   Operation 68 'insertvalue' 'mrv_5' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 69 [1/1] (0.00ns)   --->   "%mrv_6 = insertvalue i120 %mrv_5, i10 %shl_ln838_49" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_pooling.h:142]   --->   Operation 69 'insertvalue' 'mrv_6' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 70 [1/1] (0.00ns)   --->   "%mrv_7 = insertvalue i120 %mrv_6, i10 %shl_ln838_50" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_pooling.h:142]   --->   Operation 70 'insertvalue' 'mrv_7' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 71 [1/1] (0.00ns)   --->   "%mrv_8 = insertvalue i120 %mrv_7, i10 %shl_ln838_51" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_pooling.h:142]   --->   Operation 71 'insertvalue' 'mrv_8' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 72 [1/1] (0.00ns)   --->   "%mrv_9 = insertvalue i120 %mrv_8, i10 %shl_ln838_52" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_pooling.h:142]   --->   Operation 72 'insertvalue' 'mrv_9' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 73 [1/1] (0.00ns)   --->   "%mrv_10 = insertvalue i120 %mrv_9, i10 %shl_ln838_53" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_pooling.h:142]   --->   Operation 73 'insertvalue' 'mrv_10' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 74 [1/1] (0.00ns)   --->   "%mrv_11 = insertvalue i120 %mrv_10, i10 %shl_ln838_54" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_pooling.h:142]   --->   Operation 74 'insertvalue' 'mrv_11' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 75 [1/1] (0.00ns)   --->   "%ret_ln142 = ret i120 %mrv_11" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_pooling.h:142]   --->   Operation 75 'ret' 'ret_ln142' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 3.33ns, clock uncertainty: 0.9ns.
+
+ <State 1>: 2.13ns
+The critical path consists of the following:
+	wire read operation ('p_read_179', /home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_pooling.h:117) on port 'p_read12' (/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_pooling.h:117) [37]  (1.22 ns)
+	'icmp' operation ('icmp_ln1649') [50]  (0.619 ns)
+	'select' operation ('select_ln14', /home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_pooling.h:14) [51]  (0.293 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A
