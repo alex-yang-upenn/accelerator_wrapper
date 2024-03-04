@@ -1,15 +1,15 @@
-//Numpy array shape [4, 1, 8]
-//Min nan
-//Max nan
+//Numpy array shape [2, 2, 3, 2]
+//Min -0.562500000000
+//Max 0.718750000000
 //Number of zeros 0
 
 #ifndef W2_H_
 #define W2_H_
 
 #ifndef __SYNTHESIS__
-weight2_t w2[32];
+weight2_t w2[24];
 #else
-weight2_t w2[32] = {nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan};
+weight2_t w2[24] = {-0.21875, 0.34375, 0.03125, -0.43750, 0.71875, -0.37500, -0.15625, -0.34375, -0.03125, 0.03125, -0.09375, -0.37500, -0.03125, 0.31250, 0.37500, -0.18750, 0.12500, -0.50000, 0.12500, -0.56250, 0.21875, -0.06250, 0.15625, -0.34375};
 #endif
 
 #endif

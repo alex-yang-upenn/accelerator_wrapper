@@ -1,15 +1,15 @@
-//Numpy array shape [10]
-//Min nan
-//Max nan
-//Number of zeros 0
+//Numpy array shape [16]
+//Min 0.000000000000
+//Max 0.000000000000
+//Number of zeros 16
 
 #ifndef B17_H_
 #define B17_H_
 
 #ifndef __SYNTHESIS__
-bn_dense_0_bias_t b17[10];
+bias17_t b17[16];
 #else
-bn_dense_0_bias_t b17[10] = {nan, nan, nan, nan, nan, nan, nan, nan, nan, nan};
+bias17_t b17[16] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
 #endif
 
 #endif

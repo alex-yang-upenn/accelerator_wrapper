@@ -1,1 +1,1 @@
-nan, nan, nan, nan, nan, nan, nan, nan
+0.03125, -0.09375
