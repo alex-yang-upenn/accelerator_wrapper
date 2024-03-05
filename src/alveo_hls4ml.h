@@ -85,7 +85,7 @@ DO NOT fully use up assigned HBM memory.
 #define DATA_SIZE_IN (X_DIMENSION_IN * Y_DIMENSION_IN * Z_DIMENSION_IN)
 #define INSTREAMSIZE (BATCHSIZE * DATA_SIZE_IN)
 
-#define DATA_SIZE_OUT N_LAYER_21 // Update accordingly
+#define DATA_SIZE_OUT N_LAYER_18 // Update accordingly
 #define OUTSTREAMSIZE (BATCHSIZE * DATA_SIZE_OUT)
 
 typedef input_t input_data_t;
