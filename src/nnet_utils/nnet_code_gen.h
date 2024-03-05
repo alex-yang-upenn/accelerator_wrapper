@@ -146,32 +146,6 @@ class fill_buffer_5 : public FillConv2DBuffer<data_T, CONFIG_T> {
         }
     }
 };
-template<class data_T, typename CONFIG_T>
-class fill_buffer_8 : public FillConv2DBuffer<data_T, CONFIG_T> {
-    public:
-    static void fill_buffer(
-        data_T data[CONFIG_T::in_height * CONFIG_T::in_width * CONFIG_T::n_chan],
-        data_T buffer[CONFIG_T::n_pixels][CONFIG_T::filt_height * CONFIG_T::filt_width * CONFIG_T::n_chan],
-        const unsigned partition
-    ) {
-        if (partition ==   0) {
-            buffer[0][0] =    data[0]; buffer[0][1] =    data[1]; buffer[0][2] =    data[2]; buffer[0][3] =    data[3]; buffer[0][4] =    data[6]; buffer[0][5] =    data[7]; buffer[0][6] =    data[8]; buffer[0][7] =    data[9];
-
-        }
-        if (partition ==   1) {
-            buffer[0][0] =    data[2]; buffer[0][1] =    data[3]; buffer[0][2] =    data[4]; buffer[0][3] =    data[5]; buffer[0][4] =    data[8]; buffer[0][5] =    data[9]; buffer[0][6] =   data[10]; buffer[0][7] =   data[11];
-
-        }
-        if (partition ==   2) {
-            buffer[0][0] =    data[6]; buffer[0][1] =    data[7]; buffer[0][2] =    data[8]; buffer[0][3] =    data[9]; buffer[0][4] =   data[12]; buffer[0][5] =   data[13]; buffer[0][6] =   data[14]; buffer[0][7] =   data[15];
-
-        }
-        if (partition ==   3) {
-            buffer[0][0] =    data[8]; buffer[0][1] =    data[9]; buffer[0][2] =   data[10]; buffer[0][3] =   data[11]; buffer[0][4] =   data[14]; buffer[0][5] =   data[15]; buffer[0][6] =   data[16]; buffer[0][7] =   data[17];
-
-        }
-    }
-};
 
 } // namespace nnet
 

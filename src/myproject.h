@@ -9,8 +9,8 @@
 
 // Prototype of top level function for C-synthesis
 void myproject(
-    input_t input_1[N_INPUT_1_1*N_INPUT_2_1*N_INPUT_3_1],
-    result_t layer21_out[N_LAYER_21]
+    input_t input_2[N_INPUT_1_1*N_INPUT_2_1*N_INPUT_3_1],
+    result_t layer18_out[N_LAYER_18]
 );
 
 #endif
