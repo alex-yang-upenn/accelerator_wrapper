@@ -4,28 +4,28 @@
 #include "parameters.h"
 
 void myproject(
-    input_t input_1[N_INPUT_1_1*N_INPUT_2_1*N_INPUT_3_1],
+    input_t input_5[N_INPUT_1_1*N_INPUT_2_1*N_INPUT_3_1],
     result_t layer11_out[N_LAYER_11]
 ) {
 
     // hls-fpga-machine-learning insert IO
-    #pragma HLS ARRAY_RESHAPE variable=input_1 complete dim=0
+    #pragma HLS ARRAY_RESHAPE variable=input_5 complete dim=0
     #pragma HLS ARRAY_PARTITION variable=layer11_out complete dim=0
-    #pragma HLS INTERFACE ap_vld port=input_1,layer11_out 
+    #pragma HLS INTERFACE ap_vld port=input_5,layer11_out 
     #pragma HLS DATAFLOW 
 
 #ifndef __SYNTHESIS__
     static bool loaded_weights = false;
     if (!loaded_weights) {
         // hls-fpga-machine-learning insert load weights
-        nnet::load_weights_from_txt<weight2_t, 24>(w2, "w2.txt");
-        nnet::load_weights_from_txt<bias2_t, 2>(b2, "b2.txt");
-        nnet::load_weights_from_txt<weight7_t, 10>(w7, "w7.txt");
+        nnet::load_weights_from_txt<weight2_t, 12>(w2, "w2.txt");
+        nnet::load_weights_from_txt<bias2_t, 1>(b2, "b2.txt");
+        nnet::load_weights_from_txt<weight7_t, 5>(w7, "w7.txt");
         nnet::load_weights_from_txt<bias7_t, 5>(b7, "b7.txt");
         nnet::load_weights_from_txt<bn_dense_0_scale_t, 5>(s9, "s9.txt");
         nnet::load_weights_from_txt<bn_dense_0_bias_t, 5>(b9, "b9.txt");
-        nnet::load_weights_from_txt<output_dense_weight_t, 50>(w11, "w11.txt");
-        nnet::load_weights_from_txt<output_dense_bias_t, 10>(b11, "b11.txt");
+        nnet::load_weights_from_txt<output_dense_weight_t, 25>(w11, "w11.txt");
+        nnet::load_weights_from_txt<output_dense_bias_t, 5>(b11, "b11.txt");
         loaded_weights = true;
     }
 #endif
@@ -38,7 +38,7 @@ void myproject(
 
     layer2_t layer2_out[OUT_HEIGHT_2*OUT_WIDTH_2*N_FILT_2];
     #pragma HLS ARRAY_PARTITION variable=layer2_out complete dim=0
-    nnet::conv_2d_cl<input_t, layer2_t, config2>(input_1, layer2_out, w2, b2); // fused_convbn_0
+    nnet::conv_2d_cl<input_t, layer2_t, config2>(input_5, layer2_out, w2, b2); // fused_convbn_0
 
     layer4_t layer4_out[OUT_HEIGHT_2*OUT_WIDTH_2*N_FILT_2];
     #pragma HLS ARRAY_PARTITION variable=layer4_out complete dim=0

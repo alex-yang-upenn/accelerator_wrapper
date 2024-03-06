@@ -1,5 +1,5 @@
-//Numpy array shape [2]
-//Min -0.062500000000
+//Numpy array shape [1]
+//Min 0.031250000000
 //Max 0.031250000000
 //Number of zeros 0
 
@@ -7,9 +7,9 @@
 #define B2_H_
 
 #ifndef __SYNTHESIS__
-bias2_t b2[2];
+bias2_t b2[1];
 #else
-bias2_t b2[2] = {0.03125, -0.06250};
+bias2_t b2[1] = {0.03125};
 #endif
 
 #endif

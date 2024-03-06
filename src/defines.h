@@ -13,18 +13,18 @@
 #define N_INPUT_3_1 3
 #define OUT_HEIGHT_2 3
 #define OUT_WIDTH_2 3
-#define N_FILT_2 2
+#define N_FILT_2 1
 #define OUT_HEIGHT_2 3
 #define OUT_WIDTH_2 3
-#define N_FILT_2 2
+#define N_FILT_2 1
 #define OUT_HEIGHT_5 1
 #define OUT_WIDTH_5 1
-#define N_FILT_5 2
-#define N_SIZE_0_6 2
+#define N_FILT_5 1
+#define N_SIZE_0_6 1
 #define N_LAYER_7 5
 #define N_LAYER_7 5
 #define N_LAYER_7 5
-#define N_LAYER_11 10
+#define N_LAYER_11 5
 
 // hls-fpga-machine-learning insert layer-precision
 typedef ap_fixed<16,6> input_t;
