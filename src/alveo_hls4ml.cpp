@@ -4,7 +4,6 @@
 #include PROJ_HDR
 
 #ifdef IO_PARALLEL
-#ifdef IS_DENSE
 static void read_input(const input_data_t *in, input_data_t (&in_buf)[BATCHSIZE][DATA_SIZE_IN]) {
   for (int i = 0; i < BATCHSIZE; i++) {
       #pragma HLS PIPELINE
@@ -14,13 +13,13 @@ static void read_input(const input_data_t *in, input_data_t (&in_buf)[BATCHSIZE]
       }
     }
 }
-static void run_inference(input_data_t (&in_buf)[BATCHSIZE][DATA_SIZE_IN], input_data_t (&out_buf)[BATCHSIZE][DATA_SIZE_IN]) {
+static void run_inference(input_data_t (&in_buf)[BATCHSIZE][DATA_SIZE_IN], output_data_t (&out_buf)[BATCHSIZE][DATA_SIZE_OUT]) {
   for (int i = 0; i < BATCHSIZE; i++) {
       #pragma HLS DATAFLOW
       hls4ml: MYPROJ(in_buf[i],out_buf[i]);
     }
 }
-static void write_result(const input_data_t *in, input_data_t (&out_buf)[BATCHSIZE][DATA_SIZE_IN]) {
+static void write_result(output_data_t *out, output_data_t (&out_buf)[BATCHSIZE][DATA_SIZE_OUT]) {
   for (int i = 0; i < BATCHSIZE; i++) {
     #pragma HLS PIPELINE
     for (int j = 0; j < DATA_SIZE_OUT; j++) {
@@ -29,13 +28,6 @@ static void write_result(const input_data_t *in, input_data_t (&out_buf)[BATCHSI
     }
   }
 }
-#endif
-
-#ifdef IS_CONV1D
-#endif
-
-#ifdef IS_CONV2D
-#endif
 #endif
 
 #ifdef IO_STREAM
@@ -117,7 +109,7 @@ extern "C" {
       #pragma HLS DATAFLOW
       read_input(in, in_buf);
       run_inference(in_buf, out_buf);
-      write_output(out, out_buf);
+      write_result(out, out_buf);
     #endif
 
     #ifdef IO_STREAM
