@@ -1,0 +1,275 @@
+====================================================================
+Version:    xcd v2022.2 (64-bit)
+Copyright:  Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Created:    Wed Mar  6 07:08:23 2024
+====================================================================
+
+1. Kernel and compute unit information
+======================================
+
+Compute Unit: alveo_hls4ml_1
+Kernel: alveo_hls4ml
+Base Address: 0x800000
+Clock Pin: ap_clk
+Reset Pin: ap_rst_n
+
+Compute Unit: alveo_hls4ml_2
+Kernel: alveo_hls4ml
+Base Address: 0x810000
+Clock Pin: ap_clk
+Reset Pin: ap_rst_n
+
+Compute Unit: alveo_hls4ml_3
+Kernel: alveo_hls4ml
+Base Address: 0x820000
+Clock Pin: ap_clk
+Reset Pin: ap_rst_n
+
+Compute Unit: alveo_hls4ml_4
+Kernel: alveo_hls4ml
+Base Address: 0x830000
+Clock Pin: ap_clk
+Reset Pin: ap_rst_n
+
+2. Interface Connections
+========================
+
+IP to Compute Unit
+------------------
+Source Pin: SLR0/M01_AXI
+Destination Pin: alveo_hls4ml_1/s_axi_control
+
+Source Pin: SLR0/M02_AXI
+Destination Pin: alveo_hls4ml_2/s_axi_control
+
+Source Pin: SLR0/M03_AXI
+Destination Pin: alveo_hls4ml_3/s_axi_control
+
+Source Pin: SLR0/M04_AXI
+Destination Pin: alveo_hls4ml_4/s_axi_control
+
+Compute Unit to IP
+------------------
+Source Pin: alveo_hls4ml_1/m_axi_gmem0
+Destination Pin: hmss_0/S01_AXI
+
+Source Pin: alveo_hls4ml_1/m_axi_gmem1
+Destination Pin: hmss_0/S02_AXI
+
+Source Pin: alveo_hls4ml_2/m_axi_gmem0
+Destination Pin: hmss_0/S03_AXI
+
+Source Pin: alveo_hls4ml_2/m_axi_gmem1
+Destination Pin: hmss_0/S04_AXI
+
+Source Pin: alveo_hls4ml_3/m_axi_gmem0
+Destination Pin: hmss_0/S05_AXI
+
+Source Pin: alveo_hls4ml_3/m_axi_gmem1
+Destination Pin: hmss_0/S06_AXI
+
+Source Pin: alveo_hls4ml_4/m_axi_gmem0
+Destination Pin: hmss_0/S07_AXI
+
+Source Pin: alveo_hls4ml_4/m_axi_gmem1
+Destination Pin: hmss_0/S08_AXI
+
+3. Clock Connections
+====================
+
+Compute Unit: alveo_hls4ml_1
+Clock ID: 0
+Platform Clock Frequency: 300.000000 MHz
+Requested Kernel Clock Frequency: 300.000000 MHz
+Achieved Kernel Clock Frequency: 218.200000 MHz
+Source Pin: ulp_ucs/aclk_kernel_00
+Destination Pin: alveo_hls4ml_1/ap_clk
+
+Compute Unit: alveo_hls4ml_2
+Clock ID: 0
+Platform Clock Frequency: 300.000000 MHz
+Requested Kernel Clock Frequency: 300.000000 MHz
+Achieved Kernel Clock Frequency: 218.200000 MHz
+Source Pin: ulp_ucs/aclk_kernel_00
+Destination Pin: alveo_hls4ml_2/ap_clk
+
+Compute Unit: alveo_hls4ml_3
+Clock ID: 0
+Platform Clock Frequency: 300.000000 MHz
+Requested Kernel Clock Frequency: 300.000000 MHz
+Achieved Kernel Clock Frequency: 218.200000 MHz
+Source Pin: ulp_ucs/aclk_kernel_00
+Destination Pin: alveo_hls4ml_3/ap_clk
+
+Compute Unit: alveo_hls4ml_4
+Clock ID: 0
+Platform Clock Frequency: 300.000000 MHz
+Requested Kernel Clock Frequency: 300.000000 MHz
+Achieved Kernel Clock Frequency: 218.200000 MHz
+Source Pin: ulp_ucs/aclk_kernel_00
+Destination Pin: alveo_hls4ml_4/ap_clk
+
+Clock Instance: ulp_ucs
+Source Pin: ii_level0_wire/ulp_m_aclk_ctrl_00
+Destination Pin: ulp_ucs/aclk_ctrl
+
+Clock Instance: ulp_ucs
+Source Pin: ii_level0_wire/ulp_m_aclk_freerun_ref_00
+Destination Pin: ulp_ucs/aclk_freerun
+
+Clock Instance: ulp_ucs
+Source Pin: ii_level0_wire/ulp_m_aclk_freerun_ref_00
+Destination Pin: ulp_ucs/aclk_hbm_refclk
+
+Clock Instance: ulp_ucs
+Source Pin: ii_level0_wire/ulp_m_aclk_pcie_00
+Destination Pin: ulp_ucs/aclk_pcie
+
+4. Reset Connections
+====================
+
+Compute Unit: alveo_hls4ml_1
+Source Pin: proc_sys_reset_kernel_slr0/peripheral_aresetn
+Destination Pin: alveo_hls4ml_1/ap_rst_n
+Associated Clock Pin: alveo_hls4ml_1/ap_clk
+
+Compute Unit: alveo_hls4ml_2
+Source Pin: proc_sys_reset_kernel_slr0/peripheral_aresetn
+Destination Pin: alveo_hls4ml_2/ap_rst_n
+Associated Clock Pin: alveo_hls4ml_2/ap_clk
+
+Compute Unit: alveo_hls4ml_3
+Source Pin: proc_sys_reset_kernel_slr0/peripheral_aresetn
+Destination Pin: alveo_hls4ml_3/ap_rst_n
+Associated Clock Pin: alveo_hls4ml_3/ap_clk
+
+Compute Unit: alveo_hls4ml_4
+Source Pin: proc_sys_reset_kernel_slr0/peripheral_aresetn
+Destination Pin: alveo_hls4ml_4/ap_rst_n
+Associated Clock Pin: alveo_hls4ml_4/ap_clk
+
+5. SLR Utilization per Compute Unit
+===================================
+
+Compute Unit: alveo_hls4ml_1
++------------+-------+------+------+--------+--------+--------+
+| Site Type  |  SLR0 | SLR1 | SLR2 | SLR0 % | SLR1 % | SLR2 % |
++------------+-------+------+------+--------+--------+--------+
+| LUT        |  4962 |    0 |    0 |   1.13 |   0.00 |   0.00 |
+| LUTAsLogic |  4472 |    0 |    0 |   1.02 |   0.00 |   0.00 |
+| LUTAsMem   |   490 |    0 |    0 |   0.24 |   0.00 |   0.00 |
+| REG        |  7087 |    0 |    0 |   0.81 |   0.00 |   0.00 |
+| CARRY8     |   165 |    0 |    0 |   0.30 |   0.00 |   0.00 |
+| F7MUX      |   280 |    0 |    0 |   0.13 |   0.00 |   0.00 |
+| F8MUX      |    14 |    0 |    0 |   0.01 |   0.00 |   0.00 |
+| F9MUX      |     0 |    0 |    0 |   0.00 |   0.00 |   0.00 |
+| BRAM       | 413.5 |    0 |    0 |  61.53 |   0.00 |   0.00 |
+| URAM       |     0 |    0 |    0 |   0.00 |   0.00 |   0.00 |
+| DSPs       |    30 |    0 |    0 |   1.04 |   0.00 |   0.00 |
++------------+-------+------+------+--------+--------+--------+
+
+Compute Unit: alveo_hls4ml_2
++------------+------+------+------+--------+--------+--------+
+| Site Type  | SLR0 | SLR1 | SLR2 | SLR0 % | SLR1 % | SLR2 % |
++------------+------+------+------+--------+--------+--------+
+| LUT        | 2942 | 1698 |  490 |   0.67 |   0.39 |   0.11 |
+| LUTAsLogic | 2452 | 1698 |  490 |   0.56 |   0.39 |   0.11 |
+| LUTAsMem   |  490 |    0 |    0 |   0.24 |   0.00 |   0.00 |
+| REG        | 3374 | 2560 | 1344 |   0.38 |   0.30 |   0.16 |
+| CARRY8     |  120 |   37 |    8 |   0.22 |   0.07 |   0.01 |
+| F7MUX      |  126 |   97 |   57 |   0.06 |   0.04 |   0.03 |
+| F8MUX      |    0 |    6 |    8 |   0.00 |   0.01 |   0.01 |
+| F9MUX      |    0 |    0 |    0 |   0.00 |   0.00 |   0.00 |
+| BRAM       | 34.5 |  189 |  190 |   5.13 |  28.12 |  28.27 |
+| URAM       |    0 |    0 |    0 |   0.00 |   0.00 |   0.00 |
+| DSPs       |   29 |    1 |    0 |   1.01 |   0.03 |   0.00 |
++------------+------+------+------+--------+--------+--------+
+
+Compute Unit: alveo_hls4ml_3
++------------+------+------+------+--------+--------+--------+
+| Site Type  | SLR0 | SLR1 | SLR2 | SLR0 % | SLR1 % | SLR2 % |
++------------+------+------+------+--------+--------+--------+
+| LUT        | 2938 |  868 | 1449 |   0.67 |   0.20 |   0.34 |
+| LUTAsLogic | 2448 |  868 | 1449 |   0.56 |   0.20 |   0.34 |
+| LUTAsMem   |  490 |    0 |    0 |   0.24 |   0.00 |   0.00 |
+| REG        | 3369 |  817 | 3038 |   0.38 |   0.09 |   0.35 |
+| CARRY8     |  120 |    4 |   41 |   0.22 |   0.01 |   0.08 |
+| F7MUX      |  126 |   27 |  127 |   0.06 |   0.01 |   0.06 |
+| F8MUX      |    0 |    0 |   14 |   0.00 |   0.00 |   0.01 |
+| F9MUX      |    0 |    0 |    0 |   0.00 |   0.00 |   0.00 |
+| BRAM       | 31.5 |    3 |  379 |   4.69 |   0.45 |  56.40 |
+| URAM       |    0 |    0 |    0 |   0.00 |   0.00 |   0.00 |
+| DSPs       |   29 |    1 |    0 |   1.01 |   0.03 |   0.00 |
++------------+------+------+------+--------+--------+--------+
+
+Compute Unit: alveo_hls4ml_4
++------------+------+------+------+--------+--------+--------+
+| Site Type  | SLR0 | SLR1 | SLR2 | SLR0 % | SLR1 % | SLR2 % |
++------------+------+------+------+--------+--------+--------+
+| LUT        | 2960 | 2010 |    0 |   0.67 |   0.47 |   0.00 |
+| LUTAsLogic | 2470 | 2010 |    0 |   0.56 |   0.47 |   0.00 |
+| LUTAsMem   |  490 |    0 |    0 |   0.24 |   0.00 |   0.00 |
+| REG        | 3468 | 3619 |    0 |   0.39 |   0.42 |   0.00 |
+| CARRY8     |  120 |   45 |    0 |   0.22 |   0.08 |   0.00 |
+| F7MUX      |  126 |  154 |    0 |   0.06 |   0.07 |   0.00 |
+| F8MUX      |    0 |   14 |    0 |   0.00 |   0.01 |   0.00 |
+| F9MUX      |    0 |    0 |    0 |   0.00 |   0.00 |   0.00 |
+| BRAM       | 37.5 |  376 |    0 |   5.58 |  55.95 |   0.00 |
+| URAM       |    0 |    0 |    0 |   0.00 |   0.00 |   0.00 |
+| DSPs       |   29 |    1 |    0 |   1.01 |   0.03 |   0.00 |
++------------+------+------+------+--------+--------+--------+
+
+6. Compute Unit Utilization per SLR
+===================================
+
+SLR0
++------------+----------------+----------------+----------------+----------------+-----------+
+| Site Type  | alveo_hls4ml_1 | alveo_hls4ml_2 | alveo_hls4ml_3 | alveo_hls4ml_4 | Available |
++------------+----------------+----------------+----------------+----------------+-----------+
+| LUT        |           4962 |           2942 |           2938 |           2960 |    439680 |
+| LUTAsLogic |           4472 |           2452 |           2448 |           2470 |    439680 |
+| LUTAsMem   |            490 |            490 |            490 |            490 |    205440 |
+| REG        |           7087 |           3374 |           3369 |           3468 |    879360 |
+| CARRY8     |            165 |            120 |            120 |            120 |     54960 |
+| F7MUX      |            280 |            126 |            126 |            126 |    219840 |
+| F8MUX      |             14 |              0 |              0 |              0 |    109920 |
+| F9MUX      |              0 |              0 |              0 |              0 |     54960 |
+| BRAM       |          413.5 |           34.5 |           31.5 |           37.5 |       672 |
+| URAM       |              0 |              0 |              0 |              0 |       320 |
+| DSPs       |             30 |             29 |             29 |             29 |      2880 |
++------------+----------------+----------------+----------------+----------------+-----------+
+
+SLR1
++------------+----------------+----------------+----------------+----------------+-----------+
+| Site Type  | alveo_hls4ml_1 | alveo_hls4ml_2 | alveo_hls4ml_3 | alveo_hls4ml_4 | Available |
++------------+----------------+----------------+----------------+----------------+-----------+
+| LUT        |              0 |           1698 |            868 |           2010 |    439680 |
+| LUTAsLogic |              0 |           1698 |            868 |           2010 |    439680 |
+| LUTAsMem   |              0 |              0 |              0 |              0 |    205440 |
+| REG        |              0 |           2560 |            817 |           3619 |    879360 |
+| CARRY8     |              0 |             37 |              4 |             45 |     54960 |
+| F7MUX      |              0 |             97 |             27 |            154 |    219840 |
+| F8MUX      |              0 |              6 |              0 |             14 |    109920 |
+| F9MUX      |              0 |              0 |              0 |              0 |     54960 |
+| BRAM       |              0 |            189 |              3 |            376 |       672 |
+| URAM       |              0 |              0 |              0 |              0 |       320 |
+| DSPs       |              0 |              1 |              1 |              1 |      2880 |
++------------+----------------+----------------+----------------+----------------+-----------+
+
+SLR2
++------------+----------------+----------------+----------------+----------------+-----------+
+| Site Type  | alveo_hls4ml_1 | alveo_hls4ml_2 | alveo_hls4ml_3 | alveo_hls4ml_4 | Available |
++------------+----------------+----------------+----------------+----------------+-----------+
+| LUT        |              0 |            490 |           1449 |              0 |    439680 |
+| LUTAsLogic |              0 |            490 |           1449 |              0 |    439680 |
+| LUTAsMem   |              0 |              0 |              0 |              0 |    205440 |
+| REG        |              0 |           1344 |           3038 |              0 |    879360 |
+| CARRY8     |              0 |              8 |             41 |              0 |     54960 |
+| F7MUX      |              0 |             57 |            127 |              0 |    219840 |
+| F8MUX      |              0 |              8 |             14 |              0 |    109920 |
+| F9MUX      |              0 |              0 |              0 |              0 |     54960 |
+| BRAM       |              0 |            190 |            379 |              0 |       672 |
+| URAM       |              0 |              0 |              0 |              0 |       320 |
+| DSPs       |              0 |              0 |              0 |              0 |      2880 |
++------------+----------------+----------------+----------------+----------------+-----------+
+

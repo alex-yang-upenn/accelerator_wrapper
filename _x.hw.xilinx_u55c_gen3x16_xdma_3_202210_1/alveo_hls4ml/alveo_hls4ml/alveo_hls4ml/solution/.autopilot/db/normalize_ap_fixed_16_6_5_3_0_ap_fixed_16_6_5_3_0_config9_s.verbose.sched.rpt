@@ -1,0 +1,159 @@
+
+
+================================================================
+== Vitis HLS Report for 'normalize_ap_fixed_16_6_5_3_0_ap_fixed_16_6_5_3_0_config9_s'
+================================================================
+* Date:           Wed Mar  6 03:03:15 2024
+
+* Version:        2022.2 (Build 3670227 on Oct 13 2022)
+* Project:        alveo_hls4ml
+* Solution:       solution (Vitis Kernel Flow Target)
+* Product family: virtexuplus
+* Target device:  xcu55c-fsvh2892-2L-e
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+---------+----------+------------+
+    |  Clock |  Target | Estimated| Uncertainty|
+    +--------+---------+----------+------------+
+    |ap_clk  |  3.33 ns|  1.940 ns|     0.90 ns|
+    +--------+---------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-----+-----+---------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline|
+    |   min   |   max   |    min   |    max   | min | max |   Type  |
+    +---------+---------+----------+----------+-----+-----+---------+
+    |        2|        2|  6.666 ns|  6.666 ns|    1|    1|      yes|
+    +---------+---------+----------+----------+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        N/A
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 2
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 2
+HasVarLatency: 0
+IsPipeline: 1
+IsRtlPipelined: 1
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
++ Individual pipeline summary: 
+  * Pipeline-0: initiation interval (II) = 1, depth = 3
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 3
+* Pipeline : 1
+  Pipeline-0 : II = 1, D = 3, States = { 1 2 3 }
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 3 
+3 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 1.21>
+ST_1 : Operation 4 [1/1] (1.21ns)   --->   "%p_read49 = read i16 @_ssdm_op_Read.ap_auto.i16, i16 %p_read4" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_mult.h:70]   --->   Operation 4 'read' 'p_read49' <Predicate = true> <Delay = 1.21> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.42> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = -1> <Depth = -1> <FIFO>
+ST_1 : Operation 5 [1/1] (1.21ns)   --->   "%p_read38 = read i10 @_ssdm_op_Read.ap_auto.i10, i10 %p_read3" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_mult.h:70]   --->   Operation 5 'read' 'p_read38' <Predicate = true> <Delay = 1.21> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.42> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = -1> <Depth = -1> <FIFO>
+ST_1 : Operation 6 [1/1] (1.21ns)   --->   "%p_read27 = read i6 @_ssdm_op_Read.ap_auto.i6, i6 %p_read2" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_mult.h:70]   --->   Operation 6 'read' 'p_read27' <Predicate = true> <Delay = 1.21> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.42> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = -1> <Depth = -1> <FIFO>
+ST_1 : Operation 7 [1/1] (1.21ns)   --->   "%p_read16 = read i16 @_ssdm_op_Read.ap_auto.i16, i16 %p_read1" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_mult.h:70]   --->   Operation 7 'read' 'p_read16' <Predicate = true> <Delay = 1.21> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.42> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = -1> <Depth = -1> <FIFO>
+ST_1 : Operation 8 [1/1] (1.21ns)   --->   "%p_read_10 = read i16 @_ssdm_op_Read.ap_auto.i16, i16 %p_read" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_mult.h:70]   --->   Operation 8 'read' 'p_read_10' <Predicate = true> <Delay = 1.21> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.42> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = -1> <Depth = -1> <FIFO>
+
+State 2 <SV = 1> <Delay = 1.94>
+ST_2 : Operation 9 [1/1] (0.00ns)   --->   "%sext_ln1347 = sext i16 %p_read_10"   --->   Operation 9 'sext' 'sext_ln1347' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 10 [1/1] (1.94ns)   --->   "%mul_ln1347 = mul i26 %sext_ln1347, i26 32120"   --->   Operation 10 'mul' 'mul_ln1347' <Predicate = true> <Delay = 1.94> <CoreInst = "Multiplier">   --->   Core 3 'Multiplier' <Latency = 0> <II = 1> <Delay = 1.94> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 11 [1/1] (0.00ns)   --->   "%sext_ln1347_1 = sext i16 %p_read16"   --->   Operation 11 'sext' 'sext_ln1347_1' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 12 [1/1] (1.94ns)   --->   "%mul_ln1347_1 = mul i26 %sext_ln1347_1, i26 67078526"   --->   Operation 12 'mul' 'mul_ln1347_1' <Predicate = true> <Delay = 1.94> <CoreInst = "Multiplier">   --->   Core 3 'Multiplier' <Latency = 0> <II = 1> <Delay = 1.94> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 13 [1/1] (0.00ns)   --->   "%zext_ln1270 = zext i6 %p_read27"   --->   Operation 13 'zext' 'zext_ln1270' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 14 [1/1] (1.94ns)   --->   "%r_V = mul i21 %zext_ln1270, i21 30855"   --->   Operation 14 'mul' 'r_V' <Predicate = true> <Delay = 1.94> <CoreInst = "Multiplier">   --->   Core 3 'Multiplier' <Latency = 0> <II = 1> <Delay = 1.94> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 15 [1/1] (0.00ns)   --->   "%zext_ln1270_1 = zext i10 %p_read38"   --->   Operation 15 'zext' 'zext_ln1270_1' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 16 [1/1] (1.94ns)   --->   "%r_V_1 = mul i26 %zext_ln1270_1, i26 67078224"   --->   Operation 16 'mul' 'r_V_1' <Predicate = true> <Delay = 1.94> <CoreInst = "Multiplier">   --->   Core 3 'Multiplier' <Latency = 0> <II = 1> <Delay = 1.94> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 17 [1/1] (0.00ns)   --->   "%sext_ln1347_2 = sext i16 %p_read49"   --->   Operation 17 'sext' 'sext_ln1347_2' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 18 [1/1] (1.94ns)   --->   "%mul_ln1347_2 = mul i26 %sext_ln1347_2, i26 17136"   --->   Operation 18 'mul' 'mul_ln1347_2' <Predicate = true> <Delay = 1.94> <CoreInst = "Multiplier">   --->   Core 3 'Multiplier' <Latency = 0> <II = 1> <Delay = 1.94> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+
+State 3 <SV = 2> <Delay = 0.84>
+ST_3 : Operation 19 [1/1] (0.00ns)   --->   "%specpipeline_ln48 = specpipeline void @_ssdm_op_SpecPipeline, i32 1, i32 0, i32 0, i32 0, void @empty_3" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_batchnorm.h:48]   --->   Operation 19 'specpipeline' 'specpipeline_ln48' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 20 [1/1] (0.00ns)   --->   "%specresourcelimit_ln48 = specresourcelimit void @_ssdm_op_SpecResourceLimit, i64 5, void @empty_5, void @empty_3, void @empty_3, void @empty_3" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_batchnorm.h:48]   --->   Operation 20 'specresourcelimit' 'specresourcelimit_ln48' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 21 [1/1] (0.84ns)   --->   "%ret_V = add i26 %mul_ln1347, i26 35853312"   --->   Operation 21 'add' 'ret_V' <Predicate = true> <Delay = 0.84> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.84> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 22 [1/1] (0.00ns)   --->   "%trunc_ln = partselect i16 @_ssdm_op_PartSelect.i16.i26.i32.i32, i26 %ret_V, i32 10, i32 25"   --->   Operation 22 'partselect' 'trunc_ln' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 23 [1/1] (0.84ns)   --->   "%ret_V_1 = add i26 %mul_ln1347_1, i26 35419136"   --->   Operation 23 'add' 'ret_V_1' <Predicate = true> <Delay = 0.84> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.84> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 24 [1/1] (0.00ns)   --->   "%trunc_ln818_1 = partselect i16 @_ssdm_op_PartSelect.i16.i26.i32.i32, i26 %ret_V_1, i32 10, i32 25"   --->   Operation 24 'partselect' 'trunc_ln818_1' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 25 [1/1] (0.00ns)   --->   "%zext_ln1347 = zext i21 %r_V"   --->   Operation 25 'zext' 'zext_ln1347' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 26 [1/1] (0.82ns)   --->   "%ret_V_2 = add i22 %zext_ln1347, i22 2219008"   --->   Operation 26 'add' 'ret_V_2' <Predicate = true> <Delay = 0.82> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.82> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 27 [1/1] (0.00ns)   --->   "%trunc_ln818_2 = partselect i12 @_ssdm_op_PartSelect.i12.i22.i32.i32, i22 %ret_V_2, i32 10, i32 21"   --->   Operation 27 'partselect' 'trunc_ln818_2' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 28 [1/1] (0.00ns)   --->   "%sext_ln818 = sext i12 %trunc_ln818_2"   --->   Operation 28 'sext' 'sext_ln818' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 29 [1/1] (0.84ns)   --->   "%ret_V_3 = add i26 %r_V_1, i26 43024384"   --->   Operation 29 'add' 'ret_V_3' <Predicate = true> <Delay = 0.84> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.84> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 30 [1/1] (0.00ns)   --->   "%trunc_ln818_3 = partselect i16 @_ssdm_op_PartSelect.i16.i26.i32.i32, i26 %ret_V_3, i32 10, i32 25"   --->   Operation 30 'partselect' 'trunc_ln818_3' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 31 [1/1] (0.84ns)   --->   "%ret_V_4 = add i26 %mul_ln1347_2, i26 7068672"   --->   Operation 31 'add' 'ret_V_4' <Predicate = true> <Delay = 0.84> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.84> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 32 [1/1] (0.00ns)   --->   "%trunc_ln818_4 = partselect i16 @_ssdm_op_PartSelect.i16.i26.i32.i32, i26 %ret_V_4, i32 10, i32 25"   --->   Operation 32 'partselect' 'trunc_ln818_4' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 33 [1/1] (0.00ns)   --->   "%mrv = insertvalue i80 <undef>, i16 %trunc_ln" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_batchnorm.h:63]   --->   Operation 33 'insertvalue' 'mrv' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 34 [1/1] (0.00ns)   --->   "%mrv_1 = insertvalue i80 %mrv, i16 %trunc_ln818_1" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_batchnorm.h:63]   --->   Operation 34 'insertvalue' 'mrv_1' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 35 [1/1] (0.00ns)   --->   "%mrv_2 = insertvalue i80 %mrv_1, i16 %sext_ln818" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_batchnorm.h:63]   --->   Operation 35 'insertvalue' 'mrv_2' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 36 [1/1] (0.00ns)   --->   "%mrv_3 = insertvalue i80 %mrv_2, i16 %trunc_ln818_3" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_batchnorm.h:63]   --->   Operation 36 'insertvalue' 'mrv_3' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 37 [1/1] (0.00ns)   --->   "%mrv_4 = insertvalue i80 %mrv_3, i16 %trunc_ln818_4" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_batchnorm.h:63]   --->   Operation 37 'insertvalue' 'mrv_4' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 38 [1/1] (0.00ns)   --->   "%ret_ln63 = ret i80 %mrv_4" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_batchnorm.h:63]   --->   Operation 38 'ret' 'ret_ln63' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 3.33ns, clock uncertainty: 0.9ns.
+
+ <State 1>: 1.22ns
+The critical path consists of the following:
+	wire read operation ('p_read49', /home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_mult.h:70) on port 'p_read4' (/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_mult.h:70) [8]  (1.22 ns)
+
+ <State 2>: 1.94ns
+The critical path consists of the following:
+	'mul' operation ('mul_ln1347') [14]  (1.94 ns)
+
+ <State 3>: 0.844ns
+The critical path consists of the following:
+	'add' operation ('ret.V') [15]  (0.844 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

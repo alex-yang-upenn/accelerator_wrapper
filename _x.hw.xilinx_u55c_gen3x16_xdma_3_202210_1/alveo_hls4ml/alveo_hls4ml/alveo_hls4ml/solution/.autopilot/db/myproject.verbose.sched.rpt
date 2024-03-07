@@ -1,0 +1,272 @@
+
+
+================================================================
+== Vitis HLS Report for 'myproject'
+================================================================
+* Date:           Wed Mar  6 03:03:26 2024
+
+* Version:        2022.2 (Build 3670227 on Oct 13 2022)
+* Project:        alveo_hls4ml
+* Solution:       solution (Vitis Kernel Flow Target)
+* Product family: virtexuplus
+* Target device:  xcu55c-fsvh2892-2L-e
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+---------+----------+------------+
+    |  Clock |  Target | Estimated| Uncertainty|
+    +--------+---------+----------+------------+
+    |ap_clk  |  3.33 ns|  2.423 ns|     0.90 ns|
+    +--------+---------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+-----------+-----------+-----+-----+----------+
+    |  Latency (cycles) |   Latency (absolute)  |  Interval | Pipeline |
+    |   min   |   max   |    min    |    max    | min | max |   Type   |
+    +---------+---------+-----------+-----------+-----+-----+----------+
+    |       18|       19|  59.994 ns|  63.327 ns|   15|   16|  dataflow|
+    +---------+---------+-----------+-----------+-----+-----+----------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        N/A
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 2
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 16
+* Pipeline : 0
+* Dataflow Pipeline: 1
+  DF-Pipeline-0: Size = 16, States = { 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 }
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 3 
+3 --> 4 
+4 --> 5 
+5 --> 6 
+6 --> 7 
+7 --> 8 
+8 --> 9 
+9 --> 10 
+10 --> 11 
+11 --> 12 
+12 --> 13 
+13 --> 14 
+14 --> 15 
+15 --> 16 
+16 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 1.21>
+ST_1 : Operation 17 [1/1] (1.21ns)   --->   "%i_read = read i13 @_ssdm_op_Read.ap_auto.i13, i13 %i"   --->   Operation 17 'read' 'i_read' <Predicate = true> <Delay = 1.21> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.42> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = -1> <Depth = -1> <FIFO>
+ST_1 : Operation 18 [1/1] (0.00ns)   --->   "%i_c_i = alloca i64 1"   --->   Operation 18 'alloca' 'i_c_i' <Predicate = true> <Delay = 0.00> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.38> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 13> <Depth = 7> <FIFO>
+
+State 2 <SV = 1> <Delay = 1.25>
+ST_2 : Operation 19 [2/2] (1.25ns)   --->   "%tmp = call i64 @conv_2d_cl<ap_fixed<16, 6, 5, 3, 0>, ap_fixed<16, 6, 5, 3, 0>, config2>2, i768 %in_buf, i13 %i_read, i13 %i_c_i" [/home/ayvol/accelerator_wrapper/src/myproject.cpp:41->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:19->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:19]   --->   Operation 19 'call' 'tmp' <Predicate = true> <Delay = 1.25> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 3 <SV = 2> <Delay = 2.42>
+ST_3 : Operation 20 [1/2] (0.00ns)   --->   "%tmp = call i64 @conv_2d_cl<ap_fixed<16, 6, 5, 3, 0>, ap_fixed<16, 6, 5, 3, 0>, config2>2, i768 %in_buf, i13 %i_read, i13 %i_c_i" [/home/ayvol/accelerator_wrapper/src/myproject.cpp:41->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:19->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:19]   --->   Operation 20 'call' 'tmp' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_3 : Operation 21 [1/1] (0.00ns)   --->   "%layer2_out_V = extractvalue i64 %tmp" [/home/ayvol/accelerator_wrapper/src/myproject.cpp:41->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:19->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:19]   --->   Operation 21 'extractvalue' 'layer2_out_V' <Predicate = true> <Delay = 0.00> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.34> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 16> <Depth = 2> <FIFO>
+ST_3 : Operation 22 [1/1] (0.00ns)   --->   "%layer2_out_V_1 = extractvalue i64 %tmp" [/home/ayvol/accelerator_wrapper/src/myproject.cpp:41->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:19->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:19]   --->   Operation 22 'extractvalue' 'layer2_out_V_1' <Predicate = true> <Delay = 0.00> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.34> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 16> <Depth = 2> <FIFO>
+ST_3 : Operation 23 [1/1] (0.00ns)   --->   "%layer2_out_V_2 = extractvalue i64 %tmp" [/home/ayvol/accelerator_wrapper/src/myproject.cpp:41->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:19->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:19]   --->   Operation 23 'extractvalue' 'layer2_out_V_2' <Predicate = true> <Delay = 0.00> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.34> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 16> <Depth = 2> <FIFO>
+ST_3 : Operation 24 [1/1] (0.00ns)   --->   "%layer2_out_V_3 = extractvalue i64 %tmp" [/home/ayvol/accelerator_wrapper/src/myproject.cpp:41->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:19->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:19]   --->   Operation 24 'extractvalue' 'layer2_out_V_3' <Predicate = true> <Delay = 0.00> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.34> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 16> <Depth = 2> <FIFO>
+ST_3 : Operation 25 [2/2] (2.42ns)   --->   "%call_ret_i = call i24 @relu<ap_fixed<16, 6, 5, 3, 0>, ap_ufixed<6, 0, 4, 0, 0>, relu_config4>, i16 %layer2_out_V, i16 %layer2_out_V_1, i16 %layer2_out_V_2, i16 %layer2_out_V_3" [/home/ayvol/accelerator_wrapper/src/myproject.cpp:45->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:19->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:19]   --->   Operation 25 'call' 'call_ret_i' <Predicate = true> <Delay = 2.42> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 4 <SV = 3> <Delay = 0.96>
+ST_4 : Operation 26 [1/2] (0.96ns)   --->   "%call_ret_i = call i24 @relu<ap_fixed<16, 6, 5, 3, 0>, ap_ufixed<6, 0, 4, 0, 0>, relu_config4>, i16 %layer2_out_V, i16 %layer2_out_V_1, i16 %layer2_out_V_2, i16 %layer2_out_V_3" [/home/ayvol/accelerator_wrapper/src/myproject.cpp:45->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:19->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:19]   --->   Operation 26 'call' 'call_ret_i' <Predicate = true> <Delay = 0.96> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_4 : Operation 27 [1/1] (0.00ns)   --->   "%layer4_out_V = extractvalue i24 %call_ret_i" [/home/ayvol/accelerator_wrapper/src/myproject.cpp:45->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:19->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:19]   --->   Operation 27 'extractvalue' 'layer4_out_V' <Predicate = true> <Delay = 0.00> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.36> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 6> <Depth = 2> <FIFO>
+ST_4 : Operation 28 [1/1] (0.00ns)   --->   "%layer4_out_V_1 = extractvalue i24 %call_ret_i" [/home/ayvol/accelerator_wrapper/src/myproject.cpp:45->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:19->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:19]   --->   Operation 28 'extractvalue' 'layer4_out_V_1' <Predicate = true> <Delay = 0.00> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.36> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 6> <Depth = 2> <FIFO>
+ST_4 : Operation 29 [1/1] (0.00ns)   --->   "%layer4_out_V_2 = extractvalue i24 %call_ret_i" [/home/ayvol/accelerator_wrapper/src/myproject.cpp:45->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:19->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:19]   --->   Operation 29 'extractvalue' 'layer4_out_V_2' <Predicate = true> <Delay = 0.00> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.36> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 6> <Depth = 2> <FIFO>
+ST_4 : Operation 30 [1/1] (0.00ns)   --->   "%layer4_out_V_3 = extractvalue i24 %call_ret_i" [/home/ayvol/accelerator_wrapper/src/myproject.cpp:45->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:19->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:19]   --->   Operation 30 'extractvalue' 'layer4_out_V_3' <Predicate = true> <Delay = 0.00> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.36> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 6> <Depth = 2> <FIFO>
+
+State 5 <SV = 4> <Delay = 2.12>
+ST_5 : Operation 31 [2/2] (2.12ns)   --->   "%layer5_out_V = call i10 @pooling2d_cl<ap_ufixed<6, 0, 4, 0, 0>, ap_fixed<16, 6, 5, 3, 0>, config5>, i6 %layer4_out_V, i6 %layer4_out_V_1, i6 %layer4_out_V_2, i6 %layer4_out_V_3" [/home/ayvol/accelerator_wrapper/src/myproject.cpp:49->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:19->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:19]   --->   Operation 31 'call' 'layer5_out_V' <Predicate = true> <Delay = 2.12> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.34> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 10> <Depth = 2> <FIFO>
+
+State 6 <SV = 5> <Delay = 1.82>
+ST_6 : Operation 32 [1/2] (1.82ns)   --->   "%layer5_out_V = call i10 @pooling2d_cl<ap_ufixed<6, 0, 4, 0, 0>, ap_fixed<16, 6, 5, 3, 0>, config5>, i6 %layer4_out_V, i6 %layer4_out_V_1, i6 %layer4_out_V_2, i6 %layer4_out_V_3" [/home/ayvol/accelerator_wrapper/src/myproject.cpp:49->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:19->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:19]   --->   Operation 32 'call' 'layer5_out_V' <Predicate = true> <Delay = 1.82> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.34> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 10> <Depth = 2> <FIFO>
+
+State 7 <SV = 6> <Delay = 1.21>
+ST_7 : Operation 33 [2/2] (1.21ns)   --->   "%call_ret2_i = call i64 @dense_latency<ap_fixed<16, 6, 5, 3, 0>, ap_fixed<16, 6, 5, 3, 0>, config7>, i10 %layer5_out_V" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense.h:41->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:19]   --->   Operation 33 'call' 'call_ret2_i' <Predicate = true> <Delay = 1.21> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 8 <SV = 7> <Delay = 1.70>
+ST_8 : Operation 34 [1/2] (1.70ns)   --->   "%call_ret2_i = call i64 @dense_latency<ap_fixed<16, 6, 5, 3, 0>, ap_fixed<16, 6, 5, 3, 0>, config7>, i10 %layer5_out_V" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense.h:41->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:19]   --->   Operation 34 'call' 'call_ret2_i' <Predicate = true> <Delay = 1.70> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_8 : Operation 35 [1/1] (0.00ns)   --->   "%layer7_out_V = extractvalue i64 %call_ret2_i" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense.h:41->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:19]   --->   Operation 35 'extractvalue' 'layer7_out_V' <Predicate = true> <Delay = 0.00> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.34> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 16> <Depth = 2> <FIFO>
+ST_8 : Operation 36 [1/1] (0.00ns)   --->   "%layer7_out_V_1 = extractvalue i64 %call_ret2_i" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense.h:41->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:19]   --->   Operation 36 'extractvalue' 'layer7_out_V_1' <Predicate = true> <Delay = 0.00> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.34> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 16> <Depth = 2> <FIFO>
+ST_8 : Operation 37 [1/1] (0.00ns)   --->   "%layer7_out_V_2 = extractvalue i64 %call_ret2_i" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense.h:41->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:19]   --->   Operation 37 'extractvalue' 'layer7_out_V_2' <Predicate = true> <Delay = 0.00> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.36> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 6> <Depth = 2> <FIFO>
+ST_8 : Operation 38 [1/1] (0.00ns)   --->   "%layer7_out_V_3 = extractvalue i64 %call_ret2_i" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense.h:41->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:19]   --->   Operation 38 'extractvalue' 'layer7_out_V_3' <Predicate = true> <Delay = 0.00> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.34> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 10> <Depth = 2> <FIFO>
+ST_8 : Operation 39 [1/1] (0.00ns)   --->   "%layer7_out_V_4 = extractvalue i64 %call_ret2_i" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense.h:41->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:19]   --->   Operation 39 'extractvalue' 'layer7_out_V_4' <Predicate = true> <Delay = 0.00> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.34> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 16> <Depth = 2> <FIFO>
+
+State 9 <SV = 8> <Delay = 1.21>
+ST_9 : Operation 40 [3/3] (1.21ns)   --->   "%call_ret3_i = call i80 @normalize<ap_fixed<16, 6, 5, 3, 0>, ap_fixed<16, 6, 5, 3, 0>, config9>, i16 %layer7_out_V, i16 %layer7_out_V_1, i6 %layer7_out_V_2, i10 %layer7_out_V_3, i16 %layer7_out_V_4" [/home/ayvol/accelerator_wrapper/src/myproject.cpp:58->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:19->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:19]   --->   Operation 40 'call' 'call_ret3_i' <Predicate = true> <Delay = 1.21> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 10 <SV = 9> <Delay = 1.94>
+ST_10 : Operation 41 [2/3] (1.94ns)   --->   "%call_ret3_i = call i80 @normalize<ap_fixed<16, 6, 5, 3, 0>, ap_fixed<16, 6, 5, 3, 0>, config9>, i16 %layer7_out_V, i16 %layer7_out_V_1, i6 %layer7_out_V_2, i10 %layer7_out_V_3, i16 %layer7_out_V_4" [/home/ayvol/accelerator_wrapper/src/myproject.cpp:58->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:19->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:19]   --->   Operation 41 'call' 'call_ret3_i' <Predicate = true> <Delay = 1.94> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 11 <SV = 10> <Delay = 0.84>
+ST_11 : Operation 42 [1/3] (0.84ns)   --->   "%call_ret3_i = call i80 @normalize<ap_fixed<16, 6, 5, 3, 0>, ap_fixed<16, 6, 5, 3, 0>, config9>, i16 %layer7_out_V, i16 %layer7_out_V_1, i6 %layer7_out_V_2, i10 %layer7_out_V_3, i16 %layer7_out_V_4" [/home/ayvol/accelerator_wrapper/src/myproject.cpp:58->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:19->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:19]   --->   Operation 42 'call' 'call_ret3_i' <Predicate = true> <Delay = 0.84> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_11 : Operation 43 [1/1] (0.00ns)   --->   "%layer9_out_V = extractvalue i80 %call_ret3_i" [/home/ayvol/accelerator_wrapper/src/myproject.cpp:58->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:19->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:19]   --->   Operation 43 'extractvalue' 'layer9_out_V' <Predicate = true> <Delay = 0.00> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.34> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 16> <Depth = 2> <FIFO>
+ST_11 : Operation 44 [1/1] (0.00ns)   --->   "%layer9_out_V_1 = extractvalue i80 %call_ret3_i" [/home/ayvol/accelerator_wrapper/src/myproject.cpp:58->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:19->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:19]   --->   Operation 44 'extractvalue' 'layer9_out_V_1' <Predicate = true> <Delay = 0.00> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.34> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 16> <Depth = 2> <FIFO>
+ST_11 : Operation 45 [1/1] (0.00ns)   --->   "%layer9_out_V_2 = extractvalue i80 %call_ret3_i" [/home/ayvol/accelerator_wrapper/src/myproject.cpp:58->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:19->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:19]   --->   Operation 45 'extractvalue' 'layer9_out_V_2' <Predicate = true> <Delay = 0.00> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.34> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 16> <Depth = 2> <FIFO>
+ST_11 : Operation 46 [1/1] (0.00ns)   --->   "%layer9_out_V_3 = extractvalue i80 %call_ret3_i" [/home/ayvol/accelerator_wrapper/src/myproject.cpp:58->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:19->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:19]   --->   Operation 46 'extractvalue' 'layer9_out_V_3' <Predicate = true> <Delay = 0.00> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.34> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 16> <Depth = 2> <FIFO>
+ST_11 : Operation 47 [1/1] (0.00ns)   --->   "%layer9_out_V_4 = extractvalue i80 %call_ret3_i" [/home/ayvol/accelerator_wrapper/src/myproject.cpp:58->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:19->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:19]   --->   Operation 47 'extractvalue' 'layer9_out_V_4' <Predicate = true> <Delay = 0.00> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.34> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 16> <Depth = 2> <FIFO>
+
+State 12 <SV = 11> <Delay = 2.42>
+ST_12 : Operation 48 [2/2] (2.42ns)   --->   "%call_ret4_i = call i30 @relu<ap_fixed<16, 6, 5, 3, 0>, ap_ufixed<6, 0, 4, 0, 0>, relu_config10>, i16 %layer9_out_V, i16 %layer9_out_V_1, i16 %layer9_out_V_2, i16 %layer9_out_V_3, i16 %layer9_out_V_4" [/home/ayvol/accelerator_wrapper/src/myproject.cpp:62->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:19->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:19]   --->   Operation 48 'call' 'call_ret4_i' <Predicate = true> <Delay = 2.42> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 13 <SV = 12> <Delay = 2.18>
+ST_13 : Operation 49 [1/2] (0.96ns)   --->   "%call_ret4_i = call i30 @relu<ap_fixed<16, 6, 5, 3, 0>, ap_ufixed<6, 0, 4, 0, 0>, relu_config10>, i16 %layer9_out_V, i16 %layer9_out_V_1, i16 %layer9_out_V_2, i16 %layer9_out_V_3, i16 %layer9_out_V_4" [/home/ayvol/accelerator_wrapper/src/myproject.cpp:62->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:19->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:19]   --->   Operation 49 'call' 'call_ret4_i' <Predicate = true> <Delay = 0.96> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_13 : Operation 50 [1/1] (0.00ns)   --->   "%layer10_out_V = extractvalue i30 %call_ret4_i" [/home/ayvol/accelerator_wrapper/src/myproject.cpp:62->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:19->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:19]   --->   Operation 50 'extractvalue' 'layer10_out_V' <Predicate = true> <Delay = 0.00> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.36> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 6> <Depth = 2> <FIFO>
+ST_13 : Operation 51 [1/1] (0.00ns)   --->   "%layer10_out_V_1 = extractvalue i30 %call_ret4_i" [/home/ayvol/accelerator_wrapper/src/myproject.cpp:62->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:19->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:19]   --->   Operation 51 'extractvalue' 'layer10_out_V_1' <Predicate = true> <Delay = 0.00> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.36> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 6> <Depth = 2> <FIFO>
+ST_13 : Operation 52 [1/1] (0.00ns)   --->   "%layer10_out_V_2 = extractvalue i30 %call_ret4_i" [/home/ayvol/accelerator_wrapper/src/myproject.cpp:62->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:19->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:19]   --->   Operation 52 'extractvalue' 'layer10_out_V_2' <Predicate = true> <Delay = 0.00> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.36> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 6> <Depth = 2> <FIFO>
+ST_13 : Operation 53 [1/1] (0.00ns)   --->   "%layer10_out_V_3 = extractvalue i30 %call_ret4_i" [/home/ayvol/accelerator_wrapper/src/myproject.cpp:62->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:19->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:19]   --->   Operation 53 'extractvalue' 'layer10_out_V_3' <Predicate = true> <Delay = 0.00> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.36> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 6> <Depth = 2> <FIFO>
+ST_13 : Operation 54 [1/1] (0.00ns)   --->   "%layer10_out_V_4 = extractvalue i30 %call_ret4_i" [/home/ayvol/accelerator_wrapper/src/myproject.cpp:62->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:19->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:19]   --->   Operation 54 'extractvalue' 'layer10_out_V_4' <Predicate = true> <Delay = 0.00> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.36> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 6> <Depth = 2> <FIFO>
+ST_13 : Operation 55 [4/4] (1.21ns)   --->   "%call_ln41 = call void @dense_latency<ap_ufixed<6, 0, 4, 0, 0>, ap_fixed<16, 6, 5, 3, 0>, config11>, i6 %layer10_out_V, i6 %layer10_out_V_1, i6 %layer10_out_V_2, i6 %layer10_out_V_3, i6 %layer10_out_V_4, i13 %out_buf_0, i13 %i_c_i, i13 %out_buf_1, i13 %out_buf_2, i13 %out_buf_3, i13 %out_buf_4" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense.h:41->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:19]   --->   Operation 55 'call' 'call_ln41' <Predicate = true> <Delay = 1.21> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 14 <SV = 13> <Delay = 2.41>
+ST_14 : Operation 56 [3/4] (2.41ns)   --->   "%call_ln41 = call void @dense_latency<ap_ufixed<6, 0, 4, 0, 0>, ap_fixed<16, 6, 5, 3, 0>, config11>, i6 %layer10_out_V, i6 %layer10_out_V_1, i6 %layer10_out_V_2, i6 %layer10_out_V_3, i6 %layer10_out_V_4, i13 %out_buf_0, i13 %i_c_i, i13 %out_buf_1, i13 %out_buf_2, i13 %out_buf_3, i13 %out_buf_4" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense.h:41->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:19]   --->   Operation 56 'call' 'call_ln41' <Predicate = true> <Delay = 2.41> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 15 <SV = 14> <Delay = 2.41>
+ST_15 : Operation 57 [2/4] (2.41ns)   --->   "%call_ln41 = call void @dense_latency<ap_ufixed<6, 0, 4, 0, 0>, ap_fixed<16, 6, 5, 3, 0>, config11>, i6 %layer10_out_V, i6 %layer10_out_V_1, i6 %layer10_out_V_2, i6 %layer10_out_V_3, i6 %layer10_out_V_4, i13 %out_buf_0, i13 %i_c_i, i13 %out_buf_1, i13 %out_buf_2, i13 %out_buf_3, i13 %out_buf_4" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense.h:41->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:19]   --->   Operation 57 'call' 'call_ln41' <Predicate = true> <Delay = 2.41> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 16 <SV = 15> <Delay = 0.00>
+ST_16 : Operation 58 [1/1] (0.00ns)   --->   "%empty = specchannel i32 @_ssdm_op_SpecChannel, void @i_c_str, i32 1, void @p_str, void @p_str, i32 7, i32 0, i13 %i_c_i, i13 %i_c_i"   --->   Operation 58 'specchannel' 'empty' <Predicate = true> <Delay = 0.00>
+ST_16 : Operation 59 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i13 %i_c_i, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @p_str, i32 4294967295, i32 0"   --->   Operation 59 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_16 : Operation 60 [1/1] (0.00ns)   --->   "%specdataflowpipeline_ln0 = specdataflowpipeline void @_ssdm_op_SpecDataflowPipeline, i32 4294967295, i32 0, void @empty_3"   --->   Operation 60 'specdataflowpipeline' 'specdataflowpipeline_ln0' <Predicate = true> <Delay = 0.00>
+ST_16 : Operation 61 [1/4] (0.00ns)   --->   "%call_ln41 = call void @dense_latency<ap_ufixed<6, 0, 4, 0, 0>, ap_fixed<16, 6, 5, 3, 0>, config11>, i6 %layer10_out_V, i6 %layer10_out_V_1, i6 %layer10_out_V_2, i6 %layer10_out_V_3, i6 %layer10_out_V_4, i13 %out_buf_0, i13 %i_c_i, i13 %out_buf_1, i13 %out_buf_2, i13 %out_buf_3, i13 %out_buf_4" [/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense.h:41->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:19]   --->   Operation 61 'call' 'call_ln41' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_16 : Operation 62 [1/1] (0.00ns)   --->   "%ret_ln19 = ret" [/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:19]   --->   Operation 62 'ret' 'ret_ln19' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 3.33ns, clock uncertainty: 0.9ns.
+
+ <State 1>: 1.22ns
+The critical path consists of the following:
+	wire read operation ('i_read') on port 'i' [8]  (1.22 ns)
+
+ <State 2>: 1.25ns
+The critical path consists of the following:
+	'call' operation ('tmp', /home/ayvol/accelerator_wrapper/src/myproject.cpp:41->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:19->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:19) to 'conv_2d_cl<ap_fixed<16, 6, 5, 3, 0>, ap_fixed<16, 6, 5, 3, 0>, config2>2' [13]  (1.25 ns)
+
+ <State 3>: 2.42ns
+The critical path consists of the following:
+	'call' operation ('tmp', /home/ayvol/accelerator_wrapper/src/myproject.cpp:41->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:19->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:19) to 'conv_2d_cl<ap_fixed<16, 6, 5, 3, 0>, ap_fixed<16, 6, 5, 3, 0>, config2>2' [13]  (0 ns)
+	'call' operation ('call_ret_i', /home/ayvol/accelerator_wrapper/src/myproject.cpp:45->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:19->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:19) to 'relu<ap_fixed<16, 6, 5, 3, 0>, ap_ufixed<6, 0, 4, 0, 0>, relu_config4>' [18]  (2.42 ns)
+
+ <State 4>: 0.969ns
+The critical path consists of the following:
+	'call' operation ('call_ret_i', /home/ayvol/accelerator_wrapper/src/myproject.cpp:45->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:19->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:19) to 'relu<ap_fixed<16, 6, 5, 3, 0>, ap_ufixed<6, 0, 4, 0, 0>, relu_config4>' [18]  (0.969 ns)
+
+ <State 5>: 2.13ns
+The critical path consists of the following:
+	'call' operation ('layer5_out.V', /home/ayvol/accelerator_wrapper/src/myproject.cpp:49->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:19->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:19) to 'pooling2d_cl<ap_ufixed<6, 0, 4, 0, 0>, ap_fixed<16, 6, 5, 3, 0>, config5>' [23]  (2.13 ns)
+
+ <State 6>: 1.82ns
+The critical path consists of the following:
+	'call' operation ('layer5_out.V', /home/ayvol/accelerator_wrapper/src/myproject.cpp:49->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:19->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:19) to 'pooling2d_cl<ap_ufixed<6, 0, 4, 0, 0>, ap_fixed<16, 6, 5, 3, 0>, config5>' [23]  (1.82 ns)
+
+ <State 7>: 1.22ns
+The critical path consists of the following:
+	'call' operation ('call_ret2_i', /home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense.h:41->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:19) to 'dense_latency<ap_fixed<16, 6, 5, 3, 0>, ap_fixed<16, 6, 5, 3, 0>, config7>' [24]  (1.22 ns)
+
+ <State 8>: 1.7ns
+The critical path consists of the following:
+	'call' operation ('call_ret2_i', /home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense.h:41->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:19) to 'dense_latency<ap_fixed<16, 6, 5, 3, 0>, ap_fixed<16, 6, 5, 3, 0>, config7>' [24]  (1.7 ns)
+
+ <State 9>: 1.22ns
+The critical path consists of the following:
+	'call' operation ('call_ret3_i', /home/ayvol/accelerator_wrapper/src/myproject.cpp:58->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:19->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:19) to 'normalize<ap_fixed<16, 6, 5, 3, 0>, ap_fixed<16, 6, 5, 3, 0>, config9>' [30]  (1.22 ns)
+
+ <State 10>: 1.94ns
+The critical path consists of the following:
+	'call' operation ('call_ret3_i', /home/ayvol/accelerator_wrapper/src/myproject.cpp:58->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:19->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:19) to 'normalize<ap_fixed<16, 6, 5, 3, 0>, ap_fixed<16, 6, 5, 3, 0>, config9>' [30]  (1.94 ns)
+
+ <State 11>: 0.844ns
+The critical path consists of the following:
+	'call' operation ('call_ret3_i', /home/ayvol/accelerator_wrapper/src/myproject.cpp:58->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:19->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:19) to 'normalize<ap_fixed<16, 6, 5, 3, 0>, ap_fixed<16, 6, 5, 3, 0>, config9>' [30]  (0.844 ns)
+
+ <State 12>: 2.42ns
+The critical path consists of the following:
+	'call' operation ('call_ret4_i', /home/ayvol/accelerator_wrapper/src/myproject.cpp:62->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:19->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:19) to 'relu<ap_fixed<16, 6, 5, 3, 0>, ap_ufixed<6, 0, 4, 0, 0>, relu_config10>' [36]  (2.42 ns)
+
+ <State 13>: 2.19ns
+The critical path consists of the following:
+	'call' operation ('call_ret4_i', /home/ayvol/accelerator_wrapper/src/myproject.cpp:62->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:19->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:19) to 'relu<ap_fixed<16, 6, 5, 3, 0>, ap_ufixed<6, 0, 4, 0, 0>, relu_config10>' [36]  (0.969 ns)
+	'call' operation ('call_ln41', /home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense.h:41->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:19) to 'dense_latency<ap_ufixed<6, 0, 4, 0, 0>, ap_fixed<16, 6, 5, 3, 0>, config11>' [42]  (1.22 ns)
+
+ <State 14>: 2.42ns
+The critical path consists of the following:
+	'call' operation ('call_ln41', /home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense.h:41->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:19) to 'dense_latency<ap_ufixed<6, 0, 4, 0, 0>, ap_fixed<16, 6, 5, 3, 0>, config11>' [42]  (2.42 ns)
+
+ <State 15>: 2.42ns
+The critical path consists of the following:
+	'call' operation ('call_ln41', /home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense.h:41->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:19) to 'dense_latency<ap_ufixed<6, 0, 4, 0, 0>, ap_fixed<16, 6, 5, 3, 0>, config11>' [42]  (2.42 ns)
+
+ <State 16>: 0ns
+The critical path consists of the following:
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+	State 8
+	State 9
+	State 10
+	State 11
+	State 12
+	State 13
+	State 14
+	State 15
+	State 16
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

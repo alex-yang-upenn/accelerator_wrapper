@@ -1,0 +1,595 @@
+
+
+================================================================
+== Synthesis Summary Report of 'alveo_hls4ml'
+================================================================
++ General Information: 
+    * Date:           Wed Mar  6 03:05:15 2024
+    * Version:        2022.2 (Build 3670227 on Oct 13 2022)
+    * Project:        alveo_hls4ml
+    * Solution:       solution (Vitis Kernel Flow Target)
+    * Product family: virtexuplus
+    * Target device:  xcu55c-fsvh2892-2L-e
+    
+
++ Performance & Resource Estimates: 
+    
+    PS: '+' for module; 'o' for loop; '*' for dataflow
+    +------------------------------------------------------------------------------+--------+-------+---------+-----------+----------+---------+------+----------+----------+----------+------------+-------------+-----+
+    |                                    Modules                                   |  Issue |       | Latency |  Latency  | Iteration|         | Trip |          |          |          |            |             |     |
+    |                                    & Loops                                   |  Type  | Slack | (cycles)|    (ns)   |  Latency | Interval| Count| Pipelined|   BRAM   |    DSP   |     FF     |     LUT     | URAM|
+    +------------------------------------------------------------------------------+--------+-------+---------+-----------+----------+---------+------+----------+----------+----------+------------+-------------+-----+
+    |+ alveo_hls4ml*                                                               |  Timing|  -0.00|   196763|  6.558e+05|         -|   131078|     -|  dataflow|  168 (4%)|  20 (~0%)|  8440 (~0%)|  11632 (~0%)|    -|
+    | + read_input                                                                 |  Timing|  -0.00|    24650|  8.216e+04|         -|    24650|     -|        no|         -|         -|   950 (~0%)|    607 (~0%)|    -|
+    |  + read_input_Pipeline_VITIS_LOOP_8_1                                        |  Timing|  -0.00|    24579|  8.192e+04|         -|    24579|     -|        no|         -|         -|   817 (~0%)|    124 (~0%)|    -|
+    |   o VITIS_LOOP_8_1                                                           |      II|   2.43|    24577|  8.192e+04|         5|        3|  8192|       yes|         -|         -|           -|            -|    -|
+    | + run_inference                                                              |       -|   0.01|   131077|  4.369e+05|         -|   131077|     -|        no|         -|  20 (~0%)|  3910 (~0%)|   4582 (~0%)|    -|
+    |  o VITIS_LOOP_17_1                                                           |       -|   2.43|   131076|  4.369e+05|        21|        -|  8192|        no|         -|         -|           -|            -|    -|
+    |   + dataflow_in_loop_VITIS_LOOP_17_1*                                        |       -|   0.01|       19|     63.327|         -|       16|     -|  dataflow|         -|  20 (~0%)|  3677 (~0%)|   4515 (~0%)|    -|
+    |    + myproject*                                                              |       -|   0.01|       19|     63.327|         -|       16|     -|  dataflow|         -|  20 (~0%)|  3677 (~0%)|   4515 (~0%)|    -|
+    |     + conv_2d_cl_ap_fixed_16_6_5_3_0_ap_fixed_16_6_5_3_0_config2_2           |       -|   0.14|       15|     49.995|         -|       15|     -|        no|         -|   2 (~0%)|  1930 (~0%)|   1171 (~0%)|    -|
+    |      + conv_2d_latency_cl_ap_fixed_16_6_5_3_0_ap_fixed_16_6_5_3_0_config2_s  |      II|   0.14|       11|     36.663|         -|        9|     -|    rewind|         -|   2 (~0%)|  1091 (~0%)|   1120 (~0%)|    -|
+    |       o PartitionLoop                                                        |       -|   2.43|       10|     33.330|         3|        1|     9|       yes|         -|         -|           -|            -|    -|
+    |     + relu_ap_fixed_16_6_5_3_0_ap_ufixed_6_0_4_0_0_relu_config4_s            |      II|   0.01|        1|      3.333|         -|        1|     -|       yes|         -|         -|   123 (~0%)|    347 (~0%)|    -|
+    |     + pooling2d_cl_ap_ufixed_6_0_4_0_0_ap_fixed_16_6_5_3_0_config5_s         |       -|   0.30|        1|      3.333|         -|        1|     -|       yes|         -|         -|    27 (~0%)|     70 (~0%)|    -|
+    |     + dense_latency_ap_fixed_16_6_5_3_0_ap_fixed_16_6_5_3_0_config7_s        |       -|   0.73|        1|      3.333|         -|        1|     -|       yes|         -|         -|    83 (~0%)|    228 (~0%)|    -|
+    |     + normalize_ap_fixed_16_6_5_3_0_ap_fixed_16_6_5_3_0_config9_s            |       -|   0.49|        2|      6.666|         -|        1|     -|       yes|         -|   5 (~0%)|   273 (~0%)|    244 (~0%)|    -|
+    |     + relu_ap_fixed_16_6_5_3_0_ap_ufixed_6_0_4_0_0_relu_config10_s           |      II|   0.01|        1|      3.333|         -|        1|     -|       yes|         -|         -|   153 (~0%)|    428 (~0%)|    -|
+    |     + dense_latency_ap_ufixed_6_0_4_0_0_ap_fixed_16_6_5_3_0_config11_s       |       -|   0.02|        3|      9.999|         -|        1|     -|       yes|         -|  13 (~0%)|   355 (~0%)|   1213 (~0%)|    -|
+    | + entry_proc                                                                 |       -|   1.21|        0|      0.000|         -|        0|     -|        no|         -|         -|     2 (~0%)|     20 (~0%)|    -|
+    | + write_result                                                               |  Timing|  -0.00|    41034|  1.368e+05|         -|    41034|     -|        no|         -|         -|   225 (~0%)|    685 (~0%)|    -|
+    |  + write_result_Pipeline_VITIS_LOOP_23_1                                     |  Timing|  -0.00|    40963|  1.365e+05|         -|    40963|     -|        no|         -|         -|    88 (~0%)|    170 (~0%)|    -|
+    |   o VITIS_LOOP_23_1                                                          |      II|   2.43|    40961|  1.365e+05|         7|        5|  8192|       yes|         -|         -|           -|            -|    -|
+    +------------------------------------------------------------------------------+--------+-------+---------+-----------+----------+---------+------+----------+----------+----------+------------+-------------+-----+
+
+
+================================================================
+== HW Interfaces
+================================================================
+* M_AXI
++-------------+------------+---------------+---------+--------+----------+-----------+--------------+--------------+-------------+-------------+
+| Interface   | Data Width | Address Width | Latency | Offset | Register | Max Widen | Max Read     | Max Write    | Num Read    | Num Write   |
+|             | (SW->HW)   |               |         |        |          | Bitwidth  | Burst Length | Burst Length | Outstanding | Outstanding |
++-------------+------------+---------------+---------+--------+----------+-----------+--------------+--------------+-------------+-------------+
+| m_axi_gmem0 | 16 -> 256  | 64            | 64      | slave  | 0        | 512       | 16           | 16           | 16          | 16          |
+| m_axi_gmem1 | 16 -> 16   | 64            | 64      | slave  | 0        | 512       | 16           | 16           | 16          | 16          |
++-------------+------------+---------------+---------+--------+----------+-----------+--------------+--------------+-------------+-------------+
+
+* S_AXILITE Interfaces
++---------------+------------+---------------+--------+----------+
+| Interface     | Data Width | Address Width | Offset | Register |
++---------------+------------+---------------+--------+----------+
+| s_axi_control | 32         | 6             | 16     | 0        |
++---------------+------------+---------------+--------+----------+
+
+* S_AXILITE Registers
++---------------+----------+--------+-------+--------+----------------------------------+------------------------------------------------------------------------------------+
+| Interface     | Register | Offset | Width | Access | Description                      | Bit Fields                                                                         |
++---------------+----------+--------+-------+--------+----------------------------------+------------------------------------------------------------------------------------+
+| s_axi_control | CTRL     | 0x00   | 32    | RW     | Control signals                  | 0=AP_START 1=AP_DONE 2=AP_IDLE 3=AP_READY 4=AP_CONTINUE 7=AUTO_RESTART 9=INTERRUPT |
+| s_axi_control | GIER     | 0x04   | 32    | RW     | Global Interrupt Enable Register | 0=Enable                                                                           |
+| s_axi_control | IP_IER   | 0x08   | 32    | RW     | IP Interrupt Enable Register     | 0=CHAN0_INT_EN 1=CHAN1_INT_EN                                                      |
+| s_axi_control | IP_ISR   | 0x0c   | 32    | RW     | IP Interrupt Status Register     | 0=CHAN0_INT_ST 1=CHAN1_INT_ST                                                      |
+| s_axi_control | in_r_1   | 0x10   | 32    | W      | Data signal of in_r              |                                                                                    |
+| s_axi_control | in_r_2   | 0x14   | 32    | W      | Data signal of in_r              |                                                                                    |
+| s_axi_control | out_r_1  | 0x1c   | 32    | W      | Data signal of out_r             |                                                                                    |
+| s_axi_control | out_r_2  | 0x20   | 32    | W      | Data signal of out_r             |                                                                                    |
++---------------+----------+--------+-------+--------+----------------------------------+------------------------------------------------------------------------------------+
+
+* TOP LEVEL CONTROL
++-----------+---------------+-----------+
+| Interface | Type          | Ports     |
++-----------+---------------+-----------+
+| ap_clk    | clock         | ap_clk    |
+| ap_rst_n  | reset         | ap_rst_n  |
+| interrupt | interrupt     | interrupt |
+| ap_ctrl   | ap_ctrl_chain |           |
++-----------+---------------+-----------+
+
+
+================================================================
+== SW I/O Information
+================================================================
+* Top Function Arguments
++----------+-----------+---------------------------------------------+
+| Argument | Direction | Datatype                                    |
++----------+-----------+---------------------------------------------+
+| in       | in        | ap_fixed<16, 6, AP_TRN, AP_WRAP, 0> const * |
+| out      | out       | ap_fixed<16, 6, AP_TRN, AP_WRAP, 0>*        |
++----------+-----------+---------------------------------------------+
+
+* SW-to-HW Mapping
++----------+---------------+-----------+----------+
+| Argument | HW Interface  | HW Type   | HW Usage |
++----------+---------------+-----------+----------+
+| in       | m_axi_gmem0   | interface |          |
+| in       | s_axi_control | interface | offset   |
+| out      | m_axi_gmem1   | interface |          |
+| out      | s_axi_control | interface | offset   |
++----------+---------------+-----------+----------+
+
+
+================================================================
+== M_AXI Burst Information
+================================================================
+ Note: All burst requests might be further partitioned into multiple requests during RTL generation based on max_read_burst_length or max_write_burst_length settings.
+
+* Inferred Burst Summary
++--------------+-----------------+-----------+--------+-------+------------------------------------------------------------+
+| HW Interface | Loop            | Direction | Length | Width | Location                                                   |
++--------------+-----------------+-----------+--------+-------+------------------------------------------------------------+
+| m_axi_gmem0  | VITIS_LOOP_8_1  | read      | 24576  | 256   | /home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:8:19  |
+| m_axi_gmem1  | VITIS_LOOP_23_1 | write     | 40960  | 16    | /home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:23:20 |
++--------------+-----------------+-----------+--------+-------+------------------------------------------------------------+
+
+
+================================================================
+== Bind Op Report
+================================================================
++-----------------------------------------------------------------------------+-----+--------+-----------------+------+--------+---------+
+| Name                                                                        | DSP | Pragma | Variable        | Op   | Impl   | Latency |
++-----------------------------------------------------------------------------+-----+--------+-----------------+------+--------+---------+
+| + alveo_hls4ml                                                              | 20  |        |                 |      |        |         |
+|  + read_input                                                               | 0   |        |                 |      |        |         |
+|   + read_input_Pipeline_VITIS_LOOP_8_1                                      | 0   |        |                 |      |        |         |
+|     add_ln8_fu_102_p2                                                       | -   |        | add_ln8         | add  | fabric | 0       |
+|  + run_inference                                                            | 20  |        |                 |      |        |         |
+|   + dataflow_in_loop_VITIS_LOOP_17_1                                        | 20  |        |                 |      |        |         |
+|    + myproject                                                              | 20  |        |                 |      |        |         |
+|      layer2_out_V_U                                                         | -   |        | layer2_out_V    | fifo | srl    | 0       |
+|      layer2_out_V_1_U                                                       | -   |        | layer2_out_V_1  | fifo | srl    | 0       |
+|      layer2_out_V_2_U                                                       | -   |        | layer2_out_V_2  | fifo | srl    | 0       |
+|      layer2_out_V_3_U                                                       | -   |        | layer2_out_V_3  | fifo | srl    | 0       |
+|      layer4_out_V_U                                                         | -   |        | layer4_out_V    | fifo | srl    | 0       |
+|      layer4_out_V_1_U                                                       | -   |        | layer4_out_V_1  | fifo | srl    | 0       |
+|      layer4_out_V_2_U                                                       | -   |        | layer4_out_V_2  | fifo | srl    | 0       |
+|      layer4_out_V_3_U                                                       | -   |        | layer4_out_V_3  | fifo | srl    | 0       |
+|      layer5_out_V_U                                                         | -   |        | layer5_out_V    | fifo | srl    | 0       |
+|      layer7_out_V_U                                                         | -   |        | layer7_out_V    | fifo | srl    | 0       |
+|      layer7_out_V_1_U                                                       | -   |        | layer7_out_V_1  | fifo | srl    | 0       |
+|      layer7_out_V_2_U                                                       | -   |        | layer7_out_V_2  | fifo | srl    | 0       |
+|      layer7_out_V_3_U                                                       | -   |        | layer7_out_V_3  | fifo | srl    | 0       |
+|      layer7_out_V_4_U                                                       | -   |        | layer7_out_V_4  | fifo | srl    | 0       |
+|      layer9_out_V_U                                                         | -   |        | layer9_out_V    | fifo | srl    | 0       |
+|      layer9_out_V_1_U                                                       | -   |        | layer9_out_V_1  | fifo | srl    | 0       |
+|      layer9_out_V_2_U                                                       | -   |        | layer9_out_V_2  | fifo | srl    | 0       |
+|      layer9_out_V_3_U                                                       | -   |        | layer9_out_V_3  | fifo | srl    | 0       |
+|      layer9_out_V_4_U                                                       | -   |        | layer9_out_V_4  | fifo | srl    | 0       |
+|      layer10_out_V_U                                                        | -   |        | layer10_out_V   | fifo | srl    | 0       |
+|      layer10_out_V_1_U                                                      | -   |        | layer10_out_V_1 | fifo | srl    | 0       |
+|      layer10_out_V_2_U                                                      | -   |        | layer10_out_V_2 | fifo | srl    | 0       |
+|      layer10_out_V_3_U                                                      | -   |        | layer10_out_V_3 | fifo | srl    | 0       |
+|      layer10_out_V_4_U                                                      | -   |        | layer10_out_V_4 | fifo | srl    | 0       |
+|     + conv_2d_cl_ap_fixed_16_6_5_3_0_ap_fixed_16_6_5_3_0_config2_2          | 2   |        |                 |      |        |         |
+|      + conv_2d_latency_cl_ap_fixed_16_6_5_3_0_ap_fixed_16_6_5_3_0_config2_s | 2   |        |                 |      |        |         |
+|        i_part_fu_1426_p2                                                    | -   |        | i_part          | add  | fabric | 0       |
+|        r_V_21_fu_1852_p2                                                    | -   |        | r_V_21          | sub  | fabric | 0       |
+|        mul_16s_5s_21_1_1_U9                                                 | 1   |        | r_V_23          | mul  | auto   | 0       |
+|        r_V_25_fu_1639_p2                                                    | -   |        | r_V_25          | sub  | fabric | 0       |
+|        r_V_27_fu_1671_p2                                                    | -   |        | r_V_27          | add  | fabric | 0       |
+|        r_V_29_fu_1707_p2                                                    | -   |        | r_V_29          | add  | fabric | 0       |
+|        r_V_31_fu_1743_p2                                                    | -   |        | r_V_31          | add  | fabric | 0       |
+|        mul_16s_5ns_21_1_1_U10                                               | 1   |        | r_V_33          | mul  | auto   | 0       |
+|        add_ln813_fu_1792_p2                                                 | -   |        | add_ln813       | add  | fabric | 0       |
+|        add_ln813_30_fu_1814_p2                                              | -   |        | add_ln813_30    | add  | fabric | 0       |
+|        add_ln813_32_fu_1820_p2                                              | -   |        | add_ln813_32    | add  | fabric | 0       |
+|        add_ln813_33_fu_1830_p2                                              | -   |        | add_ln813_33    | add  | fabric | 0       |
+|     + relu_ap_fixed_16_6_5_3_0_ap_ufixed_6_0_4_0_0_relu_config4_s           | 0   |        |                 |      |        |         |
+|       p_Val2_1_fu_122_p2                                                    | -   |        | p_Val2_1        | add  | fabric | 0       |
+|       p_Val2_3_fu_202_p2                                                    | -   |        | p_Val2_3        | add  | fabric | 0       |
+|       p_Val2_5_fu_282_p2                                                    | -   |        | p_Val2_5        | add  | fabric | 0       |
+|       p_Val2_7_fu_362_p2                                                    | -   |        | p_Val2_7        | add  | fabric | 0       |
+|     + dense_latency_ap_fixed_16_6_5_3_0_ap_fixed_16_6_5_3_0_config7_s       | 0   |        |                 |      |        |         |
+|       r_V_fu_141_p2                                                         | -   |        | r_V             | sub  | fabric | 0       |
+|       r_V_18_fu_161_p2                                                      | -   |        | r_V_18          | sub  | fabric | 0       |
+|       mul_10ns_6ns_15_1_1_U34                                               | -   |        | r_V_19          | mul  | auto   | 0       |
+|       mul_10ns_5s_15_1_1_U35                                                | -   |        | r_V_20          | mul  | auto   | 0       |
+|     + normalize_ap_fixed_16_6_5_3_0_ap_fixed_16_6_5_3_0_config9_s           | 5   |        |                 |      |        |         |
+|       mul_16s_16ns_26_1_1_U40                                               | 1   |        | mul_ln1347      | mul  | auto   | 0       |
+|       ret_V_fu_258_p2                                                       | -   |        | ret_V           | add  | fabric | 0       |
+|       mul_16s_16s_26_1_1_U43                                                | 1   |        | mul_ln1347_1    | mul  | auto   | 0       |
+|       ret_V_1_fu_274_p2                                                     | -   |        | ret_V_1         | add  | fabric | 0       |
+|       mul_6ns_16ns_21_1_1_U42                                               | 1   |        | r_V             | mul  | auto   | 0       |
+|       ret_V_2_fu_294_p2                                                     | -   |        | ret_V_2         | add  | fabric | 0       |
+|       mul_10ns_16s_26_1_1_U41                                               | 1   |        | r_V_1           | mul  | auto   | 0       |
+|       ret_V_3_fu_314_p2                                                     | -   |        | ret_V_3         | add  | fabric | 0       |
+|       mul_16s_16ns_26_1_1_U39                                               | 1   |        | mul_ln1347_2    | mul  | auto   | 0       |
+|       ret_V_4_fu_330_p2                                                     | -   |        | ret_V_4         | add  | fabric | 0       |
+|     + relu_ap_fixed_16_6_5_3_0_ap_ufixed_6_0_4_0_0_relu_config10_s          | 0   |        |                 |      |        |         |
+|       p_Val2_8_fu_130_p2                                                    | -   |        | p_Val2_8        | add  | fabric | 0       |
+|       p_Val2_10_fu_210_p2                                                   | -   |        | p_Val2_10       | add  | fabric | 0       |
+|       p_Val2_12_fu_290_p2                                                   | -   |        | p_Val2_12       | add  | fabric | 0       |
+|       p_Val2_14_fu_370_p2                                                   | -   |        | p_Val2_14       | add  | fabric | 0       |
+|       p_Val2_16_fu_450_p2                                                   | -   |        | p_Val2_16       | add  | fabric | 0       |
+|     + dense_latency_ap_ufixed_6_0_4_0_0_ap_fixed_16_6_5_3_0_config11_s      | 13  |        |                 |      |        |         |
+|       mul_6ns_11s_17_1_1_U82                                                | 1   |        | r_V             | mul  | auto   | 0       |
+|       mul_6ns_10s_16_1_1_U73                                                | -   |        | r_V_2           | mul  | auto   | 0       |
+|       mul_6ns_11s_17_1_1_U72                                                | 1   |        | r_V_3           | mul  | auto   | 0       |
+|       mul_6ns_11s_17_1_1_U70                                                | 1   |        | r_V_4           | mul  | auto   | 0       |
+|       mul_6ns_11s_17_1_1_U81                                                | 1   |        | r_V_5           | mul  | auto   | 0       |
+|       mul_6ns_8s_14_1_1_U71                                                 | -   |        | r_V_6           | mul  | auto   | 0       |
+|       mul_6ns_9s_15_1_1_U65                                                 | -   |        | r_V_7           | mul  | auto   | 0       |
+|       mul_6ns_11ns_16_1_1_U64                                               | 1   |        | mul_ln818       | mul  | auto   | 0       |
+|       mul_6ns_9s_15_1_1_U63                                                 | -   |        | r_V_8           | mul  | auto   | 0       |
+|       mul_6ns_10s_16_1_1_U79                                                | -   |        | r_V_9           | mul  | auto   | 0       |
+|       mul_6ns_11s_17_1_1_U67                                                | 1   |        | r_V_10          | mul  | auto   | 0       |
+|       mul_6ns_11ns_16_1_1_U61                                               | 1   |        | mul_ln818_1     | mul  | auto   | 0       |
+|       mul_6ns_7ns_12_1_1_U80                                                | -   |        | mul_ln818_2     | mul  | auto   | 0       |
+|       mul_6ns_11ns_16_1_1_U68                                               | 1   |        | mul_ln818_3     | mul  | auto   | 0       |
+|       mul_6ns_10ns_15_1_1_U78                                               | -   |        | mul_ln818_4     | mul  | auto   | 0       |
+|       mul_6ns_11s_17_1_1_U74                                                | 1   |        | r_V_11          | mul  | auto   | 0       |
+|       mul_6ns_11s_17_1_1_U62                                                | 1   |        | r_V_12          | mul  | auto   | 0       |
+|       mul_6ns_10s_16_1_1_U60                                                | -   |        | r_V_13          | mul  | auto   | 0       |
+|       mul_6ns_11s_17_1_1_U76                                                | 1   |        | r_V_14          | mul  | auto   | 0       |
+|       mul_6ns_11s_17_1_1_U69                                                | 1   |        | r_V_15          | mul  | auto   | 0       |
+|       mul_6ns_10s_16_1_1_U58                                                | -   |        | r_V_16          | mul  | auto   | 0       |
+|       mul_6ns_10ns_15_1_1_U66                                               | -   |        | mul_ln818_5     | mul  | auto   | 0       |
+|       mul_6ns_10ns_15_1_1_U77                                               | -   |        | mul_ln818_6     | mul  | auto   | 0       |
+|       mul_6ns_10ns_15_1_1_U75                                               | -   |        | mul_ln818_7     | mul  | auto   | 0       |
+|       mul_6ns_11s_17_1_1_U59                                                | 1   |        | r_V_17          | mul  | auto   | 0       |
+|       add_ln813_fu_3332_p2                                                  | -   |        | add_ln813       | add  | fabric | 0       |
+|       add_ln813_2_fu_3348_p2                                                | -   |        | add_ln813_2     | add  | fabric | 0       |
+|       add_ln813_3_fu_3358_p2                                                | -   |        | add_ln813_3     | add  | fabric | 0       |
+|       add_ln813_5_fu_3374_p2                                                | -   |        | add_ln813_5     | add  | fabric | 0       |
+|       add_ln813_7_fu_3390_p2                                                | -   |        | add_ln813_7     | add  | fabric | 0       |
+|       add_ln813_8_fu_3400_p2                                                | -   |        | add_ln813_8     | add  | fabric | 0       |
+|       add_ln813_10_fu_3257_p2                                               | -   |        | add_ln813_10    | add  | fabric | 0       |
+|       add_ln813_11_fu_3419_p2                                               | -   |        | add_ln813_11    | add  | fabric | 0       |
+|       add_ln813_12_fu_3429_p2                                               | -   |        | add_ln813_12    | add  | fabric | 0       |
+|       add_ln813_13_fu_3439_p2                                               | -   |        | add_ln813_13    | add  | fabric | 0       |
+|       add_ln813_14_fu_3449_p2                                               | -   |        | add_ln813_14    | add  | fabric | 0       |
+|       add_ln813_17_fu_3471_p2                                               | -   |        | add_ln813_17    | add  | fabric | 0       |
+|       add_ln813_18_fu_3481_p2                                               | -   |        | add_ln813_18    | add  | fabric | 0       |
+|       add_ln813_19_fu_3491_p2                                               | -   |        | add_ln813_19    | add  | fabric | 0       |
+|       add_ln813_20_fu_3497_p2                                               | -   |        | add_ln813_20    | add  | fabric | 0       |
+|       add_ln813_22_fu_3513_p2                                               | -   |        | add_ln813_22    | add  | fabric | 0       |
+|       add_ln813_23_fu_3523_p2                                               | -   |        | add_ln813_23    | add  | fabric | 0       |
+|  + write_result                                                             | 0   |        |                 |      |        |         |
+|   + write_result_Pipeline_VITIS_LOOP_23_1                                   | 0   |        |                 |      |        |         |
+|     add_ln23_fu_197_p2                                                      | -   |        | add_ln23        | add  | fabric | 0       |
++-----------------------------------------------------------------------------+-----+--------+-----------------+------+--------+---------+
+
+
+================================================================
+== Bind Storage Report
+================================================================
++--------------------------------------+------+------+--------+-------------+---------+------+---------+
+| Name                                 | BRAM | URAM | Pragma | Variable    | Storage | Impl | Latency |
++--------------------------------------+------+------+--------+-------------+---------+------+---------+
+| + alveo_hls4ml                       | 168  | 0    |        |             |         |      |         |
+|   out_r_c_U                          | -    | -    |        | out_r_c     | fifo    | srl  | 0       |
+|   in_buf_V_U                         | 128  | -    |        | in_buf_V    | ram_1p  | auto | 2       |
+|   out_buf_V_U                        | 8    | -    |        | out_buf_V   | ram_1p  | auto | 1       |
+|   out_buf_V_1_U                      | 8    | -    |        | out_buf_V_1 | ram_1p  | auto | 1       |
+|   out_buf_V_2_U                      | 8    | -    |        | out_buf_V_2 | ram_1p  | auto | 1       |
+|   out_buf_V_3_U                      | 8    | -    |        | out_buf_V_3 | ram_1p  | auto | 1       |
+|   out_buf_V_4_U                      | 8    | -    |        | out_buf_V_4 | ram_1p  | auto | 1       |
+|  + run_inference                     | 0    | 0    |        |             |         |      |         |
+|   + dataflow_in_loop_VITIS_LOOP_17_1 | 0    | 0    |        |             |         |      |         |
+|    + myproject                       | 0    | 0    |        |             |         |      |         |
+|      i_c_i_U                         | -    | -    |        | i_c_i       | fifo    | srl  | 0       |
++--------------------------------------+------+------+--------+-------------+---------+------+---------+
+
+
+================================================================
+== Pragma Report
+================================================================
+* Pragmas with Warnings
++------------+---------------------------------------------------------------------------------------------------------------+------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Type       | Options                                                                                                       | Location                                                   | Messages                                                                                                                                                                           |
++------------+---------------------------------------------------------------------------------------------------------------+------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| dataflow   |                                                                                                               | ../../../src/alveo_hls4ml.cpp:18 in run_inference          | Since the only kind of statements allowed in a canonical dataflow region are variable declarations and function calls, the compiler may not be able to correctly handle the region |
+| allocation | function instances=pool_op<data_T, CONFIG_T::pool_height*CONFIG_T::pool_width, CONFIG_T::pool_op> limit=limit | ../../../src/nnet_utils/nnet_pooling.h:201 in pooling2d_cl | Ignoring ALLOCATION pragma, because the corresponding call is removed                                                                                                              |
++------------+---------------------------------------------------------------------------------------------------------------+------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+* Valid Pragma Syntax
++----------------------+-----------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------+
+| Type                 | Options                                                                                                         | Location                                                                                   |
++----------------------+-----------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------+
+| pipeline             |                                                                                                                 | ../../../src/alveo_hls4ml.cpp:9 in read_input                                              |
+| unroll               |                                                                                                                 | ../../../src/alveo_hls4ml.cpp:11 in read_input                                             |
+| pipeline             |                                                                                                                 | ../../../src/alveo_hls4ml.cpp:24 in write_result                                           |
+| unroll               |                                                                                                                 | ../../../src/alveo_hls4ml.cpp:26 in write_result                                           |
+| array_reshape        | variable=in_buf complete dim=2                                                                                  | ../../../src/alveo_hls4ml.cpp:106 in alveo_hls4ml, in_buf                                  |
+| array_reshape        | variable=out_buf complete dim=2                                                                                 | ../../../src/alveo_hls4ml.cpp:107 in alveo_hls4ml, out_buf                                 |
+| dataflow             |                                                                                                                 | ../../../src/alveo_hls4ml.cpp:109 in alveo_hls4ml                                          |
+| array_reshape        | variable=input_5 complete dim=0                                                                                 | ../../../src/myproject.cpp:12 in myproject, input_5                                        |
+| array_partition      | variable=layer11_out complete dim=0                                                                             | ../../../src/myproject.cpp:13 in myproject, layer11_out                                    |
+| interface            | ap_vld port=input_5,layer11_out                                                                                 | ../../../src/myproject.cpp:14 in myproject, input_5,layer11_out                            |
+| dataflow             |                                                                                                                 | ../../../src/myproject.cpp:15 in myproject                                                 |
+| array_partition      | variable=layer2_out complete dim=0                                                                              | ../../../src/myproject.cpp:40 in myproject, layer2_out                                     |
+| array_partition      | variable=layer4_out complete dim=0                                                                              | ../../../src/myproject.cpp:44 in myproject, layer4_out                                     |
+| array_partition      | variable=layer5_out complete dim=0                                                                              | ../../../src/myproject.cpp:48 in myproject, layer5_out                                     |
+| array_partition      | variable=layer7_out complete dim=0                                                                              | ../../../src/myproject.cpp:53 in myproject, layer7_out                                     |
+| array_partition      | variable=layer9_out complete dim=0                                                                              | ../../../src/myproject.cpp:57 in myproject, layer9_out                                     |
+| array_partition      | variable=layer10_out complete dim=0                                                                             | ../../../src/myproject.cpp:61 in myproject, layer10_out                                    |
+| pipeline             |                                                                                                                 | ../../../src/nnet_utils/nnet_activation.h:29 in linear                                     |
+| pipeline             |                                                                                                                 | ../../../src/nnet_utils/nnet_activation.h:40 in relu                                       |
+| pipeline             |                                                                                                                 | ../../../src/nnet_utils/nnet_activation.h:54 in relu_max                                   |
+| pipeline             |                                                                                                                 | ../../../src/nnet_utils/nnet_activation.h:109 in sigmoid                                   |
+| pipeline             |                                                                                                                 | ../../../src/nnet_utils/nnet_activation.h:171 in softmax_latency                           |
+| array_partition      | variable=exp_res complete                                                                                       | ../../../src/nnet_utils/nnet_activation.h:193 in softmax_latency, exp_res                  |
+| unroll               |                                                                                                                 | ../../../src/nnet_utils/nnet_activation.h:196 in softmax_latency                           |
+| unroll               |                                                                                                                 | ../../../src/nnet_utils/nnet_activation.h:210 in softmax_latency                           |
+| pipeline             |                                                                                                                 | ../../../src/nnet_utils/nnet_activation.h:217 in softmax_stable                            |
+| unroll               |                                                                                                                 | ../../../src/nnet_utils/nnet_activation.h:244 in softmax_stable                            |
+| array_partition      | variable=exp_res complete                                                                                       | ../../../src/nnet_utils/nnet_activation.h:250 in softmax_stable, exp_res                   |
+| unroll               |                                                                                                                 | ../../../src/nnet_utils/nnet_activation.h:253 in softmax_stable                            |
+| unroll               |                                                                                                                 | ../../../src/nnet_utils/nnet_activation.h:267 in softmax_stable                            |
+| pipeline             |                                                                                                                 | ../../../src/nnet_utils/nnet_activation.h:315 in softmax_legacy                            |
+| unroll               |                                                                                                                 | ../../../src/nnet_utils/nnet_activation.h:360 in softmax_argmax                            |
+| pipeline             |                                                                                                                 | ../../../src/nnet_utils/nnet_activation.h:368 in softmax_argmax                            |
+| inline               |                                                                                                                 | ../../../src/nnet_utils/nnet_activation.h:380 in softmax                                   |
+| pipeline             |                                                                                                                 | ../../../src/nnet_utils/nnet_activation.h:427 in tanh                                      |
+| pipeline             |                                                                                                                 | ../../../src/nnet_utils/nnet_activation.h:449 in hard_sigmoid                              |
+| pipeline             |                                                                                                                 | ../../../src/nnet_utils/nnet_activation.h:464 in hard_tanh                                 |
+| pipeline             |                                                                                                                 | ../../../src/nnet_utils/nnet_activation.h:482 in leaky_relu                                |
+| pipeline             |                                                                                                                 | ../../../src/nnet_utils/nnet_activation.h:499 in thresholded_relu                          |
+| pipeline             |                                                                                                                 | ../../../src/nnet_utils/nnet_activation.h:544 in softplus                                  |
+| pipeline             |                                                                                                                 | ../../../src/nnet_utils/nnet_activation.h:593 in softsign                                  |
+| pipeline             |                                                                                                                 | ../../../src/nnet_utils/nnet_activation.h:642 in elu                                       |
+| pipeline             |                                                                                                                 | ../../../src/nnet_utils/nnet_activation.h:698 in selu                                      |
+| pipeline             |                                                                                                                 | ../../../src/nnet_utils/nnet_activation.h:721 in prelu                                     |
+| pipeline             |                                                                                                                 | ../../../src/nnet_utils/nnet_activation.h:738 in binary_tanh                               |
+| pipeline             |                                                                                                                 | ../../../src/nnet_utils/nnet_activation.h:758 in ternary_tanh                              |
+| pipeline             |                                                                                                                 | ../../../src/nnet_utils/nnet_activation_stream.h:20 in linear                              |
+| unroll               |                                                                                                                 | ../../../src/nnet_utils/nnet_activation_stream.h:28 in linear                              |
+| pipeline             |                                                                                                                 | ../../../src/nnet_utils/nnet_activation_stream.h:42 in relu                                |
+| unroll               |                                                                                                                 | ../../../src/nnet_utils/nnet_activation_stream.h:50 in relu                                |
+| pipeline             |                                                                                                                 | ../../../src/nnet_utils/nnet_activation_stream.h:81 in sigmoid                             |
+| unroll               |                                                                                                                 | ../../../src/nnet_utils/nnet_activation_stream.h:89 in sigmoid                             |
+| array_partition      | variable=exp_res complete                                                                                       | ../../../src/nnet_utils/nnet_activation_stream.h:133 in softmax_latency, exp_res           |
+| pipeline             | II=ii                                                                                                           | ../../../src/nnet_utils/nnet_activation_stream.h:137 in softmax_latency                    |
+| unroll               |                                                                                                                 | ../../../src/nnet_utils/nnet_activation_stream.h:142 in softmax_latency                    |
+| unroll               |                                                                                                                 | ../../../src/nnet_utils/nnet_activation_stream.h:161 in softmax_latency                    |
+| allocation           | operation instances=mul limit=multiplier_limit                                                                  | ../../../src/nnet_utils/nnet_activation_stream.h:162 in softmax_latency                    |
+| array_partition      | variable=data_array complete                                                                                    | ../../../src/nnet_utils/nnet_activation_stream.h:194 in softmax_stable, data_array         |
+| pipeline             | II=ii                                                                                                           | ../../../src/nnet_utils/nnet_activation_stream.h:197 in softmax_stable                     |
+| unroll               |                                                                                                                 | ../../../src/nnet_utils/nnet_activation_stream.h:202 in softmax_stable                     |
+| unroll               |                                                                                                                 | ../../../src/nnet_utils/nnet_activation_stream.h:214 in softmax_stable                     |
+| array_partition      | variable=exp_res complete                                                                                       | ../../../src/nnet_utils/nnet_activation_stream.h:220 in softmax_stable, exp_res            |
+| unroll               |                                                                                                                 | ../../../src/nnet_utils/nnet_activation_stream.h:223 in softmax_stable                     |
+| unroll               |                                                                                                                 | ../../../src/nnet_utils/nnet_activation_stream.h:242 in softmax_stable                     |
+| allocation           | operation instances=mul limit=multiplier_limit                                                                  | ../../../src/nnet_utils/nnet_activation_stream.h:243 in softmax_stable                     |
+| pipeline             |                                                                                                                 | ../../../src/nnet_utils/nnet_activation_stream.h:275 in softmax_legacy                     |
+| unroll               |                                                                                                                 | ../../../src/nnet_utils/nnet_activation_stream.h:279 in softmax_legacy                     |
+| unroll               |                                                                                                                 | ../../../src/nnet_utils/nnet_activation_stream.h:286 in softmax_legacy                     |
+| unroll               |                                                                                                                 | ../../../src/nnet_utils/nnet_activation_stream.h:289 in softmax_legacy                     |
+| unroll               |                                                                                                                 | ../../../src/nnet_utils/nnet_activation_stream.h:312 in softmax_legacy                     |
+| pipeline             |                                                                                                                 | ../../../src/nnet_utils/nnet_activation_stream.h:329 in softmax_argmax                     |
+| unroll               |                                                                                                                 | ../../../src/nnet_utils/nnet_activation_stream.h:334 in softmax_argmax                     |
+| pipeline             |                                                                                                                 | ../../../src/nnet_utils/nnet_activation_stream.h:342 in softmax_argmax                     |
+| pipeline             |                                                                                                                 | ../../../src/nnet_utils/nnet_activation_stream.h:393 in tanh                               |
+| unroll               |                                                                                                                 | ../../../src/nnet_utils/nnet_activation_stream.h:401 in tanh                               |
+| pipeline             |                                                                                                                 | ../../../src/nnet_utils/nnet_activation_stream.h:424 in hard_sigmoid                       |
+| unroll               |                                                                                                                 | ../../../src/nnet_utils/nnet_activation_stream.h:432 in hard_sigmoid                       |
+| pipeline             |                                                                                                                 | ../../../src/nnet_utils/nnet_activation_stream.h:449 in hard_tanh                          |
+| unroll               |                                                                                                                 | ../../../src/nnet_utils/nnet_activation_stream.h:457 in hard_tanh                          |
+| pipeline             |                                                                                                                 | ../../../src/nnet_utils/nnet_activation_stream.h:478 in leaky_relu                         |
+| unroll               |                                                                                                                 | ../../../src/nnet_utils/nnet_activation_stream.h:486 in leaky_relu                         |
+| pipeline             |                                                                                                                 | ../../../src/nnet_utils/nnet_activation_stream.h:504 in thresholded_relu                   |
+| unroll               |                                                                                                                 | ../../../src/nnet_utils/nnet_activation_stream.h:512 in thresholded_relu                   |
+| pipeline             |                                                                                                                 | ../../../src/nnet_utils/nnet_activation_stream.h:543 in softplus                           |
+| unroll               |                                                                                                                 | ../../../src/nnet_utils/nnet_activation_stream.h:551 in softplus                           |
+| pipeline             |                                                                                                                 | ../../../src/nnet_utils/nnet_activation_stream.h:584 in softsign                           |
+| unroll               |                                                                                                                 | ../../../src/nnet_utils/nnet_activation_stream.h:592 in softsign                           |
+| pipeline             |                                                                                                                 | ../../../src/nnet_utils/nnet_activation_stream.h:625 in elu                                |
+| unroll               |                                                                                                                 | ../../../src/nnet_utils/nnet_activation_stream.h:633 in elu                                |
+| pipeline             |                                                                                                                 | ../../../src/nnet_utils/nnet_activation_stream.h:673 in selu                               |
+| unroll               |                                                                                                                 | ../../../src/nnet_utils/nnet_activation_stream.h:681 in selu                               |
+| pipeline             |                                                                                                                 | ../../../src/nnet_utils/nnet_activation_stream.h:705 in prelu                              |
+| unroll               |                                                                                                                 | ../../../src/nnet_utils/nnet_activation_stream.h:713 in prelu                              |
+| pipeline             |                                                                                                                 | ../../../src/nnet_utils/nnet_activation_stream.h:730 in binary_tanh                        |
+| unroll               |                                                                                                                 | ../../../src/nnet_utils/nnet_activation_stream.h:738 in binary_tanh                        |
+| pipeline             |                                                                                                                 | ../../../src/nnet_utils/nnet_activation_stream.h:755 in ternary_tanh                       |
+| unroll               |                                                                                                                 | ../../../src/nnet_utils/nnet_activation_stream.h:763 in ternary_tanh                       |
+| function_instantiate | variable=scale,bias                                                                                             | ../../../src/nnet_utils/nnet_batchnorm.h:37 in normalize, scale,bias                       |
+| pipeline             | II=CONFIG_T::reuse_factor                                                                                       | ../../../src/nnet_utils/nnet_batchnorm.h:42 in normalize                                   |
+| array_partition      | variable=scale complete                                                                                         | ../../../src/nnet_utils/nnet_batchnorm.h:45 in normalize, scale                            |
+| array_partition      | variable=bias complete                                                                                          | ../../../src/nnet_utils/nnet_batchnorm.h:46 in normalize, bias                             |
+| allocation           | operation instances=mul limit=CONFIG_T::multiplier_limit                                                        | ../../../src/nnet_utils/nnet_batchnorm.h:48 in normalize                                   |
+| pipeline             |                                                                                                                 | ../../../src/nnet_utils/nnet_batchnorm.h:83 in normalize_binary_tanh                       |
+| array_partition      | variable=res complete                                                                                           | ../../../src/nnet_utils/nnet_batchnorm.h:84 in normalize_binary_tanh, res                  |
+| pipeline             |                                                                                                                 | ../../../src/nnet_utils/nnet_batchnorm.h:103 in normalize_ternary_tanh                     |
+| array_partition      | variable=res complete                                                                                           | ../../../src/nnet_utils/nnet_batchnorm.h:104 in normalize_ternary_tanh, res                |
+| array_partition      | variable=scale complete                                                                                         | ../../../src/nnet_utils/nnet_batchnorm_stream.h:18 in normalize, scale                     |
+| array_partition      | variable=bias complete                                                                                          | ../../../src/nnet_utils/nnet_batchnorm_stream.h:19 in normalize, bias                      |
+| allocation           | operation instances=mul limit=CONFIG_T::multiplier_limit                                                        | ../../../src/nnet_utils/nnet_batchnorm_stream.h:22 in normalize                            |
+| pipeline             | II=ii                                                                                                           | ../../../src/nnet_utils/nnet_batchnorm_stream.h:26 in normalize                            |
+| unroll               |                                                                                                                 | ../../../src/nnet_utils/nnet_batchnorm_stream.h:34 in normalize                            |
+| array_partition      | variable=threshold complete                                                                                     | ../../../src/nnet_utils/nnet_batchnorm_stream.h:56 in normalize_binary_tanh, threshold     |
+| pipeline             |                                                                                                                 | ../../../src/nnet_utils/nnet_batchnorm_stream.h:60 in normalize_binary_tanh                |
+| unroll               |                                                                                                                 | ../../../src/nnet_utils/nnet_batchnorm_stream.h:68 in normalize_binary_tanh                |
+| array_partition      | variable=threshold_hi complete                                                                                  | ../../../src/nnet_utils/nnet_batchnorm_stream.h:86 in normalize_ternary_tanh, threshold_hi |
+| array_partition      | variable=threshold_lo complete                                                                                  | ../../../src/nnet_utils/nnet_batchnorm_stream.h:87 in normalize_ternary_tanh, threshold_lo |
+| pipeline             |                                                                                                                 | ../../../src/nnet_utils/nnet_batchnorm_stream.h:91 in normalize_ternary_tanh               |
+| unroll               |                                                                                                                 | ../../../src/nnet_utils/nnet_batchnorm_stream.h:99 in normalize_ternary_tanh               |
+| array_partition      | variable=data_buf complete dim=0                                                                                | ../../../src/nnet_utils/nnet_conv2d_latency.h:20 in conv_2d_latency_cl, data_buf           |
+| array_partition      | variable=mult complete                                                                                          | ../../../src/nnet_utils/nnet_conv2d_latency.h:23 in conv_2d_latency_cl, mult               |
+| array_partition      | variable=acc complete                                                                                           | ../../../src/nnet_utils/nnet_conv2d_latency.h:26 in conv_2d_latency_cl, acc                |
+| array_partition      | variable=weights complete                                                                                       | ../../../src/nnet_utils/nnet_conv2d_latency.h:28 in conv_2d_latency_cl, weights            |
+| array_partition      | variable=biases complete                                                                                        | ../../../src/nnet_utils/nnet_conv2d_latency.h:29 in conv_2d_latency_cl, biases             |
+| allocation           | operation instances=mul limit=CONFIG_T::mult_config::multiplier_limit                                           | ../../../src/nnet_utils/nnet_conv2d_latency.h:32 in conv_2d_latency_cl                     |
+| pipeline             | II=CONFIG_T::reuse_factor rewind                                                                                | ../../../src/nnet_utils/nnet_conv2d_latency.h:36 in conv_2d_latency_cl                     |
+| unroll               |                                                                                                                 | ../../../src/nnet_utils/nnet_conv2d_latency.h:42 in conv_2d_latency_cl                     |
+| unroll               |                                                                                                                 | ../../../src/nnet_utils/nnet_conv2d_latency.h:49 in conv_2d_latency_cl                     |
+| unroll               |                                                                                                                 | ../../../src/nnet_utils/nnet_conv2d_latency.h:53 in conv_2d_latency_cl                     |
+| unroll               |                                                                                                                 | ../../../src/nnet_utils/nnet_conv2d_latency.h:63 in conv_2d_latency_cl                     |
+| unroll               |                                                                                                                 | ../../../src/nnet_utils/nnet_conv2d_latency.h:70 in conv_2d_latency_cl                     |
+| unroll               |                                                                                                                 | ../../../src/nnet_utils/nnet_conv2d_latency.h:73 in conv_2d_latency_cl                     |
+| unroll               |                                                                                                                 | ../../../src/nnet_utils/nnet_conv2d_latency.h:81 in conv_2d_latency_cl                     |
+| array_partition      | variable=data_buf complete dim=0                                                                                | ../../../src/nnet_utils/nnet_conv2d_resource.h:33 in conv_2d_resource_cl, data_buf         |
+| array_partition      | variable=biases complete                                                                                        | ../../../src/nnet_utils/nnet_conv2d_resource.h:35 in conv_2d_resource_cl, biases           |
+| array_partition      | variable=acc complete dim=0                                                                                     | ../../../src/nnet_utils/nnet_conv2d_resource.h:38 in conv_2d_resource_cl, acc              |
+| unroll               |                                                                                                                 | ../../../src/nnet_utils/nnet_conv2d_resource.h:48 in conv_2d_resource_cl                   |
+| unroll               |                                                                                                                 | ../../../src/nnet_utils/nnet_conv2d_resource.h:52 in conv_2d_resource_cl                   |
+| pipeline             | II=1 rewind                                                                                                     | ../../../src/nnet_utils/nnet_conv2d_resource.h:59 in conv_2d_resource_cl                   |
+| unroll               |                                                                                                                 | ../../../src/nnet_utils/nnet_conv2d_resource.h:67 in conv_2d_resource_cl                   |
+| unroll               |                                                                                                                 | ../../../src/nnet_utils/nnet_conv2d_resource.h:71 in conv_2d_resource_cl                   |
+| unroll               |                                                                                                                 | ../../../src/nnet_utils/nnet_conv2d_resource.h:95 in conv_2d_resource_cl                   |
+| unroll               |                                                                                                                 | ../../../src/nnet_utils/nnet_conv2d_resource.h:99 in conv_2d_resource_cl                   |
+| array_partition      | variable = line_buffer complete dim = 2                                                                         | ../../../src/nnet_utils/nnet_conv2d_stream.h:21 in conv_2d_buffer_latency_cl               |
+| loop_flatten         |                                                                                                                 | ../../../src/nnet_utils/nnet_conv2d_stream.h:27 in conv_2d_buffer_latency_cl               |
+| pipeline             | II=CONFIG_T::reuse_factor                                                                                       | ../../../src/nnet_utils/nnet_conv2d_stream.h:28 in conv_2d_buffer_latency_cl               |
+| array_partition      | variable = line_buffer complete dim = 2                                                                         | ../../../src/nnet_utils/nnet_conv2d_stream.h:48 in conv_2d_buffer_resource_cl              |
+| loop_flatten         |                                                                                                                 | ../../../src/nnet_utils/nnet_conv2d_stream.h:54 in conv_2d_buffer_resource_cl              |
+| inline               | recursive                                                                                                       | ../../../src/nnet_utils/nnet_conv2d_stream.h:73 in conv_2d_cl                              |
+| inline               |                                                                                                                 | ../../../src/nnet_utils/nnet_conv_stream.h:17 in scale_index_k_gte_s                       |
+| inline               |                                                                                                                 | ../../../src/nnet_utils/nnet_conv_stream.h:38 in scale_index_k_lt_s                        |
+| inline               |                                                                                                                 | ../../../src/nnet_utils/nnet_conv_stream.h:61 in scale_index                               |
+| inline               |                                                                                                                 | ../../../src/nnet_utils/nnet_conv_stream.h:74 in scale_index                               |
+| inline               |                                                                                                                 | ../../../src/nnet_utils/nnet_conv_stream.h:84 in mult_buffer                               |
+| array_partition      | variable = data complete                                                                                        | ../../../src/nnet_utils/nnet_conv_stream.h:87 in mult_buffer                               |
+| array_partition      | variable = res complete                                                                                         | ../../../src/nnet_utils/nnet_conv_stream.h:89 in mult_buffer                               |
+| unroll               |                                                                                                                 | ../../../src/nnet_utils/nnet_conv_stream.h:93 in mult_buffer                               |
+| inline               | recursive                                                                                                       | ../../../src/nnet_utils/nnet_conv_stream.h:97 in mult_buffer                               |
+| unroll               |                                                                                                                 | ../../../src/nnet_utils/nnet_conv_stream.h:108 in mult_buffer                              |
+| inline               |                                                                                                                 | ../../../src/nnet_utils/nnet_conv_stream.h:134 in compute_output_encoded                   |
+| pipeline             | II = CONFIG_T::reuse_factor                                                                                     | ../../../src/nnet_utils/nnet_conv_stream.h:138 in compute_output_encoded                   |
+| unroll               |                                                                                                                 | ../../../src/nnet_utils/nnet_conv_stream.h:141 in compute_output_encoded                   |
+| unroll               |                                                                                                                 | ../../../src/nnet_utils/nnet_conv_stream.h:144 in compute_output_encoded                   |
+| inline               |                                                                                                                 | ../../../src/nnet_utils/nnet_conv_stream.h:161 in kernel_shift_1d                          |
+| pipeline             | II = 1                                                                                                          | ../../../src/nnet_utils/nnet_conv_stream.h:167 in kernel_shift_1d                          |
+| unroll               |                                                                                                                 | ../../../src/nnet_utils/nnet_conv_stream.h:170 in kernel_shift_1d                          |
+| unroll               |                                                                                                                 | ../../../src/nnet_utils/nnet_conv_stream.h:180 in kernel_shift_1d                          |
+| inline               |                                                                                                                 | ../../../src/nnet_utils/nnet_conv_stream.h:189 in kernel_shift_2d                          |
+| pipeline             | II = 1                                                                                                          | ../../../src/nnet_utils/nnet_conv_stream.h:195 in kernel_shift_2d                          |
+| unroll               |                                                                                                                 | ../../../src/nnet_utils/nnet_conv_stream.h:211 in kernel_shift_2d                          |
+| pipeline             |                                                                                                                 | ../../../src/nnet_utils/nnet_conv_stream.h:226 in shift_line_buffer                        |
+| array_partition      | variable = shift_buffer complete dim = 0                                                                        | ../../../src/nnet_utils/nnet_conv_stream.h:230 in shift_line_buffer                        |
+| unroll               |                                                                                                                 | ../../../src/nnet_utils/nnet_conv_stream.h:234 in shift_line_buffer                        |
+| unroll               |                                                                                                                 | ../../../src/nnet_utils/nnet_conv_stream.h:245 in shift_line_buffer                        |
+| inline               | OFF                                                                                                             | ../../../src/nnet_utils/nnet_conv_stream.h:263 in compute_output_buffer_2d                 |
+| array_partition      | variable = kernel_data complete                                                                                 | ../../../src/nnet_utils/nnet_conv_stream.h:277 in compute_output_buffer_2d                 |
+| array_partition      | variable = res_out complete dim = 0                                                                             | ../../../src/nnet_utils/nnet_conv_stream.h:280 in compute_output_buffer_2d                 |
+| unroll               |                                                                                                                 | ../../../src/nnet_utils/nnet_conv_stream.h:304 in compute_output_buffer_2d                 |
+| inline               |                                                                                                                 | ../../../src/nnet_utils/nnet_conv_stream.h:338 in compute_output_buffer_1d                 |
+| array_partition      | variable = kernel_data complete                                                                                 | ../../../src/nnet_utils/nnet_conv_stream.h:348 in compute_output_buffer_1d                 |
+| array_partition      | variable = res_out complete dim = 0                                                                             | ../../../src/nnet_utils/nnet_conv_stream.h:351 in compute_output_buffer_1d                 |
+| inline               | recursive                                                                                                       | ../../../src/nnet_utils/nnet_conv_stream.h:363 in compute_output_buffer_1d                 |
+| unroll               |                                                                                                                 | ../../../src/nnet_utils/nnet_conv_stream.h:375 in compute_output_buffer_1d                 |
+| inline               |                                                                                                                 | ../../../src/nnet_utils/nnet_dense.h:39 in dense                                           |
+| unroll               |                                                                                                                 | ../../../src/nnet_utils/nnet_dense_compressed.h:15 in fill_mult                            |
+| array_partition      | variable=acc complete                                                                                           | ../../../src/nnet_utils/nnet_dense_compressed.h:29 in dense_compressed, acc                |
+| array_partition      | variable=biases complete                                                                                        | ../../../src/nnet_utils/nnet_dense_compressed.h:30 in dense_compressed, biases             |
+| array_reshape        | variable=weights block factor=multiplier_limit                                                                  | ../../../src/nnet_utils/nnet_dense_compressed.h:31 in dense_compressed, weights            |
+| aggregate            | variable=weights                                                                                                | ../../../src/nnet_utils/nnet_dense_compressed.h:34 in dense_compressed, weights            |
+| unroll               |                                                                                                                 | ../../../src/nnet_utils/nnet_dense_compressed.h:41 in dense_compressed                     |
+| pipeline             | II=1 rewind                                                                                                     | ../../../src/nnet_utils/nnet_dense_compressed.h:49 in dense_compressed                     |
+| array_partition      | variable=mult complete                                                                                          | ../../../src/nnet_utils/nnet_dense_compressed.h:52 in dense_compressed, mult               |
+| unroll               |                                                                                                                 | ../../../src/nnet_utils/nnet_dense_compressed.h:56 in dense_compressed                     |
+| unroll               |                                                                                                                 | ../../../src/nnet_utils/nnet_dense_compressed.h:62 in dense_compressed                     |
+| unroll               |                                                                                                                 | ../../../src/nnet_utils/nnet_dense_compressed.h:82 in dense_compressed                     |
+| function_instantiate | variable=weights,biases                                                                                         | ../../../src/nnet_utils/nnet_dense_latency.h:21 in dense_latency, weights,biases           |
+| pipeline             | II=CONFIG_T::reuse_factor                                                                                       | ../../../src/nnet_utils/nnet_dense_latency.h:26 in dense_latency                           |
+| array_partition      | variable=biases complete                                                                                        | ../../../src/nnet_utils/nnet_dense_latency.h:29 in dense_latency, biases                   |
+| array_partition      | variable=mult complete                                                                                          | ../../../src/nnet_utils/nnet_dense_latency.h:30 in dense_latency, mult                     |
+| array_partition      | variable=acc complete                                                                                           | ../../../src/nnet_utils/nnet_dense_latency.h:31 in dense_latency, acc                      |
+| allocation           | operation instances=mul limit=CONFIG_T::multiplier_limit                                                        | ../../../src/nnet_utils/nnet_dense_latency.h:33 in dense_latency                           |
+| array_partition      | variable=biases complete                                                                                        | ../../../src/nnet_utils/nnet_dense_resource.h:30 in dense_resource_rf_leq_nin, biases      |
+| array_partition      | variable=acc complete                                                                                           | ../../../src/nnet_utils/nnet_dense_resource.h:33 in dense_resource_rf_leq_nin, acc         |
+| unroll               |                                                                                                                 | ../../../src/nnet_utils/nnet_dense_resource.h:37 in dense_resource_rf_leq_nin              |
+| pipeline             | II=1 rewind                                                                                                     | ../../../src/nnet_utils/nnet_dense_resource.h:43 in dense_resource_rf_leq_nin              |
+| unroll               |                                                                                                                 | ../../../src/nnet_utils/nnet_dense_resource.h:51 in dense_resource_rf_leq_nin              |
+| unroll               |                                                                                                                 | ../../../src/nnet_utils/nnet_dense_resource.h:75 in dense_resource_rf_leq_nin              |
+| array_partition      | variable=biases complete                                                                                        | ../../../src/nnet_utils/nnet_dense_resource.h:98 in dense_resource_rf_gt_nin_rem0, biases  |
+| array_partition      | variable=acc complete                                                                                           | ../../../src/nnet_utils/nnet_dense_resource.h:101 in dense_resource_rf_gt_nin_rem0, acc    |
+| unroll               |                                                                                                                 | ../../../src/nnet_utils/nnet_dense_resource.h:105 in dense_resource_rf_gt_nin_rem0         |
+| pipeline             | II=1 rewind                                                                                                     | ../../../src/nnet_utils/nnet_dense_resource.h:125 in dense_resource_rf_gt_nin_rem0         |
+| unroll               |                                                                                                                 | ../../../src/nnet_utils/nnet_dense_resource.h:131 in dense_resource_rf_gt_nin_rem0         |
+| unroll               |                                                                                                                 | ../../../src/nnet_utils/nnet_dense_resource.h:150 in dense_resource_rf_gt_nin_rem0         |
+| array_partition      | variable=biases complete                                                                                        | ../../../src/nnet_utils/nnet_dense_resource.h:172 in dense_resource_rf_gt_nin, biases      |
+| array_partition      | variable=acc complete                                                                                           | ../../../src/nnet_utils/nnet_dense_resource.h:175 in dense_resource_rf_gt_nin, acc         |
+| unroll               |                                                                                                                 | ../../../src/nnet_utils/nnet_dense_resource.h:179 in dense_resource_rf_gt_nin              |
+| pipeline             | II=1 rewind                                                                                                     | ../../../src/nnet_utils/nnet_dense_resource.h:185 in dense_resource_rf_gt_nin              |
+| array_partition      | variable=tmpmult complete                                                                                       | ../../../src/nnet_utils/nnet_dense_resource.h:187 in dense_resource_rf_gt_nin, tmpmult     |
+| unroll               |                                                                                                                 | ../../../src/nnet_utils/nnet_dense_resource.h:191 in dense_resource_rf_gt_nin              |
+| array_partition      | variable=mult complete                                                                                          | ../../../src/nnet_utils/nnet_dense_resource.h:199 in dense_resource_rf_gt_nin, mult        |
+| unroll               |                                                                                                                 | ../../../src/nnet_utils/nnet_dense_resource.h:203 in dense_resource_rf_gt_nin              |
+| unroll               |                                                                                                                 | ../../../src/nnet_utils/nnet_dense_resource.h:209 in dense_resource_rf_gt_nin              |
+| unroll               |                                                                                                                 | ../../../src/nnet_utils/nnet_dense_resource.h:219 in dense_resource_rf_gt_nin              |
+| unroll               |                                                                                                                 | ../../../src/nnet_utils/nnet_dense_resource.h:227 in dense_resource_rf_gt_nin              |
+| inline               | recursive                                                                                                       | ../../../src/nnet_utils/nnet_dense_resource.h:237 in dense_resource                        |
+| pipeline             | II=CONFIG_T::reuse_factor                                                                                       | ../../../src/nnet_utils/nnet_dense_stream.h:16 in dense_latency_wrapper                    |
+| inline               |                                                                                                                 | ../../../src/nnet_utils/nnet_dense_stream.h:29 in data_prepare                             |
+| pipeline             |                                                                                                                 | ../../../src/nnet_utils/nnet_dense_stream.h:34 in data_prepare                             |
+| unroll               |                                                                                                                 | ../../../src/nnet_utils/nnet_dense_stream.h:38 in data_prepare                             |
+| unroll               |                                                                                                                 | ../../../src/nnet_utils/nnet_dense_stream.h:46 in data_prepare                             |
+| inline               |                                                                                                                 | ../../../src/nnet_utils/nnet_dense_stream.h:54 in res_write                                |
+| pipeline             |                                                                                                                 | ../../../src/nnet_utils/nnet_dense_stream.h:59 in res_write                                |
+| unroll               |                                                                                                                 | ../../../src/nnet_utils/nnet_dense_stream.h:64 in res_write                                |
+| unroll               |                                                                                                                 | ../../../src/nnet_utils/nnet_dense_stream.h:74 in res_write                                |
+| inline               | recursive                                                                                                       | ../../../src/nnet_utils/nnet_dense_stream.h:85 in dense                                    |
+| array_partition      | variable=data complete                                                                                          | ../../../src/nnet_utils/nnet_dense_stream.h:88 in dense, data                              |
+| array_partition      | variable=res complete                                                                                           | ../../../src/nnet_utils/nnet_dense_stream.h:91 in dense, res                               |
+| inline               |                                                                                                                 | ../../../src/nnet_utils/nnet_mult.h:25 in product                                          |
+| inline               |                                                                                                                 | ../../../src/nnet_utils/nnet_mult.h:34 in product                                          |
+| inline               |                                                                                                                 | ../../../src/nnet_utils/nnet_mult.h:46 in product                                          |
+| inline               |                                                                                                                 | ../../../src/nnet_utils/nnet_mult.h:58 in product                                          |
+| inline               |                                                                                                                 | ../../../src/nnet_utils/nnet_mult.h:72 in product                                          |
+| inline               |                                                                                                                 | ../../../src/nnet_utils/nnet_mult.h:82 in product                                          |
+| pipeline             | II=CONFIG_T::reuse_factor                                                                                       | ../../../src/nnet_utils/nnet_pooling.h:103 in pooling1d_cl                                 |
+| allocation           | function instances=pool_op<data_T, CONFIG_T::pool_width, CONFIG_T::pool_op> limit=limit                         | ../../../src/nnet_utils/nnet_pooling.h:107 in pooling1d_cl                                 |
+| pipeline             | II=CONFIG_T::reuse_factor                                                                                       | ../../../src/nnet_utils/nnet_pooling.h:146 in global_pooling1d_cl                          |
+| allocation           | function instances=pool_op<data_T, CONFIG_T::pool_width, CONFIG_T::pool_op> limit=limit                         | ../../../src/nnet_utils/nnet_pooling.h:153 in global_pooling1d_cl                          |
+| pipeline             | II=CONFIG_T::reuse_factor                                                                                       | ../../../src/nnet_utils/nnet_pooling.h:197 in pooling2d_cl                                 |
+| pipeline             | II=CONFIG_T::reuse_factor                                                                                       | ../../../src/nnet_utils/nnet_pooling.h:256 in pooling2d_cf                                 |
+| allocation           | function instances=pool_op<data_T, CONFIG_T::pool_height*CONFIG_T::pool_width, CONFIG_T::pool_op> limit=limit   | ../../../src/nnet_utils/nnet_pooling.h:260 in pooling2d_cf                                 |
+| pipeline             | II=CONFIG_T::reuse_factor                                                                                       | ../../../src/nnet_utils/nnet_pooling.h:320 in global_pooling2d_cl                          |
+| allocation           | function instances=pool_op<data_T, CONFIG_T::pool_width * CONFIG_T::pool_height, CONFIG_T::pool_op> limit=limit | ../../../src/nnet_utils/nnet_pooling.h:323 in global_pooling2d_cl                          |
+| inline               |                                                                                                                 | ../../../src/nnet_utils/nnet_pooling_stream.h:18 in reduce_pool                            |
+| inline               |                                                                                                                 | ../../../src/nnet_utils/nnet_pooling_stream.h:34 in compute_pool_buffer_2d                 |
+| array_partition      | variable=pool_window complete                                                                                   | ../../../src/nnet_utils/nnet_pooling_stream.h:43 in compute_pool_buffer_2d, pool_window    |
+| array_partition      | variable = kernel_data complete dim = 0                                                                         | ../../../src/nnet_utils/nnet_pooling_stream.h:46 in compute_pool_buffer_2d                 |
+| pipeline             |                                                                                                                 | ../../../src/nnet_utils/nnet_pooling_stream.h:58 in compute_pool_buffer_2d                 |
+| inline               | recursive                                                                                                       | ../../../src/nnet_utils/nnet_pooling_stream.h:100 in pooling2d_cl                          |
+| array_partition      | variable = line_buffer complete dim = 2                                                                         | ../../../src/nnet_utils/nnet_pooling_stream.h:106 in pooling2d_cl                          |
+| loop_flatten         |                                                                                                                 | ../../../src/nnet_utils/nnet_pooling_stream.h:112 in pooling2d_cl                          |
+| pipeline             |                                                                                                                 | ../../../src/nnet_utils/nnet_pooling_stream.h:113 in pooling2d_cl                          |
+| inline               |                                                                                                                 | ../../../src/nnet_utils/nnet_pooling_stream.h:125 in compute_pool_buffer_1d                |
+| array_partition      | variable=pool_window complete                                                                                   | ../../../src/nnet_utils/nnet_pooling_stream.h:132 in compute_pool_buffer_1d, pool_window   |
+| array_partition      | variable = kernel_data complete dim = 0                                                                         | ../../../src/nnet_utils/nnet_pooling_stream.h:135 in compute_pool_buffer_1d                |
+| pipeline             |                                                                                                                 | ../../../src/nnet_utils/nnet_pooling_stream.h:148 in compute_pool_buffer_1d                |
+| inline               | recursive                                                                                                       | ../../../src/nnet_utils/nnet_pooling_stream.h:182 in pooling1d_cl                          |
+| pipeline             |                                                                                                                 | ../../../src/nnet_utils/nnet_pooling_stream.h:186 in pooling1d_cl                          |
+| inline               |                                                                                                                 | ../../../src/nnet_utils/nnet_pooling_stream.h:196 in reduce_global_pool                    |
+| unroll               |                                                                                                                 | ../../../src/nnet_utils/nnet_pooling_stream.h:212 in compute_global_pool                   |
+| array_partition      | variable=data_pack complete dim=0                                                                               | ../../../src/nnet_utils/nnet_pooling_stream.h:215 in compute_global_pool, data_pack        |
+| unroll               |                                                                                                                 | ../../../src/nnet_utils/nnet_pooling_stream.h:219 in compute_global_pool                   |
+| array_partition      | variable=data_window complete                                                                                   | ../../../src/nnet_utils/nnet_pooling_stream.h:233 in global_pooling2d_cl, data_window      |
+| unroll               |                                                                                                                 | ../../../src/nnet_utils/nnet_pooling_stream.h:242 in global_pooling2d_cl                   |
+| loop_flatten         |                                                                                                                 | ../../../src/nnet_utils/nnet_pooling_stream.h:250 in global_pooling2d_cl                   |
+| pipeline             |                                                                                                                 | ../../../src/nnet_utils/nnet_pooling_stream.h:258 in global_pooling2d_cl                   |
+| unroll               |                                                                                                                 | ../../../src/nnet_utils/nnet_pooling_stream.h:264 in global_pooling2d_cl                   |
+| pipeline             |                                                                                                                 | ../../../src/nnet_utils/nnet_pooling_stream.h:272 in global_pooling2d_cl                   |
+| unroll               |                                                                                                                 | ../../../src/nnet_utils/nnet_pooling_stream.h:278 in global_pooling2d_cl                   |
+| array_partition      | variable=data_window complete                                                                                   | ../../../src/nnet_utils/nnet_pooling_stream.h:292 in global_pooling1d_cl, data_window      |
+| unroll               |                                                                                                                 | ../../../src/nnet_utils/nnet_pooling_stream.h:301 in global_pooling1d_cl                   |
+| loop_flatten         |                                                                                                                 | ../../../src/nnet_utils/nnet_pooling_stream.h:307 in global_pooling1d_cl                   |
+| pipeline             |                                                                                                                 | ../../../src/nnet_utils/nnet_pooling_stream.h:314 in global_pooling1d_cl                   |
+| unroll               |                                                                                                                 | ../../../src/nnet_utils/nnet_pooling_stream.h:320 in global_pooling1d_cl                   |
+| pipeline             |                                                                                                                 | ../../../src/nnet_utils/nnet_pooling_stream.h:328 in global_pooling1d_cl                   |
+| unroll               |                                                                                                                 | ../../../src/nnet_utils/nnet_pooling_stream.h:334 in global_pooling1d_cl                   |
+| pipeline             |                                                                                                                 | ../../../src/nnet_utils/nnet_stream.h:23 in clone_stream                                   |
+| unroll               |                                                                                                                 | ../../../src/nnet_utils/nnet_stream.h:33 in clone_stream                                   |
+| pipeline             |                                                                                                                 | ../../../src/nnet_utils/nnet_stream.h:47 in clone_stream                                   |
+| unroll               |                                                                                                                 | ../../../src/nnet_utils/nnet_stream.h:59 in clone_stream                                   |
+| pipeline             |                                                                                                                 | ../../../src/nnet_utils/nnet_stream.h:74 in repack_stream                                  |
+| unroll               |                                                                                                                 | ../../../src/nnet_utils/nnet_stream.h:81 in repack_stream                                  |
+| pipeline             |                                                                                                                 | ../../../src/nnet_utils/nnet_stream.h:91 in repack_stream                                  |
+| pipeline             |                                                                                                                 | ../../../src/nnet_utils/nnet_stream.h:99 in repack_stream                                  |
+| unroll               |                                                                                                                 | ../../../src/nnet_utils/nnet_stream.h:103 in repack_stream                                 |
+| pipeline             |                                                                                                                 | ../../../src/nnet_utils/nnet_stream.h:114 in repack_stream                                 |
+| unroll               |                                                                                                                 | ../../../src/nnet_utils/nnet_stream.h:118 in repack_stream                                 |
+| pipeline             |                                                                                                                 | ../../../src/nnet_utils/nnet_stream.h:139 in broadcast_stream_1x1xc                        |
+| pipeline             |                                                                                                                 | ../../../src/nnet_utils/nnet_stream.h:142 in broadcast_stream_1x1xc                        |
+| unroll               |                                                                                                                 | ../../../src/nnet_utils/nnet_stream.h:146 in broadcast_stream_1x1xc                        |
+| pipeline             |                                                                                                                 | ../../../src/nnet_utils/nnet_stream.h:160 in broadcast_stream_hxwx1                        |
+| unroll               |                                                                                                                 | ../../../src/nnet_utils/nnet_stream.h:165 in broadcast_stream_hxwx1                        |
+| array_partition      | variable=data_array complete                                                                                    | ../../../src/nnet_utils/nnet_stream.h:185 in transpose_2d, data_array                      |
+| pipeline             |                                                                                                                 | ../../../src/nnet_utils/nnet_stream.h:188 in transpose_2d                                  |
+| pipeline             |                                                                                                                 | ../../../src/nnet_utils/nnet_stream.h:196 in transpose_2d                                  |
+| unroll               |                                                                                                                 | ../../../src/nnet_utils/nnet_types.h:28 in operator=                                       |
++----------------------+-----------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------+
+
+
