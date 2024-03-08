@@ -51,8 +51,8 @@ DO NOT fully use up assigned HBM memory.
 #define DATA_SIZE_OUT N_LAYER_11 // Update accordingly
 #define OUTSTREAMSIZE (BATCHSIZE * DATA_SIZE_OUT)
 
-typedef model_default_t input_data_t; // Update accordingly
-typedef model_default_t output_data_t;
+typedef input_t input_data_t; // Update accordingly
+typedef result_t output_data_t;
 #endif
 
 #ifdef IS_CONV1D
