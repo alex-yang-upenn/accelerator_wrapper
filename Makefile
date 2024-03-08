@@ -44,7 +44,7 @@ XO_CONTAINER_FILENAME := $(XO_DIR)/alveo_hls4ml.xo
 #--v--v--
 HLS4ML_NAME := myproject
 #name of the cpp file produced by HLS4ML
-HLS4ML_PROJ_TYPE := CONV2D
+HLS4ML_PROJ_TYPE := DENSE
 #possible options are: DENSE, CONV1D, CONV2D
 HLS4ML_IO_TYPE:= IO_PARALLEL
 #possible options are: IO_PARALLEL, IO_STREAM
