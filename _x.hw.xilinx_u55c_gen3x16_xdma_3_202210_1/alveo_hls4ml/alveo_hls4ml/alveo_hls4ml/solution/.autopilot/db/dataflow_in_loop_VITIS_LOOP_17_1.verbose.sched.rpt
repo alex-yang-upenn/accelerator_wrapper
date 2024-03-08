@@ -1,0 +1,380 @@
+
+
+================================================================
+== Vitis HLS Report for 'dataflow_in_loop_VITIS_LOOP_17_1'
+================================================================
+* Date:           Fri Mar  8 07:11:48 2024
+
+* Version:        2022.2 (Build 3670227 on Oct 13 2022)
+* Project:        alveo_hls4ml
+* Solution:       solution (Vitis Kernel Flow Target)
+* Product family: virtexuplus
+* Target device:  xcu55c-fsvh2892-2L-e
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+---------+----------+------------+
+    |  Clock |  Target | Estimated| Uncertainty|
+    +--------+---------+----------+------------+
+    |ap_clk  |  3.33 ns|  2.387 ns|     0.90 ns|
+    +--------+---------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+-----------+-----------+-----+-----+----------+
+    |  Latency (cycles) |   Latency (absolute)  |  Interval | Pipeline |
+    |   min   |   max   |    min    |    max    | min | max |   Type   |
+    +---------+---------+-----------+-----------+-----+-----+----------+
+    |       30|       30|  99.990 ns|  99.990 ns|    3|    3|  dataflow|
+    +---------+---------+-----------+-----------+-----+-----+----------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        N/A
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 2
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 31
+* Pipeline : 0
+* Dataflow Pipeline: 1
+  DF-Pipeline-0: Size = 31, States = { 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 }
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 3 
+3 --> 4 
+4 --> 5 
+5 --> 6 
+6 --> 7 
+7 --> 8 
+8 --> 9 
+9 --> 10 
+10 --> 11 
+11 --> 12 
+12 --> 13 
+13 --> 14 
+14 --> 15 
+15 --> 16 
+16 --> 17 
+17 --> 18 
+18 --> 19 
+19 --> 20 
+20 --> 21 
+21 --> 22 
+22 --> 23 
+23 --> 24 
+24 --> 25 
+25 --> 26 
+26 --> 27 
+27 --> 28 
+28 --> 29 
+29 --> 30 
+30 --> 31 
+31 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 1.21>
+ST_1 : Operation 32 [1/1] (0.00ns)   --->   "%i_read = read i14 @_ssdm_op_Read.ap_auto.i14, i14 %i"   --->   Operation 32 'read' 'i_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 33 [1/1] (0.00ns)   --->   "%empty = trunc i14 %i_read"   --->   Operation 33 'trunc' 'empty' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 34 [31/31] (1.21ns)   --->   "%call_ln19 = call void @myproject, i256 %in_buf, i13 %empty, i16 %out_buf_0, i16 %out_buf_1, i16 %out_buf_2, i16 %out_buf_3, i16 %out_buf_4, i18 %exp_table, i18 %invert_table" [/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:19]   --->   Operation 34 'call' 'call_ln19' <Predicate = true> <Delay = 1.21> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 2 <SV = 1> <Delay = 2.38>
+ST_2 : Operation 35 [30/31] (2.38ns)   --->   "%call_ln19 = call void @myproject, i256 %in_buf, i13 %empty, i16 %out_buf_0, i16 %out_buf_1, i16 %out_buf_2, i16 %out_buf_3, i16 %out_buf_4, i18 %exp_table, i18 %invert_table" [/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:19]   --->   Operation 35 'call' 'call_ln19' <Predicate = true> <Delay = 2.38> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 3 <SV = 2> <Delay = 2.38>
+ST_3 : Operation 36 [29/31] (2.38ns)   --->   "%call_ln19 = call void @myproject, i256 %in_buf, i13 %empty, i16 %out_buf_0, i16 %out_buf_1, i16 %out_buf_2, i16 %out_buf_3, i16 %out_buf_4, i18 %exp_table, i18 %invert_table" [/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:19]   --->   Operation 36 'call' 'call_ln19' <Predicate = true> <Delay = 2.38> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 4 <SV = 3> <Delay = 2.38>
+ST_4 : Operation 37 [28/31] (2.38ns)   --->   "%call_ln19 = call void @myproject, i256 %in_buf, i13 %empty, i16 %out_buf_0, i16 %out_buf_1, i16 %out_buf_2, i16 %out_buf_3, i16 %out_buf_4, i18 %exp_table, i18 %invert_table" [/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:19]   --->   Operation 37 'call' 'call_ln19' <Predicate = true> <Delay = 2.38> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 5 <SV = 4> <Delay = 2.38>
+ST_5 : Operation 38 [27/31] (2.38ns)   --->   "%call_ln19 = call void @myproject, i256 %in_buf, i13 %empty, i16 %out_buf_0, i16 %out_buf_1, i16 %out_buf_2, i16 %out_buf_3, i16 %out_buf_4, i18 %exp_table, i18 %invert_table" [/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:19]   --->   Operation 38 'call' 'call_ln19' <Predicate = true> <Delay = 2.38> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 6 <SV = 5> <Delay = 2.38>
+ST_6 : Operation 39 [26/31] (2.38ns)   --->   "%call_ln19 = call void @myproject, i256 %in_buf, i13 %empty, i16 %out_buf_0, i16 %out_buf_1, i16 %out_buf_2, i16 %out_buf_3, i16 %out_buf_4, i18 %exp_table, i18 %invert_table" [/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:19]   --->   Operation 39 'call' 'call_ln19' <Predicate = true> <Delay = 2.38> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 7 <SV = 6> <Delay = 2.38>
+ST_7 : Operation 40 [25/31] (2.38ns)   --->   "%call_ln19 = call void @myproject, i256 %in_buf, i13 %empty, i16 %out_buf_0, i16 %out_buf_1, i16 %out_buf_2, i16 %out_buf_3, i16 %out_buf_4, i18 %exp_table, i18 %invert_table" [/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:19]   --->   Operation 40 'call' 'call_ln19' <Predicate = true> <Delay = 2.38> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 8 <SV = 7> <Delay = 2.38>
+ST_8 : Operation 41 [24/31] (2.38ns)   --->   "%call_ln19 = call void @myproject, i256 %in_buf, i13 %empty, i16 %out_buf_0, i16 %out_buf_1, i16 %out_buf_2, i16 %out_buf_3, i16 %out_buf_4, i18 %exp_table, i18 %invert_table" [/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:19]   --->   Operation 41 'call' 'call_ln19' <Predicate = true> <Delay = 2.38> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 9 <SV = 8> <Delay = 2.38>
+ST_9 : Operation 42 [23/31] (2.38ns)   --->   "%call_ln19 = call void @myproject, i256 %in_buf, i13 %empty, i16 %out_buf_0, i16 %out_buf_1, i16 %out_buf_2, i16 %out_buf_3, i16 %out_buf_4, i18 %exp_table, i18 %invert_table" [/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:19]   --->   Operation 42 'call' 'call_ln19' <Predicate = true> <Delay = 2.38> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 10 <SV = 9> <Delay = 2.38>
+ST_10 : Operation 43 [22/31] (2.38ns)   --->   "%call_ln19 = call void @myproject, i256 %in_buf, i13 %empty, i16 %out_buf_0, i16 %out_buf_1, i16 %out_buf_2, i16 %out_buf_3, i16 %out_buf_4, i18 %exp_table, i18 %invert_table" [/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:19]   --->   Operation 43 'call' 'call_ln19' <Predicate = true> <Delay = 2.38> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 11 <SV = 10> <Delay = 2.38>
+ST_11 : Operation 44 [21/31] (2.38ns)   --->   "%call_ln19 = call void @myproject, i256 %in_buf, i13 %empty, i16 %out_buf_0, i16 %out_buf_1, i16 %out_buf_2, i16 %out_buf_3, i16 %out_buf_4, i18 %exp_table, i18 %invert_table" [/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:19]   --->   Operation 44 'call' 'call_ln19' <Predicate = true> <Delay = 2.38> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 12 <SV = 11> <Delay = 2.38>
+ST_12 : Operation 45 [20/31] (2.38ns)   --->   "%call_ln19 = call void @myproject, i256 %in_buf, i13 %empty, i16 %out_buf_0, i16 %out_buf_1, i16 %out_buf_2, i16 %out_buf_3, i16 %out_buf_4, i18 %exp_table, i18 %invert_table" [/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:19]   --->   Operation 45 'call' 'call_ln19' <Predicate = true> <Delay = 2.38> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 13 <SV = 12> <Delay = 2.38>
+ST_13 : Operation 46 [19/31] (2.38ns)   --->   "%call_ln19 = call void @myproject, i256 %in_buf, i13 %empty, i16 %out_buf_0, i16 %out_buf_1, i16 %out_buf_2, i16 %out_buf_3, i16 %out_buf_4, i18 %exp_table, i18 %invert_table" [/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:19]   --->   Operation 46 'call' 'call_ln19' <Predicate = true> <Delay = 2.38> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 14 <SV = 13> <Delay = 2.38>
+ST_14 : Operation 47 [18/31] (2.38ns)   --->   "%call_ln19 = call void @myproject, i256 %in_buf, i13 %empty, i16 %out_buf_0, i16 %out_buf_1, i16 %out_buf_2, i16 %out_buf_3, i16 %out_buf_4, i18 %exp_table, i18 %invert_table" [/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:19]   --->   Operation 47 'call' 'call_ln19' <Predicate = true> <Delay = 2.38> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 15 <SV = 14> <Delay = 2.38>
+ST_15 : Operation 48 [17/31] (2.38ns)   --->   "%call_ln19 = call void @myproject, i256 %in_buf, i13 %empty, i16 %out_buf_0, i16 %out_buf_1, i16 %out_buf_2, i16 %out_buf_3, i16 %out_buf_4, i18 %exp_table, i18 %invert_table" [/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:19]   --->   Operation 48 'call' 'call_ln19' <Predicate = true> <Delay = 2.38> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 16 <SV = 15> <Delay = 2.38>
+ST_16 : Operation 49 [16/31] (2.38ns)   --->   "%call_ln19 = call void @myproject, i256 %in_buf, i13 %empty, i16 %out_buf_0, i16 %out_buf_1, i16 %out_buf_2, i16 %out_buf_3, i16 %out_buf_4, i18 %exp_table, i18 %invert_table" [/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:19]   --->   Operation 49 'call' 'call_ln19' <Predicate = true> <Delay = 2.38> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 17 <SV = 16> <Delay = 2.38>
+ST_17 : Operation 50 [15/31] (2.38ns)   --->   "%call_ln19 = call void @myproject, i256 %in_buf, i13 %empty, i16 %out_buf_0, i16 %out_buf_1, i16 %out_buf_2, i16 %out_buf_3, i16 %out_buf_4, i18 %exp_table, i18 %invert_table" [/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:19]   --->   Operation 50 'call' 'call_ln19' <Predicate = true> <Delay = 2.38> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 18 <SV = 17> <Delay = 2.38>
+ST_18 : Operation 51 [14/31] (2.38ns)   --->   "%call_ln19 = call void @myproject, i256 %in_buf, i13 %empty, i16 %out_buf_0, i16 %out_buf_1, i16 %out_buf_2, i16 %out_buf_3, i16 %out_buf_4, i18 %exp_table, i18 %invert_table" [/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:19]   --->   Operation 51 'call' 'call_ln19' <Predicate = true> <Delay = 2.38> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 19 <SV = 18> <Delay = 2.38>
+ST_19 : Operation 52 [13/31] (2.38ns)   --->   "%call_ln19 = call void @myproject, i256 %in_buf, i13 %empty, i16 %out_buf_0, i16 %out_buf_1, i16 %out_buf_2, i16 %out_buf_3, i16 %out_buf_4, i18 %exp_table, i18 %invert_table" [/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:19]   --->   Operation 52 'call' 'call_ln19' <Predicate = true> <Delay = 2.38> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 20 <SV = 19> <Delay = 2.38>
+ST_20 : Operation 53 [12/31] (2.38ns)   --->   "%call_ln19 = call void @myproject, i256 %in_buf, i13 %empty, i16 %out_buf_0, i16 %out_buf_1, i16 %out_buf_2, i16 %out_buf_3, i16 %out_buf_4, i18 %exp_table, i18 %invert_table" [/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:19]   --->   Operation 53 'call' 'call_ln19' <Predicate = true> <Delay = 2.38> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 21 <SV = 20> <Delay = 2.38>
+ST_21 : Operation 54 [11/31] (2.38ns)   --->   "%call_ln19 = call void @myproject, i256 %in_buf, i13 %empty, i16 %out_buf_0, i16 %out_buf_1, i16 %out_buf_2, i16 %out_buf_3, i16 %out_buf_4, i18 %exp_table, i18 %invert_table" [/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:19]   --->   Operation 54 'call' 'call_ln19' <Predicate = true> <Delay = 2.38> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 22 <SV = 21> <Delay = 2.38>
+ST_22 : Operation 55 [10/31] (2.38ns)   --->   "%call_ln19 = call void @myproject, i256 %in_buf, i13 %empty, i16 %out_buf_0, i16 %out_buf_1, i16 %out_buf_2, i16 %out_buf_3, i16 %out_buf_4, i18 %exp_table, i18 %invert_table" [/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:19]   --->   Operation 55 'call' 'call_ln19' <Predicate = true> <Delay = 2.38> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 23 <SV = 22> <Delay = 2.38>
+ST_23 : Operation 56 [9/31] (2.38ns)   --->   "%call_ln19 = call void @myproject, i256 %in_buf, i13 %empty, i16 %out_buf_0, i16 %out_buf_1, i16 %out_buf_2, i16 %out_buf_3, i16 %out_buf_4, i18 %exp_table, i18 %invert_table" [/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:19]   --->   Operation 56 'call' 'call_ln19' <Predicate = true> <Delay = 2.38> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 24 <SV = 23> <Delay = 2.38>
+ST_24 : Operation 57 [8/31] (2.38ns)   --->   "%call_ln19 = call void @myproject, i256 %in_buf, i13 %empty, i16 %out_buf_0, i16 %out_buf_1, i16 %out_buf_2, i16 %out_buf_3, i16 %out_buf_4, i18 %exp_table, i18 %invert_table" [/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:19]   --->   Operation 57 'call' 'call_ln19' <Predicate = true> <Delay = 2.38> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 25 <SV = 24> <Delay = 2.38>
+ST_25 : Operation 58 [7/31] (2.38ns)   --->   "%call_ln19 = call void @myproject, i256 %in_buf, i13 %empty, i16 %out_buf_0, i16 %out_buf_1, i16 %out_buf_2, i16 %out_buf_3, i16 %out_buf_4, i18 %exp_table, i18 %invert_table" [/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:19]   --->   Operation 58 'call' 'call_ln19' <Predicate = true> <Delay = 2.38> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 26 <SV = 25> <Delay = 2.38>
+ST_26 : Operation 59 [6/31] (2.38ns)   --->   "%call_ln19 = call void @myproject, i256 %in_buf, i13 %empty, i16 %out_buf_0, i16 %out_buf_1, i16 %out_buf_2, i16 %out_buf_3, i16 %out_buf_4, i18 %exp_table, i18 %invert_table" [/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:19]   --->   Operation 59 'call' 'call_ln19' <Predicate = true> <Delay = 2.38> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 27 <SV = 26> <Delay = 2.38>
+ST_27 : Operation 60 [5/31] (2.38ns)   --->   "%call_ln19 = call void @myproject, i256 %in_buf, i13 %empty, i16 %out_buf_0, i16 %out_buf_1, i16 %out_buf_2, i16 %out_buf_3, i16 %out_buf_4, i18 %exp_table, i18 %invert_table" [/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:19]   --->   Operation 60 'call' 'call_ln19' <Predicate = true> <Delay = 2.38> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 28 <SV = 27> <Delay = 2.38>
+ST_28 : Operation 61 [4/31] (2.38ns)   --->   "%call_ln19 = call void @myproject, i256 %in_buf, i13 %empty, i16 %out_buf_0, i16 %out_buf_1, i16 %out_buf_2, i16 %out_buf_3, i16 %out_buf_4, i18 %exp_table, i18 %invert_table" [/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:19]   --->   Operation 61 'call' 'call_ln19' <Predicate = true> <Delay = 2.38> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 29 <SV = 28> <Delay = 2.38>
+ST_29 : Operation 62 [3/31] (2.38ns)   --->   "%call_ln19 = call void @myproject, i256 %in_buf, i13 %empty, i16 %out_buf_0, i16 %out_buf_1, i16 %out_buf_2, i16 %out_buf_3, i16 %out_buf_4, i18 %exp_table, i18 %invert_table" [/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:19]   --->   Operation 62 'call' 'call_ln19' <Predicate = true> <Delay = 2.38> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 30 <SV = 29> <Delay = 2.38>
+ST_30 : Operation 63 [2/31] (2.38ns)   --->   "%call_ln19 = call void @myproject, i256 %in_buf, i13 %empty, i16 %out_buf_0, i16 %out_buf_1, i16 %out_buf_2, i16 %out_buf_3, i16 %out_buf_4, i18 %exp_table, i18 %invert_table" [/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:19]   --->   Operation 63 'call' 'call_ln19' <Predicate = true> <Delay = 2.38> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 31 <SV = 30> <Delay = 0.00>
+ST_31 : Operation 64 [1/1] (0.00ns)   --->   "%specdataflowpipeline_ln18 = specdataflowpipeline void @_ssdm_op_SpecDataflowPipeline, i32 4294967295, i32 0, void @empty_1" [/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:18]   --->   Operation 64 'specdataflowpipeline' 'specdataflowpipeline_ln18' <Predicate = true> <Delay = 0.00>
+ST_31 : Operation 65 [1/31] (0.00ns)   --->   "%call_ln19 = call void @myproject, i256 %in_buf, i13 %empty, i16 %out_buf_0, i16 %out_buf_1, i16 %out_buf_2, i16 %out_buf_3, i16 %out_buf_4, i18 %exp_table, i18 %invert_table" [/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:19]   --->   Operation 65 'call' 'call_ln19' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_31 : Operation 66 [1/1] (0.00ns)   --->   "%ret_ln19 = ret" [/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:19]   --->   Operation 66 'ret' 'ret_ln19' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 3.33ns, clock uncertainty: 0.9ns.
+
+ <State 1>: 1.22ns
+The critical path consists of the following:
+	wire read operation ('i_read') on port 'i' [10]  (0 ns)
+	'call' operation ('call_ln19', /home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:19) to 'myproject' [13]  (1.22 ns)
+
+ <State 2>: 2.39ns
+The critical path consists of the following:
+	'call' operation ('call_ln19', /home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:19) to 'myproject' [13]  (2.39 ns)
+
+ <State 3>: 2.39ns
+The critical path consists of the following:
+	'call' operation ('call_ln19', /home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:19) to 'myproject' [13]  (2.39 ns)
+
+ <State 4>: 2.39ns
+The critical path consists of the following:
+	'call' operation ('call_ln19', /home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:19) to 'myproject' [13]  (2.39 ns)
+
+ <State 5>: 2.39ns
+The critical path consists of the following:
+	'call' operation ('call_ln19', /home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:19) to 'myproject' [13]  (2.39 ns)
+
+ <State 6>: 2.39ns
+The critical path consists of the following:
+	'call' operation ('call_ln19', /home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:19) to 'myproject' [13]  (2.39 ns)
+
+ <State 7>: 2.39ns
+The critical path consists of the following:
+	'call' operation ('call_ln19', /home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:19) to 'myproject' [13]  (2.39 ns)
+
+ <State 8>: 2.39ns
+The critical path consists of the following:
+	'call' operation ('call_ln19', /home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:19) to 'myproject' [13]  (2.39 ns)
+
+ <State 9>: 2.39ns
+The critical path consists of the following:
+	'call' operation ('call_ln19', /home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:19) to 'myproject' [13]  (2.39 ns)
+
+ <State 10>: 2.39ns
+The critical path consists of the following:
+	'call' operation ('call_ln19', /home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:19) to 'myproject' [13]  (2.39 ns)
+
+ <State 11>: 2.39ns
+The critical path consists of the following:
+	'call' operation ('call_ln19', /home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:19) to 'myproject' [13]  (2.39 ns)
+
+ <State 12>: 2.39ns
+The critical path consists of the following:
+	'call' operation ('call_ln19', /home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:19) to 'myproject' [13]  (2.39 ns)
+
+ <State 13>: 2.39ns
+The critical path consists of the following:
+	'call' operation ('call_ln19', /home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:19) to 'myproject' [13]  (2.39 ns)
+
+ <State 14>: 2.39ns
+The critical path consists of the following:
+	'call' operation ('call_ln19', /home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:19) to 'myproject' [13]  (2.39 ns)
+
+ <State 15>: 2.39ns
+The critical path consists of the following:
+	'call' operation ('call_ln19', /home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:19) to 'myproject' [13]  (2.39 ns)
+
+ <State 16>: 2.39ns
+The critical path consists of the following:
+	'call' operation ('call_ln19', /home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:19) to 'myproject' [13]  (2.39 ns)
+
+ <State 17>: 2.39ns
+The critical path consists of the following:
+	'call' operation ('call_ln19', /home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:19) to 'myproject' [13]  (2.39 ns)
+
+ <State 18>: 2.39ns
+The critical path consists of the following:
+	'call' operation ('call_ln19', /home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:19) to 'myproject' [13]  (2.39 ns)
+
+ <State 19>: 2.39ns
+The critical path consists of the following:
+	'call' operation ('call_ln19', /home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:19) to 'myproject' [13]  (2.39 ns)
+
+ <State 20>: 2.39ns
+The critical path consists of the following:
+	'call' operation ('call_ln19', /home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:19) to 'myproject' [13]  (2.39 ns)
+
+ <State 21>: 2.39ns
+The critical path consists of the following:
+	'call' operation ('call_ln19', /home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:19) to 'myproject' [13]  (2.39 ns)
+
+ <State 22>: 2.39ns
+The critical path consists of the following:
+	'call' operation ('call_ln19', /home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:19) to 'myproject' [13]  (2.39 ns)
+
+ <State 23>: 2.39ns
+The critical path consists of the following:
+	'call' operation ('call_ln19', /home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:19) to 'myproject' [13]  (2.39 ns)
+
+ <State 24>: 2.39ns
+The critical path consists of the following:
+	'call' operation ('call_ln19', /home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:19) to 'myproject' [13]  (2.39 ns)
+
+ <State 25>: 2.39ns
+The critical path consists of the following:
+	'call' operation ('call_ln19', /home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:19) to 'myproject' [13]  (2.39 ns)
+
+ <State 26>: 2.39ns
+The critical path consists of the following:
+	'call' operation ('call_ln19', /home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:19) to 'myproject' [13]  (2.39 ns)
+
+ <State 27>: 2.39ns
+The critical path consists of the following:
+	'call' operation ('call_ln19', /home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:19) to 'myproject' [13]  (2.39 ns)
+
+ <State 28>: 2.39ns
+The critical path consists of the following:
+	'call' operation ('call_ln19', /home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:19) to 'myproject' [13]  (2.39 ns)
+
+ <State 29>: 2.39ns
+The critical path consists of the following:
+	'call' operation ('call_ln19', /home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:19) to 'myproject' [13]  (2.39 ns)
+
+ <State 30>: 2.39ns
+The critical path consists of the following:
+	'call' operation ('call_ln19', /home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:19) to 'myproject' [13]  (2.39 ns)
+
+ <State 31>: 0ns
+The critical path consists of the following:
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+	State 8
+	State 9
+	State 10
+	State 11
+	State 12
+	State 13
+	State 14
+	State 15
+	State 16
+	State 17
+	State 18
+	State 19
+	State 20
+	State 21
+	State 22
+	State 23
+	State 24
+	State 25
+	State 26
+	State 27
+	State 28
+	State 29
+	State 30
+	State 31
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

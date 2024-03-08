@@ -4,7 +4,7 @@
 == Synthesis Summary Report of 'alveo_hls4ml'
 ================================================================
 + General Information: 
-    * Date:           Tue Feb  6 21:43:13 2024
+    * Date:           Fri Mar  8 07:15:44 2024
     * Version:        2022.2 (Build 3670227 on Oct 13 2022)
     * Project:        alveo_hls4ml
     * Solution:       solution (Vitis Kernel Flow Target)
@@ -19,13 +19,13 @@
     |                                 Modules                                 |  Issue |       | Latency |  Latency  | Iteration|         | Trip |          |          |          |             |            |     |
     |                                 & Loops                                 |  Type  | Slack | (cycles)|    (ns)   |  Latency | Interval| Count| Pipelined|   BRAM   |    DSP   |      FF     |     LUT    | URAM|
     +-------------------------------------------------------------------------+--------+-------+---------+-----------+----------+---------+------+----------+----------+----------+-------------+------------+-----+
-    |+ alveo_hls4ml*                                                          |  Timing|  -0.00|   196787|  6.559e+05|         -|   131147|     -|  dataflow|  176 (4%)|  38 (~0%)|  15357 (~0%)|  46235 (3%)|    -|
-    | + VITIS_LOOP_50_1_proc                                                  |  Timing|  -0.00|   131146|  4.371e+05|         -|   131146|     -|        no|         -|         -|    455 (~0%)|   668 (~0%)|    -|
-    |  + VITIS_LOOP_50_1_proc_Pipeline_VITIS_LOOP_50_1                        |  Timing|  -0.00|   131075|  4.369e+05|         -|   131075|     -|        no|         -|         -|    318 (~0%)|   185 (~0%)|    -|
-    |   o VITIS_LOOP_50_1                                                     |      II|   2.43|   131073|  4.369e+05|        18|       16|  8192|       yes|         -|         -|            -|           -|    -|
-    | + VITIS_LOOP_59_3_proc                                                  |       -|   0.04|    24605|  8.201e+04|         -|    24605|     -|        no|   8 (~0%)|  38 (~0%)|  13091 (~0%)|  42463 (3%)|    -|
-    |  o VITIS_LOOP_59_3                                                      |       -|   2.43|    24604|  8.201e+04|        32|        -|  8192|        no|         -|         -|            -|           -|    -|
-    |   + dataflow_in_loop_VITIS_LOOP_59_3*                                   |       -|   0.04|       30|     99.990|         -|        3|     -|  dataflow|   8 (~0%)|  38 (~0%)|  12858 (~0%)|  42396 (3%)|    -|
+    |+ alveo_hls4ml*                                                          |  Timing|  -0.00|    73907|  2.463e+05|         -|    41035|     -|  dataflow|  176 (4%)|  38 (~0%)|  19729 (~0%)|  53179 (4%)|    -|
+    | + read_input                                                            |  Timing|  -0.00|     8266|  2.755e+04|         -|     8266|     -|        no|         -|         -|    949 (~0%)|   592 (~0%)|    -|
+    |  + read_input_Pipeline_VITIS_LOOP_8_1                                   |  Timing|  -0.00|     8195|  2.731e+04|         -|     8195|     -|        no|         -|         -|    817 (~0%)|   109 (~0%)|    -|
+    |   o VITIS_LOOP_8_1                                                      |       -|   2.43|     8193|  2.731e+04|         3|        1|  8192|       yes|         -|         -|            -|           -|    -|
+    | + run_inference                                                         |       -|   0.04|    24605|  8.201e+04|         -|    24605|     -|        no|   8 (~0%)|  38 (~0%)|  13091 (~0%)|  42463 (3%)|    -|
+    |  o VITIS_LOOP_17_1                                                      |       -|   2.43|    24604|  8.201e+04|        32|        -|  8192|        no|         -|         -|            -|           -|    -|
+    |   + dataflow_in_loop_VITIS_LOOP_17_1*                                   |       -|   0.04|       30|     99.990|         -|        3|     -|  dataflow|   8 (~0%)|  38 (~0%)|  12858 (~0%)|  42396 (3%)|    -|
     |    + myproject                                                          |      II|   0.04|       30|     99.990|         -|        3|     -|       yes|   8 (~0%)|  38 (~0%)|  12858 (~0%)|  42396 (3%)|    -|
     |     + dense_latency_ap_fixed_16_6_5_3_0_ap_fixed_16_6_5_3_0_config2_s   |       -|   0.04|        1|      3.333|         -|        1|     -|       yes|         -|  33 (~0%)|   2923 (~0%)|  9173 (~0%)|    -|
     |     + relu_ap_fixed_16_6_5_3_0_ap_ufixed_6_0_4_0_0_relu_config4_s       |      II|   0.64|        0|      0.000|         -|        1|     -|       yes|         -|         -|            -|  4440 (~0%)|    -|
@@ -36,9 +36,9 @@
     |     + dense_latency_ap_ufixed_6_0_4_0_0_ap_fixed_16_6_5_3_0_config11_s  |       -|   0.18|        2|      6.666|         -|        1|     -|       yes|         -|         -|    537 (~0%)|  1518 (~0%)|    -|
     |     + softmax_stable_ap_fixed_ap_fixed_16_6_5_3_0_softmax_config13_s    |      II|   0.42|        8|     26.664|         -|        1|     -|       yes|   8 (~0%)|   5 (~0%)|    353 (~0%)|   453 (~0%)|    -|
     | + entry_proc                                                            |       -|   1.21|        0|      0.000|         -|        0|     -|        no|         -|         -|      2 (~0%)|    20 (~0%)|    -|
-    | + VITIS_LOOP_65_4_proc                                                  |  Timing|  -0.00|    41034|  1.368e+05|         -|    41034|     -|        no|         -|         -|    240 (~0%)|   685 (~0%)|    -|
-    |  + VITIS_LOOP_65_4_proc_Pipeline_VITIS_LOOP_65_4                        |  Timing|  -0.00|    40963|  1.365e+05|         -|    40963|     -|        no|         -|         -|    103 (~0%)|   170 (~0%)|    -|
-    |   o VITIS_LOOP_65_4                                                     |      II|   2.43|    40961|  1.365e+05|         7|        5|  8192|       yes|         -|         -|            -|           -|    -|
+    | + write_result                                                          |  Timing|  -0.00|    41034|  1.368e+05|         -|    41034|     -|        no|         -|         -|    240 (~0%)|   685 (~0%)|    -|
+    |  + write_result_Pipeline_VITIS_LOOP_23_1                                |  Timing|  -0.00|    40963|  1.365e+05|         -|    40963|     -|        no|         -|         -|    103 (~0%)|   170 (~0%)|    -|
+    |   o VITIS_LOOP_23_1                                                     |      II|   2.43|    40961|  1.365e+05|         7|        5|  8192|       yes|         -|         -|            -|           -|    -|
     +-------------------------------------------------------------------------+--------+-------+---------+-----------+----------+---------+------+----------+----------+----------+-------------+------------+-----+
 
 
@@ -50,7 +50,7 @@
 | Interface   | Data Width | Address Width | Latency | Offset | Register | Max Widen | Max Read     | Max Write    | Num Read    | Num Write   |
 |             | (SW->HW)   |               |         |        |          | Bitwidth  | Burst Length | Burst Length | Outstanding | Outstanding |
 +-------------+------------+---------------+---------+--------+----------+-----------+--------------+--------------+-------------+-------------+
-| m_axi_gmem0 | 16 -> 16   | 64            | 64      | slave  | 0        | 512       | 16           | 16           | 16          | 16          |
+| m_axi_gmem0 | 16 -> 512  | 64            | 64      | slave  | 0        | 512       | 16           | 16           | 16          | 16          |
 | m_axi_gmem1 | 16 -> 16   | 64            | 64      | slave  | 0        | 512       | 16           | 16           | 16          | 16          |
 +-------------+------------+---------------+---------+--------+----------+-----------+--------------+--------------+-------------+-------------+
 
@@ -117,8 +117,8 @@
 +--------------+-----------------+-----------+--------+-------+------------------------------------------------------------+
 | HW Interface | Loop            | Direction | Length | Width | Location                                                   |
 +--------------+-----------------+-----------+--------+-------+------------------------------------------------------------+
-| m_axi_gmem0  | VITIS_LOOP_50_1 | read      | 131072 | 16    | /home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:50:19 |
-| m_axi_gmem1  | VITIS_LOOP_65_4 | write     | 40960  | 16    | /home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:65:26 |
+| m_axi_gmem0  |                 | read      | 4096   | 512   | /home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:8:19  |
+| m_axi_gmem1  | VITIS_LOOP_23_1 | write     | 40960  | 16    | /home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:23:20 |
 +--------------+-----------------+-----------+--------+-------+------------------------------------------------------------+
 
 
@@ -129,11 +129,11 @@
 | Name                                                                   | DSP | Pragma | Variable       | Op  | Impl   | Latency |
 +------------------------------------------------------------------------+-----+--------+----------------+-----+--------+---------+
 | + alveo_hls4ml                                                         | 38  |        |                |     |        |         |
-|  + VITIS_LOOP_50_1_proc                                                | 0   |        |                |     |        |         |
-|   + VITIS_LOOP_50_1_proc_Pipeline_VITIS_LOOP_50_1                      | 0   |        |                |     |        |         |
-|     add_ln50_fu_102_p2                                                 | -   |        | add_ln50       | add | fabric | 0       |
-|  + VITIS_LOOP_59_3_proc                                                | 38  |        |                |     |        |         |
-|   + dataflow_in_loop_VITIS_LOOP_59_3                                   | 38  |        |                |     |        |         |
+|  + read_input                                                          | 0   |        |                |     |        |         |
+|   + read_input_Pipeline_VITIS_LOOP_8_1                                 | 0   |        |                |     |        |         |
+|     add_ln8_fu_119_p2                                                  | -   |        | add_ln8        | add | fabric | 0       |
+|  + run_inference                                                       | 38  |        |                |     |        |         |
+|   + dataflow_in_loop_VITIS_LOOP_17_1                                   | 38  |        |                |     |        |         |
 |    + myproject                                                         | 38  |        |                |     |        |         |
 |     + dense_latency_ap_fixed_16_6_5_3_0_ap_fixed_16_6_5_3_0_config2_s  | 33  |        |                |     |        |         |
 |       mul_16s_6ns_21_1_0_U27                                           | 1   |        | mul_ln1270     | mul | auto   | 0       |
@@ -1585,9 +1585,9 @@
 |       mul_mul_18s_18s_30_4_1_U381                                      | 1   |        | mul_ln1270_2   | mul | dsp48  | 3       |
 |       mul_mul_18s_18s_30_4_1_U382                                      | 1   |        | mul_ln1270_3   | mul | dsp48  | 3       |
 |       mul_mul_18s_18s_30_4_1_U383                                      | 1   |        | mul_ln1270_4   | mul | dsp48  | 3       |
-|  + VITIS_LOOP_65_4_proc                                                | 0   |        |                |     |        |         |
-|   + VITIS_LOOP_65_4_proc_Pipeline_VITIS_LOOP_65_4                      | 0   |        |                |     |        |         |
-|     add_ln65_fu_197_p2                                                 | -   |        | add_ln65       | add | fabric | 0       |
+|  + write_result                                                        | 0   |        |                |     |        |         |
+|   + write_result_Pipeline_VITIS_LOOP_23_1                              | 0   |        |                |     |        |         |
+|     add_ln23_fu_197_p2                                                 | -   |        | add_ln23       | add | fabric | 0       |
 +------------------------------------------------------------------------+-----+--------+----------------+-----+--------+---------+
 
 
@@ -1605,8 +1605,8 @@
 |   out_buf_V_2_U                                                      | 8    | -    |        | out_buf_V_2  | ram_1p  | auto | 1       |
 |   out_buf_V_3_U                                                      | 8    | -    |        | out_buf_V_3  | ram_1p  | auto | 1       |
 |   out_buf_V_4_U                                                      | 8    | -    |        | out_buf_V_4  | ram_1p  | auto | 1       |
-|  + VITIS_LOOP_59_3_proc                                              | 8    | 0    |        |              |         |      |         |
-|   + dataflow_in_loop_VITIS_LOOP_59_3                                 | 8    | 0    |        |              |         |      |         |
+|  + run_inference                                                     | 8    | 0    |        |              |         |      |         |
+|   + dataflow_in_loop_VITIS_LOOP_17_1                                 | 8    | 0    |        |              |         |      |         |
 |    + myproject                                                       | 8    | 0    |        |              |         |      |         |
 |     + softmax_stable_ap_fixed_ap_fixed_16_6_5_3_0_softmax_config13_s | 8    | 0    |        |              |         |      |         |
 |       exp_table_U                                                    | 6    | -    |        | exp_table    | rom_np  | auto | 1       |
@@ -1618,23 +1618,23 @@
 == Pragma Report
 ================================================================
 * Pragmas with Warnings
-+----------+---------+--------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Type     | Options | Location                                         | Messages                                                                                                                                                                           |
-+----------+---------+--------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| dataflow |         | ../../../src/alveo_hls4ml.cpp:42 in alveo_hls4ml | Since the only kind of statements allowed in a canonical dataflow region are variable declarations and function calls, the compiler may not be able to correctly handle the region |
-| dataflow |         | ../../../src/alveo_hls4ml.cpp:60 in alveo_hls4ml | Since the only kind of statements allowed in a canonical dataflow region are variable declarations and function calls, the compiler may not be able to correctly handle the region |
-+----------+---------+--------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++----------+---------+---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Type     | Options | Location                                          | Messages                                                                                                                                                                           |
++----------+---------+---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| dataflow |         | ../../../src/alveo_hls4ml.cpp:18 in run_inference | Since the only kind of statements allowed in a canonical dataflow region are variable declarations and function calls, the compiler may not be able to correctly handle the region |
++----------+---------+---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 * Valid Pragma Syntax
 +----------------------+----------------------------------------------------------+-------------------------------------------------------------------------------------------+
 | Type                 | Options                                                  | Location                                                                                  |
 +----------------------+----------------------------------------------------------+-------------------------------------------------------------------------------------------+
-| array_reshape        | variable=in_buf complete dim=2                           | ../../../src/alveo_hls4ml.cpp:46 in alveo_hls4ml, in_buf                                  |
-| array_reshape        | variable=out_buf complete dim=2                          | ../../../src/alveo_hls4ml.cpp:47 in alveo_hls4ml, out_buf                                 |
-| pipeline             |                                                          | ../../../src/alveo_hls4ml.cpp:51 in alveo_hls4ml                                          |
-| unroll               |                                                          | ../../../src/alveo_hls4ml.cpp:53 in alveo_hls4ml                                          |
-| pipeline             |                                                          | ../../../src/alveo_hls4ml.cpp:66 in alveo_hls4ml                                          |
-| unroll               |                                                          | ../../../src/alveo_hls4ml.cpp:68 in alveo_hls4ml                                          |
+| pipeline             |                                                          | ../../../src/alveo_hls4ml.cpp:9 in read_input                                             |
+| unroll               |                                                          | ../../../src/alveo_hls4ml.cpp:11 in read_input                                            |
+| pipeline             |                                                          | ../../../src/alveo_hls4ml.cpp:24 in write_result                                          |
+| unroll               |                                                          | ../../../src/alveo_hls4ml.cpp:26 in write_result                                          |
+| array_reshape        | variable=in_buf complete dim=2                           | ../../../src/alveo_hls4ml.cpp:106 in alveo_hls4ml, in_buf                                 |
+| array_reshape        | variable=out_buf complete dim=2                          | ../../../src/alveo_hls4ml.cpp:107 in alveo_hls4ml, out_buf                                |
+| dataflow             |                                                          | ../../../src/alveo_hls4ml.cpp:109 in alveo_hls4ml                                         |
 | array_reshape        | variable=fc1_input complete dim=0                        | ../../../src/myproject.cpp:22 in myproject, fc1_input                                     |
 | array_partition      | variable=layer13_out complete dim=0                      | ../../../src/myproject.cpp:23 in myproject, layer13_out                                   |
 | interface            | ap_vld port=fc1_input,layer13_out                        | ../../../src/myproject.cpp:24 in myproject, fc1_input,layer13_out                         |

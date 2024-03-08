@@ -199,10 +199,10 @@
 
 <Node id="10" bw="13" op_0_bw="13" op_1_bw="13">
 <![CDATA[
-entry:0 %i_1_read = read i13 @_ssdm_op_Read.ap_auto.i13, i13 %i_1
+entry:0 %i_read = read i13 @_ssdm_op_Read.ap_auto.i13, i13 %i
 
 ]]></Node>
-<StgValue><ssdm name="i_1_read"/></StgValue>
+<StgValue><ssdm name="i_read"/></StgValue>
 </operation>
 </state>
 
@@ -217,10 +217,10 @@ entry:0 %i_1_read = read i13 @_ssdm_op_Read.ap_auto.i13, i13 %i_1
 
 <Node id="11" bw="64" op_0_bw="13">
 <![CDATA[
-entry:1 %zext_ln379 = zext i13 %i_1_read
+entry:1 %zext_ln386 = zext i13 %i_read
 
 ]]></Node>
-<StgValue><ssdm name="zext_ln379"/></StgValue>
+<StgValue><ssdm name="zext_ln386"/></StgValue>
 </operation>
 
 <operation id="34" st_id="2" stage="1" lat="1">
@@ -232,10 +232,10 @@ entry:1 %zext_ln379 = zext i13 %i_1_read
 
 <Node id="17" bw="13" op_0_bw="256" op_1_bw="64" op_2_bw="64">
 <![CDATA[
-entry:7 %in_buf_V_addr = getelementptr i256 %in_buf_V, i64 0, i64 %zext_ln379
+entry:7 %in_buf_addr = getelementptr i256 %in_buf, i64 0, i64 %zext_ln386
 
 ]]></Node>
-<StgValue><ssdm name="in_buf_V_addr"/></StgValue>
+<StgValue><ssdm name="in_buf_addr"/></StgValue>
 </operation>
 
 <operation id="35" st_id="2" stage="3" lat="3">
@@ -247,10 +247,10 @@ entry:7 %in_buf_V_addr = getelementptr i256 %in_buf_V, i64 0, i64 %zext_ln379
 
 <Node id="19" bw="256" op_0_bw="13">
 <![CDATA[
-entry:9 %in_buf_V_load = load i13 %in_buf_V_addr
+entry:9 %in_buf_load = load i13 %in_buf_addr
 
 ]]></Node>
-<StgValue><ssdm name="in_buf_V_load"/></StgValue>
+<StgValue><ssdm name="in_buf_load"/></StgValue>
 </operation>
 </state>
 
@@ -265,10 +265,10 @@ entry:9 %in_buf_V_load = load i13 %in_buf_V_addr
 
 <Node id="19" bw="256" op_0_bw="13">
 <![CDATA[
-entry:9 %in_buf_V_load = load i13 %in_buf_V_addr
+entry:9 %in_buf_load = load i13 %in_buf_addr
 
 ]]></Node>
-<StgValue><ssdm name="in_buf_V_load"/></StgValue>
+<StgValue><ssdm name="in_buf_load"/></StgValue>
 </operation>
 </state>
 
@@ -283,10 +283,10 @@ entry:9 %in_buf_V_load = load i13 %in_buf_V_addr
 
 <Node id="19" bw="256" op_0_bw="13">
 <![CDATA[
-entry:9 %in_buf_V_load = load i13 %in_buf_V_addr
+entry:9 %in_buf_load = load i13 %in_buf_addr
 
 ]]></Node>
-<StgValue><ssdm name="in_buf_V_load"/></StgValue>
+<StgValue><ssdm name="in_buf_load"/></StgValue>
 </operation>
 </state>
 
@@ -301,7 +301,7 @@ entry:9 %in_buf_V_load = load i13 %in_buf_V_addr
 
 <Node id="20" bw="960" op_0_bw="960" op_1_bw="256">
 <![CDATA[
-entry:10 %call_ret1_i_i = call i960 @dense_latency<ap_fixed<16, 6, 5, 3, 0>, ap_fixed<16, 6, 5, 3, 0>, config2>, i256 %in_buf_V_load
+entry:10 %call_ret1_i_i = call i960 @dense_latency<ap_fixed<16, 6, 5, 3, 0>, ap_fixed<16, 6, 5, 3, 0>, config2>, i256 %in_buf_load
 
 ]]></Node>
 <StgValue><ssdm name="call_ret1_i_i"/></StgValue>
@@ -319,7 +319,7 @@ entry:10 %call_ret1_i_i = call i960 @dense_latency<ap_fixed<16, 6, 5, 3, 0>, ap_
 
 <Node id="20" bw="960" op_0_bw="960" op_1_bw="256">
 <![CDATA[
-entry:10 %call_ret1_i_i = call i960 @dense_latency<ap_fixed<16, 6, 5, 3, 0>, ap_fixed<16, 6, 5, 3, 0>, config2>, i256 %in_buf_V_load
+entry:10 %call_ret1_i_i = call i960 @dense_latency<ap_fixed<16, 6, 5, 3, 0>, ap_fixed<16, 6, 5, 3, 0>, config2>, i256 %in_buf_load
 
 ]]></Node>
 <StgValue><ssdm name="call_ret1_i_i"/></StgValue>
@@ -4324,10 +4324,10 @@ entry:254 %call_ret_i_i = call i80 @softmax_stable<ap_fixed,ap_fixed<16,6,5,3,0>
 
 <Node id="12" bw="13" op_0_bw="16" op_1_bw="64" op_2_bw="64">
 <![CDATA[
-entry:2 %out_buf_V_4_addr = getelementptr i16 %out_buf_V_4, i64 0, i64 %zext_ln379
+entry:2 %out_buf_4_addr = getelementptr i16 %out_buf_4, i64 0, i64 %zext_ln386
 
 ]]></Node>
-<StgValue><ssdm name="out_buf_V_4_addr"/></StgValue>
+<StgValue><ssdm name="out_buf_4_addr"/></StgValue>
 </operation>
 
 <operation id="302" st_id="31" stage="1" lat="1">
@@ -4339,10 +4339,10 @@ entry:2 %out_buf_V_4_addr = getelementptr i16 %out_buf_V_4, i64 0, i64 %zext_ln3
 
 <Node id="13" bw="13" op_0_bw="16" op_1_bw="64" op_2_bw="64">
 <![CDATA[
-entry:3 %out_buf_V_3_addr = getelementptr i16 %out_buf_V_3, i64 0, i64 %zext_ln379
+entry:3 %out_buf_3_addr = getelementptr i16 %out_buf_3, i64 0, i64 %zext_ln386
 
 ]]></Node>
-<StgValue><ssdm name="out_buf_V_3_addr"/></StgValue>
+<StgValue><ssdm name="out_buf_3_addr"/></StgValue>
 </operation>
 
 <operation id="303" st_id="31" stage="1" lat="1">
@@ -4354,10 +4354,10 @@ entry:3 %out_buf_V_3_addr = getelementptr i16 %out_buf_V_3, i64 0, i64 %zext_ln3
 
 <Node id="14" bw="13" op_0_bw="16" op_1_bw="64" op_2_bw="64">
 <![CDATA[
-entry:4 %out_buf_V_2_addr = getelementptr i16 %out_buf_V_2, i64 0, i64 %zext_ln379
+entry:4 %out_buf_2_addr = getelementptr i16 %out_buf_2, i64 0, i64 %zext_ln386
 
 ]]></Node>
-<StgValue><ssdm name="out_buf_V_2_addr"/></StgValue>
+<StgValue><ssdm name="out_buf_2_addr"/></StgValue>
 </operation>
 
 <operation id="304" st_id="31" stage="1" lat="1">
@@ -4369,10 +4369,10 @@ entry:4 %out_buf_V_2_addr = getelementptr i16 %out_buf_V_2, i64 0, i64 %zext_ln3
 
 <Node id="15" bw="13" op_0_bw="16" op_1_bw="64" op_2_bw="64">
 <![CDATA[
-entry:5 %out_buf_V_1_addr = getelementptr i16 %out_buf_V_1, i64 0, i64 %zext_ln379
+entry:5 %out_buf_1_addr = getelementptr i16 %out_buf_1, i64 0, i64 %zext_ln386
 
 ]]></Node>
-<StgValue><ssdm name="out_buf_V_1_addr"/></StgValue>
+<StgValue><ssdm name="out_buf_1_addr"/></StgValue>
 </operation>
 
 <operation id="305" st_id="31" stage="1" lat="1">
@@ -4384,10 +4384,10 @@ entry:5 %out_buf_V_1_addr = getelementptr i16 %out_buf_V_1, i64 0, i64 %zext_ln3
 
 <Node id="16" bw="13" op_0_bw="16" op_1_bw="64" op_2_bw="64">
 <![CDATA[
-entry:6 %out_buf_V_addr = getelementptr i16 %out_buf_V, i64 0, i64 %zext_ln379
+entry:6 %out_buf_0_addr = getelementptr i16 %out_buf_0, i64 0, i64 %zext_ln386
 
 ]]></Node>
-<StgValue><ssdm name="out_buf_V_addr"/></StgValue>
+<StgValue><ssdm name="out_buf_0_addr"/></StgValue>
 </operation>
 
 <operation id="306" st_id="31" stage="1" lat="1">
@@ -4444,7 +4444,7 @@ entry:255 %layer13_out_0_ret_i_i = extractvalue i80 %call_ret_i_i
 
 <Node id="266" bw="0" op_0_bw="16" op_1_bw="13">
 <![CDATA[
-entry:256 %store_ln386 = store i16 %layer13_out_0_ret_i_i, i13 %out_buf_V_addr
+entry:256 %store_ln386 = store i16 %layer13_out_0_ret_i_i, i13 %out_buf_0_addr
 
 ]]></Node>
 <StgValue><ssdm name="store_ln386"/></StgValue>
@@ -4474,7 +4474,7 @@ entry:257 %layer13_out_1_ret_i_i = extractvalue i80 %call_ret_i_i
 
 <Node id="268" bw="0" op_0_bw="16" op_1_bw="13">
 <![CDATA[
-entry:258 %store_ln386 = store i16 %layer13_out_1_ret_i_i, i13 %out_buf_V_1_addr
+entry:258 %store_ln386 = store i16 %layer13_out_1_ret_i_i, i13 %out_buf_1_addr
 
 ]]></Node>
 <StgValue><ssdm name="store_ln386"/></StgValue>
@@ -4504,7 +4504,7 @@ entry:259 %layer13_out_2_ret_i_i = extractvalue i80 %call_ret_i_i
 
 <Node id="270" bw="0" op_0_bw="16" op_1_bw="13">
 <![CDATA[
-entry:260 %store_ln386 = store i16 %layer13_out_2_ret_i_i, i13 %out_buf_V_2_addr
+entry:260 %store_ln386 = store i16 %layer13_out_2_ret_i_i, i13 %out_buf_2_addr
 
 ]]></Node>
 <StgValue><ssdm name="store_ln386"/></StgValue>
@@ -4534,7 +4534,7 @@ entry:261 %layer13_out_3_ret_i_i = extractvalue i80 %call_ret_i_i
 
 <Node id="272" bw="0" op_0_bw="16" op_1_bw="13">
 <![CDATA[
-entry:262 %store_ln386 = store i16 %layer13_out_3_ret_i_i, i13 %out_buf_V_3_addr
+entry:262 %store_ln386 = store i16 %layer13_out_3_ret_i_i, i13 %out_buf_3_addr
 
 ]]></Node>
 <StgValue><ssdm name="store_ln386"/></StgValue>
@@ -4564,7 +4564,7 @@ entry:263 %layer13_out_4_ret_i_i = extractvalue i80 %call_ret_i_i
 
 <Node id="274" bw="0" op_0_bw="16" op_1_bw="13">
 <![CDATA[
-entry:264 %store_ln386 = store i16 %layer13_out_4_ret_i_i, i13 %out_buf_V_4_addr
+entry:264 %store_ln386 = store i16 %layer13_out_4_ret_i_i, i13 %out_buf_4_addr
 
 ]]></Node>
 <StgValue><ssdm name="store_ln386"/></StgValue>
@@ -4579,10 +4579,10 @@ entry:264 %store_ln386 = store i16 %layer13_out_4_ret_i_i, i13 %out_buf_V_4_addr
 
 <Node id="275" bw="0">
 <![CDATA[
-entry:265 %ret_ln61 = ret
+entry:265 %ret_ln19 = ret
 
 ]]></Node>
-<StgValue><ssdm name="ret_ln61"/></StgValue>
+<StgValue><ssdm name="ret_ln19"/></StgValue>
 </operation>
 </state>
 </state_list>

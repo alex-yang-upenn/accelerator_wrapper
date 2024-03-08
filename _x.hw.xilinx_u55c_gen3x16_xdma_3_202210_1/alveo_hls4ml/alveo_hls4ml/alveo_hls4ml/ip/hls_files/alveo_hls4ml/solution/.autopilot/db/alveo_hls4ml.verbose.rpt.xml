@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'alveo_hls4ml'" level="0">
-<item name = "Date">Tue Feb  6 21:42:59 2024
+<item name = "Date">Fri Mar  8 07:15:21 2024
 </item>
 <item name = "Version">2022.2 (Build 3670227 on Oct 13 2022)</item>
 <item name = "Project">alveo_hls4ml</item>
@@ -24,17 +24,17 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="8">, min, max, min, max, min, max, Type</keys>
-<column name="">196787, 196787, 0.656 ms, 0.656 ms, 131147, 131147, dataflow</column>
+<column name="">73907, 73907, 0.246 ms, 0.246 ms, 41035, 41035, dataflow</column>
 </table>
 </item>
 <item name = "Detail">
 <section name = "" level="1">
 <item name = "Instance"><table name="" hasTotal="0">
 <keys size="9">Instance, Module, min, max, min, max, min, max, Type</keys>
-<column name="VITIS_LOOP_50_1_proc_U0">VITIS_LOOP_50_1_proc, 131146, 131146, 0.437 ms, 0.437 ms, 131146, 131146, no</column>
-<column name="VITIS_LOOP_59_3_proc_U0">VITIS_LOOP_59_3_proc, 24605, 24605, 82.008 us, 82.008 us, 24605, 24605, no</column>
+<column name="read_input_U0">read_input, 8266, 8266, 27.551 us, 27.551 us, 8266, 8266, no</column>
+<column name="run_inference_U0">run_inference, 24605, 24605, 82.008 us, 82.008 us, 24605, 24605, no</column>
 <column name="entry_proc_U0">entry_proc, 0, 0, 0 ns, 0 ns, 0, 0, no</column>
-<column name="VITIS_LOOP_65_4_proc_U0">VITIS_LOOP_65_4_proc, 41034, 41034, 0.137 ms, 0.137 ms, 41034, 41034, no</column>
+<column name="write_result_U0">write_result, 41034, 41034, 0.137 ms, 0.137 ms, 41034, 41034, no</column>
 </table>
 </item>
 <item name = "Loop"><table name="" hasTotal="0">
@@ -53,27 +53,27 @@
 <column name="DSP">-, -, -, -, -</column>
 <column name="Expression">-, -, 0, 36, -</column>
 <column name="FIFO">-, -, 5, 42, -</column>
-<column name="Instance">8, 38, 15342, 46094, 0</column>
+<column name="Instance">8, 38, 19714, 53038, 0</column>
 <column name="Memory">168, -, 0, 0, 0</column>
 <column name="Multiplexer">-, -, -, 63, -</column>
 <column name="Register">-, -, 10, -, -</column>
 <specialColumn name="Available SLR">1344, 3008, 869120, 434560, 320</specialColumn>
-<specialColumn name="Utilization SLR (%)">13, 1, 1, 10, 0</specialColumn>
+<specialColumn name="Utilization SLR (%)">13, 1, 2, 12, 0</specialColumn>
 <specialColumn name="Available">4032, 9024, 2607360, 1303680, 960</specialColumn>
-<specialColumn name="Utilization (%)">4, ~0, ~0, 3, 0</specialColumn>
+<specialColumn name="Utilization (%)">4, ~0, ~0, 4, 0</specialColumn>
 </table>
 </item>
 <item name = "Detail">
 <section name = "" level="1">
 <item name = "Instance"><table name="" hasTotal="1">
 <keys size="7">Instance, Module, BRAM_18K, DSP, FF, LUT, URAM</keys>
-<column name="VITIS_LOOP_50_1_proc_U0">VITIS_LOOP_50_1_proc, 0, 0, 455, 668, 0</column>
-<column name="VITIS_LOOP_59_3_proc_U0">VITIS_LOOP_59_3_proc, 8, 38, 13091, 42463, 0</column>
-<column name="VITIS_LOOP_65_4_proc_U0">VITIS_LOOP_65_4_proc, 0, 0, 240, 685, 0</column>
 <column name="control_s_axi_U">control_s_axi, 0, 0, 176, 296, 0</column>
 <column name="entry_proc_U0">entry_proc, 0, 0, 2, 20, 0</column>
-<column name="gmem0_m_axi_U">gmem0_m_axi, 0, 0, 689, 981, 0</column>
+<column name="gmem0_m_axi_U">gmem0_m_axi, 0, 0, 4567, 8001, 0</column>
 <column name="gmem1_m_axi_U">gmem1_m_axi, 0, 0, 689, 981, 0</column>
+<column name="read_input_U0">read_input, 0, 0, 949, 592, 0</column>
+<column name="run_inference_U0">run_inference, 8, 38, 13091, 42463, 0</column>
+<column name="write_result_U0">write_result, 0, 0, 240, 685, 0</column>
 </table>
 </item>
 <item name = "DSP"><table name="" hasTotal="0">
@@ -97,9 +97,6 @@
 </item>
 <item name = "Expression"><table name="" hasTotal="1">
 <keys size="7">Variable Name, Operation, DSP, FF, LUT, Bitwidth P0, Bitwidth P1</keys>
-<column name="VITIS_LOOP_50_1_proc_U0_ap_start">and, 0, 0, 2, 1, 1</column>
-<column name="VITIS_LOOP_59_3_proc_U0_ap_continue">and, 0, 0, 2, 1, 1</column>
-<column name="VITIS_LOOP_65_4_proc_U0_ap_start">and, 0, 0, 2, 1, 1</column>
 <column name="ap_channel_done_out_buf_V">and, 0, 0, 2, 1, 1</column>
 <column name="ap_channel_done_out_buf_V_1">and, 0, 0, 2, 1, 1</column>
 <column name="ap_channel_done_out_buf_V_2">and, 0, 0, 2, 1, 1</column>
@@ -108,24 +105,27 @@
 <column name="ap_idle">and, 0, 0, 2, 1, 1</column>
 <column name="ap_sync_ready">and, 0, 0, 2, 1, 1</column>
 <column name="entry_proc_U0_ap_start">and, 0, 0, 2, 1, 1</column>
-<column name="ap_sync_VITIS_LOOP_50_1_proc_U0_ap_ready">or, 0, 0, 2, 1, 1</column>
+<column name="read_input_U0_ap_start">and, 0, 0, 2, 1, 1</column>
+<column name="run_inference_U0_ap_continue">and, 0, 0, 2, 1, 1</column>
+<column name="write_result_U0_ap_start">and, 0, 0, 2, 1, 1</column>
 <column name="ap_sync_channel_write_out_buf_V">or, 0, 0, 2, 1, 1</column>
 <column name="ap_sync_channel_write_out_buf_V_1">or, 0, 0, 2, 1, 1</column>
 <column name="ap_sync_channel_write_out_buf_V_2">or, 0, 0, 2, 1, 1</column>
 <column name="ap_sync_channel_write_out_buf_V_3">or, 0, 0, 2, 1, 1</column>
 <column name="ap_sync_channel_write_out_buf_V_4">or, 0, 0, 2, 1, 1</column>
 <column name="ap_sync_entry_proc_U0_ap_ready">or, 0, 0, 2, 1, 1</column>
+<column name="ap_sync_read_input_U0_ap_ready">or, 0, 0, 2, 1, 1</column>
 </table>
 </item>
 <item name = "Multiplexer"><table name="" hasTotal="1">
 <keys size="5">Name, LUT, Input Size, Bits, Total Bits</keys>
-<column name="ap_sync_reg_VITIS_LOOP_50_1_proc_U0_ap_ready">9, 2, 1, 2</column>
 <column name="ap_sync_reg_channel_write_out_buf_V">9, 2, 1, 2</column>
 <column name="ap_sync_reg_channel_write_out_buf_V_1">9, 2, 1, 2</column>
 <column name="ap_sync_reg_channel_write_out_buf_V_2">9, 2, 1, 2</column>
 <column name="ap_sync_reg_channel_write_out_buf_V_3">9, 2, 1, 2</column>
 <column name="ap_sync_reg_channel_write_out_buf_V_4">9, 2, 1, 2</column>
 <column name="ap_sync_reg_entry_proc_U0_ap_ready">9, 2, 1, 2</column>
+<column name="ap_sync_reg_read_input_U0_ap_ready">9, 2, 1, 2</column>
 </table>
 </item>
 <item name = "Register"><table name="" hasTotal="1">
@@ -133,13 +133,13 @@
 <column name="ap_rst_n_inv">1, 0, 1, 0</column>
 <column name="ap_rst_reg_1">1, 0, 1, 0</column>
 <column name="ap_rst_reg_2">1, 0, 1, 0</column>
-<column name="ap_sync_reg_VITIS_LOOP_50_1_proc_U0_ap_ready">1, 0, 1, 0</column>
 <column name="ap_sync_reg_channel_write_out_buf_V">1, 0, 1, 0</column>
 <column name="ap_sync_reg_channel_write_out_buf_V_1">1, 0, 1, 0</column>
 <column name="ap_sync_reg_channel_write_out_buf_V_2">1, 0, 1, 0</column>
 <column name="ap_sync_reg_channel_write_out_buf_V_3">1, 0, 1, 0</column>
 <column name="ap_sync_reg_channel_write_out_buf_V_4">1, 0, 1, 0</column>
 <column name="ap_sync_reg_entry_proc_U0_ap_ready">1, 0, 1, 0</column>
+<column name="ap_sync_reg_read_input_U0_ap_ready">1, 0, 1, 0</column>
 </table>
 </item>
 </section>
@@ -184,8 +184,8 @@
 <column name="m_axi_gmem0_AWUSER">out, 1, m_axi, gmem0, pointer</column>
 <column name="m_axi_gmem0_WVALID">out, 1, m_axi, gmem0, pointer</column>
 <column name="m_axi_gmem0_WREADY">in, 1, m_axi, gmem0, pointer</column>
-<column name="m_axi_gmem0_WDATA">out, 32, m_axi, gmem0, pointer</column>
-<column name="m_axi_gmem0_WSTRB">out, 4, m_axi, gmem0, pointer</column>
+<column name="m_axi_gmem0_WDATA">out, 512, m_axi, gmem0, pointer</column>
+<column name="m_axi_gmem0_WSTRB">out, 64, m_axi, gmem0, pointer</column>
 <column name="m_axi_gmem0_WLAST">out, 1, m_axi, gmem0, pointer</column>
 <column name="m_axi_gmem0_WID">out, 1, m_axi, gmem0, pointer</column>
 <column name="m_axi_gmem0_WUSER">out, 1, m_axi, gmem0, pointer</column>
@@ -204,7 +204,7 @@
 <column name="m_axi_gmem0_ARUSER">out, 1, m_axi, gmem0, pointer</column>
 <column name="m_axi_gmem0_RVALID">in, 1, m_axi, gmem0, pointer</column>
 <column name="m_axi_gmem0_RREADY">out, 1, m_axi, gmem0, pointer</column>
-<column name="m_axi_gmem0_RDATA">in, 32, m_axi, gmem0, pointer</column>
+<column name="m_axi_gmem0_RDATA">in, 512, m_axi, gmem0, pointer</column>
 <column name="m_axi_gmem0_RLAST">in, 1, m_axi, gmem0, pointer</column>
 <column name="m_axi_gmem0_RID">in, 1, m_axi, gmem0, pointer</column>
 <column name="m_axi_gmem0_RUSER">in, 1, m_axi, gmem0, pointer</column>

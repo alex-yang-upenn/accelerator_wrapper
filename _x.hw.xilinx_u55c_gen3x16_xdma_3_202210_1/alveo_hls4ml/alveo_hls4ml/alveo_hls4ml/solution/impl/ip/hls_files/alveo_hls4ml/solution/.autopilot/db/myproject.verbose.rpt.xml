@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'myproject'" level="0">
-<item name = "Date">Tue Feb  6 21:42:11 2024
+<item name = "Date">Fri Mar  8 07:14:17 2024
 </item>
 <item name = "Version">2022.2 (Build 3670227 on Oct 13 2022)</item>
 <item name = "Project">alveo_hls4ml</item>
@@ -123,8 +123,8 @@
 <column name="ap_enable_reg_pp0_iter8">1, 0, 1, 0</column>
 <column name="ap_enable_reg_pp0_iter9">1, 0, 1, 0</column>
 <column name="grp_softmax_stable_ap_fixed_ap_fixed_16_6_5_3_0_softmax_config13_s_fu_391_ap_start_reg">1, 0, 1, 0</column>
-<column name="i_1_read_reg_1381">13, 0, 13, 0</column>
-<column name="in_buf_V_load_reg_1400">256, 0, 256, 0</column>
+<column name="i_read_reg_1381">13, 0, 13, 0</column>
+<column name="in_buf_load_reg_1400">256, 0, 256, 0</column>
 <column name="layer10_out_V_10_reg_2480">6, 0, 6, 0</column>
 <column name="layer10_out_V_11_reg_2485">6, 0, 6, 0</column>
 <column name="layer10_out_V_12_reg_2490">6, 0, 6, 0</column>
@@ -362,8 +362,8 @@
 <column name="layer8_out_V_8_reg_2335">16, 0, 16, 0</column>
 <column name="layer8_out_V_9_reg_2340">16, 0, 16, 0</column>
 <column name="layer8_out_V_reg_2295">16, 0, 16, 0</column>
-<column name="zext_ln379_reg_1386">13, 0, 64, 51</column>
-<column name="zext_ln379_reg_1386">64, 32, 64, 51</column>
+<column name="zext_ln386_reg_1386">13, 0, 64, 51</column>
+<column name="zext_ln386_reg_1386">64, 32, 64, 51</column>
 </table>
 </item>
 </section>
@@ -380,30 +380,30 @@
 <column name="ap_done">out, 1, ap_ctrl_hs, myproject, return value</column>
 <column name="ap_idle">out, 1, ap_ctrl_hs, myproject, return value</column>
 <column name="ap_ready">out, 1, ap_ctrl_hs, myproject, return value</column>
-<column name="in_buf_V_address0">out, 13, ap_memory, in_buf_V, array</column>
-<column name="in_buf_V_ce0">out, 1, ap_memory, in_buf_V, array</column>
-<column name="in_buf_V_q0">in, 256, ap_memory, in_buf_V, array</column>
-<column name="i_1">in, 13, ap_none, i_1, scalar</column>
-<column name="out_buf_V_address0">out, 13, ap_memory, out_buf_V, array</column>
-<column name="out_buf_V_ce0">out, 1, ap_memory, out_buf_V, array</column>
-<column name="out_buf_V_we0">out, 1, ap_memory, out_buf_V, array</column>
-<column name="out_buf_V_d0">out, 16, ap_memory, out_buf_V, array</column>
-<column name="out_buf_V_1_address0">out, 13, ap_memory, out_buf_V_1, array</column>
-<column name="out_buf_V_1_ce0">out, 1, ap_memory, out_buf_V_1, array</column>
-<column name="out_buf_V_1_we0">out, 1, ap_memory, out_buf_V_1, array</column>
-<column name="out_buf_V_1_d0">out, 16, ap_memory, out_buf_V_1, array</column>
-<column name="out_buf_V_2_address0">out, 13, ap_memory, out_buf_V_2, array</column>
-<column name="out_buf_V_2_ce0">out, 1, ap_memory, out_buf_V_2, array</column>
-<column name="out_buf_V_2_we0">out, 1, ap_memory, out_buf_V_2, array</column>
-<column name="out_buf_V_2_d0">out, 16, ap_memory, out_buf_V_2, array</column>
-<column name="out_buf_V_3_address0">out, 13, ap_memory, out_buf_V_3, array</column>
-<column name="out_buf_V_3_ce0">out, 1, ap_memory, out_buf_V_3, array</column>
-<column name="out_buf_V_3_we0">out, 1, ap_memory, out_buf_V_3, array</column>
-<column name="out_buf_V_3_d0">out, 16, ap_memory, out_buf_V_3, array</column>
-<column name="out_buf_V_4_address0">out, 13, ap_memory, out_buf_V_4, array</column>
-<column name="out_buf_V_4_ce0">out, 1, ap_memory, out_buf_V_4, array</column>
-<column name="out_buf_V_4_we0">out, 1, ap_memory, out_buf_V_4, array</column>
-<column name="out_buf_V_4_d0">out, 16, ap_memory, out_buf_V_4, array</column>
+<column name="in_buf_address0">out, 13, ap_memory, in_buf, array</column>
+<column name="in_buf_ce0">out, 1, ap_memory, in_buf, array</column>
+<column name="in_buf_q0">in, 256, ap_memory, in_buf, array</column>
+<column name="i">in, 13, ap_none, i, scalar</column>
+<column name="out_buf_0_address0">out, 13, ap_memory, out_buf_0, array</column>
+<column name="out_buf_0_ce0">out, 1, ap_memory, out_buf_0, array</column>
+<column name="out_buf_0_we0">out, 1, ap_memory, out_buf_0, array</column>
+<column name="out_buf_0_d0">out, 16, ap_memory, out_buf_0, array</column>
+<column name="out_buf_1_address0">out, 13, ap_memory, out_buf_1, array</column>
+<column name="out_buf_1_ce0">out, 1, ap_memory, out_buf_1, array</column>
+<column name="out_buf_1_we0">out, 1, ap_memory, out_buf_1, array</column>
+<column name="out_buf_1_d0">out, 16, ap_memory, out_buf_1, array</column>
+<column name="out_buf_2_address0">out, 13, ap_memory, out_buf_2, array</column>
+<column name="out_buf_2_ce0">out, 1, ap_memory, out_buf_2, array</column>
+<column name="out_buf_2_we0">out, 1, ap_memory, out_buf_2, array</column>
+<column name="out_buf_2_d0">out, 16, ap_memory, out_buf_2, array</column>
+<column name="out_buf_3_address0">out, 13, ap_memory, out_buf_3, array</column>
+<column name="out_buf_3_ce0">out, 1, ap_memory, out_buf_3, array</column>
+<column name="out_buf_3_we0">out, 1, ap_memory, out_buf_3, array</column>
+<column name="out_buf_3_d0">out, 16, ap_memory, out_buf_3, array</column>
+<column name="out_buf_4_address0">out, 13, ap_memory, out_buf_4, array</column>
+<column name="out_buf_4_ce0">out, 1, ap_memory, out_buf_4, array</column>
+<column name="out_buf_4_we0">out, 1, ap_memory, out_buf_4, array</column>
+<column name="out_buf_4_d0">out, 16, ap_memory, out_buf_4, array</column>
 </table>
 </item>
 </section>

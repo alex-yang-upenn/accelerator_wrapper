@@ -18,7 +18,7 @@ RDI_JAVA_PLATFORM=
 HOSTNAME=egl
 LANGUAGE=en_US:en
 TURN_HOST=turn.nrp-nautilus.io
-MAKE_TERMOUT=/dev/pts/1
+MAKE_TERMOUT=/dev/pts/4
 XIL_SUPPRESS_OVERRIDE_WARNINGS=1
 RDI_BINROOT=/tools/Xilinx/Vitis/2022.2/bin
 XILINX_VIVADO=/tools/Xilinx/Vivado/2022.2
@@ -75,7 +75,7 @@ TERM=xterm
 PASSWD=chuhua123
 APPIMAGE_EXTRACT_AND_RUN=1
 USER=user
-MAKE_TERMERR=/dev/pts/1
+MAKE_TERMERR=/dev/pts/4
 XILINX_PLANAHEAD=/tools/Xilinx/Vitis/2022.2
 RDI_BASEROOT=/tools/Xilinx/Vitis
 RDI_TPS_ROOT=/tools/Xilinx/Vivado/2022.2/tps/lnx64
@@ -118,30 +118,30 @@ XILINX_VITIS=/tools/Xilinx/Vitis/2022.2
 OLDPWD=/tools/Xilinx/Vitis/2022.2/bin
 TARGET=hw
 _=/tools/Xilinx/Vitis/2022.2/bin/unwrapped/lnx64.o/v++
-XILINX_CD_CONNECT_ID=37129
-XILINX_CD_SESSION=8247af37-4371-4dc2-8657-71b6a1b84615
+XILINX_CD_CONNECT_ID=35847
+XILINX_CD_SESSION=bdb30283-091a-4af6-b8ff-756a0ac010d4
 
 
 V++ command line:
 ------------------------------------------
-/tools/Xilinx/Vitis/2022.2/bin/unwrapped/lnx64.o/v++ -t hw --platform xilinx_u55c_gen3x16_xdma_3_202210_1 --save-temps --temp_dir ./_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1 -c -k alveo_hls4ml -Isrc -o_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml.xo src/alveo_hls4ml.cpp src/myproject.cpp -DMYPROJ=myproject -DIS_DENSE -I./src/ -I./src/weights -I./src/nnet_utils/ --config config.ini 
+/tools/Xilinx/Vitis/2022.2/bin/unwrapped/lnx64.o/v++ -t hw --platform xilinx_u55c_gen3x16_xdma_3_202210_1 --save-temps --temp_dir ./_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1 -c -k alveo_hls4ml -Isrc -o_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml.xo src/alveo_hls4ml.cpp src/myproject.cpp -DMYPROJ=myproject -DIS_DENSE -DIO_PARALLEL -I./src/ -I./src/weights -I./src/nnet_utils/ --config config.ini 
 
 FINAL PROGRAM OPTIONS
 --advanced.prop kernel.alveo_hls4ml.kernel_flags=-std=c++11
 --compile
 --config config.ini
---connectivity.nk alveo_hls4ml:3:alveo_hls4ml_0.alveo_hls4ml_1.alveo_hls4ml_2
---connectivity.slr alveo_hls4ml_0:SLR0
---connectivity.slr alveo_hls4ml_1:SLR1
---connectivity.slr alveo_hls4ml_2:SLR2
---connectivity.sp alveo_hls4ml_0.in:HBM[0:3]
---connectivity.sp alveo_hls4ml_0.out:HBM[4:7]
---connectivity.sp alveo_hls4ml_1.in:HBM[8:11]
---connectivity.sp alveo_hls4ml_1.out:HBM[12:15]
---connectivity.sp alveo_hls4ml_2.in:HBM[16:19]
---connectivity.sp alveo_hls4ml_2.out:HBM[20:23]
+--connectivity.nk alveo_hls4ml:4
+--connectivity.sp alveo_hls4ml_1.in:HBM[0:3]
+--connectivity.sp alveo_hls4ml_1.out:HBM[4:7]
+--connectivity.sp alveo_hls4ml_2.in:HBM[8:11]
+--connectivity.sp alveo_hls4ml_2.out:HBM[12:15]
+--connectivity.sp alveo_hls4ml_3.in:HBM[16:19]
+--connectivity.sp alveo_hls4ml_3.out:HBM[20:23]
+--connectivity.sp alveo_hls4ml_4.in:HBM[24:27]
+--connectivity.sp alveo_hls4ml_4.out:HBM[28:31]
 --define MYPROJ=myproject
 --define IS_DENSE
+--define IO_PARALLEL
 --hls.pre_tcl ./config.tcl
 --include src
 --include ./src/
@@ -157,6 +157,14 @@ FINAL PROGRAM OPTIONS
 --save-temps
 --target hw
 --temp_dir ./_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1
+--vivado.prop run.impl_1.STEPS.OPT_DESIGN.IS_ENABLED=true
+--vivado.prop run.impl_1.STEPS.OPT_DESIGN.ARGS.DIRECTIVE=Explore
+--vivado.prop run.impl_1.STEPS.PLACE_DESIGN.ARGS.DIRECTIVE=AltSpreadLogic_high
+--vivado.prop run.impl_1.STEPS.PHYS_OPT_DESIGN.IS_ENABLED=true
+--vivado.prop run.imp1_1.STEPS.PHYS_OPT_DESIGN.ARGS.DIRECTIVE=AggressiveExplore
+--vivado.prop run.impl_1.STEPS.ROUTE_DESIGN.ARGS.DIRECTIVE=Explore
+--vivado.prop run.impl_1.STEPS.POST_ROUTE_PHYS_OPT_DESIGN.IS_ENABLED=true
+--vivado.prop run.impl_1.STEPS.POST_ROUTE_PHYS_OPT_DESIGN.ARGS.DIRECTIVE=AggressiveExplore
 
 PARSED COMMAND LINE OPTIONS
 -t hw 
@@ -171,6 +179,7 @@ src/alveo_hls4ml.cpp
 src/myproject.cpp 
 -DMYPROJ=myproject 
 -DIS_DENSE 
+-DIO_PARALLEL 
 -I./src/ 
 -I./src/weights 
 -I./src/nnet_utils/ 
@@ -179,17 +188,24 @@ src/myproject.cpp
 PARSED CONFIG FILE (1) OPTIONS
 file: config.ini
 advanced.prop kernel.alveo_hls4ml.kernel_flags=-std=c++11 
-connectivity.nk alveo_hls4ml:3:alveo_hls4ml_0.alveo_hls4ml_1.alveo_hls4ml_2 
-connectivity.slr alveo_hls4ml_0:SLR0 
-connectivity.slr alveo_hls4ml_1:SLR1 
-connectivity.slr alveo_hls4ml_2:SLR2 
-connectivity.sp alveo_hls4ml_0.in:HBM[0:3] 
-connectivity.sp alveo_hls4ml_0.out:HBM[4:7] 
-connectivity.sp alveo_hls4ml_1.in:HBM[8:11] 
-connectivity.sp alveo_hls4ml_1.out:HBM[12:15] 
-connectivity.sp alveo_hls4ml_2.in:HBM[16:19] 
-connectivity.sp alveo_hls4ml_2.out:HBM[20:23] 
 hls.pre_tcl ./config.tcl 
+connectivity.nk alveo_hls4ml:4 
+connectivity.sp alveo_hls4ml_1.in:HBM[0:3] 
+connectivity.sp alveo_hls4ml_1.out:HBM[4:7] 
+connectivity.sp alveo_hls4ml_2.in:HBM[8:11] 
+connectivity.sp alveo_hls4ml_2.out:HBM[12:15] 
+connectivity.sp alveo_hls4ml_3.in:HBM[16:19] 
+connectivity.sp alveo_hls4ml_3.out:HBM[20:23] 
+connectivity.sp alveo_hls4ml_4.in:HBM[24:27] 
+connectivity.sp alveo_hls4ml_4.out:HBM[28:31] 
+vivado.prop run.impl_1.STEPS.OPT_DESIGN.IS_ENABLED=true 
+vivado.prop run.impl_1.STEPS.OPT_DESIGN.ARGS.DIRECTIVE=Explore 
+vivado.prop run.impl_1.STEPS.PLACE_DESIGN.ARGS.DIRECTIVE=AltSpreadLogic_high 
+vivado.prop run.impl_1.STEPS.PHYS_OPT_DESIGN.IS_ENABLED=true 
+vivado.prop run.imp1_1.STEPS.PHYS_OPT_DESIGN.ARGS.DIRECTIVE=AggressiveExplore 
+vivado.prop run.impl_1.STEPS.ROUTE_DESIGN.ARGS.DIRECTIVE=Explore 
+vivado.prop run.impl_1.STEPS.POST_ROUTE_PHYS_OPT_DESIGN.IS_ENABLED=true 
+vivado.prop run.impl_1.STEPS.POST_ROUTE_PHYS_OPT_DESIGN.ARGS.DIRECTIVE=AggressiveExplore 
 
 EXPANDED PARAMETERS
 From application of optMap.xml: 
@@ -201,18 +217,18 @@ FINAL PLATFORM PATH
 
 ==========================================
 new:  steps log generated by v++ for new launch 
-timestamp: 06 Feb 2024 21:27:16
+timestamp: 08 Mar 2024 06:56:59
 ------------------------------------------
 step: performing high-level synthesis for kernel:alveo_hls4ml
-timestamp: 06 Feb 2024 21:51:46
+timestamp: 08 Mar 2024 07:22:28
 launch dir: /home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml
 cmd: vitis_hls -f /home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml.tcl -messageDb vitis_hls.pb
 V++ internal step status: success
 ------------------------------------------
 V++ internal step: generating system estimate report file
-timestamp: 06 Feb 2024 21:51:59
+timestamp: 08 Mar 2024 07:22:40
 output: /home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/reports/alveo_hls4ml/system_estimate_alveo_hls4ml.xtxt
 V++ internal step status: success
 ------------------------------------------
 system estimate report task completed
-timestamp: 06 Feb 2024 21:51:59
+timestamp: 08 Mar 2024 07:22:40

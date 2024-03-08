@@ -92,53 +92,53 @@
     wire token_clear;
     reg [3:0] origin;
 
-    reg ap_done_reg_0;// for module VITIS_LOOP_50_1_proc_U0
+    reg ap_done_reg_0;// for module read_input_U0
     always @ (negedge dl_reset or posedge dl_clock) begin
         if (~dl_reset) begin
             ap_done_reg_0 <= 'b0;
         end
         else begin
-            ap_done_reg_0 <= VITIS_LOOP_50_1_proc_U0.ap_done & ~VITIS_LOOP_50_1_proc_U0.ap_continue;
+            ap_done_reg_0 <= read_input_U0.ap_done & ~read_input_U0.ap_continue;
         end
     end
 
-    reg ap_done_reg_1;// for module VITIS_LOOP_59_3_proc_U0
+    reg ap_done_reg_1;// for module run_inference_U0
     always @ (negedge dl_reset or posedge dl_clock) begin
         if (~dl_reset) begin
             ap_done_reg_1 <= 'b0;
         end
         else begin
-            ap_done_reg_1 <= VITIS_LOOP_59_3_proc_U0.ap_done & ~VITIS_LOOP_59_3_proc_U0.ap_continue;
+            ap_done_reg_1 <= run_inference_U0.ap_done & ~run_inference_U0.ap_continue;
         end
     end
 
-    reg ap_done_reg_2;// for module VITIS_LOOP_59_3_proc_U0.dataflow_in_loop_VITIS_LOOP_59_3_U0
+    reg ap_done_reg_2;// for module run_inference_U0.dataflow_in_loop_VITIS_LOOP_17_1_U0
     always @ (negedge dl_reset or posedge dl_clock) begin
         if (~dl_reset) begin
             ap_done_reg_2 <= 'b0;
         end
         else begin
-            ap_done_reg_2 <= VITIS_LOOP_59_3_proc_U0.dataflow_in_loop_VITIS_LOOP_59_3_U0.ap_done & ~VITIS_LOOP_59_3_proc_U0.dataflow_in_loop_VITIS_LOOP_59_3_U0.ap_continue;
+            ap_done_reg_2 <= run_inference_U0.dataflow_in_loop_VITIS_LOOP_17_1_U0.ap_done & ~run_inference_U0.dataflow_in_loop_VITIS_LOOP_17_1_U0.ap_continue;
         end
     end
 
-    reg ap_done_reg_3;// for module VITIS_LOOP_59_3_proc_U0.dataflow_in_loop_VITIS_LOOP_59_3_U0.myproject_U0
+    reg ap_done_reg_3;// for module run_inference_U0.dataflow_in_loop_VITIS_LOOP_17_1_U0.myproject_U0
     always @ (negedge dl_reset or posedge dl_clock) begin
         if (~dl_reset) begin
             ap_done_reg_3 <= 'b0;
         end
         else begin
-            ap_done_reg_3 <= VITIS_LOOP_59_3_proc_U0.dataflow_in_loop_VITIS_LOOP_59_3_U0.myproject_U0.ap_done & ~VITIS_LOOP_59_3_proc_U0.dataflow_in_loop_VITIS_LOOP_59_3_U0.myproject_U0.ap_continue;
+            ap_done_reg_3 <= run_inference_U0.dataflow_in_loop_VITIS_LOOP_17_1_U0.myproject_U0.ap_done & ~run_inference_U0.dataflow_in_loop_VITIS_LOOP_17_1_U0.myproject_U0.ap_continue;
         end
     end
 
-    reg ap_done_reg_4;// for module VITIS_LOOP_65_4_proc_U0
+    reg ap_done_reg_4;// for module write_result_U0
     always @ (negedge dl_reset or posedge dl_clock) begin
         if (~dl_reset) begin
             ap_done_reg_4 <= 'b0;
         end
         else begin
-            ap_done_reg_4 <= VITIS_LOOP_65_4_proc_U0.ap_done & ~VITIS_LOOP_65_4_proc_U0.ap_continue;
+            ap_done_reg_4 <= write_result_U0.ap_done & ~write_result_U0.ap_continue;
         end
     end
 
@@ -169,7 +169,7 @@
     assign proc_0_data_PIPO_blk[1] = 1'b0;
     assign proc_0_start_FIFO_blk[1] = 1'b0;
     assign proc_0_TLF_FIFO_blk[1] = 1'b0;
-    assign proc_0_input_sync_blk[1] = 1'b0 | (ap_sync_entry_proc_U0_ap_ready & entry_proc_U0.ap_idle & ~ap_sync_VITIS_LOOP_50_1_proc_U0_ap_ready);
+    assign proc_0_input_sync_blk[1] = 1'b0 | (ap_sync_entry_proc_U0_ap_ready & entry_proc_U0.ap_idle & ~ap_sync_read_input_U0_ap_ready);
     assign proc_0_output_sync_blk[1] = 1'b0;
     assign proc_dep_vld_vec_0[1] = dl_detect_out ? proc_dep_vld_vec_0_reg[1] : (proc_0_data_FIFO_blk[1] | proc_0_data_PIPO_blk[1] | proc_0_start_FIFO_blk[1] | proc_0_TLF_FIFO_blk[1] | proc_0_input_sync_blk[1] | proc_0_output_sync_blk[1]);
     always @ (negedge dl_reset or posedge dl_clock) begin
@@ -193,7 +193,7 @@
     assign dep_chan_data_0_1 = out_chan_dep_data_0;
     assign token_0_1 = token_out_vec_0[1];
 
-    // Process: VITIS_LOOP_50_1_proc_U0
+    // Process: read_input_U0
     alveo_hls4ml_hls_deadlock_detect_unit #(4, 1, 2, 2) alveo_hls4ml_hls_deadlock_detect_unit_1 (
         .reset(dl_reset),
         .clock(dl_clock),
@@ -210,7 +210,7 @@
         .dl_detect_out(dl_in_vec[1]));
 
     assign proc_1_data_FIFO_blk[0] = 1'b0;
-    assign proc_1_data_PIPO_blk[0] = 1'b0 | (~in_buf_V_U.i_full_n & VITIS_LOOP_50_1_proc_U0.ap_done & ap_done_reg_0 & ~in_buf_V_U.t_read);
+    assign proc_1_data_PIPO_blk[0] = 1'b0 | (~in_buf_V_U.i_full_n & read_input_U0.ap_done & ap_done_reg_0 & ~in_buf_V_U.t_read);
     assign proc_1_start_FIFO_blk[0] = 1'b0;
     assign proc_1_TLF_FIFO_blk[0] = 1'b0;
     assign proc_1_input_sync_blk[0] = 1'b0;
@@ -220,7 +220,7 @@
     assign proc_1_data_PIPO_blk[1] = 1'b0;
     assign proc_1_start_FIFO_blk[1] = 1'b0;
     assign proc_1_TLF_FIFO_blk[1] = 1'b0;
-    assign proc_1_input_sync_blk[1] = 1'b0 | (ap_sync_VITIS_LOOP_50_1_proc_U0_ap_ready & VITIS_LOOP_50_1_proc_U0.ap_idle & ~ap_sync_entry_proc_U0_ap_ready);
+    assign proc_1_input_sync_blk[1] = 1'b0 | (ap_sync_read_input_U0_ap_ready & read_input_U0.ap_idle & ~ap_sync_entry_proc_U0_ap_ready);
     assign proc_1_output_sync_blk[1] = 1'b0;
     assign proc_dep_vld_vec_1[1] = dl_detect_out ? proc_dep_vld_vec_1_reg[1] : (proc_1_data_FIFO_blk[1] | proc_1_data_PIPO_blk[1] | proc_1_start_FIFO_blk[1] | proc_1_TLF_FIFO_blk[1] | proc_1_input_sync_blk[1] | proc_1_output_sync_blk[1]);
     always @ (negedge dl_reset or posedge dl_clock) begin
@@ -244,7 +244,7 @@
     assign dep_chan_data_1_0 = out_chan_dep_data_1;
     assign token_1_0 = token_out_vec_1[1];
 
-    // Process: VITIS_LOOP_59_3_proc_U0
+    // Process: run_inference_U0
     alveo_hls4ml_hls_deadlock_detect_unit #(4, 2, 2, 2) alveo_hls4ml_hls_deadlock_detect_unit_2 (
         .reset(dl_reset),
         .clock(dl_clock),
@@ -261,14 +261,14 @@
         .dl_detect_out(dl_in_vec[2]));
 
     assign proc_2_data_FIFO_blk[0] = 1'b0;
-    assign proc_2_data_PIPO_blk[0] = 1'b0 | (~in_buf_V_U.t_empty_n & VITIS_LOOP_59_3_proc_U0.ap_idle & ~in_buf_V_U.i_write);
+    assign proc_2_data_PIPO_blk[0] = 1'b0 | (~in_buf_V_U.t_empty_n & run_inference_U0.ap_idle & ~in_buf_V_U.i_write);
     assign proc_2_start_FIFO_blk[0] = 1'b0;
     assign proc_2_TLF_FIFO_blk[0] = 1'b0;
     assign proc_2_input_sync_blk[0] = 1'b0;
     assign proc_2_output_sync_blk[0] = 1'b0;
     assign proc_dep_vld_vec_2[0] = dl_detect_out ? proc_dep_vld_vec_2_reg[0] : (proc_2_data_FIFO_blk[0] | proc_2_data_PIPO_blk[0] | proc_2_start_FIFO_blk[0] | proc_2_TLF_FIFO_blk[0] | proc_2_input_sync_blk[0] | proc_2_output_sync_blk[0]);
     assign proc_2_data_FIFO_blk[1] = 1'b0;
-    assign proc_2_data_PIPO_blk[1] = 1'b0 | (~out_buf_V_U.i_full_n & VITIS_LOOP_59_3_proc_U0.ap_done & ap_done_reg_1 & ~out_buf_V_U.t_read) | (~out_buf_V_1_U.i_full_n & VITIS_LOOP_59_3_proc_U0.ap_done & ap_done_reg_1 & ~out_buf_V_1_U.t_read) | (~out_buf_V_2_U.i_full_n & VITIS_LOOP_59_3_proc_U0.ap_done & ap_done_reg_1 & ~out_buf_V_2_U.t_read) | (~out_buf_V_3_U.i_full_n & VITIS_LOOP_59_3_proc_U0.ap_done & ap_done_reg_1 & ~out_buf_V_3_U.t_read) | (~out_buf_V_4_U.i_full_n & VITIS_LOOP_59_3_proc_U0.ap_done & ap_done_reg_1 & ~out_buf_V_4_U.t_read);
+    assign proc_2_data_PIPO_blk[1] = 1'b0 | (~out_buf_V_U.i_full_n & run_inference_U0.ap_done & ap_done_reg_1 & ~out_buf_V_U.t_read) | (~out_buf_V_1_U.i_full_n & run_inference_U0.ap_done & ap_done_reg_1 & ~out_buf_V_1_U.t_read) | (~out_buf_V_2_U.i_full_n & run_inference_U0.ap_done & ap_done_reg_1 & ~out_buf_V_2_U.t_read) | (~out_buf_V_3_U.i_full_n & run_inference_U0.ap_done & ap_done_reg_1 & ~out_buf_V_3_U.t_read) | (~out_buf_V_4_U.i_full_n & run_inference_U0.ap_done & ap_done_reg_1 & ~out_buf_V_4_U.t_read);
     assign proc_2_start_FIFO_blk[1] = 1'b0;
     assign proc_2_TLF_FIFO_blk[1] = 1'b0;
     assign proc_2_input_sync_blk[1] = 1'b0;
@@ -295,7 +295,7 @@
     assign dep_chan_data_2_3 = out_chan_dep_data_2;
     assign token_2_3 = token_out_vec_2[1];
 
-    // Process: VITIS_LOOP_65_4_proc_U0
+    // Process: write_result_U0
     alveo_hls4ml_hls_deadlock_detect_unit #(4, 3, 2, 2) alveo_hls4ml_hls_deadlock_detect_unit_3 (
         .reset(dl_reset),
         .clock(dl_clock),
@@ -311,7 +311,7 @@
         .token_out_vec(token_out_vec_3),
         .dl_detect_out(dl_in_vec[3]));
 
-    assign proc_3_data_FIFO_blk[0] = 1'b0 | (~VITIS_LOOP_65_4_proc_U0.out_r_blk_n);
+    assign proc_3_data_FIFO_blk[0] = 1'b0 | (~write_result_U0.out_r_blk_n);
     assign proc_3_data_PIPO_blk[0] = 1'b0;
     assign proc_3_start_FIFO_blk[0] = 1'b0;
     assign proc_3_TLF_FIFO_blk[0] = 1'b0;
@@ -319,7 +319,7 @@
     assign proc_3_output_sync_blk[0] = 1'b0;
     assign proc_dep_vld_vec_3[0] = dl_detect_out ? proc_dep_vld_vec_3_reg[0] : (proc_3_data_FIFO_blk[0] | proc_3_data_PIPO_blk[0] | proc_3_start_FIFO_blk[0] | proc_3_TLF_FIFO_blk[0] | proc_3_input_sync_blk[0] | proc_3_output_sync_blk[0]);
     assign proc_3_data_FIFO_blk[1] = 1'b0;
-    assign proc_3_data_PIPO_blk[1] = 1'b0 | (~out_buf_V_U.t_empty_n & VITIS_LOOP_65_4_proc_U0.ap_idle & ~out_buf_V_U.i_write) | (~out_buf_V_1_U.t_empty_n & VITIS_LOOP_65_4_proc_U0.ap_idle & ~out_buf_V_1_U.i_write) | (~out_buf_V_2_U.t_empty_n & VITIS_LOOP_65_4_proc_U0.ap_idle & ~out_buf_V_2_U.i_write) | (~out_buf_V_3_U.t_empty_n & VITIS_LOOP_65_4_proc_U0.ap_idle & ~out_buf_V_3_U.i_write) | (~out_buf_V_4_U.t_empty_n & VITIS_LOOP_65_4_proc_U0.ap_idle & ~out_buf_V_4_U.i_write);
+    assign proc_3_data_PIPO_blk[1] = 1'b0 | (~out_buf_V_U.t_empty_n & write_result_U0.ap_idle & ~out_buf_V_U.i_write) | (~out_buf_V_1_U.t_empty_n & write_result_U0.ap_idle & ~out_buf_V_1_U.i_write) | (~out_buf_V_2_U.t_empty_n & write_result_U0.ap_idle & ~out_buf_V_2_U.i_write) | (~out_buf_V_3_U.t_empty_n & write_result_U0.ap_idle & ~out_buf_V_3_U.i_write) | (~out_buf_V_4_U.t_empty_n & write_result_U0.ap_idle & ~out_buf_V_4_U.i_write);
     assign proc_3_start_FIFO_blk[1] = 1'b0;
     assign proc_3_TLF_FIFO_blk[1] = 1'b0;
     assign proc_3_input_sync_blk[1] = 1'b0;

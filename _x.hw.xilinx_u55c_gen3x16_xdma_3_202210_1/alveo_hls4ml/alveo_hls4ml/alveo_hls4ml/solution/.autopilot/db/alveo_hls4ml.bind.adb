@@ -34,10 +34,10 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>976909413</coreId>
+						<coreId>3044742128</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
-					<bitwidth>16</bitwidth>
+					<bitwidth>512</bitwidth>
 				</Value>
 				<direction>0</direction>
 				<if_type>4</if_type>
@@ -70,7 +70,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>2575676832</coreId>
+						<coreId>976909413</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>16</bitwidth>
@@ -98,7 +98,7 @@
 							<count>0</count>
 							<item_version>0</item_version>
 						</inlineStackInfo>
-						<originalName></originalName>
+						<originalName>in.V</originalName>
 						<rtlName></rtlName>
 						<control></control>
 						<opType></opType>
@@ -106,7 +106,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>2576474336</coreId>
+						<coreId>3046001856</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>64</bitwidth>
@@ -134,7 +134,7 @@
 							<count>0</count>
 							<item_version>0</item_version>
 						</inlineStackInfo>
-						<originalName></originalName>
+						<originalName>out.V</originalName>
 						<rtlName></rtlName>
 						<control></control>
 						<opType></opType>
@@ -142,7 +142,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>0</coreId>
+						<coreId>3046132592</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>64</bitwidth>
@@ -167,7 +167,7 @@
 						<name>out_r_read</name>
 						<fileName>/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp</fileName>
 						<fileDirectory>/home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml</fileDirectory>
-						<lineNumber>42</lineNumber>
+						<lineNumber>109</lineNumber>
 						<contextFuncName>alveo_hls4ml</contextFuncName>
 						<contextNormFuncName>alveo_hls4ml</contextNormFuncName>
 						<inlineStackInfo>
@@ -183,7 +183,7 @@
 											<first>/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp</first>
 											<second>alveo_hls4ml</second>
 										</first>
-										<second>42</second>
+										<second>109</second>
 									</item>
 								</second>
 							</item>
@@ -224,7 +224,7 @@
 						<name>in_r_read</name>
 						<fileName>/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp</fileName>
 						<fileDirectory>/home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml</fileDirectory>
-						<lineNumber>42</lineNumber>
+						<lineNumber>109</lineNumber>
 						<contextFuncName>alveo_hls4ml</contextFuncName>
 						<contextNormFuncName>alveo_hls4ml</contextNormFuncName>
 						<inlineStackInfo>
@@ -240,7 +240,7 @@
 											<first>/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp</first>
 											<second>alveo_hls4ml</second>
 										</first>
-										<second>42</second>
+										<second>109</second>
 									</item>
 								</second>
 							</item>
@@ -281,7 +281,7 @@
 						<name>out_r_c</name>
 						<fileName>/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp</fileName>
 						<fileDirectory>/home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml</fileDirectory>
-						<lineNumber>42</lineNumber>
+						<lineNumber>109</lineNumber>
 						<contextFuncName>alveo_hls4ml</contextFuncName>
 						<contextNormFuncName>alveo_hls4ml</contextNormFuncName>
 						<inlineStackInfo>
@@ -297,7 +297,7 @@
 											<first>/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp</first>
 											<second>alveo_hls4ml</second>
 										</first>
-										<second>42</second>
+										<second>109</second>
 									</item>
 								</second>
 							</item>
@@ -335,16 +335,30 @@
 						<type>0</type>
 						<id>24</id>
 						<name>in_buf_V</name>
-						<fileName></fileName>
-						<fileDirectory></fileDirectory>
-						<lineNumber>0</lineNumber>
-						<contextFuncName></contextFuncName>
-						<contextNormFuncName></contextNormFuncName>
+						<fileName>/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp</fileName>
+						<fileDirectory>/home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml</fileDirectory>
+						<lineNumber>104</lineNumber>
+						<contextFuncName>alveo_hls4ml</contextFuncName>
+						<contextNormFuncName>alveo_hls4ml</contextNormFuncName>
 						<inlineStackInfo>
-							<count>0</count>
+							<count>1</count>
 							<item_version>0</item_version>
+							<item>
+								<first>/home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml</first>
+								<second>
+									<count>1</count>
+									<item_version>0</item_version>
+									<item>
+										<first>
+											<first>/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp</first>
+											<second>alveo_hls4ml</second>
+										</first>
+										<second>104</second>
+									</item>
+								</second>
+							</item>
 						</inlineStackInfo>
-						<originalName></originalName>
+						<originalName>in_buf.V</originalName>
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram</opType>
@@ -377,16 +391,30 @@
 						<type>0</type>
 						<id>25</id>
 						<name>out_buf_V</name>
-						<fileName></fileName>
-						<fileDirectory></fileDirectory>
-						<lineNumber>0</lineNumber>
-						<contextFuncName></contextFuncName>
-						<contextNormFuncName></contextNormFuncName>
+						<fileName>/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp</fileName>
+						<fileDirectory>/home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml</fileDirectory>
+						<lineNumber>105</lineNumber>
+						<contextFuncName>alveo_hls4ml</contextFuncName>
+						<contextNormFuncName>alveo_hls4ml</contextNormFuncName>
 						<inlineStackInfo>
-							<count>0</count>
+							<count>1</count>
 							<item_version>0</item_version>
+							<item>
+								<first>/home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml</first>
+								<second>
+									<count>1</count>
+									<item_version>0</item_version>
+									<item>
+										<first>
+											<first>/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp</first>
+											<second>alveo_hls4ml</second>
+										</first>
+										<second>105</second>
+									</item>
+								</second>
+							</item>
 						</inlineStackInfo>
-						<originalName></originalName>
+						<originalName>out_buf.V</originalName>
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram</opType>
@@ -419,16 +447,30 @@
 						<type>0</type>
 						<id>26</id>
 						<name>out_buf_V_1</name>
-						<fileName></fileName>
-						<fileDirectory></fileDirectory>
-						<lineNumber>0</lineNumber>
-						<contextFuncName></contextFuncName>
-						<contextNormFuncName></contextNormFuncName>
+						<fileName>/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp</fileName>
+						<fileDirectory>/home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml</fileDirectory>
+						<lineNumber>105</lineNumber>
+						<contextFuncName>alveo_hls4ml</contextFuncName>
+						<contextNormFuncName>alveo_hls4ml</contextNormFuncName>
 						<inlineStackInfo>
-							<count>0</count>
+							<count>1</count>
 							<item_version>0</item_version>
+							<item>
+								<first>/home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml</first>
+								<second>
+									<count>1</count>
+									<item_version>0</item_version>
+									<item>
+										<first>
+											<first>/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp</first>
+											<second>alveo_hls4ml</second>
+										</first>
+										<second>105</second>
+									</item>
+								</second>
+							</item>
 						</inlineStackInfo>
-						<originalName></originalName>
+						<originalName>out_buf.V</originalName>
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram</opType>
@@ -461,16 +503,30 @@
 						<type>0</type>
 						<id>27</id>
 						<name>out_buf_V_2</name>
-						<fileName></fileName>
-						<fileDirectory></fileDirectory>
-						<lineNumber>0</lineNumber>
-						<contextFuncName></contextFuncName>
-						<contextNormFuncName></contextNormFuncName>
+						<fileName>/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp</fileName>
+						<fileDirectory>/home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml</fileDirectory>
+						<lineNumber>105</lineNumber>
+						<contextFuncName>alveo_hls4ml</contextFuncName>
+						<contextNormFuncName>alveo_hls4ml</contextNormFuncName>
 						<inlineStackInfo>
-							<count>0</count>
+							<count>1</count>
 							<item_version>0</item_version>
+							<item>
+								<first>/home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml</first>
+								<second>
+									<count>1</count>
+									<item_version>0</item_version>
+									<item>
+										<first>
+											<first>/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp</first>
+											<second>alveo_hls4ml</second>
+										</first>
+										<second>105</second>
+									</item>
+								</second>
+							</item>
 						</inlineStackInfo>
-						<originalName></originalName>
+						<originalName>out_buf.V</originalName>
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram</opType>
@@ -503,16 +559,30 @@
 						<type>0</type>
 						<id>28</id>
 						<name>out_buf_V_3</name>
-						<fileName></fileName>
-						<fileDirectory></fileDirectory>
-						<lineNumber>0</lineNumber>
-						<contextFuncName></contextFuncName>
-						<contextNormFuncName></contextNormFuncName>
+						<fileName>/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp</fileName>
+						<fileDirectory>/home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml</fileDirectory>
+						<lineNumber>105</lineNumber>
+						<contextFuncName>alveo_hls4ml</contextFuncName>
+						<contextNormFuncName>alveo_hls4ml</contextNormFuncName>
 						<inlineStackInfo>
-							<count>0</count>
+							<count>1</count>
 							<item_version>0</item_version>
+							<item>
+								<first>/home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml</first>
+								<second>
+									<count>1</count>
+									<item_version>0</item_version>
+									<item>
+										<first>
+											<first>/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp</first>
+											<second>alveo_hls4ml</second>
+										</first>
+										<second>105</second>
+									</item>
+								</second>
+							</item>
 						</inlineStackInfo>
-						<originalName></originalName>
+						<originalName>out_buf.V</originalName>
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram</opType>
@@ -545,16 +615,30 @@
 						<type>0</type>
 						<id>29</id>
 						<name>out_buf_V_4</name>
-						<fileName></fileName>
-						<fileDirectory></fileDirectory>
-						<lineNumber>0</lineNumber>
-						<contextFuncName></contextFuncName>
-						<contextNormFuncName></contextNormFuncName>
+						<fileName>/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp</fileName>
+						<fileDirectory>/home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml</fileDirectory>
+						<lineNumber>105</lineNumber>
+						<contextFuncName>alveo_hls4ml</contextFuncName>
+						<contextNormFuncName>alveo_hls4ml</contextNormFuncName>
 						<inlineStackInfo>
-							<count>0</count>
+							<count>1</count>
 							<item_version>0</item_version>
+							<item>
+								<first>/home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml</first>
+								<second>
+									<count>1</count>
+									<item_version>0</item_version>
+									<item>
+										<first>
+											<first>/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp</first>
+											<second>alveo_hls4ml</second>
+										</first>
+										<second>105</second>
+									</item>
+								</second>
+							</item>
 						</inlineStackInfo>
-						<originalName></originalName>
+						<originalName>out_buf.V</originalName>
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram</opType>
@@ -586,10 +670,10 @@
 					<Obj>
 						<type>0</type>
 						<id>30</id>
-						<name>_ln42</name>
+						<name>_ln109</name>
 						<fileName>/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp</fileName>
 						<fileDirectory>/home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml</fileDirectory>
-						<lineNumber>42</lineNumber>
+						<lineNumber>109</lineNumber>
 						<contextFuncName>alveo_hls4ml</contextFuncName>
 						<contextNormFuncName>alveo_hls4ml</contextNormFuncName>
 						<inlineStackInfo>
@@ -605,7 +689,7 @@
 											<first>/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp</first>
 											<second>alveo_hls4ml</second>
 										</first>
-										<second>42</second>
+										<second>109</second>
 									</item>
 								</second>
 							</item>
@@ -618,7 +702,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>2575447968</coreId>
+						<coreId>3045661472</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -644,10 +728,10 @@
 					<Obj>
 						<type>0</type>
 						<id>31</id>
-						<name>_ln42</name>
+						<name>_ln110</name>
 						<fileName>/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp</fileName>
 						<fileDirectory>/home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml</fileDirectory>
-						<lineNumber>42</lineNumber>
+						<lineNumber>110</lineNumber>
 						<contextFuncName>alveo_hls4ml</contextFuncName>
 						<contextNormFuncName>alveo_hls4ml</contextNormFuncName>
 						<inlineStackInfo>
@@ -663,7 +747,7 @@
 											<first>/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp</first>
 											<second>alveo_hls4ml</second>
 										</first>
-										<second>42</second>
+										<second>110</second>
 									</item>
 								</second>
 							</item>
@@ -676,7 +760,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>2575539984</coreId>
+						<coreId>0</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -703,15 +787,29 @@
 					<Obj>
 						<type>0</type>
 						<id>32</id>
-						<name>_ln0</name>
-						<fileName></fileName>
-						<fileDirectory></fileDirectory>
-						<lineNumber>0</lineNumber>
-						<contextFuncName></contextFuncName>
-						<contextNormFuncName></contextNormFuncName>
+						<name>_ln111</name>
+						<fileName>/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp</fileName>
+						<fileDirectory>/home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml</fileDirectory>
+						<lineNumber>111</lineNumber>
+						<contextFuncName>alveo_hls4ml</contextFuncName>
+						<contextNormFuncName>alveo_hls4ml</contextNormFuncName>
 						<inlineStackInfo>
-							<count>0</count>
+							<count>1</count>
 							<item_version>0</item_version>
+							<item>
+								<first>/home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml</first>
+								<second>
+									<count>1</count>
+									<item_version>0</item_version>
+									<item>
+										<first>
+											<first>/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp</first>
+											<second>alveo_hls4ml</second>
+										</first>
+										<second>111</second>
+									</item>
+								</second>
+							</item>
 						</inlineStackInfo>
 						<originalName></originalName>
 						<rtlName></rtlName>
@@ -721,7 +819,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>2575539440</coreId>
+						<coreId>0</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -754,10 +852,10 @@
 					<Obj>
 						<type>0</type>
 						<id>33</id>
-						<name>_ln42</name>
+						<name>_ln112</name>
 						<fileName>/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp</fileName>
 						<fileDirectory>/home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml</fileDirectory>
-						<lineNumber>42</lineNumber>
+						<lineNumber>112</lineNumber>
 						<contextFuncName>alveo_hls4ml</contextFuncName>
 						<contextNormFuncName>alveo_hls4ml</contextNormFuncName>
 						<inlineStackInfo>
@@ -773,7 +871,7 @@
 											<first>/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp</first>
 											<second>alveo_hls4ml</second>
 										</first>
-										<second>42</second>
+										<second>112</second>
 									</item>
 								</second>
 							</item>
@@ -786,7 +884,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>2576332240</coreId>
+						<coreId>0</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -820,10 +918,10 @@
 					<Obj>
 						<type>0</type>
 						<id>34</id>
-						<name>_ln88</name>
+						<name>_ln128</name>
 						<fileName>/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp</fileName>
 						<fileDirectory>/home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml</fileDirectory>
-						<lineNumber>88</lineNumber>
+						<lineNumber>128</lineNumber>
 						<contextFuncName>alveo_hls4ml</contextFuncName>
 						<contextNormFuncName>alveo_hls4ml</contextNormFuncName>
 						<inlineStackInfo>
@@ -839,7 +937,7 @@
 											<first>/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp</first>
 											<second>alveo_hls4ml</second>
 										</first>
-										<second>88</second>
+										<second>128</second>
 									</item>
 								</second>
 							</item>
@@ -852,7 +950,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>311</coreId>
+						<coreId>0</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -897,7 +995,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>1630019628</coreId>
+						<coreId>1701978156</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>64</bitwidth>
@@ -928,7 +1026,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>1629497655</coreId>
+						<coreId>0</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -941,7 +1039,7 @@
 					<Obj>
 						<type>2</type>
 						<id>53</id>
-						<name>VITIS_LOOP_50_1_proc</name>
+						<name>read_input</name>
 						<fileName></fileName>
 						<fileDirectory></fileDirectory>
 						<lineNumber>0</lineNumber>
@@ -959,20 +1057,20 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>1870035297</coreId>
+						<coreId>0</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
 				</Value>
 				<const_type>6</const_type>
-				<content>&lt;constant:VITIS_LOOP_50_1_proc&gt;</content>
+				<content>&lt;constant:read_input&gt;</content>
 			</item>
 			<item class_id_reference="16" object_id="_22">
 				<Value>
 					<Obj>
 						<type>2</type>
 						<id>58</id>
-						<name>VITIS_LOOP_59_3_proc</name>
+						<name>run_inference</name>
 						<fileName></fileName>
 						<fileDirectory></fileDirectory>
 						<lineNumber>0</lineNumber>
@@ -990,20 +1088,20 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>2575887792</coreId>
+						<coreId>0</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
 				</Value>
 				<const_type>6</const_type>
-				<content>&lt;constant:VITIS_LOOP_59_3_proc&gt;</content>
+				<content>&lt;constant:run_inference&gt;</content>
 			</item>
 			<item class_id_reference="16" object_id="_23">
 				<Value>
 					<Obj>
 						<type>2</type>
 						<id>66</id>
-						<name>VITIS_LOOP_65_4_proc</name>
+						<name>write_result</name>
 						<fileName></fileName>
 						<fileDirectory></fileDirectory>
 						<lineNumber>0</lineNumber>
@@ -1021,13 +1119,13 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>2574385296</coreId>
+						<coreId>0</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
 				</Value>
 				<const_type>6</const_type>
-				<content>&lt;constant:VITIS_LOOP_65_4_proc&gt;</content>
+				<content>&lt;constant:write_result&gt;</content>
 			</item>
 		</consts>
 		<blocks class_id="17" tracking_level="0" version="0">
@@ -1175,14 +1273,14 @@
 			<item class_id_reference="20" object_id="_38">
 				<id>55</id>
 				<edge_type>1</edge_type>
-				<source_obj>8</source_obj>
+				<source_obj>1</source_obj>
 				<sink_obj>31</sink_obj>
 				<is_back_edge>0</is_back_edge>
 			</item>
 			<item class_id_reference="20" object_id="_39">
 				<id>56</id>
 				<edge_type>1</edge_type>
-				<source_obj>1</source_obj>
+				<source_obj>8</source_obj>
 				<sink_obj>31</sink_obj>
 				<is_back_edge>0</is_back_edge>
 			</item>
@@ -1252,14 +1350,14 @@
 			<item class_id_reference="20" object_id="_49">
 				<id>68</id>
 				<edge_type>1</edge_type>
-				<source_obj>9</source_obj>
+				<source_obj>2</source_obj>
 				<sink_obj>33</sink_obj>
 				<is_back_edge>0</is_back_edge>
 			</item>
 			<item class_id_reference="20" object_id="_50">
 				<id>69</id>
 				<edge_type>1</edge_type>
-				<source_obj>2</source_obj>
+				<source_obj>9</source_obj>
 				<sink_obj>33</sink_obj>
 				<is_back_edge>0</is_back_edge>
 			</item>
@@ -1363,8 +1461,8 @@
 			<mDepth>-1</mDepth>
 			<mMinTripCount>-1</mMinTripCount>
 			<mMaxTripCount>-1</mMaxTripCount>
-			<mMinLatency>196787</mMinLatency>
-			<mMaxLatency>196787</mMaxLatency>
+			<mMinLatency>73907</mMinLatency>
+			<mMaxLatency>73907</mMaxLatency>
 			<mIsDfPipe>1</mIsDfPipe>
 			<mDfPipe class_id="23" tracking_level="1" version="0" object_id="_63">
 				<port_list class_id="24" tracking_level="0" version="0">
@@ -1435,33 +1533,33 @@
 					</item>
 					<item class_id_reference="28" object_id="_72">
 						<type>0</type>
-						<name>VITIS_LOOP_50_1_proc_U0</name>
+						<name>read_input_U0</name>
 						<ssdmobj_id>31</ssdmobj_id>
 						<pins>
 							<count>2</count>
 							<item_version>0</item_version>
 							<item class_id_reference="30" object_id="_73">
 								<port class_id_reference="25" object_id="_74">
-									<name>in_r</name>
-									<dir>0</dir>
-									<type>3</type>
-									<need_hs>1</need_hs>
-									<top_port class_id_reference="25" object_id_reference="_66"></top_port>
-									<chan class_id="-1"></chan>
-								</port>
-								<inst class_id_reference="31" object_id="_75">
-									<type>0</type>
-									<name>VITIS_LOOP_50_1_proc_U0</name>
-									<ssdmobj_id>31</ssdmobj_id>
-								</inst>
-							</item>
-							<item class_id_reference="30" object_id="_76">
-								<port class_id_reference="25" object_id="_77">
 									<name>gmem0</name>
 									<dir>0</dir>
 									<type>1</type>
 									<need_hs>1</need_hs>
 									<top_port class_id_reference="25" object_id_reference="_64"></top_port>
+									<chan class_id="-1"></chan>
+								</port>
+								<inst class_id_reference="31" object_id="_75">
+									<type>0</type>
+									<name>read_input_U0</name>
+									<ssdmobj_id>31</ssdmobj_id>
+								</inst>
+							</item>
+							<item class_id_reference="30" object_id="_76">
+								<port class_id_reference="25" object_id="_77">
+									<name>in_r</name>
+									<dir>0</dir>
+									<type>3</type>
+									<need_hs>1</need_hs>
+									<top_port class_id_reference="25" object_id_reference="_66"></top_port>
 									<chan class_id="-1"></chan>
 								</port>
 								<inst class_id_reference="31" object_id_reference="_75"></inst>
@@ -1473,7 +1571,7 @@
 					</item>
 					<item class_id_reference="28" object_id="_78">
 						<type>0</type>
-						<name>VITIS_LOOP_59_3_proc_U0</name>
+						<name>run_inference_U0</name>
 						<ssdmobj_id>32</ssdmobj_id>
 						<pins>
 							<count>0</count>
@@ -1485,7 +1583,7 @@
 					</item>
 					<item class_id_reference="28" object_id="_79">
 						<type>0</type>
-						<name>VITIS_LOOP_65_4_proc_U0</name>
+						<name>write_result_U0</name>
 						<ssdmobj_id>33</ssdmobj_id>
 						<pins>
 							<count>1</count>
@@ -1501,7 +1599,7 @@
 								</port>
 								<inst class_id_reference="31" object_id="_82">
 									<type>0</type>
-									<name>VITIS_LOOP_65_4_proc_U0</name>
+									<name>write_result_U0</name>
 									<ssdmobj_id>33</ssdmobj_id>
 								</inst>
 							</item>
@@ -1592,7 +1690,7 @@
 								</port>
 								<inst class_id_reference="31" object_id="_93">
 									<type>0</type>
-									<name>VITIS_LOOP_59_3_proc_U0</name>
+									<name>run_inference_U0</name>
 									<ssdmobj_id>32</ssdmobj_id>
 								</inst>
 							</item>
@@ -2451,7 +2549,7 @@
 		<count>4</count>
 		<item_version>0</item_version>
 		<item>
-			<first>call_ln42_entry_proc_fu_142</first>
+			<first>call_ln109_entry_proc_fu_142</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -2459,7 +2557,7 @@
 			</second>
 		</item>
 		<item>
-			<first>grp_VITIS_LOOP_50_1_proc_fu_120</first>
+			<first>grp_read_input_fu_120</first>
 			<second>
 				<count>2</count>
 				<item_version>0</item_version>
@@ -2468,7 +2566,7 @@
 			</second>
 		</item>
 		<item>
-			<first>grp_VITIS_LOOP_59_3_proc_fu_128</first>
+			<first>grp_run_inference_fu_128</first>
 			<second>
 				<count>2</count>
 				<item_version>0</item_version>
@@ -2477,7 +2575,7 @@
 			</second>
 		</item>
 		<item>
-			<first>grp_VITIS_LOOP_65_4_proc_fu_149</first>
+			<first>grp_write_result_fu_149</first>
 			<second>
 				<count>2</count>
 				<item_version>0</item_version>

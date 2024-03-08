@@ -155,22 +155,11 @@ Args:
 Pass:            reflow-infer-unroll
 Name:            ImplicitUnroll
 DebugLoc:        { File: /home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp, 
-                   Line: 67, Column: 19 }
-Function:        alveo_hls4ml
+                   Line: 25, Column: 19 }
+Function:        _ZL12write_resultP8ap_fixedILi16ELi6EL9ap_q_mode5EL9ap_o_mode3ELi0EERA8192_A5_S2_
 Args:            
   - String:          'Loop '''
-  - LoopName:        VITIS_LOOP_67_5
-  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
-...
---- !Passed
-Pass:            reflow-infer-unroll
-Name:            ImplicitUnroll
-DebugLoc:        { File: /home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp, 
-                   Line: 52, Column: 19 }
-Function:        alveo_hls4ml
-Args:            
-  - String:          'Loop '''
-  - LoopName:        VITIS_LOOP_52_2
+  - LoopName:        VITIS_LOOP_25_2
   - String:          ''' is marked as complete unroll implied by the pipeline pragma'
 ...
 --- !Passed
@@ -713,38 +702,32 @@ Args:
   - String:          ''' is marked as complete unroll implied by the pipeline pragma'
 ...
 --- !Passed
-Pass:            reflow-pragma-loop-unroll
-Name:            PragmaFullyUnroll
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
 DebugLoc:        { File: /home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp, 
-                   Line: 40, Column: 0 }
-Function:        alveo_hls4ml
+                   Line: 10, Column: 19 }
+Function:        _ZL10read_inputPK8ap_fixedILi16ELi6EL9ap_q_mode5EL9ap_o_mode3ELi0EERA8192_A16_S2_
 Args:            
-  - String:          'Unrolling loop '''
-  - LoopName:        VITIS_LOOP_67_5
-  - String:          ''' ('
-  - LoopLoc:         '/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:67:19'
-  - String:          ') '
-  - String:          'in function '''
-  - String:          alveo_hls4ml
-  - String:          ''' completely with a factor of '
-  - Factor:          '5'
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_10_2
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
 ...
 --- !Passed
 Pass:            reflow-pragma-loop-unroll
 Name:            PragmaFullyUnroll
 DebugLoc:        { File: /home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp, 
-                   Line: 40, Column: 0 }
-Function:        alveo_hls4ml
+                   Line: 22, Column: 0 }
+Function:        _ZL12write_resultP8ap_fixedILi16ELi6EL9ap_q_mode5EL9ap_o_mode3ELi0EERA8192_A5_S2_
 Args:            
   - String:          'Unrolling loop '''
-  - LoopName:        VITIS_LOOP_52_2
+  - LoopName:        VITIS_LOOP_25_2
   - String:          ''' ('
-  - LoopLoc:         '/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:52:19'
+  - LoopLoc:         '/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:25:19'
   - String:          ') '
   - String:          'in function '''
-  - String:          alveo_hls4ml
+  - String:          write_result
   - String:          ''' completely with a factor of '
-  - Factor:          '16'
+  - Factor:          '5'
 ...
 --- !Passed
 Pass:            reflow-pragma-loop-unroll
@@ -6340,6 +6323,23 @@ Args:
   - Factor:          '1024'
 ...
 --- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: /home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp, 
+                   Line: 7, Column: 0 }
+Function:        _ZL10read_inputPK8ap_fixedILi16ELi6EL9ap_q_mode5EL9ap_o_mode3ELi0EERA8192_A16_S2_
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_10_2
+  - String:          ''' ('
+  - LoopLoc:         '/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:10:19'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          read_input
+  - String:          ''' completely with a factor of '
+  - Factor:          '16'
+...
+--- !Passed
 Pass:            reflow-inliner
 Name:            AutoInline
 DebugLoc:        { File: /home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_latency.h, 
@@ -6666,7 +6666,7 @@ Args:
 Pass:            reflow-array-partition
 Name:            WarnOnOverlapArrayXForm
 DebugLoc:        { File: /home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp, 
-                   Line: 45, Column: 19 }
+                   Line: 105, Column: 21 }
 Function:        alveo_hls4ml
 Args:            
   - String:          'Partition and reshape on the same dimension of '''
@@ -6943,7 +6943,7 @@ Args:
 Pass:            reflow-array-partition
 Name:            ArrayXform
 DebugLoc:        { File: /home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp, 
-                   Line: 45, Column: 19 }
+                   Line: 105, Column: 21 }
 Function:        alveo_hls4ml
 Args:            
   - String:          'Applying '
@@ -6962,7 +6962,7 @@ Args:
 Pass:            reflow-array-partition
 Name:            WarnOnIgnoredArrayReshape
 DebugLoc:        { File: /home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp, 
-                   Line: 45, Column: 19 }
+                   Line: 105, Column: 21 }
 Function:        alveo_hls4ml
 Args:            
   - String:          'Ignore array reshape applied to '''
@@ -6973,7 +6973,7 @@ Args:
 Pass:            reflow-array-reshape
 Name:            ArrayXform
 DebugLoc:        { File: /home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp, 
-                   Line: 44, Column: 10 }
+                   Line: 104, Column: 20 }
 Function:        alveo_hls4ml
 Args:            
   - String:          'Applying '
@@ -6992,69 +6992,8 @@ Args:
 Pass:            reflow-burst-inference
 Name:            BurstInferred
 DebugLoc:        { File: /home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp, 
-                   Line: 50, Column: 24 }
-Function:        alveo_hls4ml
-Args:            
-  - String:          'Sequential '
-  - Direction:       read
-  - String:          ' of length '
-  - Length:          '131072'
-  - String:          ' has been inferred'
-  - String:          ' _XLX_SEP_ OldID='
-  - String:          for.inc.load.22
-  - String:          ', '
-  - String:          for.inc.load.27
-  - String:          ', '
-  - String:          for.inc.load.32
-  - String:          ', '
-  - String:          for.inc.load.37
-  - String:          ', '
-  - String:          for.inc.load.42
-  - String:          ', '
-  - String:          for.inc.load.47
-  - String:          ', '
-  - String:          for.inc.load.52
-  - String:          ', '
-  - String:          for.inc.load.57
-  - String:          ', '
-  - String:          for.inc.load.62
-  - String:          ', '
-  - String:          for.inc.load.67
-  - String:          ', '
-  - String:          for.inc.load.72
-  - String:          ', '
-  - String:          for.inc.load.77
-  - String:          ', '
-  - String:          for.inc.load.82
-  - String:          ', '
-  - String:          for.inc.load.87
-  - String:          ', '
-  - String:          for.inc.load.92
-  - String:          ', '
-  - String:          for.inc.load.97
-  - String:          ', '
-  - String:          ' _XLX_SEP_ '
-  - AccessID:        inseq
-  - String:          ' '
-  - ArrayName:       in
-  - String:          ' '
-  - BundleName:      gmem0
-  - String:          ' '
-  - LoopName:        VITIS_LOOP_50_1
-  - String:          ' '
-  - LoopLoc:         '/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:50:19'
-  - String:          ' '
-  - Function:        alveo_hls4ml
-    DebugLoc:        { File: /home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp, 
-                       Line: 40, Column: 0 }
-  - String:          ' '
-...
---- !Passed
-Pass:            reflow-burst-inference
-Name:            BurstInferred
-DebugLoc:        { File: /home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp, 
-                   Line: 65, Column: 31 }
-Function:        alveo_hls4ml
+                   Line: 23, Column: 20 }
+Function:        _ZL12write_resultP8ap_fixedILi16ELi6EL9ap_q_mode5EL9ap_o_mode3ELi0EERA8192_A5_S2_
 Args:            
   - String:          'Sequential '
   - Direction:       write
@@ -7062,15 +7001,15 @@ Args:
   - Length:          '40960'
   - String:          ' has been inferred'
   - String:          ' _XLX_SEP_ OldID='
-  - String:          for.inc64.store.7
+  - String:          for.inc.store.14
   - String:          ', '
-  - String:          for.inc64.store.14
+  - String:          for.inc.store.21
   - String:          ', '
-  - String:          for.inc64.store.21
+  - String:          for.inc.store.28
   - String:          ', '
-  - String:          for.inc64.store.28
+  - String:          for.inc.store.35
   - String:          ', '
-  - String:          for.inc64.store.35
+  - String:          for.inc.store.42
   - String:          ', '
   - String:          ' _XLX_SEP_ '
   - AccessID:        outseq
@@ -7079,13 +7018,152 @@ Args:
   - String:          ' '
   - BundleName:      gmem1
   - String:          ' '
-  - LoopName:        VITIS_LOOP_65_4
+  - LoopName:        VITIS_LOOP_23_1
   - String:          ' '
-  - LoopLoc:         '/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:65:26'
+  - LoopLoc:         '/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:23:20'
   - String:          ' '
-  - Function:        alveo_hls4ml
+  - Function:        'write_result(ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>*, ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0> (&) [8192][5])'
     DebugLoc:        { File: /home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp, 
-                       Line: 40, Column: 0 }
+                       Line: 22, Column: 0 }
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-burst-inference
+Name:            BurstInferred
+DebugLoc:        { File: /home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp, 
+                   Line: 8, Column: 19 }
+Function:        _ZL10read_inputPK8ap_fixedILi16ELi6EL9ap_q_mode5EL9ap_o_mode3ELi0EERA8192_A16_S2_
+Args:            
+  - String:          'Sequential '
+  - Direction:       read
+  - String:          ' of length '
+  - Length:          '131072'
+  - String:          ' has been inferred'
+  - String:          ' _XLX_SEP_ OldID='
+  - String:          for.inc.load.40
+  - String:          ', '
+  - String:          for.inc.load.45
+  - String:          ', '
+  - String:          for.inc.load.50
+  - String:          ', '
+  - String:          for.inc.load.55
+  - String:          ', '
+  - String:          for.inc.load.60
+  - String:          ', '
+  - String:          for.inc.load.65
+  - String:          ', '
+  - String:          for.inc.load.70
+  - String:          ', '
+  - String:          for.inc.load.75
+  - String:          ', '
+  - String:          for.inc.load.80
+  - String:          ', '
+  - String:          for.inc.load.85
+  - String:          ', '
+  - String:          for.inc.load.90
+  - String:          ', '
+  - String:          for.inc.load.95
+  - String:          ', '
+  - String:          for.inc.load.100
+  - String:          ', '
+  - String:          for.inc.load.105
+  - String:          ', '
+  - String:          for.inc.load.110
+  - String:          ', '
+  - String:          for.inc.load.115
+  - String:          ', '
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        inseq
+  - String:          ' '
+  - ArrayName:       in
+  - String:          ' '
+  - BundleName:      gmem0
+  - String:          ' '
+  - LoopName:        VITIS_LOOP_8_1
+  - String:          ' '
+  - LoopLoc:         '/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:8:19'
+  - String:          ' '
+  - Function:        'read_input(ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0> const*, ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0> (&) [8192][16])'
+    DebugLoc:        { File: /home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp, 
+                       Line: 7, Column: 0 }
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-burst-widen
+Name:            BurstWidened
+DebugLoc:        { File: /home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp, 
+                   Line: 8, Column: 19 }
+Function:        _ZL10read_inputPK8ap_fixedILi16ELi6EL9ap_q_mode5EL9ap_o_mode3ELi0EERA8192_A16_S2_
+Args:            
+  - String:          'Sequential '
+  - Direction:       read
+  - String:          ' of '
+  - OldLength:       '131072'
+  - String:          ' x '
+  - OldWords:        '16'
+  - String:          'bit words has been widened by '
+  - Factor:          '16'
+  - String:          ': '
+  - Length:          '8192'
+  - String:          ' x '
+  - Words:           '256'
+  - String:          bit words
+  - String:          ' _XLX_SEP_ OldID='
+  - String:          inseq
+  - String:          ', '
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        wseq
+  - String:          ' '
+  - ArrayName:       in
+  - String:          ' '
+  - BundleName:      gmem0
+  - String:          ' '
+  - LoopName:        VITIS_LOOP_8_1
+  - String:          ' '
+  - LoopLoc:         '/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:8:19'
+  - String:          ' '
+  - Function:        'read_input(ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0> const*, ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0> (&) [8192][16])'
+    DebugLoc:        { File: /home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp, 
+                       Line: 7, Column: 0 }
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-burst-widen
+Name:            BurstWidened
+DebugLoc:        { File: /home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp, 
+                   Line: 8, Column: 19 }
+Function:        _ZL10read_inputPK8ap_fixedILi16ELi6EL9ap_q_mode5EL9ap_o_mode3ELi0EERA8192_A16_S2_
+Args:            
+  - String:          'Sequential '
+  - Direction:       read
+  - String:          ' of '
+  - OldLength:       '8192'
+  - String:          ' x '
+  - OldWords:        '256'
+  - String:          'bit words has been widened by '
+  - Factor:          '2'
+  - String:          ': '
+  - Length:          '4096'
+  - String:          ' x '
+  - Words:           '512'
+  - String:          bit words
+  - String:          ' _XLX_SEP_ OldID='
+  - String:          wseq
+  - String:          ', '
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        wseq1
+  - String:          ' '
+  - ArrayName:       in
+  - String:          ' '
+  - BundleName:      gmem0
+  - String:          ' '
+  - LoopName:        VITIS_LOOP_8_1
+  - String:          ' '
+  - LoopLoc:         '/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:8:19'
+  - String:          ' '
+  - Function:        'read_input(ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0> const*, ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0> (&) [8192][16])'
+    DebugLoc:        { File: /home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp, 
+                       Line: 7, Column: 0 }
   - String:          ' '
 ...
 --- !Passed
@@ -8180,7 +8258,7 @@ Args:
 Pass:            reflow-array-partition
 Name:            WarnUnsupportedArrayTransform
 DebugLoc:        { File: /home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp, 
-                   Line: 61, Column: 10 }
+                   Line: 111, Column: 7 }
 Function:        alveo_hls4ml
 Args:            
   - String:          'Ignored unsupported '
@@ -8194,7 +8272,7 @@ Args:
 Pass:            reflow-array-partition
 Name:            WarnUnsupportedArrayTransform
 DebugLoc:        { File: /home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp, 
-                   Line: 61, Column: 10 }
+                   Line: 111, Column: 7 }
 Function:        alveo_hls4ml
 Args:            
   - String:          'Ignored unsupported '
@@ -8208,7 +8286,7 @@ Args:
 Pass:            reflow-array-partition
 Name:            WarnUnsupportedArrayTransform
 DebugLoc:        { File: /home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp, 
-                   Line: 61, Column: 10 }
+                   Line: 111, Column: 7 }
 Function:        alveo_hls4ml
 Args:            
   - String:          'Ignored unsupported '
@@ -8222,7 +8300,7 @@ Args:
 Pass:            reflow-array-partition
 Name:            WarnUnsupportedArrayTransform
 DebugLoc:        { File: /home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp, 
-                   Line: 61, Column: 10 }
+                   Line: 111, Column: 7 }
 Function:        alveo_hls4ml
 Args:            
   - String:          'Ignored unsupported '
@@ -8236,7 +8314,7 @@ Args:
 Pass:            reflow-array-partition
 Name:            WarnUnsupportedArrayTransform
 DebugLoc:        { File: /home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp, 
-                   Line: 61, Column: 10 }
+                   Line: 111, Column: 7 }
 Function:        alveo_hls4ml
 Args:            
   - String:          'Ignored unsupported '
@@ -8250,15 +8328,15 @@ Args:
 Pass:            reflow-burst-summary
 Name:            BurstInferredVerboseSummary
 DebugLoc:        { File: /home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp, 
-                   Line: 50, Column: 24 }
-Function:        alveo_hls4ml
+                   Line: 8, Column: 19 }
+Function:        _ZL10read_inputPK8ap_fixedILi16ELi6EL9ap_q_mode5EL9ap_o_mode3ELi0EERA8192_A16_S2_.1
 Args:            
   - String:          'Multiple burst '
   - Direction:       reads
   - String:          ' of length '
-  - Length:          '131072'
+  - Length:          '4096'
   - String:          ' and bit width '
-  - Width:           '16'
+  - Width:           '512'
   - String:          ' has been inferred.'
   - String:          ' These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.'
   - String:          ' _XLX_SEP_ '
@@ -8268,33 +8346,24 @@ Args:
   - String:          ' '
   - BundleName:      gmem0
   - String:          ' '
-  - LoopName:        VITIS_LOOP_50_1
-  - String:          ' '
-  - LoopLoc:         '/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:50:19'
-  - String:          ' '
-  - Function:        alveo_hls4ml
+  - Function:        'read_input(ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0> const*, ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0> (&) [8192][16]) (.1)'
     DebugLoc:        { File: /home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp, 
-                       Line: 40, Column: 0 }
+                       Line: 7, Column: 0 }
   - String:          ' '
 ...
 --- !Passed
 Pass:            reflow-burst-summary
 Name:            BurstInferredSummary
 DebugLoc:        { File: /home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp, 
-                   Line: 50, Column: 24 }
-Function:        alveo_hls4ml
+                   Line: 8, Column: 19 }
+Function:        _ZL10read_inputPK8ap_fixedILi16ELi6EL9ap_q_mode5EL9ap_o_mode3ELi0EERA8192_A16_S2_.1
 Args:            
   - String:          'Multiple burst '
   - Direction:       reads
   - String:          ' of length '
-  - Length:          '131072'
+  - Length:          '4096'
   - String:          ' and bit width '
-  - Width:           '16'
-  - String:          ' in loop '''
-  - LoopName:        VITIS_LOOP_50_1
-  - String:          '''('
-  - LoopLoc:         '/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:50:19'
-  - String:          ')'
+  - Width:           '512'
   - String:          ' has been inferred on bundle '''
   - BundleName:      gmem0
   - String:          '''.'
@@ -8304,8 +8373,8 @@ Args:
 Pass:            reflow-burst-summary
 Name:            BurstInferredVerboseSummary
 DebugLoc:        { File: /home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp, 
-                   Line: 65, Column: 31 }
-Function:        alveo_hls4ml
+                   Line: 23, Column: 20 }
+Function:        _ZL12write_resultP8ap_fixedILi16ELi6EL9ap_q_mode5EL9ap_o_mode3ELi0EERA8192_A5_S2_.1
 Args:            
   - String:          'Multiple burst '
   - Direction:       writes
@@ -8316,27 +8385,27 @@ Args:
   - String:          ' has been inferred.'
   - String:          ' These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.'
   - String:          ' _XLX_SEP_ '
-  - AccessID:        seq1
+  - AccessID:        seq
   - String:          ' '
   - ArrayName:       ''
   - String:          ' '
   - BundleName:      gmem1
   - String:          ' '
-  - LoopName:        VITIS_LOOP_65_4
+  - LoopName:        VITIS_LOOP_23_1
   - String:          ' '
-  - LoopLoc:         '/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:65:26'
+  - LoopLoc:         '/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:23:20'
   - String:          ' '
-  - Function:        alveo_hls4ml
+  - Function:        'write_result(ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>*, ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0> (&) [8192][5]) (.1)'
     DebugLoc:        { File: /home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp, 
-                       Line: 40, Column: 0 }
+                       Line: 22, Column: 0 }
   - String:          ' '
 ...
 --- !Passed
 Pass:            reflow-burst-summary
 Name:            BurstInferredSummary
 DebugLoc:        { File: /home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp, 
-                   Line: 65, Column: 31 }
-Function:        alveo_hls4ml
+                   Line: 23, Column: 20 }
+Function:        _ZL12write_resultP8ap_fixedILi16ELi6EL9ap_q_mode5EL9ap_o_mode3ELi0EERA8192_A5_S2_.1
 Args:            
   - String:          'Multiple burst '
   - Direction:       writes
@@ -8345,9 +8414,9 @@ Args:
   - String:          ' and bit width '
   - Width:           '16'
   - String:          ' in loop '''
-  - LoopName:        VITIS_LOOP_65_4
+  - LoopName:        VITIS_LOOP_23_1
   - String:          '''('
-  - LoopLoc:         '/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:65:26'
+  - LoopLoc:         '/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:23:20'
   - String:          ')'
   - String:          ' has been inferred on bundle '''
   - BundleName:      gmem1

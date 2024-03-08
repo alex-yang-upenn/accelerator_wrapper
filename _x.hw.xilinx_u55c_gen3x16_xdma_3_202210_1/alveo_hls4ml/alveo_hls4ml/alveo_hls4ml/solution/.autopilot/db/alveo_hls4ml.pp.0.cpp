@@ -6844,9 +6844,9 @@ typedef ap_fixed<18,4> softmax_inv_table_t;
 typedef ap_fixed<16,6> result_t;
 typedef ap_fixed<18,8> softmax_table_t;
 # 40 "/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.h" 2
-# 53 "/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.h"
-typedef model_default_t input_data_t;
-typedef model_default_t output_data_t;
+# 54 "/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.h"
+typedef input_t input_data_t;
+typedef result_t output_data_t;
 # 2 "/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp" 2
 
 
@@ -6998,7 +6998,33 @@ void myproject(
     result_t layer13_out[5]
 );
 # 5 "/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp" 2
-# 34 "/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp"
+
+
+static void read_input(const input_data_t *in, input_data_t (&in_buf)[8192][16]) {
+  VITIS_LOOP_8_1: for (int i = 0; i < 8192; i++) {
+#pragma HLS PIPELINE
+ VITIS_LOOP_10_2: for(int j = 0; j < 16; j++) {
+#pragma HLS UNROLL
+ in_buf[i][j] = in[i * 16 + j];
+      }
+    }
+}
+static void run_inference(input_data_t (&in_buf)[8192][16], output_data_t (&out_buf)[8192][5]) {
+  VITIS_LOOP_17_1: for (int i = 0; i < 8192; i++) {
+#pragma HLS DATAFLOW
+ hls4ml: myproject(in_buf[i],out_buf[i]);
+    }
+}
+static void write_result(output_data_t *out, output_data_t (&out_buf)[8192][5]) {
+  VITIS_LOOP_23_1: for (int i = 0; i < 8192; i++) {
+#pragma HLS PIPELINE
+ VITIS_LOOP_25_2: for (int j = 0; j < 5; j++) {
+#pragma HLS UNROLL
+ out[i * 5 + j] = out_buf[i][j];
+    }
+  }
+}
+# 96 "/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp"
 extern "C" {
 
 
@@ -7008,39 +7034,18 @@ extern "C" {
   __attribute__((sdx_kernel("alveo_hls4ml", 0))) void alveo_hls4ml(const input_data_t *in, output_data_t *out) {
 #line 26 "/home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml.tcl"
 #pragma HLSDIRECTIVE TOP name=alveo_hls4ml
-# 40 "/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp"
+# 102 "/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp"
 
 
-#pragma HLS DATAFLOW
-
- input_t in_buf[8192][16];
-        layer11_t out_buf[8192][5];
+      input_data_t in_buf[8192][16];
+      output_data_t out_buf[8192][5];
 #pragma HLS ARRAY_RESHAPE variable=in_buf complete dim=2
 #pragma HLS ARRAY_RESHAPE variable=out_buf complete dim=2
 
-
- VITIS_LOOP_50_1: for (int i = 0; i < 8192; i++) {
-#pragma HLS PIPELINE
- VITIS_LOOP_52_2: for(int j = 0; j < 16; j++) {
-#pragma HLS UNROLL
- in_buf[i][j] = in[i * 16 + j];
-          }
-        }
-
-
-        VITIS_LOOP_59_3: for (int i = 0; i < 8192; i++) {
 #pragma HLS DATAFLOW
- hls4ml: myproject(in_buf[i],out_buf[i]);
-        }
-
-
-        VITIS_LOOP_65_4: for (int i = 0; i < 8192; i++) {
-#pragma HLS PIPELINE
- VITIS_LOOP_67_5: for (int j = 0; j < 5; j++) {
-#pragma HLS UNROLL
- out[i * 5 + j] = out_buf[i][j];
-          }
-        }
-# 88 "/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp"
+ read_input(in, in_buf);
+      run_inference(in_buf, out_buf);
+      write_result(out, out_buf);
+# 128 "/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp"
   }
 }

@@ -6,8 +6,8 @@ catch {::common::set_param -quiet hls.xocc.mode csynth};
 open_project alveo_hls4ml
 set_top alveo_hls4ml
 # v++ -g, -D, -I, --advanced.prop kernel.alveo_hls4ml.kernel_flags
-add_files "/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp" -cflags " -D MYPROJ=myproject -D IS_DENSE -I /home/ayvol/accelerator_wrapper/src -I /home/ayvol/accelerator_wrapper/src -I /home/ayvol/accelerator_wrapper/src/weights -I /home/ayvol/accelerator_wrapper/src/nnet_utils -std=c++11"
-add_files "/home/ayvol/accelerator_wrapper/src/myproject.cpp" -cflags " -D MYPROJ=myproject -D IS_DENSE -I /home/ayvol/accelerator_wrapper/src -I /home/ayvol/accelerator_wrapper/src -I /home/ayvol/accelerator_wrapper/src/weights -I /home/ayvol/accelerator_wrapper/src/nnet_utils -std=c++11"
+add_files "/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp" -cflags " -D MYPROJ=myproject -D IS_DENSE -D IO_PARALLEL -I /home/ayvol/accelerator_wrapper/src -I /home/ayvol/accelerator_wrapper/src -I /home/ayvol/accelerator_wrapper/src/weights -I /home/ayvol/accelerator_wrapper/src/nnet_utils -std=c++11"
+add_files "/home/ayvol/accelerator_wrapper/src/myproject.cpp" -cflags " -D MYPROJ=myproject -D IS_DENSE -D IO_PARALLEL -I /home/ayvol/accelerator_wrapper/src -I /home/ayvol/accelerator_wrapper/src -I /home/ayvol/accelerator_wrapper/src/weights -I /home/ayvol/accelerator_wrapper/src/nnet_utils -std=c++11"
 open_solution -flow_target vitis solution
 set_part xcu55c-fsvh2892-2L-e
 create_clock -period 300.000000MHz -name default

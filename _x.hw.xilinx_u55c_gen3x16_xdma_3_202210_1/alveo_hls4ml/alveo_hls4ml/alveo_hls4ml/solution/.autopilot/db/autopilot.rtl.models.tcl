@@ -1,11 +1,11 @@
 set SynModuleInfo {
   {SRCNAME entry_proc MODELNAME entry_proc RTLNAME alveo_hls4ml_entry_proc}
-  {SRCNAME VITIS_LOOP_50_1_proc_Pipeline_VITIS_LOOP_50_1 MODELNAME VITIS_LOOP_50_1_proc_Pipeline_VITIS_LOOP_50_1 RTLNAME alveo_hls4ml_VITIS_LOOP_50_1_proc_Pipeline_VITIS_LOOP_50_1
+  {SRCNAME read_input_Pipeline_VITIS_LOOP_8_1 MODELNAME read_input_Pipeline_VITIS_LOOP_8_1 RTLNAME alveo_hls4ml_read_input_Pipeline_VITIS_LOOP_8_1
     SUBMODULES {
       {MODELNAME alveo_hls4ml_flow_control_loop_pipe_sequential_init RTLNAME alveo_hls4ml_flow_control_loop_pipe_sequential_init BINDTYPE interface TYPE internal_upc_flow_control INSTNAME alveo_hls4ml_flow_control_loop_pipe_sequential_init_U}
     }
   }
-  {SRCNAME VITIS_LOOP_50_1_proc MODELNAME VITIS_LOOP_50_1_proc RTLNAME alveo_hls4ml_VITIS_LOOP_50_1_proc}
+  {SRCNAME read_input MODELNAME read_input RTLNAME alveo_hls4ml_read_input}
   {SRCNAME {dense_latency<ap_fixed<16, 6, 5, 3, 0>, ap_fixed<16, 6, 5, 3, 0>, config2>} MODELNAME dense_latency_ap_fixed_16_6_5_3_0_ap_fixed_16_6_5_3_0_config2_s RTLNAME alveo_hls4ml_dense_latency_ap_fixed_16_6_5_3_0_ap_fixed_16_6_5_3_0_config2_s
     SUBMODULES {
       {MODELNAME alveo_hls4ml_mul_16s_5s_21_1_0 RTLNAME alveo_hls4ml_mul_16s_5s_21_1_0 BINDTYPE op TYPE mul IMPL auto LATENCY 0 ALLOW_PRAGMA 1}
@@ -35,10 +35,10 @@ set SynModuleInfo {
     }
   }
   {SRCNAME myproject MODELNAME myproject RTLNAME alveo_hls4ml_myproject}
-  {SRCNAME dataflow_in_loop_VITIS_LOOP_59_3 MODELNAME dataflow_in_loop_VITIS_LOOP_59_3 RTLNAME alveo_hls4ml_dataflow_in_loop_VITIS_LOOP_59_3}
-  {SRCNAME VITIS_LOOP_59_3_proc MODELNAME VITIS_LOOP_59_3_proc RTLNAME alveo_hls4ml_VITIS_LOOP_59_3_proc}
-  {SRCNAME VITIS_LOOP_65_4_proc_Pipeline_VITIS_LOOP_65_4 MODELNAME VITIS_LOOP_65_4_proc_Pipeline_VITIS_LOOP_65_4 RTLNAME alveo_hls4ml_VITIS_LOOP_65_4_proc_Pipeline_VITIS_LOOP_65_4}
-  {SRCNAME VITIS_LOOP_65_4_proc MODELNAME VITIS_LOOP_65_4_proc RTLNAME alveo_hls4ml_VITIS_LOOP_65_4_proc}
+  {SRCNAME dataflow_in_loop_VITIS_LOOP_17_1 MODELNAME dataflow_in_loop_VITIS_LOOP_17_1 RTLNAME alveo_hls4ml_dataflow_in_loop_VITIS_LOOP_17_1}
+  {SRCNAME run_inference MODELNAME run_inference RTLNAME alveo_hls4ml_run_inference}
+  {SRCNAME write_result_Pipeline_VITIS_LOOP_23_1 MODELNAME write_result_Pipeline_VITIS_LOOP_23_1 RTLNAME alveo_hls4ml_write_result_Pipeline_VITIS_LOOP_23_1}
+  {SRCNAME write_result MODELNAME write_result RTLNAME alveo_hls4ml_write_result}
   {SRCNAME alveo_hls4ml MODELNAME alveo_hls4ml RTLNAME alveo_hls4ml IS_TOP 1
     SUBMODULES {
       {MODELNAME alveo_hls4ml_in_buf_V_RAM_AUTO_2R1W_memcore RTLNAME alveo_hls4ml_in_buf_V_RAM_AUTO_2R1W_memcore BINDTYPE storage TYPE ram IMPL auto LATENCY 3 ALLOW_PRAGMA 1}

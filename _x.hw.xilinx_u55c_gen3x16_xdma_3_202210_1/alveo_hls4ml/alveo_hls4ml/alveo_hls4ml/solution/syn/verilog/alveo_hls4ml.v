@@ -7,7 +7,7 @@
 
 `timescale 1 ns / 1 ps 
 
-(* CORE_GENERATION_INFO="alveo_hls4ml_alveo_hls4ml,hls_ip_2022_2,{HLS_INPUT_TYPE=cxx,HLS_INPUT_FLOAT=0,HLS_INPUT_FIXED=0,HLS_INPUT_PART=xcu55c-fsvh2892-2L-e,HLS_INPUT_CLOCK=3.333000,HLS_INPUT_ARCH=dataflow,HLS_SYN_CLOCK=2.433090,HLS_SYN_LAT=196787,HLS_SYN_TPT=131147,HLS_SYN_MEM=176,HLS_SYN_DSP=0,HLS_SYN_FF=15357,HLS_SYN_LUT=46235,HLS_VERSION=2022_2}" *)
+(* CORE_GENERATION_INFO="alveo_hls4ml_alveo_hls4ml,hls_ip_2022_2,{HLS_INPUT_TYPE=cxx,HLS_INPUT_FLOAT=0,HLS_INPUT_FIXED=0,HLS_INPUT_PART=xcu55c-fsvh2892-2L-e,HLS_INPUT_CLOCK=3.333000,HLS_INPUT_ARCH=dataflow,HLS_SYN_CLOCK=2.433090,HLS_SYN_LAT=73907,HLS_SYN_TPT=41035,HLS_SYN_MEM=176,HLS_SYN_DSP=0,HLS_SYN_FF=19729,HLS_SYN_LUT=53179,HLS_VERSION=2022_2}" *)
 
 module alveo_hls4ml (
         ap_clk,
@@ -127,7 +127,7 @@ parameter    C_S_AXI_CONTROL_ADDR_WIDTH = 6;
 parameter    C_S_AXI_DATA_WIDTH = 32;
 parameter    C_M_AXI_GMEM0_ID_WIDTH = 1;
 parameter    C_M_AXI_GMEM0_ADDR_WIDTH = 64;
-parameter    C_M_AXI_GMEM0_DATA_WIDTH = 32;
+parameter    C_M_AXI_GMEM0_DATA_WIDTH = 512;
 parameter    C_M_AXI_GMEM0_AWUSER_WIDTH = 1;
 parameter    C_M_AXI_GMEM0_ARUSER_WIDTH = 1;
 parameter    C_M_AXI_GMEM0_WUSER_WIDTH = 1;
@@ -151,7 +151,7 @@ parameter    C_M_AXI_GMEM1_CACHE_VALUE = 3;
 
 parameter C_S_AXI_CONTROL_WSTRB_WIDTH = (32 / 8);
 parameter C_S_AXI_WSTRB_WIDTH = (32 / 8);
-parameter C_M_AXI_GMEM0_WSTRB_WIDTH = (32 / 8);
+parameter C_M_AXI_GMEM0_WSTRB_WIDTH = (512 / 8);
 parameter C_M_AXI_WSTRB_WIDTH = (32 / 8);
 parameter C_M_AXI_GMEM1_WSTRB_WIDTH = (32 / 8);
 
@@ -292,10 +292,10 @@ wire    gmem0_AWREADY;
 wire    gmem0_WREADY;
 wire    gmem0_ARREADY;
 wire    gmem0_RVALID;
-wire   [15:0] gmem0_RDATA;
+wire   [511:0] gmem0_RDATA;
 wire    gmem0_RLAST;
 wire   [0:0] gmem0_RID;
-wire   [9:0] gmem0_RFIFONUM;
+wire   [8:0] gmem0_RFIFONUM;
 wire   [0:0] gmem0_RUSER;
 wire   [1:0] gmem0_RRESP;
 wire    gmem0_BVALID;
@@ -316,111 +316,111 @@ wire    entry_proc_U0_ap_idle;
 wire    entry_proc_U0_ap_ready;
 wire   [63:0] entry_proc_U0_out_r_c_din;
 wire    entry_proc_U0_out_r_c_write;
-wire    VITIS_LOOP_50_1_proc_U0_ap_start;
-wire    VITIS_LOOP_50_1_proc_U0_ap_done;
-wire    VITIS_LOOP_50_1_proc_U0_ap_continue;
-wire    VITIS_LOOP_50_1_proc_U0_ap_idle;
-wire    VITIS_LOOP_50_1_proc_U0_ap_ready;
-wire    VITIS_LOOP_50_1_proc_U0_m_axi_gmem0_AWVALID;
-wire   [63:0] VITIS_LOOP_50_1_proc_U0_m_axi_gmem0_AWADDR;
-wire   [0:0] VITIS_LOOP_50_1_proc_U0_m_axi_gmem0_AWID;
-wire   [31:0] VITIS_LOOP_50_1_proc_U0_m_axi_gmem0_AWLEN;
-wire   [2:0] VITIS_LOOP_50_1_proc_U0_m_axi_gmem0_AWSIZE;
-wire   [1:0] VITIS_LOOP_50_1_proc_U0_m_axi_gmem0_AWBURST;
-wire   [1:0] VITIS_LOOP_50_1_proc_U0_m_axi_gmem0_AWLOCK;
-wire   [3:0] VITIS_LOOP_50_1_proc_U0_m_axi_gmem0_AWCACHE;
-wire   [2:0] VITIS_LOOP_50_1_proc_U0_m_axi_gmem0_AWPROT;
-wire   [3:0] VITIS_LOOP_50_1_proc_U0_m_axi_gmem0_AWQOS;
-wire   [3:0] VITIS_LOOP_50_1_proc_U0_m_axi_gmem0_AWREGION;
-wire   [0:0] VITIS_LOOP_50_1_proc_U0_m_axi_gmem0_AWUSER;
-wire    VITIS_LOOP_50_1_proc_U0_m_axi_gmem0_WVALID;
-wire   [15:0] VITIS_LOOP_50_1_proc_U0_m_axi_gmem0_WDATA;
-wire   [1:0] VITIS_LOOP_50_1_proc_U0_m_axi_gmem0_WSTRB;
-wire    VITIS_LOOP_50_1_proc_U0_m_axi_gmem0_WLAST;
-wire   [0:0] VITIS_LOOP_50_1_proc_U0_m_axi_gmem0_WID;
-wire   [0:0] VITIS_LOOP_50_1_proc_U0_m_axi_gmem0_WUSER;
-wire    VITIS_LOOP_50_1_proc_U0_m_axi_gmem0_ARVALID;
-wire   [63:0] VITIS_LOOP_50_1_proc_U0_m_axi_gmem0_ARADDR;
-wire   [0:0] VITIS_LOOP_50_1_proc_U0_m_axi_gmem0_ARID;
-wire   [31:0] VITIS_LOOP_50_1_proc_U0_m_axi_gmem0_ARLEN;
-wire   [2:0] VITIS_LOOP_50_1_proc_U0_m_axi_gmem0_ARSIZE;
-wire   [1:0] VITIS_LOOP_50_1_proc_U0_m_axi_gmem0_ARBURST;
-wire   [1:0] VITIS_LOOP_50_1_proc_U0_m_axi_gmem0_ARLOCK;
-wire   [3:0] VITIS_LOOP_50_1_proc_U0_m_axi_gmem0_ARCACHE;
-wire   [2:0] VITIS_LOOP_50_1_proc_U0_m_axi_gmem0_ARPROT;
-wire   [3:0] VITIS_LOOP_50_1_proc_U0_m_axi_gmem0_ARQOS;
-wire   [3:0] VITIS_LOOP_50_1_proc_U0_m_axi_gmem0_ARREGION;
-wire   [0:0] VITIS_LOOP_50_1_proc_U0_m_axi_gmem0_ARUSER;
-wire    VITIS_LOOP_50_1_proc_U0_m_axi_gmem0_RREADY;
-wire    VITIS_LOOP_50_1_proc_U0_m_axi_gmem0_BREADY;
-wire   [12:0] VITIS_LOOP_50_1_proc_U0_in_buf_V_address0;
-wire    VITIS_LOOP_50_1_proc_U0_in_buf_V_ce0;
-wire    VITIS_LOOP_50_1_proc_U0_in_buf_V_we0;
-wire   [255:0] VITIS_LOOP_50_1_proc_U0_in_buf_V_d0;
-wire   [12:0] VITIS_LOOP_59_3_proc_U0_in_buf_V_address0;
-wire    VITIS_LOOP_59_3_proc_U0_in_buf_V_ce0;
-wire   [255:0] VITIS_LOOP_59_3_proc_U0_in_buf_V_d0;
-wire    VITIS_LOOP_59_3_proc_U0_in_buf_V_we0;
-wire   [12:0] VITIS_LOOP_59_3_proc_U0_in_buf_V_address1;
-wire    VITIS_LOOP_59_3_proc_U0_in_buf_V_ce1;
-wire   [255:0] VITIS_LOOP_59_3_proc_U0_in_buf_V_d1;
-wire    VITIS_LOOP_59_3_proc_U0_in_buf_V_we1;
-wire   [12:0] VITIS_LOOP_59_3_proc_U0_out_buf_V_address0;
-wire    VITIS_LOOP_59_3_proc_U0_out_buf_V_ce0;
-wire   [15:0] VITIS_LOOP_59_3_proc_U0_out_buf_V_d0;
-wire    VITIS_LOOP_59_3_proc_U0_out_buf_V_we0;
-wire   [12:0] VITIS_LOOP_59_3_proc_U0_out_buf_V_address1;
-wire    VITIS_LOOP_59_3_proc_U0_out_buf_V_ce1;
-wire   [15:0] VITIS_LOOP_59_3_proc_U0_out_buf_V_d1;
-wire    VITIS_LOOP_59_3_proc_U0_out_buf_V_we1;
-wire   [12:0] VITIS_LOOP_59_3_proc_U0_out_buf_V_1_address0;
-wire    VITIS_LOOP_59_3_proc_U0_out_buf_V_1_ce0;
-wire   [15:0] VITIS_LOOP_59_3_proc_U0_out_buf_V_1_d0;
-wire    VITIS_LOOP_59_3_proc_U0_out_buf_V_1_we0;
-wire   [12:0] VITIS_LOOP_59_3_proc_U0_out_buf_V_1_address1;
-wire    VITIS_LOOP_59_3_proc_U0_out_buf_V_1_ce1;
-wire   [15:0] VITIS_LOOP_59_3_proc_U0_out_buf_V_1_d1;
-wire    VITIS_LOOP_59_3_proc_U0_out_buf_V_1_we1;
-wire   [12:0] VITIS_LOOP_59_3_proc_U0_out_buf_V_2_address0;
-wire    VITIS_LOOP_59_3_proc_U0_out_buf_V_2_ce0;
-wire   [15:0] VITIS_LOOP_59_3_proc_U0_out_buf_V_2_d0;
-wire    VITIS_LOOP_59_3_proc_U0_out_buf_V_2_we0;
-wire   [12:0] VITIS_LOOP_59_3_proc_U0_out_buf_V_2_address1;
-wire    VITIS_LOOP_59_3_proc_U0_out_buf_V_2_ce1;
-wire   [15:0] VITIS_LOOP_59_3_proc_U0_out_buf_V_2_d1;
-wire    VITIS_LOOP_59_3_proc_U0_out_buf_V_2_we1;
-wire   [12:0] VITIS_LOOP_59_3_proc_U0_out_buf_V_3_address0;
-wire    VITIS_LOOP_59_3_proc_U0_out_buf_V_3_ce0;
-wire   [15:0] VITIS_LOOP_59_3_proc_U0_out_buf_V_3_d0;
-wire    VITIS_LOOP_59_3_proc_U0_out_buf_V_3_we0;
-wire   [12:0] VITIS_LOOP_59_3_proc_U0_out_buf_V_3_address1;
-wire    VITIS_LOOP_59_3_proc_U0_out_buf_V_3_ce1;
-wire   [15:0] VITIS_LOOP_59_3_proc_U0_out_buf_V_3_d1;
-wire    VITIS_LOOP_59_3_proc_U0_out_buf_V_3_we1;
-wire   [12:0] VITIS_LOOP_59_3_proc_U0_out_buf_V_4_address0;
-wire    VITIS_LOOP_59_3_proc_U0_out_buf_V_4_ce0;
-wire   [15:0] VITIS_LOOP_59_3_proc_U0_out_buf_V_4_d0;
-wire    VITIS_LOOP_59_3_proc_U0_out_buf_V_4_we0;
-wire   [12:0] VITIS_LOOP_59_3_proc_U0_out_buf_V_4_address1;
-wire    VITIS_LOOP_59_3_proc_U0_out_buf_V_4_ce1;
-wire   [15:0] VITIS_LOOP_59_3_proc_U0_out_buf_V_4_d1;
-wire    VITIS_LOOP_59_3_proc_U0_out_buf_V_4_we1;
-wire    VITIS_LOOP_59_3_proc_U0_in_buf_V_read;
-wire    VITIS_LOOP_59_3_proc_U0_out_buf_V_full_n;
-wire    VITIS_LOOP_59_3_proc_U0_out_buf_V_write;
-wire    VITIS_LOOP_59_3_proc_U0_out_buf_V_1_full_n;
-wire    VITIS_LOOP_59_3_proc_U0_out_buf_V_1_write;
-wire    VITIS_LOOP_59_3_proc_U0_out_buf_V_2_full_n;
-wire    VITIS_LOOP_59_3_proc_U0_out_buf_V_2_write;
-wire    VITIS_LOOP_59_3_proc_U0_out_buf_V_3_full_n;
-wire    VITIS_LOOP_59_3_proc_U0_out_buf_V_3_write;
-wire    VITIS_LOOP_59_3_proc_U0_out_buf_V_4_full_n;
-wire    VITIS_LOOP_59_3_proc_U0_out_buf_V_4_write;
-wire    VITIS_LOOP_59_3_proc_U0_ap_start;
-wire    VITIS_LOOP_59_3_proc_U0_ap_done;
-wire    VITIS_LOOP_59_3_proc_U0_ap_ready;
-wire    VITIS_LOOP_59_3_proc_U0_ap_idle;
-wire    VITIS_LOOP_59_3_proc_U0_ap_continue;
+wire    read_input_U0_ap_start;
+wire    read_input_U0_ap_done;
+wire    read_input_U0_ap_continue;
+wire    read_input_U0_ap_idle;
+wire    read_input_U0_ap_ready;
+wire    read_input_U0_m_axi_gmem0_AWVALID;
+wire   [63:0] read_input_U0_m_axi_gmem0_AWADDR;
+wire   [0:0] read_input_U0_m_axi_gmem0_AWID;
+wire   [31:0] read_input_U0_m_axi_gmem0_AWLEN;
+wire   [2:0] read_input_U0_m_axi_gmem0_AWSIZE;
+wire   [1:0] read_input_U0_m_axi_gmem0_AWBURST;
+wire   [1:0] read_input_U0_m_axi_gmem0_AWLOCK;
+wire   [3:0] read_input_U0_m_axi_gmem0_AWCACHE;
+wire   [2:0] read_input_U0_m_axi_gmem0_AWPROT;
+wire   [3:0] read_input_U0_m_axi_gmem0_AWQOS;
+wire   [3:0] read_input_U0_m_axi_gmem0_AWREGION;
+wire   [0:0] read_input_U0_m_axi_gmem0_AWUSER;
+wire    read_input_U0_m_axi_gmem0_WVALID;
+wire   [511:0] read_input_U0_m_axi_gmem0_WDATA;
+wire   [63:0] read_input_U0_m_axi_gmem0_WSTRB;
+wire    read_input_U0_m_axi_gmem0_WLAST;
+wire   [0:0] read_input_U0_m_axi_gmem0_WID;
+wire   [0:0] read_input_U0_m_axi_gmem0_WUSER;
+wire    read_input_U0_m_axi_gmem0_ARVALID;
+wire   [63:0] read_input_U0_m_axi_gmem0_ARADDR;
+wire   [0:0] read_input_U0_m_axi_gmem0_ARID;
+wire   [31:0] read_input_U0_m_axi_gmem0_ARLEN;
+wire   [2:0] read_input_U0_m_axi_gmem0_ARSIZE;
+wire   [1:0] read_input_U0_m_axi_gmem0_ARBURST;
+wire   [1:0] read_input_U0_m_axi_gmem0_ARLOCK;
+wire   [3:0] read_input_U0_m_axi_gmem0_ARCACHE;
+wire   [2:0] read_input_U0_m_axi_gmem0_ARPROT;
+wire   [3:0] read_input_U0_m_axi_gmem0_ARQOS;
+wire   [3:0] read_input_U0_m_axi_gmem0_ARREGION;
+wire   [0:0] read_input_U0_m_axi_gmem0_ARUSER;
+wire    read_input_U0_m_axi_gmem0_RREADY;
+wire    read_input_U0_m_axi_gmem0_BREADY;
+wire   [12:0] read_input_U0_in_buf_address0;
+wire    read_input_U0_in_buf_ce0;
+wire    read_input_U0_in_buf_we0;
+wire   [255:0] read_input_U0_in_buf_d0;
+wire   [12:0] run_inference_U0_in_buf_address0;
+wire    run_inference_U0_in_buf_ce0;
+wire   [255:0] run_inference_U0_in_buf_d0;
+wire    run_inference_U0_in_buf_we0;
+wire   [12:0] run_inference_U0_in_buf_address1;
+wire    run_inference_U0_in_buf_ce1;
+wire   [255:0] run_inference_U0_in_buf_d1;
+wire    run_inference_U0_in_buf_we1;
+wire   [12:0] run_inference_U0_out_buf_0_address0;
+wire    run_inference_U0_out_buf_0_ce0;
+wire   [15:0] run_inference_U0_out_buf_0_d0;
+wire    run_inference_U0_out_buf_0_we0;
+wire   [12:0] run_inference_U0_out_buf_0_address1;
+wire    run_inference_U0_out_buf_0_ce1;
+wire   [15:0] run_inference_U0_out_buf_0_d1;
+wire    run_inference_U0_out_buf_0_we1;
+wire   [12:0] run_inference_U0_out_buf_1_address0;
+wire    run_inference_U0_out_buf_1_ce0;
+wire   [15:0] run_inference_U0_out_buf_1_d0;
+wire    run_inference_U0_out_buf_1_we0;
+wire   [12:0] run_inference_U0_out_buf_1_address1;
+wire    run_inference_U0_out_buf_1_ce1;
+wire   [15:0] run_inference_U0_out_buf_1_d1;
+wire    run_inference_U0_out_buf_1_we1;
+wire   [12:0] run_inference_U0_out_buf_2_address0;
+wire    run_inference_U0_out_buf_2_ce0;
+wire   [15:0] run_inference_U0_out_buf_2_d0;
+wire    run_inference_U0_out_buf_2_we0;
+wire   [12:0] run_inference_U0_out_buf_2_address1;
+wire    run_inference_U0_out_buf_2_ce1;
+wire   [15:0] run_inference_U0_out_buf_2_d1;
+wire    run_inference_U0_out_buf_2_we1;
+wire   [12:0] run_inference_U0_out_buf_3_address0;
+wire    run_inference_U0_out_buf_3_ce0;
+wire   [15:0] run_inference_U0_out_buf_3_d0;
+wire    run_inference_U0_out_buf_3_we0;
+wire   [12:0] run_inference_U0_out_buf_3_address1;
+wire    run_inference_U0_out_buf_3_ce1;
+wire   [15:0] run_inference_U0_out_buf_3_d1;
+wire    run_inference_U0_out_buf_3_we1;
+wire   [12:0] run_inference_U0_out_buf_4_address0;
+wire    run_inference_U0_out_buf_4_ce0;
+wire   [15:0] run_inference_U0_out_buf_4_d0;
+wire    run_inference_U0_out_buf_4_we0;
+wire   [12:0] run_inference_U0_out_buf_4_address1;
+wire    run_inference_U0_out_buf_4_ce1;
+wire   [15:0] run_inference_U0_out_buf_4_d1;
+wire    run_inference_U0_out_buf_4_we1;
+wire    run_inference_U0_in_buf_read;
+wire    run_inference_U0_out_buf_0_full_n;
+wire    run_inference_U0_out_buf_0_write;
+wire    run_inference_U0_out_buf_1_full_n;
+wire    run_inference_U0_out_buf_1_write;
+wire    run_inference_U0_out_buf_2_full_n;
+wire    run_inference_U0_out_buf_2_write;
+wire    run_inference_U0_out_buf_3_full_n;
+wire    run_inference_U0_out_buf_3_write;
+wire    run_inference_U0_out_buf_4_full_n;
+wire    run_inference_U0_out_buf_4_write;
+wire    run_inference_U0_ap_start;
+wire    run_inference_U0_ap_done;
+wire    run_inference_U0_ap_ready;
+wire    run_inference_U0_ap_idle;
+wire    run_inference_U0_ap_continue;
 wire    ap_channel_done_out_buf_V_4;
 reg    ap_sync_reg_channel_write_out_buf_V_4;
 wire    ap_sync_channel_write_out_buf_V_4;
@@ -436,54 +436,54 @@ wire    ap_sync_channel_write_out_buf_V_1;
 wire    ap_channel_done_out_buf_V;
 reg    ap_sync_reg_channel_write_out_buf_V;
 wire    ap_sync_channel_write_out_buf_V;
-wire    VITIS_LOOP_65_4_proc_U0_ap_start;
-wire    VITIS_LOOP_65_4_proc_U0_ap_done;
-wire    VITIS_LOOP_65_4_proc_U0_ap_continue;
-wire    VITIS_LOOP_65_4_proc_U0_ap_idle;
-wire    VITIS_LOOP_65_4_proc_U0_ap_ready;
-wire    VITIS_LOOP_65_4_proc_U0_out_r_read;
-wire    VITIS_LOOP_65_4_proc_U0_m_axi_gmem1_AWVALID;
-wire   [63:0] VITIS_LOOP_65_4_proc_U0_m_axi_gmem1_AWADDR;
-wire   [0:0] VITIS_LOOP_65_4_proc_U0_m_axi_gmem1_AWID;
-wire   [31:0] VITIS_LOOP_65_4_proc_U0_m_axi_gmem1_AWLEN;
-wire   [2:0] VITIS_LOOP_65_4_proc_U0_m_axi_gmem1_AWSIZE;
-wire   [1:0] VITIS_LOOP_65_4_proc_U0_m_axi_gmem1_AWBURST;
-wire   [1:0] VITIS_LOOP_65_4_proc_U0_m_axi_gmem1_AWLOCK;
-wire   [3:0] VITIS_LOOP_65_4_proc_U0_m_axi_gmem1_AWCACHE;
-wire   [2:0] VITIS_LOOP_65_4_proc_U0_m_axi_gmem1_AWPROT;
-wire   [3:0] VITIS_LOOP_65_4_proc_U0_m_axi_gmem1_AWQOS;
-wire   [3:0] VITIS_LOOP_65_4_proc_U0_m_axi_gmem1_AWREGION;
-wire   [0:0] VITIS_LOOP_65_4_proc_U0_m_axi_gmem1_AWUSER;
-wire    VITIS_LOOP_65_4_proc_U0_m_axi_gmem1_WVALID;
-wire   [15:0] VITIS_LOOP_65_4_proc_U0_m_axi_gmem1_WDATA;
-wire   [1:0] VITIS_LOOP_65_4_proc_U0_m_axi_gmem1_WSTRB;
-wire    VITIS_LOOP_65_4_proc_U0_m_axi_gmem1_WLAST;
-wire   [0:0] VITIS_LOOP_65_4_proc_U0_m_axi_gmem1_WID;
-wire   [0:0] VITIS_LOOP_65_4_proc_U0_m_axi_gmem1_WUSER;
-wire    VITIS_LOOP_65_4_proc_U0_m_axi_gmem1_ARVALID;
-wire   [63:0] VITIS_LOOP_65_4_proc_U0_m_axi_gmem1_ARADDR;
-wire   [0:0] VITIS_LOOP_65_4_proc_U0_m_axi_gmem1_ARID;
-wire   [31:0] VITIS_LOOP_65_4_proc_U0_m_axi_gmem1_ARLEN;
-wire   [2:0] VITIS_LOOP_65_4_proc_U0_m_axi_gmem1_ARSIZE;
-wire   [1:0] VITIS_LOOP_65_4_proc_U0_m_axi_gmem1_ARBURST;
-wire   [1:0] VITIS_LOOP_65_4_proc_U0_m_axi_gmem1_ARLOCK;
-wire   [3:0] VITIS_LOOP_65_4_proc_U0_m_axi_gmem1_ARCACHE;
-wire   [2:0] VITIS_LOOP_65_4_proc_U0_m_axi_gmem1_ARPROT;
-wire   [3:0] VITIS_LOOP_65_4_proc_U0_m_axi_gmem1_ARQOS;
-wire   [3:0] VITIS_LOOP_65_4_proc_U0_m_axi_gmem1_ARREGION;
-wire   [0:0] VITIS_LOOP_65_4_proc_U0_m_axi_gmem1_ARUSER;
-wire    VITIS_LOOP_65_4_proc_U0_m_axi_gmem1_RREADY;
-wire    VITIS_LOOP_65_4_proc_U0_m_axi_gmem1_BREADY;
-wire   [12:0] VITIS_LOOP_65_4_proc_U0_out_buf_V_address0;
-wire    VITIS_LOOP_65_4_proc_U0_out_buf_V_ce0;
-wire   [12:0] VITIS_LOOP_65_4_proc_U0_out_buf_V_1_address0;
-wire    VITIS_LOOP_65_4_proc_U0_out_buf_V_1_ce0;
-wire   [12:0] VITIS_LOOP_65_4_proc_U0_out_buf_V_2_address0;
-wire    VITIS_LOOP_65_4_proc_U0_out_buf_V_2_ce0;
-wire   [12:0] VITIS_LOOP_65_4_proc_U0_out_buf_V_3_address0;
-wire    VITIS_LOOP_65_4_proc_U0_out_buf_V_3_ce0;
-wire   [12:0] VITIS_LOOP_65_4_proc_U0_out_buf_V_4_address0;
-wire    VITIS_LOOP_65_4_proc_U0_out_buf_V_4_ce0;
+wire    write_result_U0_ap_start;
+wire    write_result_U0_ap_done;
+wire    write_result_U0_ap_continue;
+wire    write_result_U0_ap_idle;
+wire    write_result_U0_ap_ready;
+wire    write_result_U0_m_axi_gmem1_AWVALID;
+wire   [63:0] write_result_U0_m_axi_gmem1_AWADDR;
+wire   [0:0] write_result_U0_m_axi_gmem1_AWID;
+wire   [31:0] write_result_U0_m_axi_gmem1_AWLEN;
+wire   [2:0] write_result_U0_m_axi_gmem1_AWSIZE;
+wire   [1:0] write_result_U0_m_axi_gmem1_AWBURST;
+wire   [1:0] write_result_U0_m_axi_gmem1_AWLOCK;
+wire   [3:0] write_result_U0_m_axi_gmem1_AWCACHE;
+wire   [2:0] write_result_U0_m_axi_gmem1_AWPROT;
+wire   [3:0] write_result_U0_m_axi_gmem1_AWQOS;
+wire   [3:0] write_result_U0_m_axi_gmem1_AWREGION;
+wire   [0:0] write_result_U0_m_axi_gmem1_AWUSER;
+wire    write_result_U0_m_axi_gmem1_WVALID;
+wire   [15:0] write_result_U0_m_axi_gmem1_WDATA;
+wire   [1:0] write_result_U0_m_axi_gmem1_WSTRB;
+wire    write_result_U0_m_axi_gmem1_WLAST;
+wire   [0:0] write_result_U0_m_axi_gmem1_WID;
+wire   [0:0] write_result_U0_m_axi_gmem1_WUSER;
+wire    write_result_U0_m_axi_gmem1_ARVALID;
+wire   [63:0] write_result_U0_m_axi_gmem1_ARADDR;
+wire   [0:0] write_result_U0_m_axi_gmem1_ARID;
+wire   [31:0] write_result_U0_m_axi_gmem1_ARLEN;
+wire   [2:0] write_result_U0_m_axi_gmem1_ARSIZE;
+wire   [1:0] write_result_U0_m_axi_gmem1_ARBURST;
+wire   [1:0] write_result_U0_m_axi_gmem1_ARLOCK;
+wire   [3:0] write_result_U0_m_axi_gmem1_ARCACHE;
+wire   [2:0] write_result_U0_m_axi_gmem1_ARPROT;
+wire   [3:0] write_result_U0_m_axi_gmem1_ARQOS;
+wire   [3:0] write_result_U0_m_axi_gmem1_ARREGION;
+wire   [0:0] write_result_U0_m_axi_gmem1_ARUSER;
+wire    write_result_U0_m_axi_gmem1_RREADY;
+wire    write_result_U0_m_axi_gmem1_BREADY;
+wire    write_result_U0_out_r_read;
+wire   [12:0] write_result_U0_out_buf_0_address0;
+wire    write_result_U0_out_buf_0_ce0;
+wire   [12:0] write_result_U0_out_buf_1_address0;
+wire    write_result_U0_out_buf_1_ce0;
+wire   [12:0] write_result_U0_out_buf_2_address0;
+wire    write_result_U0_out_buf_2_ce0;
+wire   [12:0] write_result_U0_out_buf_3_address0;
+wire    write_result_U0_out_buf_3_ce0;
+wire   [12:0] write_result_U0_out_buf_4_address0;
+wire    write_result_U0_out_buf_4_ce0;
 wire    in_buf_V_i_full_n;
 wire    in_buf_V_t_empty_n;
 wire    out_buf_V_i_full_n;
@@ -504,8 +504,8 @@ wire    out_r_c_empty_n;
 wire    ap_sync_ready;
 reg    ap_sync_reg_entry_proc_U0_ap_ready;
 wire    ap_sync_entry_proc_U0_ap_ready;
-reg    ap_sync_reg_VITIS_LOOP_50_1_proc_U0_ap_ready;
-wire    ap_sync_VITIS_LOOP_50_1_proc_U0_ap_ready;
+reg    ap_sync_reg_read_input_U0_ap_ready;
+wire    ap_sync_read_input_U0_ap_ready;
 wire    ap_ce_reg;
 
 // power-on initialization
@@ -519,7 +519,7 @@ initial begin
 #0 ap_sync_reg_channel_write_out_buf_V_1 = 1'b0;
 #0 ap_sync_reg_channel_write_out_buf_V = 1'b0;
 #0 ap_sync_reg_entry_proc_U0_ap_ready = 1'b0;
-#0 ap_sync_reg_VITIS_LOOP_50_1_proc_U0_ap_ready = 1'b0;
+#0 ap_sync_reg_read_input_U0_ap_ready = 1'b0;
 end
 
 alveo_hls4ml_in_buf_V_RAM_AUTO_2R1W #(
@@ -529,22 +529,22 @@ alveo_hls4ml_in_buf_V_RAM_AUTO_2R1W #(
 in_buf_V_U(
     .clk(ap_clk),
     .reset(ap_rst_n_inv),
-    .i_address0(VITIS_LOOP_50_1_proc_U0_in_buf_V_address0),
-    .i_ce0(VITIS_LOOP_50_1_proc_U0_in_buf_V_ce0),
-    .i_we0(VITIS_LOOP_50_1_proc_U0_in_buf_V_we0),
-    .i_d0(VITIS_LOOP_50_1_proc_U0_in_buf_V_d0),
+    .i_address0(read_input_U0_in_buf_address0),
+    .i_ce0(read_input_U0_in_buf_ce0),
+    .i_we0(read_input_U0_in_buf_we0),
+    .i_d0(read_input_U0_in_buf_d0),
     .i_q0(in_buf_V_i_q0),
-    .t_address0(VITIS_LOOP_59_3_proc_U0_in_buf_V_address0),
-    .t_ce0(VITIS_LOOP_59_3_proc_U0_in_buf_V_ce0),
+    .t_address0(run_inference_U0_in_buf_address0),
+    .t_ce0(run_inference_U0_in_buf_ce0),
     .t_we0(1'b0),
     .t_d0(256'd0),
     .t_q0(in_buf_V_t_q0),
     .i_ce(1'b1),
     .t_ce(1'b1),
     .i_full_n(in_buf_V_i_full_n),
-    .i_write(VITIS_LOOP_50_1_proc_U0_ap_done),
+    .i_write(read_input_U0_ap_done),
     .t_empty_n(in_buf_V_t_empty_n),
-    .t_read(VITIS_LOOP_59_3_proc_U0_ap_ready)
+    .t_read(run_inference_U0_ap_ready)
 );
 
 alveo_hls4ml_out_buf_V_RAM_AUTO_1R1W #(
@@ -554,13 +554,13 @@ alveo_hls4ml_out_buf_V_RAM_AUTO_1R1W #(
 out_buf_V_U(
     .clk(ap_clk),
     .reset(ap_rst_n_inv),
-    .i_address0(VITIS_LOOP_59_3_proc_U0_out_buf_V_address0),
-    .i_ce0(VITIS_LOOP_59_3_proc_U0_out_buf_V_ce0),
-    .i_we0(VITIS_LOOP_59_3_proc_U0_out_buf_V_we0),
-    .i_d0(VITIS_LOOP_59_3_proc_U0_out_buf_V_d0),
+    .i_address0(run_inference_U0_out_buf_0_address0),
+    .i_ce0(run_inference_U0_out_buf_0_ce0),
+    .i_we0(run_inference_U0_out_buf_0_we0),
+    .i_d0(run_inference_U0_out_buf_0_d0),
     .i_q0(out_buf_V_i_q0),
-    .t_address0(VITIS_LOOP_65_4_proc_U0_out_buf_V_address0),
-    .t_ce0(VITIS_LOOP_65_4_proc_U0_out_buf_V_ce0),
+    .t_address0(write_result_U0_out_buf_0_address0),
+    .t_ce0(write_result_U0_out_buf_0_ce0),
     .t_we0(1'b0),
     .t_d0(16'd0),
     .t_q0(out_buf_V_t_q0),
@@ -569,7 +569,7 @@ out_buf_V_U(
     .i_full_n(out_buf_V_i_full_n),
     .i_write(ap_channel_done_out_buf_V),
     .t_empty_n(out_buf_V_t_empty_n),
-    .t_read(VITIS_LOOP_65_4_proc_U0_ap_ready)
+    .t_read(write_result_U0_ap_ready)
 );
 
 alveo_hls4ml_out_buf_V_RAM_AUTO_1R1W #(
@@ -579,13 +579,13 @@ alveo_hls4ml_out_buf_V_RAM_AUTO_1R1W #(
 out_buf_V_1_U(
     .clk(ap_clk),
     .reset(ap_rst_n_inv),
-    .i_address0(VITIS_LOOP_59_3_proc_U0_out_buf_V_1_address0),
-    .i_ce0(VITIS_LOOP_59_3_proc_U0_out_buf_V_1_ce0),
-    .i_we0(VITIS_LOOP_59_3_proc_U0_out_buf_V_1_we0),
-    .i_d0(VITIS_LOOP_59_3_proc_U0_out_buf_V_1_d0),
+    .i_address0(run_inference_U0_out_buf_1_address0),
+    .i_ce0(run_inference_U0_out_buf_1_ce0),
+    .i_we0(run_inference_U0_out_buf_1_we0),
+    .i_d0(run_inference_U0_out_buf_1_d0),
     .i_q0(out_buf_V_1_i_q0),
-    .t_address0(VITIS_LOOP_65_4_proc_U0_out_buf_V_1_address0),
-    .t_ce0(VITIS_LOOP_65_4_proc_U0_out_buf_V_1_ce0),
+    .t_address0(write_result_U0_out_buf_1_address0),
+    .t_ce0(write_result_U0_out_buf_1_ce0),
     .t_we0(1'b0),
     .t_d0(16'd0),
     .t_q0(out_buf_V_1_t_q0),
@@ -594,7 +594,7 @@ out_buf_V_1_U(
     .i_full_n(out_buf_V_1_i_full_n),
     .i_write(ap_channel_done_out_buf_V_1),
     .t_empty_n(out_buf_V_1_t_empty_n),
-    .t_read(VITIS_LOOP_65_4_proc_U0_ap_ready)
+    .t_read(write_result_U0_ap_ready)
 );
 
 alveo_hls4ml_out_buf_V_RAM_AUTO_1R1W #(
@@ -604,13 +604,13 @@ alveo_hls4ml_out_buf_V_RAM_AUTO_1R1W #(
 out_buf_V_2_U(
     .clk(ap_clk),
     .reset(ap_rst_n_inv),
-    .i_address0(VITIS_LOOP_59_3_proc_U0_out_buf_V_2_address0),
-    .i_ce0(VITIS_LOOP_59_3_proc_U0_out_buf_V_2_ce0),
-    .i_we0(VITIS_LOOP_59_3_proc_U0_out_buf_V_2_we0),
-    .i_d0(VITIS_LOOP_59_3_proc_U0_out_buf_V_2_d0),
+    .i_address0(run_inference_U0_out_buf_2_address0),
+    .i_ce0(run_inference_U0_out_buf_2_ce0),
+    .i_we0(run_inference_U0_out_buf_2_we0),
+    .i_d0(run_inference_U0_out_buf_2_d0),
     .i_q0(out_buf_V_2_i_q0),
-    .t_address0(VITIS_LOOP_65_4_proc_U0_out_buf_V_2_address0),
-    .t_ce0(VITIS_LOOP_65_4_proc_U0_out_buf_V_2_ce0),
+    .t_address0(write_result_U0_out_buf_2_address0),
+    .t_ce0(write_result_U0_out_buf_2_ce0),
     .t_we0(1'b0),
     .t_d0(16'd0),
     .t_q0(out_buf_V_2_t_q0),
@@ -619,7 +619,7 @@ out_buf_V_2_U(
     .i_full_n(out_buf_V_2_i_full_n),
     .i_write(ap_channel_done_out_buf_V_2),
     .t_empty_n(out_buf_V_2_t_empty_n),
-    .t_read(VITIS_LOOP_65_4_proc_U0_ap_ready)
+    .t_read(write_result_U0_ap_ready)
 );
 
 alveo_hls4ml_out_buf_V_RAM_AUTO_1R1W #(
@@ -629,13 +629,13 @@ alveo_hls4ml_out_buf_V_RAM_AUTO_1R1W #(
 out_buf_V_3_U(
     .clk(ap_clk),
     .reset(ap_rst_n_inv),
-    .i_address0(VITIS_LOOP_59_3_proc_U0_out_buf_V_3_address0),
-    .i_ce0(VITIS_LOOP_59_3_proc_U0_out_buf_V_3_ce0),
-    .i_we0(VITIS_LOOP_59_3_proc_U0_out_buf_V_3_we0),
-    .i_d0(VITIS_LOOP_59_3_proc_U0_out_buf_V_3_d0),
+    .i_address0(run_inference_U0_out_buf_3_address0),
+    .i_ce0(run_inference_U0_out_buf_3_ce0),
+    .i_we0(run_inference_U0_out_buf_3_we0),
+    .i_d0(run_inference_U0_out_buf_3_d0),
     .i_q0(out_buf_V_3_i_q0),
-    .t_address0(VITIS_LOOP_65_4_proc_U0_out_buf_V_3_address0),
-    .t_ce0(VITIS_LOOP_65_4_proc_U0_out_buf_V_3_ce0),
+    .t_address0(write_result_U0_out_buf_3_address0),
+    .t_ce0(write_result_U0_out_buf_3_ce0),
     .t_we0(1'b0),
     .t_d0(16'd0),
     .t_q0(out_buf_V_3_t_q0),
@@ -644,7 +644,7 @@ out_buf_V_3_U(
     .i_full_n(out_buf_V_3_i_full_n),
     .i_write(ap_channel_done_out_buf_V_3),
     .t_empty_n(out_buf_V_3_t_empty_n),
-    .t_read(VITIS_LOOP_65_4_proc_U0_ap_ready)
+    .t_read(write_result_U0_ap_ready)
 );
 
 alveo_hls4ml_out_buf_V_RAM_AUTO_1R1W #(
@@ -654,13 +654,13 @@ alveo_hls4ml_out_buf_V_RAM_AUTO_1R1W #(
 out_buf_V_4_U(
     .clk(ap_clk),
     .reset(ap_rst_n_inv),
-    .i_address0(VITIS_LOOP_59_3_proc_U0_out_buf_V_4_address0),
-    .i_ce0(VITIS_LOOP_59_3_proc_U0_out_buf_V_4_ce0),
-    .i_we0(VITIS_LOOP_59_3_proc_U0_out_buf_V_4_we0),
-    .i_d0(VITIS_LOOP_59_3_proc_U0_out_buf_V_4_d0),
+    .i_address0(run_inference_U0_out_buf_4_address0),
+    .i_ce0(run_inference_U0_out_buf_4_ce0),
+    .i_we0(run_inference_U0_out_buf_4_we0),
+    .i_d0(run_inference_U0_out_buf_4_d0),
     .i_q0(out_buf_V_4_i_q0),
-    .t_address0(VITIS_LOOP_65_4_proc_U0_out_buf_V_4_address0),
-    .t_ce0(VITIS_LOOP_65_4_proc_U0_out_buf_V_4_ce0),
+    .t_address0(write_result_U0_out_buf_4_address0),
+    .t_ce0(write_result_U0_out_buf_4_ce0),
     .t_we0(1'b0),
     .t_d0(16'd0),
     .t_q0(out_buf_V_4_t_q0),
@@ -669,7 +669,7 @@ out_buf_V_4_U(
     .i_full_n(out_buf_V_4_i_full_n),
     .i_write(ap_channel_done_out_buf_V_4),
     .t_empty_n(out_buf_V_4_t_empty_n),
-    .t_read(VITIS_LOOP_65_4_proc_U0_ap_ready)
+    .t_read(write_result_U0_ap_ready)
 );
 
 alveo_hls4ml_control_s_axi #(
@@ -722,8 +722,8 @@ alveo_hls4ml_gmem0_m_axi #(
     .C_USER_VALUE( C_M_AXI_GMEM0_USER_VALUE ),
     .C_PROT_VALUE( C_M_AXI_GMEM0_PROT_VALUE ),
     .C_CACHE_VALUE( C_M_AXI_GMEM0_CACHE_VALUE ),
-    .USER_RFIFONUM_WIDTH( 10 ),
-    .USER_DW( 16 ),
+    .USER_RFIFONUM_WIDTH( 9 ),
+    .USER_DW( 512 ),
     .USER_AW( 64 ),
     .NUM_READ_OUTSTANDING( 16 ),
     .NUM_WRITE_OUTSTANDING( 16 ))
@@ -776,12 +776,12 @@ gmem0_m_axi_U(
     .ACLK(ap_clk),
     .ARESET(ap_rst_n_inv),
     .ACLK_EN(1'b1),
-    .I_ARVALID(VITIS_LOOP_50_1_proc_U0_m_axi_gmem0_ARVALID),
+    .I_ARVALID(read_input_U0_m_axi_gmem0_ARVALID),
     .I_ARREADY(gmem0_ARREADY),
-    .I_ARADDR(VITIS_LOOP_50_1_proc_U0_m_axi_gmem0_ARADDR),
-    .I_ARLEN(VITIS_LOOP_50_1_proc_U0_m_axi_gmem0_ARLEN),
+    .I_ARADDR(read_input_U0_m_axi_gmem0_ARADDR),
+    .I_ARLEN(read_input_U0_m_axi_gmem0_ARLEN),
     .I_RVALID(gmem0_RVALID),
-    .I_RREADY(VITIS_LOOP_50_1_proc_U0_m_axi_gmem0_RREADY),
+    .I_RREADY(read_input_U0_m_axi_gmem0_RREADY),
     .I_RDATA(gmem0_RDATA),
     .I_RFIFONUM(gmem0_RFIFONUM),
     .I_AWVALID(1'b0),
@@ -790,8 +790,8 @@ gmem0_m_axi_U(
     .I_AWLEN(32'd0),
     .I_WVALID(1'b0),
     .I_WREADY(gmem0_WREADY),
-    .I_WDATA(16'd0),
-    .I_WSTRB(2'd0),
+    .I_WDATA(512'd0),
+    .I_WSTRB(64'd0),
     .I_BVALID(gmem0_BVALID),
     .I_BREADY(1'b0)
 );
@@ -874,16 +874,16 @@ gmem1_m_axi_U(
     .I_RREADY(1'b0),
     .I_RDATA(gmem1_RDATA),
     .I_RFIFONUM(gmem1_RFIFONUM),
-    .I_AWVALID(VITIS_LOOP_65_4_proc_U0_m_axi_gmem1_AWVALID),
+    .I_AWVALID(write_result_U0_m_axi_gmem1_AWVALID),
     .I_AWREADY(gmem1_AWREADY),
-    .I_AWADDR(VITIS_LOOP_65_4_proc_U0_m_axi_gmem1_AWADDR),
-    .I_AWLEN(VITIS_LOOP_65_4_proc_U0_m_axi_gmem1_AWLEN),
-    .I_WVALID(VITIS_LOOP_65_4_proc_U0_m_axi_gmem1_WVALID),
+    .I_AWADDR(write_result_U0_m_axi_gmem1_AWADDR),
+    .I_AWLEN(write_result_U0_m_axi_gmem1_AWLEN),
+    .I_WVALID(write_result_U0_m_axi_gmem1_WVALID),
     .I_WREADY(gmem1_WREADY),
-    .I_WDATA(VITIS_LOOP_65_4_proc_U0_m_axi_gmem1_WDATA),
-    .I_WSTRB(VITIS_LOOP_65_4_proc_U0_m_axi_gmem1_WSTRB),
+    .I_WDATA(write_result_U0_m_axi_gmem1_WDATA),
+    .I_WSTRB(write_result_U0_m_axi_gmem1_WSTRB),
     .I_BVALID(gmem1_BVALID),
-    .I_BREADY(VITIS_LOOP_65_4_proc_U0_m_axi_gmem1_BREADY)
+    .I_BREADY(write_result_U0_m_axi_gmem1_BREADY)
 );
 
 alveo_hls4ml_entry_proc entry_proc_U0(
@@ -902,50 +902,49 @@ alveo_hls4ml_entry_proc entry_proc_U0(
     .out_r_c_write(entry_proc_U0_out_r_c_write)
 );
 
-alveo_hls4ml_VITIS_LOOP_50_1_proc VITIS_LOOP_50_1_proc_U0(
+alveo_hls4ml_read_input read_input_U0(
     .ap_clk(ap_clk),
     .ap_rst(ap_rst_n_inv),
-    .ap_start(VITIS_LOOP_50_1_proc_U0_ap_start),
-    .ap_done(VITIS_LOOP_50_1_proc_U0_ap_done),
-    .ap_continue(VITIS_LOOP_50_1_proc_U0_ap_continue),
-    .ap_idle(VITIS_LOOP_50_1_proc_U0_ap_idle),
-    .ap_ready(VITIS_LOOP_50_1_proc_U0_ap_ready),
-    .in_r(in_r),
-    .m_axi_gmem0_AWVALID(VITIS_LOOP_50_1_proc_U0_m_axi_gmem0_AWVALID),
+    .ap_start(read_input_U0_ap_start),
+    .ap_done(read_input_U0_ap_done),
+    .ap_continue(read_input_U0_ap_continue),
+    .ap_idle(read_input_U0_ap_idle),
+    .ap_ready(read_input_U0_ap_ready),
+    .m_axi_gmem0_AWVALID(read_input_U0_m_axi_gmem0_AWVALID),
     .m_axi_gmem0_AWREADY(1'b0),
-    .m_axi_gmem0_AWADDR(VITIS_LOOP_50_1_proc_U0_m_axi_gmem0_AWADDR),
-    .m_axi_gmem0_AWID(VITIS_LOOP_50_1_proc_U0_m_axi_gmem0_AWID),
-    .m_axi_gmem0_AWLEN(VITIS_LOOP_50_1_proc_U0_m_axi_gmem0_AWLEN),
-    .m_axi_gmem0_AWSIZE(VITIS_LOOP_50_1_proc_U0_m_axi_gmem0_AWSIZE),
-    .m_axi_gmem0_AWBURST(VITIS_LOOP_50_1_proc_U0_m_axi_gmem0_AWBURST),
-    .m_axi_gmem0_AWLOCK(VITIS_LOOP_50_1_proc_U0_m_axi_gmem0_AWLOCK),
-    .m_axi_gmem0_AWCACHE(VITIS_LOOP_50_1_proc_U0_m_axi_gmem0_AWCACHE),
-    .m_axi_gmem0_AWPROT(VITIS_LOOP_50_1_proc_U0_m_axi_gmem0_AWPROT),
-    .m_axi_gmem0_AWQOS(VITIS_LOOP_50_1_proc_U0_m_axi_gmem0_AWQOS),
-    .m_axi_gmem0_AWREGION(VITIS_LOOP_50_1_proc_U0_m_axi_gmem0_AWREGION),
-    .m_axi_gmem0_AWUSER(VITIS_LOOP_50_1_proc_U0_m_axi_gmem0_AWUSER),
-    .m_axi_gmem0_WVALID(VITIS_LOOP_50_1_proc_U0_m_axi_gmem0_WVALID),
+    .m_axi_gmem0_AWADDR(read_input_U0_m_axi_gmem0_AWADDR),
+    .m_axi_gmem0_AWID(read_input_U0_m_axi_gmem0_AWID),
+    .m_axi_gmem0_AWLEN(read_input_U0_m_axi_gmem0_AWLEN),
+    .m_axi_gmem0_AWSIZE(read_input_U0_m_axi_gmem0_AWSIZE),
+    .m_axi_gmem0_AWBURST(read_input_U0_m_axi_gmem0_AWBURST),
+    .m_axi_gmem0_AWLOCK(read_input_U0_m_axi_gmem0_AWLOCK),
+    .m_axi_gmem0_AWCACHE(read_input_U0_m_axi_gmem0_AWCACHE),
+    .m_axi_gmem0_AWPROT(read_input_U0_m_axi_gmem0_AWPROT),
+    .m_axi_gmem0_AWQOS(read_input_U0_m_axi_gmem0_AWQOS),
+    .m_axi_gmem0_AWREGION(read_input_U0_m_axi_gmem0_AWREGION),
+    .m_axi_gmem0_AWUSER(read_input_U0_m_axi_gmem0_AWUSER),
+    .m_axi_gmem0_WVALID(read_input_U0_m_axi_gmem0_WVALID),
     .m_axi_gmem0_WREADY(1'b0),
-    .m_axi_gmem0_WDATA(VITIS_LOOP_50_1_proc_U0_m_axi_gmem0_WDATA),
-    .m_axi_gmem0_WSTRB(VITIS_LOOP_50_1_proc_U0_m_axi_gmem0_WSTRB),
-    .m_axi_gmem0_WLAST(VITIS_LOOP_50_1_proc_U0_m_axi_gmem0_WLAST),
-    .m_axi_gmem0_WID(VITIS_LOOP_50_1_proc_U0_m_axi_gmem0_WID),
-    .m_axi_gmem0_WUSER(VITIS_LOOP_50_1_proc_U0_m_axi_gmem0_WUSER),
-    .m_axi_gmem0_ARVALID(VITIS_LOOP_50_1_proc_U0_m_axi_gmem0_ARVALID),
+    .m_axi_gmem0_WDATA(read_input_U0_m_axi_gmem0_WDATA),
+    .m_axi_gmem0_WSTRB(read_input_U0_m_axi_gmem0_WSTRB),
+    .m_axi_gmem0_WLAST(read_input_U0_m_axi_gmem0_WLAST),
+    .m_axi_gmem0_WID(read_input_U0_m_axi_gmem0_WID),
+    .m_axi_gmem0_WUSER(read_input_U0_m_axi_gmem0_WUSER),
+    .m_axi_gmem0_ARVALID(read_input_U0_m_axi_gmem0_ARVALID),
     .m_axi_gmem0_ARREADY(gmem0_ARREADY),
-    .m_axi_gmem0_ARADDR(VITIS_LOOP_50_1_proc_U0_m_axi_gmem0_ARADDR),
-    .m_axi_gmem0_ARID(VITIS_LOOP_50_1_proc_U0_m_axi_gmem0_ARID),
-    .m_axi_gmem0_ARLEN(VITIS_LOOP_50_1_proc_U0_m_axi_gmem0_ARLEN),
-    .m_axi_gmem0_ARSIZE(VITIS_LOOP_50_1_proc_U0_m_axi_gmem0_ARSIZE),
-    .m_axi_gmem0_ARBURST(VITIS_LOOP_50_1_proc_U0_m_axi_gmem0_ARBURST),
-    .m_axi_gmem0_ARLOCK(VITIS_LOOP_50_1_proc_U0_m_axi_gmem0_ARLOCK),
-    .m_axi_gmem0_ARCACHE(VITIS_LOOP_50_1_proc_U0_m_axi_gmem0_ARCACHE),
-    .m_axi_gmem0_ARPROT(VITIS_LOOP_50_1_proc_U0_m_axi_gmem0_ARPROT),
-    .m_axi_gmem0_ARQOS(VITIS_LOOP_50_1_proc_U0_m_axi_gmem0_ARQOS),
-    .m_axi_gmem0_ARREGION(VITIS_LOOP_50_1_proc_U0_m_axi_gmem0_ARREGION),
-    .m_axi_gmem0_ARUSER(VITIS_LOOP_50_1_proc_U0_m_axi_gmem0_ARUSER),
+    .m_axi_gmem0_ARADDR(read_input_U0_m_axi_gmem0_ARADDR),
+    .m_axi_gmem0_ARID(read_input_U0_m_axi_gmem0_ARID),
+    .m_axi_gmem0_ARLEN(read_input_U0_m_axi_gmem0_ARLEN),
+    .m_axi_gmem0_ARSIZE(read_input_U0_m_axi_gmem0_ARSIZE),
+    .m_axi_gmem0_ARBURST(read_input_U0_m_axi_gmem0_ARBURST),
+    .m_axi_gmem0_ARLOCK(read_input_U0_m_axi_gmem0_ARLOCK),
+    .m_axi_gmem0_ARCACHE(read_input_U0_m_axi_gmem0_ARCACHE),
+    .m_axi_gmem0_ARPROT(read_input_U0_m_axi_gmem0_ARPROT),
+    .m_axi_gmem0_ARQOS(read_input_U0_m_axi_gmem0_ARQOS),
+    .m_axi_gmem0_ARREGION(read_input_U0_m_axi_gmem0_ARREGION),
+    .m_axi_gmem0_ARUSER(read_input_U0_m_axi_gmem0_ARUSER),
     .m_axi_gmem0_RVALID(gmem0_RVALID),
-    .m_axi_gmem0_RREADY(VITIS_LOOP_50_1_proc_U0_m_axi_gmem0_RREADY),
+    .m_axi_gmem0_RREADY(read_input_U0_m_axi_gmem0_RREADY),
     .m_axi_gmem0_RDATA(gmem0_RDATA),
     .m_axi_gmem0_RLAST(gmem0_RLAST),
     .m_axi_gmem0_RID(gmem0_RID),
@@ -953,146 +952,142 @@ alveo_hls4ml_VITIS_LOOP_50_1_proc VITIS_LOOP_50_1_proc_U0(
     .m_axi_gmem0_RUSER(gmem0_RUSER),
     .m_axi_gmem0_RRESP(gmem0_RRESP),
     .m_axi_gmem0_BVALID(1'b0),
-    .m_axi_gmem0_BREADY(VITIS_LOOP_50_1_proc_U0_m_axi_gmem0_BREADY),
+    .m_axi_gmem0_BREADY(read_input_U0_m_axi_gmem0_BREADY),
     .m_axi_gmem0_BRESP(2'd0),
     .m_axi_gmem0_BID(1'd0),
     .m_axi_gmem0_BUSER(1'd0),
-    .in_buf_V_address0(VITIS_LOOP_50_1_proc_U0_in_buf_V_address0),
-    .in_buf_V_ce0(VITIS_LOOP_50_1_proc_U0_in_buf_V_ce0),
-    .in_buf_V_we0(VITIS_LOOP_50_1_proc_U0_in_buf_V_we0),
-    .in_buf_V_d0(VITIS_LOOP_50_1_proc_U0_in_buf_V_d0)
+    .in_r(in_r),
+    .in_buf_address0(read_input_U0_in_buf_address0),
+    .in_buf_ce0(read_input_U0_in_buf_ce0),
+    .in_buf_we0(read_input_U0_in_buf_we0),
+    .in_buf_d0(read_input_U0_in_buf_d0)
 );
 
-alveo_hls4ml_VITIS_LOOP_59_3_proc VITIS_LOOP_59_3_proc_U0(
-    .in_buf_V_address0(VITIS_LOOP_59_3_proc_U0_in_buf_V_address0),
-    .in_buf_V_ce0(VITIS_LOOP_59_3_proc_U0_in_buf_V_ce0),
-    .in_buf_V_d0(VITIS_LOOP_59_3_proc_U0_in_buf_V_d0),
-    .in_buf_V_q0(in_buf_V_t_q0),
-    .in_buf_V_we0(VITIS_LOOP_59_3_proc_U0_in_buf_V_we0),
-    .in_buf_V_address1(VITIS_LOOP_59_3_proc_U0_in_buf_V_address1),
-    .in_buf_V_ce1(VITIS_LOOP_59_3_proc_U0_in_buf_V_ce1),
-    .in_buf_V_d1(VITIS_LOOP_59_3_proc_U0_in_buf_V_d1),
-    .in_buf_V_q1(256'd0),
-    .in_buf_V_we1(VITIS_LOOP_59_3_proc_U0_in_buf_V_we1),
-    .out_buf_V_address0(VITIS_LOOP_59_3_proc_U0_out_buf_V_address0),
-    .out_buf_V_ce0(VITIS_LOOP_59_3_proc_U0_out_buf_V_ce0),
-    .out_buf_V_d0(VITIS_LOOP_59_3_proc_U0_out_buf_V_d0),
-    .out_buf_V_q0(16'd0),
-    .out_buf_V_we0(VITIS_LOOP_59_3_proc_U0_out_buf_V_we0),
-    .out_buf_V_address1(VITIS_LOOP_59_3_proc_U0_out_buf_V_address1),
-    .out_buf_V_ce1(VITIS_LOOP_59_3_proc_U0_out_buf_V_ce1),
-    .out_buf_V_d1(VITIS_LOOP_59_3_proc_U0_out_buf_V_d1),
-    .out_buf_V_q1(16'd0),
-    .out_buf_V_we1(VITIS_LOOP_59_3_proc_U0_out_buf_V_we1),
-    .out_buf_V_1_address0(VITIS_LOOP_59_3_proc_U0_out_buf_V_1_address0),
-    .out_buf_V_1_ce0(VITIS_LOOP_59_3_proc_U0_out_buf_V_1_ce0),
-    .out_buf_V_1_d0(VITIS_LOOP_59_3_proc_U0_out_buf_V_1_d0),
-    .out_buf_V_1_q0(16'd0),
-    .out_buf_V_1_we0(VITIS_LOOP_59_3_proc_U0_out_buf_V_1_we0),
-    .out_buf_V_1_address1(VITIS_LOOP_59_3_proc_U0_out_buf_V_1_address1),
-    .out_buf_V_1_ce1(VITIS_LOOP_59_3_proc_U0_out_buf_V_1_ce1),
-    .out_buf_V_1_d1(VITIS_LOOP_59_3_proc_U0_out_buf_V_1_d1),
-    .out_buf_V_1_q1(16'd0),
-    .out_buf_V_1_we1(VITIS_LOOP_59_3_proc_U0_out_buf_V_1_we1),
-    .out_buf_V_2_address0(VITIS_LOOP_59_3_proc_U0_out_buf_V_2_address0),
-    .out_buf_V_2_ce0(VITIS_LOOP_59_3_proc_U0_out_buf_V_2_ce0),
-    .out_buf_V_2_d0(VITIS_LOOP_59_3_proc_U0_out_buf_V_2_d0),
-    .out_buf_V_2_q0(16'd0),
-    .out_buf_V_2_we0(VITIS_LOOP_59_3_proc_U0_out_buf_V_2_we0),
-    .out_buf_V_2_address1(VITIS_LOOP_59_3_proc_U0_out_buf_V_2_address1),
-    .out_buf_V_2_ce1(VITIS_LOOP_59_3_proc_U0_out_buf_V_2_ce1),
-    .out_buf_V_2_d1(VITIS_LOOP_59_3_proc_U0_out_buf_V_2_d1),
-    .out_buf_V_2_q1(16'd0),
-    .out_buf_V_2_we1(VITIS_LOOP_59_3_proc_U0_out_buf_V_2_we1),
-    .out_buf_V_3_address0(VITIS_LOOP_59_3_proc_U0_out_buf_V_3_address0),
-    .out_buf_V_3_ce0(VITIS_LOOP_59_3_proc_U0_out_buf_V_3_ce0),
-    .out_buf_V_3_d0(VITIS_LOOP_59_3_proc_U0_out_buf_V_3_d0),
-    .out_buf_V_3_q0(16'd0),
-    .out_buf_V_3_we0(VITIS_LOOP_59_3_proc_U0_out_buf_V_3_we0),
-    .out_buf_V_3_address1(VITIS_LOOP_59_3_proc_U0_out_buf_V_3_address1),
-    .out_buf_V_3_ce1(VITIS_LOOP_59_3_proc_U0_out_buf_V_3_ce1),
-    .out_buf_V_3_d1(VITIS_LOOP_59_3_proc_U0_out_buf_V_3_d1),
-    .out_buf_V_3_q1(16'd0),
-    .out_buf_V_3_we1(VITIS_LOOP_59_3_proc_U0_out_buf_V_3_we1),
-    .out_buf_V_4_address0(VITIS_LOOP_59_3_proc_U0_out_buf_V_4_address0),
-    .out_buf_V_4_ce0(VITIS_LOOP_59_3_proc_U0_out_buf_V_4_ce0),
-    .out_buf_V_4_d0(VITIS_LOOP_59_3_proc_U0_out_buf_V_4_d0),
-    .out_buf_V_4_q0(16'd0),
-    .out_buf_V_4_we0(VITIS_LOOP_59_3_proc_U0_out_buf_V_4_we0),
-    .out_buf_V_4_address1(VITIS_LOOP_59_3_proc_U0_out_buf_V_4_address1),
-    .out_buf_V_4_ce1(VITIS_LOOP_59_3_proc_U0_out_buf_V_4_ce1),
-    .out_buf_V_4_d1(VITIS_LOOP_59_3_proc_U0_out_buf_V_4_d1),
-    .out_buf_V_4_q1(16'd0),
-    .out_buf_V_4_we1(VITIS_LOOP_59_3_proc_U0_out_buf_V_4_we1),
+alveo_hls4ml_run_inference run_inference_U0(
+    .in_buf_address0(run_inference_U0_in_buf_address0),
+    .in_buf_ce0(run_inference_U0_in_buf_ce0),
+    .in_buf_d0(run_inference_U0_in_buf_d0),
+    .in_buf_q0(in_buf_V_t_q0),
+    .in_buf_we0(run_inference_U0_in_buf_we0),
+    .in_buf_address1(run_inference_U0_in_buf_address1),
+    .in_buf_ce1(run_inference_U0_in_buf_ce1),
+    .in_buf_d1(run_inference_U0_in_buf_d1),
+    .in_buf_q1(256'd0),
+    .in_buf_we1(run_inference_U0_in_buf_we1),
+    .out_buf_0_address0(run_inference_U0_out_buf_0_address0),
+    .out_buf_0_ce0(run_inference_U0_out_buf_0_ce0),
+    .out_buf_0_d0(run_inference_U0_out_buf_0_d0),
+    .out_buf_0_q0(16'd0),
+    .out_buf_0_we0(run_inference_U0_out_buf_0_we0),
+    .out_buf_0_address1(run_inference_U0_out_buf_0_address1),
+    .out_buf_0_ce1(run_inference_U0_out_buf_0_ce1),
+    .out_buf_0_d1(run_inference_U0_out_buf_0_d1),
+    .out_buf_0_q1(16'd0),
+    .out_buf_0_we1(run_inference_U0_out_buf_0_we1),
+    .out_buf_1_address0(run_inference_U0_out_buf_1_address0),
+    .out_buf_1_ce0(run_inference_U0_out_buf_1_ce0),
+    .out_buf_1_d0(run_inference_U0_out_buf_1_d0),
+    .out_buf_1_q0(16'd0),
+    .out_buf_1_we0(run_inference_U0_out_buf_1_we0),
+    .out_buf_1_address1(run_inference_U0_out_buf_1_address1),
+    .out_buf_1_ce1(run_inference_U0_out_buf_1_ce1),
+    .out_buf_1_d1(run_inference_U0_out_buf_1_d1),
+    .out_buf_1_q1(16'd0),
+    .out_buf_1_we1(run_inference_U0_out_buf_1_we1),
+    .out_buf_2_address0(run_inference_U0_out_buf_2_address0),
+    .out_buf_2_ce0(run_inference_U0_out_buf_2_ce0),
+    .out_buf_2_d0(run_inference_U0_out_buf_2_d0),
+    .out_buf_2_q0(16'd0),
+    .out_buf_2_we0(run_inference_U0_out_buf_2_we0),
+    .out_buf_2_address1(run_inference_U0_out_buf_2_address1),
+    .out_buf_2_ce1(run_inference_U0_out_buf_2_ce1),
+    .out_buf_2_d1(run_inference_U0_out_buf_2_d1),
+    .out_buf_2_q1(16'd0),
+    .out_buf_2_we1(run_inference_U0_out_buf_2_we1),
+    .out_buf_3_address0(run_inference_U0_out_buf_3_address0),
+    .out_buf_3_ce0(run_inference_U0_out_buf_3_ce0),
+    .out_buf_3_d0(run_inference_U0_out_buf_3_d0),
+    .out_buf_3_q0(16'd0),
+    .out_buf_3_we0(run_inference_U0_out_buf_3_we0),
+    .out_buf_3_address1(run_inference_U0_out_buf_3_address1),
+    .out_buf_3_ce1(run_inference_U0_out_buf_3_ce1),
+    .out_buf_3_d1(run_inference_U0_out_buf_3_d1),
+    .out_buf_3_q1(16'd0),
+    .out_buf_3_we1(run_inference_U0_out_buf_3_we1),
+    .out_buf_4_address0(run_inference_U0_out_buf_4_address0),
+    .out_buf_4_ce0(run_inference_U0_out_buf_4_ce0),
+    .out_buf_4_d0(run_inference_U0_out_buf_4_d0),
+    .out_buf_4_q0(16'd0),
+    .out_buf_4_we0(run_inference_U0_out_buf_4_we0),
+    .out_buf_4_address1(run_inference_U0_out_buf_4_address1),
+    .out_buf_4_ce1(run_inference_U0_out_buf_4_ce1),
+    .out_buf_4_d1(run_inference_U0_out_buf_4_d1),
+    .out_buf_4_q1(16'd0),
+    .out_buf_4_we1(run_inference_U0_out_buf_4_we1),
     .ap_clk(ap_clk),
     .ap_rst(ap_rst_n_inv),
-    .in_buf_V_empty_n(1'b0),
-    .in_buf_V_read(VITIS_LOOP_59_3_proc_U0_in_buf_V_read),
-    .out_buf_V_full_n(out_buf_V_i_full_n),
-    .out_buf_V_write(VITIS_LOOP_59_3_proc_U0_out_buf_V_write),
-    .out_buf_V_1_full_n(out_buf_V_1_i_full_n),
-    .out_buf_V_1_write(VITIS_LOOP_59_3_proc_U0_out_buf_V_1_write),
-    .out_buf_V_2_full_n(out_buf_V_2_i_full_n),
-    .out_buf_V_2_write(VITIS_LOOP_59_3_proc_U0_out_buf_V_2_write),
-    .out_buf_V_3_full_n(out_buf_V_3_i_full_n),
-    .out_buf_V_3_write(VITIS_LOOP_59_3_proc_U0_out_buf_V_3_write),
-    .out_buf_V_4_full_n(out_buf_V_4_i_full_n),
-    .out_buf_V_4_write(VITIS_LOOP_59_3_proc_U0_out_buf_V_4_write),
-    .ap_start(VITIS_LOOP_59_3_proc_U0_ap_start),
-    .ap_done(VITIS_LOOP_59_3_proc_U0_ap_done),
-    .ap_ready(VITIS_LOOP_59_3_proc_U0_ap_ready),
-    .ap_idle(VITIS_LOOP_59_3_proc_U0_ap_idle),
-    .ap_continue(VITIS_LOOP_59_3_proc_U0_ap_continue)
+    .in_buf_empty_n(1'b0),
+    .in_buf_read(run_inference_U0_in_buf_read),
+    .out_buf_0_full_n(out_buf_V_i_full_n),
+    .out_buf_0_write(run_inference_U0_out_buf_0_write),
+    .out_buf_1_full_n(out_buf_V_1_i_full_n),
+    .out_buf_1_write(run_inference_U0_out_buf_1_write),
+    .out_buf_2_full_n(out_buf_V_2_i_full_n),
+    .out_buf_2_write(run_inference_U0_out_buf_2_write),
+    .out_buf_3_full_n(out_buf_V_3_i_full_n),
+    .out_buf_3_write(run_inference_U0_out_buf_3_write),
+    .out_buf_4_full_n(out_buf_V_4_i_full_n),
+    .out_buf_4_write(run_inference_U0_out_buf_4_write),
+    .ap_start(run_inference_U0_ap_start),
+    .ap_done(run_inference_U0_ap_done),
+    .ap_ready(run_inference_U0_ap_ready),
+    .ap_idle(run_inference_U0_ap_idle),
+    .ap_continue(run_inference_U0_ap_continue)
 );
 
-alveo_hls4ml_VITIS_LOOP_65_4_proc VITIS_LOOP_65_4_proc_U0(
+alveo_hls4ml_write_result write_result_U0(
     .ap_clk(ap_clk),
     .ap_rst(ap_rst_n_inv),
-    .ap_start(VITIS_LOOP_65_4_proc_U0_ap_start),
-    .ap_done(VITIS_LOOP_65_4_proc_U0_ap_done),
-    .ap_continue(VITIS_LOOP_65_4_proc_U0_ap_continue),
-    .ap_idle(VITIS_LOOP_65_4_proc_U0_ap_idle),
-    .ap_ready(VITIS_LOOP_65_4_proc_U0_ap_ready),
-    .out_r_dout(out_r_c_dout),
-    .out_r_num_data_valid(out_r_c_num_data_valid),
-    .out_r_fifo_cap(out_r_c_fifo_cap),
-    .out_r_empty_n(out_r_c_empty_n),
-    .out_r_read(VITIS_LOOP_65_4_proc_U0_out_r_read),
-    .m_axi_gmem1_AWVALID(VITIS_LOOP_65_4_proc_U0_m_axi_gmem1_AWVALID),
+    .ap_start(write_result_U0_ap_start),
+    .ap_done(write_result_U0_ap_done),
+    .ap_continue(write_result_U0_ap_continue),
+    .ap_idle(write_result_U0_ap_idle),
+    .ap_ready(write_result_U0_ap_ready),
+    .m_axi_gmem1_AWVALID(write_result_U0_m_axi_gmem1_AWVALID),
     .m_axi_gmem1_AWREADY(gmem1_AWREADY),
-    .m_axi_gmem1_AWADDR(VITIS_LOOP_65_4_proc_U0_m_axi_gmem1_AWADDR),
-    .m_axi_gmem1_AWID(VITIS_LOOP_65_4_proc_U0_m_axi_gmem1_AWID),
-    .m_axi_gmem1_AWLEN(VITIS_LOOP_65_4_proc_U0_m_axi_gmem1_AWLEN),
-    .m_axi_gmem1_AWSIZE(VITIS_LOOP_65_4_proc_U0_m_axi_gmem1_AWSIZE),
-    .m_axi_gmem1_AWBURST(VITIS_LOOP_65_4_proc_U0_m_axi_gmem1_AWBURST),
-    .m_axi_gmem1_AWLOCK(VITIS_LOOP_65_4_proc_U0_m_axi_gmem1_AWLOCK),
-    .m_axi_gmem1_AWCACHE(VITIS_LOOP_65_4_proc_U0_m_axi_gmem1_AWCACHE),
-    .m_axi_gmem1_AWPROT(VITIS_LOOP_65_4_proc_U0_m_axi_gmem1_AWPROT),
-    .m_axi_gmem1_AWQOS(VITIS_LOOP_65_4_proc_U0_m_axi_gmem1_AWQOS),
-    .m_axi_gmem1_AWREGION(VITIS_LOOP_65_4_proc_U0_m_axi_gmem1_AWREGION),
-    .m_axi_gmem1_AWUSER(VITIS_LOOP_65_4_proc_U0_m_axi_gmem1_AWUSER),
-    .m_axi_gmem1_WVALID(VITIS_LOOP_65_4_proc_U0_m_axi_gmem1_WVALID),
+    .m_axi_gmem1_AWADDR(write_result_U0_m_axi_gmem1_AWADDR),
+    .m_axi_gmem1_AWID(write_result_U0_m_axi_gmem1_AWID),
+    .m_axi_gmem1_AWLEN(write_result_U0_m_axi_gmem1_AWLEN),
+    .m_axi_gmem1_AWSIZE(write_result_U0_m_axi_gmem1_AWSIZE),
+    .m_axi_gmem1_AWBURST(write_result_U0_m_axi_gmem1_AWBURST),
+    .m_axi_gmem1_AWLOCK(write_result_U0_m_axi_gmem1_AWLOCK),
+    .m_axi_gmem1_AWCACHE(write_result_U0_m_axi_gmem1_AWCACHE),
+    .m_axi_gmem1_AWPROT(write_result_U0_m_axi_gmem1_AWPROT),
+    .m_axi_gmem1_AWQOS(write_result_U0_m_axi_gmem1_AWQOS),
+    .m_axi_gmem1_AWREGION(write_result_U0_m_axi_gmem1_AWREGION),
+    .m_axi_gmem1_AWUSER(write_result_U0_m_axi_gmem1_AWUSER),
+    .m_axi_gmem1_WVALID(write_result_U0_m_axi_gmem1_WVALID),
     .m_axi_gmem1_WREADY(gmem1_WREADY),
-    .m_axi_gmem1_WDATA(VITIS_LOOP_65_4_proc_U0_m_axi_gmem1_WDATA),
-    .m_axi_gmem1_WSTRB(VITIS_LOOP_65_4_proc_U0_m_axi_gmem1_WSTRB),
-    .m_axi_gmem1_WLAST(VITIS_LOOP_65_4_proc_U0_m_axi_gmem1_WLAST),
-    .m_axi_gmem1_WID(VITIS_LOOP_65_4_proc_U0_m_axi_gmem1_WID),
-    .m_axi_gmem1_WUSER(VITIS_LOOP_65_4_proc_U0_m_axi_gmem1_WUSER),
-    .m_axi_gmem1_ARVALID(VITIS_LOOP_65_4_proc_U0_m_axi_gmem1_ARVALID),
+    .m_axi_gmem1_WDATA(write_result_U0_m_axi_gmem1_WDATA),
+    .m_axi_gmem1_WSTRB(write_result_U0_m_axi_gmem1_WSTRB),
+    .m_axi_gmem1_WLAST(write_result_U0_m_axi_gmem1_WLAST),
+    .m_axi_gmem1_WID(write_result_U0_m_axi_gmem1_WID),
+    .m_axi_gmem1_WUSER(write_result_U0_m_axi_gmem1_WUSER),
+    .m_axi_gmem1_ARVALID(write_result_U0_m_axi_gmem1_ARVALID),
     .m_axi_gmem1_ARREADY(1'b0),
-    .m_axi_gmem1_ARADDR(VITIS_LOOP_65_4_proc_U0_m_axi_gmem1_ARADDR),
-    .m_axi_gmem1_ARID(VITIS_LOOP_65_4_proc_U0_m_axi_gmem1_ARID),
-    .m_axi_gmem1_ARLEN(VITIS_LOOP_65_4_proc_U0_m_axi_gmem1_ARLEN),
-    .m_axi_gmem1_ARSIZE(VITIS_LOOP_65_4_proc_U0_m_axi_gmem1_ARSIZE),
-    .m_axi_gmem1_ARBURST(VITIS_LOOP_65_4_proc_U0_m_axi_gmem1_ARBURST),
-    .m_axi_gmem1_ARLOCK(VITIS_LOOP_65_4_proc_U0_m_axi_gmem1_ARLOCK),
-    .m_axi_gmem1_ARCACHE(VITIS_LOOP_65_4_proc_U0_m_axi_gmem1_ARCACHE),
-    .m_axi_gmem1_ARPROT(VITIS_LOOP_65_4_proc_U0_m_axi_gmem1_ARPROT),
-    .m_axi_gmem1_ARQOS(VITIS_LOOP_65_4_proc_U0_m_axi_gmem1_ARQOS),
-    .m_axi_gmem1_ARREGION(VITIS_LOOP_65_4_proc_U0_m_axi_gmem1_ARREGION),
-    .m_axi_gmem1_ARUSER(VITIS_LOOP_65_4_proc_U0_m_axi_gmem1_ARUSER),
+    .m_axi_gmem1_ARADDR(write_result_U0_m_axi_gmem1_ARADDR),
+    .m_axi_gmem1_ARID(write_result_U0_m_axi_gmem1_ARID),
+    .m_axi_gmem1_ARLEN(write_result_U0_m_axi_gmem1_ARLEN),
+    .m_axi_gmem1_ARSIZE(write_result_U0_m_axi_gmem1_ARSIZE),
+    .m_axi_gmem1_ARBURST(write_result_U0_m_axi_gmem1_ARBURST),
+    .m_axi_gmem1_ARLOCK(write_result_U0_m_axi_gmem1_ARLOCK),
+    .m_axi_gmem1_ARCACHE(write_result_U0_m_axi_gmem1_ARCACHE),
+    .m_axi_gmem1_ARPROT(write_result_U0_m_axi_gmem1_ARPROT),
+    .m_axi_gmem1_ARQOS(write_result_U0_m_axi_gmem1_ARQOS),
+    .m_axi_gmem1_ARREGION(write_result_U0_m_axi_gmem1_ARREGION),
+    .m_axi_gmem1_ARUSER(write_result_U0_m_axi_gmem1_ARUSER),
     .m_axi_gmem1_RVALID(1'b0),
-    .m_axi_gmem1_RREADY(VITIS_LOOP_65_4_proc_U0_m_axi_gmem1_RREADY),
+    .m_axi_gmem1_RREADY(write_result_U0_m_axi_gmem1_RREADY),
     .m_axi_gmem1_RDATA(16'd0),
     .m_axi_gmem1_RLAST(1'b0),
     .m_axi_gmem1_RID(1'd0),
@@ -1100,25 +1095,30 @@ alveo_hls4ml_VITIS_LOOP_65_4_proc VITIS_LOOP_65_4_proc_U0(
     .m_axi_gmem1_RUSER(1'd0),
     .m_axi_gmem1_RRESP(2'd0),
     .m_axi_gmem1_BVALID(gmem1_BVALID),
-    .m_axi_gmem1_BREADY(VITIS_LOOP_65_4_proc_U0_m_axi_gmem1_BREADY),
+    .m_axi_gmem1_BREADY(write_result_U0_m_axi_gmem1_BREADY),
     .m_axi_gmem1_BRESP(gmem1_BRESP),
     .m_axi_gmem1_BID(gmem1_BID),
     .m_axi_gmem1_BUSER(gmem1_BUSER),
-    .out_buf_V_address0(VITIS_LOOP_65_4_proc_U0_out_buf_V_address0),
-    .out_buf_V_ce0(VITIS_LOOP_65_4_proc_U0_out_buf_V_ce0),
-    .out_buf_V_q0(out_buf_V_t_q0),
-    .out_buf_V_1_address0(VITIS_LOOP_65_4_proc_U0_out_buf_V_1_address0),
-    .out_buf_V_1_ce0(VITIS_LOOP_65_4_proc_U0_out_buf_V_1_ce0),
-    .out_buf_V_1_q0(out_buf_V_1_t_q0),
-    .out_buf_V_2_address0(VITIS_LOOP_65_4_proc_U0_out_buf_V_2_address0),
-    .out_buf_V_2_ce0(VITIS_LOOP_65_4_proc_U0_out_buf_V_2_ce0),
-    .out_buf_V_2_q0(out_buf_V_2_t_q0),
-    .out_buf_V_3_address0(VITIS_LOOP_65_4_proc_U0_out_buf_V_3_address0),
-    .out_buf_V_3_ce0(VITIS_LOOP_65_4_proc_U0_out_buf_V_3_ce0),
-    .out_buf_V_3_q0(out_buf_V_3_t_q0),
-    .out_buf_V_4_address0(VITIS_LOOP_65_4_proc_U0_out_buf_V_4_address0),
-    .out_buf_V_4_ce0(VITIS_LOOP_65_4_proc_U0_out_buf_V_4_ce0),
-    .out_buf_V_4_q0(out_buf_V_4_t_q0)
+    .out_r_dout(out_r_c_dout),
+    .out_r_num_data_valid(out_r_c_num_data_valid),
+    .out_r_fifo_cap(out_r_c_fifo_cap),
+    .out_r_empty_n(out_r_c_empty_n),
+    .out_r_read(write_result_U0_out_r_read),
+    .out_buf_0_address0(write_result_U0_out_buf_0_address0),
+    .out_buf_0_ce0(write_result_U0_out_buf_0_ce0),
+    .out_buf_0_q0(out_buf_V_t_q0),
+    .out_buf_1_address0(write_result_U0_out_buf_1_address0),
+    .out_buf_1_ce0(write_result_U0_out_buf_1_ce0),
+    .out_buf_1_q0(out_buf_V_1_t_q0),
+    .out_buf_2_address0(write_result_U0_out_buf_2_address0),
+    .out_buf_2_ce0(write_result_U0_out_buf_2_ce0),
+    .out_buf_2_q0(out_buf_V_2_t_q0),
+    .out_buf_3_address0(write_result_U0_out_buf_3_address0),
+    .out_buf_3_ce0(write_result_U0_out_buf_3_ce0),
+    .out_buf_3_q0(out_buf_V_3_t_q0),
+    .out_buf_4_address0(write_result_U0_out_buf_4_address0),
+    .out_buf_4_ce0(write_result_U0_out_buf_4_ce0),
+    .out_buf_4_q0(out_buf_V_4_t_q0)
 );
 
 alveo_hls4ml_fifo_w64_d4_S out_r_c_U(
@@ -1133,26 +1133,14 @@ alveo_hls4ml_fifo_w64_d4_S out_r_c_U(
     .if_num_data_valid(out_r_c_num_data_valid),
     .if_fifo_cap(out_r_c_fifo_cap),
     .if_empty_n(out_r_c_empty_n),
-    .if_read(VITIS_LOOP_65_4_proc_U0_out_r_read)
+    .if_read(write_result_U0_out_r_read)
 );
-
-always @ (posedge ap_clk) begin
-    if (ap_rst_n_inv == 1'b1) begin
-        ap_sync_reg_VITIS_LOOP_50_1_proc_U0_ap_ready <= 1'b0;
-    end else begin
-        if (((ap_sync_ready & ap_start) == 1'b1)) begin
-            ap_sync_reg_VITIS_LOOP_50_1_proc_U0_ap_ready <= 1'b0;
-        end else begin
-            ap_sync_reg_VITIS_LOOP_50_1_proc_U0_ap_ready <= ap_sync_VITIS_LOOP_50_1_proc_U0_ap_ready;
-        end
-    end
-end
 
 always @ (posedge ap_clk) begin
     if (ap_rst_n_inv == 1'b1) begin
         ap_sync_reg_channel_write_out_buf_V <= 1'b0;
     end else begin
-        if (((VITIS_LOOP_59_3_proc_U0_ap_done & VITIS_LOOP_59_3_proc_U0_ap_continue) == 1'b1)) begin
+        if (((run_inference_U0_ap_done & run_inference_U0_ap_continue) == 1'b1)) begin
             ap_sync_reg_channel_write_out_buf_V <= 1'b0;
         end else begin
             ap_sync_reg_channel_write_out_buf_V <= ap_sync_channel_write_out_buf_V;
@@ -1164,7 +1152,7 @@ always @ (posedge ap_clk) begin
     if (ap_rst_n_inv == 1'b1) begin
         ap_sync_reg_channel_write_out_buf_V_1 <= 1'b0;
     end else begin
-        if (((VITIS_LOOP_59_3_proc_U0_ap_done & VITIS_LOOP_59_3_proc_U0_ap_continue) == 1'b1)) begin
+        if (((run_inference_U0_ap_done & run_inference_U0_ap_continue) == 1'b1)) begin
             ap_sync_reg_channel_write_out_buf_V_1 <= 1'b0;
         end else begin
             ap_sync_reg_channel_write_out_buf_V_1 <= ap_sync_channel_write_out_buf_V_1;
@@ -1176,7 +1164,7 @@ always @ (posedge ap_clk) begin
     if (ap_rst_n_inv == 1'b1) begin
         ap_sync_reg_channel_write_out_buf_V_2 <= 1'b0;
     end else begin
-        if (((VITIS_LOOP_59_3_proc_U0_ap_done & VITIS_LOOP_59_3_proc_U0_ap_continue) == 1'b1)) begin
+        if (((run_inference_U0_ap_done & run_inference_U0_ap_continue) == 1'b1)) begin
             ap_sync_reg_channel_write_out_buf_V_2 <= 1'b0;
         end else begin
             ap_sync_reg_channel_write_out_buf_V_2 <= ap_sync_channel_write_out_buf_V_2;
@@ -1188,7 +1176,7 @@ always @ (posedge ap_clk) begin
     if (ap_rst_n_inv == 1'b1) begin
         ap_sync_reg_channel_write_out_buf_V_3 <= 1'b0;
     end else begin
-        if (((VITIS_LOOP_59_3_proc_U0_ap_done & VITIS_LOOP_59_3_proc_U0_ap_continue) == 1'b1)) begin
+        if (((run_inference_U0_ap_done & run_inference_U0_ap_continue) == 1'b1)) begin
             ap_sync_reg_channel_write_out_buf_V_3 <= 1'b0;
         end else begin
             ap_sync_reg_channel_write_out_buf_V_3 <= ap_sync_channel_write_out_buf_V_3;
@@ -1200,7 +1188,7 @@ always @ (posedge ap_clk) begin
     if (ap_rst_n_inv == 1'b1) begin
         ap_sync_reg_channel_write_out_buf_V_4 <= 1'b0;
     end else begin
-        if (((VITIS_LOOP_59_3_proc_U0_ap_done & VITIS_LOOP_59_3_proc_U0_ap_continue) == 1'b1)) begin
+        if (((run_inference_U0_ap_done & run_inference_U0_ap_continue) == 1'b1)) begin
             ap_sync_reg_channel_write_out_buf_V_4 <= 1'b0;
         end else begin
             ap_sync_reg_channel_write_out_buf_V_4 <= ap_sync_channel_write_out_buf_V_4;
@@ -1221,6 +1209,18 @@ always @ (posedge ap_clk) begin
 end
 
 always @ (posedge ap_clk) begin
+    if (ap_rst_n_inv == 1'b1) begin
+        ap_sync_reg_read_input_U0_ap_ready <= 1'b0;
+    end else begin
+        if (((ap_sync_ready & ap_start) == 1'b1)) begin
+            ap_sync_reg_read_input_U0_ap_ready <= 1'b0;
+        end else begin
+            ap_sync_reg_read_input_U0_ap_ready <= ap_sync_read_input_U0_ap_ready;
+        end
+    end
+end
+
+always @ (posedge ap_clk) begin
     ap_rst_n_inv <= ap_rst_reg_1;
 end
 
@@ -1232,59 +1232,37 @@ always @ (posedge ap_clk) begin
     ap_rst_reg_2 <= ~ap_rst_n;
 end
 
-assign VITIS_LOOP_50_1_proc_U0_ap_continue = in_buf_V_i_full_n;
+assign ap_channel_done_out_buf_V = (run_inference_U0_ap_done & (ap_sync_reg_channel_write_out_buf_V ^ 1'b1));
 
-assign VITIS_LOOP_50_1_proc_U0_ap_start = ((ap_sync_reg_VITIS_LOOP_50_1_proc_U0_ap_ready ^ 1'b1) & ap_start);
+assign ap_channel_done_out_buf_V_1 = (run_inference_U0_ap_done & (ap_sync_reg_channel_write_out_buf_V_1 ^ 1'b1));
 
-assign VITIS_LOOP_59_3_proc_U0_ap_continue = (ap_sync_channel_write_out_buf_V_4 & ap_sync_channel_write_out_buf_V_3 & ap_sync_channel_write_out_buf_V_2 & ap_sync_channel_write_out_buf_V_1 & ap_sync_channel_write_out_buf_V);
+assign ap_channel_done_out_buf_V_2 = (run_inference_U0_ap_done & (ap_sync_reg_channel_write_out_buf_V_2 ^ 1'b1));
 
-assign VITIS_LOOP_59_3_proc_U0_ap_start = in_buf_V_t_empty_n;
+assign ap_channel_done_out_buf_V_3 = (run_inference_U0_ap_done & (ap_sync_reg_channel_write_out_buf_V_3 ^ 1'b1));
 
-assign VITIS_LOOP_59_3_proc_U0_out_buf_V_1_full_n = out_buf_V_1_i_full_n;
+assign ap_channel_done_out_buf_V_4 = (run_inference_U0_ap_done & (ap_sync_reg_channel_write_out_buf_V_4 ^ 1'b1));
 
-assign VITIS_LOOP_59_3_proc_U0_out_buf_V_2_full_n = out_buf_V_2_i_full_n;
+assign ap_done = write_result_U0_ap_done;
 
-assign VITIS_LOOP_59_3_proc_U0_out_buf_V_3_full_n = out_buf_V_3_i_full_n;
-
-assign VITIS_LOOP_59_3_proc_U0_out_buf_V_4_full_n = out_buf_V_4_i_full_n;
-
-assign VITIS_LOOP_59_3_proc_U0_out_buf_V_full_n = out_buf_V_i_full_n;
-
-assign VITIS_LOOP_65_4_proc_U0_ap_continue = ap_continue;
-
-assign VITIS_LOOP_65_4_proc_U0_ap_start = (out_buf_V_t_empty_n & out_buf_V_4_t_empty_n & out_buf_V_3_t_empty_n & out_buf_V_2_t_empty_n & out_buf_V_1_t_empty_n);
-
-assign ap_channel_done_out_buf_V = ((ap_sync_reg_channel_write_out_buf_V ^ 1'b1) & VITIS_LOOP_59_3_proc_U0_ap_done);
-
-assign ap_channel_done_out_buf_V_1 = ((ap_sync_reg_channel_write_out_buf_V_1 ^ 1'b1) & VITIS_LOOP_59_3_proc_U0_ap_done);
-
-assign ap_channel_done_out_buf_V_2 = ((ap_sync_reg_channel_write_out_buf_V_2 ^ 1'b1) & VITIS_LOOP_59_3_proc_U0_ap_done);
-
-assign ap_channel_done_out_buf_V_3 = ((ap_sync_reg_channel_write_out_buf_V_3 ^ 1'b1) & VITIS_LOOP_59_3_proc_U0_ap_done);
-
-assign ap_channel_done_out_buf_V_4 = ((ap_sync_reg_channel_write_out_buf_V_4 ^ 1'b1) & VITIS_LOOP_59_3_proc_U0_ap_done);
-
-assign ap_done = VITIS_LOOP_65_4_proc_U0_ap_done;
-
-assign ap_idle = ((out_buf_V_4_t_empty_n ^ 1'b1) & (out_buf_V_3_t_empty_n ^ 1'b1) & (out_buf_V_2_t_empty_n ^ 1'b1) & (out_buf_V_1_t_empty_n ^ 1'b1) & (out_buf_V_t_empty_n ^ 1'b1) & (in_buf_V_t_empty_n ^ 1'b1) & entry_proc_U0_ap_idle & VITIS_LOOP_65_4_proc_U0_ap_idle & VITIS_LOOP_59_3_proc_U0_ap_idle & VITIS_LOOP_50_1_proc_U0_ap_idle);
+assign ap_idle = (write_result_U0_ap_idle & run_inference_U0_ap_idle & read_input_U0_ap_idle & (out_buf_V_4_t_empty_n ^ 1'b1) & (out_buf_V_3_t_empty_n ^ 1'b1) & (out_buf_V_2_t_empty_n ^ 1'b1) & (out_buf_V_1_t_empty_n ^ 1'b1) & (out_buf_V_t_empty_n ^ 1'b1) & (in_buf_V_t_empty_n ^ 1'b1) & entry_proc_U0_ap_idle);
 
 assign ap_ready = ap_sync_ready;
 
-assign ap_sync_VITIS_LOOP_50_1_proc_U0_ap_ready = (ap_sync_reg_VITIS_LOOP_50_1_proc_U0_ap_ready | VITIS_LOOP_50_1_proc_U0_ap_ready);
+assign ap_sync_channel_write_out_buf_V = ((run_inference_U0_out_buf_0_full_n & ap_channel_done_out_buf_V) | ap_sync_reg_channel_write_out_buf_V);
 
-assign ap_sync_channel_write_out_buf_V = ((ap_channel_done_out_buf_V & VITIS_LOOP_59_3_proc_U0_out_buf_V_full_n) | ap_sync_reg_channel_write_out_buf_V);
+assign ap_sync_channel_write_out_buf_V_1 = ((run_inference_U0_out_buf_1_full_n & ap_channel_done_out_buf_V_1) | ap_sync_reg_channel_write_out_buf_V_1);
 
-assign ap_sync_channel_write_out_buf_V_1 = ((ap_channel_done_out_buf_V_1 & VITIS_LOOP_59_3_proc_U0_out_buf_V_1_full_n) | ap_sync_reg_channel_write_out_buf_V_1);
+assign ap_sync_channel_write_out_buf_V_2 = ((run_inference_U0_out_buf_2_full_n & ap_channel_done_out_buf_V_2) | ap_sync_reg_channel_write_out_buf_V_2);
 
-assign ap_sync_channel_write_out_buf_V_2 = ((ap_channel_done_out_buf_V_2 & VITIS_LOOP_59_3_proc_U0_out_buf_V_2_full_n) | ap_sync_reg_channel_write_out_buf_V_2);
+assign ap_sync_channel_write_out_buf_V_3 = ((run_inference_U0_out_buf_3_full_n & ap_channel_done_out_buf_V_3) | ap_sync_reg_channel_write_out_buf_V_3);
 
-assign ap_sync_channel_write_out_buf_V_3 = ((ap_channel_done_out_buf_V_3 & VITIS_LOOP_59_3_proc_U0_out_buf_V_3_full_n) | ap_sync_reg_channel_write_out_buf_V_3);
-
-assign ap_sync_channel_write_out_buf_V_4 = ((ap_channel_done_out_buf_V_4 & VITIS_LOOP_59_3_proc_U0_out_buf_V_4_full_n) | ap_sync_reg_channel_write_out_buf_V_4);
+assign ap_sync_channel_write_out_buf_V_4 = ((run_inference_U0_out_buf_4_full_n & ap_channel_done_out_buf_V_4) | ap_sync_reg_channel_write_out_buf_V_4);
 
 assign ap_sync_entry_proc_U0_ap_ready = (entry_proc_U0_ap_ready | ap_sync_reg_entry_proc_U0_ap_ready);
 
-assign ap_sync_ready = (ap_sync_entry_proc_U0_ap_ready & ap_sync_VITIS_LOOP_50_1_proc_U0_ap_ready);
+assign ap_sync_read_input_U0_ap_ready = (read_input_U0_ap_ready | ap_sync_reg_read_input_U0_ap_ready);
+
+assign ap_sync_ready = (ap_sync_read_input_U0_ap_ready & ap_sync_entry_proc_U0_ap_ready);
 
 assign entry_proc_U0_ap_continue = 1'b1;
 
@@ -1303,5 +1281,27 @@ assign gmem1_BID = 1'd0;
 assign gmem1_BRESP = 2'd0;
 
 assign gmem1_BUSER = 1'd0;
+
+assign read_input_U0_ap_continue = in_buf_V_i_full_n;
+
+assign read_input_U0_ap_start = ((ap_sync_reg_read_input_U0_ap_ready ^ 1'b1) & ap_start);
+
+assign run_inference_U0_ap_continue = (ap_sync_channel_write_out_buf_V_4 & ap_sync_channel_write_out_buf_V_3 & ap_sync_channel_write_out_buf_V_2 & ap_sync_channel_write_out_buf_V_1 & ap_sync_channel_write_out_buf_V);
+
+assign run_inference_U0_ap_start = in_buf_V_t_empty_n;
+
+assign run_inference_U0_out_buf_0_full_n = out_buf_V_i_full_n;
+
+assign run_inference_U0_out_buf_1_full_n = out_buf_V_1_i_full_n;
+
+assign run_inference_U0_out_buf_2_full_n = out_buf_V_2_i_full_n;
+
+assign run_inference_U0_out_buf_3_full_n = out_buf_V_3_i_full_n;
+
+assign run_inference_U0_out_buf_4_full_n = out_buf_V_4_i_full_n;
+
+assign write_result_U0_ap_continue = ap_continue;
+
+assign write_result_U0_ap_start = (out_buf_V_t_empty_n & out_buf_V_4_t_empty_n & out_buf_V_3_t_empty_n & out_buf_V_2_t_empty_n & out_buf_V_1_t_empty_n);
 
 endmodule //alveo_hls4ml

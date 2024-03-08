@@ -237,17 +237,18 @@ class AESL_RUNTIME_BC {
     string mName;
 };
 using hls::sim::Byte;
-extern "C" void alveo_hls4ml(Byte<2>*, Byte<2>*, int, int);
+struct __cosim_s64__ { char data[64]; };
+extern "C" void alveo_hls4ml(Byte<64>*, Byte<2>*, int, int);
 extern "C" void apatb_alveo_hls4ml_hw(volatile void * __xlx_apatb_param_in_r, volatile void * __xlx_apatb_param_out_r) {
 using hls::sim::createStream;
   // Collect __xlx_in_r__tmp_vec
-std::vector<Byte<2>> __xlx_in_r__tmp_vec;
+std::vector<Byte<64>> __xlx_in_r__tmp_vec;
 for (size_t i = 0; i < 1; ++i){
-__xlx_in_r__tmp_vec.push_back(((Byte<2>*)__xlx_apatb_param_in_r)[i]);
+__xlx_in_r__tmp_vec.push_back(((Byte<64>*)__xlx_apatb_param_in_r)[i]);
 }
   int __xlx_size_param_in_r = 1;
   int __xlx_offset_param_in_r = 0;
-  int __xlx_offset_byte_param_in_r = 0*2;
+  int __xlx_offset_byte_param_in_r = 0*64;
   // Collect __xlx_out_r__tmp_vec
 std::vector<Byte<2>> __xlx_out_r__tmp_vec;
 for (size_t i = 0; i < 1; ++i){
@@ -260,7 +261,7 @@ __xlx_out_r__tmp_vec.push_back(((Byte<2>*)__xlx_apatb_param_out_r)[i]);
   alveo_hls4ml(__xlx_in_r__tmp_vec.data(), __xlx_out_r__tmp_vec.data(), __xlx_offset_byte_param_in_r, __xlx_offset_byte_param_out_r);
 // print __xlx_apatb_param_in_r
 for (size_t i = 0; i < __xlx_size_param_in_r; ++i) {
-((Byte<2>*)__xlx_apatb_param_in_r)[i] = __xlx_in_r__tmp_vec[__xlx_offset_param_in_r+i];
+((Byte<64>*)__xlx_apatb_param_in_r)[i] = __xlx_in_r__tmp_vec[__xlx_offset_param_in_r+i];
 }
 // print __xlx_apatb_param_out_r
 for (size_t i = 0; i < __xlx_size_param_out_r; ++i) {

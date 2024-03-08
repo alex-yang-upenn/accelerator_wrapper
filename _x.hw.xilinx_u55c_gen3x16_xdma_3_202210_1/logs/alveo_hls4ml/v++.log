@@ -1,8 +1,8 @@
 INFO: [v++ 60-1306] Additional information associated with this v++ compile can be found at:
 	Reports: /home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/reports/alveo_hls4ml
 	Log files: /home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/logs/alveo_hls4ml
-INFO: [v++ 60-1548] Creating build summary session with primary output /home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml.xo.compile_summary, at Tue Feb  6 21:27:05 2024
-INFO: [v++ 60-1315] Creating rulecheck session with output '/home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/reports/alveo_hls4ml/v++_compile_alveo_hls4ml_guidance.html', at Tue Feb  6 21:27:06 2024
+INFO: [v++ 60-1548] Creating build summary session with primary output /home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml.xo.compile_summary, at Fri Mar  8 06:56:47 2024
+INFO: [v++ 60-1315] Creating rulecheck session with output '/home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/reports/alveo_hls4ml/v++_compile_alveo_hls4ml_guidance.html', at Fri Mar  8 06:56:48 2024
 INFO: [v++ 60-895]   Target platform: /opt/xilinx/platforms/xilinx_u55c_gen3x16_xdma_3_202210_1/xilinx_u55c_gen3x16_xdma_3_202210_1.xpfm
 INFO: [v++ 60-1578]   This platform contains Xilinx Shell Archive '/opt/xilinx/platforms/xilinx_u55c_gen3x16_xdma_3_202210_1/hw/hw.xsa'
 INFO: [v++ 74-78] Compiler Version string: 2022.2
@@ -11,8 +11,8 @@ INFO: [v++ 60-423]   Target device: xilinx_u55c_gen3x16_xdma_3_202210_1
 INFO: [v++ 60-242] Creating kernel: 'alveo_hls4ml'
 
 ===>The following messages were generated while  performing high-level synthesis for kernel: alveo_hls4ml Log file: /home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/vitis_hls.log :
-INFO: [v++ 204-61] Pipelining loop 'VITIS_LOOP_50_1'.
-INFO: [v++ 200-1470] Pipelining result : Target II = NA, Final II = 16, Depth = 18, loop 'VITIS_LOOP_50_1'
+INFO: [v++ 204-61] Pipelining loop 'VITIS_LOOP_8_1'.
+INFO: [v++ 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 3, loop 'VITIS_LOOP_8_1'
 INFO: [v++ 204-61] Pipelining function 'dense_latency<ap_fixed<16, 6, 5, 3, 0>, ap_fixed<16, 6, 5, 3, 0>, config2>'.
 INFO: [v++ 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 2, function 'dense_latency<ap_fixed<16, 6, 5, 3, 0>, ap_fixed<16, 6, 5, 3, 0>, config2>'
 INFO: [v++ 204-61] Pipelining function 'relu<ap_fixed<16, 6, 5, 3, 0>, ap_ufixed<6, 0, 4, 0, 0>, relu_config4>'.
@@ -31,8 +31,8 @@ INFO: [v++ 204-61] Pipelining function 'softmax_stable<ap_fixed,ap_fixed<16,6,5,
 INFO: [v++ 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 9, function 'softmax_stable<ap_fixed,ap_fixed<16,6,5,3,0>,softmax_config13>'
 INFO: [v++ 204-61] Pipelining function 'myproject'.
 INFO: [v++ 200-1470] Pipelining result : Target II = NA, Final II = 3, Depth = 31, function 'myproject'
-INFO: [v++ 204-61] Pipelining loop 'VITIS_LOOP_65_4'.
-INFO: [v++ 200-1470] Pipelining result : Target II = NA, Final II = 5, Depth = 7, loop 'VITIS_LOOP_65_4'
+INFO: [v++ 204-61] Pipelining loop 'VITIS_LOOP_23_1'.
+INFO: [v++ 200-1470] Pipelining result : Target II = NA, Final II = 5, Depth = 7, loop 'VITIS_LOOP_23_1'
 INFO: [v++ 200-790] **** Loop Constraint Status: All loop constraints were satisfied.
 INFO: [v++ 200-789] **** Estimated Fmax: 411.00 MHz
 INFO: [v++ 60-594] Finished kernel compilation
@@ -41,4 +41,4 @@ INFO: [v++ 60-1092] Generated system estimate report: /home/ayvol/accelerator_wr
 INFO: [v++ 60-586] Created _x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml.xo
 INFO: [v++ 60-2343] Use the vitis_analyzer tool to visualize and navigate the relevant reports. Run the following command. 
     vitis_analyzer /home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml.xo.compile_summary 
-INFO: [v++ 60-791] Total elapsed time: 0h 25m 9s
+INFO: [v++ 60-791] Total elapsed time: 0h 26m 9s

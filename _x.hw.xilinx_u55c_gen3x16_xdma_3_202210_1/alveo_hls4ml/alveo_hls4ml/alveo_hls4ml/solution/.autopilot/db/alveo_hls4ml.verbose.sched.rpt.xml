@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'alveo_hls4ml'" level="0">
-<item name = "Date">Tue Feb  6 21:40:55 2024
+<item name = "Date">Fri Mar  8 07:12:33 2024
 </item>
 <item name = "Version">2022.2 (Build 3670227 on Oct 13 2022)</item>
 <item name = "Project">alveo_hls4ml</item>
@@ -24,7 +24,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="8">, min, max, min, max, min, max, Type</keys>
-<column name="">196787, 196787, 0.656 ms, 0.656 ms, 131147, 131147, dataflow</column>
+<column name="">73907, 73907, 0.246 ms, 0.246 ms, 41035, 41035, dataflow</column>
 </table>
 </item>
 <item name = "Detail">

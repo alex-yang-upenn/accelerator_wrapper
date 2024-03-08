@@ -985,8 +985,8 @@ void apatb_alveo_hls4ml_hw(void* __xlx_apatb_param_in_r, void* __xlx_apatb_param
   port1.param = &__xlx_offset_byte_param_out_r;
 
   static hls::sim::Memory<hls::sim::Reader, hls::sim::Writer> port2 {
-    .width = 16,
-    .asize = 2,
+    .width = 512,
+    .asize = 64,
     .hbm = false,
     .name = { "gmem0" },
 #ifdef POST_CHECK

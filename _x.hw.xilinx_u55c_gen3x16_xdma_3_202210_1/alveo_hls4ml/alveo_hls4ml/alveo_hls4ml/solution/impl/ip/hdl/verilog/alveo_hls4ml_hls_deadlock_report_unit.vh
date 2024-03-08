@@ -185,7 +185,7 @@
     endfunction
 
     // get the proc path based on dl vector
-    function [432:0] proc_path(input [PROC_NUM - 1:0] dl_vec);
+    function [376:0] proc_path(input [PROC_NUM - 1:0] dl_vec);
         integer index;
         begin
             index = proc_index(dl_vec);
@@ -194,13 +194,13 @@
                     proc_path = "alveo_hls4ml_alveo_hls4ml.entry_proc_U0";
                 end
                 1 : begin
-                    proc_path = "alveo_hls4ml_alveo_hls4ml.VITIS_LOOP_50_1_proc_U0";
+                    proc_path = "alveo_hls4ml_alveo_hls4ml.read_input_U0";
                 end
                 2 : begin
-                    proc_path = "alveo_hls4ml_alveo_hls4ml.VITIS_LOOP_59_3_proc_U0";
+                    proc_path = "alveo_hls4ml_alveo_hls4ml.run_inference_U0";
                 end
                 3 : begin
-                    proc_path = "alveo_hls4ml_alveo_hls4ml.VITIS_LOOP_65_4_proc_U0";
+                    proc_path = "alveo_hls4ml_alveo_hls4ml.write_result_U0";
                 end
                 default : begin
                     proc_path = "unknown";
@@ -220,7 +220,7 @@
     endtask
 
     // print the start of a cycle
-    task print_cycle_start(input reg [432:0] proc_path, input integer cycle_id);
+    task print_cycle_start(input reg [376:0] proc_path, input integer cycle_id);
         begin
             $display("/////////////////////////");
             $display("// Dependence cycle %0d:", cycle_id);
@@ -245,7 +245,7 @@
     endtask
 
     // print one proc component in the cycle
-    task print_cycle_proc_comp(input reg [432:0] proc_path, input integer cycle_comp_id);
+    task print_cycle_proc_comp(input reg [376:0] proc_path, input integer cycle_comp_id);
         begin
             $display("// (%0d): Process: %0s", cycle_comp_id, proc_path);
             $fdisplay(fp, "Dependence_Process_ID %0d", cycle_comp_id);
@@ -267,20 +267,20 @@
                     3: begin
                         if (~entry_proc_U0.out_r_c_blk_n) begin
                             if (~out_r_c_U.if_empty_n) begin
-                                $display("//      Blocked by empty input FIFO 'alveo_hls4ml_alveo_hls4ml.out_r_c_U' written by process 'alveo_hls4ml_alveo_hls4ml.VITIS_LOOP_65_4_proc_U0'");
+                                $display("//      Blocked by empty input FIFO 'alveo_hls4ml_alveo_hls4ml.out_r_c_U' written by process 'alveo_hls4ml_alveo_hls4ml.write_result_U0'");
                                 $fdisplay(fp, "Dependence_Channel_path alveo_hls4ml_alveo_hls4ml.out_r_c_U");
                                 $fdisplay(fp, "Dependence_Channel_status EMPTY");
                             end
                             else if (~out_r_c_U.if_full_n) begin
-                                $display("//      Blocked by full output FIFO 'alveo_hls4ml_alveo_hls4ml.out_r_c_U' read by process 'alveo_hls4ml_alveo_hls4ml.VITIS_LOOP_65_4_proc_U0'");
+                                $display("//      Blocked by full output FIFO 'alveo_hls4ml_alveo_hls4ml.out_r_c_U' read by process 'alveo_hls4ml_alveo_hls4ml.write_result_U0'");
                                 $fdisplay(fp, "Dependence_Channel_path alveo_hls4ml_alveo_hls4ml.out_r_c_U");
                                 $fdisplay(fp, "Dependence_Channel_status FULL");
                             end
                         end
                     end
                     1: begin
-                        if (ap_sync_entry_proc_U0_ap_ready & entry_proc_U0.ap_idle & ~ap_sync_VITIS_LOOP_50_1_proc_U0_ap_ready) begin
-                            $display("//      Blocked by input sync logic with process : 'alveo_hls4ml_alveo_hls4ml.VITIS_LOOP_50_1_proc_U0'");
+                        if (ap_sync_entry_proc_U0_ap_ready & entry_proc_U0.ap_idle & ~ap_sync_read_input_U0_ap_ready) begin
+                            $display("//      Blocked by input sync logic with process : 'alveo_hls4ml_alveo_hls4ml.read_input_U0'");
                         end
                     end
                     endcase
@@ -288,21 +288,21 @@
                 1 : begin
                     case(index2)
                     2: begin
-                        if (~in_buf_V_U.i_full_n & VITIS_LOOP_50_1_proc_U0.ap_done & ap_done_reg_0 & ~in_buf_V_U.t_read) begin
+                        if (~in_buf_V_U.i_full_n & read_input_U0.ap_done & ap_done_reg_0 & ~in_buf_V_U.t_read) begin
                             if (~in_buf_V_U.t_empty_n) begin
-                                $display("//      Blocked by empty input PIPO 'alveo_hls4ml_alveo_hls4ml.in_buf_V_U' written by process 'alveo_hls4ml_alveo_hls4ml.VITIS_LOOP_59_3_proc_U0'");
+                                $display("//      Blocked by empty input PIPO 'alveo_hls4ml_alveo_hls4ml.in_buf_V_U' written by process 'alveo_hls4ml_alveo_hls4ml.run_inference_U0'");
                                 $fdisplay(fp, "Dependence_Channel_path alveo_hls4ml_alveo_hls4ml.in_buf_V_U");
                                 $fdisplay(fp, "Dependence_Channel_status EMPTY");
                             end
                             else if (~in_buf_V_U.i_full_n) begin
-                                $display("//      Blocked by full output PIPO 'alveo_hls4ml_alveo_hls4ml.in_buf_V_U' read by process 'alveo_hls4ml_alveo_hls4ml.VITIS_LOOP_59_3_proc_U0'");
+                                $display("//      Blocked by full output PIPO 'alveo_hls4ml_alveo_hls4ml.in_buf_V_U' read by process 'alveo_hls4ml_alveo_hls4ml.run_inference_U0'");
                                 $fdisplay(fp, "Dependence_Channel_path alveo_hls4ml_alveo_hls4ml.in_buf_V_U");
                                 $fdisplay(fp, "Dependence_Channel_status FULL");
                             end
                         end
                     end
                     0: begin
-                        if (ap_sync_VITIS_LOOP_50_1_proc_U0_ap_ready & VITIS_LOOP_50_1_proc_U0.ap_idle & ~ap_sync_entry_proc_U0_ap_ready) begin
+                        if (ap_sync_read_input_U0_ap_ready & read_input_U0.ap_idle & ~ap_sync_entry_proc_U0_ap_ready) begin
                             $display("//      Blocked by input sync logic with process : 'alveo_hls4ml_alveo_hls4ml.entry_proc_U0'");
                         end
                     end
@@ -311,76 +311,76 @@
                 2 : begin
                     case(index2)
                     1: begin
-                        if (~in_buf_V_U.t_empty_n & VITIS_LOOP_59_3_proc_U0.ap_idle & ~in_buf_V_U.i_write) begin
+                        if (~in_buf_V_U.t_empty_n & run_inference_U0.ap_idle & ~in_buf_V_U.i_write) begin
                             if (~in_buf_V_U.t_empty_n) begin
-                                $display("//      Blocked by empty input PIPO 'alveo_hls4ml_alveo_hls4ml.in_buf_V_U' written by process 'alveo_hls4ml_alveo_hls4ml.VITIS_LOOP_50_1_proc_U0'");
+                                $display("//      Blocked by empty input PIPO 'alveo_hls4ml_alveo_hls4ml.in_buf_V_U' written by process 'alveo_hls4ml_alveo_hls4ml.read_input_U0'");
                                 $fdisplay(fp, "Dependence_Channel_path alveo_hls4ml_alveo_hls4ml.in_buf_V_U");
                                 $fdisplay(fp, "Dependence_Channel_status EMPTY");
                             end
                             else if (~in_buf_V_U.i_full_n) begin
-                                $display("//      Blocked by full output PIPO 'alveo_hls4ml_alveo_hls4ml.in_buf_V_U' read by process 'alveo_hls4ml_alveo_hls4ml.VITIS_LOOP_50_1_proc_U0'");
+                                $display("//      Blocked by full output PIPO 'alveo_hls4ml_alveo_hls4ml.in_buf_V_U' read by process 'alveo_hls4ml_alveo_hls4ml.read_input_U0'");
                                 $fdisplay(fp, "Dependence_Channel_path alveo_hls4ml_alveo_hls4ml.in_buf_V_U");
                                 $fdisplay(fp, "Dependence_Channel_status FULL");
                             end
                         end
                     end
                     3: begin
-                        if (~out_buf_V_U.i_full_n & VITIS_LOOP_59_3_proc_U0.ap_done & ap_done_reg_1 & ~out_buf_V_U.t_read) begin
+                        if (~out_buf_V_U.i_full_n & run_inference_U0.ap_done & ap_done_reg_1 & ~out_buf_V_U.t_read) begin
                             if (~out_buf_V_U.t_empty_n) begin
-                                $display("//      Blocked by empty input PIPO 'alveo_hls4ml_alveo_hls4ml.out_buf_V_U' written by process 'alveo_hls4ml_alveo_hls4ml.VITIS_LOOP_65_4_proc_U0'");
+                                $display("//      Blocked by empty input PIPO 'alveo_hls4ml_alveo_hls4ml.out_buf_V_U' written by process 'alveo_hls4ml_alveo_hls4ml.write_result_U0'");
                                 $fdisplay(fp, "Dependence_Channel_path alveo_hls4ml_alveo_hls4ml.out_buf_V_U");
                                 $fdisplay(fp, "Dependence_Channel_status EMPTY");
                             end
                             else if (~out_buf_V_U.i_full_n) begin
-                                $display("//      Blocked by full output PIPO 'alveo_hls4ml_alveo_hls4ml.out_buf_V_U' read by process 'alveo_hls4ml_alveo_hls4ml.VITIS_LOOP_65_4_proc_U0'");
+                                $display("//      Blocked by full output PIPO 'alveo_hls4ml_alveo_hls4ml.out_buf_V_U' read by process 'alveo_hls4ml_alveo_hls4ml.write_result_U0'");
                                 $fdisplay(fp, "Dependence_Channel_path alveo_hls4ml_alveo_hls4ml.out_buf_V_U");
                                 $fdisplay(fp, "Dependence_Channel_status FULL");
                             end
                         end
-                        if (~out_buf_V_1_U.i_full_n & VITIS_LOOP_59_3_proc_U0.ap_done & ap_done_reg_1 & ~out_buf_V_1_U.t_read) begin
+                        if (~out_buf_V_1_U.i_full_n & run_inference_U0.ap_done & ap_done_reg_1 & ~out_buf_V_1_U.t_read) begin
                             if (~out_buf_V_1_U.t_empty_n) begin
-                                $display("//      Blocked by empty input PIPO 'alveo_hls4ml_alveo_hls4ml.out_buf_V_1_U' written by process 'alveo_hls4ml_alveo_hls4ml.VITIS_LOOP_65_4_proc_U0'");
+                                $display("//      Blocked by empty input PIPO 'alveo_hls4ml_alveo_hls4ml.out_buf_V_1_U' written by process 'alveo_hls4ml_alveo_hls4ml.write_result_U0'");
                                 $fdisplay(fp, "Dependence_Channel_path alveo_hls4ml_alveo_hls4ml.out_buf_V_1_U");
                                 $fdisplay(fp, "Dependence_Channel_status EMPTY");
                             end
                             else if (~out_buf_V_1_U.i_full_n) begin
-                                $display("//      Blocked by full output PIPO 'alveo_hls4ml_alveo_hls4ml.out_buf_V_1_U' read by process 'alveo_hls4ml_alveo_hls4ml.VITIS_LOOP_65_4_proc_U0'");
+                                $display("//      Blocked by full output PIPO 'alveo_hls4ml_alveo_hls4ml.out_buf_V_1_U' read by process 'alveo_hls4ml_alveo_hls4ml.write_result_U0'");
                                 $fdisplay(fp, "Dependence_Channel_path alveo_hls4ml_alveo_hls4ml.out_buf_V_1_U");
                                 $fdisplay(fp, "Dependence_Channel_status FULL");
                             end
                         end
-                        if (~out_buf_V_2_U.i_full_n & VITIS_LOOP_59_3_proc_U0.ap_done & ap_done_reg_1 & ~out_buf_V_2_U.t_read) begin
+                        if (~out_buf_V_2_U.i_full_n & run_inference_U0.ap_done & ap_done_reg_1 & ~out_buf_V_2_U.t_read) begin
                             if (~out_buf_V_2_U.t_empty_n) begin
-                                $display("//      Blocked by empty input PIPO 'alveo_hls4ml_alveo_hls4ml.out_buf_V_2_U' written by process 'alveo_hls4ml_alveo_hls4ml.VITIS_LOOP_65_4_proc_U0'");
+                                $display("//      Blocked by empty input PIPO 'alveo_hls4ml_alveo_hls4ml.out_buf_V_2_U' written by process 'alveo_hls4ml_alveo_hls4ml.write_result_U0'");
                                 $fdisplay(fp, "Dependence_Channel_path alveo_hls4ml_alveo_hls4ml.out_buf_V_2_U");
                                 $fdisplay(fp, "Dependence_Channel_status EMPTY");
                             end
                             else if (~out_buf_V_2_U.i_full_n) begin
-                                $display("//      Blocked by full output PIPO 'alveo_hls4ml_alveo_hls4ml.out_buf_V_2_U' read by process 'alveo_hls4ml_alveo_hls4ml.VITIS_LOOP_65_4_proc_U0'");
+                                $display("//      Blocked by full output PIPO 'alveo_hls4ml_alveo_hls4ml.out_buf_V_2_U' read by process 'alveo_hls4ml_alveo_hls4ml.write_result_U0'");
                                 $fdisplay(fp, "Dependence_Channel_path alveo_hls4ml_alveo_hls4ml.out_buf_V_2_U");
                                 $fdisplay(fp, "Dependence_Channel_status FULL");
                             end
                         end
-                        if (~out_buf_V_3_U.i_full_n & VITIS_LOOP_59_3_proc_U0.ap_done & ap_done_reg_1 & ~out_buf_V_3_U.t_read) begin
+                        if (~out_buf_V_3_U.i_full_n & run_inference_U0.ap_done & ap_done_reg_1 & ~out_buf_V_3_U.t_read) begin
                             if (~out_buf_V_3_U.t_empty_n) begin
-                                $display("//      Blocked by empty input PIPO 'alveo_hls4ml_alveo_hls4ml.out_buf_V_3_U' written by process 'alveo_hls4ml_alveo_hls4ml.VITIS_LOOP_65_4_proc_U0'");
+                                $display("//      Blocked by empty input PIPO 'alveo_hls4ml_alveo_hls4ml.out_buf_V_3_U' written by process 'alveo_hls4ml_alveo_hls4ml.write_result_U0'");
                                 $fdisplay(fp, "Dependence_Channel_path alveo_hls4ml_alveo_hls4ml.out_buf_V_3_U");
                                 $fdisplay(fp, "Dependence_Channel_status EMPTY");
                             end
                             else if (~out_buf_V_3_U.i_full_n) begin
-                                $display("//      Blocked by full output PIPO 'alveo_hls4ml_alveo_hls4ml.out_buf_V_3_U' read by process 'alveo_hls4ml_alveo_hls4ml.VITIS_LOOP_65_4_proc_U0'");
+                                $display("//      Blocked by full output PIPO 'alveo_hls4ml_alveo_hls4ml.out_buf_V_3_U' read by process 'alveo_hls4ml_alveo_hls4ml.write_result_U0'");
                                 $fdisplay(fp, "Dependence_Channel_path alveo_hls4ml_alveo_hls4ml.out_buf_V_3_U");
                                 $fdisplay(fp, "Dependence_Channel_status FULL");
                             end
                         end
-                        if (~out_buf_V_4_U.i_full_n & VITIS_LOOP_59_3_proc_U0.ap_done & ap_done_reg_1 & ~out_buf_V_4_U.t_read) begin
+                        if (~out_buf_V_4_U.i_full_n & run_inference_U0.ap_done & ap_done_reg_1 & ~out_buf_V_4_U.t_read) begin
                             if (~out_buf_V_4_U.t_empty_n) begin
-                                $display("//      Blocked by empty input PIPO 'alveo_hls4ml_alveo_hls4ml.out_buf_V_4_U' written by process 'alveo_hls4ml_alveo_hls4ml.VITIS_LOOP_65_4_proc_U0'");
+                                $display("//      Blocked by empty input PIPO 'alveo_hls4ml_alveo_hls4ml.out_buf_V_4_U' written by process 'alveo_hls4ml_alveo_hls4ml.write_result_U0'");
                                 $fdisplay(fp, "Dependence_Channel_path alveo_hls4ml_alveo_hls4ml.out_buf_V_4_U");
                                 $fdisplay(fp, "Dependence_Channel_status EMPTY");
                             end
                             else if (~out_buf_V_4_U.i_full_n) begin
-                                $display("//      Blocked by full output PIPO 'alveo_hls4ml_alveo_hls4ml.out_buf_V_4_U' read by process 'alveo_hls4ml_alveo_hls4ml.VITIS_LOOP_65_4_proc_U0'");
+                                $display("//      Blocked by full output PIPO 'alveo_hls4ml_alveo_hls4ml.out_buf_V_4_U' read by process 'alveo_hls4ml_alveo_hls4ml.write_result_U0'");
                                 $fdisplay(fp, "Dependence_Channel_path alveo_hls4ml_alveo_hls4ml.out_buf_V_4_U");
                                 $fdisplay(fp, "Dependence_Channel_status FULL");
                             end
@@ -391,7 +391,7 @@
                 3 : begin
                     case(index2)
                     0: begin
-                        if (~VITIS_LOOP_65_4_proc_U0.out_r_blk_n) begin
+                        if (~write_result_U0.out_r_blk_n) begin
                             if (~out_r_c_U.if_empty_n) begin
                                 $display("//      Blocked by empty input FIFO 'alveo_hls4ml_alveo_hls4ml.out_r_c_U' written by process 'alveo_hls4ml_alveo_hls4ml.entry_proc_U0'");
                                 $fdisplay(fp, "Dependence_Channel_path alveo_hls4ml_alveo_hls4ml.out_r_c_U");
@@ -405,62 +405,62 @@
                         end
                     end
                     2: begin
-                        if (~out_buf_V_U.t_empty_n & VITIS_LOOP_65_4_proc_U0.ap_idle & ~out_buf_V_U.i_write) begin
+                        if (~out_buf_V_U.t_empty_n & write_result_U0.ap_idle & ~out_buf_V_U.i_write) begin
                             if (~out_buf_V_U.t_empty_n) begin
-                                $display("//      Blocked by empty input PIPO 'alveo_hls4ml_alveo_hls4ml.out_buf_V_U' written by process 'alveo_hls4ml_alveo_hls4ml.VITIS_LOOP_59_3_proc_U0'");
+                                $display("//      Blocked by empty input PIPO 'alveo_hls4ml_alveo_hls4ml.out_buf_V_U' written by process 'alveo_hls4ml_alveo_hls4ml.run_inference_U0'");
                                 $fdisplay(fp, "Dependence_Channel_path alveo_hls4ml_alveo_hls4ml.out_buf_V_U");
                                 $fdisplay(fp, "Dependence_Channel_status EMPTY");
                             end
                             else if (~out_buf_V_U.i_full_n) begin
-                                $display("//      Blocked by full output PIPO 'alveo_hls4ml_alveo_hls4ml.out_buf_V_U' read by process 'alveo_hls4ml_alveo_hls4ml.VITIS_LOOP_59_3_proc_U0'");
+                                $display("//      Blocked by full output PIPO 'alveo_hls4ml_alveo_hls4ml.out_buf_V_U' read by process 'alveo_hls4ml_alveo_hls4ml.run_inference_U0'");
                                 $fdisplay(fp, "Dependence_Channel_path alveo_hls4ml_alveo_hls4ml.out_buf_V_U");
                                 $fdisplay(fp, "Dependence_Channel_status FULL");
                             end
                         end
-                        if (~out_buf_V_1_U.t_empty_n & VITIS_LOOP_65_4_proc_U0.ap_idle & ~out_buf_V_1_U.i_write) begin
+                        if (~out_buf_V_1_U.t_empty_n & write_result_U0.ap_idle & ~out_buf_V_1_U.i_write) begin
                             if (~out_buf_V_1_U.t_empty_n) begin
-                                $display("//      Blocked by empty input PIPO 'alveo_hls4ml_alveo_hls4ml.out_buf_V_1_U' written by process 'alveo_hls4ml_alveo_hls4ml.VITIS_LOOP_59_3_proc_U0'");
+                                $display("//      Blocked by empty input PIPO 'alveo_hls4ml_alveo_hls4ml.out_buf_V_1_U' written by process 'alveo_hls4ml_alveo_hls4ml.run_inference_U0'");
                                 $fdisplay(fp, "Dependence_Channel_path alveo_hls4ml_alveo_hls4ml.out_buf_V_1_U");
                                 $fdisplay(fp, "Dependence_Channel_status EMPTY");
                             end
                             else if (~out_buf_V_1_U.i_full_n) begin
-                                $display("//      Blocked by full output PIPO 'alveo_hls4ml_alveo_hls4ml.out_buf_V_1_U' read by process 'alveo_hls4ml_alveo_hls4ml.VITIS_LOOP_59_3_proc_U0'");
+                                $display("//      Blocked by full output PIPO 'alveo_hls4ml_alveo_hls4ml.out_buf_V_1_U' read by process 'alveo_hls4ml_alveo_hls4ml.run_inference_U0'");
                                 $fdisplay(fp, "Dependence_Channel_path alveo_hls4ml_alveo_hls4ml.out_buf_V_1_U");
                                 $fdisplay(fp, "Dependence_Channel_status FULL");
                             end
                         end
-                        if (~out_buf_V_2_U.t_empty_n & VITIS_LOOP_65_4_proc_U0.ap_idle & ~out_buf_V_2_U.i_write) begin
+                        if (~out_buf_V_2_U.t_empty_n & write_result_U0.ap_idle & ~out_buf_V_2_U.i_write) begin
                             if (~out_buf_V_2_U.t_empty_n) begin
-                                $display("//      Blocked by empty input PIPO 'alveo_hls4ml_alveo_hls4ml.out_buf_V_2_U' written by process 'alveo_hls4ml_alveo_hls4ml.VITIS_LOOP_59_3_proc_U0'");
+                                $display("//      Blocked by empty input PIPO 'alveo_hls4ml_alveo_hls4ml.out_buf_V_2_U' written by process 'alveo_hls4ml_alveo_hls4ml.run_inference_U0'");
                                 $fdisplay(fp, "Dependence_Channel_path alveo_hls4ml_alveo_hls4ml.out_buf_V_2_U");
                                 $fdisplay(fp, "Dependence_Channel_status EMPTY");
                             end
                             else if (~out_buf_V_2_U.i_full_n) begin
-                                $display("//      Blocked by full output PIPO 'alveo_hls4ml_alveo_hls4ml.out_buf_V_2_U' read by process 'alveo_hls4ml_alveo_hls4ml.VITIS_LOOP_59_3_proc_U0'");
+                                $display("//      Blocked by full output PIPO 'alveo_hls4ml_alveo_hls4ml.out_buf_V_2_U' read by process 'alveo_hls4ml_alveo_hls4ml.run_inference_U0'");
                                 $fdisplay(fp, "Dependence_Channel_path alveo_hls4ml_alveo_hls4ml.out_buf_V_2_U");
                                 $fdisplay(fp, "Dependence_Channel_status FULL");
                             end
                         end
-                        if (~out_buf_V_3_U.t_empty_n & VITIS_LOOP_65_4_proc_U0.ap_idle & ~out_buf_V_3_U.i_write) begin
+                        if (~out_buf_V_3_U.t_empty_n & write_result_U0.ap_idle & ~out_buf_V_3_U.i_write) begin
                             if (~out_buf_V_3_U.t_empty_n) begin
-                                $display("//      Blocked by empty input PIPO 'alveo_hls4ml_alveo_hls4ml.out_buf_V_3_U' written by process 'alveo_hls4ml_alveo_hls4ml.VITIS_LOOP_59_3_proc_U0'");
+                                $display("//      Blocked by empty input PIPO 'alveo_hls4ml_alveo_hls4ml.out_buf_V_3_U' written by process 'alveo_hls4ml_alveo_hls4ml.run_inference_U0'");
                                 $fdisplay(fp, "Dependence_Channel_path alveo_hls4ml_alveo_hls4ml.out_buf_V_3_U");
                                 $fdisplay(fp, "Dependence_Channel_status EMPTY");
                             end
                             else if (~out_buf_V_3_U.i_full_n) begin
-                                $display("//      Blocked by full output PIPO 'alveo_hls4ml_alveo_hls4ml.out_buf_V_3_U' read by process 'alveo_hls4ml_alveo_hls4ml.VITIS_LOOP_59_3_proc_U0'");
+                                $display("//      Blocked by full output PIPO 'alveo_hls4ml_alveo_hls4ml.out_buf_V_3_U' read by process 'alveo_hls4ml_alveo_hls4ml.run_inference_U0'");
                                 $fdisplay(fp, "Dependence_Channel_path alveo_hls4ml_alveo_hls4ml.out_buf_V_3_U");
                                 $fdisplay(fp, "Dependence_Channel_status FULL");
                             end
                         end
-                        if (~out_buf_V_4_U.t_empty_n & VITIS_LOOP_65_4_proc_U0.ap_idle & ~out_buf_V_4_U.i_write) begin
+                        if (~out_buf_V_4_U.t_empty_n & write_result_U0.ap_idle & ~out_buf_V_4_U.i_write) begin
                             if (~out_buf_V_4_U.t_empty_n) begin
-                                $display("//      Blocked by empty input PIPO 'alveo_hls4ml_alveo_hls4ml.out_buf_V_4_U' written by process 'alveo_hls4ml_alveo_hls4ml.VITIS_LOOP_59_3_proc_U0'");
+                                $display("//      Blocked by empty input PIPO 'alveo_hls4ml_alveo_hls4ml.out_buf_V_4_U' written by process 'alveo_hls4ml_alveo_hls4ml.run_inference_U0'");
                                 $fdisplay(fp, "Dependence_Channel_path alveo_hls4ml_alveo_hls4ml.out_buf_V_4_U");
                                 $fdisplay(fp, "Dependence_Channel_status EMPTY");
                             end
                             else if (~out_buf_V_4_U.i_full_n) begin
-                                $display("//      Blocked by full output PIPO 'alveo_hls4ml_alveo_hls4ml.out_buf_V_4_U' read by process 'alveo_hls4ml_alveo_hls4ml.VITIS_LOOP_59_3_proc_U0'");
+                                $display("//      Blocked by full output PIPO 'alveo_hls4ml_alveo_hls4ml.out_buf_V_4_U' read by process 'alveo_hls4ml_alveo_hls4ml.run_inference_U0'");
                                 $fdisplay(fp, "Dependence_Channel_path alveo_hls4ml_alveo_hls4ml.out_buf_V_4_U");
                                 $fdisplay(fp, "Dependence_Channel_status FULL");
                             end

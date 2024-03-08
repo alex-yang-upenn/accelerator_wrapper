@@ -542,8 +542,7 @@
     <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/ayvol/accelerator_wrapper/src/myproject.cpp:74:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="myproject" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=layer11_out complete dim=0" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_DATAFLOW" msg_id="214-114" msg_severity="WARNING" msg_loc="/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:60:9" msg_body="Since the only kind of statements allowed in a canonical dataflow region are variable declarations and function calls, the compiler may not be able to correctly handle the region"/>
-    <msg msg_groups="PRAGMA_DATAFLOW" msg_id="214-114" msg_severity="WARNING" msg_loc="/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:42:9" msg_body="Since the only kind of statements allowed in a canonical dataflow region are variable declarations and function calls, the compiler may not be able to correctly handle the region"/>
+    <msg msg_groups="PRAGMA_DATAFLOW" msg_id="214-114" msg_severity="WARNING" msg_loc="/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:18:9" msg_body="Since the only kind of statements allowed in a canonical dataflow region are variable declarations and function calls, the compiler may not be able to correctly handle the region"/>
     <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/tools/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot/ap_int_ref.h:678:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="and_reduce" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
@@ -556,32 +555,32 @@
     <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_types.h:28:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="operator=" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:9:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="read_input" ARG_PragmaIsValid="1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:11:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="read_input" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:18:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="run_inference" ARG_PragmaIsValid="1" ARG_PragmaType="dataflow" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:24:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="write_result" ARG_PragmaIsValid="1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:26:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="write_result" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
     <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml.tcl:26:9" msg_body="HLS pragma dump">
         <args ARG_PragmaContext="directive" ARG_PragmaFunction="alveo_hls4ml" ARG_PragmaIsValid="1" ARG_PragmaOptions="name=alveo_hls4ml" ARG_PragmaType="top" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:42:9" msg_body="HLS pragma dump">
-        <args ARG_PragmaFunction="alveo_hls4ml" ARG_PragmaIsValid="1" ARG_PragmaType="dataflow" ClangWarningOption="dump-hls-pragmas"/>
-    </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:46:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:106:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="alveo_hls4ml" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=in_buf complete dim=2" ARG_PragmaType="array_reshape" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:47:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:107:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="alveo_hls4ml" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=out_buf complete dim=2" ARG_PragmaType="array_reshape" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:51:9" msg_body="HLS pragma dump">
-        <args ARG_PragmaFunction="alveo_hls4ml" ARG_PragmaIsValid="1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
-    </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:53:9" msg_body="HLS pragma dump">
-        <args ARG_PragmaFunction="alveo_hls4ml" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
-    </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:60:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:109:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="alveo_hls4ml" ARG_PragmaIsValid="1" ARG_PragmaType="dataflow" ClangWarningOption="dump-hls-pragmas"/>
-    </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:66:9" msg_body="HLS pragma dump">
-        <args ARG_PragmaFunction="alveo_hls4ml" ARG_PragmaIsValid="1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
-    </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:68:9" msg_body="HLS pragma dump">
-        <args ARG_PragmaFunction="alveo_hls4ml" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
     <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-131" msg_severity="INFO" msg_loc="/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_latency.h:42:27" msg_body="Inlining function 'nnet::product::mult&lt;ap_fixed&lt;16, 6, (ap_q_mode)5, (ap_o_mode)3, 0&gt;, ap_fixed&lt;6, 1, (ap_q_mode)5, (ap_o_mode)3, 0&gt; &gt;::product(ap_fixed&lt;16, 6, (ap_q_mode)5, (ap_o_mode)3, 0&gt;, ap_fixed&lt;6, 1, (ap_q_mode)5, (ap_o_mode)3, 0&gt;)' into 'void nnet::dense_latency&lt;ap_fixed&lt;16, 6, (ap_q_mode)5, (ap_o_mode)3, 0&gt;, ap_fixed&lt;16, 6, (ap_q_mode)5, (ap_o_mode)3, 0&gt;, config2&gt;(ap_fixed&lt;16, 6, (ap_q_mode)5, (ap_o_mode)3, 0&gt;*, ap_fixed&lt;16, 6, (ap_q_mode)5, (ap_o_mode)3, 0&gt;*, config2::weight_t*, config2::bias_t*)'">
         <args Callee="nnet::product::mult&lt;ap_fixed&lt;16, 6, (ap_q_mode)5, (ap_o_mode)3, 0&gt;, ap_fixed&lt;6, 1, (ap_q_mode)5, (ap_o_mode)3, 0&gt; &gt;::product(ap_fixed&lt;16, 6, (ap_q_mode)5, (ap_o_mode)3, 0&gt;, ap_fixed&lt;6, 1, (ap_q_mode)5, (ap_o_mode)3, 0&gt;)" Caller="void nnet::dense_latency&lt;ap_fixed&lt;16, 6, (ap_q_mode)5, (ap_o_mode)3, 0&gt;, ap_fixed&lt;16, 6, (ap_q_mode)5, (ap_o_mode)3, 0&gt;, config2&gt;(ap_fixed&lt;16, 6, (ap_q_mode)5, (ap_o_mode)3, 0&gt;*, ap_fixed&lt;16, 6, (ap_q_mode)5, (ap_o_mode)3, 0&gt;*, config2::weight_t*, config2::bias_t*)"/>
@@ -610,11 +609,8 @@
     <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-131" msg_severity="INFO" msg_loc="/home/ayvol/accelerator_wrapper/src/myproject.cpp:77:5" msg_body="Inlining function 'void nnet::softmax&lt;ap_fixed&lt;16, 6, (ap_q_mode)5, (ap_o_mode)3, 0&gt;, ap_fixed&lt;16, 6, (ap_q_mode)5, (ap_o_mode)3, 0&gt;, softmax_config13&gt;(ap_fixed&lt;16, 6, (ap_q_mode)5, (ap_o_mode)3, 0&gt;*, ap_fixed&lt;16, 6, (ap_q_mode)5, (ap_o_mode)3, 0&gt;*)' into 'myproject(ap_fixed&lt;16, 6, (ap_q_mode)5, (ap_o_mode)3, 0&gt;*, ap_fixed&lt;16, 6, (ap_q_mode)5, (ap_o_mode)3, 0&gt;*)'">
         <args Callee="void nnet::softmax&lt;ap_fixed&lt;16, 6, (ap_q_mode)5, (ap_o_mode)3, 0&gt;, ap_fixed&lt;16, 6, (ap_q_mode)5, (ap_o_mode)3, 0&gt;, softmax_config13&gt;(ap_fixed&lt;16, 6, (ap_q_mode)5, (ap_o_mode)3, 0&gt;*, ap_fixed&lt;16, 6, (ap_q_mode)5, (ap_o_mode)3, 0&gt;*)" Caller="myproject(ap_fixed&lt;16, 6, (ap_q_mode)5, (ap_o_mode)3, 0&gt;*, ap_fixed&lt;16, 6, (ap_q_mode)5, (ap_o_mode)3, 0&gt;*)"/>
     </msg>
-    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:67:19" msg_body="Loop 'VITIS_LOOP_67_5' is marked as complete unroll implied by the pipeline pragma">
-        <args LoopName="VITIS_LOOP_67_5"/>
-    </msg>
-    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:52:19" msg_body="Loop 'VITIS_LOOP_52_2' is marked as complete unroll implied by the pipeline pragma">
-        <args LoopName="VITIS_LOOP_52_2"/>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:25:19" msg_body="Loop 'VITIS_LOOP_25_2' is marked as complete unroll implied by the pipeline pragma">
+        <args LoopName="VITIS_LOOP_25_2"/>
     </msg>
     <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="/home/ayvol/accelerator_wrapper/src/myproject.cpp:73:15" msg_body="Loop 'anonymous' is marked as complete unroll implied by the pipeline pragma">
         <args LoopName="anonymous"/>
@@ -685,11 +681,11 @@
     <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_activation.h:43:22" msg_body="Loop 'VITIS_LOOP_43_1' is marked as complete unroll implied by the pipeline pragma">
         <args LoopName="VITIS_LOOP_43_1"/>
     </msg>
-    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:40:0" msg_body="Unrolling loop 'VITIS_LOOP_67_5' (/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:67:19) in function 'alveo_hls4ml' completely with a factor of 5">
-        <args Factor="5" LoopLoc="/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:67:19" LoopName="VITIS_LOOP_67_5"/>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:10:19" msg_body="Loop 'VITIS_LOOP_10_2' is marked as complete unroll implied by the pipeline pragma">
+        <args LoopName="VITIS_LOOP_10_2"/>
     </msg>
-    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:40:0" msg_body="Unrolling loop 'VITIS_LOOP_52_2' (/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:52:19) in function 'alveo_hls4ml' completely with a factor of 16">
-        <args Factor="16" LoopLoc="/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:52:19" LoopName="VITIS_LOOP_52_2"/>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:22:0" msg_body="Unrolling loop 'VITIS_LOOP_25_2' (/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:25:19) in function 'write_result' completely with a factor of 5">
+        <args Factor="5" LoopLoc="/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:25:19" LoopName="VITIS_LOOP_25_2"/>
     </msg>
     <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="/home/ayvol/accelerator_wrapper/src/myproject.cpp:19:0" msg_body="Unrolling loop 'anonymous' (/home/ayvol/accelerator_wrapper/src/myproject.cpp:73:15) in function 'myproject' completely with a factor of 5">
         <args Factor="5" LoopLoc="/home/ayvol/accelerator_wrapper/src/myproject.cpp:73:15" LoopName="anonymous"/>
@@ -838,6 +834,9 @@
     <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_latency.h:15:0" msg_body="Unrolling loop 'anonymous' (/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_latency.h:17:32) in function 'nnet::dense_latency&lt;ap_fixed&lt;16, 6, (ap_q_mode)5, (ap_o_mode)3, 0&gt;, ap_fixed&lt;16, 6, (ap_q_mode)5, (ap_o_mode)3, 0&gt;, config2&gt;' completely with a factor of 1024">
         <args Factor="1024" LoopLoc="/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_latency.h:17:32" LoopName="anonymous"/>
     </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:7:0" msg_body="Unrolling loop 'VITIS_LOOP_10_2' (/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:10:19) in function 'read_input' completely with a factor of 16">
+        <args Factor="16" LoopLoc="/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:10:19" LoopName="VITIS_LOOP_10_2"/>
+    </msg>
     <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_latency.h:15:0" msg_body="Inlining function 'std::enable_if&lt;!(std::is_same&lt;ap_ufixed&lt;6, 0, (ap_q_mode)4, (ap_o_mode)0, 0&gt;, ap_uint&lt;1&gt; &gt;::value), ap_fixed&lt;16, 6, (ap_q_mode)5, (ap_o_mode)3, 0&gt; &gt;::type nnet::cast&lt;ap_ufixed&lt;6, 0, (ap_q_mode)4, (ap_o_mode)0, 0&gt;, ap_fixed&lt;16, 6, (ap_q_mode)5, (ap_o_mode)3, 0&gt;, config5&gt;(config5::accum_t)' into 'void nnet::dense_latency&lt;ap_ufixed&lt;6, 0, (ap_q_mode)4, (ap_o_mode)0, 0&gt;, ap_fixed&lt;16, 6, (ap_q_mode)5, (ap_o_mode)3, 0&gt;, config5&gt;(ap_ufixed&lt;6, 0, (ap_q_mode)4, (ap_o_mode)0, 0&gt;*, ap_fixed&lt;16, 6, (ap_q_mode)5, (ap_o_mode)3, 0&gt;*, config5::weight_t*, config5::bias_t*)'">
         <args Callee="std::enable_if&lt;!(std::is_same&lt;ap_ufixed&lt;6, 0, (ap_q_mode)4, (ap_o_mode)0, 0&gt;, ap_uint&lt;1&gt; &gt;::value), ap_fixed&lt;16, 6, (ap_q_mode)5, (ap_o_mode)3, 0&gt; &gt;::type nnet::cast&lt;ap_ufixed&lt;6, 0, (ap_q_mode)4, (ap_o_mode)0, 0&gt;, ap_fixed&lt;16, 6, (ap_q_mode)5, (ap_o_mode)3, 0&gt;, config5&gt;(config5::accum_t)" Caller="void nnet::dense_latency&lt;ap_ufixed&lt;6, 0, (ap_q_mode)4, (ap_o_mode)0, 0&gt;, ap_fixed&lt;16, 6, (ap_q_mode)5, (ap_o_mode)3, 0&gt;, config5&gt;(ap_ufixed&lt;6, 0, (ap_q_mode)4, (ap_o_mode)0, 0&gt;*, ap_fixed&lt;16, 6, (ap_q_mode)5, (ap_o_mode)3, 0&gt;*, config5::weight_t*, config5::bias_t*)"/>
     </msg>
@@ -895,7 +894,7 @@
     <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_activation.h:216:0" msg_body="Inlining function 'unsigned int nnet::softmax_idx_from_real_val&lt;ap_fixed&lt;18, 8, (ap_q_mode)5, (ap_o_mode)3, 0&gt;, softmax_config13&gt;(ap_fixed&lt;18, 8, (ap_q_mode)5, (ap_o_mode)3, 0&gt;)' into 'void nnet::softmax_stable&lt;ap_fixed&lt;16, 6, (ap_q_mode)5, (ap_o_mode)3, 0&gt;, ap_fixed&lt;16, 6, (ap_q_mode)5, (ap_o_mode)3, 0&gt;, softmax_config13&gt;(ap_fixed&lt;16, 6, (ap_q_mode)5, (ap_o_mode)3, 0&gt;*, ap_fixed&lt;16, 6, (ap_q_mode)5, (ap_o_mode)3, 0&gt;*)'">
         <args Callee="unsigned int nnet::softmax_idx_from_real_val&lt;ap_fixed&lt;18, 8, (ap_q_mode)5, (ap_o_mode)3, 0&gt;, softmax_config13&gt;(ap_fixed&lt;18, 8, (ap_q_mode)5, (ap_o_mode)3, 0&gt;)" Caller="void nnet::softmax_stable&lt;ap_fixed&lt;16, 6, (ap_q_mode)5, (ap_o_mode)3, 0&gt;, ap_fixed&lt;16, 6, (ap_q_mode)5, (ap_o_mode)3, 0&gt;, softmax_config13&gt;(ap_fixed&lt;16, 6, (ap_q_mode)5, (ap_o_mode)3, 0&gt;*, ap_fixed&lt;16, 6, (ap_q_mode)5, (ap_o_mode)3, 0&gt;*)"/>
     </msg>
-    <msg msg_groups="PRAGMA_MISC" msg_id="214-267" msg_severity="WARNING" msg_loc="/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:45:19" msg_body="Partition and reshape on the same dimension of 'out_buf' may not commute. Partition is applied first.">
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-267" msg_severity="WARNING" msg_loc="/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:105:21" msg_body="Partition and reshape on the same dimension of 'out_buf' may not commute. Partition is applied first.">
         <args ArrayName="out_buf"/>
     </msg>
     <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="/home/ayvol/accelerator_wrapper/src/weights/b11.h:12:0" msg_body="Applying array_partition to 'b11': Complete partitioning on dimension 1.">
@@ -934,28 +933,28 @@
     <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="/home/ayvol/accelerator_wrapper/src/myproject.cpp:73:15" msg_body="Applying array_partition to 'layer11_out': Complete partitioning on dimension 1.">
         <args Dim="1" Mode="Complete" UOName="layer11_out"/>
     </msg>
-    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:45:19" msg_body="Applying array_partition to 'out_buf': Complete partitioning on dimension 2.">
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:105:21" msg_body="Applying array_partition to 'out_buf': Complete partitioning on dimension 2.">
         <args Dim="2" Mode="Complete" UOName="out_buf"/>
     </msg>
-    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:44:10" msg_body="Applying array_reshape to 'in_buf': Complete reshaping on dimension 2.">
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:104:20" msg_body="Applying array_reshape to 'in_buf': Complete reshaping on dimension 2.">
         <args Dim="2" Mode="Complete" UOName="in_buf"/>
     </msg>
     <msg msg_groups="AUTOMATION" msg_id="214-364" msg_severity="INFO" msg_loc="/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_latency.h:66:21" msg_body="Automatically inlining function 'std::enable_if&lt;!(std::is_same&lt;ap_fixed&lt;16, 6, (ap_q_mode)5, (ap_o_mode)3, 0&gt;, ap_uint&lt;1&gt; &gt;::value), ap_fixed&lt;16, 6, (ap_q_mode)5, (ap_o_mode)3, 0&gt; &gt;::type nnet::cast&lt;ap_fixed&lt;16, 6, (ap_q_mode)5, (ap_o_mode)3, 0&gt;, ap_fixed&lt;16, 6, (ap_q_mode)5, (ap_o_mode)3, 0&gt;, config2&gt;(config2::accum_t)' to improve effectiveness of pipeline pragma in function 'void nnet::dense_latency&lt;ap_fixed&lt;16, 6, (ap_q_mode)5, (ap_o_mode)3, 0&gt;, ap_fixed&lt;16, 6, (ap_q_mode)5, (ap_o_mode)3, 0&gt;, config2&gt;(ap_fixed&lt;16, 6, (ap_q_mode)5, (ap_o_mode)3, 0&gt;*, ap_fixed&lt;16, 6, (ap_q_mode)5, (ap_o_mode)3, 0&gt;*, config2::weight_t*, config2::bias_t*)'">
         <args Callee="std::enable_if&lt;!(std::is_same&lt;ap_fixed&lt;16, 6, (ap_q_mode)5, (ap_o_mode)3, 0&gt;, ap_uint&lt;1&gt; &gt;::value), ap_fixed&lt;16, 6, (ap_q_mode)5, (ap_o_mode)3, 0&gt; &gt;::type nnet::cast&lt;ap_fixed&lt;16, 6, (ap_q_mode)5, (ap_o_mode)3, 0&gt;, ap_fixed&lt;16, 6, (ap_q_mode)5, (ap_o_mode)3, 0&gt;, config2&gt;(config2::accum_t)" Caller="void nnet::dense_latency&lt;ap_fixed&lt;16, 6, (ap_q_mode)5, (ap_o_mode)3, 0&gt;, ap_fixed&lt;16, 6, (ap_q_mode)5, (ap_o_mode)3, 0&gt;, config2&gt;(ap_fixed&lt;16, 6, (ap_q_mode)5, (ap_o_mode)3, 0&gt;*, ap_fixed&lt;16, 6, (ap_q_mode)5, (ap_o_mode)3, 0&gt;*, config2::weight_t*, config2::bias_t*)"/>
     </msg>
-    <msg msg_groups="PRAGMA_MISC" msg_id="214-253" msg_severity="WARNING" msg_loc="/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:61:10" msg_body="Ignored unsupported array_partition pragma on variable 'out_buf_4'. This can happen when applying a pragma on a function argument with mismatched array size w.r.t. its call site, or when providing a dim too deep on an array of insufficient dimension.">
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-253" msg_severity="WARNING" msg_loc="/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:111:7" msg_body="Ignored unsupported array_partition pragma on variable 'out_buf_4'. This can happen when applying a pragma on a function argument with mismatched array size w.r.t. its call site, or when providing a dim too deep on an array of insufficient dimension.">
         <args Name="out_buf_4" PragmaName="array_partition"/>
     </msg>
-    <msg msg_groups="PRAGMA_MISC" msg_id="214-253" msg_severity="WARNING" msg_loc="/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:61:10" msg_body="Ignored unsupported array_partition pragma on variable 'out_buf_3'. This can happen when applying a pragma on a function argument with mismatched array size w.r.t. its call site, or when providing a dim too deep on an array of insufficient dimension.">
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-253" msg_severity="WARNING" msg_loc="/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:111:7" msg_body="Ignored unsupported array_partition pragma on variable 'out_buf_3'. This can happen when applying a pragma on a function argument with mismatched array size w.r.t. its call site, or when providing a dim too deep on an array of insufficient dimension.">
         <args Name="out_buf_3" PragmaName="array_partition"/>
     </msg>
-    <msg msg_groups="PRAGMA_MISC" msg_id="214-253" msg_severity="WARNING" msg_loc="/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:61:10" msg_body="Ignored unsupported array_partition pragma on variable 'out_buf_2'. This can happen when applying a pragma on a function argument with mismatched array size w.r.t. its call site, or when providing a dim too deep on an array of insufficient dimension.">
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-253" msg_severity="WARNING" msg_loc="/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:111:7" msg_body="Ignored unsupported array_partition pragma on variable 'out_buf_2'. This can happen when applying a pragma on a function argument with mismatched array size w.r.t. its call site, or when providing a dim too deep on an array of insufficient dimension.">
         <args Name="out_buf_2" PragmaName="array_partition"/>
     </msg>
-    <msg msg_groups="PRAGMA_MISC" msg_id="214-253" msg_severity="WARNING" msg_loc="/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:61:10" msg_body="Ignored unsupported array_partition pragma on variable 'out_buf_1'. This can happen when applying a pragma on a function argument with mismatched array size w.r.t. its call site, or when providing a dim too deep on an array of insufficient dimension.">
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-253" msg_severity="WARNING" msg_loc="/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:111:7" msg_body="Ignored unsupported array_partition pragma on variable 'out_buf_1'. This can happen when applying a pragma on a function argument with mismatched array size w.r.t. its call site, or when providing a dim too deep on an array of insufficient dimension.">
         <args Name="out_buf_1" PragmaName="array_partition"/>
     </msg>
-    <msg msg_groups="PRAGMA_MISC" msg_id="214-253" msg_severity="WARNING" msg_loc="/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:61:10" msg_body="Ignored unsupported array_partition pragma on variable 'out_buf_0'. This can happen when applying a pragma on a function argument with mismatched array size w.r.t. its call site, or when providing a dim too deep on an array of insufficient dimension.">
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-253" msg_severity="WARNING" msg_loc="/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:111:7" msg_body="Ignored unsupported array_partition pragma on variable 'out_buf_0'. This can happen when applying a pragma on a function argument with mismatched array size w.r.t. its call site, or when providing a dim too deep on an array of insufficient dimension.">
         <args Name="out_buf_0" PragmaName="array_partition"/>
     </msg>
 </xilinx:hls_fe_msgs>
