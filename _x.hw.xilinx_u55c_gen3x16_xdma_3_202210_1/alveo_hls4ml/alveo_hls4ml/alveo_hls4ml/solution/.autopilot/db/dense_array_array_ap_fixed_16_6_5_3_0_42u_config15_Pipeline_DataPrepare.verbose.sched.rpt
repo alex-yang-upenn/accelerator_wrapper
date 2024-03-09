@@ -3,7 +3,7 @@
 ================================================================
 == Vitis HLS Report for 'dense_array_array_ap_fixed_16_6_5_3_0_42u_config15_Pipeline_DataPrepare'
 ================================================================
-* Date:           Thu Feb 15 07:28:55 2024
+* Date:           Fri Mar  8 19:03:00 2024
 
 * Version:        2022.2 (Build 3670227 on Oct 13 2022)
 * Project:        alveo_hls4ml
@@ -529,7 +529,7 @@ The critical path consists of the following:
  <State 2>: 1.21ns
 The critical path consists of the following:
 	fifo read operation ('layer13_out_read', /home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:35) on port 'layer13_out' (/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:35) [205]  (1.21 ns)
-	'store' operation ('store_ln39', /home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:39) of variable 'trunc_ln35_1', /home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:35 on local variable 'data_V_367' [285]  (0 ns)
+	'store' operation ('store_ln39', /home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:39) of variable 'trunc_ln35_1', /home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:35 on local variable 'data_V_390' [311]  (0 ns)
 
 
 ============================================================

@@ -1,72 +1,80 @@
-Thu Feb 15 06:52:09 2024: Running xcd server. This server was built by gradle.
-Thu Feb 15 06:52:09 2024: Server was asked to start on port: '44021'
-Thu Feb 15 06:52:09 2024: Server is using token UUID: 'ef897f74-f24b-4f86-849d-a905a1bfa2df'
-Thu Feb 15 06:52:09 2024: SESSION_MGR: creating session with session uuid: '6d04a3e9-ade5-4ab9-8d63-1f78fcd2ec76' and name 'default'
-Thu Feb 15 06:52:09 2024: Attempting to start server on port '44021'
-Thu Feb 15 06:52:09 2024: XCD main fifo: created main fifo '/tmp/xcdmainef897f74-f24b-4f86-849d-a905a1bfa2df', fd read = 12
-Thu Feb 15 06:52:09 2024: Running Dispatch Server
-Thu Feb 15 06:52:09 2024: Version 2.2.0
-Thu Feb 15 06:52:15 2024: Dispatch Server: Accepted socket connection from client
-Thu Feb 15 06:52:15 2024: Starting Socket connection
-Thu Feb 15 06:52:15 2024: EXCHANGE_TOKEN received, server token: ef897f74-f24b-4f86-849d-a905a1bfa2df, passed token: ef897f74-f24b-4f86-849d-a905a1bfa2df
-Thu Feb 15 06:52:18 2024: DISPATCH_HANDLER: Adding handler from function makeHandler in library libxv_system_diagram
-Thu Feb 15 06:52:18 2024: SESSION_MGR: creating session with session uuid: '68080a13-e4b1-423a-9981-26a013f81a87' and name 'v++_compile_alveo_hls4ml'
-Thu Feb 15 06:52:18 2024: KERNEL_SVC: creating session with uuid: '68080a13-e4b1-423a-9981-26a013f81a87' and name 'v++_compile_alveo_hls4ml'
-Thu Feb 15 06:52:18 2024: GUIDANCE_SMGR: creating guidance session with uuid: '68080a13-e4b1-423a-9981-26a013f81a87' and name 'v++_compile_alveo_hls4ml'
-Thu Feb 15 06:52:18 2024: SYSTEM_DIAGRAM: creating session with uuid: '68080a13-e4b1-423a-9981-26a013f81a87' and name 'v++_compile_alveo_hls4ml'
-Thu Feb 15 07:02:06 2024: Dispatch Server: Accepted socket connection from client
-Thu Feb 15 07:02:06 2024: Starting Socket connection
-Thu Feb 15 07:54:34 2024: SESSION_MGR: closing session for UUID '68080a13-e4b1-423a-9981-26a013f81a87' with name 'v++_compile_alveo_hls4ml'
-Thu Feb 15 07:54:34 2024: KERNEL_SVC: closing session for UUID '68080a13-e4b1-423a-9981-26a013f81a87' with name 'v++_compile_alveo_hls4ml'
-Thu Feb 15 07:54:34 2024: GUIDANCE_SMGR: closing session for UUID '68080a13-e4b1-423a-9981-26a013f81a87' with name 'v++_compile_alveo_hls4ml'
-Thu Feb 15 07:54:36 2024: SYSTEM_DIAGRAM: closing session for UUID '68080a13-e4b1-423a-9981-26a013f81a87' with name 'v++_compile_alveo_hls4ml'
-Thu Feb 15 07:54:36 2024: STOP_SERVER received, server token: ef897f74-f24b-4f86-849d-a905a1bfa2df, passed token: ef897f74-f24b-4f86-849d-a905a1bfa2df
-Thu Feb 15 07:54:36 2024: Socket received request to stop server.
-Thu Feb 15 07:54:36 2024: Dispatch Server: do_await_stop
-Thu Feb 15 07:54:36 2024: Dispatch Server: stopping mainFifo_
-Thu Feb 15 07:54:36 2024: XCD main fifo: Stopping
-Thu Feb 15 07:54:36 2024: XCD main fifo: do_read error code: Operation canceled
-Thu Feb 15 07:54:36 2024: XCD main fifo: bytes_transferred: 0
-Thu Feb 15 07:54:36 2024: SERVER: destructor for server bound to port 44021
-Thu Feb 15 07:54:36 2024: XCD main fifo: Good unlink of /tmp/xcdmainef897f74-f24b-4f86-849d-a905a1bfa2df
-Thu Feb 15 07:54:36 2024: Server exiting with status 0.
-Thu Feb 15 07:54:36 2024: Closing log file.
-Thu Feb 15 07:54:40 2024: Running xcd server. This server was built by gradle.
-Thu Feb 15 07:54:40 2024: Server was asked to start on port: '40673'
-Thu Feb 15 07:54:40 2024: Server is using token UUID: '68641ba7-9b39-4090-9022-0b95add72831'
-Thu Feb 15 07:54:40 2024: SESSION_MGR: creating session with session uuid: '6d04a3e9-ade5-4ab9-8d63-1f78fcd2ec76' and name 'default'
-Thu Feb 15 07:54:40 2024: Attempting to start server on port '40673'
-Thu Feb 15 07:54:40 2024: XCD main fifo: created main fifo '/tmp/xcdmain68641ba7-9b39-4090-9022-0b95add72831', fd read = 12
-Thu Feb 15 07:54:40 2024: Running Dispatch Server
-Thu Feb 15 07:54:40 2024: Version 2.2.0
-Thu Feb 15 07:54:49 2024: Dispatch Server: Accepted socket connection from client
-Thu Feb 15 07:54:49 2024: Starting Socket connection
-Thu Feb 15 07:54:49 2024: EXCHANGE_TOKEN received, server token: 68641ba7-9b39-4090-9022-0b95add72831, passed token: 68641ba7-9b39-4090-9022-0b95add72831
-Thu Feb 15 07:54:49 2024: DISPATCH_HANDLER: Adding handler from function makeHandler in library libxv_system_diagram
-Thu Feb 15 07:54:49 2024: SESSION_MGR: creating session with session uuid: '28809707-5f5e-4d34-8903-e7c89554f69c' and name 'v++_link_alveo_hls4ml'
-Thu Feb 15 07:54:49 2024: KERNEL_SVC: creating session with uuid: '28809707-5f5e-4d34-8903-e7c89554f69c' and name 'v++_link_alveo_hls4ml'
-Thu Feb 15 07:54:49 2024: GUIDANCE_SMGR: creating guidance session with uuid: '28809707-5f5e-4d34-8903-e7c89554f69c' and name 'v++_link_alveo_hls4ml'
-Thu Feb 15 07:54:49 2024: SYSTEM_DIAGRAM: creating session with uuid: '28809707-5f5e-4d34-8903-e7c89554f69c' and name 'v++_link_alveo_hls4ml'
-Thu Feb 15 07:57:44 2024: Dispatch Server: Accepted socket connection from client
-Thu Feb 15 07:57:44 2024: Starting Socket connection
-Thu Feb 15 07:58:52 2024: Dispatch Server: Accepted socket connection from client
-Thu Feb 15 07:58:52 2024: Starting Socket connection
-Thu Feb 15 08:30:16 2024: Dispatch Server: Accepted socket connection from client
-Thu Feb 15 08:30:16 2024: Starting Socket connection
-Thu Feb 15 08:40:16 2024: Dispatch Server: Accepted socket connection from client
-Thu Feb 15 08:40:16 2024: Starting Socket connection
-Thu Feb 15 14:08:15 2024: SESSION_MGR: closing session for UUID '28809707-5f5e-4d34-8903-e7c89554f69c' with name 'v++_link_alveo_hls4ml'
-Thu Feb 15 14:08:15 2024: KERNEL_SVC: closing session for UUID '28809707-5f5e-4d34-8903-e7c89554f69c' with name 'v++_link_alveo_hls4ml'
-Thu Feb 15 14:08:15 2024: GUIDANCE_SMGR: closing session for UUID '28809707-5f5e-4d34-8903-e7c89554f69c' with name 'v++_link_alveo_hls4ml'
-Thu Feb 15 14:08:17 2024: SYSTEM_DIAGRAM: closing session for UUID '28809707-5f5e-4d34-8903-e7c89554f69c' with name 'v++_link_alveo_hls4ml'
-Thu Feb 15 14:08:17 2024: STOP_SERVER received, server token: 68641ba7-9b39-4090-9022-0b95add72831, passed token: 68641ba7-9b39-4090-9022-0b95add72831
-Thu Feb 15 14:08:17 2024: Socket received request to stop server.
-Thu Feb 15 14:08:17 2024: Dispatch Server: do_await_stop
-Thu Feb 15 14:08:17 2024: Dispatch Server: stopping mainFifo_
-Thu Feb 15 14:08:17 2024: XCD main fifo: Stopping
-Thu Feb 15 14:08:17 2024: XCD main fifo: do_read error code: Operation canceled
-Thu Feb 15 14:08:17 2024: XCD main fifo: bytes_transferred: 0
-Thu Feb 15 14:08:17 2024: SERVER: destructor for server bound to port 40673
-Thu Feb 15 14:08:17 2024: XCD main fifo: Good unlink of /tmp/xcdmain68641ba7-9b39-4090-9022-0b95add72831
-Thu Feb 15 14:08:17 2024: Server exiting with status 0.
-Thu Feb 15 14:08:17 2024: Closing log file.
+Fri Mar  8 18:22:14 2024: Running xcd server. This server was built by gradle.
+Fri Mar  8 18:22:14 2024: Server was asked to start on port: '34841'
+Fri Mar  8 18:22:14 2024: Server is using token UUID: '976d8022-86fc-45af-bb78-8fd2a41023c6'
+Fri Mar  8 18:22:14 2024: SESSION_MGR: creating session with session uuid: '6d04a3e9-ade5-4ab9-8d63-1f78fcd2ec76' and name 'default'
+Fri Mar  8 18:22:14 2024: Attempting to start server on port '34841'
+Fri Mar  8 18:22:14 2024: XCD main fifo: created main fifo '/tmp/xcdmain976d8022-86fc-45af-bb78-8fd2a41023c6', fd read = 12
+Fri Mar  8 18:22:14 2024: Running Dispatch Server
+Fri Mar  8 18:22:14 2024: Version 2.2.0
+Fri Mar  8 18:22:20 2024: Dispatch Server: Accepted socket connection from client
+Fri Mar  8 18:22:20 2024: Starting Socket connection
+Fri Mar  8 18:22:20 2024: EXCHANGE_TOKEN received, server token: 976d8022-86fc-45af-bb78-8fd2a41023c6, passed token: 976d8022-86fc-45af-bb78-8fd2a41023c6
+Fri Mar  8 18:22:22 2024: DISPATCH_HANDLER: Adding handler from function makeHandler in library libxv_system_diagram
+Fri Mar  8 18:22:22 2024: SESSION_MGR: creating session with session uuid: 'f4ca51e9-6846-4859-bbc6-b7801c5fc697' and name 'v++_compile_alveo_hls4ml'
+Fri Mar  8 18:22:22 2024: KERNEL_SVC: creating session with uuid: 'f4ca51e9-6846-4859-bbc6-b7801c5fc697' and name 'v++_compile_alveo_hls4ml'
+Fri Mar  8 18:22:22 2024: GUIDANCE_SMGR: creating guidance session with uuid: 'f4ca51e9-6846-4859-bbc6-b7801c5fc697' and name 'v++_compile_alveo_hls4ml'
+Fri Mar  8 18:22:22 2024: SYSTEM_DIAGRAM: creating session with uuid: 'f4ca51e9-6846-4859-bbc6-b7801c5fc697' and name 'v++_compile_alveo_hls4ml'
+Fri Mar  8 18:29:01 2024: Dispatch Server: Accepted socket connection from client
+Fri Mar  8 18:29:01 2024: Starting Socket connection
+Fri Mar  8 19:30:01 2024: SESSION_MGR: closing session for UUID 'f4ca51e9-6846-4859-bbc6-b7801c5fc697' with name 'v++_compile_alveo_hls4ml'
+Fri Mar  8 19:30:01 2024: KERNEL_SVC: closing session for UUID 'f4ca51e9-6846-4859-bbc6-b7801c5fc697' with name 'v++_compile_alveo_hls4ml'
+Fri Mar  8 19:30:01 2024: GUIDANCE_SMGR: closing session for UUID 'f4ca51e9-6846-4859-bbc6-b7801c5fc697' with name 'v++_compile_alveo_hls4ml'
+Fri Mar  8 19:30:03 2024: SYSTEM_DIAGRAM: closing session for UUID 'f4ca51e9-6846-4859-bbc6-b7801c5fc697' with name 'v++_compile_alveo_hls4ml'
+Fri Mar  8 19:30:03 2024: STOP_SERVER received, server token: 976d8022-86fc-45af-bb78-8fd2a41023c6, passed token: 976d8022-86fc-45af-bb78-8fd2a41023c6
+Fri Mar  8 19:30:03 2024: Socket received request to stop server.
+Fri Mar  8 19:30:03 2024: Dispatch Server: do_await_stop
+Fri Mar  8 19:30:03 2024: Dispatch Server: stopping mainFifo_
+Fri Mar  8 19:30:03 2024: XCD main fifo: Stopping
+Fri Mar  8 19:30:03 2024: XCD main fifo: do_read error code: Operation canceled
+Fri Mar  8 19:30:03 2024: XCD main fifo: bytes_transferred: 0
+Fri Mar  8 19:30:03 2024: SERVER: destructor for server bound to port 34841
+Fri Mar  8 19:30:03 2024: XCD main fifo: Good unlink of /tmp/xcdmain976d8022-86fc-45af-bb78-8fd2a41023c6
+Fri Mar  8 19:30:03 2024: Server exiting with status 0.
+Fri Mar  8 19:30:03 2024: Closing log file.
+Fri Mar  8 19:30:08 2024: Running xcd server. This server was built by gradle.
+Fri Mar  8 19:30:08 2024: Server was asked to start on port: '35895'
+Fri Mar  8 19:30:08 2024: Server is using token UUID: 'bb7d5ddf-f570-47fa-bb47-4f718e99b59f'
+Fri Mar  8 19:30:08 2024: SESSION_MGR: creating session with session uuid: '6d04a3e9-ade5-4ab9-8d63-1f78fcd2ec76' and name 'default'
+Fri Mar  8 19:30:08 2024: Attempting to start server on port '35895'
+Fri Mar  8 19:30:08 2024: XCD main fifo: created main fifo '/tmp/xcdmainbb7d5ddf-f570-47fa-bb47-4f718e99b59f', fd read = 12
+Fri Mar  8 19:30:08 2024: Running Dispatch Server
+Fri Mar  8 19:30:08 2024: Version 2.2.0
+Fri Mar  8 19:30:16 2024: Dispatch Server: Accepted socket connection from client
+Fri Mar  8 19:30:16 2024: Starting Socket connection
+Fri Mar  8 19:30:16 2024: EXCHANGE_TOKEN received, server token: bb7d5ddf-f570-47fa-bb47-4f718e99b59f, passed token: bb7d5ddf-f570-47fa-bb47-4f718e99b59f
+Fri Mar  8 19:30:16 2024: DISPATCH_HANDLER: Adding handler from function makeHandler in library libxv_system_diagram
+Fri Mar  8 19:30:16 2024: SESSION_MGR: creating session with session uuid: '07634967-91fa-447f-b9d0-628acec40a40' and name 'v++_link_alveo_hls4ml'
+Fri Mar  8 19:30:16 2024: KERNEL_SVC: creating session with uuid: '07634967-91fa-447f-b9d0-628acec40a40' and name 'v++_link_alveo_hls4ml'
+Fri Mar  8 19:30:16 2024: GUIDANCE_SMGR: creating guidance session with uuid: '07634967-91fa-447f-b9d0-628acec40a40' and name 'v++_link_alveo_hls4ml'
+Fri Mar  8 19:30:16 2024: SYSTEM_DIAGRAM: creating session with uuid: '07634967-91fa-447f-b9d0-628acec40a40' and name 'v++_link_alveo_hls4ml'
+Fri Mar  8 19:33:08 2024: Dispatch Server: Accepted socket connection from client
+Fri Mar  8 19:33:08 2024: Starting Socket connection
+Fri Mar  8 19:34:13 2024: Dispatch Server: Accepted socket connection from client
+Fri Mar  8 19:34:13 2024: Starting Socket connection
+Fri Mar  8 20:00:31 2024: Dispatch Server: Accepted socket connection from client
+Fri Mar  8 20:00:31 2024: Starting Socket connection
+Fri Mar  8 20:28:39 2024: Dispatch Server: Accepted socket connection from client
+Fri Mar  8 20:28:39 2024: Starting Socket connection
+Fri Mar  8 20:28:39 2024: Dispatch Server: Accepted socket connection from client
+Fri Mar  8 20:28:39 2024: Starting Socket connection
+Fri Mar  8 20:28:39 2024: Dispatch Server: Accepted socket connection from client
+Fri Mar  8 20:28:39 2024: Starting Socket connection
+Fri Mar  8 20:29:38 2024: Dispatch Server: Accepted socket connection from client
+Fri Mar  8 20:29:38 2024: Starting Socket connection
+Fri Mar  8 20:44:38 2024: Dispatch Server: Accepted socket connection from client
+Fri Mar  8 20:44:38 2024: Starting Socket connection
+Sat Mar  9 04:32:29 2024: SESSION_MGR: closing session for UUID '07634967-91fa-447f-b9d0-628acec40a40' with name 'v++_link_alveo_hls4ml'
+Sat Mar  9 04:32:29 2024: KERNEL_SVC: closing session for UUID '07634967-91fa-447f-b9d0-628acec40a40' with name 'v++_link_alveo_hls4ml'
+Sat Mar  9 04:32:29 2024: GUIDANCE_SMGR: closing session for UUID '07634967-91fa-447f-b9d0-628acec40a40' with name 'v++_link_alveo_hls4ml'
+Sat Mar  9 04:32:31 2024: SYSTEM_DIAGRAM: closing session for UUID '07634967-91fa-447f-b9d0-628acec40a40' with name 'v++_link_alveo_hls4ml'
+Sat Mar  9 04:32:31 2024: STOP_SERVER received, server token: bb7d5ddf-f570-47fa-bb47-4f718e99b59f, passed token: bb7d5ddf-f570-47fa-bb47-4f718e99b59f
+Sat Mar  9 04:32:31 2024: Socket received request to stop server.
+Sat Mar  9 04:32:31 2024: Dispatch Server: do_await_stop
+Sat Mar  9 04:32:31 2024: Dispatch Server: stopping mainFifo_
+Sat Mar  9 04:32:31 2024: XCD main fifo: Stopping
+Sat Mar  9 04:32:31 2024: XCD main fifo: do_read error code: Operation canceled
+Sat Mar  9 04:32:31 2024: XCD main fifo: bytes_transferred: 0
+Sat Mar  9 04:32:31 2024: SERVER: destructor for server bound to port 35895
+Sat Mar  9 04:32:31 2024: XCD main fifo: Good unlink of /tmp/xcdmainbb7d5ddf-f570-47fa-bb47-4f718e99b59f
+Sat Mar  9 04:32:31 2024: Server exiting with status 0.
+Sat Mar  9 04:32:31 2024: Closing log file.

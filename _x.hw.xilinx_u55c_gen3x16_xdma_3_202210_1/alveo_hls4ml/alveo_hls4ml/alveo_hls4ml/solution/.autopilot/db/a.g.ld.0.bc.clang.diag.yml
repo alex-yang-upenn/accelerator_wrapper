@@ -2071,24 +2071,24 @@ Args:
 Pass:            reflow-infer-unroll
 Name:            ImplicitUnroll
 DebugLoc:        { File: /home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp, 
-                   Line: 44, Column: 22 }
+                   Line: 78, Column: 22 }
 Function:        _ZL10read_inputPK8ap_fixedILi16ELi6EL9ap_q_mode5EL9ap_o_mode3ELi0EERN3hls6streamIN4nnet5arrayIS2_Lj3EEELi0EEEi
 Args:            
   - String:          'Loop '''
-  - LoopName:        VITIS_LOOP_44_2
+  - LoopName:        VITIS_LOOP_78_2
   - String:          ''' is marked as complete unroll implied by the pipeline pragma'
 ...
 --- !Passed
 Pass:            reflow-pragma-loop-unroll
 Name:            PragmaFullyUnroll
 DebugLoc:        { File: /home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp, 
-                   Line: 55, Column: 0 }
+                   Line: 86, Column: 0 }
 Function:        _ZL12write_resultP8ap_fixedILi16ELi6EL9ap_q_mode5EL9ap_o_mode3ELi0EERN3hls6streamIN4nnet5arrayIS2_Lj10EEELi0EEEi
 Args:            
   - String:          'Unrolling loop '''
-  - LoopName:        VITIS_LOOP_57_1
+  - LoopName:        VITIS_LOOP_88_1
   - String:          ''' ('
-  - LoopLoc:         '/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:57:20'
+  - LoopLoc:         '/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:88:20'
   - String:          ') '
   - String:          'in function '''
   - String:          write_result
@@ -25142,13 +25142,13 @@ Args:
 Pass:            reflow-pragma-loop-unroll
 Name:            PragmaFullyUnroll
 DebugLoc:        { File: /home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp, 
-                   Line: 40, Column: 0 }
+                   Line: 74, Column: 0 }
 Function:        _ZL10read_inputPK8ap_fixedILi16ELi6EL9ap_q_mode5EL9ap_o_mode3ELi0EERN3hls6streamIN4nnet5arrayIS2_Lj3EEELi0EEEi
 Args:            
   - String:          'Unrolling loop '''
-  - LoopName:        VITIS_LOOP_44_2
+  - LoopName:        VITIS_LOOP_78_2
   - String:          ''' ('
-  - LoopLoc:         '/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:44:22'
+  - LoopLoc:         '/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:78:22'
   - String:          ') '
   - String:          'in function '''
   - String:          read_input
@@ -25159,7 +25159,7 @@ Args:
 Pass:            reflow-inliner
 Name:            AutoInline
 DebugLoc:        { File: /home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp, 
-                   Line: 40, Column: 0 }
+                   Line: 74, Column: 0 }
 Function:        _ZL10read_inputPK8ap_fixedILi16ELi6EL9ap_q_mode5EL9ap_o_mode3ELi0EERN3hls6streamIN4nnet5arrayIS2_Lj3EEELi0EEEi
 Args:            
   - String:          'Inlining function '''
@@ -25169,7 +25169,7 @@ Args:
   - String:          ''' into '''
   - Caller:          'read_input(ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0> const*, hls::stream<nnet::array<ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, 3u>, 0>&, int)'
     DebugLoc:        { File: /home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp, 
-                       Line: 40, Column: 0 }
+                       Line: 74, Column: 0 }
   - String:          ''''
 ...
 --- !Passed
@@ -26162,7 +26162,7 @@ Args:
 Pass:            reflow-inliner
 Name:            AutoInline
 DebugLoc:        { File: /home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp, 
-                   Line: 55, Column: 0 }
+                   Line: 86, Column: 0 }
 Function:        _ZL12write_resultP8ap_fixedILi16ELi6EL9ap_q_mode5EL9ap_o_mode3ELi0EERN3hls6streamIN4nnet5arrayIS2_Lj10EEELi0EEEi
 Args:            
   - String:          'Inlining function '''
@@ -26172,7 +26172,7 @@ Args:
   - String:          ''' into '''
   - Caller:          'write_result(ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>*, hls::stream<nnet::array<ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, 10u>, 0>&, int)'
     DebugLoc:        { File: /home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp, 
-                       Line: 55, Column: 0 }
+                       Line: 86, Column: 0 }
   - String:          ''''
 ...
 --- !Passed
@@ -27013,7 +27013,7 @@ Args:
 Pass:            reflow-aggr
 Name:            AggrSucc
 DebugLoc:        { File: /home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp, 
-                   Line: 85, Column: 34 }
+                   Line: 117, Column: 36 }
 Function:        alveo_hls4ml
 Args:            
   - String:          'Aggregating '
@@ -27302,7 +27302,7 @@ Args:
 Pass:            reflow-aggr
 Name:            AggrSucc
 DebugLoc:        { File: /home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp, 
-                   Line: 84, Column: 33 }
+                   Line: 116, Column: 35 }
 Function:        alveo_hls4ml
 Args:            
   - String:          'Aggregating '
@@ -29209,7 +29209,7 @@ Args:
 Pass:            reflow-burst-inference
 Name:            BurstInferred
 DebugLoc:        { File: /home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp, 
-                   Line: 41, Column: 20 }
+                   Line: 75, Column: 20 }
 Function:        _ZL10read_inputPK8ap_fixedILi16ELi6EL9ap_q_mode5EL9ap_o_mode3ELi0EERN3hls6streamIN4nnet5arrayIS2_Lj3EEELi0EEEi
 Args:            
   - String:          'Sequential '
@@ -29231,20 +29231,20 @@ Args:
   - String:          ' '
   - BundleName:      gmem0
   - String:          ' '
-  - LoopName:        VITIS_LOOP_41_1
+  - LoopName:        VITIS_LOOP_75_1
   - String:          ' '
-  - LoopLoc:         '/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:41:20'
+  - LoopLoc:         '/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:75:20'
   - String:          ' '
   - Function:        'read_input(ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0> const*, hls::stream<nnet::array<ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, 3u>, 0>&, int)'
     DebugLoc:        { File: /home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp, 
-                       Line: 40, Column: 0 }
+                       Line: 74, Column: 0 }
   - String:          ' '
 ...
 --- !Passed
 Pass:            reflow-burst-inference
 Name:            BurstInferred
 DebugLoc:        { File: /home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp, 
-                   Line: 57, Column: 29 }
+                   Line: 88, Column: 29 }
 Function:        _ZL12write_resultP8ap_fixedILi16ELi6EL9ap_q_mode5EL9ap_o_mode3ELi0EERN3hls6streamIN4nnet5arrayIS2_Lj10EEELi0EEEi
 Args:            
   - String:          'Sequential '
@@ -29282,14 +29282,14 @@ Args:
   - String:          ' '
   - Function:        'write_result(ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>*, hls::stream<nnet::array<ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, 10u>, 0>&, int)'
     DebugLoc:        { File: /home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp, 
-                       Line: 55, Column: 0 }
+                       Line: 86, Column: 0 }
   - String:          ' '
 ...
 --- !Passed
 Pass:            reflow-burst-widen
 Name:            BurstWidened
 DebugLoc:        { File: /home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp, 
-                   Line: 57, Column: 29 }
+                   Line: 88, Column: 29 }
 Function:        _ZL12write_resultP8ap_fixedILi16ELi6EL9ap_q_mode5EL9ap_o_mode3ELi0EERN3hls6streamIN4nnet5arrayIS2_Lj10EEELi0EEEi
 Args:            
   - String:          'Sequential '
@@ -29317,14 +29317,14 @@ Args:
   - String:          ' '
   - Function:        'write_result(ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>*, hls::stream<nnet::array<ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, 10u>, 0>&, int)'
     DebugLoc:        { File: /home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp, 
-                       Line: 55, Column: 0 }
+                       Line: 86, Column: 0 }
   - String:          ' '
 ...
 --- !Missed
 Pass:            reflow-burst-widen
 Name:            GreaterOrEqualAlignment
 DebugLoc:        { File: /home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp, 
-                   Line: 57, Column: 29 }
+                   Line: 88, Column: 29 }
 Function:        _ZL12write_resultP8ap_fixedILi16ELi6EL9ap_q_mode5EL9ap_o_mode3ELi0EERN3hls6streamIN4nnet5arrayIS2_Lj10EEELi0EEEi
 Args:            
   - String:          'Could not widen since type '
@@ -29341,14 +29341,14 @@ Args:
   - String:          ' '
   - Function:        'write_result(ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>*, hls::stream<nnet::array<ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, 10u>, 0>&, int)'
     DebugLoc:        { File: /home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp, 
-                       Line: 55, Column: 0 }
+                       Line: 86, Column: 0 }
   - String:          ' '
 ...
 --- !Missed
 Pass:            reflow-burst-widen
 Name:            GreaterOrEqualAlignment
 DebugLoc:        { File: /home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp, 
-                   Line: 57, Column: 29 }
+                   Line: 88, Column: 29 }
 Function:        _ZL12write_resultP8ap_fixedILi16ELi6EL9ap_q_mode5EL9ap_o_mode3ELi0EERN3hls6streamIN4nnet5arrayIS2_Lj10EEELi0EEEi
 Args:            
   - String:          'Could not widen since type '
@@ -29365,7 +29365,7 @@ Args:
   - String:          ' '
   - Function:        'write_result(ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>*, hls::stream<nnet::array<ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, 10u>, 0>&, int)'
     DebugLoc:        { File: /home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp, 
-                       Line: 55, Column: 0 }
+                       Line: 86, Column: 0 }
   - String:          ' '
 ...
 --- !Passed
@@ -31224,6 +31224,45 @@ Args:
 --- !Passed
 Pass:            reflow-auto-array-partition
 Name:            AutoParallelPerformanceDrivenVerbosePassed
+Function:        _ZN4nnet10conv_2d_clINS_5arrayI8ap_fixedILi16ELi6EL9ap_q_mode5EL9ap_o_mode3ELi0EELj16EEENS1_IS5_Lj24EEE8config10EEvRN3hls6streamIT_Li0EEERNSA_IT0_Li0EEEPNT1_8weight_tEPNSH_6bias_tE
+Args:            
+  - PragmaType:      array_partition
+  - String:          ' '
+  - PragmaOptions:   'dim=1 type=complete  variable=ref.tmp.i'
+  - String:          ' '
+  - PragmaIsAuto:    '1'
+  - String:          ' '
+  - PragmaFunction:  'nnet::conv_2d_cl<nnet::array<ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, 16u>, nnet::array<ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, 24u>, config10>'
+  - String:          ' '
+  - PragmaSrcLoc:    '/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv2d_stream.h:28:9'
+    DebugLoc:        { File: /home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv2d_stream.h, 
+                       Line: 28, Column: 9 }
+  - VarName:         ref.tmp.i
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoArrayXform
+DebugLoc:        { File: /home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv2d_stream.h, 
+                   Line: 28, Column: 9 }
+Function:        _ZN4nnet10conv_2d_clINS_5arrayI8ap_fixedILi16ELi6EL9ap_q_mode5EL9ap_o_mode3ELi0EELj16EEENS1_IS5_Lj24EEE8config10EEvRN3hls6streamIT_Li0EEERNSA_IT0_Li0EEEPNT1_8weight_tEPNSH_6bias_tE
+Args:            
+  - String:          'Inferring pragma '''
+  - PragmaType:      array_partition
+  - String:          ' type='
+  - Mode:            complete
+  - String:          ' dim='
+  - Dim:             '1'
+  - String:          ''' for array '''
+  - Name:            ref.tmp.i
+  - String:          ''''
+  - String:          ' due to '
+  - String:          pipeline
+  - String:          ' pragma'
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoParallelPerformanceDrivenVerbosePassed
 Function:        _ZN4nnet10conv_2d_clINS_5arrayI8ap_fixedILi16ELi6EL9ap_q_mode5EL9ap_o_mode3ELi0EELj3EEENS1_IS5_Lj16EEE7config2EEvRN3hls6streamIT_Li0EEERNSA_IT0_Li0EEEPNT1_8weight_tEPNSH_6bias_tE
 Args:            
   - PragmaType:      array_partition
@@ -31300,45 +31339,6 @@ Args:
   - String:          ' pragma'
 ...
 --- !Passed
-Pass:            reflow-auto-array-partition
-Name:            AutoParallelPerformanceDrivenVerbosePassed
-Function:        _ZN4nnet10conv_2d_clINS_5arrayI8ap_fixedILi16ELi6EL9ap_q_mode5EL9ap_o_mode3ELi0EELj16EEENS1_IS5_Lj24EEE8config10EEvRN3hls6streamIT_Li0EEERNSA_IT0_Li0EEEPNT1_8weight_tEPNSH_6bias_tE
-Args:            
-  - PragmaType:      array_partition
-  - String:          ' '
-  - PragmaOptions:   'dim=1 type=complete  variable=ref.tmp.i'
-  - String:          ' '
-  - PragmaIsAuto:    '1'
-  - String:          ' '
-  - PragmaFunction:  'nnet::conv_2d_cl<nnet::array<ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, 16u>, nnet::array<ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, 24u>, config10>'
-  - String:          ' '
-  - PragmaSrcLoc:    '/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv2d_stream.h:28:9'
-    DebugLoc:        { File: /home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv2d_stream.h, 
-                       Line: 28, Column: 9 }
-  - VarName:         ref.tmp.i
-  - String:          ' '
-...
---- !Passed
-Pass:            reflow-auto-array-partition
-Name:            AutoArrayXform
-DebugLoc:        { File: /home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv2d_stream.h, 
-                   Line: 28, Column: 9 }
-Function:        _ZN4nnet10conv_2d_clINS_5arrayI8ap_fixedILi16ELi6EL9ap_q_mode5EL9ap_o_mode3ELi0EELj16EEENS1_IS5_Lj24EEE8config10EEvRN3hls6streamIT_Li0EEERNSA_IT0_Li0EEEPNT1_8weight_tEPNSH_6bias_tE
-Args:            
-  - String:          'Inferring pragma '''
-  - PragmaType:      array_partition
-  - String:          ' type='
-  - Mode:            complete
-  - String:          ' dim='
-  - Dim:             '1'
-  - String:          ''' for array '''
-  - Name:            ref.tmp.i
-  - String:          ''''
-  - String:          ' due to '
-  - String:          pipeline
-  - String:          ' pragma'
-...
---- !Passed
 Pass:            reflow-array-partition
 Name:            ArrayXform
 Function:        _ZN4nnet10conv_2d_clINS_5arrayI8ap_fixedILi16ELi6EL9ap_q_mode5EL9ap_o_mode3ELi0EELj3EEENS1_IS5_Lj16EEE7config2EEvRN3hls6streamIT_Li0EEERNSA_IT0_Li0EEEPNT1_8weight_tEPNSH_6bias_tE
@@ -31393,7 +31393,7 @@ Args:
 Pass:            reflow-burst-summary
 Name:            BurstInferredVerboseSummary
 DebugLoc:        { File: /home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp, 
-                   Line: 41, Column: 20 }
+                   Line: 75, Column: 20 }
 Function:        _ZL10read_inputPK8ap_fixedILi16ELi6EL9ap_q_mode5EL9ap_o_mode3ELi0EERN3hls6streamIN4nnet5arrayIS2_Lj3EEELi0EEEi.1
 Args:            
   - String:          'Multiple burst '
@@ -31411,20 +31411,20 @@ Args:
   - String:          ' '
   - BundleName:      gmem0
   - String:          ' '
-  - LoopName:        VITIS_LOOP_41_1
+  - LoopName:        VITIS_LOOP_75_1
   - String:          ' '
-  - LoopLoc:         '/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:41:20'
+  - LoopLoc:         '/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:75:20'
   - String:          ' '
   - Function:        'read_input(ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0> const*, hls::stream<nnet::array<ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, 3u>, 0>&, int) (.1)'
     DebugLoc:        { File: /home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp, 
-                       Line: 40, Column: 0 }
+                       Line: 74, Column: 0 }
   - String:          ' '
 ...
 --- !Passed
 Pass:            reflow-burst-summary
 Name:            BurstInferredSummary
 DebugLoc:        { File: /home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp, 
-                   Line: 41, Column: 20 }
+                   Line: 75, Column: 20 }
 Function:        _ZL10read_inputPK8ap_fixedILi16ELi6EL9ap_q_mode5EL9ap_o_mode3ELi0EERN3hls6streamIN4nnet5arrayIS2_Lj3EEELi0EEEi.1
 Args:            
   - String:          'Multiple burst '
@@ -31434,9 +31434,9 @@ Args:
   - String:          ' and bit width '
   - Width:           '16'
   - String:          ' in loop '''
-  - LoopName:        VITIS_LOOP_41_1
+  - LoopName:        VITIS_LOOP_75_1
   - String:          '''('
-  - LoopLoc:         '/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:41:20'
+  - LoopLoc:         '/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:75:20'
   - String:          ')'
   - String:          ' has been inferred on bundle '''
   - BundleName:      gmem0
@@ -31447,7 +31447,7 @@ Args:
 Pass:            reflow-burst-summary
 Name:            BurstInferredVerboseSummary
 DebugLoc:        { File: /home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp, 
-                   Line: 57, Column: 29 }
+                   Line: 88, Column: 29 }
 Function:        _ZL12write_resultP8ap_fixedILi16ELi6EL9ap_q_mode5EL9ap_o_mode3ELi0EERN3hls6streamIN4nnet5arrayIS2_Lj10EEELi0EEEi.1
 Args:            
   - String:          'Multiple burst '
@@ -31467,14 +31467,14 @@ Args:
   - String:          ' '
   - Function:        'write_result(ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>*, hls::stream<nnet::array<ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, 10u>, 0>&, int) (.1)'
     DebugLoc:        { File: /home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp, 
-                       Line: 55, Column: 0 }
+                       Line: 86, Column: 0 }
   - String:          ' '
 ...
 --- !Passed
 Pass:            reflow-burst-summary
 Name:            BurstInferredSummary
 DebugLoc:        { File: /home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp, 
-                   Line: 57, Column: 29 }
+                   Line: 88, Column: 29 }
 Function:        _ZL12write_resultP8ap_fixedILi16ELi6EL9ap_q_mode5EL9ap_o_mode3ELi0EERN3hls6streamIN4nnet5arrayIS2_Lj10EEELi0EEEi.1
 Args:            
   - String:          'Multiple burst '

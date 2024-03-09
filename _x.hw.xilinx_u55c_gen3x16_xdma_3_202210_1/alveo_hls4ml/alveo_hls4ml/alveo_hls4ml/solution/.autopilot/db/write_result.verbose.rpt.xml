@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'write_result'" level="0">
-<item name = "Date">Thu Feb 15 07:39:52 2024
+<item name = "Date">Fri Mar  8 19:17:17 2024
 </item>
 <item name = "Version">2022.2 (Build 3670227 on Oct 13 2022)</item>
 <item name = "Project">alveo_hls4ml</item>
@@ -79,8 +79,8 @@
 </item>
 <item name = "Expression"><table name="" hasTotal="1">
 <keys size="7">Variable Name, Operation, DSP, FF, LUT, Bitwidth P0, Bitwidth P1</keys>
-<column name="add_ln59_1_fu_212_p2">+, 0, 0, 24, 17, 17</column>
-<column name="add_ln59_fu_230_p2">+, 0, 0, 71, 64, 64</column>
+<column name="add_ln90_1_fu_212_p2">+, 0, 0, 24, 17, 17</column>
+<column name="add_ln90_fu_230_p2">+, 0, 0, 71, 64, 64</column>
 <column name="ap_block_state1">or, 0, 0, 2, 1, 1</column>
 </table>
 </item>
@@ -108,7 +108,7 @@
 <column name="tmp_2_reg_286">32, 0, 32, 0</column>
 <column name="tmp_3_reg_266">32, 0, 32, 0</column>
 <column name="tmp_s_reg_276">32, 0, 32, 0</column>
-<column name="trunc_ln57_reg_271">32, 0, 32, 0</column>
+<column name="trunc_ln88_reg_271">32, 0, 32, 0</column>
 </table>
 </item>
 </section>

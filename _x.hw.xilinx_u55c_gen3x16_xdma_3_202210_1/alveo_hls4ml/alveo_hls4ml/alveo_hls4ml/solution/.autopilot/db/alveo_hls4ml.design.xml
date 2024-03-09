@@ -5,8 +5,8 @@
 <ModuleName>alveo_hls4ml</ModuleName>
 <InstancesList>
 <Instance>
-<InstName>dataflow_in_loop_VITIS_LOOP_89_1_U0</InstName>
-<ModuleName>dataflow_in_loop_VITIS_LOOP_89_1</ModuleName>
+<InstName>dataflow_in_loop_VITIS_LOOP_121_1_U0</InstName>
+<ModuleName>dataflow_in_loop_VITIS_LOOP_121_1</ModuleName>
 <IsCompInst>true</IsCompInst>
 <ID>1258</ID>
 <InstancesList>
@@ -17,8 +17,8 @@
 <ID>1264</ID>
 <InstancesList>
 <Instance>
-<InstName>grp_read_input_Pipeline_VITIS_LOOP_41_1_fu_97</InstName>
-<ModuleName>read_input_Pipeline_VITIS_LOOP_41_1</ModuleName>
+<InstName>grp_read_input_Pipeline_VITIS_LOOP_75_1_fu_97</InstName>
+<ModuleName>read_input_Pipeline_VITIS_LOOP_75_1</ModuleName>
 <IsCompInst>true</IsCompInst>
 <ID>97</ID>
 </Instance>
@@ -453,9 +453,9 @@
 </InterfaceSummary>
 </Module>
 <Module>
-<Name>read_input_Pipeline_VITIS_LOOP_41_1</Name>
+<Name>read_input_Pipeline_VITIS_LOOP_75_1</Name>
 <Loops>
-<VITIS_LOOP_41_1></VITIS_LOOP_41_1>
+<VITIS_LOOP_75_1></VITIS_LOOP_75_1>
 </Loops>
 <PerformanceEstimates>
 <SummaryOfTimingAnalysis>
@@ -474,8 +474,8 @@
 <PipelineType>no</PipelineType>
 </SummaryOfOverallLatency>
 <SummaryOfLoopLatency>
-<VITIS_LOOP_41_1>
-<Name>VITIS_LOOP_41_1</Name>
+<VITIS_LOOP_75_1>
+<Name>VITIS_LOOP_75_1</Name>
 <Slack>2.43</Slack>
 <TripCount>1024</TripCount>
 <Latency>3073</Latency>
@@ -485,7 +485,7 @@
 <PipelineType>yes</PipelineType>
 <InstanceList>
 </InstanceList>
-</VITIS_LOOP_41_1>
+</VITIS_LOOP_75_1>
 </SummaryOfLoopLatency>
 </PerformanceEstimates>
 <AreaEstimates>
@@ -510,7 +510,7 @@
 <InterfaceSummary>
 <RtlPorts>
 <name>ap_clk</name>
-<Object>read_input_Pipeline_VITIS_LOOP_41_1</Object>
+<Object>read_input_Pipeline_VITIS_LOOP_75_1</Object>
 <Type>return value</Type>
 <Scope></Scope>
 <IOProtocol>ap_ctrl_hs</IOProtocol>
@@ -521,7 +521,7 @@
 </RtlPorts>
 <RtlPorts>
 <name>ap_rst</name>
-<Object>read_input_Pipeline_VITIS_LOOP_41_1</Object>
+<Object>read_input_Pipeline_VITIS_LOOP_75_1</Object>
 <Type>return value</Type>
 <Scope></Scope>
 <IOProtocol>ap_ctrl_hs</IOProtocol>
@@ -532,7 +532,7 @@
 </RtlPorts>
 <RtlPorts>
 <name>ap_start</name>
-<Object>read_input_Pipeline_VITIS_LOOP_41_1</Object>
+<Object>read_input_Pipeline_VITIS_LOOP_75_1</Object>
 <Type>return value</Type>
 <Scope></Scope>
 <IOProtocol>ap_ctrl_hs</IOProtocol>
@@ -543,7 +543,7 @@
 </RtlPorts>
 <RtlPorts>
 <name>ap_done</name>
-<Object>read_input_Pipeline_VITIS_LOOP_41_1</Object>
+<Object>read_input_Pipeline_VITIS_LOOP_75_1</Object>
 <Type>return value</Type>
 <Scope></Scope>
 <IOProtocol>ap_ctrl_hs</IOProtocol>
@@ -554,7 +554,7 @@
 </RtlPorts>
 <RtlPorts>
 <name>ap_idle</name>
-<Object>read_input_Pipeline_VITIS_LOOP_41_1</Object>
+<Object>read_input_Pipeline_VITIS_LOOP_75_1</Object>
 <Type>return value</Type>
 <Scope></Scope>
 <IOProtocol>ap_ctrl_hs</IOProtocol>
@@ -565,7 +565,7 @@
 </RtlPorts>
 <RtlPorts>
 <name>ap_ready</name>
-<Object>read_input_Pipeline_VITIS_LOOP_41_1</Object>
+<Object>read_input_Pipeline_VITIS_LOOP_75_1</Object>
 <Type>return value</Type>
 <Scope></Scope>
 <IOProtocol>ap_ctrl_hs</IOProtocol>
@@ -1136,8 +1136,8 @@
 <Attribute>control</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>sext_ln41_1_i</name>
-<Object>sext_ln41_1_i</Object>
+<name>sext_ln75_1_i</name>
+<Object>sext_ln75_1_i</Object>
 <Type>scalar</Type>
 <Scope></Scope>
 <IOProtocol>ap_none</IOProtocol>
@@ -25195,7 +25195,7 @@
 </InterfaceSummary>
 </Module>
 <Module>
-<Name>dataflow_in_loop_VITIS_LOOP_89_1</Name>
+<Name>dataflow_in_loop_VITIS_LOOP_121_1</Name>
 <PerformanceEstimates>
 <SummaryOfTimingAnalysis>
 <TargetClockPeriod>3.33</TargetClockPeriod>
@@ -26314,7 +26314,7 @@
 </RtlPorts>
 <RtlPorts>
 <name>ap_clk</name>
-<Object>dataflow_in_loop_VITIS_LOOP_89_1</Object>
+<Object>dataflow_in_loop_VITIS_LOOP_121_1</Object>
 <Type>return value</Type>
 <Scope></Scope>
 <IOProtocol>ap_ctrl_hs</IOProtocol>
@@ -26325,7 +26325,7 @@
 </RtlPorts>
 <RtlPorts>
 <name>ap_rst</name>
-<Object>dataflow_in_loop_VITIS_LOOP_89_1</Object>
+<Object>dataflow_in_loop_VITIS_LOOP_121_1</Object>
 <Type>return value</Type>
 <Scope></Scope>
 <IOProtocol>ap_ctrl_hs</IOProtocol>
@@ -26336,7 +26336,7 @@
 </RtlPorts>
 <RtlPorts>
 <name>ap_start</name>
-<Object>dataflow_in_loop_VITIS_LOOP_89_1</Object>
+<Object>dataflow_in_loop_VITIS_LOOP_121_1</Object>
 <Type>return value</Type>
 <Scope></Scope>
 <IOProtocol>ap_ctrl_hs</IOProtocol>
@@ -26347,7 +26347,7 @@
 </RtlPorts>
 <RtlPorts>
 <name>ap_done</name>
-<Object>dataflow_in_loop_VITIS_LOOP_89_1</Object>
+<Object>dataflow_in_loop_VITIS_LOOP_121_1</Object>
 <Type>return value</Type>
 <Scope></Scope>
 <IOProtocol>ap_ctrl_hs</IOProtocol>
@@ -26358,7 +26358,7 @@
 </RtlPorts>
 <RtlPorts>
 <name>ap_ready</name>
-<Object>dataflow_in_loop_VITIS_LOOP_89_1</Object>
+<Object>dataflow_in_loop_VITIS_LOOP_121_1</Object>
 <Type>return value</Type>
 <Scope></Scope>
 <IOProtocol>ap_ctrl_hs</IOProtocol>
@@ -26369,7 +26369,7 @@
 </RtlPorts>
 <RtlPorts>
 <name>ap_idle</name>
-<Object>dataflow_in_loop_VITIS_LOOP_89_1</Object>
+<Object>dataflow_in_loop_VITIS_LOOP_121_1</Object>
 <Type>return value</Type>
 <Scope></Scope>
 <IOProtocol>ap_ctrl_hs</IOProtocol>
@@ -26380,7 +26380,7 @@
 </RtlPorts>
 <RtlPorts>
 <name>ap_continue</name>
-<Object>dataflow_in_loop_VITIS_LOOP_89_1</Object>
+<Object>dataflow_in_loop_VITIS_LOOP_121_1</Object>
 <Type>return value</Type>
 <Scope></Scope>
 <IOProtocol>ap_ctrl_hs</IOProtocol>
@@ -26394,7 +26394,7 @@
 <Module>
 <Name>alveo_hls4ml</Name>
 <Loops>
-<VITIS_LOOP_89_1></VITIS_LOOP_89_1>
+<VITIS_LOOP_121_1></VITIS_LOOP_121_1>
 </Loops>
 <PerformanceEstimates>
 <SummaryOfTimingAnalysis>
@@ -26413,8 +26413,8 @@
 <PipelineType>no</PipelineType>
 </SummaryOfOverallLatency>
 <SummaryOfLoopLatency>
-<VITIS_LOOP_89_1>
-<Name>VITIS_LOOP_89_1</Name>
+<VITIS_LOOP_121_1>
+<Name>VITIS_LOOP_121_1</Name>
 <Slack>2.43</Slack>
 <TripCount>8192</TripCount>
 <Latency>25796636</Latency>
@@ -26423,9 +26423,9 @@
 <PipelineDepth>25796636</PipelineDepth>
 <PipelineType>dataflow</PipelineType>
 <InstanceList>
-<Instance>dataflow_in_loop_VITIS_LOOP_89_1_U0</Instance>
+<Instance>dataflow_in_loop_VITIS_LOOP_121_1_U0</Instance>
 </InstanceList>
-</VITIS_LOOP_89_1>
+</VITIS_LOOP_121_1>
 </SummaryOfLoopLatency>
 </PerformanceEstimates>
 <AreaEstimates>
@@ -27995,7 +27995,7 @@
 </FIFOInst>
 <FIFOInst>
 <Name>input1_U</Name>
-<ParentInst>dataflow_in_loop_VITIS_LOOP_89_1_U0</ParentInst>
+<ParentInst>dataflow_in_loop_VITIS_LOOP_121_1_U0</ParentInst>
 <StaticDepth>1024</StaticDepth>
 <RuntimeDepth>mOutPtr</RuntimeDepth>
 <InterfaceList>
@@ -28010,7 +28010,7 @@
 </FIFOInst>
 <FIFOInst>
 <Name>output2_U</Name>
-<ParentInst>dataflow_in_loop_VITIS_LOOP_89_1_U0</ParentInst>
+<ParentInst>dataflow_in_loop_VITIS_LOOP_121_1_U0</ParentInst>
 <StaticDepth>1</StaticDepth>
 <RuntimeDepth>mOutPtr</RuntimeDepth>
 <InterfaceList>

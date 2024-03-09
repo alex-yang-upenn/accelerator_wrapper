@@ -3,18 +3,6 @@
 # be overridden through the make command line
 #+-------------------------------------------------------------------------------
 
-PROFILE := no
-#Generates profile summary report
-ifeq ($(PROFILE), yes)
-LDCLFLAGS += --profile_kernel data:all:all:all
-endif
-
-DEBUG := no
-#Generates debug summary report
-ifeq ($(DEBUG), yes)
-LDCLFLAGS += --dk list_ports
-endif
-
 #Checks for XILINX_VITIS
 ifndef XILINX_VITIS
 $(error XILINX_VITIS variable is not set, please set correctly and rerun)

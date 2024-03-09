@@ -29,14 +29,14 @@
             <Interval-max>25796638</Interval-max>
         </SummaryOfOverallLatency>
         <SummaryOfLoopLatency>
-            <VITIS_LOOP_89_1>
+            <VITIS_LOOP_121_1>
                 <Slack>2.43</Slack>
                 <TripCount>8192</TripCount>
                 <Latency>25796636</Latency>
                 <AbsoluteTimeLatency>85980186</AbsoluteTimeLatency>
                 <DataflowPipelineThroughput>3149</DataflowPipelineThroughput>
                 <InstanceList/>
-            </VITIS_LOOP_89_1>
+            </VITIS_LOOP_121_1>
         </SummaryOfLoopLatency>
     </PerformanceEstimates>
     <AreaEstimates>
@@ -1362,8 +1362,8 @@
             <ModuleName>alveo_hls4ml</ModuleName>
             <InstancesList>
                 <Instance>
-                    <InstName>dataflow_in_loop_VITIS_LOOP_89_1_U0</InstName>
-                    <ModuleName>dataflow_in_loop_VITIS_LOOP_89_1</ModuleName>
+                    <InstName>dataflow_in_loop_VITIS_LOOP_121_1_U0</InstName>
+                    <ModuleName>dataflow_in_loop_VITIS_LOOP_121_1</ModuleName>
                     <IsCompInst>true</IsCompInst>
                     <ID>1258</ID>
                     <InstancesList>
@@ -1374,14 +1374,14 @@
                             <ID>1264</ID>
                             <InstancesList>
                                 <Instance>
-                                    <InstName>grp_read_input_Pipeline_VITIS_LOOP_41_1_fu_97</InstName>
-                                    <ModuleName>read_input_Pipeline_VITIS_LOOP_41_1</ModuleName>
+                                    <InstName>grp_read_input_Pipeline_VITIS_LOOP_75_1_fu_97</InstName>
+                                    <ModuleName>read_input_Pipeline_VITIS_LOOP_75_1</ModuleName>
                                     <IsCompInst>true</IsCompInst>
                                     <ID>97</ID>
-                                    <BindInstances>add_ln41_fu_98_p2</BindInstances>
+                                    <BindInstances>add_ln75_fu_98_p2</BindInstances>
                                 </Instance>
                             </InstancesList>
-                            <BindInstances>mul5_i_fu_128_p2 add_ln41_fu_146_p2</BindInstances>
+                            <BindInstances>mul5_i_fu_128_p2 add_ln75_fu_146_p2</BindInstances>
                         </Instance>
                         <Instance>
                             <InstName>myproject_U0</InstName>
@@ -1614,7 +1614,7 @@
                             <ModuleName>write_result</ModuleName>
                             <IsCompInst>true</IsCompInst>
                             <ID>2446</ID>
-                            <BindInstances>add_ln59_1_fu_212_p2 add_ln59_fu_230_p2</BindInstances>
+                            <BindInstances>add_ln90_1_fu_212_p2 add_ln90_fu_230_p2</BindInstances>
                         </Instance>
                     </InstancesList>
                     <BindInstances>out_r_c_U n_c_U input1_U output2_U</BindInstances>
@@ -1663,9 +1663,9 @@
             </AreaEstimates>
         </Module>
         <Module>
-            <Name>read_input_Pipeline_VITIS_LOOP_41_1</Name>
+            <Name>read_input_Pipeline_VITIS_LOOP_75_1</Name>
             <Loops>
-                <VITIS_LOOP_41_1/>
+                <VITIS_LOOP_75_1/>
             </Loops>
             <PerformanceEstimates>
                 <SummaryOfTimingAnalysis>
@@ -1684,8 +1684,8 @@
                     <PipelineType>no</PipelineType>
                 </SummaryOfOverallLatency>
                 <SummaryOfLoopLatency>
-                    <VITIS_LOOP_41_1>
-                        <Name>VITIS_LOOP_41_1</Name>
+                    <VITIS_LOOP_75_1>
+                        <Name>VITIS_LOOP_75_1</Name>
                         <Slack>2.43</Slack>
                         <TripCount>1024</TripCount>
                         <Latency>3073</Latency>
@@ -1694,7 +1694,7 @@
                         <PipelineDepth>5</PipelineDepth>
                         <PipelineType>yes</PipelineType>
                         <InstanceList/>
-                    </VITIS_LOOP_41_1>
+                    </VITIS_LOOP_75_1>
                 </SummaryOfLoopLatency>
             </PerformanceEstimates>
             <AreaEstimates>
@@ -1717,7 +1717,7 @@
                 </Resources>
             </AreaEstimates>
             <BindNodes>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_41_1" OPTYPE="add" PRAGMA="" RTLNAME="add_ln41_fu_98_p2" SOURCE="/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:41" URAM="0" VARIABLE="add_ln41"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_75_1" OPTYPE="add" PRAGMA="" RTLNAME="add_ln75_fu_98_p2" SOURCE="/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:75" URAM="0" VARIABLE="add_ln75"/>
             </BindNodes>
         </Module>
         <Module>
@@ -1760,7 +1760,7 @@
             </AreaEstimates>
             <BindNodes>
                 <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op sub" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="" OPTYPE="sub" PRAGMA="" RTLNAME="mul5_i_fu_128_p2" SOURCE="" URAM="0" VARIABLE="mul5_i"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="" OPTYPE="add" PRAGMA="" RTLNAME="add_ln41_fu_146_p2" SOURCE="/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:41" URAM="0" VARIABLE="add_ln41"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="" OPTYPE="add" PRAGMA="" RTLNAME="add_ln75_fu_146_p2" SOURCE="/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:75" URAM="0" VARIABLE="add_ln75"/>
             </BindNodes>
         </Module>
         <Module>
@@ -10760,12 +10760,12 @@
                 </Resources>
             </AreaEstimates>
             <BindNodes>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="" OPTYPE="add" PRAGMA="" RTLNAME="add_ln59_1_fu_212_p2" SOURCE="/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:59" URAM="0" VARIABLE="add_ln59_1"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="" OPTYPE="add" PRAGMA="" RTLNAME="add_ln59_fu_230_p2" SOURCE="/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:59" URAM="0" VARIABLE="add_ln59"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="" OPTYPE="add" PRAGMA="" RTLNAME="add_ln90_1_fu_212_p2" SOURCE="/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:90" URAM="0" VARIABLE="add_ln90_1"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="" OPTYPE="add" PRAGMA="" RTLNAME="add_ln90_fu_230_p2" SOURCE="/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:90" URAM="0" VARIABLE="add_ln90"/>
             </BindNodes>
         </Module>
         <Module>
-            <Name>dataflow_in_loop_VITIS_LOOP_89_1</Name>
+            <Name>dataflow_in_loop_VITIS_LOOP_121_1</Name>
             <PerformanceEstimates>
                 <SummaryOfTimingAnalysis>
                     <TargetClockPeriod>3.33</TargetClockPeriod>
@@ -10813,7 +10813,7 @@
         <Module>
             <Name>alveo_hls4ml</Name>
             <Loops>
-                <VITIS_LOOP_89_1/>
+                <VITIS_LOOP_121_1/>
             </Loops>
             <PerformanceEstimates>
                 <SummaryOfTimingAnalysis>
@@ -10832,8 +10832,8 @@
                     <PipelineType>no</PipelineType>
                 </SummaryOfOverallLatency>
                 <SummaryOfLoopLatency>
-                    <VITIS_LOOP_89_1>
-                        <Name>VITIS_LOOP_89_1</Name>
+                    <VITIS_LOOP_121_1>
+                        <Name>VITIS_LOOP_121_1</Name>
                         <Slack>2.43</Slack>
                         <TripCount>8192</TripCount>
                         <Latency>25796636</Latency>
@@ -10842,9 +10842,9 @@
                         <PipelineDepth>25796636</PipelineDepth>
                         <PipelineType>dataflow</PipelineType>
                         <InstanceList>
-                            <Instance>dataflow_in_loop_VITIS_LOOP_89_1_U0</Instance>
+                            <Instance>dataflow_in_loop_VITIS_LOOP_121_1_U0</Instance>
                         </InstanceList>
-                    </VITIS_LOOP_89_1>
+                    </VITIS_LOOP_121_1>
                 </SummaryOfLoopLatency>
             </PerformanceEstimates>
             <AreaEstimates>
@@ -11111,7 +11111,7 @@
         </FIFOInst>
         <FIFOInst>
             <Name>input1_U</Name>
-            <ParentInst>dataflow_in_loop_VITIS_LOOP_89_1_U0</ParentInst>
+            <ParentInst>dataflow_in_loop_VITIS_LOOP_121_1_U0</ParentInst>
             <StaticDepth>1024</StaticDepth>
             <RuntimeDepth>mOutPtr</RuntimeDepth>
             <InterfaceList>
@@ -11126,7 +11126,7 @@
         </FIFOInst>
         <FIFOInst>
             <Name>output2_U</Name>
-            <ParentInst>dataflow_in_loop_VITIS_LOOP_89_1_U0</ParentInst>
+            <ParentInst>dataflow_in_loop_VITIS_LOOP_121_1_U0</ParentInst>
             <StaticDepth>1</StaticDepth>
             <RuntimeDepth>mOutPtr</RuntimeDepth>
             <InterfaceList>
@@ -11467,25 +11467,25 @@
             <item name="Inferred Burst Summary">
                 <table>
                     <keys size="6">HW Interface, Loop, Direction, Length, Width, Location</keys>
-                    <column name="m_axi_gmem0">VITIS_LOOP_41_1, read, 3072, 16, /home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:41:20</column>
-                    <column name="m_axi_gmem1">, write, 5, 32, /home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:57:29</column>
+                    <column name="m_axi_gmem0">VITIS_LOOP_75_1, read, 3072, 16, /home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:75:20</column>
+                    <column name="m_axi_gmem1">, write, 5, 32, /home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:88:29</column>
                 </table>
             </item>
             <item name="Inferred Bursts and Widening Missed">
                 <table>
                     <keys size="5">HW Interface, Variable, Problem, Resolution, Location</keys>
-                    <column name="m_axi_gmem1">out, Could not widen since type i32 size is greater than or equal to alignment 4(bytes), 214-307, /home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:57:29</column>
+                    <column name="m_axi_gmem1">out, Could not widen since type i32 size is greater than or equal to alignment 4(bytes), 214-307, /home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:88:29</column>
                 </table>
             </item>
         </section>
     </ReportBurst>
     <PragmaReport>
-        <Pragma type="pipeline" location="../../../src/alveo_hls4ml.cpp:42" status="valid" parentFunction="read_input" variable="" isDirective="0" options=""/>
-        <Pragma type="unroll" location="../../../src/alveo_hls4ml.cpp:45" status="valid" parentFunction="read_input" variable="" isDirective="0" options=""/>
-        <Pragma type="unroll" location="../../../src/alveo_hls4ml.cpp:58" status="valid" parentFunction="write_result" variable="" isDirective="0" options=""/>
-        <Pragma type="stream" location="../../../src/alveo_hls4ml.cpp:86" status="valid" parentFunction="alveo_hls4ml" variable="input" isDirective="0" options="variable=input depth=(32 * 32)"/>
-        <Pragma type="stream" location="../../../src/alveo_hls4ml.cpp:87" status="valid" parentFunction="alveo_hls4ml" variable="output" isDirective="0" options="variable=output depth=1"/>
-        <Pragma type="dataflow" location="../../../src/alveo_hls4ml.cpp:90" status="warning" parentFunction="alveo_hls4ml" variable="" isDirective="0" options="">
+        <Pragma type="pipeline" location="../../../src/alveo_hls4ml.cpp:76" status="valid" parentFunction="read_input" variable="" isDirective="0" options=""/>
+        <Pragma type="unroll" location="../../../src/alveo_hls4ml.cpp:79" status="valid" parentFunction="read_input" variable="" isDirective="0" options=""/>
+        <Pragma type="unroll" location="../../../src/alveo_hls4ml.cpp:89" status="valid" parentFunction="write_result" variable="" isDirective="0" options=""/>
+        <Pragma type="stream" location="../../../src/alveo_hls4ml.cpp:118" status="valid" parentFunction="alveo_hls4ml" variable="input" isDirective="0" options="variable=input depth=(32 * 32)"/>
+        <Pragma type="stream" location="../../../src/alveo_hls4ml.cpp:119" status="valid" parentFunction="alveo_hls4ml" variable="output" isDirective="0" options="variable=output depth=1"/>
+        <Pragma type="dataflow" location="../../../src/alveo_hls4ml.cpp:122" status="warning" parentFunction="alveo_hls4ml" variable="" isDirective="0" options="">
             <Msg msg_id="214-114" msg_severity="WARNING" msg_body="Since the only kind of statements allowed in a canonical dataflow region are variable declarations and function calls, the compiler may not be able to correctly handle the region"/>
         </Pragma>
         <Pragma type="interface" location="../../../src/myproject.cpp:30" status="valid" parentFunction="myproject" variable="input_2,layer25_out" isDirective="0" options="axis port=input_2,layer25_out"/>

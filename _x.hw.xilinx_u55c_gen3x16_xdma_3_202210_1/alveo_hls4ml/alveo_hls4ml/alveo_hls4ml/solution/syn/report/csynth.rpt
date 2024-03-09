@@ -4,7 +4,7 @@
 == Synthesis Summary Report of 'alveo_hls4ml'
 ================================================================
 + General Information: 
-    * Date:           Thu Feb 15 07:41:45 2024
+    * Date:           Fri Mar  8 19:19:53 2024
     * Version:        2022.2 (Build 3670227 on Oct 13 2022)
     * Project:        alveo_hls4ml
     * Solution:       solution (Vitis Kernel Flow Target)
@@ -20,11 +20,11 @@
     |                                     & Loops                                     |  Type  | Slack | (cycles) |    (ns)   |  Latency | Interval | Count| Pipelined|   BRAM   |    DSP   |      FF     |      LUT     | URAM|
     +---------------------------------------------------------------------------------+--------+-------+----------+-----------+----------+----------+------+----------+----------+----------+-------------+--------------+-----+
     |+ alveo_hls4ml                                                                   |  Timing|  -0.00|  25796637|  8.598e+07|         -|  25796638|     -|        no|   52 (1%)|  454 (5%)|   94998 (3%)|  261073 (20%)|    -|
-    | o VITIS_LOOP_89_1                                                               |       -|   2.43|  25796636|  8.598e+07|      3178|         -|  8192|        no|         -|         -|            -|             -|    -|
-    |  + dataflow_in_loop_VITIS_LOOP_89_1*                                            |  Timing|  -0.00|      3175|  1.058e+04|         -|      3149|     -|  dataflow|   52 (1%)|  454 (5%)|   93133 (3%)|  258611 (19%)|    -|
+    | o VITIS_LOOP_121_1                                                              |       -|   2.43|  25796636|  8.598e+07|      3178|         -|  8192|        no|         -|         -|            -|             -|    -|
+    |  + dataflow_in_loop_VITIS_LOOP_121_1*                                           |  Timing|  -0.00|      3175|  1.058e+04|         -|      3149|     -|  dataflow|   52 (1%)|  454 (5%)|   93133 (3%)|  258611 (19%)|    -|
     |   + read_input                                                                  |  Timing|  -0.00|      3148|  1.049e+04|         -|      3148|     -|        no|         -|         -|    206 (~0%)|     759 (~0%)|    -|
-    |    + read_input_Pipeline_VITIS_LOOP_41_1                                        |  Timing|  -0.00|      3075|  1.025e+04|         -|      3075|     -|        no|         -|         -|     66 (~0%)|     132 (~0%)|    -|
-    |     o VITIS_LOOP_41_1                                                           |      II|   2.43|      3073|  1.024e+04|         5|         3|  1024|       yes|         -|         -|            -|             -|    -|
+    |    + read_input_Pipeline_VITIS_LOOP_75_1                                        |  Timing|  -0.00|      3075|  1.025e+04|         -|      3075|     -|        no|         -|         -|     66 (~0%)|     132 (~0%)|    -|
+    |     o VITIS_LOOP_75_1                                                           |      II|   2.43|      3073|  1.024e+04|         5|         3|  1024|       yes|         -|         -|            -|             -|    -|
     |   + myproject*                                                                  |       -|   0.01|      3099|  1.033e+04|         -|      3076|     -|  dataflow|   50 (1%)|  454 (5%)|   91859 (3%)|  256812 (19%)|    -|
     |    + conv_2d_cl_array_ap_fixed_3u_array_ap_fixed_16_6_5_3_0_16u_config2_s       |       -|   0.12|      3075|  1.025e+04|         -|      3075|     -|        no|         -|  17 (~0%)|   2922 (~0%)|    7690 (~0%)|    -|
     |     o ReadInputHeight_ReadInputWidth                                            |      II|   2.43|      3073|  1.024e+04|         5|         3|  1024|       yes|         -|         -|            -|             -|    -|
@@ -144,15 +144,15 @@
 +--------------+-----------------+-----------+--------+-------+------------------------------------------------------------+
 | HW Interface | Loop            | Direction | Length | Width | Location                                                   |
 +--------------+-----------------+-----------+--------+-------+------------------------------------------------------------+
-| m_axi_gmem0  | VITIS_LOOP_41_1 | read      | 3072   | 16    | /home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:41:20 |
-| m_axi_gmem1  |                 | write     | 5      | 32    | /home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:57:29 |
+| m_axi_gmem0  | VITIS_LOOP_75_1 | read      | 3072   | 16    | /home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:75:20 |
+| m_axi_gmem1  |                 | write     | 5      | 32    | /home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:88:29 |
 +--------------+-----------------+-----------+--------+-------+------------------------------------------------------------+
 
 * Inferred Bursts and Widening Missed
 +--------------+----------+------------------------------------------------------------------------------------+------------+------------------------------------------------------------+
 | HW Interface | Variable | Problem                                                                            | Resolution | Location                                                   |
 +--------------+----------+------------------------------------------------------------------------------------+------------+------------------------------------------------------------+
-| m_axi_gmem1  | out      | Could not widen since type i32 size is greater than or equal to alignment 4(bytes) | 214-307    | /home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:57:29 |
+| m_axi_gmem1  | out      | Could not widen since type i32 size is greater than or equal to alignment 4(bytes) | 214-307    | /home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:88:29 |
 +--------------+----------+------------------------------------------------------------------------------------+------------+------------------------------------------------------------+
 
     * Resolution URL: www.xilinx.com/cgi-bin/docs/rdoc?v=2022.2;t=hls+guidance;d=XXX-YYY.html (replace XXX-YYY with column value)
@@ -164,12 +164,12 @@
 | Name                                                                          | DSP | Pragma | Variable        | Op  | Impl   | Latency |
 +-------------------------------------------------------------------------------+-----+--------+-----------------+-----+--------+---------+
 | + alveo_hls4ml                                                                | 454 |        |                 |     |        |         |
-|  + dataflow_in_loop_VITIS_LOOP_89_1                                           | 454 |        |                 |     |        |         |
+|  + dataflow_in_loop_VITIS_LOOP_121_1                                          | 454 |        |                 |     |        |         |
 |   + read_input                                                                | 0   |        |                 |     |        |         |
 |     mul5_i_fu_128_p2                                                          | -   |        | mul5_i          | sub | fabric | 0       |
-|     add_ln41_fu_146_p2                                                        | -   |        | add_ln41        | add | fabric | 0       |
-|    + read_input_Pipeline_VITIS_LOOP_41_1                                      | 0   |        |                 |     |        |         |
-|      add_ln41_fu_98_p2                                                        | -   |        | add_ln41        | add | fabric | 0       |
+|     add_ln75_fu_146_p2                                                        | -   |        | add_ln75        | add | fabric | 0       |
+|    + read_input_Pipeline_VITIS_LOOP_75_1                                      | 0   |        |                 |     |        |         |
+|      add_ln75_fu_98_p2                                                        | -   |        | add_ln75        | add | fabric | 0       |
 |   + myproject                                                                 | 454 |        |                 |     |        |         |
 |    + conv_2d_cl_array_ap_fixed_3u_array_ap_fixed_16_6_5_3_0_16u_config2_s     | 17  |        |                 |     |        |         |
 |      add_ln24_fu_229_p2                                                       | -   |        | add_ln24        | add | fabric | 0       |
@@ -7639,8 +7639,8 @@
 |       mul_18s_17ns_26_1_1_U1749                                               | 1   |        | mul_ln1270_8    | mul | auto   | 0       |
 |       mul_18s_17ns_26_1_1_U1750                                               | 1   |        | mul_ln1270_9    | mul | auto   | 0       |
 |   + write_result                                                              | 0   |        |                 |     |        |         |
-|     add_ln59_1_fu_212_p2                                                      | -   |        | add_ln59_1      | add | fabric | 0       |
-|     add_ln59_fu_230_p2                                                        | -   |        | add_ln59        | add | fabric | 0       |
+|     add_ln90_1_fu_212_p2                                                      | -   |        | add_ln90_1      | add | fabric | 0       |
+|     add_ln90_fu_230_p2                                                        | -   |        | add_ln90        | add | fabric | 0       |
 +-------------------------------------------------------------------------------+-----+--------+-----------------+-----+--------+---------+
 
 
@@ -7651,7 +7651,7 @@
 | Name                                                                                          | BRAM | URAM | Pragma | Variable                                                                             | Storage | Impl   | Latency |
 +-----------------------------------------------------------------------------------------------+------+------+--------+--------------------------------------------------------------------------------------+---------+--------+---------+
 | + alveo_hls4ml                                                                                | 52   | 0    |        |                                                                                      |         |        |         |
-|  + dataflow_in_loop_VITIS_LOOP_89_1                                                           | 52   | 0    |        |                                                                                      |         |        |         |
+|  + dataflow_in_loop_VITIS_LOOP_121_1                                                          | 52   | 0    |        |                                                                                      |         |        |         |
 |    out_r_c_U                                                                                  | -    | -    |        | out_r_c                                                                              | fifo    | srl    | 0       |
 |    n_c_U                                                                                      | -    | -    |        | n_c                                                                                  | fifo    | srl    | 0       |
 |    input1_U                                                                                   | 2    | -    |        | input1                                                                               | fifo    | memory | 0       |
@@ -7822,21 +7822,21 @@
 == Pragma Report
 ================================================================
 * Pragmas with Warnings
-+----------+---------+--------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Type     | Options | Location                                         | Messages                                                                                                                                                                           |
-+----------+---------+--------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| dataflow |         | ../../../src/alveo_hls4ml.cpp:90 in alveo_hls4ml | Since the only kind of statements allowed in a canonical dataflow region are variable declarations and function calls, the compiler may not be able to correctly handle the region |
-+----------+---------+--------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++----------+---------+---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Type     | Options | Location                                          | Messages                                                                                                                                                                           |
++----------+---------+---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| dataflow |         | ../../../src/alveo_hls4ml.cpp:122 in alveo_hls4ml | Since the only kind of statements allowed in a canonical dataflow region are variable declarations and function calls, the compiler may not be able to correctly handle the region |
++----------+---------+---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 * Valid Pragma Syntax
 +----------------------+-----------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------+
 | Type                 | Options                                                                                                         | Location                                                                                   |
 +----------------------+-----------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------+
-| pipeline             |                                                                                                                 | ../../../src/alveo_hls4ml.cpp:42 in read_input                                             |
-| unroll               |                                                                                                                 | ../../../src/alveo_hls4ml.cpp:45 in read_input                                             |
-| unroll               |                                                                                                                 | ../../../src/alveo_hls4ml.cpp:58 in write_result                                           |
-| stream               | variable=input depth=(32 * 32)                                                                                  | ../../../src/alveo_hls4ml.cpp:86 in alveo_hls4ml, input                                    |
-| stream               | variable=output depth=1                                                                                         | ../../../src/alveo_hls4ml.cpp:87 in alveo_hls4ml, output                                   |
+| pipeline             |                                                                                                                 | ../../../src/alveo_hls4ml.cpp:76 in read_input                                             |
+| unroll               |                                                                                                                 | ../../../src/alveo_hls4ml.cpp:79 in read_input                                             |
+| unroll               |                                                                                                                 | ../../../src/alveo_hls4ml.cpp:89 in write_result                                           |
+| stream               | variable=input depth=(32 * 32)                                                                                  | ../../../src/alveo_hls4ml.cpp:118 in alveo_hls4ml, input                                   |
+| stream               | variable=output depth=1                                                                                         | ../../../src/alveo_hls4ml.cpp:119 in alveo_hls4ml, output                                  |
 | interface            | axis port=input_2,layer25_out                                                                                   | ../../../src/myproject.cpp:30 in myproject, input_2,layer25_out                            |
 | dataflow             |                                                                                                                 | ../../../src/myproject.cpp:31 in myproject                                                 |
 | stream               | variable=layer2_out depth=900                                                                                   | ../../../src/myproject.cpp:64 in myproject, layer2_out                                     |

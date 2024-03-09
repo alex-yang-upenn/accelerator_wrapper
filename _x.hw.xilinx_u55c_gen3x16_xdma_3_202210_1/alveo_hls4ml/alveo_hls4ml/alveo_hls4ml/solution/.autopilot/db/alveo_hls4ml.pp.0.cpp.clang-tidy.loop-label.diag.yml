@@ -65,39 +65,39 @@ Diagnostics:
         Length:          0
         ReplacementText: 'VITIS_LOOP_40_1: '
   - DiagnosticName:  xilinx-label-all-loops
-    Message:         'Added loop label VITIS_LOOP_41_1:  '
-    FileOffset:      41
+    Message:         'Added loop label VITIS_LOOP_75_1:  '
+    FileOffset:      75
     FilePath:        /home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp
     Replacements:    
       - FilePath:        /home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml/solution/.autopilot/db/alveo_hls4ml.pp.0.cpp
-        Offset:          899760
+        Offset:          899761
         Length:          0
-        ReplacementText: 'VITIS_LOOP_41_1: '
+        ReplacementText: 'VITIS_LOOP_75_1: '
   - DiagnosticName:  xilinx-label-all-loops
-    Message:         'Added loop label VITIS_LOOP_44_2:  '
-    FileOffset:      44
+    Message:         'Added loop label VITIS_LOOP_78_2:  '
+    FileOffset:      78
     FilePath:        /home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp
     Replacements:    
       - FilePath:        /home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml/solution/.autopilot/db/alveo_hls4ml.pp.0.cpp
-        Offset:          899844
+        Offset:          899845
         Length:          0
-        ReplacementText: 'VITIS_LOOP_44_2: '
+        ReplacementText: 'VITIS_LOOP_78_2: '
   - DiagnosticName:  xilinx-label-all-loops
-    Message:         'Added loop label VITIS_LOOP_57_1:  '
-    FileOffset:      57
+    Message:         'Added loop label VITIS_LOOP_88_1:  '
+    FileOffset:      88
     FilePath:        /home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp
     Replacements:    
       - FilePath:        /home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml/solution/.autopilot/db/alveo_hls4ml.pp.0.cpp
-        Offset:          900109
+        Offset:          900107
         Length:          0
-        ReplacementText: 'VITIS_LOOP_57_1: '
+        ReplacementText: 'VITIS_LOOP_88_1: '
   - DiagnosticName:  xilinx-label-all-loops
-    Message:         'Added loop label VITIS_LOOP_89_1:  '
-    FileOffset:      89
+    Message:         'Added loop label VITIS_LOOP_121_1:  '
+    FileOffset:      121
     FilePath:        /home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp
     Replacements:    
       - FilePath:        /home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml/solution/.autopilot/db/alveo_hls4ml.pp.0.cpp
-        Offset:          900813
+        Offset:          900818
         Length:          0
-        ReplacementText: 'VITIS_LOOP_89_1: '
+        ReplacementText: 'VITIS_LOOP_121_1: '
 ...

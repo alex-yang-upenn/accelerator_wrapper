@@ -1,6 +1,6 @@
 set SynModuleInfo {
   {SRCNAME entry_proc MODELNAME entry_proc RTLNAME alveo_hls4ml_entry_proc}
-  {SRCNAME read_input_Pipeline_VITIS_LOOP_41_1 MODELNAME read_input_Pipeline_VITIS_LOOP_41_1 RTLNAME alveo_hls4ml_read_input_Pipeline_VITIS_LOOP_41_1
+  {SRCNAME read_input_Pipeline_VITIS_LOOP_75_1 MODELNAME read_input_Pipeline_VITIS_LOOP_75_1 RTLNAME alveo_hls4ml_read_input_Pipeline_VITIS_LOOP_75_1
     SUBMODULES {
       {MODELNAME alveo_hls4ml_flow_control_loop_pipe_sequential_init RTLNAME alveo_hls4ml_flow_control_loop_pipe_sequential_init BINDTYPE interface TYPE internal_upc_flow_control INSTNAME alveo_hls4ml_flow_control_loop_pipe_sequential_init_U}
     }
@@ -145,7 +145,7 @@ set SynModuleInfo {
     }
   }
   {SRCNAME write_result MODELNAME write_result RTLNAME alveo_hls4ml_write_result}
-  {SRCNAME dataflow_in_loop_VITIS_LOOP_89_1 MODELNAME dataflow_in_loop_VITIS_LOOP_89_1 RTLNAME alveo_hls4ml_dataflow_in_loop_VITIS_LOOP_89_1
+  {SRCNAME dataflow_in_loop_VITIS_LOOP_121_1 MODELNAME dataflow_in_loop_VITIS_LOOP_121_1 RTLNAME alveo_hls4ml_dataflow_in_loop_VITIS_LOOP_121_1
     SUBMODULES {
       {MODELNAME alveo_hls4ml_fifo_w64_d4_S RTLNAME alveo_hls4ml_fifo_w64_d4_S BINDTYPE storage TYPE fifo IMPL srl ALLOW_PRAGMA 1 INSTNAME out_r_c_U}
       {MODELNAME alveo_hls4ml_fifo_w48_d1024_A RTLNAME alveo_hls4ml_fifo_w48_d1024_A BINDTYPE storage TYPE fifo IMPL memory ALLOW_PRAGMA 1 INSTNAME input1_U}

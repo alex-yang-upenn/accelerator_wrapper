@@ -1497,7 +1497,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>e41d2879</spirit:value>
+            <spirit:value>8ee8d5fe</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1513,7 +1513,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>c610cf17</spirit:value>
+            <spirit:value>1f0672f9</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1529,7 +1529,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>79580f79</spirit:value>
+            <spirit:value>2b131f5e</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1545,7 +1545,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>af56b8f3</spirit:value>
+            <spirit:value>10deb2b9</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -3735,7 +3735,7 @@
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>hdl/verilog/alveo_hls4ml_dataflow_in_loop_VITIS_LOOP_89_1.v</spirit:name>
+        <spirit:name>hdl/verilog/alveo_hls4ml_dataflow_in_loop_VITIS_LOOP_121_1.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
@@ -4003,7 +4003,7 @@
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>hdl/verilog/alveo_hls4ml_read_input_Pipeline_VITIS_LOOP_41_1.v</spirit:name>
+        <spirit:name>hdl/verilog/alveo_hls4ml_read_input_Pipeline_VITIS_LOOP_75_1.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
@@ -4193,7 +4193,7 @@
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>hdl/verilog/alveo_hls4ml_dataflow_in_loop_VITIS_LOOP_89_1.v</spirit:name>
+        <spirit:name>hdl/verilog/alveo_hls4ml_dataflow_in_loop_VITIS_LOOP_121_1.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
       </spirit:file>
@@ -4528,7 +4528,7 @@
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>hdl/verilog/alveo_hls4ml_read_input_Pipeline_VITIS_LOOP_41_1.v</spirit:name>
+        <spirit:name>hdl/verilog/alveo_hls4ml_read_input_Pipeline_VITIS_LOOP_75_1.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
       </spirit:file>
@@ -4752,7 +4752,7 @@
         <spirit:fileType>vhdlSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>hdl/vhdl/alveo_hls4ml_dataflow_in_loop_VITIS_LOOP_89_1.vhd</spirit:name>
+        <spirit:name>hdl/vhdl/alveo_hls4ml_dataflow_in_loop_VITIS_LOOP_121_1.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
@@ -5008,7 +5008,7 @@
         <spirit:fileType>vhdlSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>hdl/vhdl/alveo_hls4ml_read_input_Pipeline_VITIS_LOOP_41_1.vhd</spirit:name>
+        <spirit:name>hdl/vhdl/alveo_hls4ml_read_input_Pipeline_VITIS_LOOP_75_1.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
@@ -5150,7 +5150,7 @@
       <spirit:file>
         <spirit:name>hdl/vhdl/alveo_hls4ml.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
-        <spirit:userFileType>CHECKSUM_2825419e</spirit:userFileType>
+        <spirit:userFileType>CHECKSUM_a28dd911</spirit:userFileType>
       </spirit:file>
     </spirit:fileSet>
     <spirit:fileSet>
@@ -5191,7 +5191,7 @@
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>hdl/vhdl/alveo_hls4ml_dataflow_in_loop_VITIS_LOOP_89_1.vhd</spirit:name>
+        <spirit:name>hdl/vhdl/alveo_hls4ml_dataflow_in_loop_VITIS_LOOP_121_1.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
       </spirit:file>
@@ -5511,7 +5511,7 @@
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>hdl/vhdl/alveo_hls4ml_read_input_Pipeline_VITIS_LOOP_41_1.vhd</spirit:name>
+        <spirit:name>hdl/vhdl/alveo_hls4ml_read_input_Pipeline_VITIS_LOOP_75_1.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
       </spirit:file>
@@ -6013,8 +6013,8 @@
       </xilinx:taxonomies>
       <xilinx:displayName>Alveo_hls4ml</xilinx:displayName>
       <xilinx:definitionSource>HLS</xilinx:definitionSource>
-      <xilinx:coreRevision>2113428824</xilinx:coreRevision>
-      <xilinx:coreCreationDateTime>2024-02-15T07:53:12Z</xilinx:coreCreationDateTime>
+      <xilinx:coreRevision>2113461203</xilinx:coreRevision>
+      <xilinx:coreCreationDateTime>2024-03-08T19:28:37Z</xilinx:coreCreationDateTime>
       <xilinx:sdxKernelAttributes>
         <xilinx:sdx_kernel>true</xilinx:sdx_kernel>
         <xilinx:sdx_kernel_type>hls</xilinx:sdx_kernel_type>
@@ -6025,7 +6025,7 @@
       <xilinx:checksum xilinx:scope="busInterfaces" xilinx:value="7dd81df5"/>
       <xilinx:checksum xilinx:scope="addressSpaces" xilinx:value="9a83c657"/>
       <xilinx:checksum xilinx:scope="memoryMaps" xilinx:value="c789e091"/>
-      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="01dc8650"/>
+      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="1ebfcf7e"/>
       <xilinx:checksum xilinx:scope="ports" xilinx:value="c22e4902"/>
       <xilinx:checksum xilinx:scope="hdlParameters" xilinx:value="98f6d57d"/>
       <xilinx:checksum xilinx:scope="parameters" xilinx:value="3ebd41a3"/>

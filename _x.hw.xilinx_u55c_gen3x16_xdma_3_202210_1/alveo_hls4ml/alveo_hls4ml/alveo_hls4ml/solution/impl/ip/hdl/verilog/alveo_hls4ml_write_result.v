@@ -254,23 +254,23 @@ reg    n_blk_n;
 reg   [63:0] out_read_reg_255;
 reg   [12:0] n_read_reg_260;
 reg   [31:0] tmp_3_reg_266;
-wire   [31:0] trunc_ln57_fu_156_p1;
-reg   [31:0] trunc_ln57_reg_271;
+wire   [31:0] trunc_ln88_fu_156_p1;
+reg   [31:0] trunc_ln88_reg_271;
 reg   [31:0] tmp_s_reg_276;
 reg   [31:0] tmp_1_reg_281;
 reg   [31:0] tmp_2_reg_286;
 reg   [63:0] gmem1_addr_reg_291;
 wire    ap_CS_fsm_state2;
-wire  signed [63:0] sext_ln57_fu_245_p1;
+wire  signed [63:0] sext_ln88_fu_245_p1;
 reg    ap_block_state1;
 wire   [15:0] p_shl_fu_190_p3;
 wire   [13:0] p_shl1_fu_201_p3;
 wire   [16:0] p_shl_cast2_fu_197_p1;
-wire   [16:0] zext_ln59_fu_208_p1;
-wire   [16:0] add_ln59_1_fu_212_p2;
+wire   [16:0] zext_ln90_fu_208_p1;
+wire   [16:0] add_ln90_1_fu_212_p2;
 wire   [17:0] shl_ln_fu_218_p3;
-wire   [63:0] zext_ln59_1_fu_226_p1;
-wire   [63:0] add_ln59_fu_230_p2;
+wire   [63:0] zext_ln90_1_fu_226_p1;
+wire   [63:0] add_ln90_fu_230_p2;
 wire   [61:0] trunc_ln_fu_235_p4;
 reg   [75:0] ap_NS_fsm;
 reg    ap_ST_fsm_state1_blk;
@@ -379,7 +379,7 @@ end
 
 always @ (posedge ap_clk) begin
     if ((1'b1 == ap_CS_fsm_state2)) begin
-        gmem1_addr_reg_291 <= sext_ln57_fu_245_p1;
+        gmem1_addr_reg_291 <= sext_ln88_fu_245_p1;
     end
 end
 
@@ -391,7 +391,7 @@ always @ (posedge ap_clk) begin
         tmp_2_reg_286 <= {{output_r_dout[127:96]}};
         tmp_3_reg_266 <= {{output_r_dout[159:128]}};
         tmp_s_reg_276 <= {{output_r_dout[63:32]}};
-        trunc_ln57_reg_271 <= trunc_ln57_fu_156_p1;
+        trunc_ln88_reg_271 <= trunc_ln88_fu_156_p1;
     end
 end
 
@@ -669,7 +669,7 @@ always @ (*) begin
     end else if ((1'b1 == ap_CS_fsm_state5)) begin
         m_axi_gmem1_WDATA = tmp_s_reg_276;
     end else if ((1'b1 == ap_CS_fsm_state4)) begin
-        m_axi_gmem1_WDATA = trunc_ln57_reg_271;
+        m_axi_gmem1_WDATA = trunc_ln88_reg_271;
     end else begin
         m_axi_gmem1_WDATA = 'bx;
     end
@@ -999,9 +999,9 @@ always @ (*) begin
     endcase
 end
 
-assign add_ln59_1_fu_212_p2 = (p_shl_cast2_fu_197_p1 + zext_ln59_fu_208_p1);
+assign add_ln90_1_fu_212_p2 = (p_shl_cast2_fu_197_p1 + zext_ln90_fu_208_p1);
 
-assign add_ln59_fu_230_p2 = (out_read_reg_255 + zext_ln59_1_fu_226_p1);
+assign add_ln90_fu_230_p2 = (out_read_reg_255 + zext_ln90_1_fu_226_p1);
 
 assign ap_CS_fsm_state1 = ap_CS_fsm[32'd0];
 
@@ -1087,16 +1087,16 @@ assign p_shl_cast2_fu_197_p1 = p_shl_fu_190_p3;
 
 assign p_shl_fu_190_p3 = {{n_read_reg_260}, {3'd0}};
 
-assign sext_ln57_fu_245_p1 = $signed(trunc_ln_fu_235_p4);
+assign sext_ln88_fu_245_p1 = $signed(trunc_ln_fu_235_p4);
 
-assign shl_ln_fu_218_p3 = {{add_ln59_1_fu_212_p2}, {1'd0}};
+assign shl_ln_fu_218_p3 = {{add_ln90_1_fu_212_p2}, {1'd0}};
 
-assign trunc_ln57_fu_156_p1 = output_r_dout[31:0];
+assign trunc_ln88_fu_156_p1 = output_r_dout[31:0];
 
-assign trunc_ln_fu_235_p4 = {{add_ln59_fu_230_p2[63:2]}};
+assign trunc_ln_fu_235_p4 = {{add_ln90_fu_230_p2[63:2]}};
 
-assign zext_ln59_1_fu_226_p1 = shl_ln_fu_218_p3;
+assign zext_ln90_1_fu_226_p1 = shl_ln_fu_218_p3;
 
-assign zext_ln59_fu_208_p1 = p_shl1_fu_201_p3;
+assign zext_ln90_fu_208_p1 = p_shl1_fu_201_p3;
 
 endmodule //alveo_hls4ml_write_result

@@ -6870,7 +6870,7 @@ typedef ap_fixed<18,8> output_softmax_table_t;
 typedef ap_fixed<18,8,AP_RND,AP_SAT> output_softmax_exp_table_t;
 typedef ap_fixed<18,8,AP_RND,AP_SAT> output_softmax_inv_table_t;
 # 40 "/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.h" 2
-# 72 "/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.h"
+# 153 "/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.h"
 typedef ap_fixed<16,6> input_data_t;
 typedef ap_fixed<16,6> output_data_t;
 
@@ -7027,12 +7027,12 @@ void myproject(
     hls::stream<result_t> &layer25_out
 );
 # 5 "/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp" 2
-# 40 "/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp"
+# 74 "/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp"
 static void read_input(const input_data_t *in, hls::stream<input_stream_t> &input, int n) {
-  VITIS_LOOP_41_1: for (int i = 0; i < (32 * 32); i++) {
+  VITIS_LOOP_75_1: for (int i = 0; i < (32 * 32); i++) {
 #pragma HLS PIPELINE
  input_stream_t tmp;
-    VITIS_LOOP_44_2: for (int j = 0; j < 3; j++) {
+    VITIS_LOOP_78_2: for (int j = 0; j < 3; j++) {
 #pragma HLS UNROLL
  tmp[j] = in[(n * (32 * 32) * 3) + (i * 3) + j];
     }
@@ -7040,16 +7040,14 @@ static void read_input(const input_data_t *in, hls::stream<input_stream_t> &inpu
   }
 }
 
-
-
-
 static void write_result(output_data_t *out, hls::stream<output_stream_t> &output, int n) {
   output_stream_t tmp = output.read();
-  VITIS_LOOP_57_1: for (int i = 0; i < 10; i++) {
+  VITIS_LOOP_88_1: for (int i = 0; i < 10; i++) {
 #pragma HLS UNROLL
  out[(n * 10) + i] = tmp[i];
   }
 }
+
 
 
 extern "C" {
@@ -7061,21 +7059,20 @@ extern "C" {
   __attribute__((sdx_kernel("alveo_hls4ml", 0))) void alveo_hls4ml(const input_data_t *in, output_data_t *out) {
 #line 26 "/home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml.tcl"
 #pragma HLSDIRECTIVE TOP name=alveo_hls4ml
-# 70 "/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp"
+# 102 "/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp"
 
-# 84 "/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp"
-    hls::stream<input_stream_t> input("input");
-    hls::stream<output_stream_t> output("output");
+# 116 "/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp"
+      hls::stream<input_stream_t> input("input");
+      hls::stream<output_stream_t> output("output");
 #pragma HLS STREAM variable=input depth=(32 * 32)
 #pragma HLS STREAM variable=output depth=1
 
- VITIS_LOOP_89_1: for (int n = 0; n < 8192; n++) {
+ VITIS_LOOP_121_1: for (int n = 0; n < 8192; n++) {
 #pragma HLS DATAFLOW
  read_input(in, input, n);
-      hls4ml: myproject(input, output);
-      write_result(out, output, n);
-    }
-
+        hls4ml: myproject(input, output);
+        write_result(out, output, n);
+      }
 
   }
 }

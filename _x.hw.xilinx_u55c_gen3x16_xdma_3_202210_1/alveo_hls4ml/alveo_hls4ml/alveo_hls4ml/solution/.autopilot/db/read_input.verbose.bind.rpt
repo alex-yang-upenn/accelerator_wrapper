@@ -3,7 +3,7 @@
 ================================================================
 == Vitis HLS Report for 'read_input'
 ================================================================
-* Date:           Thu Feb 15 07:26:29 2024
+* Date:           Fri Mar  8 18:59:57 2024
 
 * Version:        2022.2 (Build 3670227 on Oct 13 2022)
 * Project:        alveo_hls4ml
@@ -38,7 +38,7 @@
         |                                               |                                     |  Latency (cycles) |   Latency (absolute)  |   Interval  | Pipeline|
         |                    Instance                   |                Module               |   min   |   max   |    min    |    max    |  min |  max |   Type  |
         +-----------------------------------------------+-------------------------------------+---------+---------+-----------+-----------+------+------+---------+
-        |grp_read_input_Pipeline_VITIS_LOOP_41_1_fu_97  |read_input_Pipeline_VITIS_LOOP_41_1  |     3075|     3075|  10.249 us|  10.249 us|  3075|  3075|       no|
+        |grp_read_input_Pipeline_VITIS_LOOP_75_1_fu_97  |read_input_Pipeline_VITIS_LOOP_75_1  |     3075|     3075|  10.249 us|  10.249 us|  3075|  3075|       no|
         +-----------------------------------------------+-------------------------------------+---------+---------+-----------+-----------+------+------+---------+
 
         * Loop: 
@@ -163,233 +163,233 @@ ST_2 : Operation 79 [1/1] (0.00ns)   --->   "%p_shl_cast4_i = zext i25 %p_shl_i"
 ST_2 : Operation 80 [1/1] (0.00ns)   --->   "%p_shl1_i = bitconcatenate i23 @_ssdm_op_BitConcatenate.i23.i13.i10, i13 %n_read, i10 0"   --->   Operation 80 'bitconcatenate' 'p_shl1_i' <Predicate = true> <Delay = 0.00>
 ST_2 : Operation 81 [1/1] (0.00ns)   --->   "%p_shl1_cast5_i = zext i23 %p_shl1_i"   --->   Operation 81 'zext' 'p_shl1_cast5_i' <Predicate = true> <Delay = 0.00>
 ST_2 : Operation 82 [1/1] (0.83ns)   --->   "%mul5_i = sub i26 %p_shl_cast4_i, i26 %p_shl1_cast5_i"   --->   Operation 82 'sub' 'mul5_i' <Predicate = true> <Delay = 0.83> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.83> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
-ST_2 : Operation 83 [1/1] (0.00ns)   --->   "%tmp_i = bitconcatenate i27 @_ssdm_op_BitConcatenate.i27.i26.i1, i26 %mul5_i, i1 0" [/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:41->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:91]   --->   Operation 83 'bitconcatenate' 'tmp_i' <Predicate = true> <Delay = 0.00>
-ST_2 : Operation 84 [1/1] (0.00ns)   --->   "%sext_ln41 = sext i27 %tmp_i" [/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:41->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:91]   --->   Operation 84 'sext' 'sext_ln41' <Predicate = true> <Delay = 0.00>
-ST_2 : Operation 85 [1/1] (1.14ns)   --->   "%add_ln41 = add i64 %sext_ln41, i64 %in_r_read" [/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:41->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:91]   --->   Operation 85 'add' 'add_ln41' <Predicate = true> <Delay = 1.14> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.14> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
-ST_2 : Operation 86 [1/1] (0.00ns)   --->   "%trunc_ln_i = partselect i63 @_ssdm_op_PartSelect.i63.i64.i32.i32, i64 %add_ln41, i32 1, i32 63" [/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:41->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:91]   --->   Operation 86 'partselect' 'trunc_ln_i' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 83 [1/1] (0.00ns)   --->   "%tmp_i = bitconcatenate i27 @_ssdm_op_BitConcatenate.i27.i26.i1, i26 %mul5_i, i1 0" [/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:75->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:123]   --->   Operation 83 'bitconcatenate' 'tmp_i' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 84 [1/1] (0.00ns)   --->   "%sext_ln75 = sext i27 %tmp_i" [/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:75->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:123]   --->   Operation 84 'sext' 'sext_ln75' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 85 [1/1] (1.14ns)   --->   "%add_ln75 = add i64 %sext_ln75, i64 %in_r_read" [/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:75->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:123]   --->   Operation 85 'add' 'add_ln75' <Predicate = true> <Delay = 1.14> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.14> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 86 [1/1] (0.00ns)   --->   "%trunc_ln_i = partselect i63 @_ssdm_op_PartSelect.i63.i64.i32.i32, i64 %add_ln75, i32 1, i32 63" [/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:75->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:123]   --->   Operation 86 'partselect' 'trunc_ln_i' <Predicate = true> <Delay = 0.00>
 
 State 3 <SV = 2> <Delay = 2.43>
-ST_3 : Operation 87 [1/1] (0.00ns)   --->   "%sext_ln41_1 = sext i63 %trunc_ln_i" [/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:41->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:91]   --->   Operation 87 'sext' 'sext_ln41_1' <Predicate = true> <Delay = 0.00>
-ST_3 : Operation 88 [1/1] (0.00ns)   --->   "%gmem0_addr = getelementptr i16 %gmem0, i64 %sext_ln41_1" [/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:41->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:91]   --->   Operation 88 'getelementptr' 'gmem0_addr' <Predicate = true> <Delay = 0.00>
-ST_3 : Operation 89 [70/70] (2.43ns)   --->   "%empty = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i16, i16 %gmem0_addr, i32 3072" [/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:41->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:91]   --->   Operation 89 'readreq' 'empty' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_3 : Operation 87 [1/1] (0.00ns)   --->   "%sext_ln75_1 = sext i63 %trunc_ln_i" [/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:75->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:123]   --->   Operation 87 'sext' 'sext_ln75_1' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 88 [1/1] (0.00ns)   --->   "%gmem0_addr = getelementptr i16 %gmem0, i64 %sext_ln75_1" [/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:75->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:123]   --->   Operation 88 'getelementptr' 'gmem0_addr' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 89 [70/70] (2.43ns)   --->   "%empty = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i16, i16 %gmem0_addr, i32 3072" [/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:75->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:123]   --->   Operation 89 'readreq' 'empty' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
 
 State 4 <SV = 3> <Delay = 2.43>
-ST_4 : Operation 90 [69/70] (2.43ns)   --->   "%empty = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i16, i16 %gmem0_addr, i32 3072" [/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:41->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:91]   --->   Operation 90 'readreq' 'empty' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_4 : Operation 90 [69/70] (2.43ns)   --->   "%empty = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i16, i16 %gmem0_addr, i32 3072" [/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:75->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:123]   --->   Operation 90 'readreq' 'empty' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
 
 State 5 <SV = 4> <Delay = 2.43>
-ST_5 : Operation 91 [68/70] (2.43ns)   --->   "%empty = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i16, i16 %gmem0_addr, i32 3072" [/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:41->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:91]   --->   Operation 91 'readreq' 'empty' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_5 : Operation 91 [68/70] (2.43ns)   --->   "%empty = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i16, i16 %gmem0_addr, i32 3072" [/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:75->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:123]   --->   Operation 91 'readreq' 'empty' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
 
 State 6 <SV = 5> <Delay = 2.43>
-ST_6 : Operation 92 [67/70] (2.43ns)   --->   "%empty = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i16, i16 %gmem0_addr, i32 3072" [/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:41->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:91]   --->   Operation 92 'readreq' 'empty' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_6 : Operation 92 [67/70] (2.43ns)   --->   "%empty = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i16, i16 %gmem0_addr, i32 3072" [/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:75->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:123]   --->   Operation 92 'readreq' 'empty' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
 
 State 7 <SV = 6> <Delay = 2.43>
-ST_7 : Operation 93 [66/70] (2.43ns)   --->   "%empty = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i16, i16 %gmem0_addr, i32 3072" [/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:41->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:91]   --->   Operation 93 'readreq' 'empty' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_7 : Operation 93 [66/70] (2.43ns)   --->   "%empty = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i16, i16 %gmem0_addr, i32 3072" [/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:75->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:123]   --->   Operation 93 'readreq' 'empty' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
 
 State 8 <SV = 7> <Delay = 2.43>
-ST_8 : Operation 94 [65/70] (2.43ns)   --->   "%empty = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i16, i16 %gmem0_addr, i32 3072" [/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:41->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:91]   --->   Operation 94 'readreq' 'empty' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_8 : Operation 94 [65/70] (2.43ns)   --->   "%empty = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i16, i16 %gmem0_addr, i32 3072" [/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:75->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:123]   --->   Operation 94 'readreq' 'empty' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
 
 State 9 <SV = 8> <Delay = 2.43>
-ST_9 : Operation 95 [64/70] (2.43ns)   --->   "%empty = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i16, i16 %gmem0_addr, i32 3072" [/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:41->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:91]   --->   Operation 95 'readreq' 'empty' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_9 : Operation 95 [64/70] (2.43ns)   --->   "%empty = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i16, i16 %gmem0_addr, i32 3072" [/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:75->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:123]   --->   Operation 95 'readreq' 'empty' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
 
 State 10 <SV = 9> <Delay = 2.43>
-ST_10 : Operation 96 [63/70] (2.43ns)   --->   "%empty = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i16, i16 %gmem0_addr, i32 3072" [/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:41->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:91]   --->   Operation 96 'readreq' 'empty' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_10 : Operation 96 [63/70] (2.43ns)   --->   "%empty = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i16, i16 %gmem0_addr, i32 3072" [/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:75->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:123]   --->   Operation 96 'readreq' 'empty' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
 
 State 11 <SV = 10> <Delay = 2.43>
-ST_11 : Operation 97 [62/70] (2.43ns)   --->   "%empty = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i16, i16 %gmem0_addr, i32 3072" [/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:41->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:91]   --->   Operation 97 'readreq' 'empty' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_11 : Operation 97 [62/70] (2.43ns)   --->   "%empty = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i16, i16 %gmem0_addr, i32 3072" [/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:75->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:123]   --->   Operation 97 'readreq' 'empty' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
 
 State 12 <SV = 11> <Delay = 2.43>
-ST_12 : Operation 98 [61/70] (2.43ns)   --->   "%empty = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i16, i16 %gmem0_addr, i32 3072" [/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:41->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:91]   --->   Operation 98 'readreq' 'empty' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_12 : Operation 98 [61/70] (2.43ns)   --->   "%empty = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i16, i16 %gmem0_addr, i32 3072" [/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:75->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:123]   --->   Operation 98 'readreq' 'empty' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
 
 State 13 <SV = 12> <Delay = 2.43>
-ST_13 : Operation 99 [60/70] (2.43ns)   --->   "%empty = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i16, i16 %gmem0_addr, i32 3072" [/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:41->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:91]   --->   Operation 99 'readreq' 'empty' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_13 : Operation 99 [60/70] (2.43ns)   --->   "%empty = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i16, i16 %gmem0_addr, i32 3072" [/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:75->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:123]   --->   Operation 99 'readreq' 'empty' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
 
 State 14 <SV = 13> <Delay = 2.43>
-ST_14 : Operation 100 [59/70] (2.43ns)   --->   "%empty = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i16, i16 %gmem0_addr, i32 3072" [/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:41->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:91]   --->   Operation 100 'readreq' 'empty' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_14 : Operation 100 [59/70] (2.43ns)   --->   "%empty = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i16, i16 %gmem0_addr, i32 3072" [/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:75->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:123]   --->   Operation 100 'readreq' 'empty' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
 
 State 15 <SV = 14> <Delay = 2.43>
-ST_15 : Operation 101 [58/70] (2.43ns)   --->   "%empty = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i16, i16 %gmem0_addr, i32 3072" [/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:41->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:91]   --->   Operation 101 'readreq' 'empty' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_15 : Operation 101 [58/70] (2.43ns)   --->   "%empty = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i16, i16 %gmem0_addr, i32 3072" [/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:75->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:123]   --->   Operation 101 'readreq' 'empty' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
 
 State 16 <SV = 15> <Delay = 2.43>
-ST_16 : Operation 102 [57/70] (2.43ns)   --->   "%empty = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i16, i16 %gmem0_addr, i32 3072" [/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:41->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:91]   --->   Operation 102 'readreq' 'empty' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_16 : Operation 102 [57/70] (2.43ns)   --->   "%empty = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i16, i16 %gmem0_addr, i32 3072" [/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:75->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:123]   --->   Operation 102 'readreq' 'empty' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
 
 State 17 <SV = 16> <Delay = 2.43>
-ST_17 : Operation 103 [56/70] (2.43ns)   --->   "%empty = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i16, i16 %gmem0_addr, i32 3072" [/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:41->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:91]   --->   Operation 103 'readreq' 'empty' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_17 : Operation 103 [56/70] (2.43ns)   --->   "%empty = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i16, i16 %gmem0_addr, i32 3072" [/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:75->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:123]   --->   Operation 103 'readreq' 'empty' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
 
 State 18 <SV = 17> <Delay = 2.43>
-ST_18 : Operation 104 [55/70] (2.43ns)   --->   "%empty = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i16, i16 %gmem0_addr, i32 3072" [/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:41->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:91]   --->   Operation 104 'readreq' 'empty' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_18 : Operation 104 [55/70] (2.43ns)   --->   "%empty = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i16, i16 %gmem0_addr, i32 3072" [/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:75->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:123]   --->   Operation 104 'readreq' 'empty' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
 
 State 19 <SV = 18> <Delay = 2.43>
-ST_19 : Operation 105 [54/70] (2.43ns)   --->   "%empty = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i16, i16 %gmem0_addr, i32 3072" [/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:41->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:91]   --->   Operation 105 'readreq' 'empty' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_19 : Operation 105 [54/70] (2.43ns)   --->   "%empty = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i16, i16 %gmem0_addr, i32 3072" [/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:75->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:123]   --->   Operation 105 'readreq' 'empty' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
 
 State 20 <SV = 19> <Delay = 2.43>
-ST_20 : Operation 106 [53/70] (2.43ns)   --->   "%empty = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i16, i16 %gmem0_addr, i32 3072" [/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:41->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:91]   --->   Operation 106 'readreq' 'empty' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_20 : Operation 106 [53/70] (2.43ns)   --->   "%empty = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i16, i16 %gmem0_addr, i32 3072" [/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:75->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:123]   --->   Operation 106 'readreq' 'empty' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
 
 State 21 <SV = 20> <Delay = 2.43>
-ST_21 : Operation 107 [52/70] (2.43ns)   --->   "%empty = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i16, i16 %gmem0_addr, i32 3072" [/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:41->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:91]   --->   Operation 107 'readreq' 'empty' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_21 : Operation 107 [52/70] (2.43ns)   --->   "%empty = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i16, i16 %gmem0_addr, i32 3072" [/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:75->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:123]   --->   Operation 107 'readreq' 'empty' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
 
 State 22 <SV = 21> <Delay = 2.43>
-ST_22 : Operation 108 [51/70] (2.43ns)   --->   "%empty = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i16, i16 %gmem0_addr, i32 3072" [/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:41->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:91]   --->   Operation 108 'readreq' 'empty' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_22 : Operation 108 [51/70] (2.43ns)   --->   "%empty = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i16, i16 %gmem0_addr, i32 3072" [/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:75->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:123]   --->   Operation 108 'readreq' 'empty' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
 
 State 23 <SV = 22> <Delay = 2.43>
-ST_23 : Operation 109 [50/70] (2.43ns)   --->   "%empty = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i16, i16 %gmem0_addr, i32 3072" [/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:41->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:91]   --->   Operation 109 'readreq' 'empty' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_23 : Operation 109 [50/70] (2.43ns)   --->   "%empty = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i16, i16 %gmem0_addr, i32 3072" [/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:75->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:123]   --->   Operation 109 'readreq' 'empty' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
 
 State 24 <SV = 23> <Delay = 2.43>
-ST_24 : Operation 110 [49/70] (2.43ns)   --->   "%empty = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i16, i16 %gmem0_addr, i32 3072" [/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:41->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:91]   --->   Operation 110 'readreq' 'empty' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_24 : Operation 110 [49/70] (2.43ns)   --->   "%empty = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i16, i16 %gmem0_addr, i32 3072" [/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:75->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:123]   --->   Operation 110 'readreq' 'empty' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
 
 State 25 <SV = 24> <Delay = 2.43>
-ST_25 : Operation 111 [48/70] (2.43ns)   --->   "%empty = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i16, i16 %gmem0_addr, i32 3072" [/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:41->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:91]   --->   Operation 111 'readreq' 'empty' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_25 : Operation 111 [48/70] (2.43ns)   --->   "%empty = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i16, i16 %gmem0_addr, i32 3072" [/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:75->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:123]   --->   Operation 111 'readreq' 'empty' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
 
 State 26 <SV = 25> <Delay = 2.43>
-ST_26 : Operation 112 [47/70] (2.43ns)   --->   "%empty = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i16, i16 %gmem0_addr, i32 3072" [/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:41->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:91]   --->   Operation 112 'readreq' 'empty' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_26 : Operation 112 [47/70] (2.43ns)   --->   "%empty = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i16, i16 %gmem0_addr, i32 3072" [/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:75->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:123]   --->   Operation 112 'readreq' 'empty' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
 
 State 27 <SV = 26> <Delay = 2.43>
-ST_27 : Operation 113 [46/70] (2.43ns)   --->   "%empty = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i16, i16 %gmem0_addr, i32 3072" [/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:41->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:91]   --->   Operation 113 'readreq' 'empty' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_27 : Operation 113 [46/70] (2.43ns)   --->   "%empty = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i16, i16 %gmem0_addr, i32 3072" [/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:75->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:123]   --->   Operation 113 'readreq' 'empty' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
 
 State 28 <SV = 27> <Delay = 2.43>
-ST_28 : Operation 114 [45/70] (2.43ns)   --->   "%empty = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i16, i16 %gmem0_addr, i32 3072" [/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:41->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:91]   --->   Operation 114 'readreq' 'empty' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_28 : Operation 114 [45/70] (2.43ns)   --->   "%empty = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i16, i16 %gmem0_addr, i32 3072" [/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:75->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:123]   --->   Operation 114 'readreq' 'empty' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
 
 State 29 <SV = 28> <Delay = 2.43>
-ST_29 : Operation 115 [44/70] (2.43ns)   --->   "%empty = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i16, i16 %gmem0_addr, i32 3072" [/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:41->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:91]   --->   Operation 115 'readreq' 'empty' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_29 : Operation 115 [44/70] (2.43ns)   --->   "%empty = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i16, i16 %gmem0_addr, i32 3072" [/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:75->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:123]   --->   Operation 115 'readreq' 'empty' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
 
 State 30 <SV = 29> <Delay = 2.43>
-ST_30 : Operation 116 [43/70] (2.43ns)   --->   "%empty = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i16, i16 %gmem0_addr, i32 3072" [/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:41->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:91]   --->   Operation 116 'readreq' 'empty' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_30 : Operation 116 [43/70] (2.43ns)   --->   "%empty = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i16, i16 %gmem0_addr, i32 3072" [/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:75->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:123]   --->   Operation 116 'readreq' 'empty' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
 
 State 31 <SV = 30> <Delay = 2.43>
-ST_31 : Operation 117 [42/70] (2.43ns)   --->   "%empty = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i16, i16 %gmem0_addr, i32 3072" [/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:41->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:91]   --->   Operation 117 'readreq' 'empty' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_31 : Operation 117 [42/70] (2.43ns)   --->   "%empty = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i16, i16 %gmem0_addr, i32 3072" [/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:75->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:123]   --->   Operation 117 'readreq' 'empty' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
 
 State 32 <SV = 31> <Delay = 2.43>
-ST_32 : Operation 118 [41/70] (2.43ns)   --->   "%empty = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i16, i16 %gmem0_addr, i32 3072" [/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:41->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:91]   --->   Operation 118 'readreq' 'empty' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_32 : Operation 118 [41/70] (2.43ns)   --->   "%empty = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i16, i16 %gmem0_addr, i32 3072" [/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:75->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:123]   --->   Operation 118 'readreq' 'empty' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
 
 State 33 <SV = 32> <Delay = 2.43>
-ST_33 : Operation 119 [40/70] (2.43ns)   --->   "%empty = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i16, i16 %gmem0_addr, i32 3072" [/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:41->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:91]   --->   Operation 119 'readreq' 'empty' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_33 : Operation 119 [40/70] (2.43ns)   --->   "%empty = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i16, i16 %gmem0_addr, i32 3072" [/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:75->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:123]   --->   Operation 119 'readreq' 'empty' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
 
 State 34 <SV = 33> <Delay = 2.43>
-ST_34 : Operation 120 [39/70] (2.43ns)   --->   "%empty = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i16, i16 %gmem0_addr, i32 3072" [/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:41->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:91]   --->   Operation 120 'readreq' 'empty' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_34 : Operation 120 [39/70] (2.43ns)   --->   "%empty = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i16, i16 %gmem0_addr, i32 3072" [/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:75->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:123]   --->   Operation 120 'readreq' 'empty' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
 
 State 35 <SV = 34> <Delay = 2.43>
-ST_35 : Operation 121 [38/70] (2.43ns)   --->   "%empty = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i16, i16 %gmem0_addr, i32 3072" [/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:41->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:91]   --->   Operation 121 'readreq' 'empty' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_35 : Operation 121 [38/70] (2.43ns)   --->   "%empty = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i16, i16 %gmem0_addr, i32 3072" [/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:75->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:123]   --->   Operation 121 'readreq' 'empty' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
 
 State 36 <SV = 35> <Delay = 2.43>
-ST_36 : Operation 122 [37/70] (2.43ns)   --->   "%empty = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i16, i16 %gmem0_addr, i32 3072" [/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:41->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:91]   --->   Operation 122 'readreq' 'empty' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_36 : Operation 122 [37/70] (2.43ns)   --->   "%empty = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i16, i16 %gmem0_addr, i32 3072" [/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:75->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:123]   --->   Operation 122 'readreq' 'empty' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
 
 State 37 <SV = 36> <Delay = 2.43>
-ST_37 : Operation 123 [36/70] (2.43ns)   --->   "%empty = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i16, i16 %gmem0_addr, i32 3072" [/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:41->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:91]   --->   Operation 123 'readreq' 'empty' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_37 : Operation 123 [36/70] (2.43ns)   --->   "%empty = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i16, i16 %gmem0_addr, i32 3072" [/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:75->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:123]   --->   Operation 123 'readreq' 'empty' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
 
 State 38 <SV = 37> <Delay = 2.43>
-ST_38 : Operation 124 [35/70] (2.43ns)   --->   "%empty = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i16, i16 %gmem0_addr, i32 3072" [/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:41->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:91]   --->   Operation 124 'readreq' 'empty' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_38 : Operation 124 [35/70] (2.43ns)   --->   "%empty = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i16, i16 %gmem0_addr, i32 3072" [/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:75->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:123]   --->   Operation 124 'readreq' 'empty' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
 
 State 39 <SV = 38> <Delay = 2.43>
-ST_39 : Operation 125 [34/70] (2.43ns)   --->   "%empty = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i16, i16 %gmem0_addr, i32 3072" [/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:41->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:91]   --->   Operation 125 'readreq' 'empty' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_39 : Operation 125 [34/70] (2.43ns)   --->   "%empty = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i16, i16 %gmem0_addr, i32 3072" [/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:75->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:123]   --->   Operation 125 'readreq' 'empty' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
 
 State 40 <SV = 39> <Delay = 2.43>
-ST_40 : Operation 126 [33/70] (2.43ns)   --->   "%empty = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i16, i16 %gmem0_addr, i32 3072" [/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:41->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:91]   --->   Operation 126 'readreq' 'empty' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_40 : Operation 126 [33/70] (2.43ns)   --->   "%empty = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i16, i16 %gmem0_addr, i32 3072" [/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:75->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:123]   --->   Operation 126 'readreq' 'empty' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
 
 State 41 <SV = 40> <Delay = 2.43>
-ST_41 : Operation 127 [32/70] (2.43ns)   --->   "%empty = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i16, i16 %gmem0_addr, i32 3072" [/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:41->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:91]   --->   Operation 127 'readreq' 'empty' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_41 : Operation 127 [32/70] (2.43ns)   --->   "%empty = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i16, i16 %gmem0_addr, i32 3072" [/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:75->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:123]   --->   Operation 127 'readreq' 'empty' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
 
 State 42 <SV = 41> <Delay = 2.43>
-ST_42 : Operation 128 [31/70] (2.43ns)   --->   "%empty = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i16, i16 %gmem0_addr, i32 3072" [/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:41->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:91]   --->   Operation 128 'readreq' 'empty' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_42 : Operation 128 [31/70] (2.43ns)   --->   "%empty = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i16, i16 %gmem0_addr, i32 3072" [/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:75->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:123]   --->   Operation 128 'readreq' 'empty' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
 
 State 43 <SV = 42> <Delay = 2.43>
-ST_43 : Operation 129 [30/70] (2.43ns)   --->   "%empty = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i16, i16 %gmem0_addr, i32 3072" [/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:41->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:91]   --->   Operation 129 'readreq' 'empty' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_43 : Operation 129 [30/70] (2.43ns)   --->   "%empty = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i16, i16 %gmem0_addr, i32 3072" [/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:75->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:123]   --->   Operation 129 'readreq' 'empty' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
 
 State 44 <SV = 43> <Delay = 2.43>
-ST_44 : Operation 130 [29/70] (2.43ns)   --->   "%empty = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i16, i16 %gmem0_addr, i32 3072" [/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:41->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:91]   --->   Operation 130 'readreq' 'empty' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_44 : Operation 130 [29/70] (2.43ns)   --->   "%empty = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i16, i16 %gmem0_addr, i32 3072" [/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:75->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:123]   --->   Operation 130 'readreq' 'empty' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
 
 State 45 <SV = 44> <Delay = 2.43>
-ST_45 : Operation 131 [28/70] (2.43ns)   --->   "%empty = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i16, i16 %gmem0_addr, i32 3072" [/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:41->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:91]   --->   Operation 131 'readreq' 'empty' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_45 : Operation 131 [28/70] (2.43ns)   --->   "%empty = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i16, i16 %gmem0_addr, i32 3072" [/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:75->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:123]   --->   Operation 131 'readreq' 'empty' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
 
 State 46 <SV = 45> <Delay = 2.43>
-ST_46 : Operation 132 [27/70] (2.43ns)   --->   "%empty = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i16, i16 %gmem0_addr, i32 3072" [/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:41->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:91]   --->   Operation 132 'readreq' 'empty' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_46 : Operation 132 [27/70] (2.43ns)   --->   "%empty = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i16, i16 %gmem0_addr, i32 3072" [/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:75->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:123]   --->   Operation 132 'readreq' 'empty' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
 
 State 47 <SV = 46> <Delay = 2.43>
-ST_47 : Operation 133 [26/70] (2.43ns)   --->   "%empty = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i16, i16 %gmem0_addr, i32 3072" [/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:41->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:91]   --->   Operation 133 'readreq' 'empty' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_47 : Operation 133 [26/70] (2.43ns)   --->   "%empty = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i16, i16 %gmem0_addr, i32 3072" [/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:75->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:123]   --->   Operation 133 'readreq' 'empty' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
 
 State 48 <SV = 47> <Delay = 2.43>
-ST_48 : Operation 134 [25/70] (2.43ns)   --->   "%empty = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i16, i16 %gmem0_addr, i32 3072" [/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:41->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:91]   --->   Operation 134 'readreq' 'empty' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_48 : Operation 134 [25/70] (2.43ns)   --->   "%empty = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i16, i16 %gmem0_addr, i32 3072" [/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:75->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:123]   --->   Operation 134 'readreq' 'empty' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
 
 State 49 <SV = 48> <Delay = 2.43>
-ST_49 : Operation 135 [24/70] (2.43ns)   --->   "%empty = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i16, i16 %gmem0_addr, i32 3072" [/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:41->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:91]   --->   Operation 135 'readreq' 'empty' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_49 : Operation 135 [24/70] (2.43ns)   --->   "%empty = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i16, i16 %gmem0_addr, i32 3072" [/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:75->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:123]   --->   Operation 135 'readreq' 'empty' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
 
 State 50 <SV = 49> <Delay = 2.43>
-ST_50 : Operation 136 [23/70] (2.43ns)   --->   "%empty = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i16, i16 %gmem0_addr, i32 3072" [/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:41->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:91]   --->   Operation 136 'readreq' 'empty' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_50 : Operation 136 [23/70] (2.43ns)   --->   "%empty = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i16, i16 %gmem0_addr, i32 3072" [/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:75->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:123]   --->   Operation 136 'readreq' 'empty' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
 
 State 51 <SV = 50> <Delay = 2.43>
-ST_51 : Operation 137 [22/70] (2.43ns)   --->   "%empty = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i16, i16 %gmem0_addr, i32 3072" [/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:41->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:91]   --->   Operation 137 'readreq' 'empty' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_51 : Operation 137 [22/70] (2.43ns)   --->   "%empty = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i16, i16 %gmem0_addr, i32 3072" [/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:75->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:123]   --->   Operation 137 'readreq' 'empty' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
 
 State 52 <SV = 51> <Delay = 2.43>
-ST_52 : Operation 138 [21/70] (2.43ns)   --->   "%empty = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i16, i16 %gmem0_addr, i32 3072" [/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:41->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:91]   --->   Operation 138 'readreq' 'empty' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_52 : Operation 138 [21/70] (2.43ns)   --->   "%empty = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i16, i16 %gmem0_addr, i32 3072" [/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:75->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:123]   --->   Operation 138 'readreq' 'empty' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
 
 State 53 <SV = 52> <Delay = 2.43>
-ST_53 : Operation 139 [20/70] (2.43ns)   --->   "%empty = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i16, i16 %gmem0_addr, i32 3072" [/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:41->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:91]   --->   Operation 139 'readreq' 'empty' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_53 : Operation 139 [20/70] (2.43ns)   --->   "%empty = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i16, i16 %gmem0_addr, i32 3072" [/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:75->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:123]   --->   Operation 139 'readreq' 'empty' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
 
 State 54 <SV = 53> <Delay = 2.43>
-ST_54 : Operation 140 [19/70] (2.43ns)   --->   "%empty = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i16, i16 %gmem0_addr, i32 3072" [/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:41->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:91]   --->   Operation 140 'readreq' 'empty' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_54 : Operation 140 [19/70] (2.43ns)   --->   "%empty = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i16, i16 %gmem0_addr, i32 3072" [/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:75->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:123]   --->   Operation 140 'readreq' 'empty' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
 
 State 55 <SV = 54> <Delay = 2.43>
-ST_55 : Operation 141 [18/70] (2.43ns)   --->   "%empty = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i16, i16 %gmem0_addr, i32 3072" [/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:41->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:91]   --->   Operation 141 'readreq' 'empty' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_55 : Operation 141 [18/70] (2.43ns)   --->   "%empty = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i16, i16 %gmem0_addr, i32 3072" [/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:75->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:123]   --->   Operation 141 'readreq' 'empty' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
 
 State 56 <SV = 55> <Delay = 2.43>
-ST_56 : Operation 142 [17/70] (2.43ns)   --->   "%empty = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i16, i16 %gmem0_addr, i32 3072" [/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:41->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:91]   --->   Operation 142 'readreq' 'empty' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_56 : Operation 142 [17/70] (2.43ns)   --->   "%empty = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i16, i16 %gmem0_addr, i32 3072" [/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:75->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:123]   --->   Operation 142 'readreq' 'empty' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
 
 State 57 <SV = 56> <Delay = 2.43>
-ST_57 : Operation 143 [16/70] (2.43ns)   --->   "%empty = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i16, i16 %gmem0_addr, i32 3072" [/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:41->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:91]   --->   Operation 143 'readreq' 'empty' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_57 : Operation 143 [16/70] (2.43ns)   --->   "%empty = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i16, i16 %gmem0_addr, i32 3072" [/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:75->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:123]   --->   Operation 143 'readreq' 'empty' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
 
 State 58 <SV = 57> <Delay = 2.43>
-ST_58 : Operation 144 [15/70] (2.43ns)   --->   "%empty = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i16, i16 %gmem0_addr, i32 3072" [/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:41->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:91]   --->   Operation 144 'readreq' 'empty' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_58 : Operation 144 [15/70] (2.43ns)   --->   "%empty = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i16, i16 %gmem0_addr, i32 3072" [/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:75->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:123]   --->   Operation 144 'readreq' 'empty' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
 
 State 59 <SV = 58> <Delay = 2.43>
-ST_59 : Operation 145 [14/70] (2.43ns)   --->   "%empty = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i16, i16 %gmem0_addr, i32 3072" [/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:41->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:91]   --->   Operation 145 'readreq' 'empty' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_59 : Operation 145 [14/70] (2.43ns)   --->   "%empty = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i16, i16 %gmem0_addr, i32 3072" [/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:75->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:123]   --->   Operation 145 'readreq' 'empty' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
 
 State 60 <SV = 59> <Delay = 2.43>
-ST_60 : Operation 146 [13/70] (2.43ns)   --->   "%empty = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i16, i16 %gmem0_addr, i32 3072" [/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:41->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:91]   --->   Operation 146 'readreq' 'empty' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_60 : Operation 146 [13/70] (2.43ns)   --->   "%empty = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i16, i16 %gmem0_addr, i32 3072" [/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:75->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:123]   --->   Operation 146 'readreq' 'empty' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
 
 State 61 <SV = 60> <Delay = 2.43>
-ST_61 : Operation 147 [12/70] (2.43ns)   --->   "%empty = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i16, i16 %gmem0_addr, i32 3072" [/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:41->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:91]   --->   Operation 147 'readreq' 'empty' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_61 : Operation 147 [12/70] (2.43ns)   --->   "%empty = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i16, i16 %gmem0_addr, i32 3072" [/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:75->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:123]   --->   Operation 147 'readreq' 'empty' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
 
 State 62 <SV = 61> <Delay = 2.43>
-ST_62 : Operation 148 [11/70] (2.43ns)   --->   "%empty = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i16, i16 %gmem0_addr, i32 3072" [/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:41->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:91]   --->   Operation 148 'readreq' 'empty' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_62 : Operation 148 [11/70] (2.43ns)   --->   "%empty = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i16, i16 %gmem0_addr, i32 3072" [/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:75->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:123]   --->   Operation 148 'readreq' 'empty' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
 
 State 63 <SV = 62> <Delay = 2.43>
-ST_63 : Operation 149 [10/70] (2.43ns)   --->   "%empty = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i16, i16 %gmem0_addr, i32 3072" [/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:41->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:91]   --->   Operation 149 'readreq' 'empty' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_63 : Operation 149 [10/70] (2.43ns)   --->   "%empty = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i16, i16 %gmem0_addr, i32 3072" [/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:75->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:123]   --->   Operation 149 'readreq' 'empty' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
 
 State 64 <SV = 63> <Delay = 2.43>
-ST_64 : Operation 150 [9/70] (2.43ns)   --->   "%empty = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i16, i16 %gmem0_addr, i32 3072" [/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:41->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:91]   --->   Operation 150 'readreq' 'empty' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_64 : Operation 150 [9/70] (2.43ns)   --->   "%empty = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i16, i16 %gmem0_addr, i32 3072" [/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:75->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:123]   --->   Operation 150 'readreq' 'empty' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
 
 State 65 <SV = 64> <Delay = 2.43>
-ST_65 : Operation 151 [8/70] (2.43ns)   --->   "%empty = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i16, i16 %gmem0_addr, i32 3072" [/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:41->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:91]   --->   Operation 151 'readreq' 'empty' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_65 : Operation 151 [8/70] (2.43ns)   --->   "%empty = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i16, i16 %gmem0_addr, i32 3072" [/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:75->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:123]   --->   Operation 151 'readreq' 'empty' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
 
 State 66 <SV = 65> <Delay = 2.43>
-ST_66 : Operation 152 [7/70] (2.43ns)   --->   "%empty = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i16, i16 %gmem0_addr, i32 3072" [/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:41->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:91]   --->   Operation 152 'readreq' 'empty' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_66 : Operation 152 [7/70] (2.43ns)   --->   "%empty = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i16, i16 %gmem0_addr, i32 3072" [/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:75->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:123]   --->   Operation 152 'readreq' 'empty' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
 
 State 67 <SV = 66> <Delay = 2.43>
-ST_67 : Operation 153 [6/70] (2.43ns)   --->   "%empty = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i16, i16 %gmem0_addr, i32 3072" [/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:41->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:91]   --->   Operation 153 'readreq' 'empty' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_67 : Operation 153 [6/70] (2.43ns)   --->   "%empty = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i16, i16 %gmem0_addr, i32 3072" [/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:75->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:123]   --->   Operation 153 'readreq' 'empty' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
 
 State 68 <SV = 67> <Delay = 2.43>
-ST_68 : Operation 154 [5/70] (2.43ns)   --->   "%empty = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i16, i16 %gmem0_addr, i32 3072" [/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:41->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:91]   --->   Operation 154 'readreq' 'empty' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_68 : Operation 154 [5/70] (2.43ns)   --->   "%empty = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i16, i16 %gmem0_addr, i32 3072" [/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:75->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:123]   --->   Operation 154 'readreq' 'empty' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
 
 State 69 <SV = 68> <Delay = 2.43>
-ST_69 : Operation 155 [4/70] (2.43ns)   --->   "%empty = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i16, i16 %gmem0_addr, i32 3072" [/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:41->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:91]   --->   Operation 155 'readreq' 'empty' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_69 : Operation 155 [4/70] (2.43ns)   --->   "%empty = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i16, i16 %gmem0_addr, i32 3072" [/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:75->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:123]   --->   Operation 155 'readreq' 'empty' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
 
 State 70 <SV = 69> <Delay = 2.43>
-ST_70 : Operation 156 [3/70] (2.43ns)   --->   "%empty = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i16, i16 %gmem0_addr, i32 3072" [/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:41->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:91]   --->   Operation 156 'readreq' 'empty' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_70 : Operation 156 [3/70] (2.43ns)   --->   "%empty = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i16, i16 %gmem0_addr, i32 3072" [/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:75->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:123]   --->   Operation 156 'readreq' 'empty' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
 
 State 71 <SV = 70> <Delay = 2.43>
-ST_71 : Operation 157 [2/70] (2.43ns)   --->   "%empty = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i16, i16 %gmem0_addr, i32 3072" [/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:41->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:91]   --->   Operation 157 'readreq' 'empty' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_71 : Operation 157 [2/70] (2.43ns)   --->   "%empty = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i16, i16 %gmem0_addr, i32 3072" [/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:75->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:123]   --->   Operation 157 'readreq' 'empty' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
 
 State 72 <SV = 71> <Delay = 2.43>
-ST_72 : Operation 158 [1/70] (2.43ns)   --->   "%empty = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i16, i16 %gmem0_addr, i32 3072" [/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:41->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:91]   --->   Operation 158 'readreq' 'empty' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_72 : Operation 158 [1/70] (2.43ns)   --->   "%empty = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i16, i16 %gmem0_addr, i32 3072" [/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:75->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:123]   --->   Operation 158 'readreq' 'empty' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 121 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
 
 State 73 <SV = 72> <Delay = 0.00>
 ST_73 : Operation 159 [1/1] (0.00ns)   --->   "%empty_103 = wait i32 @_ssdm_op_Wait"   --->   Operation 159 'wait' 'empty_103' <Predicate = true> <Delay = 0.00>
-ST_73 : Operation 160 [2/2] (0.00ns)   --->   "%call_ln41 = call void @read_input_Pipeline_VITIS_LOOP_41_1, i16 %gmem0, i63 %trunc_ln_i, i48 %input1" [/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:41->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:91]   --->   Operation 160 'call' 'call_ln41' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_73 : Operation 160 [2/2] (0.00ns)   --->   "%call_ln75 = call void @read_input_Pipeline_VITIS_LOOP_75_1, i16 %gmem0, i63 %trunc_ln_i, i48 %input1" [/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:75->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:123]   --->   Operation 160 'call' 'call_ln75' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
 
 State 74 <SV = 73> <Delay = 0.00>
 ST_74 : Operation 161 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i13 %n_c, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @ScalarProp_str, i32 4294967295, i32 0"   --->   Operation 161 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
 ST_74 : Operation 162 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i48 %input1, void @empty_29, i32 0, i32 0, void @empty, i32 0, i32 0, void @empty, void @empty, void @empty, i32 0, i32 0, i32 0, i32 0, void @empty, void @empty, i32 4294967295, i32 0"   --->   Operation 162 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
 ST_74 : Operation 163 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i16 %gmem0, void @empty_10, i32 0, i32 0, void @empty, i32 64, i32 0, void @empty_19, void @empty_27, void @empty, i32 16, i32 16, i32 16, i32 16, void @empty, void @empty, i32 4294967295, i32 0"   --->   Operation 163 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
-ST_74 : Operation 164 [1/2] (0.00ns)   --->   "%call_ln41 = call void @read_input_Pipeline_VITIS_LOOP_41_1, i16 %gmem0, i63 %trunc_ln_i, i48 %input1" [/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:41->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:91]   --->   Operation 164 'call' 'call_ln41' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
-ST_74 : Operation 165 [1/1] (0.00ns)   --->   "%ret_ln91 = ret" [/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:91]   --->   Operation 165 'ret' 'ret_ln91' <Predicate = true> <Delay = 0.00>
+ST_74 : Operation 164 [1/2] (0.00ns)   --->   "%call_ln75 = call void @read_input_Pipeline_VITIS_LOOP_75_1, i16 %gmem0, i63 %trunc_ln_i, i48 %input1" [/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:75->/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:123]   --->   Operation 164 'call' 'call_ln75' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_74 : Operation 165 [1/1] (0.00ns)   --->   "%ret_ln123 = ret" [/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:123]   --->   Operation 165 'ret' 'ret_ln123' <Predicate = true> <Delay = 0.00>
 
 
 ============================================================
@@ -423,18 +423,18 @@ p_shl1_i          (bitconcatenate) [ 0000000000000000000000000000000000000000000
 p_shl1_cast5_i    (zext          ) [ 000000000000000000000000000000000000000000000000000000000000000000000000000]
 mul5_i            (sub           ) [ 000000000000000000000000000000000000000000000000000000000000000000000000000]
 tmp_i             (bitconcatenate) [ 000000000000000000000000000000000000000000000000000000000000000000000000000]
-sext_ln41         (sext          ) [ 000000000000000000000000000000000000000000000000000000000000000000000000000]
-add_ln41          (add           ) [ 000000000000000000000000000000000000000000000000000000000000000000000000000]
+sext_ln75         (sext          ) [ 000000000000000000000000000000000000000000000000000000000000000000000000000]
+add_ln75          (add           ) [ 000000000000000000000000000000000000000000000000000000000000000000000000000]
 trunc_ln_i        (partselect    ) [ 000111111111111111111111111111111111111111111111111111111111111111111111111]
-sext_ln41_1       (sext          ) [ 000000000000000000000000000000000000000000000000000000000000000000000000000]
+sext_ln75_1       (sext          ) [ 000000000000000000000000000000000000000000000000000000000000000000000000000]
 gmem0_addr        (getelementptr ) [ 000011111111111111111111111111111111111111111111111111111111111111111111100]
 empty             (readreq       ) [ 000000000000000000000000000000000000000000000000000000000000000000000000000]
 empty_103         (wait          ) [ 000000000000000000000000000000000000000000000000000000000000000000000000000]
 specinterface_ln0 (specinterface ) [ 000000000000000000000000000000000000000000000000000000000000000000000000000]
 specinterface_ln0 (specinterface ) [ 000000000000000000000000000000000000000000000000000000000000000000000000000]
 specinterface_ln0 (specinterface ) [ 000000000000000000000000000000000000000000000000000000000000000000000000000]
-call_ln41         (call          ) [ 000000000000000000000000000000000000000000000000000000000000000000000000000]
-ret_ln91          (ret           ) [ 000000000000000000000000000000000000000000000000000000000000000000000000000]
+call_ln75         (call          ) [ 000000000000000000000000000000000000000000000000000000000000000000000000000]
+ret_ln123         (ret           ) [ 000000000000000000000000000000000000000000000000000000000000000000000000000]
 </LifeTime>
 
 <model>
@@ -625,7 +625,7 @@ ret_ln91          (ret           ) [ 0000000000000000000000000000000000000000000
 <pin id="41" dir="1" index="0" bw="1" slack="0"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="read_input_Pipeline_VITIS_LOOP_41_1"/></StgValue>
+<StgValue><ssdm name="read_input_Pipeline_VITIS_LOOP_75_1"/></StgValue>
 </bind>
 </comp>
 
@@ -805,7 +805,7 @@ ret_ln91          (ret           ) [ 0000000000000000000000000000000000000000000
 </bind>
 </comp>
 
-<comp id="97" class="1004" name="grp_read_input_Pipeline_VITIS_LOOP_41_1_fu_97">
+<comp id="97" class="1004" name="grp_read_input_Pipeline_VITIS_LOOP_75_1_fu_97">
 <pin_list>
 <pin id="98" dir="0" index="0" bw="0" slack="0"/>
 <pin id="99" dir="0" index="1" bw="16" slack="0"/>
@@ -815,7 +815,7 @@ ret_ln91          (ret           ) [ 0000000000000000000000000000000000000000000
 </pin_list>
 <bind>
 <opcode="call(48) " fcode="call"/>
-<opset="call_ln41/73 "/>
+<opset="call_ln75/73 "/>
 </bind>
 </comp>
 
@@ -892,18 +892,18 @@ ret_ln91          (ret           ) [ 0000000000000000000000000000000000000000000
 </bind>
 </comp>
 
-<comp id="142" class="1004" name="sext_ln41_fu_142">
+<comp id="142" class="1004" name="sext_ln75_fu_142">
 <pin_list>
 <pin id="143" dir="0" index="0" bw="27" slack="0"/>
 <pin id="144" dir="1" index="1" bw="64" slack="0"/>
 </pin_list>
 <bind>
 <opcode="sext(35) " fcode="sext"/>
-<opset="sext_ln41/2 "/>
+<opset="sext_ln75/2 "/>
 </bind>
 </comp>
 
-<comp id="146" class="1004" name="add_ln41_fu_146">
+<comp id="146" class="1004" name="add_ln75_fu_146">
 <pin_list>
 <pin id="147" dir="0" index="0" bw="27" slack="0"/>
 <pin id="148" dir="0" index="1" bw="64" slack="0"/>
@@ -911,7 +911,7 @@ ret_ln91          (ret           ) [ 0000000000000000000000000000000000000000000
 </pin_list>
 <bind>
 <opcode="add(8) " fcode="add"/>
-<opset="add_ln41/2 "/>
+<opset="add_ln75/2 "/>
 </bind>
 </comp>
 
@@ -929,14 +929,14 @@ ret_ln91          (ret           ) [ 0000000000000000000000000000000000000000000
 </bind>
 </comp>
 
-<comp id="162" class="1004" name="sext_ln41_1_fu_162">
+<comp id="162" class="1004" name="sext_ln75_1_fu_162">
 <pin_list>
 <pin id="163" dir="0" index="0" bw="63" slack="1"/>
 <pin id="164" dir="1" index="1" bw="64" slack="0"/>
 </pin_list>
 <bind>
 <opcode="sext(35) " fcode="sext"/>
-<opset="sext_ln41_1/3 "/>
+<opset="sext_ln75_1/3 "/>
 </bind>
 </comp>
 
@@ -1087,8 +1087,8 @@ ret_ln91          (ret           ) [ 0000000000000000000000000000000000000000000
 		p_shl1_cast5_i : 1
 		mul5_i : 2
 		tmp_i : 3
-		sext_ln41 : 4
-		add_ln41 : 5
+		sext_ln75 : 4
+		add_ln75 : 5
 		trunc_ln_i : 6
 	State 3
 		gmem0_addr : 1
@@ -1174,9 +1174,9 @@ ret_ln91          (ret           ) [ 0000000000000000000000000000000000000000000
 |----------|-----------------------------------------------|---------|---------|
 | Operation|                Functional Unit                |    FF   |   LUT   |
 |----------|-----------------------------------------------|---------|---------|
-|   call   | grp_read_input_Pipeline_VITIS_LOOP_41_1_fu_97 |    76   |    29   |
+|   call   | grp_read_input_Pipeline_VITIS_LOOP_75_1_fu_97 |    76   |    29   |
 |----------|-----------------------------------------------|---------|---------|
-|    add   |                add_ln41_fu_146                |    0    |    71   |
+|    add   |                add_ln75_fu_146                |    0    |    71   |
 |----------|-----------------------------------------------|---------|---------|
 |    sub   |                 mul5_i_fu_128                 |    0    |    32   |
 |----------|-----------------------------------------------|---------|---------|
@@ -1194,8 +1194,8 @@ ret_ln91          (ret           ) [ 0000000000000000000000000000000000000000000
 |   zext   |              p_shl_cast4_i_fu_113             |    0    |    0    |
 |          |             p_shl1_cast5_i_fu_124             |    0    |    0    |
 |----------|-----------------------------------------------|---------|---------|
-|   sext   |                sext_ln41_fu_142               |    0    |    0    |
-|          |               sext_ln41_1_fu_162              |    0    |    0    |
+|   sext   |                sext_ln75_fu_142               |    0    |    0    |
+|          |               sext_ln75_1_fu_162              |    0    |    0    |
 |----------|-----------------------------------------------|---------|---------|
 |partselect|               trunc_ln_i_fu_152               |    0    |    0    |
 |----------|-----------------------------------------------|---------|---------|

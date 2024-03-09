@@ -43,7 +43,7 @@ set SCTraceFileFormat vcd
 set SCTraceOption all
 set TargetInfo xcu55c:-fsvh2892:-2L-e
 set SourceFiles {sc {} c {/home/ayvol/accelerator_wrapper/src/myproject.cpp /home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp}}
-set SourceFlags {sc {} c {{-DMYPROJ=myproject -DIS_CONV2D -I/home/ayvol/accelerator_wrapper/src -I/home/ayvol/accelerator_wrapper/src -I/home/ayvol/accelerator_wrapper/src/weights -I/home/ayvol/accelerator_wrapper/src/nnet_utils -std=c++11} {-DMYPROJ=myproject -DIS_CONV2D -I/home/ayvol/accelerator_wrapper/src -I/home/ayvol/accelerator_wrapper/src -I/home/ayvol/accelerator_wrapper/src/weights -I/home/ayvol/accelerator_wrapper/src/nnet_utils -std=c++11}}}
+set SourceFlags {sc {} c {{-DMYPROJ=myproject -DIS_CONV2D -DIO_STREAM -I/home/ayvol/accelerator_wrapper/src -I/home/ayvol/accelerator_wrapper/src -I/home/ayvol/accelerator_wrapper/src/weights -I/home/ayvol/accelerator_wrapper/src/nnet_utils -std=c++11} {-DMYPROJ=myproject -DIS_CONV2D -DIO_STREAM -I/home/ayvol/accelerator_wrapper/src -I/home/ayvol/accelerator_wrapper/src -I/home/ayvol/accelerator_wrapper/src/weights -I/home/ayvol/accelerator_wrapper/src/nnet_utils -std=c++11}}}
 set DirectiveFile /home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml/solution/solution.directive
 set TBFiles {bc {} c {} sc {} cas {} vhdl {} verilog {}}
 set SpecLanguage C

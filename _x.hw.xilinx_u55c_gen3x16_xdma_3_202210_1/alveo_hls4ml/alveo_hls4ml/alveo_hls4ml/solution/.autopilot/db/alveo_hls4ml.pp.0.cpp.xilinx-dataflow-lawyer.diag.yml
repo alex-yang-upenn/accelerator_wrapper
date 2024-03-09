@@ -3,14 +3,14 @@ MainSourceFile:  /home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_
 Diagnostics:     
   - DiagnosticName:  clang-diagnostic-warning
     Message:         '[xlx-df-check-10] Either use an argument of the function or declare the variable inside the dataflow loop body'
-    FileOffset:      '91:17'
+    FileOffset:      '123:17'
     FilePath:        /home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp
   - DiagnosticName:  clang-diagnostic-warning
     Message:         '[xlx-df-check-10] Either use an argument of the function or declare the variable inside the dataflow loop body'
-    FileOffset:      '93:25'
+    FileOffset:      '125:27'
     FilePath:        /home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp
   - DiagnosticName:  clang-diagnostic-warning
     Message:         '[xlx-df-check-11] Since the only kind of statements allowed in a canonical dataflow region are variable declarations and function calls, the compiler may not be able to correctly handle the region'
-    FileOffset:      '90:9'
+    FileOffset:      '122:9'
     FilePath:        /home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp
 ...

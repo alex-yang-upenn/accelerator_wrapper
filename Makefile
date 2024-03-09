@@ -42,13 +42,15 @@ BIN_FILENAME := $(BUILD_DIR)/alveo_hls4ml.xclbin
 XO_CONTAINER_FILENAME := $(XO_DIR)/alveo_hls4ml.xo
 
 #--v--v--
-#these need to be set by the user for their specific installation
 HLS4ML_NAME := myproject
+#name of the cpp file produced by HLS4ML
 HLS4ML_PROJ_TYPE := CONV2D
-#possible options are: DENSE, CONV2D
+#possible options are: DENSE, CONV1D, CONV2D
+HLS4ML_IO_TYPE:= IO_STREAM
+#possible options are: IO_PARALLEL, IO_STREAM
 #--^--^--
-ifeq ($(filter $(HLS4ML_PROJ_TYPE),DENSE CONV2D),)
-$(error invalid HLS4ML_PROJ_TYPE, must be DENSE or CONV2D)
+ifeq ($(filter $(HLS4ML_PROJ_TYPE),DENSE CONV1D CONV2D),)
+$(error invalid HLS4ML_PROJ_TYPE, must be DENSE, CONV1D, or CONV2D)
 endif
 
 # Include Libraries
@@ -61,10 +63,6 @@ include $(PWD)/libs/opencl/opencl.mk
 CXXFLAGS += $(opencl_CXXFLAGS) -Wall -O0 -g -std=c++11 
 LDFLAGS += $(opencl_LDFLAGS) -I$(XILINX_VIVADO)/include/ -I$(XILINX_HLS)/include/ -Wno-unknown-pragmas
 
-# Include Macro Definitions
-CXXFLAGS += -DIS_$(HLS4ML_PROJ_TYPE) -DHLS4ML_DATA_DIR=./ -DXCL_BIN_FILENAME=$(BIN_FILENAME)
-KERN_MACROS += -DMYPROJ=$(HLS4ML_NAME) -DIS_$(HLS4ML_PROJ_TYPE)
-
 # Host compiler global settings
 HOST_SRCS += src/host.cpp
 CXXFLAGS += -fmessage-length=0
@@ -76,10 +74,14 @@ endif
 
 # Kernel compiler global settings
 KERN_SRCS += src/$(HLS4ML_NAME).cpp
-CLFLAGS += -t $(TARGET) --platform $(DEVICE) --save-temps 
+VPPFLAGS += -t $(TARGET) --platform $(DEVICE) --save-temps 
 ifneq ($(TARGET), hw)
-	CLFLAGS += -g
+	VPPFLAGS += -g
 endif
+
+# Macro Definitions
+CXX_MACROS += -DIS_$(HLS4ML_PROJ_TYPE) -D$(HLS4ML_IO_TYPE) -DHLS4ML_DATA_DIR=./ -DXCL_BIN_FILENAME=$(BIN_FILENAME)
+KERN_MACROS += -DMYPROJ=$(HLS4ML_NAME) -DIS_$(HLS4ML_PROJ_TYPE) -D$(HLS4ML_IO_TYPE)
 
 EXECUTABLE = host
 EMCONFIG_DIR = $(XO_DIR)
@@ -90,14 +92,14 @@ all: check-devices $(EXECUTABLE) $(BIN_FILENAME) emconfig
 # Building kernel
 $(XO_CONTAINER_FILENAME): src/alveo_hls4ml.cpp
 	mkdir -p $(XO_DIR)
-	v++ $(CLFLAGS) --temp_dir $(XO_DIR) -c -k alveo_hls4ml -I'$(<D)' -o'$@' '$<' $(KERN_SRCS) $(KERN_MACROS) -I./src/ -I./src/weights -I./src/nnet_utils/ --config config.ini
+	v++ $(VPPFLAGS) --temp_dir $(XO_DIR) -c -k alveo_hls4ml -I'$(<D)' -o'$@' '$<' $(KERN_SRCS) $(KERN_MACROS) -I./src/ -I./src/weights -I./src/nnet_utils/ --config config.ini
 $(BIN_FILENAME): $(XO_CONTAINER_FILENAME)
 	mkdir -p $(BUILD_DIR)
-	v++ $(CLFLAGS) --temp_dir $(BUILD_DIR) -l $(LDCLFLAGS) -o'$@' $(+) --config config.ini
+	v++ $(VPPFLAGS) --temp_dir $(BUILD_DIR) -l -o'$@' $(+) --config config.ini
 
 # Building Host
 $(EXECUTABLE): check-xrt $(HOST_SRCS) $(HOST_HDRS)
-	$(CXX) $(CXXFLAGS) $(HOST_SRCS) $(HOST_HDRS) -o '$@' $(LDFLAGS)
+	$(CXX) $(CXXFLAGS) $(CXX_MACROS) $(HOST_SRCS) $(HOST_HDRS) -o '$@' $(LDFLAGS)
 
 emconfig:$(EMCONFIG_DIR)/emconfig.json
 $(EMCONFIG_DIR)/emconfig.json:

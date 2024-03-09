@@ -984,9 +984,9 @@
     <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/ayvol/accelerator_wrapper/src/myproject.cpp:125:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="myproject" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=layer23_out depth=1" ARG_PragmaType="stream" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_DATAFLOW" msg_id="214-113" msg_severity="WARNING" msg_loc="/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:91:17" msg_body="Either use an argument of the function or declare the variable inside the dataflow loop body"/>
-    <msg msg_groups="PRAGMA_DATAFLOW" msg_id="214-113" msg_severity="WARNING" msg_loc="/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:93:25" msg_body="Either use an argument of the function or declare the variable inside the dataflow loop body"/>
-    <msg msg_groups="PRAGMA_DATAFLOW" msg_id="214-114" msg_severity="WARNING" msg_loc="/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:90:9" msg_body="Since the only kind of statements allowed in a canonical dataflow region are variable declarations and function calls, the compiler may not be able to correctly handle the region"/>
+    <msg msg_groups="PRAGMA_DATAFLOW" msg_id="214-113" msg_severity="WARNING" msg_loc="/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:123:17" msg_body="Either use an argument of the function or declare the variable inside the dataflow loop body"/>
+    <msg msg_groups="PRAGMA_DATAFLOW" msg_id="214-113" msg_severity="WARNING" msg_loc="/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:125:27" msg_body="Either use an argument of the function or declare the variable inside the dataflow loop body"/>
+    <msg msg_groups="PRAGMA_DATAFLOW" msg_id="214-114" msg_severity="WARNING" msg_loc="/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:122:9" msg_body="Since the only kind of statements allowed in a canonical dataflow region are variable declarations and function calls, the compiler may not be able to correctly handle the region"/>
     <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/tools/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot/ap_int_ref.h:678:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="and_reduce" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
@@ -999,25 +999,25 @@
     <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_types.h:28:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="operator=" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:42:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:76:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="read_input" ARG_PragmaIsValid="1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:45:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:79:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="read_input" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:58:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:89:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="write_result" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
     <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml.tcl:26:9" msg_body="HLS pragma dump">
         <args ARG_PragmaContext="directive" ARG_PragmaFunction="alveo_hls4ml" ARG_PragmaIsValid="1" ARG_PragmaOptions="name=alveo_hls4ml" ARG_PragmaType="top" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:86:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:118:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="alveo_hls4ml" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=input depth=(32 * 32)" ARG_PragmaType="stream" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:87:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:119:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="alveo_hls4ml" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=output depth=1" ARG_PragmaType="stream" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:90:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:122:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="alveo_hls4ml" ARG_PragmaIsValid="1" ARG_PragmaType="dataflow" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
     <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-131" msg_severity="INFO" msg_loc="/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv_stream.h:252:5" msg_body="Inlining function 'void nnet::kernel_shift_2d&lt;nnet::array&lt;ap_fixed&lt;16, 6, (ap_q_mode)5, (ap_o_mode)3, 0&gt;, 3u&gt;, config2&gt;(nnet::array&lt;ap_fixed&lt;16, 6, (ap_q_mode)5, (ap_o_mode)3, 0&gt;, 3u&gt;::value_type (*) [config2::n_chan], nnet::array&lt;ap_fixed&lt;16, 6, (ap_q_mode)5, (ap_o_mode)3, 0&gt;, 3u&gt;::value_type*)' into 'void nnet::shift_line_buffer&lt;nnet::array&lt;ap_fixed&lt;16, 6, (ap_q_mode)5, (ap_o_mode)3, 0&gt;, 3u&gt;, config2&gt;(nnet::array&lt;ap_fixed&lt;16, 6, (ap_q_mode)5, (ap_o_mode)3, 0&gt;, 3u&gt; const&amp;, ap_shift_reg&lt;nnet::array&lt;ap_fixed&lt;16, 6, (ap_q_mode)5, (ap_o_mode)3, 0&gt;, 3u&gt;::value_type, config2::in_width&gt; (*) [config2::n_chan], nnet::array&lt;ap_fixed&lt;16, 6, (ap_q_mode)5, (ap_o_mode)3, 0&gt;, 3u&gt;::value_type*)'">
@@ -1197,11 +1197,11 @@
     <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv_stream.h:276:40" msg_body="Loop 'anonymous' is marked as complete unroll implied by the pipeline pragma">
         <args LoopName="anonymous"/>
     </msg>
-    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:44:22" msg_body="Loop 'VITIS_LOOP_44_2' is marked as complete unroll implied by the pipeline pragma">
-        <args LoopName="VITIS_LOOP_44_2"/>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:78:22" msg_body="Loop 'VITIS_LOOP_78_2' is marked as complete unroll implied by the pipeline pragma">
+        <args LoopName="VITIS_LOOP_78_2"/>
     </msg>
-    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:55:0" msg_body="Unrolling loop 'VITIS_LOOP_57_1' (/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:57:20) in function 'write_result' completely with a factor of 10">
-        <args Factor="10" LoopLoc="/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:57:20" LoopName="VITIS_LOOP_57_1"/>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:86:0" msg_body="Unrolling loop 'VITIS_LOOP_88_1' (/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:88:20) in function 'write_result' completely with a factor of 10">
+        <args Factor="10" LoopLoc="/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:88:20" LoopName="VITIS_LOOP_88_1"/>
     </msg>
     <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_activation_stream.h:170:0" msg_body="Unrolling loop 'SoftmaxArrayPackLoop' (/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_activation_stream.h:201:9) in function 'nnet::softmax_stable&lt;nnet::array&lt;ap_fixed&lt;16, 6, (ap_q_mode)5, (ap_o_mode)3, 0&gt;, 10u&gt;, nnet::array&lt;ap_fixed&lt;16, 6, (ap_q_mode)5, (ap_o_mode)3, 0&gt;, 10u&gt;, softmax_config25&gt;' completely with a factor of 10">
         <args Factor="10" LoopLoc="/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_activation_stream.h:201:9" LoopName="SoftmaxArrayPackLoop"/>
@@ -1671,10 +1671,10 @@
     <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv_stream.h:224:0" msg_body="Unrolling loop 'anonymous' (/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv_stream.h:229:30) in function 'nnet::shift_line_buffer&lt;nnet::array&lt;ap_fixed&lt;16, 6, (ap_q_mode)5, (ap_o_mode)3, 0&gt;, 3u&gt;, config2&gt;' completely with a factor of 3">
         <args Factor="3" LoopLoc="/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv_stream.h:229:30" LoopName="anonymous"/>
     </msg>
-    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:40:0" msg_body="Unrolling loop 'VITIS_LOOP_44_2' (/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:44:22) in function 'read_input' completely with a factor of 3">
-        <args Factor="3" LoopLoc="/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:44:22" LoopName="VITIS_LOOP_44_2"/>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:74:0" msg_body="Unrolling loop 'VITIS_LOOP_78_2' (/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:78:22) in function 'read_input' completely with a factor of 3">
+        <args Factor="3" LoopLoc="/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:78:22" LoopName="VITIS_LOOP_78_2"/>
     </msg>
-    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:40:0" msg_body="Inlining function 'nnet::array&lt;ap_fixed&lt;16, 6, (ap_q_mode)5, (ap_o_mode)3, 0&gt;, 3u&gt;::operator[](unsigned long)' into 'read_input(ap_fixed&lt;16, 6, (ap_q_mode)5, (ap_o_mode)3, 0&gt; const*, hls::stream&lt;nnet::array&lt;ap_fixed&lt;16, 6, (ap_q_mode)5, (ap_o_mode)3, 0&gt;, 3u&gt;, 0&gt;&amp;, int)'">
+    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:74:0" msg_body="Inlining function 'nnet::array&lt;ap_fixed&lt;16, 6, (ap_q_mode)5, (ap_o_mode)3, 0&gt;, 3u&gt;::operator[](unsigned long)' into 'read_input(ap_fixed&lt;16, 6, (ap_q_mode)5, (ap_o_mode)3, 0&gt; const*, hls::stream&lt;nnet::array&lt;ap_fixed&lt;16, 6, (ap_q_mode)5, (ap_o_mode)3, 0&gt;, 3u&gt;, 0&gt;&amp;, int)'">
         <args Callee="nnet::array&lt;ap_fixed&lt;16, 6, (ap_q_mode)5, (ap_o_mode)3, 0&gt;, 3u&gt;::operator[](unsigned long)" Caller="read_input(ap_fixed&lt;16, 6, (ap_q_mode)5, (ap_o_mode)3, 0&gt; const*, hls::stream&lt;nnet::array&lt;ap_fixed&lt;16, 6, (ap_q_mode)5, (ap_o_mode)3, 0&gt;, 3u&gt;, 0&gt;&amp;, int)"/>
     </msg>
     <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_conv_stream.h:224:0" msg_body="Inlining function 'nnet::array&lt;ap_fixed&lt;16, 6, (ap_q_mode)5, (ap_o_mode)3, 0&gt;, 3u&gt;::operator[](unsigned long) const' into 'void nnet::shift_line_buffer&lt;nnet::array&lt;ap_fixed&lt;16, 6, (ap_q_mode)5, (ap_o_mode)3, 0&gt;, 3u&gt;, config2&gt;(nnet::array&lt;ap_fixed&lt;16, 6, (ap_q_mode)5, (ap_o_mode)3, 0&gt;, 3u&gt; const&amp;, ap_shift_reg&lt;nnet::array&lt;ap_fixed&lt;16, 6, (ap_q_mode)5, (ap_o_mode)3, 0&gt;, 3u&gt;::value_type, config2::in_width&gt; (*) [config2::n_chan], nnet::array&lt;ap_fixed&lt;16, 6, (ap_q_mode)5, (ap_o_mode)3, 0&gt;, 3u&gt;::value_type*)'">
@@ -1851,7 +1851,7 @@
     <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_activation_stream.h:170:0" msg_body="Inlining function 'unsigned int nnet::softmax_idx_from_real_val&lt;ap_fixed&lt;18, 8, (ap_q_mode)0, (ap_o_mode)0, 0&gt;, softmax_config25&gt;(ap_fixed&lt;18, 8, (ap_q_mode)0, (ap_o_mode)0, 0&gt;)' into 'void nnet::softmax_stable&lt;nnet::array&lt;ap_fixed&lt;16, 6, (ap_q_mode)5, (ap_o_mode)3, 0&gt;, 10u&gt;, nnet::array&lt;ap_fixed&lt;16, 6, (ap_q_mode)5, (ap_o_mode)3, 0&gt;, 10u&gt;, softmax_config25&gt;(hls::stream&lt;nnet::array&lt;ap_fixed&lt;16, 6, (ap_q_mode)5, (ap_o_mode)3, 0&gt;, 10u&gt;, 0&gt;&amp;, hls::stream&lt;nnet::array&lt;ap_fixed&lt;16, 6, (ap_q_mode)5, (ap_o_mode)3, 0&gt;, 10u&gt;, 0&gt;&amp;)'">
         <args Callee="unsigned int nnet::softmax_idx_from_real_val&lt;ap_fixed&lt;18, 8, (ap_q_mode)0, (ap_o_mode)0, 0&gt;, softmax_config25&gt;(ap_fixed&lt;18, 8, (ap_q_mode)0, (ap_o_mode)0, 0&gt;)" Caller="void nnet::softmax_stable&lt;nnet::array&lt;ap_fixed&lt;16, 6, (ap_q_mode)5, (ap_o_mode)3, 0&gt;, 10u&gt;, nnet::array&lt;ap_fixed&lt;16, 6, (ap_q_mode)5, (ap_o_mode)3, 0&gt;, 10u&gt;, softmax_config25&gt;(hls::stream&lt;nnet::array&lt;ap_fixed&lt;16, 6, (ap_q_mode)5, (ap_o_mode)3, 0&gt;, 10u&gt;, 0&gt;&amp;, hls::stream&lt;nnet::array&lt;ap_fixed&lt;16, 6, (ap_q_mode)5, (ap_o_mode)3, 0&gt;, 10u&gt;, 0&gt;&amp;)"/>
     </msg>
-    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:55:0" msg_body="Inlining function 'nnet::array&lt;ap_fixed&lt;16, 6, (ap_q_mode)5, (ap_o_mode)3, 0&gt;, 10u&gt;::operator[](unsigned long)' into 'write_result(ap_fixed&lt;16, 6, (ap_q_mode)5, (ap_o_mode)3, 0&gt;*, hls::stream&lt;nnet::array&lt;ap_fixed&lt;16, 6, (ap_q_mode)5, (ap_o_mode)3, 0&gt;, 10u&gt;, 0&gt;&amp;, int)'">
+    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:86:0" msg_body="Inlining function 'nnet::array&lt;ap_fixed&lt;16, 6, (ap_q_mode)5, (ap_o_mode)3, 0&gt;, 10u&gt;::operator[](unsigned long)' into 'write_result(ap_fixed&lt;16, 6, (ap_q_mode)5, (ap_o_mode)3, 0&gt;*, hls::stream&lt;nnet::array&lt;ap_fixed&lt;16, 6, (ap_q_mode)5, (ap_o_mode)3, 0&gt;, 10u&gt;, 0&gt;&amp;, int)'">
         <args Callee="nnet::array&lt;ap_fixed&lt;16, 6, (ap_q_mode)5, (ap_o_mode)3, 0&gt;, 10u&gt;::operator[](unsigned long)" Caller="write_result(ap_fixed&lt;16, 6, (ap_q_mode)5, (ap_o_mode)3, 0&gt;*, hls::stream&lt;nnet::array&lt;ap_fixed&lt;16, 6, (ap_q_mode)5, (ap_o_mode)3, 0&gt;, 10u&gt;, 0&gt;&amp;, int)"/>
     </msg>
     <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_pooling_stream.h:104:0" msg_body="Applying array_partition to '_ZZN4nnet12pooling2d_clINS_5arrayI9ap_ufixedILi6ELi0EL9ap_q_mode4EL9ap_o_mode0ELi0EELj24EEENS1_I8ap_fixedILi16ELi6ELS3_5ELS4_3ELi0EELj24EEE8config13EEvRN3hls6streamIT_Li0EEERNSC_IT0_Li0EEEE11line_buffer': Complete partitioning on dimension 1. Complete partitioning on dimension 2.">
@@ -1941,7 +1941,7 @@
     <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_activation_stream.h:219:40" msg_body="Applying array_partition to 'exp_res': Complete partitioning on dimension 1.">
         <args Dim="1" Mode="Complete" UOName="exp_res"/>
     </msg>
-    <msg msg_groups="PRAGMA_AGGREGATE" msg_id="214-241" msg_severity="INFO" msg_loc="/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:85:34" msg_body="Aggregating fifo (hls::stream) variable 'output' with compact=bit mode in 160-bits">
+    <msg msg_groups="PRAGMA_AGGREGATE" msg_id="214-241" msg_severity="INFO" msg_loc="/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:117:36" msg_body="Aggregating fifo (hls::stream) variable 'output' with compact=bit mode in 160-bits">
         <args AggregateTypeName="compact=bit" Bitwidth="160" HwTyName="fifo (hls::stream)" Name="output"/>
     </msg>
     <msg msg_groups="PRAGMA_AGGREGATE" msg_id="214-241" msg_severity="INFO" msg_loc="/home/ayvol/accelerator_wrapper/src/myproject.cpp:124:28" msg_body="Aggregating fifo (hls::stream) variable 'layer23_out' with compact=bit mode in 160-bits">
@@ -1992,7 +1992,7 @@
     <msg msg_groups="PRAGMA_AGGREGATE" msg_id="214-241" msg_severity="INFO" msg_loc="/home/ayvol/accelerator_wrapper/src/myproject.cpp:67:27" msg_body="Aggregating fifo (hls::stream) variable 'layer4_out' with compact=bit mode in 96-bits">
         <args AggregateTypeName="compact=bit" Bitwidth="96" HwTyName="fifo (hls::stream)" Name="layer4_out"/>
     </msg>
-    <msg msg_groups="PRAGMA_AGGREGATE" msg_id="214-241" msg_severity="INFO" msg_loc="/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:84:33" msg_body="Aggregating fifo (hls::stream) variable 'input' with compact=bit mode in 48-bits">
+    <msg msg_groups="PRAGMA_AGGREGATE" msg_id="214-241" msg_severity="INFO" msg_loc="/home/ayvol/accelerator_wrapper/src/alveo_hls4ml.cpp:116:35" msg_body="Aggregating fifo (hls::stream) variable 'input' with compact=bit mode in 48-bits">
         <args AggregateTypeName="compact=bit" Bitwidth="48" HwTyName="fifo (hls::stream)" Name="input"/>
     </msg>
     <msg msg_groups="AUTOMATION" msg_id="214-364" msg_severity="INFO" msg_loc="/home/ayvol/accelerator_wrapper/src/nnet_utils/nnet_dense_stream.h:17:2" msg_body="Automatically inlining function 'void nnet::dense_latency&lt;ap_fixed&lt;16, 6, (ap_q_mode)5, (ap_o_mode)3, 0&gt;, ap_fixed&lt;16, 6, (ap_q_mode)5, (ap_o_mode)3, 0&gt;, config15&gt;(ap_fixed&lt;16, 6, (ap_q_mode)5, (ap_o_mode)3, 0&gt;*, ap_fixed&lt;16, 6, (ap_q_mode)5, (ap_o_mode)3, 0&gt;*, config15::weight_t*, config15::bias_t*)' to improve effectiveness of pipeline pragma in function 'void nnet::dense_latency_wrapper&lt;ap_fixed&lt;16, 6, (ap_q_mode)5, (ap_o_mode)3, 0&gt;, ap_fixed&lt;16, 6, (ap_q_mode)5, (ap_o_mode)3, 0&gt;, config15&gt;(ap_fixed&lt;16, 6, (ap_q_mode)5, (ap_o_mode)3, 0&gt;*, ap_fixed&lt;16, 6, (ap_q_mode)5, (ap_o_mode)3, 0&gt;*, config15::weight_t*, config15::bias_t*)'">

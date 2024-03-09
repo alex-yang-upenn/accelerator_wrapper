@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'read_input'" level="0">
-<item name = "Date">Thu Feb 15 07:33:12 2024
+<item name = "Date">Fri Mar  8 19:09:05 2024
 </item>
 <item name = "Version">2022.2 (Build 3670227 on Oct 13 2022)</item>
 <item name = "Project">alveo_hls4ml</item>
@@ -31,7 +31,7 @@
 <section name = "" level="1">
 <item name = "Instance"><table name="" hasTotal="0">
 <keys size="9">Instance, Module, min, max, min, max, min, max, Type</keys>
-<column name="grp_read_input_Pipeline_VITIS_LOOP_41_1_fu_97">read_input_Pipeline_VITIS_LOOP_41_1, 3075, 3075, 10.249 us, 10.249 us, 3075, 3075, no</column>
+<column name="grp_read_input_Pipeline_VITIS_LOOP_75_1_fu_97">read_input_Pipeline_VITIS_LOOP_75_1, 3075, 3075, 10.249 us, 10.249 us, 3075, 3075, no</column>
 </table>
 </item>
 <item name = "Loop"><table name="" hasTotal="0">
@@ -64,7 +64,7 @@
 <section name = "" level="1">
 <item name = "Instance"><table name="" hasTotal="1">
 <keys size="7">Instance, Module, BRAM_18K, DSP, FF, LUT, URAM</keys>
-<column name="grp_read_input_Pipeline_VITIS_LOOP_41_1_fu_97">read_input_Pipeline_VITIS_LOOP_41_1, 0, 0, 66, 132, 0</column>
+<column name="grp_read_input_Pipeline_VITIS_LOOP_75_1_fu_97">read_input_Pipeline_VITIS_LOOP_75_1, 0, 0, 66, 132, 0</column>
 </table>
 </item>
 <item name = "DSP"><table name="" hasTotal="0">
@@ -81,7 +81,7 @@
 </item>
 <item name = "Expression"><table name="" hasTotal="1">
 <keys size="7">Variable Name, Operation, DSP, FF, LUT, Bitwidth P0, Bitwidth P1</keys>
-<column name="add_ln41_fu_146_p2">+, 0, 0, 71, 64, 64</column>
+<column name="add_ln75_fu_146_p2">+, 0, 0, 71, 64, 64</column>
 <column name="mul5_i_fu_128_p2">-, 0, 0, 33, 26, 26</column>
 <column name="ap_block_state1">or, 0, 0, 2, 1, 1</column>
 </table>
@@ -113,7 +113,7 @@
 <keys size="5">Name, FF, LUT, Bits, Const Bits</keys>
 <column name="ap_CS_fsm">74, 0, 74, 0</column>
 <column name="ap_done_reg">1, 0, 1, 0</column>
-<column name="grp_read_input_Pipeline_VITIS_LOOP_41_1_fu_97_ap_start_reg">1, 0, 1, 0</column>
+<column name="grp_read_input_Pipeline_VITIS_LOOP_75_1_fu_97_ap_start_reg">1, 0, 1, 0</column>
 <column name="start_once_reg">1, 0, 1, 0</column>
 <column name="trunc_ln_i_reg_178">63, 0, 63, 0</column>
 </table>
