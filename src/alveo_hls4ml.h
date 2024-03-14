@@ -36,14 +36,14 @@ Description:
 #ifndef ALVEO_HLS4ML_H
 #define ALVEO_HLS4ML_H
 
-#include "defines.h" // Generated from HLS4ML
+#include "parameters.h" // Generated from HLS4ML
 
 #ifdef IO_PARALLEL
 #ifdef IS_DENSE
 /* Calculate according to FPGA specs (HBM PC memory size) and size of input layer. 
 DO NOT fully use up assigned HBM memory. 
 */
-#define BATCHSIZE 8192
+#define BATCHSIZE 16384
 
 #define DATA_SIZE_IN N_INPUT_1_1
 #define INSTREAMSIZE (BATCHSIZE * DATA_SIZE_IN)
@@ -52,7 +52,7 @@ DO NOT fully use up assigned HBM memory.
 #define OUTSTREAMSIZE (BATCHSIZE * DATA_SIZE_OUT)
 
 typedef input_t input_data_t; // Update accordingly
-typedef result_t output_data_t;
+typedef layer_11_t output_data_t;
 #endif
 
 #ifdef IS_CONV1D
