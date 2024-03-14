@@ -1,5 +1,0 @@
-11 warnings and 1 error generated.
-Error while processing /home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml/solution/.autopilot/db/alveo_hls4ml.pp.0.cpp.
-clang-tidy applied 153 of 153 suggested fixes.
-Suppressed 216 warnings (205 in non-user code, 11 with check filters).
-Use -header-filter=.* to display errors from all non-system headers. Use -system-headers to display errors from system headers as well.
