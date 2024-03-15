@@ -52,7 +52,7 @@ DO NOT fully use up assigned HBM memory.
 #define OUTSTREAMSIZE (BATCHSIZE * DATA_SIZE_OUT)
 
 typedef input_t input_data_t; // Update accordingly
-typedef layer_11_t output_data_t;
+typedef layer11_t output_data_t;
 #endif
 
 #ifdef IS_CONV1D
