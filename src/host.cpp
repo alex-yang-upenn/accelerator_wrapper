@@ -61,7 +61,7 @@ int main(int argc, char** argv)
     
     std::cout << "Will run using " << datadir << " to get input features and output predictions (tb_input_features.dat and tb_output_predictions.dat)" << std::endl;
     
-    fpgaObj<input_data_t, output_data_t> fpga(INSTREAMSIZE, OUTSTREAMSIZE, NUM_CU, NBUFFER, 100);
+    fpgaObj<input_data_t, output_data_t> fpga(INSTREAMSIZE, OUTSTREAMSIZE, NUM_CU, NBUFFER, 500);
 
     /* 
     get_xil_devices() is a utility API which will find the xilinx
@@ -101,7 +101,7 @@ int main(int argc, char** argv)
     fpga.finishRun();
 
     auto ts_end = SClock::now();
-    float throughput = (float(NUM_CU * NBUFFER * 100 * BATCHSIZE) /
+    float throughput = (float(NUM_CU * NBUFFER * 500 * BATCHSIZE) /
             float(std::chrono::duration_cast<std::chrono::nanoseconds>(ts_end - ts_start).count())) *
             1000000000.;
     
