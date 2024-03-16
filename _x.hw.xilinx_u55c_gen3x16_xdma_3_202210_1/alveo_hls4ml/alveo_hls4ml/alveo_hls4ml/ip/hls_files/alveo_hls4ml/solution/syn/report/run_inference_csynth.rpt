@@ -1,0 +1,171 @@
+
+
+================================================================
+== Vitis HLS Report for 'run_inference'
+================================================================
+* Date:           Sat Mar 16 03:53:43 2024
+
+* Version:        2022.2 (Build 3670227 on Oct 13 2022)
+* Project:        alveo_hls4ml
+* Solution:       solution (Vitis Kernel Flow Target)
+* Product family: virtexuplus
+* Target device:  xcu55c-fsvh2892-2L-e
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+---------+----------+------------+
+    |  Clock |  Target | Estimated| Uncertainty|
+    +--------+---------+----------+------------+
+    |ap_clk  |  3.33 ns|  2.248 ns|     0.90 ns|
+    +--------+---------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-------+-------+---------+
+    |  Latency (cycles) |  Latency (absolute) |    Interval   | Pipeline|
+    |   min   |   max   |    min   |    max   |  min  |  max  |   Type  |
+    +---------+---------+----------+----------+-------+-------+---------+
+    |    49192|    49192|  0.164 ms|  0.164 ms|  49192|  49192|       no|
+    +---------+---------+----------+----------+-------+-------+---------+
+
+    + Detail: 
+        * Instance: 
+        +-------------------------------------+----------------------------------+---------+---------+----------+----------+-----+-----+----------+
+        |                                     |                                  |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline |
+        |               Instance              |              Module              |   min   |   max   |    min   |    max   | min | max |   Type   |
+        +-------------------------------------+----------------------------------+---------+---------+----------+----------+-----+-----+----------+
+        |dataflow_in_loop_VITIS_LOOP_17_1_U0  |dataflow_in_loop_VITIS_LOOP_17_1  |       41|       41|  0.137 us|  0.137 us|    3|    3|  dataflow|
+        +-------------------------------------+----------------------------------+---------+---------+----------+----------+-----+-----+----------+
+
+        * Loop: 
+        +-------------------+---------+---------+----------+-----------+-----------+-------+----------+
+        |                   |  Latency (cycles) | Iteration|  Initiation Interval  |  Trip |          |
+        |     Loop Name     |   min   |   max   |  Latency |  achieved |   target  | Count | Pipelined|
+        +-------------------+---------+---------+----------+-----------+-----------+-------+----------+
+        |- VITIS_LOOP_17_1  |    49191|    49191|        43|          -|          -|  16384|        no|
+        +-------------------+---------+---------+----------+-----------+-----------+-------+----------+
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++---------------------+---------+------+---------+---------+-----+
+|         Name        | BRAM_18K|  DSP |    FF   |   LUT   | URAM|
++---------------------+---------+------+---------+---------+-----+
+|DSP                  |        -|     -|        -|        -|    -|
+|Expression           |        -|     -|      218|       52|    -|
+|FIFO                 |        -|     -|        -|        -|    -|
+|Instance             |        -|   933|    49718|    32139|    -|
+|Memory               |        -|     -|        -|        -|    -|
+|Multiplexer          |        -|     -|        -|       18|    -|
+|Register             |        -|     -|       30|        -|    -|
++---------------------+---------+------+---------+---------+-----+
+|Total                |        0|   933|    49966|    32209|    0|
++---------------------+---------+------+---------+---------+-----+
+|Available SLR        |     1344|  3008|   869120|   434560|  320|
++---------------------+---------+------+---------+---------+-----+
+|Utilization SLR (%)  |        0|    31|        5|        7|    0|
++---------------------+---------+------+---------+---------+-----+
+|Available            |     4032|  9024|  2607360|  1303680|  960|
++---------------------+---------+------+---------+---------+-----+
+|Utilization (%)      |        0|    10|        1|        2|    0|
++---------------------+---------+------+---------+---------+-----+
+
++ Detail: 
+    * Instance: 
+    +-------------------------------------+----------------------------------+---------+-----+-------+-------+-----+
+    |               Instance              |              Module              | BRAM_18K| DSP |   FF  |  LUT  | URAM|
+    +-------------------------------------+----------------------------------+---------+-----+-------+-------+-----+
+    |dataflow_in_loop_VITIS_LOOP_17_1_U0  |dataflow_in_loop_VITIS_LOOP_17_1  |        0|  933|  49718|  32139|    0|
+    +-------------------------------------+----------------------------------+---------+-----+-------+-------+-----+
+    |Total                                |                                  |        0|  933|  49718|  32139|    0|
+    +-------------------------------------+----------------------------------+---------+-----+-------+-------+-----+
+
+    * DSP: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +----------------------------+----------+----+----+----+------------+------------+
+    |        Variable Name       | Operation| DSP| FF | LUT| Bitwidth P0| Bitwidth P1|
+    +----------------------------+----------+----+----+----+------------+------------+
+    |loop_dataflow_input_count   |         +|   0|  71|  17|          15|           1|
+    |loop_dataflow_output_count  |         +|   0|  71|  17|          15|           1|
+    |bound_minus_1               |         -|   0|  76|  18|          16|           1|
+    +----------------------------+----------+----+----+----+------------+------------+
+    |Total                       |          |   0| 218|  52|          46|           3|
+    +----------------------------+----------+----+----+----+------------+------------+
+
+    * Multiplexer: 
+    +----------------------------+----+-----------+-----+-----------+
+    |            Name            | LUT| Input Size| Bits| Total Bits|
+    +----------------------------+----+-----------+-----+-----------+
+    |loop_dataflow_input_count   |   9|          2|   15|         30|
+    |loop_dataflow_output_count  |   9|          2|   15|         30|
+    +----------------------------+----+-----------+-----+-----------+
+    |Total                       |  18|          4|   30|         60|
+    +----------------------------+----+-----------+-----+-----------+
+
+    * Register: 
+    +----------------------------+----+----+-----+-----------+
+    |            Name            | FF | LUT| Bits| Const Bits|
+    +----------------------------+----+----+-----+-----------+
+    |loop_dataflow_input_count   |  15|   0|   15|          0|
+    |loop_dataflow_output_count  |  15|   0|   15|          0|
+    +----------------------------+----+----+-----+-----------+
+    |Total                       |  30|   0|   30|          0|
+    +----------------------------+----+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++------------------+-----+-----+------------+---------------+--------------+
+|     RTL Ports    | Dir | Bits|  Protocol  | Source Object |    C Type    |
++------------------+-----+-----+------------+---------------+--------------+
+|in_buf_address0   |  out|   14|   ap_memory|         in_buf|         array|
+|in_buf_ce0        |  out|    1|   ap_memory|         in_buf|         array|
+|in_buf_d0         |  out|  288|   ap_memory|         in_buf|         array|
+|in_buf_q0         |   in|  288|   ap_memory|         in_buf|         array|
+|in_buf_we0        |  out|    1|   ap_memory|         in_buf|         array|
+|in_buf_address1   |  out|   14|   ap_memory|         in_buf|         array|
+|in_buf_ce1        |  out|    1|   ap_memory|         in_buf|         array|
+|in_buf_d1         |  out|  288|   ap_memory|         in_buf|         array|
+|in_buf_q1         |   in|  288|   ap_memory|         in_buf|         array|
+|in_buf_we1        |  out|    1|   ap_memory|         in_buf|         array|
+|out_buf_address0  |  out|   14|   ap_memory|        out_buf|         array|
+|out_buf_ce0       |  out|    1|   ap_memory|        out_buf|         array|
+|out_buf_d0        |  out|   16|   ap_memory|        out_buf|         array|
+|out_buf_q0        |   in|   16|   ap_memory|        out_buf|         array|
+|out_buf_we0       |  out|    1|   ap_memory|        out_buf|         array|
+|out_buf_address1  |  out|   14|   ap_memory|        out_buf|         array|
+|out_buf_ce1       |  out|    1|   ap_memory|        out_buf|         array|
+|out_buf_d1        |  out|   16|   ap_memory|        out_buf|         array|
+|out_buf_q1        |   in|   16|   ap_memory|        out_buf|         array|
+|out_buf_we1       |  out|    1|   ap_memory|        out_buf|         array|
+|ap_clk            |   in|    1|  ap_ctrl_hs|  run_inference|  return value|
+|ap_rst            |   in|    1|  ap_ctrl_hs|  run_inference|  return value|
+|in_buf_empty_n    |   in|    1|  ap_ctrl_hs|  run_inference|  return value|
+|in_buf_read       |  out|    1|  ap_ctrl_hs|  run_inference|  return value|
+|out_buf_full_n    |   in|    1|  ap_ctrl_hs|  run_inference|  return value|
+|out_buf_write     |  out|    1|  ap_ctrl_hs|  run_inference|  return value|
+|ap_start          |   in|    1|  ap_ctrl_hs|  run_inference|  return value|
+|ap_done           |  out|    1|  ap_ctrl_hs|  run_inference|  return value|
+|ap_ready          |  out|    1|  ap_ctrl_hs|  run_inference|  return value|
+|ap_idle           |  out|    1|  ap_ctrl_hs|  run_inference|  return value|
+|ap_continue       |   in|    1|  ap_ctrl_hs|  run_inference|  return value|
++------------------+-----+-----+------------+---------------+--------------+
+

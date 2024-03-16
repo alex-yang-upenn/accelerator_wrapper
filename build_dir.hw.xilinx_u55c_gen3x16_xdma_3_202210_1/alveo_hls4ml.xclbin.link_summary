@@ -1,0 +1,1274 @@
+<ENTRY>
+{
+ "thisFile": "/home/ayvol/accelerator_wrapper/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml.xclbin.link_summary",
+ "connectId": "",
+ "serverToken": "",
+ "timestamp": "0"
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_CmdStep",
+ "dateTimestamp": "Sat Mar 16 04:03:10 2024",
+ "timestampMillis": "1710561790537",
+ "buildStep": {
+  "cmdId": "12ce3f90-5913-468a-ba73-b9fe5a95be6e",
+  "name": "v++",
+  "logFile": "/home/ayvol/accelerator_wrapper/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/link/link.steps.log",
+  "commandLine": "/tools/Xilinx/Vitis/2022.2/bin/unwrapped/lnx64.o/v++  --vivado.prop \"run.__KERNEL__.{STEPS.SYNTH_DESIGN.ARGS.MORE OPTIONS}={-directive sdx_optimization_effort_high}\" --advanced.misc \"report=type report_timing_summary name impl_report_timing_summary_route_design_summary steps {route_design} runs {impl_1} options {-max_paths 10}\" --advanced.misc \"report=type report_timing_summary name impl_report_timing_summary_post_route_phys_opt_design_summary steps {post_route_phys_opt_design} runs {impl_1} options {-max_paths 10}\" -t hw --platform xilinx_u55c_gen3x16_xdma_3_202210_1 --save-temps --temp_dir ./build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1 -l -obuild_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml.xclbin _x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml.xo --config config.ini ",
+  "args": [
+   "-t",
+   "hw",
+   "--platform",
+   "xilinx_u55c_gen3x16_xdma_3_202210_1",
+   "--save-temps",
+   "--temp_dir",
+   "./build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1",
+   "-l",
+   "-obuild_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml.xclbin",
+   "_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml.xo",
+   "--config",
+   "config.ini"
+  ],
+  "iniFiles": [
+   {
+    "path": "/home/ayvol/accelerator_wrapper/config.ini",
+    "content": "[advanced]\nprop=kernel.alveo_hls4ml.kernel_flags=-std=c++11\n#param=compiler.normalizeDefaultMemoryBanks=true\n\n[hls]\npre_tcl=./config.tcl\n\n[connectivity]\n# nk=\u003ckernel name\u003e:\u003cnumber\u003e:\u003ccu_name\u003e.\u003ccu_name\u003e...\nnk=alveo_hls4ml:4\n\n# slr=\u003ccompute_unit_name\u003e:\u003cslr_ID\u003e\n\n# sp=\u003ccompute_unit_name\u003e.\u003cinterface_name\u003e:\u003cbank name\u003e \nsp=alveo_hls4ml_1.in:HBM[0:3]\nsp=alveo_hls4ml_1.out:HBM[4:7]\nsp=alveo_hls4ml_2.in:HBM[8:11]\nsp=alveo_hls4ml_2.out:HBM[12:15]\nsp=alveo_hls4ml_3.in:HBM[16:19]\nsp=alveo_hls4ml_3.out:HBM[20:23]\nsp=alveo_hls4ml_4.in:HBM[24:27]\nsp=alveo_hls4ml_4.out:HBM[28:31]\n\n[vivado]\nprop=run.impl_1.STEPS.OPT_DESIGN.IS_ENABLED=true\nprop=run.impl_1.STEPS.OPT_DESIGN.ARGS.DIRECTIVE=Explore\n\nprop=run.impl_1.STEPS.PLACE_DESIGN.ARGS.DIRECTIVE=Explore\n\nprop=run.impl_1.STEPS.PHYS_OPT_DESIGN.IS_ENABLED=true\nprop=run.imp1_1.STEPS.PHYS_OPT_DESIGN.ARGS.DIRECTIVE=AggressiveExplore\n\nprop=run.impl_1.STEPS.ROUTE_DESIGN.ARGS.DIRECTIVE=Explore\n\nprop=run.impl_1.STEPS.POST_ROUTE_PHYS_OPT_DESIGN.IS_ENABLED=true\nprop=run.impl_1.STEPS.POST_ROUTE_PHYS_OPT_DESIGN.ARGS.DIRECTIVE=AggressiveExplore"
+   }
+  ],
+  "cwd": "/home/ayvol/accelerator_wrapper"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Sat Mar 16 04:03:10 2024",
+ "timestampMillis": "1710561790537",
+ "status": {
+  "cmdId": "12ce3f90-5913-468a-ba73-b9fe5a95be6e",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_FlowMetaData",
+ "dateTimestamp": "Sat Mar 16 04:03:26 2024",
+ "timestampMillis": "1710561806921",
+ "buildSummary": {
+  "hardwarePlatform": "xilinx_u55c_gen3x16_xdma_3_202210_1.xpfm",
+  "hardwareDsa": "",
+  "platformDirectory": "/opt/xilinx/platforms/xilinx_u55c_gen3x16_xdma_3_202210_1",
+  "runtime": "OpenCL",
+  "systemConfig": "Linux",
+  "flow": "BF_LINK",
+  "target": "TT_HW",
+  "binaryContainer": {
+   "base": {
+    "type": "BT_UKNOWN",
+    "name": "alveo_hls4ml",
+    "file": "/home/ayvol/accelerator_wrapper/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml.xclbin",
+    "reports": [],
+    "uuid": ""
+   },
+   "kernels": []
+  },
+  "kernels": [
+   {
+    "base": {
+     "type": "KERNEL",
+     "name": "alveo_hls4ml",
+     "file": "/home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml.xo",
+     "reports": [],
+     "uuid": ""
+    },
+    "sources": [
+     "/home/ayvol/accelerator_wrapper/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/link/int/xo/alveo_hls4ml/alveo_hls4ml/cpu_sources/alveo_hls4ml.cpp",
+     "/home/ayvol/accelerator_wrapper/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/link/int/xo/alveo_hls4ml/alveo_hls4ml/cpu_sources/ereg_v1.cpp"
+    ],
+    "psSources": [],
+    "cuNames": [
+     "alveo_hls4ml_1",
+     "alveo_hls4ml_2",
+     "alveo_hls4ml_3",
+     "alveo_hls4ml_4"
+    ],
+    "type": "HLS",
+    "frequency": 0,
+    "freqUnits": ""
+   }
+  ],
+  "toolVersion": "Vitis V++ Compiler Release 2022.2. SW Build 3671529 on 2022-10-13-17:52:11"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "Sat Mar 16 04:03:30 2024",
+ "timestampMillis": "1710561810926",
+ "buildStep": {
+  "cmdId": "b35490da-3843-4861-b8c8-99ade94c61e9",
+  "name": "system_link",
+  "logFile": "",
+  "commandLine": "system_link --xo /home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml.xo -keep --config /home/ayvol/accelerator_wrapper/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/link/int/syslinkConfig.ini --xpfm /opt/xilinx/platforms/xilinx_u55c_gen3x16_xdma_3_202210_1/xilinx_u55c_gen3x16_xdma_3_202210_1.xpfm --target hw --output_dir /home/ayvol/accelerator_wrapper/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/link/int --temp_dir /home/ayvol/accelerator_wrapper/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/link/sys_link",
+  "args": [
+   "--xo",
+   "/home/ayvol/accelerator_wrapper/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml.xo",
+   "-keep",
+   "--config",
+   "/home/ayvol/accelerator_wrapper/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/link/int/syslinkConfig.ini",
+   "--xpfm",
+   "/opt/xilinx/platforms/xilinx_u55c_gen3x16_xdma_3_202210_1/xilinx_u55c_gen3x16_xdma_3_202210_1.xpfm",
+   "--target",
+   "hw",
+   "--output_dir",
+   "/home/ayvol/accelerator_wrapper/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/link/int",
+   "--temp_dir",
+   "/home/ayvol/accelerator_wrapper/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/link/sys_link"
+  ],
+  "iniFiles": [
+   {
+    "path": "/home/ayvol/accelerator_wrapper/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/link/int/syslinkConfig.ini",
+    "content": "nk=alveo_hls4ml:4\nsp=alveo_hls4ml_1.in:HBM[0:3]\nsp=alveo_hls4ml_1.out:HBM[4:7]\nsp=alveo_hls4ml_2.in:HBM[8:11]\nsp=alveo_hls4ml_2.out:HBM[12:15]\nsp=alveo_hls4ml_3.in:HBM[16:19]\nsp=alveo_hls4ml_3.out:HBM[20:23]\nsp=alveo_hls4ml_4.in:HBM[24:27]\nsp=alveo_hls4ml_4.out:HBM[28:31]\n\n"
+   }
+  ],
+  "cwd": "/home/ayvol/accelerator_wrapper"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Sat Mar 16 04:03:30 2024",
+ "timestampMillis": "1710561810927",
+ "status": {
+  "cmdId": "b35490da-3843-4861-b8c8-99ade94c61e9",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Sat Mar 16 04:04:54 2024",
+ "timestampMillis": "1710561894011",
+ "status": {
+  "cmdId": "b35490da-3843-4861-b8c8-99ade94c61e9",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "Sat Mar 16 04:04:54 2024",
+ "timestampMillis": "1710561894776",
+ "buildStep": {
+  "cmdId": "c78aece8-b05a-49b3-9653-9facce351924",
+  "name": "cf2sw",
+  "logFile": "",
+  "commandLine": "cf2sw -sdsl /home/ayvol/accelerator_wrapper/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/link/int/sdsl.dat -rtd /home/ayvol/accelerator_wrapper/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/link/int/cf2sw.rtd -nofilter /home/ayvol/accelerator_wrapper/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/link/int/cf2sw_full.rtd -xclbin /home/ayvol/accelerator_wrapper/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/link/int/xclbin_orig.xml -o /home/ayvol/accelerator_wrapper/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/link/int/xclbin_orig.1.xml",
+  "args": [
+   "-sdsl",
+   "/home/ayvol/accelerator_wrapper/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/link/int/sdsl.dat",
+   "-rtd",
+   "/home/ayvol/accelerator_wrapper/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/link/int/cf2sw.rtd",
+   "-nofilter",
+   "/home/ayvol/accelerator_wrapper/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/link/int/cf2sw_full.rtd",
+   "-xclbin",
+   "/home/ayvol/accelerator_wrapper/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/link/int/xclbin_orig.xml",
+   "-o",
+   "/home/ayvol/accelerator_wrapper/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/link/int/xclbin_orig.1.xml"
+  ],
+  "iniFiles": [],
+  "cwd": "/home/ayvol/accelerator_wrapper"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Sat Mar 16 04:04:54 2024",
+ "timestampMillis": "1710561894777",
+ "status": {
+  "cmdId": "c78aece8-b05a-49b3-9653-9facce351924",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Sat Mar 16 04:05:04 2024",
+ "timestampMillis": "1710561904322",
+ "status": {
+  "cmdId": "c78aece8-b05a-49b3-9653-9facce351924",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "Sat Mar 16 04:05:05 2024",
+ "timestampMillis": "1710561905634",
+ "buildStep": {
+  "cmdId": "1dd54f64-dd63-435a-8218-8001c0340899",
+  "name": "rtd2_system_diagram",
+  "logFile": "",
+  "commandLine": "rtd2SystemDiagram",
+  "args": [],
+  "iniFiles": [],
+  "cwd": "/home/ayvol/accelerator_wrapper"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Sat Mar 16 04:05:05 2024",
+ "timestampMillis": "1710561905635",
+ "status": {
+  "cmdId": "1dd54f64-dd63-435a-8218-8001c0340899",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sat Mar 16 04:05:06 2024",
+ "timestampMillis": "1710561906135",
+ "report": {
+  "path": "/home/ayvol/accelerator_wrapper/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/link/int/systemDiagramModel.json",
+  "name": "",
+  "fileType": "JSON",
+  "reportType": "SYSTEM_DIAGRAM",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Sat Mar 16 04:05:06 2024",
+ "timestampMillis": "1710561906196",
+ "status": {
+  "cmdId": "1dd54f64-dd63-435a-8218-8001c0340899",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "Sat Mar 16 04:05:06 2024",
+ "timestampMillis": "1710561906895",
+ "buildStep": {
+  "cmdId": "167763de-f6c4-4bbd-ad09-c7d069111815",
+  "name": "vpl",
+  "logFile": "",
+  "commandLine": "vpl -t hw -f xilinx_u55c_gen3x16_xdma_3_202210_1 -s --remote_ip_cache /home/ayvol/accelerator_wrapper/.ipcache --output_dir /home/ayvol/accelerator_wrapper/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/link/int --log_dir /home/ayvol/accelerator_wrapper/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/logs/link --report_dir /home/ayvol/accelerator_wrapper/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/reports/link --config /home/ayvol/accelerator_wrapper/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/link/int/vplConfig.ini -k /home/ayvol/accelerator_wrapper/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/link/int/kernel_info.dat --webtalk_flag Vitis --temp_dir /home/ayvol/accelerator_wrapper/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/link --no-info --iprepo /home/ayvol/accelerator_wrapper/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/link/int/xo/ip_repo/xilinx_com_hls_alveo_hls4ml_1_0 --messageDb /home/ayvol/accelerator_wrapper/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/link/run_link/vpl.pb /home/ayvol/accelerator_wrapper/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/link/int/dr.bd.tcl",
+  "args": [
+   "-t",
+   "hw",
+   "-f",
+   "xilinx_u55c_gen3x16_xdma_3_202210_1",
+   "-s",
+   "--remote_ip_cache",
+   "/home/ayvol/accelerator_wrapper/.ipcache",
+   "--output_dir",
+   "/home/ayvol/accelerator_wrapper/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/link/int",
+   "--log_dir",
+   "/home/ayvol/accelerator_wrapper/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/logs/link",
+   "--report_dir",
+   "/home/ayvol/accelerator_wrapper/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/reports/link",
+   "--config",
+   "/home/ayvol/accelerator_wrapper/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/link/int/vplConfig.ini",
+   "-k",
+   "/home/ayvol/accelerator_wrapper/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/link/int/kernel_info.dat",
+   "--webtalk_flag",
+   "Vitis",
+   "--temp_dir",
+   "/home/ayvol/accelerator_wrapper/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/link",
+   "--no-info",
+   "--iprepo",
+   "/home/ayvol/accelerator_wrapper/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/link/int/xo/ip_repo/xilinx_com_hls_alveo_hls4ml_1_0",
+   "--messageDb",
+   "/home/ayvol/accelerator_wrapper/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/link/run_link/vpl.pb",
+   "/home/ayvol/accelerator_wrapper/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/link/int/dr.bd.tcl"
+  ],
+  "iniFiles": [
+   {
+    "path": "/home/ayvol/accelerator_wrapper/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/link/int/vplConfig.ini",
+    "content": "[advanced]\nmisc=report=type report_timing_summary name impl_report_timing_summary_route_design_summary steps {route_design} runs {impl_1} options {-max_paths 10}\nmisc=report=type report_timing_summary name impl_report_timing_summary_post_route_phys_opt_design_summary steps {post_route_phys_opt_design} runs {impl_1} options {-max_paths 10}\nparam=compiler.enablePerformanceTrace=1\nprop=kernel.alveo_hls4ml.kernel_flags=-std=c++11\nparam=compiler.vppCurrentWorkingDir=/home/ayvol/accelerator_wrapper\nmisc=BinaryName=alveo_hls4ml\n\n[connectivity]\nnk=alveo_hls4ml:4:alveo_hls4ml_1,alveo_hls4ml_2,alveo_hls4ml_3,alveo_hls4ml_4\n\n[vivado]\nprop=run.__KERNEL__.{STEPS.SYNTH_DESIGN.ARGS.MORE OPTIONS}={-directive sdx_optimization_effort_high}\nprop=run.impl_1.STEPS.OPT_DESIGN.IS_ENABLED=true\nprop=run.impl_1.STEPS.OPT_DESIGN.ARGS.DIRECTIVE=Explore\nprop=run.impl_1.STEPS.PLACE_DESIGN.ARGS.DIRECTIVE=Explore\nprop=run.impl_1.STEPS.PHYS_OPT_DESIGN.IS_ENABLED=true\nprop=run.imp1_1.STEPS.PHYS_OPT_DESIGN.ARGS.DIRECTIVE=AggressiveExplore\nprop=run.impl_1.STEPS.ROUTE_DESIGN.ARGS.DIRECTIVE=Explore\nprop=run.impl_1.STEPS.POST_ROUTE_PHYS_OPT_DESIGN.IS_ENABLED=true\nprop=run.impl_1.STEPS.POST_ROUTE_PHYS_OPT_DESIGN.ARGS.DIRECTIVE=AggressiveExplore\n\n"
+   }
+  ],
+  "cwd": "/home/ayvol/accelerator_wrapper"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Sat Mar 16 04:05:06 2024",
+ "timestampMillis": "1710561906896",
+ "status": {
+  "cmdId": "167763de-f6c4-4bbd-ad09-c7d069111815",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_CmdStep",
+ "dateTimestamp": "Sat Mar 16 04:05:10 2024",
+ "timestampMillis": "1710561910143",
+ "buildStep": {
+  "cmdId": "07283622-6bea-45a0-a02e-bd5948b7e8ff",
+  "name": "vpl",
+  "logFile": "/home/ayvol/accelerator_wrapper/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/link/link.steps.log",
+  "commandLine": "/tools/Xilinx/Vitis/2022.2/bin/unwrapped/lnx64.o/vpl -t hw -f xilinx_u55c_gen3x16_xdma_3_202210_1 -s --remote_ip_cache /home/ayvol/accelerator_wrapper/.ipcache --output_dir /home/ayvol/accelerator_wrapper/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/link/int --log_dir /home/ayvol/accelerator_wrapper/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/logs/link --report_dir /home/ayvol/accelerator_wrapper/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/reports/link --config /home/ayvol/accelerator_wrapper/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/link/int/vplConfig.ini -k /home/ayvol/accelerator_wrapper/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/link/int/kernel_info.dat --webtalk_flag Vitis --temp_dir /home/ayvol/accelerator_wrapper/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/link --no-info --iprepo /home/ayvol/accelerator_wrapper/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/link/int/xo/ip_repo/xilinx_com_hls_alveo_hls4ml_1_0 --messageDb /home/ayvol/accelerator_wrapper/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/link/run_link/vpl.pb /home/ayvol/accelerator_wrapper/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/link/int/dr.bd.tcl ",
+  "args": [],
+  "iniFiles": [],
+  "cwd": "/home/ayvol/accelerator_wrapper/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/link/run_link"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Sat Mar 16 04:05:10 2024",
+ "timestampMillis": "1710561910143",
+ "status": {
+  "cmdId": "07283622-6bea-45a0-a02e-bd5948b7e8ff",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_VivadoProject",
+ "dateTimestamp": "Sat Mar 16 04:05:51 2024",
+ "timestampMillis": "1710561951749",
+ "vivadoProject": {
+  "openDir": "/home/ayvol/accelerator_wrapper/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/link/vivado/vpl",
+  "openScript": "openprj.tcl",
+  "relativeProject": "prj/prj.xpr"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "Sat Mar 16 04:05:51 2024",
+ "timestampMillis": "1710561951751",
+ "buildStep": {
+  "cmdId": "7ca984d8-9b8a-4b44-8dc2-db0a3e27d698",
+  "name": "vivado",
+  "logFile": "/home/ayvol/accelerator_wrapper/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/link/vivado/vpl/vivado.log",
+  "commandLine": "vivado -log vivado.log -applog -m64 -messageDb vivado.pb -mode batch -source vpl.tcl -notrace",
+  "args": [
+   "-log",
+   "vivado.log",
+   "-applog",
+   " -m64",
+   "-messageDb",
+   "vivado.pb",
+   "-mode",
+   "batch",
+   "-source",
+   "vpl.tcl",
+   "-notrace"
+  ],
+  "iniFiles": [],
+  "cwd": "/home/ayvol/accelerator_wrapper/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/link/run_link"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Sat Mar 16 04:05:51 2024",
+ "timestampMillis": "1710561951751",
+ "status": {
+  "cmdId": "7ca984d8-9b8a-4b44-8dc2-db0a3e27d698",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sat Mar 16 04:12:23 2024",
+ "timestampMillis": "1710562343849",
+ "report": {
+  "path": "/home/ayvol/accelerator_wrapper/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/link/int/automation_summary_update_bd.txt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "VITIS_DESIGN_FLOW",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_CmdStep",
+ "dateTimestamp": "Sat Mar 16 04:36:57 2024",
+ "timestampMillis": "1710563817733",
+ "buildStep": {
+  "cmdId": "9c10aee7-2d62-4a37-9fda-666ba0b1b5f5",
+  "name": "vivado.impl",
+  "logFile": "",
+  "commandLine": "",
+  "args": [],
+  "iniFiles": [],
+  "cwd": "/home/ayvol/accelerator_wrapper/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/link/vivado/vpl"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Sat Mar 16 04:36:57 2024",
+ "timestampMillis": "1710563817812",
+ "status": {
+  "cmdId": "9c10aee7-2d62-4a37-9fda-666ba0b1b5f5",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_CmdStep",
+ "dateTimestamp": "Sat Mar 16 04:36:57 2024",
+ "timestampMillis": "1710563817813",
+ "buildStep": {
+  "cmdId": "1e227482-1fce-4ea4-a5ff-8b540883f361",
+  "name": "vivado.impl.impl_1",
+  "logFile": "/home/ayvol/accelerator_wrapper/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/link/vivado/vpl/prj/prj.runs/impl_1/runme.log",
+  "commandLine": "",
+  "args": [],
+  "iniFiles": [],
+  "cwd": "/home/ayvol/accelerator_wrapper/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/link/vivado/vpl/prj/prj.runs/impl_1"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Sat Mar 16 04:36:57 2024",
+ "timestampMillis": "1710563817813",
+ "status": {
+  "cmdId": "1e227482-1fce-4ea4-a5ff-8b540883f361",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sat Mar 16 07:00:32 2024",
+ "timestampMillis": "1710572432661",
+ "report": {
+  "path": "/home/ayvol/accelerator_wrapper/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/link/vivado/vpl/prj/prj.runs/impl_1/system_diagram.json",
+  "name": "",
+  "fileType": "JSON",
+  "reportType": "SYSTEM_DIAGRAM_PLUS",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sat Mar 16 07:02:41 2024",
+ "timestampMillis": "1710572561255",
+ "report": {
+  "path": "/home/ayvol/accelerator_wrapper/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/link/int/kernel_service.json",
+  "name": "",
+  "fileType": "JSON",
+  "reportType": "KERNEL_SERVICE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sat Mar 16 07:02:41 2024",
+ "timestampMillis": "1710572561422",
+ "report": {
+  "path": "/home/ayvol/accelerator_wrapper/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/link/int/kernel_service.pb",
+  "name": "",
+  "fileType": "BINARY_PROTOBUF",
+  "reportType": "KERNEL_SERVICE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sat Mar 16 07:30:08 2024",
+ "timestampMillis": "1710574208712",
+ "report": {
+  "path": "/home/ayvol/accelerator_wrapper/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/link/vivado/vpl/prj/prj.runs/impl_1/dr_timing_summary.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_TIMING_SUMMARY_FAIL",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Sat Mar 16 07:50:11 2024",
+ "timestampMillis": "1710575411481",
+ "status": {
+  "cmdId": "7ca984d8-9b8a-4b44-8dc2-db0a3e27d698",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sat Mar 16 07:50:12 2024",
+ "timestampMillis": "1710575412302",
+ "report": {
+  "path": "/home/ayvol/accelerator_wrapper/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/reports/link/imp/impl_1_kernel_util_routed.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "KERNEL_UTILIZATION_ROUTE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sat Mar 16 07:50:12 2024",
+ "timestampMillis": "1710575412364",
+ "report": {
+  "path": "/home/ayvol/accelerator_wrapper/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/reports/link/imp/impl_1_kernel_util_placed.xutil",
+  "name": "",
+  "fileType": "XUTIL",
+  "reportType": "KERNEL_UTILIZATION_PLACEMENT",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sat Mar 16 07:50:12 2024",
+ "timestampMillis": "1710575412425",
+ "report": {
+  "path": "/home/ayvol/accelerator_wrapper/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/reports/link/imp/impl_1_kernel_util_synthed.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "KERNEL_UTILIZATION_SYNTHESIS",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sat Mar 16 07:50:12 2024",
+ "timestampMillis": "1710575412548",
+ "report": {
+  "path": "/home/ayvol/accelerator_wrapper/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/reports/link/imp/impl_1_slr_util_placed.pb",
+  "name": "",
+  "fileType": "BINARY_PROTOBUF",
+  "reportType": "GLOBAL_SLR_UTIL_PLACED",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sat Mar 16 07:50:12 2024",
+ "timestampMillis": "1710575412610",
+ "report": {
+  "path": "/home/ayvol/accelerator_wrapper/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/reports/link/imp/impl_1_slr_util_placed.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_SLR_UTIL_PLACED",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sat Mar 16 07:50:12 2024",
+ "timestampMillis": "1710575412672",
+ "report": {
+  "path": "/home/ayvol/accelerator_wrapper/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/reports/link/imp/impl_1_full_util_synthed.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_UTILIZATION_SYNTHESIS",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sat Mar 16 07:50:12 2024",
+ "timestampMillis": "1710575412733",
+ "report": {
+  "path": "/home/ayvol/accelerator_wrapper/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/reports/link/imp/impl_1_slr_util_routed.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_SLR_UTIL_ROUTED",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sat Mar 16 07:50:12 2024",
+ "timestampMillis": "1710575412795",
+ "report": {
+  "path": "/home/ayvol/accelerator_wrapper/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/reports/link/imp/impl_1_kernel_util_placed.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "KERNEL_UTILIZATION_PLACEMENT",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sat Mar 16 07:50:12 2024",
+ "timestampMillis": "1710575412856",
+ "report": {
+  "path": "/home/ayvol/accelerator_wrapper/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/reports/link/imp/impl_1_slr_util_routed.pb",
+  "name": "",
+  "fileType": "BINARY_PROTOBUF",
+  "reportType": "GLOBAL_SLR_UTIL_ROUTED",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sat Mar 16 07:50:12 2024",
+ "timestampMillis": "1710575412918",
+ "report": {
+  "path": "/home/ayvol/accelerator_wrapper/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/reports/link/imp/impl_1_kernel_util_synthed.xutil",
+  "name": "",
+  "fileType": "XUTIL",
+  "reportType": "KERNEL_UTILIZATION_SYNTHESIS",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sat Mar 16 07:50:12 2024",
+ "timestampMillis": "1710575412979",
+ "report": {
+  "path": "/home/ayvol/accelerator_wrapper/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/reports/link/imp/impl_1_full_util_routed.pb",
+  "name": "",
+  "fileType": "BINARY_PROTOBUF",
+  "reportType": "GLOBAL_UTILIZATION_ROUTE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sat Mar 16 07:50:13 2024",
+ "timestampMillis": "1710575413040",
+ "report": {
+  "path": "/home/ayvol/accelerator_wrapper/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/reports/link/imp/impl_1_kernel_util_routed.xutil",
+  "name": "",
+  "fileType": "XUTIL",
+  "reportType": "KERNEL_UTILIZATION_ROUTE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sat Mar 16 07:50:13 2024",
+ "timestampMillis": "1710575413162",
+ "report": {
+  "path": "/home/ayvol/accelerator_wrapper/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/reports/link/imp/impl_1_full_util_synthed.pb",
+  "name": "",
+  "fileType": "BINARY_PROTOBUF",
+  "reportType": "GLOBAL_UTILIZATION_SYNTHESIS",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sat Mar 16 07:50:13 2024",
+ "timestampMillis": "1710575413224",
+ "report": {
+  "path": "/home/ayvol/accelerator_wrapper/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/reports/link/imp/impl_1_full_util_routed.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_UTILIZATION_ROUTE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sat Mar 16 07:50:13 2024",
+ "timestampMillis": "1710575413333",
+ "report": {
+  "path": "/home/ayvol/accelerator_wrapper/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/reports/link/imp/impl_1_system_diagram.json",
+  "name": "",
+  "fileType": "JSON",
+  "reportType": "SYSTEM_DIAGRAM_PLUS",
+  "cmdId": "1e227482-1fce-4ea4-a5ff-8b540883f361"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sat Mar 16 07:50:13 2024",
+ "timestampMillis": "1710575413588",
+ "report": {
+  "path": "/home/ayvol/accelerator_wrapper/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/reports/link/imp/impl_1_hw_bb_locked_timing_summary_routed.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_TIMING_SUMMARY",
+  "cmdId": "1e227482-1fce-4ea4-a5ff-8b540883f361"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sat Mar 16 07:50:14 2024",
+ "timestampMillis": "1710575414050",
+ "report": {
+  "path": "/home/ayvol/accelerator_wrapper/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/reports/link/imp/impl_1_hw_bb_locked_timing_summary_routed.rpx",
+  "name": "",
+  "fileType": "BINARY_PROTOBUF",
+  "reportType": "GLOBAL_REPORT_TIMING_SUMMARY",
+  "cmdId": "1e227482-1fce-4ea4-a5ff-8b540883f361"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sat Mar 16 07:50:14 2024",
+ "timestampMillis": "1710575414111",
+ "report": {
+  "path": "/home/ayvol/accelerator_wrapper/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/reports/link/imp/impl_1_hw_bb_locked_timing_summary_routed.rpv",
+  "name": "",
+  "fileType": "BINARY_PROTOBUF",
+  "reportType": "GLOBAL_REPORT_TIMING_SUMMARY_CONCISE",
+  "cmdId": "1e227482-1fce-4ea4-a5ff-8b540883f361"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sat Mar 16 07:50:14 2024",
+ "timestampMillis": "1710575414357",
+ "report": {
+  "path": "/home/ayvol/accelerator_wrapper/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/reports/link/imp/impl_1_hw_bb_locked_timing_summary_postroute_physopted.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_TIMING_SUMMARY",
+  "cmdId": "1e227482-1fce-4ea4-a5ff-8b540883f361"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sat Mar 16 07:50:14 2024",
+ "timestampMillis": "1710575414589",
+ "report": {
+  "path": "/home/ayvol/accelerator_wrapper/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/reports/link/imp/impl_1_hw_bb_locked_timing_summary_postroute_physopted.rpx",
+  "name": "",
+  "fileType": "BINARY_PROTOBUF",
+  "reportType": "GLOBAL_REPORT_TIMING_SUMMARY",
+  "cmdId": "1e227482-1fce-4ea4-a5ff-8b540883f361"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sat Mar 16 07:50:14 2024",
+ "timestampMillis": "1710575414651",
+ "report": {
+  "path": "/home/ayvol/accelerator_wrapper/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/reports/link/imp/impl_1_hw_bb_locked_timing_summary_postroute_physopted.rpv",
+  "name": "",
+  "fileType": "BINARY_PROTOBUF",
+  "reportType": "GLOBAL_REPORT_TIMING_SUMMARY_CONCISE",
+  "cmdId": "1e227482-1fce-4ea4-a5ff-8b540883f361"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Sat Mar 16 07:50:15 2024",
+ "timestampMillis": "1710575415050",
+ "status": {
+  "cmdId": "07283622-6bea-45a0-a02e-bd5948b7e8ff",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Sat Mar 16 07:50:15 2024",
+ "timestampMillis": "1710575415127",
+ "status": {
+  "cmdId": "167763de-f6c4-4bbd-ad09-c7d069111815",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "Sat Mar 16 07:50:16 2024",
+ "timestampMillis": "1710575416506",
+ "buildStep": {
+  "cmdId": "0c61a2af-71de-4fb8-acb5-4e713a715ab5",
+  "name": "rtdgen",
+  "logFile": "",
+  "commandLine": "rtdgen",
+  "args": [],
+  "iniFiles": [],
+  "cwd": "/home/ayvol/accelerator_wrapper"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Sat Mar 16 07:50:16 2024",
+ "timestampMillis": "1710575416506",
+ "status": {
+  "cmdId": "0c61a2af-71de-4fb8-acb5-4e713a715ab5",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sat Mar 16 07:50:16 2024",
+ "timestampMillis": "1710575416789",
+ "report": {
+  "path": "/home/ayvol/accelerator_wrapper/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/link/int/alveo_hls4ml_xml.rtd",
+  "name": "",
+  "fileType": "JSON",
+  "reportType": "XCLBIN_INFO",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "Sat Mar 16 07:50:16 2024",
+ "timestampMillis": "1710575416890",
+ "buildStep": {
+  "cmdId": "d6d374a8-13dd-4af1-b51e-0b90b27373e0",
+  "name": "cf2sw",
+  "logFile": "",
+  "commandLine": "cf2sw -a /home/ayvol/accelerator_wrapper/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/link/int/address_map.xml -sdsl /home/ayvol/accelerator_wrapper/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/link/int/sdsl.dat -xclbin /home/ayvol/accelerator_wrapper/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/link/int/xclbin_orig.xml -rtd /home/ayvol/accelerator_wrapper/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/link/int/alveo_hls4ml.rtd -o /home/ayvol/accelerator_wrapper/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/link/int/alveo_hls4ml.xml",
+  "args": [
+   "-a",
+   "/home/ayvol/accelerator_wrapper/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/link/int/address_map.xml",
+   "-sdsl",
+   "/home/ayvol/accelerator_wrapper/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/link/int/sdsl.dat",
+   "-xclbin",
+   "/home/ayvol/accelerator_wrapper/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/link/int/xclbin_orig.xml",
+   "-rtd",
+   "/home/ayvol/accelerator_wrapper/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/link/int/alveo_hls4ml.rtd",
+   "-o",
+   "/home/ayvol/accelerator_wrapper/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/link/int/alveo_hls4ml.xml"
+  ],
+  "iniFiles": [],
+  "cwd": "/home/ayvol/accelerator_wrapper"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Sat Mar 16 07:50:16 2024",
+ "timestampMillis": "1710575416890",
+ "status": {
+  "cmdId": "d6d374a8-13dd-4af1-b51e-0b90b27373e0",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Sat Mar 16 07:50:35 2024",
+ "timestampMillis": "1710575435476",
+ "status": {
+  "cmdId": "d6d374a8-13dd-4af1-b51e-0b90b27373e0",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "Sat Mar 16 07:50:35 2024",
+ "timestampMillis": "1710575435477",
+ "buildStep": {
+  "cmdId": "bd257160-0787-4cd8-9c55-d1e132d24957",
+  "name": "rtdgen",
+  "logFile": "",
+  "commandLine": "writeSystemDiagram",
+  "args": [
+   "/home/ayvol/accelerator_wrapper/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/link/int/alveo_hls4ml.rtd",
+   "/home/ayvol/accelerator_wrapper/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/link/int/systemDiagramModelSlrBaseAddress.json"
+  ],
+  "iniFiles": [],
+  "cwd": "/home/ayvol/accelerator_wrapper"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Sat Mar 16 07:50:35 2024",
+ "timestampMillis": "1710575435477",
+ "status": {
+  "cmdId": "bd257160-0787-4cd8-9c55-d1e132d24957",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sat Mar 16 07:50:35 2024",
+ "timestampMillis": "1710575435542",
+ "report": {
+  "path": "/home/ayvol/accelerator_wrapper/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/link/int/systemDiagramModelSlrBaseAddress.json",
+  "name": "",
+  "fileType": "JSON",
+  "reportType": "SYSTEM_DIAGRAM_PLUS",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Sat Mar 16 07:50:35 2024",
+ "timestampMillis": "1710575435542",
+ "status": {
+  "cmdId": "bd257160-0787-4cd8-9c55-d1e132d24957",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "Sat Mar 16 07:50:35 2024",
+ "timestampMillis": "1710575435542",
+ "buildStep": {
+  "cmdId": "749382e4-c303-4c05-b7b1-e7c0277403a2",
+  "name": "rtdgen",
+  "logFile": "",
+  "commandLine": "writeAutomationSummary",
+  "args": [
+   "/home/ayvol/accelerator_wrapper/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/link/int/automation_summary.txt"
+  ],
+  "iniFiles": [],
+  "cwd": "/home/ayvol/accelerator_wrapper"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Sat Mar 16 07:50:35 2024",
+ "timestampMillis": "1710575435542",
+ "status": {
+  "cmdId": "749382e4-c303-4c05-b7b1-e7c0277403a2",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sat Mar 16 07:50:35 2024",
+ "timestampMillis": "1710575435604",
+ "report": {
+  "path": "/home/ayvol/accelerator_wrapper/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/link/int/automation_summary.txt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "VITIS_DESIGN_FLOW",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Sat Mar 16 07:50:35 2024",
+ "timestampMillis": "1710575435604",
+ "status": {
+  "cmdId": "749382e4-c303-4c05-b7b1-e7c0277403a2",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Sat Mar 16 07:50:35 2024",
+ "timestampMillis": "1710575435727",
+ "status": {
+  "cmdId": "0c61a2af-71de-4fb8-acb5-4e713a715ab5",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "Sat Mar 16 07:50:36 2024",
+ "timestampMillis": "1710575436557",
+ "buildStep": {
+  "cmdId": "b9591c2f-1559-4d60-b8a0-398abb9c6dae",
+  "name": "xclbinutil",
+  "logFile": "",
+  "commandLine": "xclbinutil --add-section BITSTREAM:RAW:/home/ayvol/accelerator_wrapper/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/link/int/partial.bit --force --target hw --key-value SYS:dfx_enable:true --add-section :JSON:/home/ayvol/accelerator_wrapper/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/link/int/alveo_hls4ml.rtd --append-section :JSON:/home/ayvol/accelerator_wrapper/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/link/int/appendSection.rtd --add-section CLOCK_FREQ_TOPOLOGY:JSON:/home/ayvol/accelerator_wrapper/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/link/int/alveo_hls4ml_xml.rtd --add-section BUILD_METADATA:JSON:/home/ayvol/accelerator_wrapper/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/link/int/alveo_hls4ml_build.rtd --add-section EMBEDDED_METADATA:RAW:/home/ayvol/accelerator_wrapper/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/link/int/alveo_hls4ml.xml --add-section SYSTEM_METADATA:RAW:/home/ayvol/accelerator_wrapper/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/link/int/systemDiagramModelSlrBaseAddress.json --key-value SYS:PlatformVBNV:xilinx_u55c_gen3x16_xdma_3_202210_1 --output /home/ayvol/accelerator_wrapper/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml.xclbin",
+  "args": [
+   "--add-section",
+   "BITSTREAM:RAW:/home/ayvol/accelerator_wrapper/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/link/int/partial.bit",
+   "--force",
+   "--target",
+   "hw",
+   "--key-value",
+   "SYS:dfx_enable:true",
+   "--add-section",
+   ":JSON:/home/ayvol/accelerator_wrapper/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/link/int/alveo_hls4ml.rtd",
+   "--append-section",
+   ":JSON:/home/ayvol/accelerator_wrapper/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/link/int/appendSection.rtd",
+   "--add-section",
+   "CLOCK_FREQ_TOPOLOGY:JSON:/home/ayvol/accelerator_wrapper/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/link/int/alveo_hls4ml_xml.rtd",
+   "--add-section",
+   "BUILD_METADATA:JSON:/home/ayvol/accelerator_wrapper/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/link/int/alveo_hls4ml_build.rtd",
+   "--add-section",
+   "EMBEDDED_METADATA:RAW:/home/ayvol/accelerator_wrapper/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/link/int/alveo_hls4ml.xml",
+   "--add-section",
+   "SYSTEM_METADATA:RAW:/home/ayvol/accelerator_wrapper/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/link/int/systemDiagramModelSlrBaseAddress.json",
+   "--key-value",
+   "SYS:PlatformVBNV:xilinx_u55c_gen3x16_xdma_3_202210_1",
+   "--output",
+   "/home/ayvol/accelerator_wrapper/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml.xclbin"
+  ],
+  "iniFiles": [],
+  "cwd": "/home/ayvol/accelerator_wrapper"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Sat Mar 16 07:50:36 2024",
+ "timestampMillis": "1710575436558",
+ "status": {
+  "cmdId": "b9591c2f-1559-4d60-b8a0-398abb9c6dae",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Sat Mar 16 07:50:39 2024",
+ "timestampMillis": "1710575439456",
+ "status": {
+  "cmdId": "b9591c2f-1559-4d60-b8a0-398abb9c6dae",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "Sat Mar 16 07:50:39 2024",
+ "timestampMillis": "1710575439744",
+ "buildStep": {
+  "cmdId": "1ae88562-08d3-4b0c-b741-ed3e78477cb3",
+  "name": "xclbinutilinfo",
+  "logFile": "",
+  "commandLine": "xclbinutil --quiet --force --info /home/ayvol/accelerator_wrapper/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml.xclbin.info --input /home/ayvol/accelerator_wrapper/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml.xclbin",
+  "args": [
+   "--quiet",
+   "--force",
+   "--info",
+   "/home/ayvol/accelerator_wrapper/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml.xclbin.info",
+   "--input",
+   "/home/ayvol/accelerator_wrapper/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml.xclbin"
+  ],
+  "iniFiles": [],
+  "cwd": "/home/ayvol/accelerator_wrapper"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Sat Mar 16 07:50:39 2024",
+ "timestampMillis": "1710575439744",
+ "status": {
+  "cmdId": "1ae88562-08d3-4b0c-b741-ed3e78477cb3",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Sat Mar 16 07:50:40 2024",
+ "timestampMillis": "1710575440428",
+ "status": {
+  "cmdId": "1ae88562-08d3-4b0c-b741-ed3e78477cb3",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "Sat Mar 16 07:50:40 2024",
+ "timestampMillis": "1710575440653",
+ "buildStep": {
+  "cmdId": "4ffc8e82-c919-48c5-92df-071f0b684989",
+  "name": "generate_sc_driver",
+  "logFile": "",
+  "commandLine": "",
+  "args": [],
+  "iniFiles": [],
+  "cwd": "/home/ayvol/accelerator_wrapper"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Sat Mar 16 07:50:40 2024",
+ "timestampMillis": "1710575440653",
+ "status": {
+  "cmdId": "4ffc8e82-c919-48c5-92df-071f0b684989",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Sat Mar 16 07:50:40 2024",
+ "timestampMillis": "1710575440715",
+ "status": {
+  "cmdId": "4ffc8e82-c919-48c5-92df-071f0b684989",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sat Mar 16 07:50:41 2024",
+ "timestampMillis": "1710575441060",
+ "report": {
+  "path": "/home/ayvol/accelerator_wrapper/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/reports/link/system_estimate_alveo_hls4ml.xtxt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_SYSTEM_ESTIMATE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sat Mar 16 07:50:41 2024",
+ "timestampMillis": "1710575441570",
+ "report": {
+  "path": "/home/ayvol/accelerator_wrapper/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/logs/optraceViewer.html",
+  "name": "",
+  "fileType": "HTML",
+  "reportType": "OPERATION_TRACE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Sat Mar 16 07:50:41 2024",
+ "timestampMillis": "1710575441631",
+ "status": {
+  "cmdId": "12ce3f90-5913-468a-ba73-b9fe5a95be6e",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sat Mar 16 07:50:43 2024",
+ "timestampMillis": "1710575443538",
+ "report": {
+  "path": "/home/ayvol/accelerator_wrapper/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/reports/link/v++_link_alveo_hls4ml_guidance.html",
+  "name": "",
+  "fileType": "HTML",
+  "reportType": "GLOBAL_RULECHECK_GUIDANCE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sat Mar 16 07:50:43 2024",
+ "timestampMillis": "1710575443539",
+ "report": {
+  "path": "/home/ayvol/accelerator_wrapper/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/v++_link_alveo_hls4ml_guidance.pb3",
+  "name": "",
+  "fileType": "BINARY_PROTOBUF",
+  "reportType": "GLOBAL_RULECHECK_GUIDANCE",
+  "cmdId": ""
+ }
+}
+</ENTRY>

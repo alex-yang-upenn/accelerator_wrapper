@@ -1,0 +1,146 @@
+
+
+================================================================
+== Vitis HLS Report for 'dataflow_in_loop_VITIS_LOOP_17_1'
+================================================================
+* Date:           Sat Mar 16 03:53:37 2024
+
+* Version:        2022.2 (Build 3670227 on Oct 13 2022)
+* Project:        alveo_hls4ml
+* Solution:       solution (Vitis Kernel Flow Target)
+* Product family: virtexuplus
+* Target device:  xcu55c-fsvh2892-2L-e
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+---------+----------+------------+
+    |  Clock |  Target | Estimated| Uncertainty|
+    +--------+---------+----------+------------+
+    |ap_clk  |  3.33 ns|  2.248 ns|     0.90 ns|
+    +--------+---------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-----+-----+----------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline |
+    |   min   |   max   |    min   |    max   | min | max |   Type   |
+    +---------+---------+----------+----------+-----+-----+----------+
+    |       41|       41|  0.137 us|  0.137 us|    3|    3|  dataflow|
+    +---------+---------+----------+----------+-----+-----+----------+
+
+    + Detail: 
+        * Instance: 
+        +------------+---------+---------+---------+----------+----------+-----+-----+---------+
+        |            |         |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline|
+        |  Instance  |  Module |   min   |   max   |    min   |    max   | min | max |   Type  |
+        +------------+---------+---------+---------+----------+----------+-----+-----+---------+
+        |ereg_v1_U0  |ereg_v1  |       41|       41|  0.137 us|  0.137 us|    3|    3|      yes|
+        +------------+---------+---------+---------+----------+----------+-----+-----+---------+
+
+        * Loop: 
+        N/A
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++---------------------+---------+------+---------+---------+-----+
+|         Name        | BRAM_18K|  DSP |    FF   |   LUT   | URAM|
++---------------------+---------+------+---------+---------+-----+
+|DSP                  |        -|     -|        -|        -|    -|
+|Expression           |        -|     -|        -|        -|    -|
+|FIFO                 |        -|     -|        -|        -|    -|
+|Instance             |        -|   933|    49718|    32139|    -|
+|Memory               |        -|     -|        -|        -|    -|
+|Multiplexer          |        -|     -|        -|        -|    -|
+|Register             |        -|     -|        -|        -|    -|
++---------------------+---------+------+---------+---------+-----+
+|Total                |        0|   933|    49718|    32139|    0|
++---------------------+---------+------+---------+---------+-----+
+|Available SLR        |     1344|  3008|   869120|   434560|  320|
++---------------------+---------+------+---------+---------+-----+
+|Utilization SLR (%)  |        0|    31|        5|        7|    0|
++---------------------+---------+------+---------+---------+-----+
+|Available            |     4032|  9024|  2607360|  1303680|  960|
++---------------------+---------+------+---------+---------+-----+
+|Utilization (%)      |        0|    10|        1|        2|    0|
++---------------------+---------+------+---------+---------+-----+
+
++ Detail: 
+    * Instance: 
+    +------------+---------+---------+-----+-------+-------+-----+
+    |  Instance  |  Module | BRAM_18K| DSP |   FF  |  LUT  | URAM|
+    +------------+---------+---------+-----+-------+-------+-----+
+    |ereg_v1_U0  |ereg_v1  |        0|  933|  49718|  32139|    0|
+    +------------+---------+---------+-----+-------+-------+-----+
+    |Total       |         |        0|  933|  49718|  32139|    0|
+    +------------+---------+---------+-----+-------+-------+-----+
+
+    * DSP: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    N/A
+
+    * Multiplexer: 
+    N/A
+
+    * Register: 
+    N/A
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++------------------+-----+-----+------------+----------------------------------+--------------+
+|     RTL Ports    | Dir | Bits|  Protocol  |           Source Object          |    C Type    |
++------------------+-----+-----+------------+----------------------------------+--------------+
+|in_buf_address0   |  out|   14|   ap_memory|                            in_buf|         array|
+|in_buf_ce0        |  out|    1|   ap_memory|                            in_buf|         array|
+|in_buf_d0         |  out|  288|   ap_memory|                            in_buf|         array|
+|in_buf_q0         |   in|  288|   ap_memory|                            in_buf|         array|
+|in_buf_we0        |  out|    1|   ap_memory|                            in_buf|         array|
+|in_buf_address1   |  out|   14|   ap_memory|                            in_buf|         array|
+|in_buf_ce1        |  out|    1|   ap_memory|                            in_buf|         array|
+|in_buf_d1         |  out|  288|   ap_memory|                            in_buf|         array|
+|in_buf_q1         |   in|  288|   ap_memory|                            in_buf|         array|
+|in_buf_we1        |  out|    1|   ap_memory|                            in_buf|         array|
+|i                 |   in|   15|     ap_none|                                 i|        scalar|
+|i_ap_vld          |   in|    1|     ap_none|                                 i|        scalar|
+|out_buf_address0  |  out|   14|   ap_memory|                           out_buf|         array|
+|out_buf_ce0       |  out|    1|   ap_memory|                           out_buf|         array|
+|out_buf_d0        |  out|   16|   ap_memory|                           out_buf|         array|
+|out_buf_q0        |   in|   16|   ap_memory|                           out_buf|         array|
+|out_buf_we0       |  out|    1|   ap_memory|                           out_buf|         array|
+|out_buf_address1  |  out|   14|   ap_memory|                           out_buf|         array|
+|out_buf_ce1       |  out|    1|   ap_memory|                           out_buf|         array|
+|out_buf_d1        |  out|   16|   ap_memory|                           out_buf|         array|
+|out_buf_q1        |   in|   16|   ap_memory|                           out_buf|         array|
+|out_buf_we1       |  out|    1|   ap_memory|                           out_buf|         array|
+|ap_clk            |   in|    1|  ap_ctrl_hs|  dataflow_in_loop_VITIS_LOOP_17_1|  return value|
+|ap_rst            |   in|    1|  ap_ctrl_hs|  dataflow_in_loop_VITIS_LOOP_17_1|  return value|
+|in_buf_empty_n    |   in|    1|  ap_ctrl_hs|  dataflow_in_loop_VITIS_LOOP_17_1|  return value|
+|in_buf_read       |  out|    1|  ap_ctrl_hs|  dataflow_in_loop_VITIS_LOOP_17_1|  return value|
+|out_buf_full_n    |   in|    1|  ap_ctrl_hs|  dataflow_in_loop_VITIS_LOOP_17_1|  return value|
+|out_buf_write     |  out|    1|  ap_ctrl_hs|  dataflow_in_loop_VITIS_LOOP_17_1|  return value|
+|ap_start          |   in|    1|  ap_ctrl_hs|  dataflow_in_loop_VITIS_LOOP_17_1|  return value|
+|ap_done           |  out|    1|  ap_ctrl_hs|  dataflow_in_loop_VITIS_LOOP_17_1|  return value|
+|ap_ready          |  out|    1|  ap_ctrl_hs|  dataflow_in_loop_VITIS_LOOP_17_1|  return value|
+|ap_idle           |  out|    1|  ap_ctrl_hs|  dataflow_in_loop_VITIS_LOOP_17_1|  return value|
+|ap_continue       |   in|    1|  ap_ctrl_hs|  dataflow_in_loop_VITIS_LOOP_17_1|  return value|
++------------------+-----+-----+------------+----------------------------------+--------------+
+
