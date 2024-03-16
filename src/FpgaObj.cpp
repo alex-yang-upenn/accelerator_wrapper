@@ -68,7 +68,7 @@ void fpgaObj<T, U>::initializeOpenCL(std::vector<cl::Device> &devices, cl::Progr
 
     // Create a OpenCL command queue for each compute unit
     for (int i = 0; i < _numSLR; i++) {
-        cl::CommandQueue q_tmp(context, clDevice, CL_QUEUE_PROFILING_ENABLE | CL_QUEUE_OUT_OF_ORDER_EXEC_MODE_ENABLE);
+        cl::CommandQueue q_tmp(context, clDevice, CL_QUEUE_OUT_OF_ORDER_EXEC_MODE_ENABLE);
         q.push_back(q_tmp);
     }
 
@@ -98,8 +98,8 @@ void fpgaObj<T, U>::initializeOpenCL(std::vector<cl::Device> &devices, cl::Progr
 
             std::vector<cl::Event> tmp_write_vec;
             std::vector<cl::Event> tmp_kern_vec;
-            tmp_write_vec.reserve(1);
-            tmp_kern_vec.reserve(1);
+            tmp_write_vec.push_back(tmp_write);
+            tmp_kern_vec.push_back(tmp_kern);
             writeList.push_back(tmp_write_vec);
             kernList.push_back(tmp_kern_vec);
         }
@@ -201,19 +201,19 @@ std::stringstream fpgaObj<T, U>::runFPGA() {
     std::stringstream ss;
 
     for (int i = 0 ; i < _numSLR * _n_iter; i++){
-        t_start = Clock::now();
+        // t_start = Clock::now();
         auto ikf = get_info_lock();
         int ikb = ikf.first;
         int ik = ikb % _numSLR ;
         bool firstRun = ikf.second;
 
-        auto ts1 = SClock::now();
-        print_nanoseconds("        start:  ",ts1, ik, ss);
+        // auto ts1 = SClock::now();
+        // print_nanoseconds("        start:  ",ts1, ik, ss);
     
         get_ilock(ikb);
         // Copy input data to device global memory
         if (!firstRun) {
-            OCL_CHECK(err, err = read_event[ikb].wait());
+            OCL_CHECK(err, err = kern_event[ikb].wait());
         }
         OCL_CHECK(err,
                     err =
@@ -221,30 +221,28 @@ std::stringstream fpgaObj<T, U>::runFPGA() {
                                                     0 /* 0 means from host*/,
                                                     NULL,
                                                     &(write_event[ikb])));
-
-        writeList[ikb].push_back(write_event[ikb]);
-        //Launch the kernel
+        
+        // Launch the kernel
         OCL_CHECK(err,
                     err = q[ik].enqueueNDRangeKernel(
                         krnl_xil[ikb], 0, 1, 1, &(writeList[ikb]), &(kern_event[ikb])));
 
-        kernList[ikb].push_back(kern_event[ikb]);
         OCL_CHECK(err,
                     err = q[ik].enqueueMigrateMemObjects({buffer_out[ikb]},
                                                     CL_MIGRATE_MEM_OBJECT_HOST,
                                                     &(kernList[ikb]),
                                                     &(read_event[ikb])));
 
-        //set_callback(queuename.c_str(), read_event);
+        // set_callback(queuename.c_str(), read_event);
         release_ilock(ikb);
     
         OCL_CHECK(err, err = kern_event[ikb].wait());
         OCL_CHECK(err, err = read_event[ikb].wait());
-        auto ts2 = SClock::now();
-        print_nanoseconds("       finish:  ",ts2, ik, ss);
+        // auto ts2 = SClock::now();
+        // print_nanoseconds("       finish:  ",ts2, ik, ss);
 
-        t_end = Clock::now();
-        ss << "KERN"<<ik<<"   Total time: " << std::chrono::duration_cast<std::chrono::nanoseconds>(t_end - t_start).count() << " ns\n";
+        // t_end = Clock::now();
+        // ss << "KERN"<<ik<<"   Total time: " << std::chrono::duration_cast<std::chrono::nanoseconds>(t_end - t_start).count() << " ns\n";
     }
     return ss;
 }
