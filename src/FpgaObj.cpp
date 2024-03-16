@@ -221,16 +221,16 @@ std::stringstream fpgaObj<T, U>::runFPGA() {
                                                     0 /* 0 means from host*/,
                                                     NULL,
                                                     &(write_event[ikb])));
-    
+
         // Launch the kernel
         OCL_CHECK(err,
                     err = q[ik].enqueueNDRangeKernel(
-                        krnl_xil[ikb], 0, 1, 1, &(write_event[ikb]), &(kern_event[ikb])));
+                        krnl_xil[ikb], 0, 1, 1, NULL, &(kern_event[ikb])));
 
         OCL_CHECK(err,
                     err = q[ik].enqueueMigrateMemObjects({buffer_out[ikb]},
                                                     CL_MIGRATE_MEM_OBJECT_HOST,
-                                                    &(kern_event[ikb]),
+                                                    NULL,
                                                     &(read_event[ikb])));
 
         // set_callback(queuename.c_str(), read_event);
