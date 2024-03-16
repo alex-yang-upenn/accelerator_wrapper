@@ -98,8 +98,6 @@ void fpgaObj<T, U>::initializeOpenCL(std::vector<cl::Device> &devices, cl::Progr
 
             std::vector<cl::Event> tmp_write_vec;
             std::vector<cl::Event> tmp_kern_vec;
-            tmp_write_vec.reserve(1);
-            tmp_kern_vec.reserve(1);
             writeList.push_back(tmp_write_vec);
             kernList.push_back(tmp_kern_vec);
         }
@@ -221,11 +219,13 @@ std::stringstream fpgaObj<T, U>::runFPGA() {
                                                     0 /* 0 means from host*/,
                                                     NULL,
                                                     &(write_event[ikb])));
+        writeList[ikb].push_back(write_event[ikb]);
 
         // Launch the kernel
         OCL_CHECK(err,
                     err = q[ik].enqueueNDRangeKernel(
                         krnl_xil[ikb], 0, 1, 1, NULL, &(kern_event[ikb])));
+        kernList[ikb].push_back(kern_event[ikb]);
 
         OCL_CHECK(err,
                     err = q[ik].enqueueMigrateMemObjects({buffer_out[ikb]},
