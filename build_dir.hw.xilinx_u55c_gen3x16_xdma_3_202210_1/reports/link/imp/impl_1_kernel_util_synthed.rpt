@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2022.2 (lin64) Build 3671981 Fri Oct 14 04:59:54 MDT 2022
-| Date         : Sat Mar 16 04:55:18 2024
+| Date         : Wed Mar 20 20:48:39 2024
 | Host         : egl running 64-bit Ubuntu 20.04.4 LTS
 | Command      : report_accelerator_utilization -kernels { alveo_hls4ml:level0_i/ulp/alveo_hls4ml_1/inst:alveo_hls4ml_1 alveo_hls4ml:level0_i/ulp/alveo_hls4ml_2/inst:alveo_hls4ml_2 alveo_hls4ml:level0_i/ulp/alveo_hls4ml_3/inst:alveo_hls4ml_3 alveo_hls4ml:level0_i/ulp/alveo_hls4ml_4/inst:alveo_hls4ml_4} -file kernel_util_synthed.rpt -name kernel_util_synthed -json
 | Design       : level0_wrapper

@@ -499,8 +499,8 @@
     "time_stamp": "2022-10-13-17:52:11",
     "options": "/tools/Xilinx/Vitis/2022.2/bin/unwrapped/lnx64.o/v++ -t hw --platform xilinx_u55c_gen3x16_xdma_3_202210_1 --save-temps --temp_dir ./build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1 -l -obuild_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml.xclbin _x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml.xo --config config.ini ",
     "xclbin_name": "alveo_hls4ml",
-    "uuid": "12ce3f90-5913-468a-ba73-b9fe5a95be6e",
-    "link_uuid": "12ce3f90-5913-468a-ba73-b9fe5a95be6e",
+    "uuid": "8d72fefb-1eb9-4fe9-ae00-217cb2f0629d",
+    "link_uuid": "8d72fefb-1eb9-4fe9-ae00-217cb2f0629d",
     "package_uuid": "",
     "system_compile_flow": false
    },
@@ -1075,7 +1075,7 @@
        "actual_resources": [
         {
          "design_state": "routed",
-         "LUT": "13581",
+         "LUT": "13580",
          "REG": "10621",
          "BRAM": "215",
          "DSP": "933",
@@ -1083,7 +1083,7 @@
         },
         {
          "design_state": "fully_placed",
-         "LUT": "13581",
+         "LUT": "13580",
          "REG": "10541",
          "BRAM": "215",
          "DSP": "933",
@@ -1177,12 +1177,12 @@
          "resource_utilization": [
           {
            "resource_name": "LUT",
-           "used": "13581",
+           "used": "13580",
            "available": "432000"
           },
           {
            "resource_name": "LUTAsLogic",
-           "used": "12816",
+           "used": "12815",
            "available": "432000"
           },
           {
@@ -1302,7 +1302,7 @@
        "actual_resources": [
         {
          "design_state": "routed",
-         "LUT": "13633",
+         "LUT": "13632",
          "REG": "10576",
          "BRAM": "215",
          "DSP": "933",
@@ -1310,7 +1310,7 @@
         },
         {
          "design_state": "fully_placed",
-         "LUT": "13633",
+         "LUT": "13632",
          "REG": "10512",
          "BRAM": "215",
          "DSP": "933",
@@ -1404,12 +1404,12 @@
          "resource_utilization": [
           {
            "resource_name": "LUT",
-           "used": "13633",
+           "used": "13632",
            "available": "432000"
           },
           {
            "resource_name": "LUTAsLogic",
-           "used": "12868",
+           "used": "12867",
            "available": "432000"
           },
           {

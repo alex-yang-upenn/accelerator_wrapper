@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2022.2 (lin64) Build 3671981 Fri Oct 14 04:59:54 MDT 2022
-| Date         : Sat Mar 16 07:02:24 2024
+| Date         : Wed Mar 20 23:23:09 2024
 | Host         : egl running 64-bit Ubuntu 20.04.4 LTS
 | Command      : report_utilization -file full_util_routed.rpt -pb full_util_routed.pb
 | Design       : level0_wrapper
@@ -37,8 +37,8 @@ Table of Contents
 +----------------------------+--------+--------+------------+-----------+-------+
 |          Site Type         |  Used  |  Fixed | Prohibited | Available | Util% |
 +----------------------------+--------+--------+------------+-----------+-------+
-| CLB LUTs                   | 183388 | 107889 |          0 |   1303680 | 14.07 |
-|   LUT as Logic             | 169924 | 101912 |          0 |   1303680 | 13.03 |
+| CLB LUTs                   | 183384 | 107889 |          0 |   1303680 | 14.07 |
+|   LUT as Logic             | 169920 | 101912 |          0 |   1303680 | 13.03 |
 |   LUT as Memory            |  13464 |   5977 |          0 |    600960 |  2.24 |
 |     LUT as Distributed RAM |   7592 |   4564 |            |           |       |
 |     LUT as Shift Register  |   5872 |   1413 |            |           |       |
@@ -79,13 +79,13 @@ Table of Contents
 +--------------------------------------------+--------+--------+------------+-----------+-------+
 |                  Site Type                 |  Used  |  Fixed | Prohibited | Available | Util% |
 +--------------------------------------------+--------+--------+------------+-----------+-------+
-| CLB                                        |  38491 |      0 |          0 |    162960 | 23.62 |
-|   CLBL                                     |  19420 |      0 |            |           |       |
-|   CLBM                                     |  19071 |      0 |            |           |       |
-| LUT as Logic                               | 169924 | 101912 |          0 |   1303680 | 13.03 |
-|   using O5 output only                     |   2794 |        |            |           |       |
-|   using O6 output only                     | 116363 |        |            |           |       |
-|   using O5 and O6                          |  50767 |        |            |           |       |
+| CLB                                        |  38498 |      0 |          0 |    162960 | 23.62 |
+|   CLBL                                     |  19433 |      0 |            |           |       |
+|   CLBM                                     |  19065 |      0 |            |           |       |
+| LUT as Logic                               | 169920 | 101912 |          0 |   1303680 | 13.03 |
+|   using O5 output only                     |   2791 |        |            |           |       |
+|   using O6 output only                     | 116358 |        |            |           |       |
+|   using O5 and O6                          |  50771 |        |            |           |       |
 | LUT as Memory                              |  13464 |   5977 |          0 |    600960 |  2.24 |
 |   LUT as Distributed RAM                   |   7592 |   4564 |            |           |       |
 |     using O5 output only                   |      0 |        |            |           |       |
@@ -98,8 +98,8 @@ Table of Contents
 | CLB Registers                              | 217734 |      0 |          0 |   2607360 |  8.35 |
 |   Register driven from within the CLB      | 110960 |        |            |           |       |
 |   Register driven from outside the CLB     | 106774 |        |            |           |       |
-|     LUT in front of the register is unused |  67591 |        |            |           |       |
-|     LUT in front of the register is used   |  39183 |        |            |           |       |
+|     LUT in front of the register is unused |  67656 |        |            |           |       |
+|     LUT in front of the register is used   |  39118 |        |            |           |       |
 | Unique Control Sets                        |   7566 |        |          0 |    325920 |  2.32 |
 +--------------------------------------------+--------+--------+------------+-----------+-------+
 * * Note: Available Control Sets calculated as Slices * 2, Review the Control Sets Report for more information regarding control sets.
@@ -463,11 +463,11 @@ Table of Contents
 |     Using RX_REG only            |     0 |     0 |           |       |
 |     Using Both TX_REG and RX_REG |     0 |     0 |           |       |
 | SLR1 <-> SLR0                    |  6948 |       |     23040 | 30.16 |
-|   SLR0 -> SLR1                   |  2945 |       |           | 12.78 |
+|   SLR0 -> SLR1                   |  2946 |       |           | 12.79 |
 |     Using TX_REG only            |     0 |     0 |           |       |
 |     Using RX_REG only            |     0 |     0 |           |       |
 |     Using Both TX_REG and RX_REG |     0 |     0 |           |       |
-|   SLR1 -> SLR0                   |  4003 |       |           | 17.37 |
+|   SLR1 -> SLR0                   |  4002 |       |           | 17.37 |
 |     Using TX_REG only            |     0 |     0 |           |       |
 |     Using RX_REG only            |     0 |     0 |           |       |
 |     Using Both TX_REG and RX_REG |     0 |     0 |           |       |
@@ -483,8 +483,8 @@ Table of Contents
 | FROM \ TO | SLR2 | SLR1 | SLR0 |
 +-----------+------+------+------+
 | SLR2      |    0 | 2421 |  115 |
-| SLR1      | 2655 |    0 | 3888 |
-| SLR0      |   64 | 2881 |    0 |
+| SLR1      | 2655 |    0 | 3887 |
+| SLR0      |   64 | 2882 |    0 |
 +-----------+------+------+------+
 
 
@@ -494,14 +494,14 @@ Table of Contents
 +----------------------------+-------+-------+-------+--------+--------+--------+
 |          Site Type         |  SLR0 |  SLR1 |  SLR2 | SLR0 % | SLR1 % | SLR2 % |
 +----------------------------+-------+-------+-------+--------+--------+--------+
-| CLB                        | 15528 | 16224 |  6739 |  28.25 |  30.04 |  12.48 |
-|   CLBL                     |  7504 |  8412 |  3504 |  25.63 |  28.73 |  11.97 |
-|   CLBM                     |  8024 |  7812 |  3235 |  31.25 |  31.60 |  13.09 |
-| CLB LUTs                   | 68467 | 88442 | 26479 |  15.57 |  20.47 |   6.13 |
-|   LUT as Logic             | 61746 | 83241 | 24937 |  14.04 |  19.27 |   5.77 |
-|     using O5 output only   |  1354 |   976 |   464 |   0.31 |   0.23 |   0.11 |
-|     using O6 output only   | 40411 | 58189 | 17763 |   9.19 |  13.47 |   4.11 |
-|     using O5 and O6        | 19981 | 24076 |  6710 |   4.54 |   5.57 |   1.55 |
+| CLB                        | 15548 | 16211 |  6739 |  28.29 |  30.02 |  12.48 |
+|   CLBL                     |  7516 |  8408 |  3509 |  25.67 |  28.72 |  11.98 |
+|   CLBM                     |  8032 |  7803 |  3230 |  31.28 |  31.57 |  13.07 |
+| CLB LUTs                   | 68465 | 88440 | 26479 |  15.57 |  20.47 |   6.13 |
+|   LUT as Logic             | 61744 | 83239 | 24937 |  14.04 |  19.27 |   5.77 |
+|     using O5 output only   |  1352 |   975 |   464 |   0.31 |   0.23 |   0.11 |
+|     using O6 output only   | 40409 | 58186 | 17763 |   9.19 |  13.47 |   4.11 |
+|     using O5 and O6        | 19983 | 24078 |  6710 |   4.54 |   5.57 |   1.55 |
 |   LUT as Memory            |  6721 |  5201 |  1542 |   3.27 |   2.63 |   0.78 |
 |     LUT as Distributed RAM |  3240 |  3532 |   820 |   1.58 |   1.79 |   0.41 |
 |       using O5 output only |     0 |     0 |     0 |   0.00 |   0.00 |   0.00 |

@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'alveo_hls4ml'" level="0">
-<item name = "Date">Sat Mar 16 03:52:57 2024
+<item name = "Date">Wed Mar 20 19:47:02 2024
 </item>
 <item name = "Version">2022.2 (Build 3670227 on Oct 13 2022)</item>
 <item name = "Project">alveo_hls4ml</item>

@@ -34,7 +34,7 @@
               <coreName>RAM</coreName>
               <isStorage>0</isStorage>
               <storageDepth>0</storageDepth>
-              <coreId>0</coreId>
+              <coreId>1426305072</coreId>
               <rtlModuleName/>
             </Obj>
             <bitwidth>288</bitwidth>
@@ -70,7 +70,7 @@
               <coreName/>
               <isStorage>0</isStorage>
               <storageDepth>0</storageDepth>
-              <coreId>1094673840</coreId>
+              <coreId>1430031696</coreId>
               <rtlModuleName/>
             </Obj>
             <bitwidth>15</bitwidth>
@@ -106,7 +106,7 @@
               <coreName>RAM</coreName>
               <isStorage>0</isStorage>
               <storageDepth>0</storageDepth>
-              <coreId>1094673392</coreId>
+              <coreId>1429878576</coreId>
               <rtlModuleName/>
             </Obj>
             <bitwidth>16</bitwidth>
@@ -189,7 +189,7 @@
               <coreName/>
               <isStorage>0</isStorage>
               <storageDepth>0</storageDepth>
-              <coreId>1091152800</coreId>
+              <coreId>1426010912</coreId>
               <rtlModuleName/>
             </Obj>
             <bitwidth>14</bitwidth>
@@ -245,7 +245,7 @@
               <coreName/>
               <isStorage>0</isStorage>
               <storageDepth>0</storageDepth>
-              <coreId>1092384832</coreId>
+              <coreId>1426183344</coreId>
               <rtlModuleName/>
             </Obj>
             <bitwidth>0</bitwidth>
@@ -304,7 +304,7 @@
               <coreName/>
               <isStorage>0</isStorage>
               <storageDepth>0</storageDepth>
-              <coreId>1094655088</coreId>
+              <coreId>1425328912</coreId>
               <rtlModuleName/>
             </Obj>
             <bitwidth>0</bitwidth>
@@ -349,7 +349,7 @@
               <coreName/>
               <isStorage>0</isStorage>
               <storageDepth>0</storageDepth>
-              <coreId>1094197168</coreId>
+              <coreId>1430888608</coreId>
               <rtlModuleName/>
             </Obj>
             <bitwidth>0</bitwidth>
